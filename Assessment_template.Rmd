@@ -1,5 +1,5 @@
 ---
-title: 'Status of China Rockfish (*Sebastes nebulosus*) Along the U.S. Pacific Coast in 2015'
+title: 'Status of Yellowtail Rockfish (*Sebastes flavidus*) Along the U.S. Pacific Coast in 2017'
 author: ''
 date: ''
 output:

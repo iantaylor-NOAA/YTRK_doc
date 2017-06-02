@@ -24,12 +24,12 @@ load("./r4ss/SS_output.RData")
 # ============================================================================= 
 
 # Species, common and scientific
-spp = "China rockfish"
-spp.sci = "Sebastes nebulosus"
-  
+spp = "Yellowtail rockfish"
+spp.sci = "Sebastes flavidus"
+
+### Continue edits for YTRK from here:  
 # minimum vulnerable age class
 min_age = "1+"
-
 
 # number of independent assessment models to include in the document
 n_models = 1 
