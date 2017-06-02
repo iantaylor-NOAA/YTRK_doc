@@ -44,7 +44,7 @@ library(r4ss)
 
 # number of assessment models - this is run before the R_preamble.R, which also
 # contains this value
- n_models = 1
+ n_models = 2
  
 
 # By default, you can only work in the directory containing the project
@@ -55,13 +55,11 @@ library(r4ss)
 # Give the names of the data and control files, for each model
 # Used in the SS_files_linebreaks.R
 mod1_dat =  'china_WAonly_data.ss'  
-mod2_dat =  'china_central_data.ss'
-mod3_dat =  'china_south_data.ss'
+mod2_dat =  'china_WAonly_data.ss'
 
 # Control file names 
 mod1_ctrl = 'china_WAonly_control.ss' 
-mod2_ctrl = 'china_central_control.ss'
-mod3_ctrl = 'china_south_control.ss'
+mod2_ctrl = 'china_WAonly_control.ss' 
 
 # =============================================================================
 
@@ -74,7 +72,6 @@ output.dir = file.path(getwd(), 'r4ss')
 # Uncomment the /r4SS/ in the .gitignore file
 dir.create(file.path(output.dir,'plots_mod1'))
 dir.create(file.path(output.dir,'plots_mod2'))
-dir.create(file.path(output.dir,'plots_mod3'))
 
 
 # BEGIN r4ss===================================================================
@@ -82,13 +79,11 @@ dir.create(file.path(output.dir,'plots_mod3'))
 # Run this deliberately - it deletes the r4SS output plots files
 do.call(file.remove, list(list.files(file.path(output.dir, 'plots_mod1'),    full.names=TRUE)))
 do.call(file.remove, list(list.files(file.path(output.dir, 'plots_mod2'),    full.names=TRUE)))
-do.call(file.remove, list(list.files(file.path(output.dir, 'plots_mod3'),    full.names=TRUE)))
 do.call(file.remove, list(list.files(file.path(output.dir, 'plots_compare'), full.names=TRUE)))
 
 # Run r4ss for each model - **CHANGE DIRECTORY if necessary**
                mod1 = SS_output(dir = file.path(input.dir,'Base_model1'), forecast=T, covar=T, ncol=1000)
 if(n_models>1){mod2 = SS_output(dir = file.path(input.dir,'Base_model2'), forecast=T, covar=T, ncol=1000)}
-if(n_models>2){mod3 = SS_output(dir = file.path(input.dir,'Base_model3'), forecast=T, covar=T, ncol=1000)}
 
 # Save the workspace an image
 save.image('./r4ss/SS_output.RData')
@@ -130,21 +125,6 @@ if(n_models > 1){
            maxcols2 = 4, 
            printfolder = '', 
            dir = out.dir.mod2)
-}
-
-# Model3
-if(n_models > 2){
-  SS_plots(mod3,
-           png = TRUE,
-           html = FALSE,
-           datplot = TRUE,
-           uncertainty = TRUE,
-           maxrows = 6, 
-           maxcols = 6, 
-           maxrows2 = 4, 
-           maxcols2 = 4, 
-           printfolder = '', 
-           dir = out.dir.mod3)
 }
 
 # -----------------------------------------------------------------------------
@@ -191,8 +171,8 @@ if(n_models==3) {out.mod3 = mod3}
  dir.compare.plots <- file.path(getwd(),'/r4ss/plots_compare') 
     
  # vector of names and colors models as defined
- mod.names <- c("WA","CA","OR")
- mod.cols  <- c("blue", "purple", "red")
+ mod.names <- c("North","South")
+ mod.cols  <- c("blue", "red")
 } # end n_models if
 
 
@@ -207,7 +187,7 @@ SSplotComparisons(base.summary,
                   spacepoints = 20,  # years between points on each line
                   initpoint = 0,     # "first" year of points (modular arithmetic)
                   staggerpoints = 0, # points aligned across models
-                  endyrvec = 2015,   # final year to show in time series
+                  endyrvec = 2017,   # final year to show in time series
                   legendlabels = mod.names, 
                   filenameprefix = "base_", 
                   col = mod.cols)
@@ -220,7 +200,7 @@ SSplotComparisons(base.summary,
                   spacepoints = 20,  # years between points on each line
                   initpoint = 0,     # "first" year of points (modular arithmetic)
                   staggerpoints = 0, # points aligned across models
-                  endyrvec = 2025,   # final year to show in time series
+                  endyrvec = 2027,   # final year to show in time series
                   legendlabels = mod.names, 
                   filenameprefix = "forecast_", 
                   col = mod.cols)
@@ -242,13 +222,6 @@ SSplotBiology(out.mod2,
               colvec = c(mod.cols[2], NA, NA),
               subplot = 1, 
               add = TRUE)
-      
-if(n_models>2){
-  SSplotBiology(out.mod3, 
-              colvec = c(mod.cols[3], NA, NA), 
-              subplot = 1, 
-              add = TRUE)
-}
 
 # legend to cover up non-useful Females/Males default legend
 legend('topleft', legend = mod.names, col = mod.cols, lwd = 3, bg = 'white')
@@ -271,14 +244,6 @@ if(n_models==2){
   SSplotYield(out.mod2, col = mod.cols[2], subplot = 1)
   grid()
   SSplotYield(out.mod1, col = mod.cols[1], subplot = 1, add = TRUE)
-}
-
-if(n_models==3){
-  SSplotYield(out.mod3, col = mod.cols[3], subplot = 1)
-  grid()
-  SSplotYield(out.mod2, col = mod.cols[2], subplot = 1, add = TRUE)
-  SSplotYield(out.mod1, col = mod.cols[1], subplot = 1, add = TRUE)
-  
 }
 
 
