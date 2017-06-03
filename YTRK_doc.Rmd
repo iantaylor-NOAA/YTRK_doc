@@ -59,9 +59,12 @@ for regional management.}
 
 This assessment reports the status of the `r spp` (\emph{`r spp.sci`}) resource 
 in U.S. waters off the coast of the California, Oregon, and Washington using data 
-through `r LastYR`.  Etc...
+through `r LastYR`.  
 
+The Pacific Fishery Management Council (PFMC) manages the U.S. fishery as two
+stocks separated at Cape Mendocino, California (40$^\circ$ 10'N). This assessment analyzes those two areas as independent stocks, with the southern stock extending southward to the U.S./Mexico border and the northern stock extending northward to the U.S./Canada border.
 
+The previous assessment [@Wallace2005], following the pattern of prior assessments, included only the Northern stock which it divided into three assessment areas with divisions at Cape Elizabeth (47$^\circ$ 20'N) and Cape Falcon (45$^\circ$ 46'N). However, a more recent genetic analysis [@Hess2011] found distinct stocks north and south of Cape Mendocino but did not find stock differences within the northern area, with the genetic stock extending northward through British Colombia, Canada to Southeast Alaska. However, Canada and Alaska are not included in this assessment.
 
 
 ##Catches{-}
