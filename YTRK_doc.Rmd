@@ -92,7 +92,7 @@ Catch tables: (Tables \ref{tab:Exec_catch_N}-\ref{tab:Exec_catch_S})
 
 \FloatBarrier
 
-![Estimated catch history of `r spp` in the `r mod1_label`. \label{fig:r4ss_catch_N}](r4ss/plots_mod1/catch2 landings stacked.png)
+![Estimated catch history of `r spp` in the `r mod1_label`. Recreational catches in Washington are model estimates of total weigth converted from input catch in numbers using model estimates of growth and selectivity.\label{fig:r4ss_catch_N}](r4ss/plots_mod1/catch2 landings stacked.png)
 
 ![Estimated catch history of `r spp` in the `r mod2_label`. \label{fig:r4ss_catch_S}](r4ss/plots_mod2/catch2 landings stacked.png)
 
@@ -809,6 +809,12 @@ increase in growth, $t_0$ is the intercept, and $L_{\infty}$ is the asymptotic l
 The weight-length relationship is based on the standard power function: 
 $W = \alpha(L^\beta)$ where $W$ is individual weight (kg), $L$ is length (cm), 
 and $\alpha$ and $\beta$ are coefficients used as constants.
+
+To estimate this relationship, 12,778 samples with both weight and length measurements from the fishery independent surveys were analyzed. These included 6,354 samples from the NWFSC Combo survey, 5,085 from the Triennial survey, and 1,339 from the Hook and Line survey. All Hook and Line survey samples were from the Southern area, along with 910 samples from the other two surveys (Figure \ref{fig:weight-length}). A single weight-length relationship was chosen for females and males in both areas after examining various factors that may influence this relationships, including sex, area, year, and season. None of these factors had a strong influence in the overall results. Season was one of the bigger factors, with fish sampled later in the year showing a small increase in weight at a given length (2-6\% depending on the other factors considered). However, season was confounded with area because most of the samples from the Southern area were collected from the Hook and Line survey which takes place later in the year (mid-September to mid-November) and the resolution of other data in the model do not support modeling the stock at a scale finer than a annual time step. Males and females did not show strong differences in either area, and the estimated differences were in opposite directions for the two areas, suggesting that this might be a spurious relationship or confounded with differences timing of the sampling relative to spawning.
+
+The estimated coefficients resulting from this analysis were $\alpha = 1.1843e-05$ and $\beta = 3.0672$.
+
+
 
 
 
@@ -1657,6 +1663,7 @@ assessment team. Not required in draft assessment undergoing review.
 <!-- ********************************************************************** -->
 
 ![Summary of data sources used in the `r mod1_label`. \label{fig:data_plot}](r4ss/plots_mod1/data_plot.png)
+
 ![Summary of data sources used in the `r mod2_label`. \label{fig:data_plot}](r4ss/plots_mod2/data_plot.png)
 
 
@@ -1787,6 +1794,8 @@ assessment team. Not required in draft assessment undergoing review.
 <!-- *****************Maturity and Fecundity FIGURES*********************** --> 
 <!-- ********************************************************************** -->
 
+
+![Estimated weight-length relationship for `r spp` used in both models. Colored points show observed values (red for females, blue for males, and green for unsexed). The black line indicates the estimated relationship $W = 0.000011843L^{3.0672}$.\label{fig:weight-length}](Figures/weight-length_fit.png)
 
 
 

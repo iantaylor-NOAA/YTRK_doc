@@ -24,7 +24,7 @@ load("./r4ss/SS_output.RData")
 # ============================================================================= 
 
 # Species, common and scientific
-spp = "Yellowtail rockfish"
+spp = "Yellowtail Rockfish"
 spp.sci = "Sebastes flavidus"
 
 # minimum vulnerable age class
