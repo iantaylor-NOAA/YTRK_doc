@@ -54,9 +54,6 @@ link-citations: yes
 #Executive Summary{-}
 
 ##Stock{-}
-\hl{Include: species/area, including an evaluation of any potential biological basis 
-for regional management.}
-
 This assessment reports the status of the `r spp` (\emph{`r spp.sci`}) resource 
 in U.S. waters off the coast of the California, Oregon, and Washington using data 
 through `r LastYR`.  
@@ -68,11 +65,16 @@ The previous assessment [@Wallace2005], following the pattern of prior assessmen
 
 
 ##Catches{-}
+Catches from the Northern stock were divided into four categories: commercial catch, bycatch in the at-sea hake fishery, recreational catch in Oregon and California (north of 40$^\circ$ 10'N), and recreational catch in Washington. The first three of these fleets were entered in metric tons, but the recreational catch from Washington was entered in the model as numbers of fish with the average weight calculated internally in the model.
+
+Catches from the Southern stock were divided into two categories: commercial and recreational catch, both of which were entered as metric tons.
+
+
 \hl{Include: trends and current levels-include table for last ten years and graph with 
 long term data}
 
-Catch figure(s) with fleets: (Figures \ref{fig:Exec_catch1}-\ref{fig:Exec_catch3})    
-Catch table:                 (Table \ref{tab:Exec_catch})
+Catch figures: (Figures \ref{fig:r4ss_catch_N}-\ref{fig:r4ss_catch_S})    
+Catch tables: (Tables \ref{tab:Exec_catch_N}-\ref{tab:Exec_catch_S})
 
 
 
@@ -87,40 +89,34 @@ Catch table:                 (Table \ref{tab:Exec_catch})
 <!-- ***********This depends on how many plots you need******************** -->
 <!-- ***********Also included is the r4SS plot - keep or remove************ -->
 <!-- ***********CATCH FIGURES********************************************** -->
-```{r, fig.cap= paste(spp, 'landings in ..... \\label{fig:Exec_catch1}',sep=' ')}
-    # CSV: './txt_files/Exec_catch_for_figs.csv'
-    # Note: you cannot have carriage returns in the R options line
-    # Plot washington catches           
-    Plot_catch(Catch_df = Exec_region1_catch)
-```
-
-```{r, fig.cap=paste('Stacked line plot of', spp,' landings history for Oregon by fleet (recreational and commercial). \\label{fig:Exec_catch2}',sep=' ')}
-    # Plot Oregon catches
-    Plot_catch(Catch_df = Exec_region2_catch)
-```
-
-```{r, fig.cap=paste('Stacked line plot of', spp, 'landings history for California by fleet (recreational and commercial). \\label{fig:Exec_catch3}',sep=' ')}
-     # Plot California catches  
-      Plot_catch(Catch_df = Exec_region3_catch)
-```
 
 \FloatBarrier
 
-![Landings history of `r spp` in the `r mod1_label`. \label{fig:r4ss_catches}](r4ss/plots_mod1/catch2 landings stacked.png)
+![Estimated catch history of `r spp` in the `r mod1_label`. \label{fig:r4ss_catch_N}](r4ss/plots_mod1/catch2 landings stacked.png)
+
+![Estimated catch history of `r spp` in the `r mod2_label`. \label{fig:r4ss_catch_S}](r4ss/plots_mod2/catch2 landings stacked.png)
 
 
 
 
 
-<!-- ***********CATCH TABLE************************************************ -->
+<!-- ***********CATCH TABLE NORTH****************************************** -->
 ```{r, results='asis'}
-    #CSV: './txt_files/Exec_catch_summary.csv'
+    #CSV: './txt_files/Exec_catch_summary_N.csv'
     # Catch table section in R_exec_summary_fig_tables.R
     # Print the table
-    print(Exec_catch.table, include.rownames = FALSE, caption.placement = 'top')
+    print(Exec_catch.table_N, include.rownames = FALSE, caption.placement = 'top')
 ```
 <!-- ***********END EXECUTIVE SUMMARY CATCH FIGURES AND TABLES************* -->
 
+<!-- ***********CATCH TABLE SOUTH****************************************** -->
+```{r, results='asis'}
+    #CSV: './txt_files/Exec_catch_summary_S.csv'
+    # Catch table section in R_exec_summary_fig_tables.R
+    # Print the table
+    print(Exec_catch.table_S, include.rownames = FALSE, caption.placement = 'top')
+```
+<!-- ***********END EXECUTIVE SUMMARY CATCH FIGURES AND TABLES************* -->
 
 
 \FloatBarrier

@@ -38,6 +38,7 @@ n_models = 2
 mod1_label = "Northern model"  # (north of $40^\\circ 10^\\prime$ N. latitude)"
 mod2_label = "Southern model" # (south of $40^\\circ 10^\\prime$ N. latitude)"
   
+fourtyten = "40$^\\circ$ 10'N"
 
 # Management targets
 MT   = 0.4   # management target; .4 for rockfish

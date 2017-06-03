@@ -63,33 +63,43 @@ Plot_catch = function(Catch_df) {
 # CATCH TABLE(S) --------------------------------------------------------------
 
 # Read in executive summary catches table
-Exec_catch_summary = read.csv('./txt_files/Exec_catch_summary.csv')
-  
+Exec_catch_summary_N = read.csv('./txt_files/Exec_catch_summary_N.csv')
+Exec_catch_summary_S = read.csv('./txt_files/Exec_catch_summary_S.csv')
+
 # Assign column names as they should appear in the table; change the alignment 
 # to match number of columns +1
-colnames(Exec_catch_summary) = c('Year', 
-                                 'Landings 1',
-                                 'Landings 2',
-                                 'Landings 3',
-                                 'Landings 4', 
-                                 'Landings 5',
-                                 'Total')
-    
+# Assign column names
+colnames(Exec_catch_summary_N) = c('Year',
+            'Commercial (t)',
+            'At-sea hake bycatch (t)',
+            'Recreational OR+CA (t)',
+            'Recreational WA (1000s)')
+colnames(Exec_catch_summary_S) = c('Year',
+            'Recreational (t)',
+            'Commercial (t)')
+
 # Make executive summary catch xtable
-Exec_catch.table = xtable(Exec_catch_summary, 
-                          caption = c(paste('Recent ',spp,' landings (mt) by 
-                                            fleet.', sep='')), 
-                          label='tab:Exec_catch')
-    
+Exec_catch.table_N = xtable(Exec_catch_summary_N, 
+                          caption = c(paste0('Recent ',spp,' catch by 
+                                             fleet for the Northern stock 
+                                             (north of ', fourtyten,').')),
+                          label='tab:Exec_catch_N')
+Exec_catch.table_S = xtable(Exec_catch_summary_S, 
+                            caption = c(paste0('Recent ',spp,' catch by 
+                                            fleet for the Southern stock 
+                                             (south of ', fourtyten,').')),
+                            label='tab:Exec_catch_S')
+
 # Add alignment - you will have to adjust based on the number of columns you have
 # and the desired width, remember to add one leading ghost column for row.names
-align(Exec_catch.table) = c('l', 'l', 
-                            '>{\\centering}p{1in}', 
-                            '>{\\centering}p{1in}',
-                            '>{\\centering}p{1in}', 
-                            '>{\\centering}p{.9in}',
-                            '>{\\centering}p{.9in}',
-                            '>{\\centering}p{.6in}')  
+align(Exec_catch.table_N) = c('l', 'l', 
+                            '>{\\centering}p{1.0in}', 
+                            '>{\\centering}p{1.0in}',
+                            '>{\\centering}p{1.0in}', 
+                            '>{\\centering}p{1.0in}')  
+align(Exec_catch.table_S) = c('l', 'l', 
+                            '>{\\centering}p{1.5in}', 
+                            '>{\\centering}p{1.5in}')  
 
   
 # =============================================================================
