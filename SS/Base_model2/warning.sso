@@ -1,5 +1,7 @@
-SS-V3.24U-safe;_08/29/2014;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_11.2_Win64
-Tue Jul 28 16:15:19 2015
+SS-V3.30.03.07-safe;_2017_05_19;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_11.6
+Mon Jun 05 10:22:49 2017
 
- N warnings: 0
+ Maximum size at age: 55.9159; is within 5% of the largest size bin: 56; Add more bins
+Final gradient: 1.82273e-005 is larger than final_conv: 1e-005
+ N warnings: 2
 Number_of_active_parameters_on_or_near_bounds: 0

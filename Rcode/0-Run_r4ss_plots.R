@@ -52,15 +52,6 @@ library(r4ss)
 # setwd('C:/Assessment_template')
 
 
-# Give the names of the data and control files, for each model
-# Used in the SS_files_linebreaks.R
-mod1_dat =  'china_WAonly_data.ss'  
-mod2_dat =  'china_WAonly_data.ss'
-
-# Control file names 
-mod1_ctrl = 'china_WAonly_control.ss' 
-mod2_ctrl = 'china_WAonly_control.ss' 
-
 # =============================================================================
 
 # set input and output directories
@@ -171,7 +162,7 @@ if(n_models==3) {out.mod3 = mod3}
  dir.compare.plots <- file.path(getwd(),'/r4ss/plots_compare') 
     
  # vector of names and colors models as defined
- mod.names <- c("North","South")
+ mod.names <- c("Northern","Southern")
  mod.cols  <- c("blue", "red")
 } # end n_models if
 
