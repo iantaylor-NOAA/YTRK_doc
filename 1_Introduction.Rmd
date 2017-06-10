@@ -1,0 +1,59 @@
+<!-- ***********INTRODUCTION SECTION*************************************** -->
+
+#Introduction
+
+##Basic Information
+\hl{Include: Scientific name, distribution, the basis of the choice of stock structure, 
+including regional differences in life history or other biological characteristics 
+that should form the basis of management units.}
+
+##Map
+A map showing the scope of the assessment and depicting boundaries for fisheries or 
+data collection strata is provided in Figure \ref{fig:boundary_map}.
+
+##Life History
+\hl{Include: Important features of life history that affect management (e.g., migration, 
+sexual dimorphism, bathymetric demography).}
+
+##Ecosystem Considerations
+\hl{Include: Ecosystem considerations (e.g., ecosystem role and trophic relationships of 
+the species, habitat requirements/preferences, relevant data on ecosystem processes 
+that may affect stock or parameters used in the stock assessment, and/or cross-FMP 
+interactions with other fisheries). This section should note if environmental 
+correlations or food web interactions were incorporated into the assessment model. 
+The length and depth of this section would depend on availability of data and reports 
+from the IEA, expertise of the STAT, and whether ecosystem factors are informational 
+to contribute quantitative information to the assessment.}
+
+
+
+##Fishery Information
+\hl{Include: Important features of current fishery and relevant history of fishery.}
+
+Rockfish example: The rockfish fishery off the U.S. Pacific coast first developed 
+off California in the late 19th century as a hook-and-line fishery [@Love2002].  
+The rockfish trawl fishery was established in the early 1940s, when the United 
+States became involved in World War II and wartime shortage of red meat created 
+an increased demand for other sources of protein [@Alverson1964; @Harry1961]. Etc....
+
+
+##Summary of Management History
+\hl{Include: Summary of management history (e.g., changes in mesh sizes, trip 
+limits, or other management actions that may have significantly altered selection, 
+catch rates, or discards).}
+
+
+##Management Performance
+\hl{Include: Management performance, including a table or tables comparing 
+Overfishing Limit (OFL), Annual Catch Limit (ACL), Harvest Guideline (HG) 
+[CPS only], landings, and catch (i.e., landings plus discard) for each area and year.}
+
+Management performance table: (Table \ref{tab:mnmgt_perform})      
+A summary of these values as well as other base case summary results can be found 
+in Table \ref{tab:base_summary}.
+
+
+##Fisheries off Canada, Alaska, and/or Mexico
+Include if necessary.
+
+

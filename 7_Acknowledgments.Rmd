@@ -1,0 +1,11 @@
+<!-- ***************************ACKNOWLEDGEMENTS*************************** -->
+#Acknowledgments
+Include: STAR panel members and affiliations as well as names and affiliations 
+of persons who contributed data, advice or information but were not part of the 
+assessment team. Not required in draft assessment undergoing review.
+
+
+\newpage
+\FloatBarrier
+
+

@@ -1,0 +1,216 @@
+<!-- ************ASSESSMENT SECTION**************************************** -->
+#Assessment
+
+<!-- ***********HISTORY AND CURRENT ASSESSMENT***************************** -->
+##History Of Modeling Approaches Used For This Stock
+
+###Previous Assessments
+
+###Previous Assessment Recommendations
+Include: Response to STAR panel recommendations from the most recent previous 
+assessment.
+
+\begin{description}[style=unboxed]
+
+  \item[Recommendation 1: blah blah blah.] \hfill \\
+
+   STAT response: blah blah blah....
+
+\item[Recommendation 2: blah blah blah.] \hfill \\
+
+  STAT response: blah blah blah....
+
+\item[Recommendation 3: blah blah blah., etc.] \hfill \\
+
+  STAT response: Continue recommendations as needed
+
+
+\end{description}
+
+
+
+
+<!-- ************************MODEL DESCRIPTION***************************** -->
+##Model Description
+
+
+###Transition To The Current Stock Assessment
+Include: Complete description of any new modeling approaches
+
+Below, we describe the most important changes made since the last full assessment 
+and explain rationale for each change.:
+
+1. Change No. 1. \emph{Rationale}: blah blah blah.
+
+2. Change No. 2.  \emph{Rationale}: blah blah blah.
+
+3. Change No. 3.  \emph{Rationale}:  Continue list as needed.
+
+
+
+###Definition of Fleets and Areas
+We generated data sources for each of the models.  Fleets by model include:
+
+
+**Model Region 1 or remove this line if only one model** 
+
+\emph{Commercial}: The commercial fleets include...   
+
+\emph{Recreational}: The recreational fleets include...
+
+\emph{Research}: Research derived-data include...
+
+
+
+###Summary of Data for Fleets and Areas
+
+
+
+###Modeling Software
+The STAT team used Stock Synthesis 3 version 3.24u by Dr. Richard Methot at 
+the NWFSC. This most recent version (SS-V3.24u) was used, since it included 
+improvements and corrections to older versions.
+
+###Data Weighting
+Citation for Francis method [@Francis2011]      
+Citation for Ianelli-McAllister harmonic mean method [@McAllister1997]
+
+
+
+###Priors
+Citation for Hamel prior on natural mortality [@Hamel2015]
+
+
+###General Model Specifications
+Citation for posterior predictive fecundity relationship from Dick [-@Dick2009]     
+Model data, control, starter, and forecast files can be found in Appendices A-D.
+
+
+###Estimated And Fixed Parameters
+A full list of all estimated and fixed parameters is provided in Tables....
+Estimated and fixed parameters tables currently read in from .csv file, 
+EXAMPLE: Table \ref{tab:Model1_params}
+
+
+##Model Selection and Evaluation
+###Key Assumptions and Structural Choices
+Include: Evidence of search for balance between model realism and parsimony.  
+Comparison of key model assumptions, include comparisons based on nested models 
+(e.g., asymptotic vs. domed selectivities, constant vs. time-varying selectivities).  
+
+
+
+###Alternate Models Considered
+Include: Summary of alternate model configurations that were tried but rejected.
+
+
+
+###Convergence
+Include: Randomization run results or other evidence of search for global 
+best estimates.    
+
+Convergence testing through use of dispersed starting values often requires 
+extreme values to actually explore new areas of the multivariate likelihood 
+surface. Jitter is a SS option that generates random starting values from a 
+normal distribution logistically transformed into each parameter's range 
+[@Methot2015]. Table \ref{tab:jitter} shows the results of running 100 jitters 
+for each pre-STAR base model....
+
+##Response To The Current STAR Panel Requests
+\begin{description}[style=unboxed]
+
+\item[Request No. 1: Add after STAR panel.] \hfill \\
+
+    \textbf{Rationale:} Add after STAR panel.  
+
+    \textbf{STAT Response:} Add after STAR panel.
+
+\item[Request No. 2: Add after STAR panel.] \hfill \\
+
+    \textbf{Rationale:} Add after STAR panel.
+
+    \textbf{STAT Response:} Add after STAR panel.
+
+\item[Request No. 3: Add after STAR panel.] \hfill \\
+
+    \textbf{Rationale:} Add after STAR panel.
+  
+    \textbf{STAT Response:} Add after STAR panel.
+
+\item[Request No. 4: Example of a request that may have a list:] \hfill \\
+\begin{itemize}
+\item \textbf{Item No. 1}
+\item \textbf{Item No. 2}
+\item \textbf{Item No. 3, etc.}
+\end{itemize}
+
+    \textbf{Rationale:} Add after STAR panel.
+
+    \textbf{STAT Response:} Continue requests as needed.
+
+
+\end{description}
+
+<!-- *********************MODEL 1 RESULTS********************************** -->
+##Model 1 
+###Model 1 Base Case Results
+
+Table \ref{tab:Model1_params}   
+
+
+
+### Model 1 Uncertainty and Sensitivity Analyses
+Table \ref{tab:Sensitivity_model1}
+
+
+
+### Model 1 Retrospective Analysis
+ 
+
+### Model 1 Likelihood Profiles
+
+
+###Model 1 Harvest Control Rules (CPS only)
+
+###Model 1 Reference Points (groundfish only)
+Intro sentence or two....(Table \ref{tab:Timeseries_mod1}). 
+
+Equilibrium yield at the proxy $F_{MSY}$ harvest rate corresponding to 
+$SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt.  Table \ref{tab:Ref_pts_mod1} 
+shows the full suite of estimated reference points for the northern area model 
+and Figure \ref{fig:Yield_all} shows the equilibrium yield curve.
+
+
+<!-- *************************MODEL 2 RESULTS****************************** -->
+##Model 2 
+
+###Model 2 Base Case Results
+
+### Model 2 Uncertainty and Sensitivity Analyses
+
+### Model 2 Retrospective Analysis
+
+### Model 2 Likelihood Profiles
+
+###Model 2 Harvest Control Rules (CPS only)
+
+###Model 2 Reference Points (groundfish only)
+
+
+<!-- ***********************MODEL 3 RESULTS******************************** -->
+##Model 3
+
+###Model 3 Base Case Results
+
+### Model 3 Uncertainty and Sensitivity Analyses
+
+### Model 3 Retrospective Analysis
+
+### Model 3 Likelihood profiles
+
+###Model 3 Harvest Control Rules (CPS only)
+
+###Model 3 Reference Points (groundfish only)
+
+
+
