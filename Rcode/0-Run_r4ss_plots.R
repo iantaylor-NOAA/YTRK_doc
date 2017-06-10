@@ -201,22 +201,33 @@ SSplotComparisons(base.summary,
 # Plot comparison of growth curves --------------------------------------------
 png(file.path(dir.compare.plots, 'growth_comparison.png'),
     width = 6.5, 
-    height = 5, 
+    height = 4, 
     res = 300, 
     units = 'in')
 
-SSplotBiology(out.mod1, 
-              colvec = c(mod.cols[1], NA, NA), 
-              subplot = 1)
-      
-SSplotBiology(out.mod2, 
-              colvec = c(mod.cols[2], NA, NA),
-              subplot = 1, 
-              add = TRUE)
+### make 2-panel plot to compare growth across models
+par(mfrow=c(1,2), mar=c(0,0,0,1), oma=c(4,4,1,0), las=1)
 
-# legend to cover up non-useful Females/Males default legend
-legend('topleft', legend = mod.names, col = mod.cols, lwd = 3, bg = 'white')
- 
+# empty plot for 1st model with axis labels in outer margins
+plot(0, type='n', xlim=c(0,40), ylim=c(0,65), xaxs='i', yaxs='i')
+mtext(side=1, line=2.5, outer=TRUE, text="Age (yr)")
+mtext(side=2, line=2.5, outer=TRUE, text="Length (cm)", las=0)
+# add growth curves
+SSplotBiology(mod1, subplot=1, add=TRUE, legendloc="bottomright")
+# add legend, grid, and outer box
+legend('topleft', title="Northern", legend=NA, bty="n", text.font=2)
+grid()
+box()
+
+# empty plot for 2nd model
+plot(0, type='n', xlim=c(0,40), ylim=c(0,65), axes=FALSE, xaxs='i', yaxs='i')
+# add growth curves 
+SSplotBiology(mod2, subplot=1, legendloc=NA, add=TRUE)
+# add legend, grid, and outer box
+legend('topleft', title="Southern", legend=NA, bty="n", text.font=2)
+axis(1)
+grid()
+box()
 # close PNG file
 dev.off()
 
@@ -230,17 +241,10 @@ png(file.path(dir.compare.plots, 'yield_comparison_n_models.png'),
     pointsize = 10)
 par(las = 1)
 
-
-if(n_models==2){
-  SSplotYield(out.mod2, col = mod.cols[2], subplot = 1)
-  grid()
-  SSplotYield(out.mod1, col = mod.cols[1], subplot = 1, add = TRUE)
-}
-
-
-# legend to cover up non-useful Females/Males default legend
-legend('topright', legend = mod.names, col = mod.cols, lwd = 3, bg = 'white', bty = 'n')
-
+SSplotYield(out.mod1, col = mod.cols[1], subplot = 1)
+SSplotYield(out.mod2, col = mod.cols[2], subplot = 1, add = TRUE)
+legend('topright', col=mod.cols, legend=mod.names, lwd=2, bty='n')
+grid()
 # close PNG file
 dev.off()
 

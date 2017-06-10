@@ -205,7 +205,7 @@ The estimated coefficients resulting from this analysis were $\alpha = 1.1843e-0
 
 \vspace{.5cm}
 **Maturity And Fecundity**
-Maturity was estimated from histological analysis of 141 samples collected in 2016. These include 96 from the NWFSC Combo survey, 25 from mid-water catches in the NWFSC acoustic/trawl survey, 13 from the Hook and Line survey, and 7 from Oregon Department of Fish and Wildlife. The sample sizes were not adequate to estimate differences in maturity by area. Length at 50\% maturity was estimated at 42.49cm (Figure \ref{fig:maturity.png}) which was consistent with the range 37-45cm cited in the previous assessment [@Wallace2005].
+Maturity was estimated from histological analysis of 141 samples collected in 2016. These include 96 from the NWFSC Combo survey, 25 from mid-water catches in the NWFSC acoustic/trawl survey, 13 from the Hook and Line survey, and 7 from Oregon Department of Fish and Wildlife. The sample sizes were not adequate to estimate differences in maturity by area. Length at 50\% maturity was estimated at 42.49cm (Figure \ref{fig:maturity}) which was consistent with the range 37-45cm cited in the previous assessment [@Wallace2005].
 
 
 \vspace{.5cm}

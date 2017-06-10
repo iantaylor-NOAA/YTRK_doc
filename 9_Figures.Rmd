@@ -150,9 +150,14 @@
 
 \FloatBarrier
 
-<!--RESEARCH Age and lengh composition figures-->
+<!--RESEARCH Age and length composition figures-->
+
+!-- ********************************************************************** -->
+<!-- **********************Growth FIGURES*************************** --> 
+<!-- ********************************************************************** -->
 
 
+![Estimated growth for female and male `r spp` in each model. Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. \label{fig:growth}](r4ss/plots_compare/growth_comparison.png)
 
 
 <!-- ********************************************************************** -->
@@ -160,7 +165,6 @@
 <!-- ********************************************************************** -->
 
 
-![Estimated weight-length relationship for `r spp` used in both models. Colored points show observed values (red for females, blue for males, and green for unsexed). The black line indicates the estimated relationship $W = 0.000011843L^{3.0672}$.\label{fig:weight-length}](Figures/weight-length_fit.png)
 
 ![Estimated maturity relationship for `r spp` used in both models. Gray points indicate average observed functional maturity within each length bin with point size proportional to the number of samples.\label{fig:maturity}](Figures/YT_Propmat_update3_22.jpeg)
 
@@ -177,6 +181,13 @@
 
 
 
+<!-- ********************************************************************** -->
+<!-- **********************Weight-Length FIGURES*************************** --> 
+<!-- ********************************************************************** -->
+
+
+
+![Estimated weight-length relationship for `r spp` used in both models. Colored points show observed values (red for females, blue for males, and green for unsexed). The black line indicates the estimated relationship $W = 0.000011843L^{3.0672}$.\label{fig:weight-length}](Figures/weight-length_fit.png)
 
 
 <!-- ********************************************************************** -->
@@ -198,12 +209,6 @@
 
 
 
-
-
-
-<!-- ********************************************************************** -->
-<!-- **********************Weight-Length FIGURES*************************** --> 
-<!-- ********************************************************************** -->
 
 
 
