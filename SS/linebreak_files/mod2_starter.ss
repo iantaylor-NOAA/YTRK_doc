@@ -8,7 +8,7 @@ YTRK.South.control.ss
 0 # write parm values to ParmTrace.sso (0=no,1=good,active; 2=good,all; 3=e
 # very_iter,all_parms; 4=every,active)
 0 # write to cumreport.sso (0=no,1=like&timeseries; 2=add survey fits)
-0 # Include prior_like for non-estimated parameters (0,1) 
+1 # Include prior_like for non-estimated parameters (0,1) 
 0 # Use Soft Boundaries to aid convergence (0,1) (recommended)
 1 # Number of datafiles to produce: 1st is input, 2nd is estimates, 3rd and
 #  higher are bootstrap
@@ -23,7 +23,7 @@ YTRK.South.control.ss
 
 1e-005 # final convergence criteria (e.g. 1.0e-04) 
 0 # retrospective year relative to end year (e.g. -4)
-3 # min age for calc of summary biomass
+4 # min age for calc of summary biomass
 1 # Depletion basis:  denom is: 0=skip; 1=rel X*B0; 2=rel X*Bmsy; 3=rel X*B
 # _styr
 1 # Fraction (X) for Depletion denominator (e.g. 0.4)

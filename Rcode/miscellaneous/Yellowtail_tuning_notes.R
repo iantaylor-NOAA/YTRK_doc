@@ -8,8 +8,8 @@ if (system("hostname", intern=TRUE) %in% c("NWCLW04223033") ){
 old.mod <- 'South/12c_extraSD_rec'
 new.mod <- 'South/12e_extraSD_rec_tune'
 
-## old.mod <- 'North/14i_marginal_ages'
-## new.mod <- 'North/14j_marginal_ages_Francis'
+old.mod <- 'North/16f_natM_estFoffset'
+new.mod <- 'North/17_tuned'
 
 replist <- SS_output(file.path(YTdir.mods, old.mod))
 newdir <- file.path(YTdir.mods, new.mod)

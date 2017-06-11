@@ -16,19 +16,25 @@
 # t_method=1)
 #
 #GPat month  area age (for each settlement assignment)
+#
  1 1 1 0        # <TOADS> Retained from POP.  OK? IAN: Yes.
 #
-1 #_Nblock_Patterns
 #
-2 #_blocks_per_pattern
+2  #_Nblock_Patterns
+#
+10 1 #_blocks_per_pattern
 # begin and end years of blocks
-2002 2010 2011 2026
+2002 2002 2003 2003 2004 2004 2005 2005 2006 2006 2007 2007 2008 2008 2009 
+2009 2010 2010 2011 2016
+#2002 2010 2011 2016
+2002 2016
 #
 #
 # controls for all timevary parameters
 1 #_env/block/dev_adjust_method for all time-vary parms (1=warn relative to
 #  base parm bounds; 3=no bound check)
 1 1 1 1 1 # autogen
+#
 # where: 0 = autogen all time-varying parms; 1 = read each time-varying par
 # m line; 2 = read then autogen if min=-12345
 ## 1st element for biology, 2nd for SR, 3rd for Q, 5th for selex, 4th reser
@@ -43,7 +49,7 @@
 # c_K; 4=not implemented
 #
 # Changed to age 0 because males were trying to shrink from age-0 to age-1
-0 #_Growth_Age_for_L1
+2 #_Growth_Age_for_L1
 25 #_Growth_Age_for_L2 (999 to use as Linf)
 #
 #
@@ -71,8 +77,8 @@
 #_LO    HI      INIT    PRIOR   PR_SD   PR_type PHASE   env-var use_dev dev
 # _mnyr dev_mxyr dev_PH Block  Blk_Fxn # parm_name
 # female parameters
-0.02    0.25    0.12    -2.12    0.438   0       -2      0       0       0 
-      0       0       0       0       # NatM_p_1_Fem_GP_1
+0.02    0.25    0.15    -2.12    0.438   0       2      0       0       0  
+     0       0       0       0       # NatM_p_1_Fem_GP_1
 1       25      22      22      99      0        3      0       0       0  
      0       0       0       0       # L_at_Amin_Fem_GP_1
 35      70      55      55      99      0        2      0       0       0  
@@ -91,12 +97,12 @@
      0       0       0       0       # Mat50%_Fem
 -2      1     -0.40078 -0.40078 99      0       -50     0       0       0  
      0       0       0       0       # Mat_slope_Fem
-0       6       2.88E-5 2.88E-5 99      0       -50     0       0       0  
+0       6    1.1185e-11 99      99      0       -50     0       0       0  
      0       0       0       0       # Eggs_scalar_Fem
 2       7       4.59    4.59    99      0       -50     0       0       0  
      0       0       0       0       # Eggs_exp_len_Fem
 # male parameters (offset from female)
--3      3       0.0     0       99      6       -2      0       0       0  
+-3      3       -0.2231 0       99      0        2      0       0       0  
      0       0       0       0       # NatM_p_1_Mal_GP_1
 -1      1       0       0       99      0       -2      0       0       0  
      0       0       0       0       # L_at_Amin_Mal_GP_1
@@ -153,8 +159,8 @@
 # l
 #0.2     1       0.4     0.715   0.160   0       6       0       0       0 
 #       0       0       0       0       # SR_BH_steep
-0.5     1.2     0.7     0.76    99      0       -6      0       0       0  
-     0       0       0       0       # SR_sigmaR
+0.5     1.2     0.546   0.67     99      0       -6      0       0       0 
+      0       0       0       0       # SR_sigmaR
 -5      5       0       0       99      0       -50     0       0       0  
      0       0       0       0       # SR_regime
 0       2       0       1       99      0       -50     0       0       0  
@@ -163,24 +169,23 @@
 #
 #
 1 #do_recdev:  0=none; 1=devvector; 2=simple deviations
-1975 # first year of main recr_devs; early devs can preceed this era
+1962 # first year of main recr_devs; early devs can preceed this era
 2014 # last year of main recr_devs; forecast devs start in following year
 4 #_recdev phase
 1 # (0/1) to read 13 advanced options
 #
 1932 #_recdev_early_start (0=none; neg value makes relative to recdev_start
 # )
--5 #_recdev_early_phase
+5 #_recdev_early_phase
 5 #_forecast_recruitment phase (incl. late recr) (0 value resets to maxphas
 # e+1)
 #
 1 #_lambda for Fcast_recr_like occurring before endyr+1
-1954 #_last_early_yr_nobias_adj_in_MPD
-1970 #_first_yr_fullbias_adj_in_MPD
-2006 #_last_yr_fullbias_adj_in_MPD
-2009 #_first_recent_yr_nobias_adj_in_MPD
-0.875 #_max_bias_adj_in_MPD (-1 to override ramp and set biasadj=1.0 for al
-# l estimated recdevs)
+1945.4   #_last_early_yr_nobias_adj_in_MPD 
+1976.7   #_first_yr_fullbias_adj_in_MPD 
+2010.5   #_last_yr_fullbias_adj_in_MPD 
+2013.0   #_first_recent_yr_nobias_adj_in_MPD 
+0.8154   #_max_bias_adj_in_MPD (1.0 to mimic pre-2009 models)   
 0 #_period of cycles in recruitment (N parms read below)
 -6 #min rec_dev
 6 #max rec_dev
@@ -189,8 +194,8 @@
 #
 #
 #Fishing Mortality info
-0.03 # F ballpark
--1999 # F ballpark year (neg value to disable)
+0.3 # F ballpark
+1984 # F ballpark year (neg value to disable)
 1 # F_Method:  1=Pope; 2=instan. F; 3=hybrid (hybrid is recommended)
 0.95 # max F or harvest rate, depends on F_Method
 # no additional F input needed for Fmethod 1
@@ -199,16 +204,14 @@
 # if Fmethod=3; read N iterations for tuning for Fmethod 3
 #
 #_Q_setup
-#_fleet link    link_info       extra_se        biasadj float   #       fle
-# etname
+#_fleet link link_info extra_se biasadj float   #       fleetname
 1       1       0       0       0       1       #       CommercialTrawl
-2       1       0       0       0       1       #       HakeByCatch
+2       1       0       1       0       1       #       HakeByCatch
 # no fleets 3 or 4 because no index (yet)
 5       1       0       0       0       1       #       Triennial
 6       1       0       0       0       1       #       NWFSCcombo
 -9999   0       0       0       0       0
 #
-#_Q_parms(if_any);Qunits_are_ln(q)
 #_Q_parms(if_any);Qunits_are_ln(q)
 #_LO    HI      INIT    PRIOR   PR_SD   PR_type PHASE   env-var use_dev dev
 # _mnyr dev_mxyr dev_PH Block  Blk_Fxn # parm_name
@@ -216,6 +219,8 @@
      0       0       0       0       # LnQ_base_1
 -30     15      -15     0       1       0       -1      0       0       0  
      0       0       0       0       # LnQ_base_2
+0       0.5     0.01    0       1       0        1      0       0       0  
+     0       0       0       0       # Extra_SD_hake_bycatch
 -30     15      -15     0       1       0       -1      0       0       0  
      0       0       0       0       # LnQ_base_4
 -30     15      -15     0       1       0       -1      0       0       0  
@@ -245,11 +250,11 @@
 #CommercialTrawl selectivity
 20      55      35      0       99      0       1       0       0       0  
      0       0       0       0       #       SizeSel_P1
--20     7       -20     0       99      0       4       0       0       0  
+-20     70      70      0       99      0      -4       0       0       0  
      0       0       0       0       #       SizeSel_P2
 -5      20      3       0       99      0       3       0       0       0  
      0       0       0       0       #       SizeSel_P3
--5      20      8       0       99      0       4       0       0       0  
+-5      70      70      0       99      0      -4       0       0       0  
      0       0       0       0       #       SizeSel_P4
 -999    25      -999    0       99      0       -99     0       0       0  
      0       0       0       0       #       SizeSel_P5
@@ -262,16 +267,16 @@
      0       0       0       0       #       Retain_P2
 -10     20      3       3       99      0       3       0       0       0  
      0       0       1       2       #       Retain_P3
--3      3       0       0       3       0       -4       0       0       0 
-      0       0       0       0       #       Retain_P4
+-3      3       0       0       3       0       -4      0       0       0  
+     0       0       0       0       #       Retain_P4
 #HakeByCatch
 20      55      35      0       99      0       1       0       0       0  
      0       0       0       0       #       SizeSel_P1
--20     7       -20     0       99      0       4       0       0       0  
+-20     70      70      0       99      0      -4       0       0       0  
      0       0       0       0       #       SizeSel_P2
 -5      20      3       0       99      0       3       0       0       0  
      0       0       0       0       #       SizeSel_P3
--5      20      8       0       99      0       4       0       0       0  
+-5      70      70      0       99      0      -4       0       0       0  
      0       0       0       0       #       SizeSel_P4
 -999    25      -999    0       99      0       -99     0       0       0  
      0       0       0       0       #       SizeSel_P5
@@ -290,14 +295,14 @@
      0       0       0       0       #       SizeSel_P5
 -999    25      -999    0       99      0       -99     0       0       0  
      0       0       0       0       #       SizeSel_P6
-#RecWA
-20      55      35      0       99      0       1       0       0       0  
+#RecWA (initial values from previously estimated run)
+20      55      28.3    0       99      0       6       0       0       0  
      0       0       0       0       #       SizeSel_P1
--20     7       -20     0       99      0       4       0       0       0  
+-20     70      70      0       99      0      -4       0       0       0  
      0       0       0       0       #       SizeSel_P2
--5      20      3       0       99      0       3       0       0       0  
+-5      20      -1.394  0       99      0       6       0       0       0  
      0       0       0       0       #       SizeSel_P3
--5      20      8       0       99      0       4       0       0       0  
+-5      70      70      0       99      0      -4       0       0       0  
      0       0       0       0       #       SizeSel_P4
 -999    25      -999    0       99      0       -99     0       0       0  
      0       0       0       0       #       SizeSel_P5
@@ -306,11 +311,11 @@
 #Triennial
 20      55      35      0       99      0       1       0       0       0  
      0       0       0       0       #       SizeSel_P1
--20     7       -20     0       99      0       4       0       0       0  
+-20     70      70      0       99      0      -4       0       0       0  
      0       0       0       0       #       SizeSel_P2
 -5      20      3       0       99      0       3       0       0       0  
      0       0       0       0       #       SizeSel_P3
--5      20      8       0       99      0       4       0       0       0  
+-5      70      70      0       99      0      -4       0       0       0  
      0       0       0       0       #       SizeSel_P4
 -999    25      -999    0       99      0       -99     0       0       0  
      0       0       0       0       #       SizeSel_P5
@@ -319,11 +324,11 @@
 #NWFSCcombo
 20      55      35      0       99      0       1       0       0       0  
      0       0       0       0       #       SizeSel_P1
--20     7       -20     0       99      0       4       0       0       0  
+-20     70      70      0       99      0      -4       0       0       0  
      0       0       0       0       #       SizeSel_P2
 -5      20      3       0       99      0       3       0       0       0  
      0       0       0       0       #       SizeSel_P3
--5      20      8       0       99      0       4       0       0       0  
+-5      70      70      0       99      0      -4       0       0       0  
      0       0       0       0       #       SizeSel_P4
 -999    25      -999    0       99      0       -99     0       0       0  
      0       0       0       0       #       SizeSel_P5
@@ -332,12 +337,41 @@
 #
 #
 #
-#_no timevary selex parameters
+#_no timevary selex parameters (initial values from previously estimated ru
+# n)
 #
--10     20      3       3       99      0       3
--10     20      3       3       99      0       3
+#20      55      35      0       99      0       3              #       Siz
+# eSel_P1
+# timevary selex parameters
+# (copied from control.ss_new to get initial values to speed optimiztation)
+#LO            HI          INIT         PRIOR         PR_SD       PR_type  
+#   PHASE  #  parm_name
+-10            20       2.22742             3            99             0  
+    6  # Retain_P3_CommercialTrawl(1)_BLK1repl_2002
+-10            20       3.70725             3            99             0  
+    6  # Retain_P3_CommercialTrawl(1)_BLK1repl_2003
+-10            20       1.12665             3            99             0  
+    6  # Retain_P3_CommercialTrawl(1)_BLK1repl_2004
+-10            20     -0.119847             3            99             0  
+    6  # Retain_P3_CommercialTrawl(1)_BLK1repl_2005
+-10            20       1.76073             3            99             0  
+    6  # Retain_P3_CommercialTrawl(1)_BLK1repl_2006
+-10            20       -0.5268             3            99             0  
+    6  # Retain_P3_CommercialTrawl(1)_BLK1repl_2007
+-10            20       2.39693             3            99             0  
+    6  # Retain_P3_CommercialTrawl(1)_BLK1repl_2008
+-10            20      0.475635             3            99             0  
+    6  # Retain_P3_CommercialTrawl(1)_BLK1repl_2009
+-10            20      0.138629             3            99             0  
+    6  # Retain_P3_CommercialTrawl(1)_BLK1repl_2010
+-10            20       7.37535             3            99             0  
+    6  # Retain_P3_CommercialTrawl(1)_BLK1repl_2011
+#
+#
 #
 0   #  use 2D_AR1 selectivity(0/1):  experimental feature
+#
+#
 #_no 2D_AR1 selex offset used
 #
 # Tag loss and Tag reporting parameters go next
@@ -355,22 +389,22 @@
  #_5=mult_by_agecomp_N
  #_6=mult_by_size-at-age_N
  #_7=mult_by_generalized_sizecomp
-#_Factor  Fleet  Value
-4 1 0.01
-4 2 0.01
-4 3 0.01
-4 4 0.01
-4 5 0.01
-4 6 0.01
-5 1 0.01
-5 2 0.01
-5 3 0.01
-5 4 0.01
-5 5 0.01
-5 6 0.01
--9999   1    0  # terminator
+ #_Factor Fleet    Var_Adj
+        4     1 0.03857449
+        4     2 0.12023819
+        4     3 0.08465395
+        4     4 0.01104229
+        4     5 0.03954969
+        4     6 0.02741399
+        5     1 0.10524762
+        5     2 0.01000000
+        5     3 0.01000000
+        5     4 0.02140517
+        5     5 0.08331711
+        5     6 0.30791774
+    -9999     1 0.00000000
 #
-1 #_maxlambdaphase
+5 #_maxlambdaphase
 1 #_sd_offset
 # read 0 changes to default Lambdas (default value is 1.0)
 # Like_comp codes:  1=surv; 2=disc; 3=mnwt; 4=length; 5=age; 6=SizeFreq; 7=
@@ -378,6 +412,7 @@
 # 10=recrdev; 11=parm_prior; 12=parm_dev; 13=CrashPen; 14=Morphcomp; 15=Tag
 # -comp; 16=Tag-negbin; 17=F_ballpark
 #like_comp fleet  phase  value  sizefreq_method
+17     1  5  0  0 # turn off ballpark likelihood in phase 5
 -9999  1  1  1  1  #  terminator
 #
 0 # (0/1) read specs for more stddev reporting
