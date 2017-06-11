@@ -1,7 +1,7 @@
 SS-V3.30.03.07-safe;_2017_05_19;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_11.6
-Mon Jun 05 10:29:22 2017
+Sun Jun 11 12:32:27 2017
 
-Block:1 2 ends after retroyr+1; resetting to: 2017
- Maximum size at age: 55.9159; is within 5% of the largest size bin: 56; Add more bins
+ Early recdev biasadj is >2 times ratio of rmse to sigmaR
+ Early recdev biasadj is >2 times ratio of rmse to sigmaR
  N warnings: 2
-Number_of_active_parameters_on_or_near_bounds: 10
+Number_of_active_parameters_on_or_near_bounds: 0

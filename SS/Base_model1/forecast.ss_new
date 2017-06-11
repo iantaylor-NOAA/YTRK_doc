@@ -33,7 +33,7 @@
 # Conditional input if relative F choice = 2
 # Fleet relative F:  rows are seasons, columns are fleets
 #_Fleet:  CommercialTrawl HakeByCatch RecORandCA RecWA Triennial NWFSCcombo
-#  0.837502 0.0592488 0.013469 0.0897799 0 0
+#  0.904553 0.0610256 0.00717526 0.0272459 0 0
 # enter list of fleet number and max for fleets with max annual catch; terminate with fleet=-9999
 -9999 -1
 # enter list of area ID and max annual catch; terminate with area=-9999

@@ -14,7 +14,7 @@
 #_Cond 1 #_Morph_between/within_stdev_ratio (no read if N_morphs=1)
 #_Cond 1 #vector_Morphdist_(-1_in_first_val_gives_normal_approx)
 #
-1 # recr_dist_method for parameters:  1=like 3.24; 2=main effects for GP, Settle timing, Area; 3=each Settle entity; 4=none when N_GP*Nsettle*pop==1
+2 # recr_dist_method for parameters:  1=like 3.24; 2=main effects for GP, Settle timing, Area; 3=each Settle entity; 4=none when N_GP*Nsettle*pop==1
 1 # Recruitment: 1=global; 2=by area (future option)
 1 #  number of recruitment settlement assignments 
 0 # year_x_area_x_settlement_event interaction requested (only for recr_dist_method=1)
@@ -31,16 +31,22 @@
 #_Cond 1 1 1 2 4 10 # example move definition for seas=1, morph=1, source=1 dest=2, age1=4, age2=10
 #
 #
-0 #_Nblock_Patterns
-#
+1 #_Nblock_Patterns
+2 #_Blocks per pattern
+1980 1989  1990 2016
 #
 #_Cond 0 #_blocks_per_pattern 
 # begin and end years of blocks
 #
 # controls for all timevary parameters 
+#
+#
 1 #_env/block/dev_adjust_method for all time-vary parms (1=warn relative to base parm bounds; 3=no bound check)
+#
 #  autogen
+#
 1 1 1 1 1 # autogen
+#
 # where: 0 = autogen all time-varying parms; 1 = read each time-varying parm line; 2 = read then autogen if min=-12345
 # 1st element for biology, 2nd for SR, 3rd for Q, 5th for selex, 4th reserved
 #
@@ -52,7 +58,7 @@
 #
 #
 #
-0  #_Growth_Age_for_L1
+1  #_Growth_Age_for_L1
 25 #_Growth_Age_for_L2 (999 to use as Linf)
 #
 #
@@ -74,7 +80,7 @@
 #
 #_Female parameters
 #
-0.02    0.25    0.12    -2.12    0.438   0       -2      0       0       0       0       0       0       0       # NatM_p_1_Fem_GP_1
+0.02    0.25    0.18   -2.12    0.438   0       -2      0       0       0       0       0       0       0       # NatM_p_1_Fem_GP_1
 1       25      22      22      99      0        3      0       0       0       0       0       0       0       # L_at_Amin_Fem_GP_1
 35      70      55      55      99      0        2      0       0       0       0       0       0       0       # L_at_Amax_Fem_GP_1
 0.1     0.4     0.14    0.1     99      0        3      0       0       0       0       0       0       0       # VonBert_K_Fem_GP_1
@@ -84,12 +90,12 @@
 2       4       3.0672  99      99      0       -50     0       0       0       0       0       0       0       # Wtlen_2_Fem
 30      56      42.49   42.49   99      0       -50     0       0       0       0       0       0       0       # Mat50%_Fem
 -2      1     -0.40078 -0.40078 99      0       -50     0       0       0       0       0       0       0       # Mat_slope_Fem
-0       6       2.88E-5 2.88E-5 99      0       -50     0       0       0       0       0       0       0       # Eggs_scalar_Fem
+0       6    1.1185e-11 99      99      0       -50     0       0       0       0       0       0       0       # Eggs_scalar_Fem
 2       7       4.59    4.59    99      0       -50     0       0       0       0       0       0       0       # Eggs_exp_len_Fem
 #
 #_Male parameters (offset from female)
 #
- -3      3       0.0     0       99      6       -2      0       0       0       0       0       0       0       # NatM_p_1_Mal_GP_1
+ -3      3       -0.2876 0       99      6       -2      0       0       0       0       0       0       0       # NatM_p_1_Mal_GP_1
  -1      1       0       0       99      0       -2      0       0       0       0       0       0       0       # L_at_Amin_Mal_GP_1
  -1      1       -0.17   0       99      0        2      0       0       0       0       0       0       0       # L_at_Amax_Mal_GP_1
  -1      1       0.32    0       99      0        3      0       0       0       0       0       0       0       # VonBert_K_Mal_GP_1
@@ -111,11 +117,14 @@
 #_no timevary MG parameters
 #
 #_seasonal_effects_on_biology_parms
+#
  0 0 0 0 0 0 0 0 0 0 #_femwtlen1,femwtlen2,mat1,mat2,fec1,fec2,Malewtlen1,malewtlen2,L1,K
+#
 #_ LO HI INIT PRIOR PR_SD PR_type PHASE
 #_Cond -2 2 0 0 -1 99 -2 #_placeholder when no seasonal MG parameters
 #
 #_Spawner-Recruitment
+#
 3 #_SR_function: 2=Ricker; 3=std_B-H; 4=SCAA; 5=Hockey; 6=B-H_flattop; 7=survival_3Parm; 8=Shepard_3Parm
 0  # 0/1 to use steepness in initial equ recruitment calculation
 0  #  future feature:  0/1 to make realized sigmaR a function of SR curvature
@@ -132,7 +141,7 @@
     #0.2     1       0.4     0.715   0.160   0       6       0       0       0       0       0       0       0       # SR_BH_steep
 #
 #
-     0.5     1.2   0.7   0.76    99     0   -6    0    0    0    0    0    0    0 # SR_sigmaR
+     0.5     1.2   0.85  0.76    99     0   -6    0    0    0    0    0    0    0 # SR_sigmaR
     -5       5     0     0       99     0   -50   0    0    0    0    0    0    0 # SR_regime
      0       2     0     1       99     0   -50   0    0    0    0    0    0    0 # SR_autocorr
 #
@@ -144,16 +153,17 @@
 #
 #
 1 # (0/1) to read 13 advanced options
-1932 #_recdev_early_start (0=none; neg value makes relative to recdev_start)
+1945 #_recdev_early_start (0=none; neg value makes relative to recdev_start)
 5 #_recdev_early_phase
 5 #_forecast_recruitment phase (incl. late recr) (0 value resets to maxphase+1)
 #
 1 #_lambda for Fcast_recr_like occurring before endyr+1
-1964 #_last_early_yr_nobias_adj_in_MPD
-1973 #_first_yr_fullbias_adj_in_MPD
-1987 #_last_yr_fullbias_adj_in_MPD
-2017 #_first_recent_yr_nobias_adj_in_MPD
-0.7495  #_max_bias_adj_in_MPD (-1 to override ramp and set biasadj=1.0 for all estimated recdevs)
+#
+1963.9   #_last_early_yr_nobias_adj_in_MPD 
+1971.7   #_first_yr_fullbias_adj_in_MPD 
+2003.0   #_last_yr_fullbias_adj_in_MPD 
+2017.9   #_first_recent_yr_nobias_adj_in_MPD 
+0.6972   #_max_bias_adj_in_MPD (1.0 to mimic pre-2009 models)   
 0 #_period of cycles in recruitment (N parms read below)
 -6 #min rec_dev
 6 #max rec_dev
@@ -163,8 +173,8 @@
 #
 #
 #Fishing Mortality info 
-0.03 # F ballpark
--1999 # F ballpark year (neg value to disable)
+0.3 # F ballpark
+1984 # F ballpark year (neg value to disable)
 1 # F_Method:  1=Pope; 2=instan. F; 3=hybrid (hybrid is recommended)
 0.95 # max F or harvest rate, depends on F_Method
 # no additional F input needed for Fmethod 1
@@ -178,7 +188,7 @@
 #
 #_Q_setup
 #_   fleet      link link_info  extra_se   biasadj     float  #  fleetname
-         1         1         0         0         0         1  #  RecreationalCatch
+         1         1         0         1         0         1  #  RecreationalCatch
          3         1         0         0         0         1  #  OnboardSurvey
          4         1         0         0         0         1  #  HookAndLineSurvey
 -9999 0 0 0 0 0
@@ -186,6 +196,7 @@
 #_Q_parms(if_any);Qunits_are_ln(q)
 #_LO   HI    INIT   PRIOR   PR_SD   PR_type  PHASE  env-var  use_dev dev_mnyr dev_mxyr   dev_PH  Block  Blk_Fxn  #  parm_name
 -30    15   -15.817     0     1     0   -1    0    0    0    0    0    0    0  #  LnQ_base_RecreationalCatch
+0      0.5    0.01      0     1     0    1    0    0    0    0    0    0    0  #  Extra_SD_rec
 -30    15   -15.817     0     1     0   -1    0    0    0    0    0    0    0  #  LnQ_base_OnboardSurvey
 -30    15   -15.817     0     1     0   -1    0    0    0    0    0    0    0  #  LnQ_base_HookAndLineSurvey
 #
@@ -198,8 +209,8 @@
 #
 24  0 0 0 # 1 RecreationalCatch
 24  0 0 0 # 2 CommercialCatch
-24  0 0 0 # 3 OnboarSurvey
-15  0 0 3 # 4 HookAndLineSurvey
+24  0 0 0 # 3 OnboardSurvey
+24  0 0 0 # 4 HookAndLineSurvey
 24  0 0 0 # 5 RecStudy
 #
 #_age_selex_types
@@ -214,30 +225,37 @@
 #
 #RecreationalCatch selectivity
 20      55      35      0       99      0       1       0       0       0       0       0       0       0       #       SizeSel_P1
--20     70      55      0       99      0       4       0       0       0       0       0       0       0       #       SizeSel_P2
+-20     20      20      0       99      0      -4       0       0       0       0       0       0       0       #       SizeSel_P2
 -5      20      3       0       99      0       3       0       0       0       0       0       0       0       #       SizeSel_P3
--5      20      20      0       99      0       4       0       0       0       0       0       0       0       #       SizeSel_P4
+-5      20      20      0       99      0      -4       0       0       0       0       0       0       0       #       SizeSel_P4
 -999    25      -999    0       99      0       -99     0       0       0       0       0       0       0       #       SizeSel_P5
 -999    25      -999    0       99      0       -99     0       0       0       0       0       0       0       #       SizeSel_P6
 #CommercialCatch selectivity
 20      55      35      0       99      0       1       0       0       0       0       0       0       0       #       SizeSel_P1
--20     7       55      0       99      0      -4       0       0       0       0       0       0       0       #       SizeSel_P2
+-20     20      20      0       99      0      -4       0       0       0       0       0       0       0       #       SizeSel_P2
 -5      20      3       0       99      0       3       0       0       0       0       0       0       0       #       SizeSel_P3
--5      20      55      0       99      0      -4       0       0       0       0       0       0       0       #       SizeSel_P4
+-5      20      20      0       99      0      -4       0       0       0       0       0       0       0       #       SizeSel_P4
 -999    25      -999    0       99      0       -99     0       0       0       0       0       0       0       #       SizeSel_P5
 -999    25      -999    0       99      0       -99     0       0       0       0       0       0       0       #       SizeSel_P6
 #OnboardSurvey selectivity
 20      55      35      0       99      0       1       0       0       0       0       0       0       0       #       SizeSel_P1
--20     7       55      0       99      0      -4       0       0       0       0       0       0       0       #       SizeSel_P2
+-20     7       -20     0       99      0      -4       0       0       0       0       0       0       0       #       SizeSel_P2
 -5      20      3       0       99      0       3       0       0       0       0       0       0       0       #       SizeSel_P3
--5      20      55      0       99      0      -4       0       0       0       0       0       0       0       #       SizeSel_P4
+-5      20      20      0       99      0       4       0       0       0       0       0       0       0       #       SizeSel_P4
+-999    25      -999    0       99      0       -99     0       0       0       0       0       0       0       #       SizeSel_P5
+-999    25      -999    0       99      0       -99     0       0       0       0       0       0       0       #       SizeSel_P6
+#HookandLine selectivity
+20      55      35      0       99      0       1       0       0       0       0       0       0       0       #       SizeSel_P1
+-20     20      20      0       99      0      -4       0       0       0       0       0       0       0       #       SizeSel_P2
+-5      20      3       0       99      0       3       0       0       0       0       0       0       0       #       SizeSel_P3
+-5      20      20      0       99      0      -4       0       0       0       0       0       0       0       #       SizeSel_P4
 -999    25      -999    0       99      0       -99     0       0       0       0       0       0       0       #       SizeSel_P5
 -999    25      -999    0       99      0       -99     0       0       0       0       0       0       0       #       SizeSel_P6
 #RecStudy selectivity
 20      55      35      0       99      0       1       0       0       0       0       0       0       0       #       SizeSel_P1
--20     7       55      0       99      0      -4       0       0       0       0       0       0       0       #       SizeSel_P2
+-20     20      20      0       99      0      -4       0       0       0       0       0       0       0       #       SizeSel_P2
 -5      20      3       0       99      0       3       0       0       0       0       0       0       0       #       SizeSel_P3
--5      20      55      0       99      0      -4       0       0       0       0       0       0       0       #       SizeSel_P4
+-5      20      20      0       99      0      -4       0       0       0       0       0       0       0       #       SizeSel_P4
 -999    25      -999    0       99      0       -99     0       0       0       0       0       0       0       #       SizeSel_P5
 -999    25      -999    0       99      0       -99     0       0       0       0       0       0       0       #       SizeSel_P6
 #
@@ -245,8 +263,10 @@
 #
 #_no timevary selex parameters
 #
-# -10     20      3       3       99      0       3
-# -10     20      3       3       99      0       3
+## 20      55      35      0       99      0       1
+## 20      55      35      0       99      0       1
+## -5      20      55      0       99      0       4
+## -5      20      55      0       99      0       4
 #
 #
 #
@@ -269,24 +289,28 @@
  #_6=mult_by_size-at-age_N
  #_7=mult_by_generalized_sizecomp
 #_Factor  Fleet  Value
-	4     1 0.004255352
-        4     2 0.303311327
-        4     3 0.010000000
-        4     4 0.736787629
-        4     5 0.551620119
-        5     1 0.192267655
-        5     2 0.127688644
-        5     3 0.010000000
-        5     4 0.010000000
-        5     5 0.010000000
--9999   1    0  # terminator
+ #_Factor Fleet     Var_Adj
 #
-1 #_maxlambdaphase
+#
+4 1 0.005579158
+4 2 0.33087714
+4 3 0.006225575
+4 4 1.167896417
+4 5 0.670430019
+5 1 0.062482746
+5 2 0.112764402
+5 4 0.1862
+-9999   1       0.000000000
+#
+#
+#
+5 #_maxlambdaphase
 1 #_sd_offset
 # read 0 changes to default Lambdas (default value is 1.0)
 # Like_comp codes:  1=surv; 2=disc; 3=mnwt; 4=length; 5=age; 6=SizeFreq; 7=sizeage; 8=catch; 9=init_equ_catch; 
 # 10=recrdev; 11=parm_prior; 12=parm_dev; 13=CrashPen; 14=Morphcomp; 15=Tag-comp; 16=Tag-negbin; 17=F_ballpark
-#like_comp fleet  phase  value  si
+#like_comp fleet  phase  value  sizefreq_method
+17     1  5  0  0 # turn off ballpark likelihood in phase 5
 -9999  1  1  1  1  #  terminator
 #
 # lambdas (for info only; columns are phases)
