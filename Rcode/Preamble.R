@@ -26,6 +26,8 @@ load("./r4ss/SS_output.RData")
 # Species, common and scientific
 spp = "Yellowtail Rockfish"
 spp.sci = "Sebastes flavidus"
+
+# long fleetnames for potential use in r4ss plots
 fleetnames1 <- c("Commercial Fishery",
                  "At-Sea Hake Fishery",
                  "Recreational OR+CA",
@@ -97,15 +99,8 @@ Project_lastyr  = max(mod1$timeseries$Yr[mod1$timeseries$Era=='FORE'])
 
 
 for(imod in 1:n_models) {
-  if (imod==1) {
-      mod_num = 'mod1'
-    } else {
-    if (imod==2) {
-      mod_num = 'mod2'
-    } else {
-      mod_num = 'mod3'
-    }}
-  
+  mod_num = paste0('mod', imod) # string like "mod1"
+  mod_label = get(paste0("mod", imod, "_label")) # object like mod1_label
   
   # Read in the plotInfoTable.csv containining the list of plots created from r4SS
   plotInfoTable = read.csv(paste0('./r4ss/plots_',mod_num,'/plotInfoTable_',mod_num,'_final.csv'))
@@ -118,9 +113,23 @@ for(imod in 1:n_models) {
   plotInfoTable$caption  = gsub('-', '_', plotInfoTable$caption)
   plotInfoTable$caption  = gsub('<br>|<blockquote>|</i>|<i>|</blockquote>', 
                                 ' ',plotInfoTable$caption)
-  
+  plotInfoTable$caption <- paste0("**", mod_label, "** ", plotInfoTable$caption)
+    
   # Change factors to strings
   plotInfoTable = data.frame(lapply(plotInfoTable, as.character), stringsAsFactors=FALSE)
+  
+  # add include = TRUE/FALSE to filter which plots go in document
+  plotInfoTable$include <- TRUE
+  exclude_strings <- c("lenfit_sampsize", "agefit_sampsize",
+                       "mod1_18_comp_gstagefit_residsflt6mkt2",
+                       "mod1_39_comp_gstlenfit_flt1mkt2",
+                       "mod1_40_comp_gstlenfit_residsflt1mkt2",
+                       "mod2_8_comp_agefit_data_weighting_TA1",
+                       "mod2_15_comp_gstagefit_residsflt2mkt2")
+                       
+  for(istring in 1:length(exclude_strings)){
+    plotInfoTable$include[grep(exclude_strings[istring], plotInfoTable$file)] <- FALSE
+  }
   
   # Pull out the different categories of plots, e.g., Bio, Sel, Timeseries, etc
   categories = as.vector(unique(plotInfoTable$category))
@@ -134,17 +143,19 @@ for(imod in 1:n_models) {
     dummy_df = data.frame(lapply(dummy_df, as.character), stringsAsFactors=FALSE)
     dummy_df$label = substr(dummy_df$basename,1, nchar(dummy_df$basename)-4)
     dummy_df$filepath = paste0('./r4ss/plots_',mod_num,'/',dummy_df$basename)
+    # convert from character to logical because "which" used later doesn't coerce to be logical
+    dummy_df$include <- as.logical(dummy_df$include) 
     assign(paste0(categories[icat],'_',mod_num),dummy_df)
   }
 } # end n_models
 
 # multiple models
-multi_page_fig = c('page2', 'page3', 'page4', 'page5', 'page6', 'page7')
+multi_page_fig = paste0('page', 2:10)
 
-# Give plotInfoTable columns to use to paste in info for the 
-# caption, label and file path
-caption_col = 2
-label_col = 10
-path_col =  11
+## # Give plotInfoTable columns to use to paste in info for the 
+## # caption, label and file path
+## caption_col = 2
+## label_col = 10
+## path_col =  11
 
 
