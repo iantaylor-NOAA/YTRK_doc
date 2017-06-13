@@ -49,11 +49,11 @@ link-citations: yes
 \renewcommand{\thefigure}{\alph{figure}}
 \renewcommand{\thetable}{\alph{table}}
 
-#<TOADS>
 
 ```{r child = "0_Executive_Summary.Rmd"}
 ```
 <!--************RESET FIGURE & TABLE NUMBERS FOR THE DOCUMENT'S MAIN BODY** -->
+
 \newpage
 \renewcommand{\thefigure}{\arabic{figure}}
 \renewcommand{\thetable}{\arabic{table}}
@@ -61,12 +61,11 @@ link-citations: yes
 \setcounter{table}{0}
 \pagenumbering{arabic}
 
-#
+
 <!-- How to comment out any section while debugging doc -->
 <!--  -->
 <!--  ```{r child='SS_file_appendices.rmd'}
 ``` --> 
-#
 
 ```{r child = "1_Introduction.Rmd"}
 ```
