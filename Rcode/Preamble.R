@@ -26,9 +26,20 @@ load("./r4ss/SS_output.RData")
 # Species, common and scientific
 spp = "Yellowtail Rockfish"
 spp.sci = "Sebastes flavidus"
+fleetnames1 <- c("Commercial Fishery",
+                 "At-Sea Hake Fishery",
+                 "Recreational OR+CA",
+                 "Recreational WA",
+                 "Triennial Survey",
+                 "NWFSC Combo Survey")
+fleetnames2 <- c("Recreational Fishery",
+                 "Commercial Fishery",
+                 "Recreational Onboard Survey",
+                 "Hook & Line Survey",
+                 "Recreational Study")         
 
-# minimum vulnerable age class
-min_age = "1+"
+# minimum vulnerable age class (summary age)
+min_age = "4+"
 
 # number of independent assessment models to include in the document
 n_models = 2 
@@ -50,7 +61,7 @@ MSST = 0.25  # minimum stock size threshold; 0.25 for rockfish
 # mt (no fecundity relationship)
 fecund = mod1$SpawnOutputUnits  
 # Fecundity text depending on the input value above (can change this line if you like)
-if(fecund == 'numbers'){fecund_unit='billion eggs'} else {fecund_unit = 'mt'}
+if(fecund == 'numbers'){fecund_unit='trillion eggs'} else {fecund_unit = 'mt'}
 
 # Change these years either here or in the table code if you need to
 

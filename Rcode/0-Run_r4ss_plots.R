@@ -17,6 +17,10 @@
 # document
 rm(list=ls(all=TRUE))
 
+# define directory on a specific computer
+if (system("hostname", intern=TRUE) %in% c("NWCLW04223033") ){ #Ian's computer
+  setwd("C:/SS/Yellowtail/Yellowtail2017/YTRK_doc")
+}
 
 # SECTION1: Run r4ss, parse plotInfoTable.csv file, & add linebreaks to SS files
 
@@ -118,6 +122,51 @@ if(n_models > 1){
            dir = out.dir.mod2)
 }
 
+# simple function to write streamline writing PNG for specialized plots
+pngfun <- function(file,mod=1,w=6.5,h=5,pt=10){
+  out.dir <- get(paste0("out.dir.mod",mod))
+  file <- file.path(out.dir, file)
+  cat('writing PNG to',file,'\n')
+  png(filename=file,
+      width=w,height=h,
+      units='in',res=300,pointsize=pt)
+}
+
+# time-varying retention for fleet 1 in model 1
+pngfun('time-varying_retention.png', mod=1)
+source('Rcode/time-varying_retention.R')
+dev.off()
+
+# fit to indices for model 1
+pngfun('index0_all_indices.png', mod=1)
+par(mfrow=c(2,2),mar=c(2,2,2,1),oma=c(2,2,0,0)+.1)
+SSplotIndices(mod1,subplot=1,datplot=TRUE) #,fleetnames=fleets)
+mtext(side=1,line=1,outer=TRUE,'Year')
+mtext(side=2,line=1,outer=TRUE,'Index')
+dev.off()
+
+pngfun('index0_all_indices_fit.png', mod=1)
+par(mfrow=c(2,2),mar=c(2,2,2,1),oma=c(2,2,0,0)+.1)
+SSplotIndices(mod1,subplot=2,datplot=FALSE) #,fleetnames=fleets)
+mtext(side=1,line=1,outer=TRUE,'Year')
+mtext(side=2,line=1,outer=TRUE,'Index')
+dev.off()
+
+
+# fit to indices for model 2
+pngfun('index0_all_indices.png', mod=2)
+par(mfrow=c(2,2),mar=c(2,2,2,1),oma=c(2,2,0,0)+.1)
+SSplotIndices(mod2,subplot=1,datplot=TRUE) #,fleetnames=fleets)
+mtext(side=1,line=1,outer=TRUE,'Year')
+mtext(side=2,line=1,outer=TRUE,'Index')
+dev.off()
+
+pngfun('index0_all_indices_fit.png', mod=2)
+par(mfrow=c(2,2),mar=c(2,2,2,1),oma=c(2,2,0,0)+.1)
+SSplotIndices(mod2,subplot=2,datplot=FALSE, maximum_ymax_ratio=3) #,fleetnames=fleets)
+mtext(side=1,line=1,outer=TRUE,'Year')
+mtext(side=2,line=1,outer=TRUE,'Index')
+dev.off()
 # -----------------------------------------------------------------------------
 
 # Run the code to parse the plotInfoTable files

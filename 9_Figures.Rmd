@@ -122,7 +122,7 @@
 <!-- ***********MODEL 1**************************************************** -->
  
 ```{r, results='asis'}
-    # Plot all of the timeseries plots
+    # Plot all of the comp plots
       for(i in 1:dim(LenComp_mod1)[1]) { # was previously 1:10 but caused error due to no 10th figure
        
         # find matches to multi-page plots
@@ -151,13 +151,6 @@
 \FloatBarrier
 
 <!--RESEARCH Age and length composition figures-->
-
-!-- ********************************************************************** -->
-<!-- **********************Growth FIGURES*************************** --> 
-<!-- ********************************************************************** -->
-
-
-![Estimated growth for female and male `r spp` in each model. Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. \label{fig:growth}](r4ss/plots_compare/growth_comparison.png)
 
 
 <!-- ********************************************************************** -->
@@ -218,7 +211,7 @@
 \FloatBarrier
 
 <!-- ********************************************************************** -->
-<!-- ***********History of modelleing approaches FIGURES******************* --> 
+<!-- ***********History of modeling approaches FIGURES******************* --> 
 <!-- ********************************************************************** -->
 
 
@@ -246,19 +239,56 @@
 <!-- *********************BASE MODEL FIGURES******************************* -->
 <!-- ====================================================================== -->
 
-<!-- ***********MODEL 1 BASE MODEL FIGURES********************************* --> 
+<!-- ********************************************************************** -->
+<!-- **********************Growth FIGURES*************************** --> 
+<!-- ********************************************************************** -->
 
+![Estimated length-at-age for female and male `r spp` in each model. Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. \label{fig:growth}](r4ss/plots_compare/growth_comparison.png)
+
+\FloatBarrier 
+
+<!-- ********************************************************************** -->
+<!-- *******************Selectivity & Retention**************************** --> 
+<!-- ********************************************************************** -->
+
+![Estimated selectivity by length by each fishery and survey in the `mod1_label`. \label{fig:selex}](r4ss/plots_mod1/sel01_multiple_fleets_length1.png)
+
+![Estimated retention by length by the Commercial Fishery in the `mod1_label`. \label{fig:retention}](r4ss/plots_mod1/time-varying_retention.png)
+
+![Estimated selectivity by length by each fishery and survey in the `mod2_label`. \label{fig:selex}](r4ss/plots_mod2/sel01_multiple_fleets_length1.png)
+
+\FloatBarrier 
+
+
+
+\FloatBarrier 
+
+<!-- ********************************************************************** -->
+<!-- ******************** Estimated Recruitment**************************** --> 
+<!-- ********************************************************************** -->
+
+
+![Estimated time-series of recruitment for the `mod1_label`. \label{fig:recruits1}](r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png)
+  
+![Estimated time-series of recruitment deviations for the `mod1_label`. \label{fig:recdevs1}](r4ss/plots_mod1/recdevs2_withbars.png)
+  
+\FloatBarrier
+
+![Estimated time-series of recruitment for the `mod2_label`. \label{fig:recruits2}](r4ss/plots_mod2/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png)
+  
+![Estimated time-series of recruitment deviations for the `mod2_label`. \label{fig:recdevs2}](r4ss/plots_mod2/recdevs2_withbars.png)
 
 \FloatBarrier
 
+<!-- ********************************************************************** -->
+<!-- ***********************Fits to the Indices**************************** --> 
+<!-- ********************************************************************** -->
 
-<!-- ***********MODEL 2 BASE MODEL FIGURES********************************* --> 
+![Estimated fits to the CPUE and survey indices for the `mod1_label`. \label{fig:index_fits1}](r4ss/plots_mod1/index0_all_indices_fit.png)
 
+![Estimated fits to the CPUE and survey indices for the `mod2_label`. \label{fig:index_fits2}](r4ss/plots_mod2/index0_all_indices_fit.png)
 
-<!-- ***********MODEL 3 BASE MODEL FIGURES********************************* --> 
-
-
-
+\FloatBarrier 
 
 
 
