@@ -1,4 +1,4 @@
-#V3.30.03.05
+#V3.30.01.09-trans
 # for all year entries except rebuilder; enter either: actual year, -999 fo
 # r styr, 0 for endyr, neg number for rel. endyr
 1 # Benchmarks: 0=skip; 1=calc F_spr,F_btgt,F_msy 
@@ -9,7 +9,7 @@
 #_Bmark_years: beg_bio, end_bio, beg_selex, end_selex, beg_relF, end_relF, 
 # beg_recr_dist, end_recr_dist, beg_SRparm, end_SRparm (enter actual year, 
 # or values of 0 or -integer to be rel. endyr)
- 2016 2016 2016 2016 2016 2016 2016 2016 2016 2016
+0 0 0 0 0 0 0 0 0 0
 2 #Bmark_relF_Basis: 1 = use year range; 2 = set relF same as forecast belo
 # w
 #
@@ -20,11 +20,11 @@
 #_Fcast_years:  beg_selex, end_selex, beg_relF, end_relF, beg_recruits, end
 # _recruits  (enter actual year, or values of 0 or -integer to be rel. endy
 # r)
- 0 0 0 0 0 0
+0 0 0 0 0 0
 1 # Control rule method (1=catch=f(SSB) west coast; 2=F=f(SSB) ) 
-0.4 # Control rule Biomass level for constant F (as frac of Bzero, e.g. 0.4
-# 0); (Must be > the no F level below) 
-0.1 # Control rule Biomass level for no F (as frac of Bzero, e.g. 0.10) 
+0.40 # Control rule Biomass level for constant F (as frac of Bzero, e.g. 0.
+# 40); (Must be > the no F level below) 
+0.10 # Control rule Biomass level for no F (as frac of Bzero, e.g. 0.10) 
 0.956 # Control rule target as fraction of Flimit (e.g. 0.75) 
 3 #_N forecast loops (1=OFL only; 2=ABC; 3=get F from forecast ABC catch wi
 # th allocations applied)
@@ -32,7 +32,7 @@
 -1 #_Forecast loop control #3 (reserved for future bells&whistles) 
 0 #_Forecast loop control #4 (reserved for future bells&whistles) 
 0 #_Forecast loop control #5 (reserved for future bells&whistles) 
-2030  #FirstYear for caps and allocations (should be after years with fixed
+2050  #FirstYear for caps and allocations (should be after years with fixed
 #  inputs) 
 0 # stddev of log(realized catch/target catch) in forecast (set value>0.0 t
 # o cause active impl_error)
@@ -49,8 +49,9 @@
 # 2=deadbio; 3=retainbio; 5=deadnum; 6=retainnum)
 # Conditional input if relative F choice = 2
 # Fleet relative F:  rows are seasons, columns are fleets
-#_Fleet:  CommercialTrawl HakeByCatch RecCatch EarlyTriennial NWFSCcombo
-#  1 0 0 0 0
+#_Fleet:  Fishery POP EarlyTriennial LateTriennial AFSCSlope NWFSCSlope NWF
+# SCcombo
+#  1 0 0 0 0 0 0
 # enter list of fleet number and max for fleets with max annual catch; term
 # inate with fleet=-9999
 -9999 -1
@@ -67,7 +68,7 @@
 2 # basis for input Fcast catch: -1=read basis with each obs; 2=dead catch;
 #  3=retained catch; 99=input Hrate(F)
 #enter list of Fcast catches; terminate with line having year=-9999
-#_Yr Seas Fleet Catch(or_F)
+#_Year Seas Fleet Catch(or_F)
 -9999 1 1 0 
 #
 999 # verify end of input 
