@@ -1,90 +1,205 @@
-##Data
-Data used in the `r spp` assessment are summarized in Figure \ref{fig:data_plot}.  
-A description of each data source is below.
 
+#Data
+
+Data used in the Northern and Southern yellowtail rockfish assessments are summarized in Figures \ref{fig:data_plot} and \ref{fig:data_plot}.
+
+Data sources for the two models are largely distinct.  Northern fisheries and surveys had very sparse data (if any) for the south and vice-versa.  Among the 12 data sources referenced below, only 2 data sources are common to both models.  These are the MRFSS/RecFIN recreational dockside survey, which focuses on California and Oregon, and the CalCOM California commercial dataset, which contributed data from the northern-most California counties (Eureka and Del Norte) to the Northern model.  The CalCOM data account for less than five percent of the commercial landings in the Northern model, and less than 1% of the biological samples. 
+
+Commercial landings are not differentiated in either model.  For the Northern model, this is due to the very small portion (1.15 %) of the landings that are attributed to non-trawl gear.  For the Southern model, this is due to the paucity of data.
+
+A description of each model"s data sources follows.
 
 <!-- ************FISHERY-DEPENDENT DATA************************************ -->
+
+
+##Northern Model Data
+
 ###Commercial Fishery Landings
 
-**Washington catch information**
+**Washington Catch Information**   
+The Washington Department of Fisheries and Wildlife (WDFW) provided historical yellowtail catch for 1889–1980.  Landings for 1981-2016 came from the Pacific Fisheries Information Network (PacFIN) database.  WDFW also provided catches for the period 1981 – 2016 to include the re-distribution of the unspeciated "URCK" landings in PacFIN; this information is currently not available from PacFIN.  
 
-WDFW provided historical yellowtail catch for 1889 – 1980 period.  WDFW also provided catches for 1981 – 2016 period to include the re-distribution of the "URCK" landings in PacFIN database.  This information is currently not available from PacFIN.  
+**Oregon Catch Information**   
+The Oregon Department of Fisheries and Wildlife (ODFW) provided historical yellowtail catch from 1892-1985.  ODFW also provided estimates of yellowtail rockfish in the in the un-speciated PacFIN "URCK" and "POP1" catch categories for recent years, and those estimates were combined with PacFIN landings for 1986-2016.
 
-**Sub-heading 2**
+**Northern California Catch**   
+The California Commercial Fishery Database (CalCOM) provided landings for the Northern model for the two counties north of 40.10 (Eureka and Del Norte) for 1969-2016.
 
-**Sub-heading 3**
+**Hake Bycatch**   
+The Alaska Fisheries Science Center (AFSC) provided data for yellowtail bycatch in the hake fishery from 1976-2016.
 
 ###Sport Fishery Removals
 
-**Sub-heading 1**
+**Washington Sport Catch**   
+WDFW provided recreational catches for 1967 and 1975-2016.
 
-**Sub-heading 2**
-
-**Sub-heading 3**
+**Oregon Sport Catch**   
+ODFW provided recreational catch data for 1979-2016.
 
 ###Estimated Discards
 
-**Sub-heading 1**
+**Commercial Discards**   
+The West Coast Groundfish Observing Program (WCGOP) is an onboard observer program that has extensively surveyed fishing practices since 2002, with nearly 100% observer coverage in the trawl sector in recent years.  WCGOP provided discard ratios for yellowtail rockfish from 2002 to 2015.
 
-**Sub-heading 2**
-
-**Sub-heading 3**
-
-
-###Abundance Indices
-
-**Sub-heading 1**
-
-**Sub-heading 2**
-
-
-
-<!-- ************FISHERY-INDPENDENT DATA*********************************** -->
-
-###Fishery-Independent Data: possible sources
- *Northwest Fisheries Science Center (NWFSC) slope survey*    
-The NWFSC slope survey was conducted annually from 1999 to 2002.  
-The depth range of this survey is 100-700 fm. 
-
-*Northwest Fisheries Science Center (NWFSC) shelf-slope survey*     
-This survey is referred to as the “combo,” conducted annually since 2003.  
-The survey consistently covered depths between 30 and 700 fm.
-
-*Alaska Fisheries Science Center (AFSC) shelf survey*     
-The survey, often referred to as the “triennial” survey was conducted every 
-third year between 1977 and (and conducted in 2004 by the NWFSC using the 
-same protocols).  The triennial survey trawls in depths of 30 to 275 fm.
-
-*Pikitch Study*    
+**Pikitch Study**  
 The Pikitch study was conducted between 1985 and 1987 [@Pikitch1988].  The northern 
 and southern boundaries of the study were $48^\circ 42^\prime$ N latitude and 
 $42^\circ 60^\prime$ N. latitude respectively, which is primarily within the 
-Columbia INPFC area [@Pikitch1988 ; @Rogers1992].  Participation in the study 
+Columbia INPFC area [@Pikitch1988 ; @Rogers1992].  
+
+Participation in the study 
 was voluntary and included vessels using bottom, midwater, and shrimp trawl gears.  
 Observers of normal fishing operations on commercial vessels collected the data, 
 estimated the total weight of the catch by tow and recorded the weight of species 
 retained and discarded in the sample.  
  
-*Enhanced Data Collection Project (EDCP)*       
-The EDCP was conducted by ODFW to collect information on bycatch and discard 
-groundfish species off the coast of Oregon from late 1995 to early 1999.  
-EDCP had limited spatial coverage in Oregon waters only. 
+Pikitch study discards were aggregated due to small sample size and included in the
+data as representing a single year mid-way through the study.
 
-*Partnership For Interdisciplinary Studies of Coastal Oceans (PISCO)*       
-Blurb on species presence in PISCO surveys
+###Abundance Indices
+
+**Commercial Logbook CPUE**   
+The commercial logbook (fish-ticket) data in PacFIN was used to generate an index for the years 1987-1998, a period in which management of the fishery was stable, i.e., regulations weren"t changing fishery practices.
+
+**Hake Bycatch Index**   
+The Hake bycatch data provided by AFSC was used to generate an index of abundance for 1985-1999.
+
+**Pikitch Study**  
+The Pikitch data referenced above provided an index for years 1981-91.
+
+<!-- ************FISHERY-INDPENDENT DATA*********************************** -->
+
+###Fishery-Independent Data
+
+**Northwest Fisheries Science Center (NWFSC) shelf-slope survey**     
+This survey, referred to as the “NWFSCcombo Survey”, has been conducted annually since 2003.  
+The survey consistently covers depths between 30 and 700 fm.
+
+Data from this survey for yellowtail rockfish was available for 2003-2016, and provided an index
+in addition to length and age data.
+
+**Alaska Fisheries Science Center (AFSC) shelf survey**    
+The survey, often referred to as the “Triennial Survey"" was conducted by the AFSC every 
+third year between 1977 and 2001, (and was conducted in 2004 by the NWFSC using the 
+same protocols).  The Triennial Survey trawled in depths of 30 to 275 fm.
+
+The Triennial Survey provided yellowtail rockfish length and age data, as well as an index of
+abundance from 1997-2004.
+
 
 <!--************BIOLOGICAL DATA*********************************************-->
-###Biological Parameters and Data
+###Biological Samples
 
-**Length And Age Compositions**
+**Length And Age Compositions**   
+Length composition data were compiled from PacFIN for Oregon and Washington for the Northern model and combined
+with raw (unexpanded) length data from CalCOM for the two California counties north of 40.10 (Eureka and Del Norte counties).
 
-Include: Sample size information for length and age composition data by area, 
-year, gear, market category, etc., including both the number of trips and 
-fish sampled.
 
+Note that sample-sizes are the number of fish for recreational sources (since "tow" data is missing for most sources, we prefer to let each fish represent itself), and for commercial and survey data model input sample sizes are calculated as:
+
+  SampleSize = Ntows + 0.138 if Nfish/Ntows < 44; Ntows * 7.06 otherwise (Ian Stewart, pers. comm.)
+  
+
+
+Length compositions were provided from the following sources:
+<!-- ***********Indices of abundance summary table************************* -->
+```{r, results = "asis"}
+    Length_sources = read.csv("./txt_files/02_Summary_N_Length_sources.csv")
+      colnames(Length_sources) = c("Source",
+                                  "Type",
+                                  "Lengths",
+                                  "Tows",	
+                                  "Years")
+
+   # Lengths summary, create table   
+     Length_sources.table = xtable(Length_sources, 
+                                  caption = c("Summary of the time series of lengths used in the stock assessment."),
+                                 label = "tab:Length_sources", digits = 0)    
+
+    # Print index summary table
+      print(Length_sources.table, 
+            include.rownames=FALSE, 
+            caption.placement="top",
+            sanitize.text.function = function(x){x})
+```
+<!-- ---------------------------------------------------------------------- -->
+
+Model input sample-sizes for age data were calculated according to the same algorithm as for lengths, except that the conditional age-at-length sample sizes are the number of fish, regardless of the source of the data.
+
+
+Age structure data were available from the following sources:
+<!-- ***********Indices of abundance summary table************************* -->
+```{r, results = "asis"}
+    Age_sources = read.csv("./txt_files/02_Summary_N_Age_sources.csv")
+      colnames(Age_sources) = c("Source",
+                                  "Type",
+                                  "Ages",
+                                  "Tows",	
+                                  "Years")
+
+   # Index of abundance summary, create table   
+     Age_sources.table = xtable(Age_sources, 
+                                  caption = c("Summary of the
+                                              time series of age data used in the stock
+                                              assessment."),
+                                 label = "tab:Age_sources",
+                                 digits = 0)    
+
+    # Print index summary table
+      print(Age_sources.table, 
+            include.rownames=FALSE, 
+            caption.placement="top",
+            sanitize.text.function = function(x){x})
+```
+<!-- ---------------------------------------------------------------------- -->
+
+
+<!-- ************FISHERY-DEPENDENT DATA************************************ -->
+
+
+##Southern Model Data
+
+###Commercial Fishery Landings
+
+**California Commercial Landings**   
+Landings in California south of 40.10 for 1969-2016 were obtained from CalCOM
+
+###Sport Fishery Removals
+
+**MRFSS Estimates and RecFIN**  
+CDFW provided estimated yellowtail removals for the MRFSS period 1980-1989, 1993-2003.
+RecFIN provided landings for 2004-2016.
+
+###Estimated Discards
+
+No discard data were available for the Southern model.
+
+###Abundance Indices
+
+**MRFSS Index**  
+An index of abundance was developed from trip-aggregated MRFSS data for the years 1980-1989, 1992-2003.
+
+**California Onboard Survey**  
+An Onboard recreational survey provided data for an index of abundance provided by the SWFSC for 1987-2016.
+
+
+<!-- ************FISHERY-INDPENDENT DATA*********************************** -->
+
+###Fishery-Independent Data
+
+**Hook and Line Survey**  
+The NWFSC Hook and Line survey provided data for an index in the Southern California Bight from 2004-2016.
+
+
+<!--************BIOLOGICAL DATA*********************************************-->
+###Biological Samples
+
+**Length And Age Compositions**  
 Length compositions were provided from the following sources, by region, with 
 brief descriptions below:    
 
+
+Itemize still doesn"t work?
 _Model 1_ 
 \begin{itemize}[noitemsep,nolistsep,topsep=0pt]
   \item Source No. 1 (\emph{ex. research, commerical dead fish, live fish, etc},\\     
@@ -104,56 +219,7 @@ _Model 1_
 
 Can duplicate this list if you have more than one assessment model
 
-Possible sources of age and length data:
-
-*Recreational: Washington (WDFW)*
-
-*Recreational: California MRFSS And CRFS Length Composition Data*
-Individual fish lengths recorded by MRFSS (1980-2003) and CRFS (2004-2011) samplers were
-downloaded from the RecFIN website (www.recfin.org). CRFS data from 2012-2014 were
-obtained directly from CDFW.
-
-*Recreational: Oregon Recreational Boat Survey (ORBS)*
-Biological data from the ORBS program were provided by ODFW. The ORBS is a dockside
-sampling program for the both the recreational CPFV and private modes. Length composition
-samples from north of Florence for the CPFV and private fleets were provided from
-1980-2014.  Samples from south of Florence spanned 1984-2014
-
-
-*Recreational: Miller and Gotshall [-@Miller1965]*      
-The Northern California Marine Sport Fish Survey conducted an assessment survey with
-goals that included estimation of annual fishing effort by all recreational fishing modes,
-catch by weight, CPUE, and collection of data to analyze length compositions
-
-
-*Commercial: PacFIN (Oregon and California)*
-
-
-
-*Research: NMFS Groundfish Ecology Survey*      
-
-From 2001-2005, the SWFSC Fisheries Ecology Division conducted longline surveys 
-aboard a chartered commercial longline vessel at various stations between 
-Monterey and Davenport, CA ($36^\circ$ N. latitude to $37.5^\circ$ N. latitude)
-(pers. comm. Don Pearson, SWFSC). Longline gear was set in various depths from 
-10 meters to 700 meters, parallel to the depth contour.  Each longline set 
-consisted of 3-5 skates, each with about 250 2/0 circle hooks baited with squid.  
-In nearshore habitats, the gear soaked for roughly 30 minutes.  
-
-*Research: California Collaborative Fisheries Research Program (CCFRP)*
-
-*Research: NWFSC shelf-slope survey*
-
-*Research: NWFSC slope survey*
-
-*Research: Abrams Thesis*
-
-
-
-
-\vspace{.5cm}
-**Age Structures**
-
+**Age Structures**  
 Age structure data were available from the following sources:
 
 _Model Region 1_ 
@@ -175,44 +241,34 @@ _Model Region 1_
 
 Can duplicate this list if you have more than one assessment model
 
-Length-at-age was initially estimated external to the population dynamics models 
-using the von Bertalanffy growth curve [@vonB1938], $L_i = L_{\infty}e^{(-k[t-t_0])}$, 
-where $L_i$ is the length (cm) at age $i$, $t$ is age in years, $k$ is rate of 
-increase in growth, $t_0$ is the intercept, and $L_{\infty}$ is the asymptotic length.  
 
 
+## Biological Parameters Common to Both Models
 
 \vspace{.5cm}
 **Aging Precision And Bias**
 
 
-
-
 \vspace{.5cm}
 **Weight-Length**
 
-The weight-length relationship is based on the standard power function: 
-$W = \alpha(L^\beta)$ where $W$ is individual weight (kg), $L$ is length (cm), 
-and $\alpha$ and $\beta$ are coefficients used as constants.
+The weight-length relationship is based on the standard power function: $W = \alpha(L^\beta)$ where $W$ is individual weight (kg), $L$ is length (cm), and $\alpha$ and $\beta$ are coefficients used as constants.
 
-To estimate this relationship, 12,778 samples with both weight and length measurements from the fishery independent surveys were analyzed. These included 6,354 samples from the NWFSC Combo survey, 5,085 from the Triennial survey, and 1,339 from the Hook and Line survey. All Hook and Line survey samples were from the Southern area, along with 910 samples from the other two surveys (Figure \ref{fig:weight-length}). A single weight-length relationship was chosen for females and males in both areas after examining various factors that may influence this relationships, including sex, area, year, and season. None of these factors had a strong influence in the overall results. Season was one of the bigger factors, with fish sampled later in the year showing a small increase in weight at a given length (2-6\% depending on the other factors considered). However, season was confounded with area because most of the samples from the Southern area were collected from the Hook and Line survey which takes place later in the year (mid-September to mid-November) and the resolution of other data in the model do not support modeling the stock at a scale finer than a annual time step. Males and females did not show strong differences in either area, and the estimated differences were in opposite directions for the two areas, suggesting that this might be a spurious relationship or confounded with differences timing of the sampling relative to spawning.
+To estimate this relationship, 12,778 samples with both weight and length measurements from the fishery independent surveys were analyzed. These included 6,354 samples from the NWFSC Combo survey, 5,085 from the Triennial survey, and 1,339 from the Hook and Line survey. All Hook and Line survey samples were from the Southern area, along with 910 samples from the other two surveys (Figure \ref{fig:weight-length}). A single weight-length relationship was chosen for females and males in both areas after examining various factors that may influence this relationships, including sex, area, year, and season. None of these factors had a strong influence in the overall results. Season was one of the bigger factors, with fish sampled later in the year showing a small increase in weight at a given length (2-6% depending on the other factors considered). However, season was confounded with area because most of the samples from the Southern area were collected from the Hook and Line survey which takes place later in the year (mid-September to mid-November) and the resolution of other data in the model do not support modeling the stock at a scale finer than a annual time step. Males and females did not show strong differences in either area, and the estimated differences were in opposite directions for the two areas, suggesting that this might be a spurious relationship or confounded with differences timing of the sampling relative to spawning.
 
 The estimated coefficients resulting from this analysis were $\alpha = 1.1843e-05$ and $\beta = 3.0672$.
 
-
-
-
-
 \vspace{.5cm}
 **Maturity And Fecundity**
-Maturity was estimated from histological analysis of 141 samples collected in 2016. These include 96 from the NWFSC Combo survey, 25 from mid-water catches in the NWFSC acoustic/trawl survey, 13 from the Hook and Line survey, and 7 from Oregon Department of Fish and Wildlife. The sample sizes were not adequate to estimate differences in maturity by area. Length at 50\% maturity was estimated at 42.49cm (Figure \ref{fig:maturity}) which was consistent with the range 37-45cm cited in the previous assessment [@Wallace2005].
+Maturity was estimated from histological analysis of 
+
+141 samples collected in 2016. These include 96 from the NWFSC Combo survey, 25 from mid-water catches in the NWFSC acoustic/trawl survey, 13 from the Hook and Line survey, and 7 from Oregon Department of Fish and Wildlife. The sample sizes were not adequate to estimate differences in maturity by area. Length at 50\% maturity was estimated at 42.49cm (Figure \ref{fig:maturity.png}) which was consistent with the range 37-45cm cited in the previous assessment [@Wallace2005].
 
 
 \vspace{.5cm}
 **Natural Mortality**
 
-Natural mortality for wild fish populations is extremely difficult to estimate.  
-
+Natural mortality 
 
 
 \vspace{.5cm}
@@ -222,7 +278,7 @@ Natural mortality for wild fish populations is extremely difficult to estimate.
 
 ###Environmental Or Ecosystem Data Included In The Assessment
 
-
+No environmental index is present in either model.
 
 
 
