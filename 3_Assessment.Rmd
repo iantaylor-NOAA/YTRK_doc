@@ -4,7 +4,8 @@
 <!-- ***********HISTORY AND CURRENT ASSESSMENT***************************** -->
 ##History Of Modeling Approaches Used For This Stock
 
-###Previous Assessments
+Yellowtail rockfish was previously modeled as a 3-area stock north of 40.10 using ADMB in 1999 <TOADS> Need citation, with an update assessment in 2004[@Wallace2005].  That assessment divided the stock into 3 INPFC areas which are not coincident with state boundaries; this is a concern in that recent reconstructions of historical catch are state-by-state along the West Coast, therefor we have made no effort to reproduce the previous model.
+
 
 ###Previous Assessment Recommendations
 Include: Response to STAR panel recommendations from the most recent previous 
@@ -12,9 +13,9 @@ assessment.
 
 \begin{description}[style=unboxed]
 
-  \item[Recommendation 1: blah blah blah.] \hfill \\
+  \item[Recommendation 1: More data needed.] \hfill \\
 
-   STAT response: blah blah blah....
+   STAT response: Got some.
 
 \item[Recommendation 2: blah blah blah.] \hfill \\
 
@@ -35,55 +36,61 @@ assessment.
 
 
 ###Transition To The Current Stock Assessment
-Include: Complete description of any new modeling approaches
+These are the main changes from the previous model, and our rationale for them:
 
-Below, we describe the most important changes made since the last full assessment 
-and explain rationale for each change.:
+1. Transition to Stock Synthesis. \emph{Rationale}: The Pacific Fishery Management Council's preferred modeling platform for stock assessments is Stock Synthesis [@Methot2015], developed since the last full assessment of yellowtail rockfish.
 
-1. Change No. 1. \emph{Rationale}: blah blah blah.
+2. Addition of Southern model. \emph{Rationale}: Hess, et al. determined that the West Coast yellowtail stocks show a genetic cline occurring near Cape Mendocino, which is roughly 40.10 north latitude [@Hess2011].  This divides the stock into two genetically distinct substocks which we model independently.
 
-2. Change No. 2.  \emph{Rationale}: blah blah blah.
+2. Availability of recent data. \emph{Rationale}: Ten years of data collection have occurred since the last update assessment.
 
-3. Change No. 3.  \emph{Rationale}:  Continue list as needed.
-
+3. Historical catch reconstructions. \emph{Rationale}:  Reconstruction of catch timeseries in California, Washington and Oregon clarify stock history as far back as 1898.
 
 
 ###Definition of Fleets and Areas
-We generated data sources for each of the models.  Fleets by model include:
 
 
-**Model Region 1 or remove this line if only one model** 
+**Northern Model** 
 
-\emph{Commercial}: The commercial fleets include...   
+\emph{Commercial}: The commercial fleet consists primarily of bottom and midwater trawl.
 
-\emph{Recreational}: The recreational fleets include...
+\emph{Recreational}: The recreational fleet includes data from sport fisheries off Washington, Oregon, and northern California (Eureka and Del Norte counties)
 
-\emph{Research}: Research derived-data include...
+\emph{Research}: Research derived-data include observations from the West Coast Groundfish Observing Program (WCGOP) which documents discarding in the commercial fishery, the Alaska Fisheries Science Center's Triennial Trawl survey, and the Northwest Fisheries Science Center's NWFSCcombo survey.
 
+**Southern Model**
 
+\emph{Commercial}: The commercial fleet consists primarily of hook and line and trawl gear.  Hook and line gear account for 78% of the landings by weight in the recent period (1978-2016).
 
-###Summary of Data for Fleets and Areas
+\emph{Recreational}: The recreational fleet includes data from sport fishery off the California coast south of Cape Mendocino.
 
+\emph{Research}: Research derived-data include observations from the Northwest Fisheries Science Center's NWFSCcombo survey, and California Onboard recreational survey.
 
 
 ###Modeling Software
-The STAT team used Stock Synthesis 3 version 3.24u by Dr. Richard Methot at 
-the NWFSC. This most recent version (SS-V3.24u) was used, since it included 
-improvements and corrections to older versions.
+The STAT team used Stock Synthesis 3 version 3.3 [@Methot2015].
 
 ###Data Weighting
-Citation for Francis method [@Francis2011]      
-Citation for Ianelli-McAllister harmonic mean method [@McAllister1997]
 
+Commercial and survey length composition and marginal age composition data are weighted according to the method of Ian Stewart (pers.comm):
+
+   Sample Size = 0.138 * Nfish + Ntows if Nfish/Ntows < 44, and Ntows * 7.06 otherwise.
+
+Age-at-Length samples are unwieghted; that is, each fish is assumed to represesnt an independent sample.
+
+Recreational tows are difficult to define in most cases.  Since much of the recreational data are from the dockside interview Marine Recreational Fisheries Statics Survey (MRFSS, 1980-2003), which provided notoriously poor data with respect to aggregating samples to "trip", we chose to use all recreational data "as-is", with the initial weights entered as number of fish.
+
+Stock Synthesis does internal re-weighting between years within fleets to adjust for sample size.  Weighting among fleets uses either the Francis method [@Francis2011] or the Ianelli-McAllister harmonic mean method [@McAllister1997].  The Francis method was used for all fleets, except for the Southern model's Hook and Line age data, which is a single year of data to which we applied the Ianelli-McAllister method.
 
 
 ###Priors
-Citation for Hamel prior on natural mortality [@Hamel2015]
+Natural Mortality (M) priors were provide by Owen Hamel prior on natural mortality [@Hamel2015].  We used the Hamel prior as a fixed value in the Southern model, however the Northern model was able to estimate M.  In both models, male M was estimated as an offset from female M.  The Southern female M is 0.18; the Northern female M prior is 0.12.
 
+The prior for steepness (h, 0.718) was provided by James Thorson and used as a fixed parameter in both models. <TOADS:  Citation>
 
 ###General Model Specifications
 Citation for posterior predictive fecundity relationship from Dick [-@Dick2009]     
-Model data, control, starter, and forecast files can be found in Appendices A-D.
+Model data, control, starter, and forecast files can be found at https://DEVORE  <TOADS>.
 
 
 ###Estimated And Fixed Parameters
@@ -98,6 +105,8 @@ Include: Evidence of search for balance between model realism and parsimony.
 Comparison of key model assumptions, include comparisons based on nested models 
 (e.g., asymptotic vs. domed selectivities, constant vs. time-varying selectivities).  
 
+Selectivity in both models is asymptotic, with the exception of the OR-CA MRFSS recreational fleet in the Northern model, and the Onboard recreational fleet in the Southern model.
+
 
 
 ###Alternate Models Considered
@@ -111,7 +120,7 @@ best estimates.
 
 Convergence testing through use of dispersed starting values often requires 
 extreme values to actually explore new areas of the multivariate likelihood 
-surface. Jitter is a SS option that generates random starting values from a 
+surface. Jitter is a Stock Synthesis option that generates random starting values from a 
 normal distribution logistically transformed into each parameter's range 
 [@Methot2015]. Table \ref{tab:jitter} shows the results of running 100 jitters 
 for each pre-STAR base model....
