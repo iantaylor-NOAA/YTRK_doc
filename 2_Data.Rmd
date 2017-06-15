@@ -65,7 +65,7 @@ WDFW provided recreational catches for 1967 and 1975-2016.
 ODFW provided recreational catch data for 1979-2016.
 
 **MRFSS and RecFIN**
-Data from Northern California came from the Marine Recreational Fisheries Statistical Survey (**MRFSS**) and from the Recreational Fisheries Information Network (**RecFIN).  These are dockside surveys focused on California and Oregon.  MRFSS was conducted from 1980-1989 and 1993-2003, RecFIN from 2004 to the present.
+Data from Northern California came from the Marine Recreational Fisheries Statistical Survey (**MRFSS**) and from the Recreational Fisheries Information Network (**RecFIN**).  These are dockside surveys focused on California and Oregon.  MRFSS was conducted from 1980-1989 and 1993-2003, RecFIN from 2004 to the present.
 
 ###Estimated Discards
 
@@ -146,6 +146,9 @@ with raw (unexpanded) length data from CalCOM for the two California counties no
 
 
 Length compositions were provided from the following sources:
+
+\vspace{.5cm}
+
 <!-- ***********Indices of abundance summary table************************* -->
 ```{r, results = "asis"}
     Length_sources = read.csv("./txt_files/02_Summary_N_Length_sources.csv")
@@ -170,7 +173,7 @@ Length compositions were provided from the following sources:
 
 
 Age structure data were available from the following sources:
-
+\vspace{.5cm}
 
 <!-- ***********Indices of abundance summary table************************* -->
 ```{r, results = "asis"}
@@ -200,8 +203,11 @@ Age structure data were available from the following sources:
 
 <!-- ************FISHERY-DEPENDENT DATA************************************ -->
 
+\newpage
 
 ##Southern Model Data
+
+\vspace{.5cm}
 
 <!-- ***********Indices of abundance summary table************************* -->
 ```{r, results = "asis"}
@@ -269,6 +275,7 @@ Length composition samples were available for the Southern model from 5 sources,
 
 Length compositions were provided from the following sources:
 
+\vspace{.5cm}
 
 <!-- ***********Indices of abundance summary table************************* -->
 ```{r, results = "asis"}
@@ -295,6 +302,8 @@ Length compositions were provided from the following sources:
 
 Age structure data were available from the following sources:
 
+
+\vspace{.5cm}
 
 <!-- ***********Indices of abundance summary table************************* -->
 ```{r, results = "asis"}
