@@ -4,31 +4,14 @@
 <!-- ***********HISTORY AND CURRENT ASSESSMENT***************************** -->
 ##History Of Modeling Approaches Used For This Stock
 
-Yellowtail rockfish was previously modeled as a 3-area stock north of 40.10 using ADMB in 1999 <TOADS> Need citation, with an update assessment in 2004[@Wallace2005].  That assessment divided the stock into 3 INPFC areas which are not coincident with state boundaries; this is a concern in that recent reconstructions of historical catch are state-by-state along the West Coast, therefor we have made no effort to reproduce the previous model.
+Yellowtail rockfish was previously modeled as a 3-area stock north of 40.10 using ADMB in 1999 <TOADS> Need citation, with an update assessment in 2004[@Wallace2005].  That assessment divided the stock into 3 INPFC areas which are not coincident with state boundaries; this is a concern in that recent reconstructions of historical catch are state-by-state along the West Coast.  Because we cannot produce data that conform to the areas previously assessed, we have made no effort to reproduce the previous model.
 
 
 ###Previous Assessment Recommendations
-Include: Response to STAR panel recommendations from the most recent previous 
-assessment.
 
-\begin{description}[style=unboxed]
+Many of the recommendations of the previous STAR panel are not relevant to this assessment, as they related to data deficiencies at that time that have since been resolved.  The 2004 STAR particularly recommended a focus on abundance indices, which they noted might require further survey information.
 
-  \item[Recommendation 1: More data needed.] \hfill \\
-
-   STAT response: Got some.
-
-\item[Recommendation 2: blah blah blah.] \hfill \\
-
-  STAT response: blah blah blah....
-
-\item[Recommendation 3: blah blah blah., etc.] \hfill \\
-
-  STAT response: Continue recommendations as needed
-
-
-\end{description}
-
-
+This assessment provides three indices for the Northern model, and two for the Southern model.
 
 
 <!-- ************************MODEL DESCRIPTION***************************** -->
@@ -42,7 +25,7 @@ These are the main changes from the previous model, and our rationale for them:
 
 2. Addition of Southern model. \emph{Rationale}: Hess, et al. determined that the West Coast yellowtail stocks show a genetic cline occurring near Cape Mendocino, which is roughly 40.10 north latitude [@Hess2011].  This divides the stock into two genetically distinct substocks which we model independently.
 
-2. Availability of recent data. \emph{Rationale}: Ten years of data collection have occurred since the last update assessment.
+2. Availability of recent data. \emph{Rationale}: Ten years of data collection have occurred since the last update assessment, and the data necessary for an assessment of the Southern stock is now available.
 
 3. Historical catch reconstructions. \emph{Rationale}:  Reconstruction of catch timeseries in California, Washington and Oregon clarify stock history as far back as 1898.
 
@@ -52,7 +35,7 @@ These are the main changes from the previous model, and our rationale for them:
 
 **Northern Model** 
 
-\emph{Commercial}: The commercial fleet consists primarily of bottom and midwater trawl.
+\emph{Commercial}: The commercial fleet consists primarily of bottom and midwater trawl.  No attempt was made to analyze the fishery separately by gear, particularly since it seems that in the fishery in the 1980s and 1990s, "bottom trawl"" gear was used in the midwater as well as on the bottom, and "midwater gear"" was sometimes dragged across soft bottoms (Craig Goode, ODFW Port Sampler, pers. comm).
 
 \emph{Recreational}: The recreational fleet includes data from sport fisheries off Washington, Oregon, and northern California (Eureka and Del Norte counties)
 
@@ -76,11 +59,11 @@ Commercial and survey length composition and marginal age composition data are w
 
    Sample Size = 0.138 * Nfish + Ntows if Nfish/Ntows < 44, and Ntows * 7.06 otherwise.
 
-Age-at-Length samples are unwieghted; that is, each fish is assumed to represesnt an independent sample.
+Age-at-Length samples are unwieghted; that is, each fish is assumed to represent an independent sample.
 
-Recreational tows are difficult to define in most cases.  Since much of the recreational data are from the dockside interview Marine Recreational Fisheries Statics Survey (MRFSS, 1980-2003), which provided notoriously poor data with respect to aggregating samples to "trip", we chose to use all recreational data "as-is", with the initial weights entered as number of fish.
+Recreational trips (the analogue of tows in the commercial fishery) are difficult to define in most cases.  Since much of the recreational data are from the dockside interview MRFSS program, which didn't anticipate the need to delineate samples as belonging to particular trips, we chose to use all recreational data "as-is", with the initial weights entered as number of fish.
 
-Stock Synthesis does internal re-weighting between years within fleets to adjust for sample size.  Weighting among fleets uses either the Francis method [@Francis2011] or the Ianelli-McAllister harmonic mean method [@McAllister1997].  The Francis method was used for all fleets, except for the Southern model's Hook and Line age data, which is a single year of data to which we applied the Ianelli-McAllister method.
+Stock Synthesis performs internal re-weighting within fleets to adjust for between-year differences in sample size.  Weighting among fleets uses either the Francis method [@Francis2011] or the Ianelli-McAllister harmonic mean method [@McAllister1997].  The Francis method was used for all fleets, except for the age data from the Southern model's Hook and Line survey, which is a single year of data to which we applied the Ianelli-McAllister method.
 
 
 ###Priors
@@ -101,22 +84,19 @@ EXAMPLE: Table \ref{tab:Model1_params}
 
 ##Model Selection and Evaluation
 ###Key Assumptions and Structural Choices
-Include: Evidence of search for balance between model realism and parsimony.  
-Comparison of key model assumptions, include comparisons based on nested models 
-(e.g., asymptotic vs. domed selectivities, constant vs. time-varying selectivities).  
 
 Selectivity in both models is asymptotic, with the exception of the OR-CA MRFSS recreational fleet in the Northern model, and the Onboard recreational fleet in the Southern model.
 
-
-
 ###Alternate Models Considered
-Include: Summary of alternate model configurations that were tried but rejected.
+Time-blocked selectivity and retention were investigated in the Northern model, as were domed selectivities.
 
+We also explored time-blocks on selectivity in the Southern model, and domed selectivity for the MRFSS/RecFIN data.
 
+These approaches resulted in model fits to data that were obviously poor, and so they were rejected
 
 ###Convergence
-Include: Randomization run results or other evidence of search for global 
-best estimates.    
+
+<TOADS> Boilerplate, revisit:
 
 Convergence testing through use of dispersed starting values often requires 
 extreme values to actually explore new areas of the multivariate likelihood 
@@ -204,22 +184,6 @@ and Figure \ref{fig:Yield_all} shows the equilibrium yield curve.
 ###Model 2 Harvest Control Rules (CPS only)
 
 ###Model 2 Reference Points (groundfish only)
-
-
-<!-- ***********************MODEL 3 RESULTS******************************** -->
-##Model 3
-
-###Model 3 Base Case Results
-
-### Model 3 Uncertainty and Sensitivity Analyses
-
-### Model 3 Retrospective Analysis
-
-### Model 3 Likelihood profiles
-
-###Model 3 Harvest Control Rules (CPS only)
-
-###Model 3 Reference Points (groundfish only)
 
 
 
