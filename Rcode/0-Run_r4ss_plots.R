@@ -131,7 +131,7 @@ pngfun <- function(file,mod=1,w=6.5,h=5,pt=10){
 # multi-fleet comparisons with taller files NORTH
 for(datonly in c(FALSE,TRUE)){
   for(kind in c("LEN","AGE")){
-    SSplotComps(mod1, subplot=24, kind=kind, datonly=datonly, maxrows=4, pheight=8,
+    SSplotComps(mod1, subplot=24, kind=kind, datonly=datonly, maxrows=4, pheight=7.5,
                 cexZ1 = ifelse(datonly, 5, 1.5),
                 plot=FALSE, print=TRUE, fleetnames=fleetnames1,
                 plotdir=out.dir.mod1)
@@ -140,7 +140,7 @@ for(datonly in c(FALSE,TRUE)){
 # multi-fleet comparisons with taller files SOUTH
 for(datonly in c(FALSE,TRUE)){
   for(kind in c("LEN","AGE")){
-    SSplotComps(mod2, subplot=24, kind=kind, datonly=datonly, maxrows=5, pheight=ifelse(kind=="LEN",8,5),
+    SSplotComps(mod2, subplot=24, kind=kind, datonly=datonly, maxrows=5, pheight=ifelse(kind=="LEN",7.5,5),
                 cexZ1 = ifelse(datonly, 5, 1.5),
                 plot=FALSE, print=TRUE, fleetnames=fleetnames2,
                 plotdir=out.dir.mod2)
