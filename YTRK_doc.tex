@@ -1164,8 +1164,8 @@ ODFW provided recreational catch data for 1979-2016.
 
 \textbf{MRFSS and RecFIN} Data from Northern California came from the
 Marine Recreational Fisheries Statistical Survey (\textbf{MRFSS}) and
-from the Recreational Fisheries Information Network (**RecFIN). These
-are dockside surveys focused on California and Oregon. MRFSS was
+from the Recreational Fisheries Information Network (\textbf{RecFIN}).
+These are dockside surveys focused on California and Oregon. MRFSS was
 conducted from 1980-1989 and 1993-2003, RecFIN from 2004 to the present.
 
 \subsubsection{Estimated Discards}\label{estimated-discards}
@@ -1306,6 +1306,8 @@ length data from CalCOM for the two California counties north of 40.10
 
 Length compositions were provided from the following sources:
 
+\vspace{.5cm}
+
 \begin{table}[ht]
 \centering
 \caption{Summary of the time series of lengths used in the stock assessment.} 
@@ -1326,6 +1328,7 @@ PacFIN & commercial & 186161 & 3830 & 1968-2016 \\
 \end{table}
 
 Age structure data were available from the following sources:
+\vspace{.5cm}
 
 \begin{table}[ht]
 \centering
@@ -1346,7 +1349,11 @@ PacFIN & commercial & 138854 &  & 1972-2016 \\
 \end{tabular}
 \end{table}
 
+\newpage
+
 \subsection{Southern Model Data}\label{southern-model-data}
+
+\vspace{.5cm}
 
 \begin{table}[ht]
 \centering
@@ -1414,6 +1421,8 @@ sources, and ages from 3.
 
 Length compositions were provided from the following sources:
 
+\vspace{.5cm}
+
 \begin{table}[ht]
 \centering
 \caption{Summary of the time series of lengths used in the stock assessment.} 
@@ -1433,6 +1442,8 @@ CalCOM & commercial & 16160 & 1543 & 1978-2015 \\
 \end{table}
 
 Age structure data were available from the following sources:
+
+\vspace{.5cm}
 
 \begin{table}[ht]
 \centering
@@ -2255,43 +2266,17 @@ Yr & OFL contriubtion (mt) & ACL landings (mt) & Age 5+ biomass (mt) & Spawning 
 
 \section{Figures}\label{figures}
 
-\subsection{Catch History}\label{catch-history}
-
 \begin{figure}[htbp]
 \centering
-\includegraphics{r4ss/plots_mod1/catch5 total catch (including discards) stacked.png}
-\caption{Estimated catch history of Yellowtail Rockfish in the Northern
-model. Recreational catches in Washington are model estimates of total
-weigth converted from input catch in numbers using model estimates of
-growth and selectivity. Catches for the Commercial Fishery include
-estimated discards.\label{fig:r4ss_total_catch_N}}
+\includegraphics{Figures/assess_region_map.png}
+\caption{Map depicting the boundaries for the base-case model.
+\label{fig:assess_region_map}}
 \end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{r4ss/plots_mod1/catch7 discards stacked plot (depends on multiple fleets).png}
-\caption{Estimated discards in the Commercial Fishery in the Northern
-model. Estimates are influenced by the data for landings, discard
-ratios, and discard length combines and depend on the estimated
-parameters controlling selectivity and
-retention.\label{fig:r4ss_discard_N}}
-\end{figure}
-
-\FloatBarrier
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{r4ss/plots_mod2/catch2 landings stacked.png}
-\caption{Estimated catch history of Yellowtail Rockfish in the Southern
-model. \label{fig:r4ss_catch2_S}}
-\end{figure}
-
-\FloatBarrier
 
 \newpage
 
-\subsection{Life History (Maturity, Fecundity, Weight-Length, and
-Growth)}\label{life-history-maturity-fecundity-weight-length-and-growth}
+\subsection{Life history (maturity, fecundity, and growth) for both
+models}\label{life-history-maturity-fecundity-and-growth-for-both-models}
 
 \begin{figure}[htbp]
 \centering
@@ -2325,9 +2310,8 @@ lengths at each age. Values represent beginning-of-year growth.
 
 \newpage
 
-\subsection{Data and model fits}\label{data-and-model-fits}
-
-\subsubsection{Data summary}\label{data-summary}
+\subsection{Data and model fits for the Northern
+model}\label{data-and-model-fits-for-the-northern-model}
 
 \begin{figure}[htbp]
 \centering
@@ -2336,17 +2320,34 @@ lengths at each age. Values represent beginning-of-year growth.
 \label{fig:data_plot}}
 \end{figure}
 
+\FloatBarrier
+
 \begin{figure}[htbp]
 \centering
-\includegraphics{r4ss/plots_mod2/data_plot.png}
-\caption{Summary of data sources used in the Southern model.
-\label{fig:data_plot}}
+\includegraphics{r4ss/plots_mod1/catch5 total catch (including discards) stacked.png}
+\caption{Estimated catch history of Yellowtail Rockfish in the Northern
+model. Recreational catches in Washington are model estimates of total
+weigth converted from input catch in numbers using model estimates of
+growth and selectivity. Catches for the Commercial Fishery include
+estimated discards.\label{fig:r4ss_total_catch_N}}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod1/catch7 discards stacked plot (depends on multiple fleets).png}
+\caption{Estimated discards in the Commercial Fishery in the Northern
+model. Estimates are influenced by the data for landings, discard
+ratios, and discard length combines and depend on the estimated
+parameters controlling selectivity and
+retention.\label{fig:r4ss_discard_N}}
 \end{figure}
 
 \FloatBarrier
 
-\subsubsection{Selectivity, retention, and
-discards}\label{selectivity-retention-and-discards}
+\newpage 
+
+\subsubsection{Selectivity, retention, and discards for Northern
+model}\label{selectivity-retention-and-discards-for-northern-model}
 
 \begin{figure}[htbp]
 \centering
@@ -2362,28 +2363,23 @@ the Northern model. \label{fig:selex}}
 Northern model. \label{fig:retention}}
 \end{figure}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics{r4ss/plots_mod2/sel01_multiple_fleets_length1.png}
-\caption{Estimated selectivity by length by each fishery and survey in
-the Southern model. \label{fig:selex}}
-\end{figure}
-
-\FloatBarrier 
+\FloatBarrier
 
 \newpage
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{r4ss/plots_mod1/discard_dataCommercialTrawl.png}
+\includegraphics{r4ss/plots_mod1/discard_dataCommercial Fishery.png}
 \caption{Fit to discard fractions for the commercial fishery in the
 Northern model.\label{fig:r4ss_discard_fits}}
 \end{figure}
 
+\FloatBarrier
+
 \newpage
 
-\subsubsection{Fits to indices of
-abundance}\label{fits-to-indices-of-abundance}
+\subsubsection{Fits to indices of abundance for Northern
+model}\label{fits-to-indices-of-abundance-for-northern-model}
 
 \begin{figure}[htbp]
 \centering
@@ -2392,23 +2388,38 @@ abundance}\label{fits-to-indices-of-abundance}
 model. \label{fig:index_fits1}}
 \end{figure}
 
+\FloatBarrier
+
+\newpage
+
+\subsubsection{Length compositions for Northern
+model}\label{length-compositions-for-northern-model}
+
 \begin{figure}[htbp]
 \centering
-\includegraphics{r4ss/plots_mod2/index0_all_indices_fit.png}
-\caption{Estimated fits to the CPUE and survey indices for the Southern
-model. \label{fig:index_fits2}}
+\includegraphics{r4ss/plots_mod1/comp_lendat__page1_multi-fleet_comparison.png}
+\caption{Length compositions for all fleets in the Northern model
+(figure 1 of 2). Bubble size is proportional to proportions within each
+year. Bubble colors indicate unsexed fish (gray), females (red), and
+males (blue).\label{fig:comp_length_bubble_mod1_page1}}
 \end{figure}
 
-\FloatBarrier 
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lendat__page2_multi-fleet_comparison.png}
+\caption{Length compositions for all fleets in the Northern model
+(figure 2 of 2). \label{fig:comp_length_bubble_mod1_page2}}
+\end{figure}
 
-\subsubsection{Fits to length compositions for Northern
-model}\label{fits-to-length-compositions-for-northern-model}
+\FloatBarrier
+
+\newpage
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{./r4ss/plots_mod1/comp_lenfit_flt1mkt2_page1.png}
-\caption{\textbf{Northern model} Length comps, retained, CommercialTrawl
-(plot 1 of 2) \label{fig:mod1_1_comp_lenfit_flt1mkt2_page1}}
+\caption{\textbf{Northern model} Length comps, retained, Commercial
+Fishery (plot 1 of 2) \label{fig:mod1_1_comp_lenfit_flt1mkt2_page1}}
 \end{figure}
 
 \includegraphics{./r4ss/plots_mod1/comp_lenfit_flt1mkt2_page2.png}
@@ -2419,193 +2430,144 @@ model}\label{fits-to-length-compositions-for-northern-model}
 
             \end{center}
 
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_residsflt1mkt2_page2.png}
-
-\begin{center} 
-
-            Figure continued from previous page 
-
-            \end{center}
-
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_data_weighting_TA1.8_CommercialTrawl.png}
-\caption{\textbf{Northern model} Francis data weighting method TA1.8:
-CommercialTrawl Suggested sample size adjustment (with 95\% interval)
-for len data from CommercialTrawl: 0.9488 (0.7164\_1.4056) For more
-info, see Francis, R.I.C.C. (2011). Data weighting in statistical
-fisheries stock assessment models. Can. J. Fish. Aquat. Sci. 68:
-1124\_1138.
-\label{fig:mod1_5_comp_lenfit_data_weighting_TA1.8_CommercialTrawl}}
+\includegraphics{./r4ss/plots_mod1/comp_lenfit_data_weighting_TA1.8_Commercial Fishery.png}
+\caption{\textbf{Northern model} Mean length for Commercial Fishery with
+95\% confidence intervals based on current samples sizes. Francis data
+weighting method TA1.8: thinner intervals (with capped ends) show result
+of further adjusting sample sizes based on suggested multiplier (with
+95\% interval) for len data from Commercial Fishery: 0.9488
+(0.7215\_1.4041) For more info, see Francis, R.I.C.C. (2011). Data
+weighting in statistical fisheries stock assessment models. Can. J.
+Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod1_5_comp_lenfit_data_weighting_TA1.8_Commercial Fishery}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{./r4ss/plots_mod1/comp_lenfit_flt1mkt1.png}
-\caption{\textbf{Northern model} Length comps, discard, CommercialTrawl
-\label{fig:mod1_6_comp_lenfit_flt1mkt1}}
+\caption{\textbf{Northern model} Length comps, discard, Commercial
+Fishery \label{fig:mod1_6_comp_lenfit_flt1mkt1}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_residsflt1mkt1.png}
-\caption{\textbf{Northern model} Pearson residuals, discard,
-CommercialTrawl (max=4.18)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_7_comp_lenfit_residsflt1mkt1}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_data_weighting_TA1.8_CommercialTrawl.png}
-\caption{\textbf{Northern model} Francis data weighting method TA1.8:
-CommercialTrawl Suggested sample size adjustment (with 95\% interval)
-for len data from CommercialTrawl: 0.9488 (0.7195\_1.4058) For more
-info, see Francis, R.I.C.C. (2011). Data weighting in statistical
-fisheries stock assessment models. Can. J. Fish. Aquat. Sci. 68:
-1124\_1138.
-\label{fig:mod1_9_comp_lenfit_data_weighting_TA1.8_CommercialTrawl}}
+\includegraphics{./r4ss/plots_mod1/comp_lenfit_data_weighting_TA1.8_Commercial Fishery.png}
+\caption{\textbf{Northern model} Mean length for Commercial Fishery with
+95\% confidence intervals based on current samples sizes. Francis data
+weighting method TA1.8: thinner intervals (with capped ends) show result
+of further adjusting sample sizes based on suggested multiplier (with
+95\% interval) for len data from Commercial Fishery: 0.9488
+(0.7104\_1.3849) For more info, see Francis, R.I.C.C. (2011). Data
+weighting in statistical fisheries stock assessment models. Can. J.
+Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod1_9_comp_lenfit_data_weighting_TA1.8_Commercial Fishery}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{./r4ss/plots_mod1/comp_lenfit_flt2mkt0.png}
-\caption{\textbf{Northern model} Length comps, whole catch, HakeByCatch
-\label{fig:mod1_10_comp_lenfit_flt2mkt0}}
+\caption{\textbf{Northern model} Length comps, whole catch, At\_Sea Hake
+Fishery \label{fig:mod1_10_comp_lenfit_flt2mkt0}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_residsflt2mkt0.png}
-\caption{\textbf{Northern model} Pearson residuals, whole catch,
-HakeByCatch (max=3.78)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_11_comp_lenfit_residsflt2mkt0}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_data_weighting_TA1.8_HakeByCatch.png}
-\caption{\textbf{Northern model} Francis data weighting method TA1.8:
-HakeByCatch Suggested sample size adjustment (with 95\% interval) for
-len data from HakeByCatch: 0.9774 (0.6751\_1.6973) For more info, see
-Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock
-assessment models. Can. J. Fish. Aquat. Sci. 68: 1124\_1138.
-\label{fig:mod1_13_comp_lenfit_data_weighting_TA1.8_HakeByCatch}}
+\includegraphics{./r4ss/plots_mod1/comp_lenfit_data_weighting_TA1.8_At-Sea Hake Fishery.png}
+\caption{\textbf{Northern model} Mean length for At\_Sea Hake Fishery
+with 95\% confidence intervals based on current samples sizes. Francis
+data weighting method TA1.8: thinner intervals (with capped ends) show
+result of further adjusting sample sizes based on suggested multiplier
+(with 95\% interval) for len data from At\_Sea Hake Fishery: 0.9774
+(0.6609\_1.864) For more info, see Francis, R.I.C.C. (2011). Data
+weighting in statistical fisheries stock assessment models. Can. J.
+Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod1_13_comp_lenfit_data_weighting_TA1.8_At-Sea Hake Fishery}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{./r4ss/plots_mod1/comp_lenfit_flt3mkt2.png}
-\caption{\textbf{Northern model} Length comps, retained, RecORandCA
-\label{fig:mod1_14_comp_lenfit_flt3mkt2}}
+\caption{\textbf{Northern model} Length comps, retained, Recreational
+OR+CA \label{fig:mod1_14_comp_lenfit_flt3mkt2}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_residsflt3mkt2.png}
-\caption{\textbf{Northern model} Pearson residuals, retained, RecORandCA
-(max=3.03)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_15_comp_lenfit_residsflt3mkt2}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_data_weighting_TA1.8_RecORandCA.png}
-\caption{\textbf{Northern model} Francis data weighting method TA1.8:
-RecORandCA Suggested sample size adjustment (with 95\% interval) for len
-data from RecORandCA: 0.9761 (0.6621\_1.774) For more info, see Francis,
-R.I.C.C. (2011). Data weighting in statistical fisheries stock
-assessment models. Can. J. Fish. Aquat. Sci. 68: 1124\_1138.
-\label{fig:mod1_17_comp_lenfit_data_weighting_TA1.8_RecORandCA}}
+\includegraphics{./r4ss/plots_mod1/comp_lenfit_data_weighting_TA1.8_Recreational OR+CA.png}
+\caption{\textbf{Northern model} Mean length for Recreational OR+CA with
+95\% confidence intervals based on current samples sizes. Francis data
+weighting method TA1.8: thinner intervals (with capped ends) show result
+of further adjusting sample sizes based on suggested multiplier (with
+95\% interval) for len data from Recreational OR+CA: 0.9761
+(0.648\_1.7901) For more info, see Francis, R.I.C.C. (2011). Data
+weighting in statistical fisheries stock assessment models. Can. J.
+Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod1_17_comp_lenfit_data_weighting_TA1.8_Recreational OR+CA}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{./r4ss/plots_mod1/comp_lenfit_flt4mkt2.png}
-\caption{\textbf{Northern model} Length comps, retained, RecWA
+\caption{\textbf{Northern model} Length comps, retained, Recreational WA
 \label{fig:mod1_18_comp_lenfit_flt4mkt2}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_residsflt4mkt2.png}
-\caption{\textbf{Northern model} Pearson residuals, retained, RecWA
-(max=23.16)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_19_comp_lenfit_residsflt4mkt2}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_data_weighting_TA1.8_RecWA.png}
-\caption{\textbf{Northern model} Francis data weighting method TA1.8:
-RecWA Suggested sample size adjustment (with 95\% interval) for len data
-from RecWA: 1.0134 (0.5588\_2.3419) For more info, see Francis, R.I.C.C.
-(2011). Data weighting in statistical fisheries stock assessment models.
-Can. J. Fish. Aquat. Sci. 68: 1124\_1138.
-\label{fig:mod1_21_comp_lenfit_data_weighting_TA1.8_RecWA}}
+\includegraphics{./r4ss/plots_mod1/comp_lenfit_data_weighting_TA1.8_Recreational WA.png}
+\caption{\textbf{Northern model} Mean length for Recreational WA with
+95\% confidence intervals based on current samples sizes. Francis data
+weighting method TA1.8: thinner intervals (with capped ends) show result
+of further adjusting sample sizes based on suggested multiplier (with
+95\% interval) for len data from Recreational WA: 1.0134
+(0.5562\_2.3747) For more info, see Francis, R.I.C.C. (2011). Data
+weighting in statistical fisheries stock assessment models. Can. J.
+Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod1_21_comp_lenfit_data_weighting_TA1.8_Recreational WA}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{./r4ss/plots_mod1/comp_lenfit_flt5mkt2.png}
 \caption{\textbf{Northern model} Length comps, retained, Triennial
-\label{fig:mod1_22_comp_lenfit_flt5mkt2}}
+Survey \label{fig:mod1_22_comp_lenfit_flt5mkt2}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_residsflt5mkt2.png}
-\caption{\textbf{Northern model} Pearson residuals, retained, Triennial
-(max=1.54)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_23_comp_lenfit_residsflt5mkt2}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_data_weighting_TA1.8_Triennial.png}
-\caption{\textbf{Northern model} Francis data weighting method TA1.8:
-Triennial Suggested sample size adjustment (with 95\% interval) for len
-data from Triennial: 0.9781 (0.5131\_5.1969) For more info, see Francis,
-R.I.C.C. (2011). Data weighting in statistical fisheries stock
-assessment models. Can. J. Fish. Aquat. Sci. 68: 1124\_1138.
-\label{fig:mod1_25_comp_lenfit_data_weighting_TA1.8_Triennial}}
+\includegraphics{./r4ss/plots_mod1/comp_lenfit_data_weighting_TA1.8_Triennial Survey.png}
+\caption{\textbf{Northern model} Mean length for Triennial Survey with
+95\% confidence intervals based on current samples sizes. Francis data
+weighting method TA1.8: thinner intervals (with capped ends) show result
+of further adjusting sample sizes based on suggested multiplier (with
+95\% interval) for len data from Triennial Survey: 0.9781
+(0.528\_5.4951) For more info, see Francis, R.I.C.C. (2011). Data
+weighting in statistical fisheries stock assessment models. Can. J.
+Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod1_25_comp_lenfit_data_weighting_TA1.8_Triennial Survey}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{./r4ss/plots_mod1/comp_lenfit_flt6mkt2.png}
-\caption{\textbf{Northern model} Length comps, retained, NWFSCcombo
-\label{fig:mod1_26_comp_lenfit_flt6mkt2}}
+\caption{\textbf{Northern model} Length comps, retained, NWFSC Combo
+Survey \label{fig:mod1_26_comp_lenfit_flt6mkt2}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_residsflt6mkt2.png}
-\caption{\textbf{Northern model} Pearson residuals, retained, NWFSCcombo
-(max=2.68)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_27_comp_lenfit_residsflt6mkt2}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_data_weighting_TA1.8_NWFSCcombo.png}
-\caption{\textbf{Northern model} Francis data weighting method TA1.8:
-NWFSCcombo Suggested sample size adjustment (with 95\% interval) for len
-data from NWFSCcombo: 1.0144 (0.6332\_5.1343) For more info, see
-Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock
-assessment models. Can. J. Fish. Aquat. Sci. 68: 1124\_1138.
-\label{fig:mod1_29_comp_lenfit_data_weighting_TA1.8_NWFSCcombo}}
+\includegraphics{./r4ss/plots_mod1/comp_lenfit_data_weighting_TA1.8_NWFSC Combo Survey.png}
+\caption{\textbf{Northern model} Mean length for NWFSC Combo Survey with
+95\% confidence intervals based on current samples sizes. Francis data
+weighting method TA1.8: thinner intervals (with capped ends) show result
+of further adjusting sample sizes based on suggested multiplier (with
+95\% interval) for len data from NWFSC Combo Survey: 1.0144
+(0.6361\_4.9173) For more info, see Francis, R.I.C.C. (2011). Data
+weighting in statistical fisheries stock assessment models. Can. J.
+Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod1_29_comp_lenfit_data_weighting_TA1.8_NWFSC Combo Survey}}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -2619,300 +2581,22 @@ whole catch. \label{fig:mod1_30_comp_lenfit__aggregated_across_time}}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_sex1mkt1_multi-fleet_comparison.png}
-\caption{\textbf{Northern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, sexes combined,
-discard, comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_31_comp_lenfit_sex1mkt1_multi-fleet_comparison}}
+\includegraphics{r4ss/plots_mod1/comp_lenfit__page1_multi-fleet_comparison.png}
+\caption{Length composition Pearson residuals for all fleets in the
+Northern model (Figure 1 of 2). Closed bubbles are positive residuals
+(observed \textgreater{} expected) and open bubbles are negative
+residuals (observed \textless{} expected). Bubble colors indicate
+unsexed fish (gray), females (red), and males
+(blue).\label{fig:comp_Pearson_length_mod1_page1}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_sex1mkt2_multi-fleet_comparison.png}
-\caption{\textbf{Northern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, sexes combined,
-retained, comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_32_comp_lenfit_sex1mkt2_multi-fleet_comparison}}
+\includegraphics{r4ss/plots_mod1/comp_lenfit__page2_multi-fleet_comparison.png}
+\caption{Length composition Pearson residuals for all fleets in the
+Northern model (Figure 2 of
+2).\label{fig:comp_Pearson_length_mod1_page2}}
 \end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_sex2mkt2_multi-fleet_comparison.png}
-\caption{\textbf{Northern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, female, retained,
-comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_33_comp_lenfit_sex2mkt2_multi-fleet_comparison}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_sex2mkt1_multi-fleet_comparison.png}
-\caption{\textbf{Northern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, female, discard,
-comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_34_comp_lenfit_sex2mkt1_multi-fleet_comparison}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_sex2mkt0_multi-fleet_comparison.png}
-\caption{\textbf{Northern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, female, whole catch,
-comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_35_comp_lenfit_sex2mkt0_multi-fleet_comparison}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_sex3mkt2_multi-fleet_comparison.png}
-\caption{\textbf{Northern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, male, retained,
-comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_36_comp_lenfit_sex3mkt2_multi-fleet_comparison}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_sex3mkt1_multi-fleet_comparison.png}
-\caption{\textbf{Northern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, male, discard,
-comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_37_comp_lenfit_sex3mkt1_multi-fleet_comparison}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_sex3mkt0_multi-fleet_comparison.png}
-\caption{\textbf{Northern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, male, whole catch,
-comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_38_comp_lenfit_sex3mkt0_multi-fleet_comparison}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_gstlenfit_flt1mkt2.png}
-\caption{\textbf{Northern model} Ghost length comps, retained,
-CommercialTrawl \label{fig:mod1_39_comp_gstlenfit_flt1mkt2}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_gstlenfit_residsflt1mkt2.png}
-\caption{\textbf{Northern model} Pearson residuals, retained,
-CommercialTrawl (max=NA)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_40_comp_gstlenfit_residsflt1mkt2}}
-\end{figure}
-
-\FloatBarrier
-
-\subsubsection{Fits to length compositions for Southern
-model}\label{fits-to-length-compositions-for-southern-model}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_flt1mkt2.png}
-\caption{\textbf{Southern model} Length comps, retained,
-RecreationalCatch \label{fig:mod2_1_comp_lenfit_flt1mkt2}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_residsflt1mkt2.png}
-\caption{\textbf{Southern model} Pearson residuals, retained,
-RecreationalCatch (max=4.4)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod2_2_comp_lenfit_residsflt1mkt2}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_data_weighting_TA1.8_RecreationalCatch.png}
-\caption{\textbf{Southern model} Francis data weighting method TA1.8:
-RecreationalCatch Suggested sample size adjustment (with 95\% interval)
-for len data from RecreationalCatch: 0.9238 (0.6097\_1.7877) For more
-info, see Francis, R.I.C.C. (2011). Data weighting in statistical
-fisheries stock assessment models. Can. J. Fish. Aquat. Sci. 68:
-1124\_1138.
-\label{fig:mod2_4_comp_lenfit_data_weighting_TA1.8_RecreationalCatch}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_flt2mkt2.png}
-\caption{\textbf{Southern model} Length comps, retained, CommercialCatch
-\label{fig:mod2_5_comp_lenfit_flt2mkt2}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_residsflt2mkt2.png}
-\caption{\textbf{Southern model} Pearson residuals, retained,
-CommercialCatch (max=5.72)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod2_6_comp_lenfit_residsflt2mkt2}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_data_weighting_TA1.8_CommercialCatch.png}
-\caption{\textbf{Southern model} Francis data weighting method TA1.8:
-CommercialCatch Suggested sample size adjustment (with 95\% interval)
-for len data from CommercialCatch: 0.9835 (0.6829\_1.8164) For more
-info, see Francis, R.I.C.C. (2011). Data weighting in statistical
-fisheries stock assessment models. Can. J. Fish. Aquat. Sci. 68:
-1124\_1138.
-\label{fig:mod2_8_comp_lenfit_data_weighting_TA1.8_CommercialCatch}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_flt3mkt2.png}
-\caption{\textbf{Southern model} Length comps, retained, OnboardSurvey
-\label{fig:mod2_9_comp_lenfit_flt3mkt2}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_residsflt3mkt2.png}
-\caption{\textbf{Southern model} Pearson residuals, retained,
-OnboardSurvey (max=5.23)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod2_10_comp_lenfit_residsflt3mkt2}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_data_weighting_TA1.8_OnboardSurvey.png}
-\caption{\textbf{Southern model} Francis data weighting method TA1.8:
-OnboardSurvey Suggested sample size adjustment (with 95\% interval) for
-len data from OnboardSurvey: 0.7823 (0.5494\_1.4862) For more info, see
-Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock
-assessment models. Can. J. Fish. Aquat. Sci. 68: 1124\_1138.
-\label{fig:mod2_12_comp_lenfit_data_weighting_TA1.8_OnboardSurvey}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_flt4mkt0.png}
-\caption{\textbf{Southern model} Length comps, whole catch,
-HookAndLineSurvey \label{fig:mod2_13_comp_lenfit_flt4mkt0}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_residsflt4mkt0.png}
-\caption{\textbf{Southern model} Pearson residuals, whole catch,
-HookAndLineSurvey (max=2.92)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod2_14_comp_lenfit_residsflt4mkt0}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_data_weighting_TA1.8_HookAndLineSurvey.png}
-\caption{\textbf{Southern model} Francis data weighting method TA1.8:
-HookAndLineSurvey Suggested sample size adjustment (with 95\% interval)
-for len data from HookAndLineSurvey: 1.0633 (0.74\_2.6995) For more
-info, see Francis, R.I.C.C. (2011). Data weighting in statistical
-fisheries stock assessment models. Can. J. Fish. Aquat. Sci. 68:
-1124\_1138.
-\label{fig:mod2_16_comp_lenfit_data_weighting_TA1.8_HookAndLineSurvey}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_flt5mkt2.png}
-\caption{\textbf{Southern model} Length comps, retained, RecStudy
-\label{fig:mod2_17_comp_lenfit_flt5mkt2}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_residsflt5mkt2.png}
-\caption{\textbf{Southern model} Pearson residuals, retained, RecStudy
-(max=2.16)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod2_18_comp_lenfit_residsflt5mkt2}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_data_weighting_TA1.8_RecStudy.png}
-\caption{\textbf{Southern model} Francis data weighting method TA1.8:
-RecStudy Suggested sample size adjustment (with 95\% interval) for len
-data from RecStudy: 1.0664 (0.5599\_16.048) For more info, see Francis,
-R.I.C.C. (2011). Data weighting in statistical fisheries stock
-assessment models. Can. J. Fish. Aquat. Sci. 68: 1124\_1138.
-\label{fig:mod2_20_comp_lenfit_data_weighting_TA1.8_RecStudy}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit__aggregated_across_time.png}
-\caption{\textbf{Southern model} Length comps, aggregated across time by
-fleet. Labels `retained' and `discard' indicate discarded or retained
-sampled for each fleet. Panels without this designation represent the
-whole catch. \label{fig:mod2_21_comp_lenfit__aggregated_across_time}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_sex1mkt2_multi-fleet_comparison.png}
-\caption{\textbf{Southern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, sexes combined,
-retained, comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod2_22_comp_lenfit_sex1mkt2_multi-fleet_comparison}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_sex2mkt0_multi-fleet_comparison.png}
-\caption{\textbf{Southern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, female, whole catch,
-comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod2_23_comp_lenfit_sex2mkt0_multi-fleet_comparison}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_lenfit_sex3mkt0_multi-fleet_comparison.png}
-\caption{\textbf{Southern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, male, whole catch,
-comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod2_24_comp_lenfit_sex3mkt0_multi-fleet_comparison}}
-\end{figure}
-
-\FloatBarrier
 
 \subsubsection{Fits to age compositions for Northern
 model}\label{fits-to-age-compositions-for-northern-model}
@@ -2920,7 +2604,7 @@ model}\label{fits-to-age-compositions-for-northern-model}
 \begin{figure}[htbp]
 \centering
 \includegraphics{./r4ss/plots_mod1/comp_agefit_flt1mkt2_page1.png}
-\caption{\textbf{Northern model} Age comps, retained, CommercialTrawl
+\caption{\textbf{Northern model} Age comps, retained, Commercial Fishery
 (plot 1 of 2) \label{fig:mod1_1_comp_agefit_flt1mkt2_page1}}
 \end{figure}
 
@@ -2932,80 +2616,60 @@ model}\label{fits-to-age-compositions-for-northern-model}
 
             \end{center}
 
-\includegraphics{./r4ss/plots_mod1/comp_agefit_residsflt1mkt2_page2.png}
-
-\begin{center} 
-
-            Figure continued from previous page 
-
-            \end{center}
-
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod1/comp_agefit_data_weighting_TA1.8_CommercialTrawl.png}
-\caption{\textbf{Northern model} Francis data weighting method TA1.8:
-CommercialTrawl Suggested sample size adjustment (with 95\% interval)
-for age data from CommercialTrawl: 1.1663 (0.7554\_2.1133) For more
-info, see Francis, R.I.C.C. (2011). Data weighting in statistical
-fisheries stock assessment models. Can. J. Fish. Aquat. Sci. 68:
-1124\_1138.
-\label{fig:mod1_5_comp_agefit_data_weighting_TA1.8_CommercialTrawl}}
+\includegraphics{./r4ss/plots_mod1/comp_agefit_data_weighting_TA1.8_Commercial Fishery.png}
+\caption{\textbf{Northern model} Mean age for Commercial Fishery with
+95\% confidence intervals based on current samples sizes. Francis data
+weighting method TA1.8: thinner intervals (with capped ends) show result
+of further adjusting sample sizes based on suggested multiplier (with
+95\% interval) for age data from Commercial Fishery: 1.1663
+(0.7815\_1.9908) For more info, see Francis, R.I.C.C. (2011). Data
+weighting in statistical fisheries stock assessment models. Can. J.
+Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod1_5_comp_agefit_data_weighting_TA1.8_Commercial Fishery}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{./r4ss/plots_mod1/comp_agefit_flt4mkt2.png}
-\caption{\textbf{Northern model} Age comps, retained, RecWA
+\caption{\textbf{Northern model} Age comps, retained, Recreational WA
 \label{fig:mod1_6_comp_agefit_flt4mkt2}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod1/comp_agefit_residsflt4mkt2.png}
-\caption{\textbf{Northern model} Pearson residuals, retained, RecWA
-(max=2.68)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_7_comp_agefit_residsflt4mkt2}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_agefit_data_weighting_TA1.8_RecWA.png}
-\caption{\textbf{Northern model} Francis data weighting method TA1.8:
-RecWA Suggested sample size adjustment (with 95\% interval) for age data
-from RecWA: 1.0396 (0.6753\_3.901) For more info, see Francis, R.I.C.C.
-(2011). Data weighting in statistical fisheries stock assessment models.
-Can. J. Fish. Aquat. Sci. 68: 1124\_1138.
-\label{fig:mod1_9_comp_agefit_data_weighting_TA1.8_RecWA}}
+\includegraphics{./r4ss/plots_mod1/comp_agefit_data_weighting_TA1.8_Recreational WA.png}
+\caption{\textbf{Northern model} Mean age for Recreational WA with 95\%
+confidence intervals based on current samples sizes. Francis data
+weighting method TA1.8: thinner intervals (with capped ends) show result
+of further adjusting sample sizes based on suggested multiplier (with
+95\% interval) for age data from Recreational WA: 1.0396
+(0.6808\_3.6904) For more info, see Francis, R.I.C.C. (2011). Data
+weighting in statistical fisheries stock assessment models. Can. J.
+Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod1_9_comp_agefit_data_weighting_TA1.8_Recreational WA}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{./r4ss/plots_mod1/comp_agefit_flt5mkt2.png}
-\caption{\textbf{Northern model} Age comps, retained, Triennial
+\caption{\textbf{Northern model} Age comps, retained, Triennial Survey
 \label{fig:mod1_10_comp_agefit_flt5mkt2}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod1/comp_agefit_residsflt5mkt2.png}
-\caption{\textbf{Northern model} Pearson residuals, retained, Triennial
-(max=1.24)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_11_comp_agefit_residsflt5mkt2}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_agefit_data_weighting_TA1.8_Triennial.png}
-\caption{\textbf{Northern model} Francis data weighting method TA1.8:
-Triennial Suggested sample size adjustment (with 95\% interval) for age
-data from Triennial: 1.0944 (0.6476\_3.7348) For more info, see Francis,
-R.I.C.C. (2011). Data weighting in statistical fisheries stock
-assessment models. Can. J. Fish. Aquat. Sci. 68: 1124\_1138.
-\label{fig:mod1_13_comp_agefit_data_weighting_TA1.8_Triennial}}
+\includegraphics{./r4ss/plots_mod1/comp_agefit_data_weighting_TA1.8_Triennial Survey.png}
+\caption{\textbf{Northern model} Mean age for Triennial Survey with 95\%
+confidence intervals based on current samples sizes. Francis data
+weighting method TA1.8: thinner intervals (with capped ends) show result
+of further adjusting sample sizes based on suggested multiplier (with
+95\% interval) for age data from Triennial Survey: 1.0944
+(0.6479\_3.5223) For more info, see Francis, R.I.C.C. (2011). Data
+weighting in statistical fisheries stock assessment models. Can. J.
+Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod1_13_comp_agefit_data_weighting_TA1.8_Triennial Survey}}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -3019,41 +2683,24 @@ whole catch. \label{fig:mod1_14_comp_agefit__aggregated_across_time}}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod1/comp_agefit_sex2mkt2_multi-fleet_comparison.png}
-\caption{\textbf{Northern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, female, retained,
-comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_15_comp_agefit_sex2mkt2_multi-fleet_comparison}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_agefit_sex3mkt2_multi-fleet_comparison.png}
-\caption{\textbf{Northern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, male, retained,
-comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_16_comp_agefit_sex3mkt2_multi-fleet_comparison}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
 \includegraphics{./r4ss/plots_mod1/comp_gstagefit_flt6mkt2.png}
-\caption{\textbf{Northern model} Ghost age comps, retained, NWFSCcombo
-\label{fig:mod1_17_comp_gstagefit_flt6mkt2}}
+\caption{\textbf{Northern model} Ghost age comps, retained, NWFSC Combo
+Survey \label{fig:mod1_16_comp_gstagefit_flt6mkt2}}
 \end{figure}
+
+\FloatBarrier
+
+\newpage
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod1/comp_gstagefit_residsflt6mkt2.png}
-\caption{\textbf{Northern model} Pearson residuals, retained, NWFSCcombo
-(max=NA)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod1_18_comp_gstagefit_residsflt6mkt2}}
+\includegraphics{r4ss/plots_mod1/comp_agefit__multi-fleet_comparison.png}
+\caption{Age composition Pearson residuals for all fleets in the
+Northern model. Closed bubbles are positive residuals (observed
+\textgreater{} expected) and open bubbles are negative residuals
+(observed \textless{} expected). Bubble colors indicate unsexed fish
+(gray), females (red), and males
+(blue).\label{fig:comp_Pearson_age_mod1}}
 \end{figure}
 
 \FloatBarrier
@@ -3066,37 +2713,24 @@ model}\label{fits-to-conditional-age-at-length-compositions-for-northern-model}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod1/comp_condAALfit_residsflt6mkt2_page1.png}
-\caption{\textbf{Northern model} Pearson residuals, retained, NWFSCcombo
-(max=8.29) (plot 1 of 2)
-\label{fig:mod1_1_comp_condAALfit_residsflt6mkt2_page1}}
-\end{figure}
-
-\includegraphics{./r4ss/plots_mod1/comp_condAALfit_residsflt6mkt2_page2.png}
-
-\begin{center} 
-
-            Figure continued from previous page 
-
-            \end{center}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_condAALfit_data_weighting_TA1.8_condAgeNWFSCcombo.png}
-\caption{\textbf{Northern model} Francis data weighting method TA1.8 for
-conditional age \url{data:NWFSCcombo} Suggested sample size
-adjustment(with 95\% interval) forconditional age\_at\_length data from
-NWFSCcombo: 1.0265 (0.6887\_2.3764) For more info, see Francis, R.I.C.C.
+\includegraphics{./r4ss/plots_mod1/comp_condAALfit_data_weighting_TA1.8_condAgeNWFSC Combo Survey.png}
+\caption{\textbf{Northern model} Mean age from conditional data
+(aggregated across length bins) for NWFSC Combo Survey with 95\%
+confidence intervals based on current samples sizes. Francis data
+weighting method TA1.8: thinner intervals (with capped ends) show result
+of further adjusting sample sizes based on suggested multiplier (with
+95\% interval) for conditional age\_at\_length data from NWFSC Combo
+Survey: 1.0265 (0.6813\_2.4963) For more info, see Francis, R.I.C.C.
 (2011). Data weighting in statistical fisheries stock assessment models.
 Can. J. Fish. Aquat. Sci. 68: 1124\_1138.
-\label{fig:mod1_3_comp_condAALfit_data_weighting_TA1.8_condAgeNWFSCcombo}}
+\label{fig:mod1_3_comp_condAALfit_data_weighting_TA1.8_condAgeNWFSC Combo Survey}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{./r4ss/plots_mod1/comp_condAALfit_Andre_plotsflt6mkt2_page1.png}
-\caption{\textbf{Northern model} Conditional AAL plot, retained,
-NWFSCcombo (plot 1 of 5) These plots show mean age and std. dev. in
+\caption{\textbf{Northern model} Conditional AAL plot, retained, NWFSC
+Combo Survey (plot 1 of 5) These plots show mean age and std. dev. in
 conditional AAL. Left plots are mean AAL by size\_class (obs. and pred.)
 with 90\% CIs based on adding 1.64 SE of mean to the data. Right plots
 in each pair are SE of mean AAL (obs. and pred.) with 90\% CIs based on
@@ -3140,63 +2774,327 @@ the chi\_square distribution.
 
 \newpage
 
-\subsubsection{Fits to age compositions for Southern
-model}\label{fits-to-age-compositions-for-southern-model}
+\subsection{Model results for Northern
+model}\label{model-results-for-northern-model}
+
+\subsubsection{Base model results for Northern
+model}\label{base-model-results-for-northern-model}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod1/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png}
+\caption{Estimated time-series of spawning output for Northern model.
+\label{fig:ssb}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod1/ts1_Total_biomass_(mt).png}
+\caption{Estimated time-series of total biomass for Northern model.
+\label{fig:total_bio}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png}
+\caption{Estimated time-series of relative biomass for Northern model.
+\label{fig:depl}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png}
+\caption{Estimated time-series of recruitment for the Northern model.
+\label{fig:recruits1}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod1/recdevs2_withbars.png}
+\caption{Estimated time-series of recruitment deviations for the
+Northern model. \label{fig:recdevs1}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod1/SR_curve2.png}
+\caption{Estimated recruitment (red circles) for the Northern model
+relative to the stock-recruit relationship (black line). The green line
+shows the effect of the bias correction for the lognormal distribution
+\label{fig:stock_recruit_curve}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{Figures/historical_assessment_timeseries.png}
+\caption{Comparison of time series of age 4+ biomass for Yellowtail
+Rockfish across past assessments. \label{fig:assessment_history}}
+\end{figure}
+
+\FloatBarrier
+
+\newpage
+
+\subsection{Data and model fits for Southern
+model}\label{data-and-model-fits-for-southern-model}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod2/data_plot.png}
+\caption{Summary of data sources used in the Southern model.
+\label{fig:data_plot}}
+\end{figure}
+
+\FloatBarrier
+
+\newpage
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod2/catch2 landings stacked.png}
+\caption{Estimated catch history of Yellowtail Rockfish in the Southern
+model. \label{fig:r4ss_catch2_S}}
+\end{figure}
+
+\FloatBarrier
+
+\newpage 
+
+\subsubsection{Selectivity, retention, and discards for Southern
+model}\label{selectivity-retention-and-discards-for-southern-model}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod2/sel01_multiple_fleets_length1.png}
+\caption{Estimated selectivity by length by each fishery and survey in
+the Southern model. \label{fig:selex}}
+\end{figure}
+
+\FloatBarrier 
+
+\newpage
+
+\subsubsection{Fits to indices of abundance for Southern
+model}\label{fits-to-indices-of-abundance-for-southern-model}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod2/index0_all_indices_fit.png}
+\caption{Estimated fits to the CPUE and survey indices for the Southern
+model. \label{fig:index_fits2}}
+\end{figure}
+
+\FloatBarrier 
+
+\newpage
+
+\subsubsection{Length compositions for Southern
+model}\label{length-compositions-for-southern-model}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod2/comp_lendat__multi-fleet_comparison.png}
+\caption{Length compositions for all fleets in the Southern model.
+Bubble size is proportional to proportions within each year.
+\label{fig:comp_length_bubble_mod2}}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{./r4ss/plots_mod2/comp_lenfit_flt1mkt2.png}
+\caption{\textbf{Southern model} Length comps, retained, Recreational
+Fishery \label{fig:mod2_1_comp_lenfit_flt1mkt2}}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{./r4ss/plots_mod2/comp_lenfit_data_weighting_TA1.8_Recreational Fishery.png}
+\caption{\textbf{Southern model} Mean length for Recreational Fishery
+with 95\% confidence intervals based on current samples sizes. Francis
+data weighting method TA1.8: thinner intervals (with capped ends) show
+result of further adjusting sample sizes based on suggested multiplier
+(with 95\% interval) for len data from Recreational Fishery: 0.9238
+(0.6119\_1.7256) For more info, see Francis, R.I.C.C. (2011). Data
+weighting in statistical fisheries stock assessment models. Can. J.
+Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod2_4_comp_lenfit_data_weighting_TA1.8_Recreational Fishery}}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{./r4ss/plots_mod2/comp_lenfit_flt2mkt2.png}
+\caption{\textbf{Southern model} Length comps, retained, Commercial
+Fishery \label{fig:mod2_5_comp_lenfit_flt2mkt2}}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{./r4ss/plots_mod2/comp_lenfit_data_weighting_TA1.8_Commercial Fishery.png}
+\caption{\textbf{Southern model} Mean length for Commercial Fishery with
+95\% confidence intervals based on current samples sizes. Francis data
+weighting method TA1.8: thinner intervals (with capped ends) show result
+of further adjusting sample sizes based on suggested multiplier (with
+95\% interval) for len data from Commercial Fishery: 0.9835
+(0.6883\_1.939) For more info, see Francis, R.I.C.C. (2011). Data
+weighting in statistical fisheries stock assessment models. Can. J.
+Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod2_8_comp_lenfit_data_weighting_TA1.8_Commercial Fishery}}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{./r4ss/plots_mod2/comp_lenfit_flt3mkt2.png}
+\caption{\textbf{Southern model} Length comps, retained, Recreational
+Onboard Survey \label{fig:mod2_9_comp_lenfit_flt3mkt2}}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{./r4ss/plots_mod2/comp_lenfit_data_weighting_TA1.8_Recreational Onboard Survey.png}
+\caption{\textbf{Southern model} Mean length for Recreational Onboard
+Survey with 95\% confidence intervals based on current samples sizes.
+Francis data weighting method TA1.8: thinner intervals (with capped
+ends) show result of further adjusting sample sizes based on suggested
+multiplier (with 95\% interval) for len data from Recreational Onboard
+Survey: 0.7823 (0.5555\_1.5327) For more info, see Francis, R.I.C.C.
+(2011). Data weighting in statistical fisheries stock assessment models.
+Can. J. Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod2_12_comp_lenfit_data_weighting_TA1.8_Recreational Onboard Survey}}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{./r4ss/plots_mod2/comp_lenfit_flt4mkt0.png}
+\caption{\textbf{Southern model} Length comps, whole catch, Hook \& Line
+Survey \label{fig:mod2_13_comp_lenfit_flt4mkt0}}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{./r4ss/plots_mod2/comp_lenfit_data_weighting_TA1.8_Hook \& Line Survey.png}
+\caption{\textbf{Southern model} Mean length for Hook \& Line Survey
+with 95\% confidence intervals based on current samples sizes. Francis
+data weighting method TA1.8: thinner intervals (with capped ends) show
+result of further adjusting sample sizes based on suggested multiplier
+(with 95\% interval) for len data from Hook \& Line Survey: 1.0633
+(0.7447\_2.5263) For more info, see Francis, R.I.C.C. (2011). Data
+weighting in statistical fisheries stock assessment models. Can. J.
+Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod2_16_comp_lenfit_data_weighting_TA1.8_Hook & Line Survey}}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{./r4ss/plots_mod2/comp_lenfit_flt5mkt2.png}
+\caption{\textbf{Southern model} Length comps, retained, Recreational
+Study \label{fig:mod2_17_comp_lenfit_flt5mkt2}}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{./r4ss/plots_mod2/comp_lenfit_data_weighting_TA1.8_Recreational Study.png}
+\caption{\textbf{Southern model} Mean length for Recreational Study with
+95\% confidence intervals based on current samples sizes. Francis data
+weighting method TA1.8: thinner intervals (with capped ends) show result
+of further adjusting sample sizes based on suggested multiplier (with
+95\% interval) for len data from Recreational Study: 1.0664
+(0.566\_16.055) For more info, see Francis, R.I.C.C. (2011). Data
+weighting in statistical fisheries stock assessment models. Can. J.
+Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod2_20_comp_lenfit_data_weighting_TA1.8_Recreational Study}}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{./r4ss/plots_mod2/comp_lenfit__aggregated_across_time.png}
+\caption{\textbf{Southern model} Length comps, aggregated across time by
+fleet. Labels `retained' and `discard' indicate discarded or retained
+sampled for each fleet. Panels without this designation represent the
+whole catch. \label{fig:mod2_21_comp_lenfit__aggregated_across_time}}
+\end{figure}
+
+\FloatBarrier
+
+\newpage
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod2/comp_lenfit__multi-fleet_comparison.png}
+\caption{Length composition Pearson residuals for all fleets in the
+Southern model. Closed bubbles are positive residuals (observed
+\textgreater{} expected) and open bubbles are negative residuals
+(observed \textless{} expected). \label{fig:comp_Pearson_length_mod2}}
+\end{figure}
+
+\FloatBarrier
+
+\newpage
+
+\subsubsection{Age compositions for Southern
+model}\label{age-compositions-for-southern-model}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod2/comp_agedat__multi-fleet_comparison.png}
+\caption{Age compositions for all fleets in the Southern model. Bubble
+size is proportional to proportions within each year.
+\label{fig:comp_age_bubble_mod2}}
+\end{figure}
+
+\FloatBarrier
+
+\newpage
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{./r4ss/plots_mod2/comp_agefit_flt1mkt2.png}
-\caption{\textbf{Southern model} Age comps, retained, RecreationalCatch
-\label{fig:mod2_1_comp_agefit_flt1mkt2}}
+\caption{\textbf{Southern model} Age comps, retained, Recreational
+Fishery \label{fig:mod2_1_comp_agefit_flt1mkt2}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod2/comp_agefit_residsflt1mkt2.png}
-\caption{\textbf{Southern model} Pearson residuals, retained,
-RecreationalCatch (max=1.36)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod2_2_comp_agefit_residsflt1mkt2}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_agefit_data_weighting_TA1.8_RecreationalCatch.png}
-\caption{\textbf{Southern model} Francis data weighting method TA1.8:
-RecreationalCatch Suggested sample size adjustment (with 95\% interval)
-for age data from RecreationalCatch: 0.9648 (0.5135\_28.2193) For more
-info, see Francis, R.I.C.C. (2011). Data weighting in statistical
-fisheries stock assessment models. Can. J. Fish. Aquat. Sci. 68:
-1124\_1138.
-\label{fig:mod2_4_comp_agefit_data_weighting_TA1.8_RecreationalCatch}}
+\includegraphics{./r4ss/plots_mod2/comp_agefit_data_weighting_TA1.8_Recreational Fishery.png}
+\caption{\textbf{Southern model} Mean age for Recreational Fishery with
+95\% confidence intervals based on current samples sizes. Francis data
+weighting method TA1.8: thinner intervals (with capped ends) show result
+of further adjusting sample sizes based on suggested multiplier (with
+95\% interval) for age data from Recreational Fishery: 0.9648
+(0.6595\_28.2193) For more info, see Francis, R.I.C.C. (2011). Data
+weighting in statistical fisheries stock assessment models. Can. J.
+Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod2_4_comp_agefit_data_weighting_TA1.8_Recreational Fishery}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{./r4ss/plots_mod2/comp_agefit_flt4mkt0.png}
-\caption{\textbf{Southern model} Age comps, whole catch,
-HookAndLineSurvey \label{fig:mod2_5_comp_agefit_flt4mkt0}}
+\caption{\textbf{Southern model} Age comps, whole catch, Hook \& Line
+Survey \label{fig:mod2_5_comp_agefit_flt4mkt0}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod2/comp_agefit_residsflt4mkt0.png}
-\caption{\textbf{Southern model} Pearson residuals, whole catch,
-HookAndLineSurvey (max=4.02)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod2_6_comp_agefit_residsflt4mkt0}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_agefit_data_weighting_TA1.8_HookAndLineSurvey.png}
-\caption{\textbf{Southern model} Francis data weighting method TA1.8:
-HookAndLineSurvey Too few points to calculate adjustments For more info,
-see Francis, R.I.C.C. (2011). Data weighting in statistical fisheries
-stock assessment models. Can. J. Fish. Aquat. Sci. 68: 1124\_1138.
-\label{fig:mod2_8_comp_agefit_data_weighting_TA1.8_HookAndLineSurvey}}
+\includegraphics{./r4ss/plots_mod2/comp_agefit_data_weighting_TA1.8_Hook \& Line Survey.png}
+\caption{\textbf{Southern model} Mean age for Hook \& Line Survey with
+95\% confidence intervals based on current samples sizes. Francis data
+weighting method TA1.8: too few points to calculate adjustments. For
+more info, see Francis, R.I.C.C. (2011). Data weighting in statistical
+fisheries stock assessment models. Can. J. Fish. Aquat. Sci. 68:
+1124\_1138.
+\label{fig:mod2_8_comp_agefit_data_weighting_TA1.8_Hook & Line Survey}}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -3210,63 +3108,18 @@ whole catch. \label{fig:mod2_9_comp_agefit__aggregated_across_time}}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod2/comp_agefit_sex2mkt2_multi-fleet_comparison.png}
-\caption{\textbf{Southern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, female, retained,
-comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod2_10_comp_agefit_sex2mkt2_multi-fleet_comparison}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_agefit_sex2mkt0_multi-fleet_comparison.png}
-\caption{\textbf{Southern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, female, whole catch,
-comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod2_11_comp_agefit_sex2mkt0_multi-fleet_comparison}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_agefit_sex3mkt2_multi-fleet_comparison.png}
-\caption{\textbf{Southern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, male, retained,
-comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod2_12_comp_agefit_sex3mkt2_multi-fleet_comparison}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_agefit_sex3mkt0_multi-fleet_comparison.png}
-\caption{\textbf{Southern model} Note: this plot doesn't seem to be
-working right for some models. Pearson residuals, male, whole catch,
-comparing across fleets\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod2_13_comp_agefit_sex3mkt0_multi-fleet_comparison}}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
 \includegraphics{./r4ss/plots_mod2/comp_gstagefit_flt2mkt2.png}
-\caption{\textbf{Southern model} Ghost age comps, retained,
-CommercialCatch \label{fig:mod2_14_comp_gstagefit_flt2mkt2}}
+\caption{\textbf{Southern model} Ghost age comps, retained, Commercial
+Fishery \label{fig:mod2_11_comp_gstagefit_flt2mkt2}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod2/comp_gstagefit_residsflt2mkt2.png}
-\caption{\textbf{Southern model} Pearson residuals, retained,
-CommercialCatch (max=NA)\\
-Closed bubbles are positive residuals (observed \textgreater{} expected)
-and open bubbles are negative residuals (observed \textless{} expected).
-\label{fig:mod2_15_comp_gstagefit_residsflt2mkt2}}
+\includegraphics{r4ss/plots_mod2/comp_agefit__multi-fleet_comparison.png}
+\caption{Age composition Pearson residuals for all fleets in the
+Southern model. Closed bubbles are positive residuals (observed
+\textgreater{} expected) and open bubbles are negative residuals
+(observed \textless{} expected). \label{fig:comp_Pearson_age_mod2}}
 \end{figure}
 
 \FloatBarrier
@@ -3279,49 +3132,28 @@ model}\label{fits-to-conditional-age-at-length-compositions-for-southern-model}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./r4ss/plots_mod2/comp_condAALfit_residsflt2mkt2_page1.png}
-\caption{\textbf{Southern model} Pearson residuals, retained,
-CommercialCatch (max=10.37) (plot 1 of 3)
-\label{fig:mod2_1_comp_condAALfit_residsflt2mkt2_page1}}
-\end{figure}
-
-\includegraphics{./r4ss/plots_mod2/comp_condAALfit_residsflt2mkt2_page2.png}
-
-\begin{center} 
-
-            Figure continued from previous page 
-
-            \end{center}
-
-\includegraphics{./r4ss/plots_mod2/comp_condAALfit_residsflt2mkt2_page3.png}
-
-\begin{center} 
-
-            Figure continued from previous page 
-
-            \end{center}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{./r4ss/plots_mod2/comp_condAALfit_data_weighting_TA1.8_condAgeCommercialCatch.png}
-\caption{\textbf{Southern model} Francis data weighting method TA1.8 for
-conditional age \url{data:CommercialCatch} Suggested sample size
-adjustment(with 95\% interval) forconditional age\_at\_length data from
-CommercialCatch: 0.9816 (0.6227\_2.2389) For more info, see Francis,
-R.I.C.C. (2011). Data weighting in statistical fisheries stock
-assessment models. Can. J. Fish. Aquat. Sci. 68: 1124\_1138.
-\label{fig:mod2_4_comp_condAALfit_data_weighting_TA1.8_condAgeCommercialCatch}}
+\includegraphics{./r4ss/plots_mod2/comp_condAALfit_data_weighting_TA1.8_condAgeCommercial Fishery.png}
+\caption{\textbf{Southern model} Mean age from conditional data
+(aggregated across length bins) for Commercial Fishery with 95\%
+confidence intervals based on current samples sizes. Francis data
+weighting method TA1.8: thinner intervals (with capped ends) show result
+of further adjusting sample sizes based on suggested multiplier (with
+95\% interval) for conditional age\_at\_length data from Commercial
+Fishery: 0.9816 (0.6742\_2.1384) For more info, see Francis, R.I.C.C.
+(2011). Data weighting in statistical fisheries stock assessment models.
+Can. J. Fish. Aquat. Sci. 68: 1124\_1138.
+\label{fig:mod2_4_comp_condAALfit_data_weighting_TA1.8_condAgeCommercial Fishery}}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{./r4ss/plots_mod2/comp_condAALfit_Andre_plotsflt2mkt2_page1.png}
 \caption{\textbf{Southern model} Conditional AAL plot, retained,
-CommercialCatch (plot 1 of 8) These plots show mean age and std. dev. in
-conditional AAL. Left plots are mean AAL by size\_class (obs. and pred.)
-with 90\% CIs based on adding 1.64 SE of mean to the data. Right plots
-in each pair are SE of mean AAL (obs. and pred.) with 90\% CIs based on
-the chi\_square distribution.
+Commercial Fishery (plot 1 of 8) These plots show mean age and std. dev.
+in conditional AAL. Left plots are mean AAL by size\_class (obs. and
+pred.) with 90\% CIs based on adding 1.64 SE of mean to the data. Right
+plots in each pair are SE of mean AAL (obs. and pred.) with 90\% CIs
+based on the chi\_square distribution.
 \label{fig:mod2_5_comp_condAALfit_Andre_plotsflt2mkt2_page1}}
 \end{figure}
 
@@ -3385,43 +3217,64 @@ the chi\_square distribution.
 
 \newpage
 
-\subsection{Model results}\label{model-results}
+\subsection{Model results for Southern
+model}\label{model-results-for-southern-model}
 
-\subsubsection{Base model results}\label{base-model-results}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png}
-\caption{Estimated time-series of recruitment for the Northern model.
-\label{fig:recruits1}}
-\end{figure}
+\subsubsection{Base model results for Southern
+model}\label{base-model-results-for-southern-model}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{r4ss/plots_mod1/recdevs2_withbars.png}
-\caption{Estimated time-series of recruitment deviations for the
-Northern model. \label{fig:recdevs1}}
+\includegraphics{r4ss/plots_mod2/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png}
+\caption{Estimated time-series of spawning output for Southern model.
+\label{fig:ssb}}
 \end{figure}
 
 \FloatBarrier
 
-\newpage
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod2/ts1_Total_biomass_(mt).png}
+\caption{Estimated time-series of total biomass for Southern model.
+\label{fig:total_bio}}
+\end{figure}
 
-\subsubsection{Base model results for Northern
-model}\label{base-model-results-for-northern-model}
+\FloatBarrier
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod2/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png}
+\caption{Estimated time-series of relative biomass for Southern model.
+\label{fig:depl}}
+\end{figure}
+
+\FloatBarrier
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{r4ss/plots_mod2/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png}
 \caption{Estimated time-series of recruitment for the Southern model.
-\label{fig:recruits2}}
+\label{fig:recruits1}}
 \end{figure}
+
+\FloatBarrier
 
 \begin{figure}[htbp]
 \centering
 \includegraphics{r4ss/plots_mod2/recdevs2_withbars.png}
 \caption{Estimated time-series of recruitment deviations for the
-Southern model. \label{fig:recdevs2}}
+Southern model. \label{fig:recdevs1}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{r4ss/plots_mod2/SR_curve2.png}
+\caption{Estimated recruitment (red circles) for the Southern model
+relative to the stock-recruit relationship (black line). The green line
+shows the effect of the bias correction for the lognormal distribution
+\label{fig:stock_recruit_curve}}
 \end{figure}
 
 \FloatBarrier
