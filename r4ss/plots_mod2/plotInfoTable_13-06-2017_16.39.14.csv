@@ -1,0 +1,240 @@
+"file","caption","category","png_time","StartTime"
+"bio1_sizeatage.png","Length at age in the beginning of the year (or season) in the ending year of the model. Shaded area indicates 95% distribution of length at age around estimated growth curve.","Bio",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"bio2_sizeatage_plus_CV_and_SD.png","Length at age (top-left panel) with CV (thick line) and SD (thin line) of length at age shown in top-right and lower-left panels","Bio",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"bio3_sizeatage_plus_WT_and_MAT.png","Length at age (top-left panel) with weight (thick line) and maturity (thin line) shown in top-right and lower-left panels","Bio",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"bio5_weightatsize.png","Weight-length relationship for females","Bio",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"bio6_maturity.png","Maturity at length","Bio",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"bio8_fecundity_wt.png","Fecundity as a function of weight","Bio",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"bio9_fecundity_len.png","Fecundity as a function of length","Bio",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"bio10_spawningoutput.png","Spawning output at length","Bio",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel01_multiple_fleets_length1.png","Selectivity at length for multiple fleets.","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel02_multiple_fleets_age1.png","Selectivity at age for multiple fleets.","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel02_multiple_fleets_age2.png","Selectivity at age derived from selectivity at length for multiple fleets.","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel09_len_flt1sex1.png","Female ending year selectivity for RecreationalCatch","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel09_len_flt1sex2.png","Male ending year selectivity for RecreationalCatch","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel09_len_flt2sex1.png","Female ending year selectivity for CommercialCatch","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel09_len_flt2sex2.png","Male ending year selectivity for CommercialCatch","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel09_len_flt3sex1.png","Female ending year selectivity for OnboardSurvey","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel09_len_flt3sex2.png","Male ending year selectivity for OnboardSurvey","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel09_len_flt4sex1.png","Female ending year selectivity for HookAndLineSurvey","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel09_len_flt4sex2.png","Male ending year selectivity for HookAndLineSurvey","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel09_len_flt5sex1.png","Female ending year selectivity for RecStudy","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel09_len_flt5sex2.png","Male ending year selectivity for RecStudy","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel21_agelen_contour_flt1sex1.png","Female ending year selectivity and growth for RecreationalCatch","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel21_agelen_contour_flt1sex2.png","Male ending year selectivity and growth for RecreationalCatch","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel21_agelen_contour_flt2sex1.png","Female ending year selectivity and growth for CommercialCatch","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel21_agelen_contour_flt2sex2.png","Male ending year selectivity and growth for CommercialCatch","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel21_agelen_contour_flt3sex1.png","Female ending year selectivity and growth for OnboardSurvey","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel21_agelen_contour_flt3sex2.png","Male ending year selectivity and growth for OnboardSurvey","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel21_agelen_contour_flt4sex1.png","Female ending year selectivity and growth for HookAndLineSurvey","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel21_agelen_contour_flt4sex2.png","Male ending year selectivity and growth for HookAndLineSurvey","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel21_agelen_contour_flt5sex1.png","Female ending year selectivity and growth for RecStudy","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"sel21_agelen_contour_flt5sex2.png","Male ending year selectivity and growth for RecStudy","Sel",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"ts1_Total_biomass_(mt).png","Total biomass (mt)","Timeseries",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"ts4_Summary_biomass_(mt).png","Summary biomass (mt)","Timeseries",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"ts7_Spawning_output.png","Spawning output","Timeseries",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png","Spawning output with ~95% asymptotic intervals","Timeseries",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"ts9_Spawning_depletion.png","Spawning depletion","Timeseries",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png","Spawning depletion with ~95% asymptotic intervals","Timeseries",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"ts11_Age-0_recruits_(1000s).png","Age-0 recruits (1,000s)","Timeseries",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png","Age-0 recruits (1,000s) with ~95% asymptotic intervals","Timeseries",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"ts_summaryF.png","Summary F (definition of F depends on setting in starter.ss)","Timeseries",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"recdevs1_points.png","Recruitment deviations","RecDev",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"recdevs2_withbars.png","Recruitment deviations with 95% intervals","RecDev",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"recdevs3_varcheck.png","Recruitment deviations variance check.<br> See later figure of transformed variance values for comparison with bias adjustment settings in the model.","RecDev",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"recruit_fit_bias_adjust.png","Points are transformed variances. Red line shows current settings forfor bias adjustment specified in control file.Blue line shows least squares estimate of alternative bias adjustmentrelationship for recruitment deviations (which may or may not be animprovement. For more information, see<br> 
+<blockquote>Methot, R.D. and Taylor, I.G., 2011. Adjusting for bias due to variability of estimated recruitments in fishery assessment models. <i>Can. J. Fish. Aquat. Sci.</i>, 68:1744-1760.</blockquote><br> 
+Estimated alternative inputs to SS control file associated with blue line in figure: 
+<pre>1962.1   #_last_early_yr_nobias_adj_in_MPD 
+1973.0   #_first_yr_fullbias_adj_in_MPD 
+2003.6   #_last_yr_fullbias_adj_in_MPD 
+2009.3   #_first_recent_yr_nobias_adj_in_MPD 
+0.742   #_max_bias_adj_in_MPD (1.0 to mimic pre-2009 models)   </pre>","RecDev",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"SR_curve.png","Spawner-recruit curve","S-R",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"SR_curve2.png","Spawner-recruit curve with labels on first, last, and years with (log) deviations > 0.5","S-R",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"catch1 landings.png","landings","Catch",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"catch2 landings stacked.png","landings stacked","Catch",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"catch9 harvest rate.png","harvest rate","Catch",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"SPR1_series.png","Timeseries of SPR","SPR",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"SPR2_minusSPRseries.png","Timeseries of 1-SPR","SPR",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"SPR3_ratiointerval.png","Timeseries of SPR ratio","SPR",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"SPR4_phase.png","Phase plot of biomass ratio vs. SPR ratio","SPR",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index1_cpuedata_RecreationalCatch.png","Index data for RecreationalCatch. Lines indicate 95% uncertainty interval around index values. Thicker lines (if present) indicate input uncertainty before addition of estimated additional uncertainty parameter.","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index2_cpuefit_RecreationalCatch.png","Fit to index data for RecreationalCatch. Lines indicate 95% uncertainty interval around index values. Thicker lines (if present) indicate input uncertainty before addition of estimated additional uncertainty parameter.","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index3_cpuecheck_RecreationalCatch.png","Observed vs. expected index values with smoother for RecreationalCatch","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index4_logcpuedata_RecreationalCatch.png","Log index data for RecreationalCatch. Lines indicate 95% uncertainty interval around index values. Thicker lines (if present) indicate input uncertainty before addition of estimated additional uncertainty parameter.","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index5_logcpuefit_RecreationalCatch.png","Fit to log index data on log scale for RecreationalCatch. Lines indicate 95% uncertainty interval around index values. Thicker lines (if present) indicate input uncertainty before addition of estimated additional uncertainty parameter.","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index6_logcpuecheck_RecreationalCatch.png","log(observed) vs. log(expected) index values with smoother for RecreationalCatch","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index1_cpuedata_OnboardSurvey.png","Index data for OnboardSurvey. Lines indicate 95% uncertainty interval around index values. Thicker lines (if present) indicate input uncertainty before addition of estimated additional uncertainty parameter.","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index2_cpuefit_OnboardSurvey.png","Fit to index data for OnboardSurvey. Lines indicate 95% uncertainty interval around index values. Thicker lines (if present) indicate input uncertainty before addition of estimated additional uncertainty parameter.","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index3_cpuecheck_OnboardSurvey.png","Observed vs. expected index values with smoother for OnboardSurvey","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index4_logcpuedata_OnboardSurvey.png","Log index data for OnboardSurvey. Lines indicate 95% uncertainty interval around index values. Thicker lines (if present) indicate input uncertainty before addition of estimated additional uncertainty parameter.","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index5_logcpuefit_OnboardSurvey.png","Fit to log index data on log scale for OnboardSurvey. Lines indicate 95% uncertainty interval around index values. Thicker lines (if present) indicate input uncertainty before addition of estimated additional uncertainty parameter.","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index6_logcpuecheck_OnboardSurvey.png","log(observed) vs. log(expected) index values with smoother for OnboardSurvey","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index1_cpuedata_HookAndLineSurvey.png","Index data for HookAndLineSurvey. Lines indicate 95% uncertainty interval around index values. Thicker lines (if present) indicate input uncertainty before addition of estimated additional uncertainty parameter.","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index2_cpuefit_HookAndLineSurvey.png","Fit to index data for HookAndLineSurvey. Lines indicate 95% uncertainty interval around index values. Thicker lines (if present) indicate input uncertainty before addition of estimated additional uncertainty parameter.","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index3_cpuecheck_HookAndLineSurvey.png","Observed vs. expected index values with smoother for HookAndLineSurvey","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index4_logcpuedata_HookAndLineSurvey.png","Log index data for HookAndLineSurvey. Lines indicate 95% uncertainty interval around index values. Thicker lines (if present) indicate input uncertainty before addition of estimated additional uncertainty parameter.","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index5_logcpuefit_HookAndLineSurvey.png","Fit to log index data on log scale for HookAndLineSurvey. Lines indicate 95% uncertainty interval around index values. Thicker lines (if present) indicate input uncertainty before addition of estimated additional uncertainty parameter.","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index6_logcpuecheck_HookAndLineSurvey.png","log(observed) vs. log(expected) index values with smoother for HookAndLineSurvey","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"index9_standcpueall.png","Standardized indices overlaid","Index",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers1_sex1_beg.png","Beginning of year expected numbers at age of females in (max ~ 61.8 million)","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers1_sex2_beg.png","Beginning of year expected numbers at age of males in (max ~ 61.8 million)","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers2_meanage_beg.png","Beginning of year mean age in the population","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers1_sex1_mid.png","Middle of year expected numbers at age of females in (max ~ 56.5 million)","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers1_sex2_mid.png","Middle of year expected numbers at age of males in (max ~ 57.8 million)","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers2_meanage_mid.png","Middle of year mean age in the population","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers3_frac_female_age.png","Fraction female in numbers at age","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers6_len_sex1.png","Beginning of year expected numbers at length of females in (max ~ 61.8 million)","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers6_len_sex2.png","Beginning of year expected numbers at length of males in (max ~ 61.8 million)","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers7_meanlen.png","Beginning of year mean length (cm) in the population","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers6_len_sex1.png","Middle of year expected numbers at length of females in (max ~ 25.8 million)","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers6_len_sex2.png","Middle of year expected numbers at length of males in (max ~ 26.4 million)","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers7_meanlen.png","Middle of year mean length (cm) in the population","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers8_frac_female_len.png","Fraction female in numbers at length","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers4_equilagecomp.png","Equilibrium age distribution","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers5_ageerrorSD.png","Ageing imprecision: SD of observed age (yr)","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers5_ageerror_matrix_1.png","Ageing imprecision: matrix for method 1 <br>(White = 1.0, Orange = 0.5, Red = 0.0)","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers5_ageerror_matrix_2.png","Ageing imprecision: matrix for method 2 <br>(White = 1.0, Orange = 0.5, Red = 0.0)","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers10_ageerror_matrix_1.png","Distribution of observed age at true age 
+ for ageing error type 1","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"numbers10_ageerror_matrix_2.png","Distribution of observed age at true age 
+ for ageing error type 2","Numbers",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_flt1mkt2.png","Length comp data, retained, RecreationalCatch","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_bubflt1mkt2.png","Length comp data, retained, RecreationalCatch (max=0.36)","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_data_weighting_TA1.8_RecreationalCatch.png","Francis data weighting method TA1.8: RecreationalCatch <br> Suggested sample size adjustment (with 95% interval) for len data from RecreationalCatch:<br>0.9238 (0.6176-1.7345) <br><br>For more info, see<br> <blockquote>Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock assessment models. <i>Can. J. Fish. Aquat. Sci.</i> 68: 1124-1138.</blockquote>","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_flt2mkt2.png","Length comp data, retained, CommercialCatch","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_bubflt2mkt2.png","Length comp data, retained, CommercialCatch (max=0.3)","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_data_weighting_TA1.8_CommercialCatch.png","Francis data weighting method TA1.8: CommercialCatch <br> Suggested sample size adjustment (with 95% interval) for len data from CommercialCatch:<br>0.9835 (0.7045-1.8961) <br><br>For more info, see<br> <blockquote>Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock assessment models. <i>Can. J. Fish. Aquat. Sci.</i> 68: 1124-1138.</blockquote>","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_flt3mkt2.png","Length comp data, retained, OnboardSurvey","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_bubflt3mkt2.png","Length comp data, retained, OnboardSurvey (max=0.53)","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_data_weighting_TA1.8_OnboardSurvey.png","Francis data weighting method TA1.8: OnboardSurvey <br> Suggested sample size adjustment (with 95% interval) for len data from OnboardSurvey:<br>0.7823 (0.5419-1.5699) <br><br>For more info, see<br> <blockquote>Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock assessment models. <i>Can. J. Fish. Aquat. Sci.</i> 68: 1124-1138.</blockquote>","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_flt4mkt0.png","Length comp data, whole catch, HookAndLineSurvey","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_bubflt4mkt0.png","Length comp data, whole catch, HookAndLineSurvey (max=0.16)","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_data_weighting_TA1.8_HookAndLineSurvey.png","Francis data weighting method TA1.8: HookAndLineSurvey <br> Suggested sample size adjustment (with 95% interval) for len data from HookAndLineSurvey:<br>1.0633 (0.7556-2.8476) <br><br>For more info, see<br> <blockquote>Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock assessment models. <i>Can. J. Fish. Aquat. Sci.</i> 68: 1124-1138.</blockquote>","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_flt5mkt2.png","Length comp data, retained, RecStudy","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_bubflt5mkt2.png","Length comp data, retained, RecStudy (max=0.2)","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_data_weighting_TA1.8_RecStudy.png","Francis data weighting method TA1.8: RecStudy <br> Suggested sample size adjustment (with 95% interval) for len data from RecStudy:<br>1.0664 (0.5562-13.8662) <br><br>For more info, see<br> <blockquote>Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock assessment models. <i>Can. J. Fish. Aquat. Sci.</i> 68: 1124-1138.</blockquote>","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat__aggregated_across_time.png","Length comp data, aggregated across time by fleet.
+ <br> Labels 'retained' and 'discard' indicate discarded or retained sampled for each fleet. Panels without this designation represent the whole catch.
+","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_sex1mkt2_multi-fleet_comparison.png","Note: this plot doesn't seem to be working right for some models.<br><br> Length comp data, sexes combined, retained, comparing across fleets","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_sex2mkt0_multi-fleet_comparison.png","Note: this plot doesn't seem to be working right for some models.<br><br> Length comp data, female, whole catch, comparing across fleets","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lendat_sex3mkt0_multi-fleet_comparison.png","Note: this plot doesn't seem to be working right for some models.<br><br> Length comp data, male, whole catch, comparing across fleets","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agedat_flt1mkt2.png","Age comp data, retained, RecreationalCatch","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agedat_bubflt1mkt2.png","Age comp data, retained, RecreationalCatch (max=0.21)","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agedat_data_weighting_TA1.8_RecreationalCatch.png","Francis data weighting method TA1.8: RecreationalCatch <br> Suggested sample size adjustment (with 95% interval) for age data from RecreationalCatch:<br>0.9648 (0.6595-28.2193) <br><br>For more info, see<br> <blockquote>Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock assessment models. <i>Can. J. Fish. Aquat. Sci.</i> 68: 1124-1138.</blockquote>","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agedat_flt4mkt0.png","Age comp data, whole catch, HookAndLineSurvey","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agedat_bubflt4mkt0.png","Age comp data, whole catch, HookAndLineSurvey (max=0.19)","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agedat_data_weighting_TA1.8_HookAndLineSurvey.png","Francis data weighting method TA1.8: HookAndLineSurvey <br> Too few points to calculate adjustments <br><br>For more info, see<br> <blockquote>Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock assessment models. <i>Can. J. Fish. Aquat. Sci.</i> 68: 1124-1138.</blockquote>","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agedat__aggregated_across_time.png","Age comp data, aggregated across time by fleet.
+ <br> Labels 'retained' and 'discard' indicate discarded or retained sampled for each fleet. Panels without this designation represent the whole catch.
+","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agedat_sex2mkt2_multi-fleet_comparison.png","Note: this plot doesn't seem to be working right for some models.<br><br> Age comp data, female, retained, comparing across fleets","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agedat_sex2mkt0_multi-fleet_comparison.png","Note: this plot doesn't seem to be working right for some models.<br><br> Age comp data, female, whole catch, comparing across fleets","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agedat_sex3mkt2_multi-fleet_comparison.png","Note: this plot doesn't seem to be working right for some models.<br><br> Age comp data, male, retained, comparing across fleets","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agedat_sex3mkt0_multi-fleet_comparison.png","Note: this plot doesn't seem to be working right for some models.<br><br> Age comp data, male, whole catch, comparing across fleets","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_gstagedat_flt2mkt2.png","Ghost age comp data, retained, CommercialCatch","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_gstagedat_bubflt2mkt2.png","Ghost age comp data, retained, CommercialCatch (max=0.48)","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALdat_bubflt2mkt2_page1.png","Conditional age-at-length data, retained, CommercialCatch (max=0.95) (plot 1 of 3)","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALdat_bubflt2mkt2_page2.png","Conditional age-at-length data, retained, CommercialCatch (max=0.95) (plot 1 of 3) (plot 2 of 3)","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALdat_bubflt2mkt2_page3.png","Conditional age-at-length data, retained, CommercialCatch (max=0.95) (plot 1 of 3) (plot 2 of 3) (plot 3 of 3)","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALdat_data_weighting_TA1.8_condAgeCommercialCatch.png","Francis data weighting method TA1.8 for conditional age data:CommercialCatch <br> Suggested sample size adjustment(with 95% interval) forconditional age-at-length data from CommercialCatch:<br>0.9816 (0.6725-2.1284) <br><br>For more info, see<br> <blockquote>Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock assessment models. <i>Can. J. Fish. Aquat. Sci.</i> 68: 1124-1138.</blockquote>","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALdat_Andre_plotsflt2mkt2_page1.png","Conditional AAL plot, retained, CommercialCatch (plot 1 of 8)
+These plots show mean age and std. dev. in conditional A@L.<br>Left plots are mean A@L by size-class (obs. and pred.) with 90% CIs based on adding 1.64 SE of mean to the data.<br>Right plots in each pair are SE of mean A@L (obs. and pred.) with 90% CIs based on the chi-square distribution.","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALdat_Andre_plotsflt2mkt2_page2.png","Conditional AAL plot, retained, CommercialCatch (plot 2 of 8)
+These plots show mean age and std. dev. in conditional A@L.<br>Left plots are mean A@L by size-class (obs. and pred.) with 90% CIs based on adding 1.64 SE of mean to the data.<br>Right plots in each pair are SE of mean A@L (obs. and pred.) with 90% CIs based on the chi-square distribution.","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALdat_Andre_plotsflt2mkt2_page3.png","Conditional AAL plot, retained, CommercialCatch (plot 3 of 8)
+These plots show mean age and std. dev. in conditional A@L.<br>Left plots are mean A@L by size-class (obs. and pred.) with 90% CIs based on adding 1.64 SE of mean to the data.<br>Right plots in each pair are SE of mean A@L (obs. and pred.) with 90% CIs based on the chi-square distribution.","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALdat_Andre_plotsflt2mkt2_page4.png","Conditional AAL plot, retained, CommercialCatch (plot 4 of 8)
+These plots show mean age and std. dev. in conditional A@L.<br>Left plots are mean A@L by size-class (obs. and pred.) with 90% CIs based on adding 1.64 SE of mean to the data.<br>Right plots in each pair are SE of mean A@L (obs. and pred.) with 90% CIs based on the chi-square distribution.","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALdat_Andre_plotsflt2mkt2_page5.png","Conditional AAL plot, retained, CommercialCatch (plot 5 of 8)
+These plots show mean age and std. dev. in conditional A@L.<br>Left plots are mean A@L by size-class (obs. and pred.) with 90% CIs based on adding 1.64 SE of mean to the data.<br>Right plots in each pair are SE of mean A@L (obs. and pred.) with 90% CIs based on the chi-square distribution.","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALdat_Andre_plotsflt2mkt2_page6.png","Conditional AAL plot, retained, CommercialCatch (plot 6 of 8)
+These plots show mean age and std. dev. in conditional A@L.<br>Left plots are mean A@L by size-class (obs. and pred.) with 90% CIs based on adding 1.64 SE of mean to the data.<br>Right plots in each pair are SE of mean A@L (obs. and pred.) with 90% CIs based on the chi-square distribution.","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALdat_Andre_plotsflt2mkt2_page7.png","Conditional AAL plot, retained, CommercialCatch (plot 7 of 8)
+These plots show mean age and std. dev. in conditional A@L.<br>Left plots are mean A@L by size-class (obs. and pred.) with 90% CIs based on adding 1.64 SE of mean to the data.<br>Right plots in each pair are SE of mean A@L (obs. and pred.) with 90% CIs based on the chi-square distribution.","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALdat_Andre_plotsflt2mkt2_page8.png","Conditional AAL plot, retained, CommercialCatch (plot 8 of 8)
+These plots show mean age and std. dev. in conditional A@L.<br>Left plots are mean A@L by size-class (obs. and pred.) with 90% CIs based on adding 1.64 SE of mean to the data.<br>Right plots in each pair are SE of mean A@L (obs. and pred.) with 90% CIs based on the chi-square distribution.","CompDat",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_flt1mkt2.png","Length comps, retained, RecreationalCatch","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_residsflt1mkt2.png","Pearson residuals, retained, RecreationalCatch (max=4.4) <br> 
+Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_sampsize_flt1mkt2.png","N-EffN comparison, Length comps, retained, RecreationalCatch","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_data_weighting_TA1.8_RecreationalCatch.png","Francis data weighting method TA1.8: RecreationalCatch <br> Suggested sample size adjustment (with 95% interval) for len data from RecreationalCatch:<br>0.9238 (0.6097-1.7877) <br><br>For more info, see<br> <blockquote>Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock assessment models. <i>Can. J. Fish. Aquat. Sci.</i> 68: 1124-1138.</blockquote>","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_flt2mkt2.png","Length comps, retained, CommercialCatch","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_residsflt2mkt2.png","Pearson residuals, retained, CommercialCatch (max=5.72) <br> 
+Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_sampsize_flt2mkt2.png","N-EffN comparison, Length comps, retained, CommercialCatch","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_data_weighting_TA1.8_CommercialCatch.png","Francis data weighting method TA1.8: CommercialCatch <br> Suggested sample size adjustment (with 95% interval) for len data from CommercialCatch:<br>0.9835 (0.6829-1.8164) <br><br>For more info, see<br> <blockquote>Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock assessment models. <i>Can. J. Fish. Aquat. Sci.</i> 68: 1124-1138.</blockquote>","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_flt3mkt2.png","Length comps, retained, OnboardSurvey","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_residsflt3mkt2.png","Pearson residuals, retained, OnboardSurvey (max=5.23) <br> 
+Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_sampsize_flt3mkt2.png","N-EffN comparison, Length comps, retained, OnboardSurvey","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_data_weighting_TA1.8_OnboardSurvey.png","Francis data weighting method TA1.8: OnboardSurvey <br> Suggested sample size adjustment (with 95% interval) for len data from OnboardSurvey:<br>0.7823 (0.5494-1.4862) <br><br>For more info, see<br> <blockquote>Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock assessment models. <i>Can. J. Fish. Aquat. Sci.</i> 68: 1124-1138.</blockquote>","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_flt4mkt0.png","Length comps, whole catch, HookAndLineSurvey","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_residsflt4mkt0.png","Pearson residuals, whole catch, HookAndLineSurvey (max=2.92) <br> 
+Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_sampsize_flt4mkt0.png","N-EffN comparison, Length comps, whole catch, HookAndLineSurvey","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_data_weighting_TA1.8_HookAndLineSurvey.png","Francis data weighting method TA1.8: HookAndLineSurvey <br> Suggested sample size adjustment (with 95% interval) for len data from HookAndLineSurvey:<br>1.0633 (0.74-2.6995) <br><br>For more info, see<br> <blockquote>Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock assessment models. <i>Can. J. Fish. Aquat. Sci.</i> 68: 1124-1138.</blockquote>","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_flt5mkt2.png","Length comps, retained, RecStudy","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_residsflt5mkt2.png","Pearson residuals, retained, RecStudy (max=2.16) <br> 
+Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_sampsize_flt5mkt2.png","N-EffN comparison, Length comps, retained, RecStudy","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_data_weighting_TA1.8_RecStudy.png","Francis data weighting method TA1.8: RecStudy <br> Suggested sample size adjustment (with 95% interval) for len data from RecStudy:<br>1.0664 (0.5599-16.048) <br><br>For more info, see<br> <blockquote>Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock assessment models. <i>Can. J. Fish. Aquat. Sci.</i> 68: 1124-1138.</blockquote>","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit__aggregated_across_time.png","Length comps, aggregated across time by fleet.
+ <br> Labels 'retained' and 'discard' indicate discarded or retained sampled for each fleet. Panels without this designation represent the whole catch.
+","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_sex1mkt2_multi-fleet_comparison.png","Note: this plot doesn't seem to be working right for some models.<br><br> Pearson residuals, sexes combined, retained, comparing across fleets <br> 
+Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_sex2mkt0_multi-fleet_comparison.png","Note: this plot doesn't seem to be working right for some models.<br><br> Pearson residuals, female, whole catch, comparing across fleets <br> 
+Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_lenfit_sex3mkt0_multi-fleet_comparison.png","Note: this plot doesn't seem to be working right for some models.<br><br> Pearson residuals, male, whole catch, comparing across fleets <br> 
+Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).","LenComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agefit_flt1mkt2.png","Age comps, retained, RecreationalCatch","AgeComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agefit_residsflt1mkt2.png","Pearson residuals, retained, RecreationalCatch (max=1.36) <br> 
+Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).","AgeComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agefit_sampsize_flt1mkt2.png","N-EffN comparison, Age comps, retained, RecreationalCatch","AgeComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agefit_data_weighting_TA1.8_RecreationalCatch.png","Francis data weighting method TA1.8: RecreationalCatch <br> Suggested sample size adjustment (with 95% interval) for age data from RecreationalCatch:<br>0.9648 (0.5135-28.2193) <br><br>For more info, see<br> <blockquote>Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock assessment models. <i>Can. J. Fish. Aquat. Sci.</i> 68: 1124-1138.</blockquote>","AgeComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agefit_flt4mkt0.png","Age comps, whole catch, HookAndLineSurvey","AgeComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agefit_residsflt4mkt0.png","Pearson residuals, whole catch, HookAndLineSurvey (max=4.02) <br> 
+Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).","AgeComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agefit_sampsize_flt4mkt0.png","N-EffN comparison, Age comps, whole catch, HookAndLineSurvey","AgeComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agefit_data_weighting_TA1.8_HookAndLineSurvey.png","Francis data weighting method TA1.8: HookAndLineSurvey <br> Too few points to calculate adjustments <br><br>For more info, see<br> <blockquote>Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock assessment models. <i>Can. J. Fish. Aquat. Sci.</i> 68: 1124-1138.</blockquote>","AgeComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agefit__aggregated_across_time.png","Age comps, aggregated across time by fleet.
+ <br> Labels 'retained' and 'discard' indicate discarded or retained sampled for each fleet. Panels without this designation represent the whole catch.
+","AgeComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agefit_sex2mkt2_multi-fleet_comparison.png","Note: this plot doesn't seem to be working right for some models.<br><br> Pearson residuals, female, retained, comparing across fleets <br> 
+Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).","AgeComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agefit_sex2mkt0_multi-fleet_comparison.png","Note: this plot doesn't seem to be working right for some models.<br><br> Pearson residuals, female, whole catch, comparing across fleets <br> 
+Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).","AgeComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agefit_sex3mkt2_multi-fleet_comparison.png","Note: this plot doesn't seem to be working right for some models.<br><br> Pearson residuals, male, retained, comparing across fleets <br> 
+Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).","AgeComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_agefit_sex3mkt0_multi-fleet_comparison.png","Note: this plot doesn't seem to be working right for some models.<br><br> Pearson residuals, male, whole catch, comparing across fleets <br> 
+Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).","AgeComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_gstagefit_flt2mkt2.png","Ghost age comps, retained, CommercialCatch","AgeComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_gstagefit_residsflt2mkt2.png","Pearson residuals, retained, CommercialCatch (max=NA) <br> 
+Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).","AgeComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALfit_residsflt2mkt2_page1.png","Pearson residuals, retained, CommercialCatch (max=10.37) (plot 1 of 3)","A@LComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALfit_residsflt2mkt2_page2.png","Pearson residuals, retained, CommercialCatch (max=10.37) (plot 1 of 3) (plot 2 of 3)","A@LComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALfit_residsflt2mkt2_page3.png","Pearson residuals, retained, CommercialCatch (max=10.37) (plot 1 of 3) (plot 2 of 3) (plot 3 of 3)","A@LComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALfit_data_weighting_TA1.8_condAgeCommercialCatch.png","Francis data weighting method TA1.8 for conditional age data:CommercialCatch <br> Suggested sample size adjustment(with 95% interval) forconditional age-at-length data from CommercialCatch:<br>0.9816 (0.6227-2.2389) <br><br>For more info, see<br> <blockquote>Francis, R.I.C.C. (2011). Data weighting in statistical fisheries stock assessment models. <i>Can. J. Fish. Aquat. Sci.</i> 68: 1124-1138.</blockquote>","A@LComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALfit_Andre_plotsflt2mkt2_page1.png","Conditional AAL plot, retained, CommercialCatch (plot 1 of 8)
+These plots show mean age and std. dev. in conditional A@L.<br>Left plots are mean A@L by size-class (obs. and pred.) with 90% CIs based on adding 1.64 SE of mean to the data.<br>Right plots in each pair are SE of mean A@L (obs. and pred.) with 90% CIs based on the chi-square distribution.","A@LComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALfit_Andre_plotsflt2mkt2_page2.png","Conditional AAL plot, retained, CommercialCatch (plot 2 of 8)
+These plots show mean age and std. dev. in conditional A@L.<br>Left plots are mean A@L by size-class (obs. and pred.) with 90% CIs based on adding 1.64 SE of mean to the data.<br>Right plots in each pair are SE of mean A@L (obs. and pred.) with 90% CIs based on the chi-square distribution.","A@LComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALfit_Andre_plotsflt2mkt2_page3.png","Conditional AAL plot, retained, CommercialCatch (plot 3 of 8)
+These plots show mean age and std. dev. in conditional A@L.<br>Left plots are mean A@L by size-class (obs. and pred.) with 90% CIs based on adding 1.64 SE of mean to the data.<br>Right plots in each pair are SE of mean A@L (obs. and pred.) with 90% CIs based on the chi-square distribution.","A@LComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALfit_Andre_plotsflt2mkt2_page4.png","Conditional AAL plot, retained, CommercialCatch (plot 4 of 8)
+These plots show mean age and std. dev. in conditional A@L.<br>Left plots are mean A@L by size-class (obs. and pred.) with 90% CIs based on adding 1.64 SE of mean to the data.<br>Right plots in each pair are SE of mean A@L (obs. and pred.) with 90% CIs based on the chi-square distribution.","A@LComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALfit_Andre_plotsflt2mkt2_page5.png","Conditional AAL plot, retained, CommercialCatch (plot 5 of 8)
+These plots show mean age and std. dev. in conditional A@L.<br>Left plots are mean A@L by size-class (obs. and pred.) with 90% CIs based on adding 1.64 SE of mean to the data.<br>Right plots in each pair are SE of mean A@L (obs. and pred.) with 90% CIs based on the chi-square distribution.","A@LComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALfit_Andre_plotsflt2mkt2_page6.png","Conditional AAL plot, retained, CommercialCatch (plot 6 of 8)
+These plots show mean age and std. dev. in conditional A@L.<br>Left plots are mean A@L by size-class (obs. and pred.) with 90% CIs based on adding 1.64 SE of mean to the data.<br>Right plots in each pair are SE of mean A@L (obs. and pred.) with 90% CIs based on the chi-square distribution.","A@LComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALfit_Andre_plotsflt2mkt2_page7.png","Conditional AAL plot, retained, CommercialCatch (plot 7 of 8)
+These plots show mean age and std. dev. in conditional A@L.<br>Left plots are mean A@L by size-class (obs. and pred.) with 90% CIs based on adding 1.64 SE of mean to the data.<br>Right plots in each pair are SE of mean A@L (obs. and pred.) with 90% CIs based on the chi-square distribution.","A@LComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"comp_condAALfit_Andre_plotsflt2mkt2_page8.png","Conditional AAL plot, retained, CommercialCatch (plot 8 of 8)
+These plots show mean age and std. dev. in conditional A@L.<br>Left plots are mean A@L by size-class (obs. and pred.) with 90% CIs based on adding 1.64 SE of mean to the data.<br>Right plots in each pair are SE of mean A@L (obs. and pred.) with 90% CIs based on the chi-square distribution.","A@LComp",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"yield1_yield_curve.png","Yield curve","Yield",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"yield2_Hilborn_surplus_production.png","Surplus production plot. For interpretation, see<br> <blockquote>Walters, Hilborn, and  Christensen, 2008, Surplus production dynamics in declining and recovering fish populations. <i>Can. J. Fish. Aquat. Sci.</i> 65: 2536-2551.</blockquote>","Yield",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"data_plot.png","Data presence by year for each fleet","Data",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"
+"data_plot2.png","Data presence by year for each fleet, where circle area is relative <br>  within a data type, and proportional to precision for indices and compositions, <br>  and absolute catch for catches.<br>  Note that since the circles are are scaled relative to maximum,<br>  scaling within separate plots should not be compared.","Data",2017-06-13 16:39:14,"StartTime: Tue Jun 13 16:19:12 2017"

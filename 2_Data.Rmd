@@ -92,9 +92,11 @@ data as representing a single year mid-way through the study.
 **Commercial Logbook CPUE**   
 The commercial logbook (fish-ticket) data in PacFIN was used to generate an index for the years 1987-1998, a period in which management of the fishery was stable, i.e., regulations weren"t changing fishery practices.  
 
-The data were modeled with a modified Stephens-MacCall approach [@Stephens2004].  This approach uses the species composition of the catch to evaluate the per-haul probability of encountering a particular species; in this case, yellowtail rockfish.  The intent of the analysis is to eliminate all hauls from the index that could not encounter yellowtail.  Usually, the Stephens-MacCall approach is a simple binomial model for presence-absence of the predictive species and the target, however a generalized linear mixed-effects approach -- modeling the species as binomial and adding random effects for year, vessel, and haul-duration improved the model fit.
+The data were modeled with a modified Stephens-MacCall approach [@Stephens2004].  This approach uses the species composition of the catch to evaluate the per-haul probability of encountering a particular species; in this case, yellowtail rockfish.  The intent of the analysis is to eliminate all hauls from the index that could not encounter yellowtail.  
 
-The hauls identified with a reasonable probability of encountering yellowtail were then modeled in a delta-lognormal glm to produce an index of abundance.
+Usually, the Stephens-MacCall approach is a simple binomial model for presence-absence of the predictive species and the target, however a generalized linear mixed-effects approach -- modeling the species as binomial and adding random effects for the interaction of year and vessel, for haul duration, and for month improved the model fit.
+
+The hauls identified with a reasonable probability of encountering yellowtail were then modeled in a delta-lognormal glm to produce an annual index of abundance, bootstrapped 500 times to evaluate uncertainty.
 
 **Hake Bycatch Index**   
 The Hake bycatch data provided by the Alaska Fisheries Science Center (AFSC) was used to generate an index of abundance for 1985-1999.
@@ -109,7 +111,11 @@ VAST was then used to conduct a geostatistical standardization of the CPUE of ye
 
 
 **Pikitch Study**  
-The Pikitch data referenced above provided an index for years 1981-91.
+The Pikitch data referenced above provided an index for years 1981-91. <TOADS> need information about developing the index.
+
+**NWFSCcombo Index**
+
+**Triennial Index**
 
 <!-- ************FISHERY-INDPENDENT DATA*********************************** -->
 
@@ -162,10 +168,10 @@ Length compositions were provided from the following sources:
 ```
 <!-- ---------------------------------------------------------------------- -->
 
-Model input sample-sizes for age data were calculated according to the same algorithm as for lengths, except that the conditional age-at-length sample sizes are the number of fish, regardless of the source of the data.
-
 
 Age structure data were available from the following sources:
+
+
 <!-- ***********Indices of abundance summary table************************* -->
 ```{r, results = "asis"}
     Age_sources = read.csv("./txt_files/02_Summary_N_Age_sources.csv")
@@ -262,6 +268,8 @@ Length composition samples were available for the Southern model from 5 sources,
 
 
 Length compositions were provided from the following sources:
+
+
 <!-- ***********Indices of abundance summary table************************* -->
 ```{r, results = "asis"}
     Length_sources = read.csv("./txt_files/02_Summary_S_Length_sources.csv")
@@ -284,10 +292,10 @@ Length compositions were provided from the following sources:
 ```
 <!-- ---------------------------------------------------------------------- -->
 
-Model input sample-sizes for age data were calculated according to the same algorithm as for lengths, except that the conditional age-at-length sample sizes are the number of fish, regardless of the source of the data.
-
 
 Age structure data were available from the following sources:
+
+
 <!-- ***********Indices of abundance summary table************************* -->
 ```{r, results = "asis"}
     Age_sources = read.csv("./txt_files/02_Summary_S_Age_sources.csv")
@@ -311,8 +319,6 @@ Age structure data were available from the following sources:
             sanitize.text.function = function(x){x})
 ```
 <!-- ---------------------------------------------------------------------- -->
-
-
 
 ## Biological Parameters Common to Both Models
 

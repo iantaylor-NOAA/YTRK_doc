@@ -1,0 +1,13 @@
+Source,Landings,Lengths,Ages,Index,Discards,Type
+PacFIN,Y,Y,Y,Y,,Commercial
+WCGOP,,Y,,,Y,Commercial Discards
+Hake Bycatch,Y,Y,Y,Y,,Commercial
+CalCOM,Y,Y,Y,,,Commercial
+WaSport,Y,Y,Y,,,Recreational
+MRFSS,Y,Y,,,,Recreational
+RecFIN,Y,Y,,,,Recreational
+Triennial,,Y,Y,Y,,Survey
+NWFSCcombo,,Y,Y,Y,,Survey
+Pikitch,,Y,,Y,Y,Commercial Study
+ODFW,Y,,,,,Historical data
+WDFW,Y,,,,,Historical data

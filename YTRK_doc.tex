@@ -1209,16 +1209,18 @@ The data were modeled with a modified Stephens-MacCall approach
 approach uses the species composition of the catch to evaluate the
 per-haul probability of encountering a particular species; in this case,
 yellowtail rockfish. The intent of the analysis is to eliminate all
-hauls from the index that could not encounter yellowtail. Usually, the
-Stephens-MacCall approach is a simple binomial model for
+hauls from the index that could not encounter yellowtail.
+
+Usually, the Stephens-MacCall approach is a simple binomial model for
 presence-absence of the predictive species and the target, however a
 generalized linear mixed-effects approach -- modeling the species as
-binomial and adding random effects for year, vessel, and haul-duration
-improved the model fit.
+binomial and adding random effects for the interaction of year and
+vessel, for haul duration, and for month improved the model fit.
 
 The hauls identified with a reasonable probability of encountering
 yellowtail were then modeled in a delta-lognormal glm to produce an
-index of abundance.
+annual index of abundance, bootstrapped 500 times to evaluate
+uncertainty.
 
 \textbf{Hake Bycatch Index}\\
 The Hake bycatch data provided by the Alaska Fisheries Science Center
@@ -1270,6 +1272,11 @@ catchability.
 
 \textbf{Pikitch Study}\\
 The Pikitch data referenced above provided an index for years 1981-91.
+need information about developing the index.
+
+\textbf{NWFSCcombo Index}
+
+\textbf{Triennial Index}
 
 \subsubsection{Fishery-Independent Data}\label{fishery-independent-data}
 
@@ -1317,11 +1324,6 @@ PacFIN & commercial & 186161 & 3830 & 1968-2016 \\
    \hline
 \end{tabular}
 \end{table}
-
-Model input sample-sizes for age data were calculated according to the
-same algorithm as for lengths, except that the conditional age-at-length
-sample sizes are the number of fish, regardless of the source of the
-data.
 
 Age structure data were available from the following sources:
 
@@ -1429,11 +1431,6 @@ CalCOM & commercial & 16160 & 1543 & 1978-2015 \\
    \hline
 \end{tabular}
 \end{table}
-
-Model input sample-sizes for age data were calculated according to the
-same algorithm as for lengths, except that the conditional age-at-length
-sample sizes are the number of fish, regardless of the source of the
-data.
 
 Age structure data were available from the following sources:
 
@@ -1547,31 +1544,21 @@ Yellowtail rockfish was previously modeled as a 3-area stock north of
 2004(Wallace and Lai \protect\hyperlink{ref-Wallace2005}{2005}). That
 assessment divided the stock into 3 INPFC areas which are not coincident
 with state boundaries; this is a concern in that recent reconstructions
-of historical catch are state-by-state along the West Coast, therefor we
+of historical catch are state-by-state along the West Coast. Because we
+cannot produce data that conform to the areas previously assessed, we
 have made no effort to reproduce the previous model.
 
 \subsubsection{Previous Assessment
 Recommendations}\label{previous-assessment-recommendations}
 
-Include: Response to STAR panel recommendations from the most recent
-previous assessment.
+Many of the recommendations of the previous STAR panel are not relevant
+to this assessment, as they related to data deficiencies at that time
+that have since been resolved. The 2004 STAR particularly recommended a
+focus on abundance indices, which they noted might require further
+survey information.
 
-\begin{description}[style=unboxed]
-
-  \item[Recommendation 1: More data needed.] \hfill \\
-
-   STAT response: Got some.
-
-\item[Recommendation 2: blah blah blah.] \hfill \\
-
-  STAT response: blah blah blah....
-
-\item[Recommendation 3: blah blah blah., etc.] \hfill \\
-
-  STAT response: Continue recommendations as needed
-
-
-\end{description}
+This assessment provides three indices for the Northern model, and two
+for the Southern model.
 
 \subsection{Model Description}\label{model-description}
 
@@ -1596,7 +1583,9 @@ for them:
   substocks which we model independently.
 \item
   Availability of recent data. \emph{Rationale}: Ten years of data
-  collection have occurred since the last update assessment.
+  collection have occurred since the last update assessment, and the
+  data necessary for an assessment of the Southern stock is now
+  available.
 \item
   Historical catch reconstructions. \emph{Rationale}: Reconstruction of
   catch timeseries in California, Washington and Oregon clarify stock
@@ -1609,7 +1598,11 @@ Areas}\label{definition-of-fleets-and-areas}
 \textbf{Northern Model}
 
 \emph{Commercial}: The commercial fleet consists primarily of bottom and
-midwater trawl.
+midwater trawl. No attempt was made to analyze the fishery separately by
+gear, particularly since it seems that in the fishery in the 1980s and
+1990s, ``bottom trawl''" gear was used in the midwater as well as on the
+bottom, and ``midwater gear''" was sometimes dragged across soft bottoms
+(Craig Goode, ODFW Port Sampler, pers. comm).
 
 \emph{Recreational}: The recreational fleet includes data from sport
 fisheries off Washington, Oregon, and northern California (Eureka and
@@ -1648,23 +1641,24 @@ Sample Size = 0.138 * Nfish + Ntows if Nfish/Ntows \textless{} 44, and
 Ntows * 7.06 otherwise.
 
 Age-at-Length samples are unwieghted; that is, each fish is assumed to
-represesnt an independent sample.
+represent an independent sample.
 
-Recreational tows are difficult to define in most cases. Since much of
-the recreational data are from the dockside interview Marine
-Recreational Fisheries Statics Survey (MRFSS, 1980-2003), which provided
-notoriously poor data with respect to aggregating samples to ``trip'',
-we chose to use all recreational data ``as-is'', with the initial
-weights entered as number of fish.
+Recreational trips (the analogue of tows in the commercial fishery) are
+difficult to define in most cases. Since much of the recreational data
+are from the dockside interview MRFSS program, which didn't anticipate
+the need to delineate samples as belonging to particular trips, we chose
+to use all recreational data ``as-is'', with the initial weights entered
+as number of fish.
 
-Stock Synthesis does internal re-weighting between years within fleets
-to adjust for sample size. Weighting among fleets uses either the
-Francis method (Francis \protect\hyperlink{ref-Francis2011}{2011}) or
-the Ianelli-McAllister harmonic mean method (McAllister and Ianelli
+Stock Synthesis performs internal re-weighting within fleets to adjust
+for between-year differences in sample size. Weighting among fleets uses
+either the Francis method (Francis
+\protect\hyperlink{ref-Francis2011}{2011}) or the Ianelli-McAllister
+harmonic mean method (McAllister and Ianelli
 \protect\hyperlink{ref-McAllister1997}{1997}). The Francis method was
-used for all fleets, except for the Southern model's Hook and Line age
-data, which is a single year of data to which we applied the
-Ianelli-McAllister method.
+used for all fleets, except for the age data from the Southern model's
+Hook and Line survey, which is a single year of data to which we applied
+the Ianelli-McAllister method.
 
 \subsubsection{Priors}\label{priors}
 
@@ -1700,12 +1694,6 @@ Evaluation}\label{model-selection-and-evaluation}
 \subsubsection{Key Assumptions and Structural
 Choices}\label{key-assumptions-and-structural-choices}
 
-Include: Evidence of search for balance between model realism and
-parsimony.\\
-Comparison of key model assumptions, include comparisons based on nested
-models (e.g., asymptotic vs.~domed selectivities, constant
-vs.~time-varying selectivities).
-
 Selectivity in both models is asymptotic, with the exception of the
 OR-CA MRFSS recreational fleet in the Northern model, and the Onboard
 recreational fleet in the Southern model.
@@ -1713,13 +1701,18 @@ recreational fleet in the Southern model.
 \subsubsection{Alternate Models
 Considered}\label{alternate-models-considered}
 
-Include: Summary of alternate model configurations that were tried but
-rejected.
+Time-blocked selectivity and retention were investigated in the Northern
+model, as were domed selectivities.
+
+We also explored time-blocks on selectivity in the Southern model, and
+domed selectivity for the MRFSS/RecFIN data.
+
+These approaches resulted in model fits to data that were obviously
+poor, and so they were rejected
 
 \subsubsection{Convergence}\label{convergence}
 
-Include: Randomization run results or other evidence of search for
-global best estimates.
+ Boilerplate, revisit:
 
 Convergence testing through use of dispersed starting values often
 requires extreme values to actually explore new areas of the
@@ -1816,26 +1809,6 @@ only)}\label{model-2-harvest-control-rules-cps-only}
 
 \subsubsection{Model 2 Reference Points (groundfish
 only)}\label{model-2-reference-points-groundfish-only}
-
-\subsection{Model 3}\label{model-3}
-
-\subsubsection{Model 3 Base Case
-Results}\label{model-3-base-case-results}
-
-\subsubsection{Model 3 Uncertainty and Sensitivity
-Analyses}\label{model-3-uncertainty-and-sensitivity-analyses}
-
-\subsubsection{Model 3 Retrospective
-Analysis}\label{model-3-retrospective-analysis}
-
-\subsubsection{Model 3 Likelihood
-profiles}\label{model-3-likelihood-profiles}
-
-\subsubsection{Model 3 Harvest Control Rules (CPS
-only)}\label{model-3-harvest-control-rules-cps-only}
-
-\subsubsection{Model 3 Reference Points (groundfish
-only)}\label{model-3-reference-points-groundfish-only}
 
 \section{Harvest Projections and Decision
 Tables}\label{harvest-projections-and-decision-tables}
