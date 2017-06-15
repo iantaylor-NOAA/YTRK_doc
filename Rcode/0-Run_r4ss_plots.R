@@ -24,7 +24,7 @@ if (system("hostname", intern=TRUE) %in% c("NWCLW04223033") ){ #Ian's computer
 
 # SECTION1: Run r4ss, parse plotInfoTable.csv file, & add linebreaks to SS files
 
-stop("\n  This file should not be sourced!") # note to stop from accidental sourcing
+#stop("\n  This file should not be sourced!") # note to stop from accidental sourcing
 
 # Here we're going to make sure you have all the required packages for the template
 # Check for installtion and make sure all R libraries can be loaded
@@ -41,7 +41,7 @@ for(p in requiredPackages){
 }
 
 # Install the latest version of r4ss using devtools
-devtools::install_github("r4ss/r4ss")
+devtools::install_github("r4ss/r4ss", ref='comp-plots-and-weights')
 library(r4ss)
 
 # CHANGE values in this section ===============================================
@@ -93,34 +93,30 @@ out.dir.mod1 = file.path(output.dir,'plots_mod1')
 out.dir.mod2 = file.path(output.dir,'plots_mod2')
 out.dir.mod3 = file.path(output.dir,'plots_mod3')
 
+# long fleetnames for potential use in r4ss plots (repeated in Preamble.R)
+fleetnames1 <- c("Commercial Fishery",
+                 "At-Sea Hake Fishery",
+                 "Recreational OR+CA",
+                 "Recreational WA",
+                 "Triennial Survey",
+                 "NWFSC Combo Survey")
+fleetnames2 <- c("Recreational Fishery",
+                 "Commercial Fishery",
+                 "Recreational Onboard Survey",
+                 "Hook & Line Survey",
+                 "Recreational Study")         
 
 # Model 1
-SS_plots(mod1,
-         png = TRUE,
-         html = FALSE,
-         datplot = TRUE,
-         uncertainty = TRUE,
-         maxrows = 6, 
-         maxcols = 6, 
-         maxrows2 = 4, 
-         maxcols2 = 4, 
-         printfolder = '', 
-         dir = out.dir.mod1)
+SS_plots(mod1, fleetnames=fleetnames1,
+         png = TRUE, html = FALSE, datplot = TRUE, uncertainty = TRUE,
+         maxrows = 6, maxcols = 6, maxrows2 = 4, maxcols2 = 4, 
+         printfolder = '', dir = out.dir.mod1)
 
-# Model2
-if(n_models > 1){
-  SS_plots(mod2,
-           png = TRUE,
-           html = FALSE,
-           datplot = TRUE,
-           uncertainty = TRUE,
-           maxrows = 6, 
-           maxcols = 6, 
-           maxrows2 = 4, 
-           maxcols2 = 4, 
-           printfolder = '', 
-           dir = out.dir.mod2)
-}
+# Model 2
+SS_plots(mod2, fleetnames=fleetnames2,
+         png = TRUE, html = FALSE, datplot = TRUE, uncertainty = TRUE,
+         maxrows = 6, maxcols = 6, maxrows2 = 4, maxcols2 = 4, 
+         printfolder = '', dir = out.dir.mod2)
 
 # simple function to write streamline writing PNG for specialized plots
 pngfun <- function(file,mod=1,w=6.5,h=5,pt=10){
@@ -130,6 +126,25 @@ pngfun <- function(file,mod=1,w=6.5,h=5,pt=10){
   png(filename=file,
       width=w,height=h,
       units='in',res=300,pointsize=pt)
+}
+
+# multi-fleet comparisons with taller files NORTH
+for(datonly in c(FALSE,TRUE)){
+  for(kind in c("LEN","AGE")){
+    SSplotComps(mod1, subplot=24, kind=kind, datonly=datonly, maxrows=4, pheight=7.5,
+                cexZ1 = ifelse(datonly, 5, 1.5),
+                plot=FALSE, print=TRUE, fleetnames=fleetnames1,
+                plotdir=out.dir.mod1)
+  }
+}
+# multi-fleet comparisons with taller files SOUTH
+for(datonly in c(FALSE,TRUE)){
+  for(kind in c("LEN","AGE")){
+    SSplotComps(mod2, subplot=24, kind=kind, datonly=datonly, maxrows=5, pheight=ifelse(kind=="LEN",7.5,5),
+                cexZ1 = ifelse(datonly, 5, 1.5),
+                plot=FALSE, print=TRUE, fleetnames=fleetnames2,
+                plotdir=out.dir.mod2)
+  }
 }
 
 # time-varying retention for fleet 1 in model 1
