@@ -23,6 +23,8 @@ geometry: margin=1in
 csl: CJFAS.csl
 bibliography: BibFile.bib
 link-citations: yes
+header-includes:
+    - \usepackage{caption}
 ---
 ```{r global_options, include=FALSE}
     # set global options for R code chunks: echo=FALSE (don't include source code); 
@@ -69,34 +71,28 @@ link-citations: yes
 
 ```{r child = "1_Introduction.Rmd"}
 ```
-
+\newpage
 ```{r child = "2_Data.Rmd"}
 ```
-
+\newpage
 ```{r child = "3_Assessment.Rmd"}
 ```
-
+\newpage
 ```{r child = "4_HarvestProjections.Rmd"}
 ```
-
+\newpage
 ```{r child = "5_RegionalManagement.Rmd"}
 ```
-
+\newpage
 ```{r child = "6_ResearchNeeds.Rmd"}
 ```
-
+\newpage
 ```{r child = "7_Acknowledgments.Rmd"}
 ```
-
-```{r child = "8_Tables.Rmd"}
-```
-
-```{r child = "9_Figures.Rmd"}
-```
-
-```{r child='10_Appendices.Rmd'}
-```
-
-```{r child='11_References.Rmd'}
-```
+\newpage
+\newpage
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\setcounter{figure}{0}
+\setcounter{table}{0}
 <!-- ********************END OF THE DOCUMENT******************************* -->

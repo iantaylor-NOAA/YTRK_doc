@@ -13,8 +13,12 @@ Many of the recommendations of the previous STAR panel are not relevant to this 
 
 This assessment provides four indices for the Northern model, and three for the Southern model.  All indices are newly developed for this analysis.
 
+\clearpage
+\newpage
+
 
 <!-- ************************MODEL DESCRIPTION***************************** -->
+
 ##Model Description
 
 
@@ -83,6 +87,7 @@ A full list of all estimated and fixed parameters is provided in Tables....
 Estimated and fixed parameters tables currently read in from .csv file, 
 EXAMPLE: Table \ref{tab:Model1_params}
 
+\clearpage
 
 ##Model Selection and Evaluation
 ###Key Assumptions and Structural Choices
@@ -106,6 +111,8 @@ surface. Jitter is a Stock Synthesis option that generates random starting value
 normal distribution logistically transformed into each parameter's range 
 [@Methot2015]. Table \ref{tab:jitter} shows the results of running 100 jitters 
 for each pre-STAR base model....
+
+\clearpage
 
 ##Response To The Current STAR Panel Requests
 \begin{description}[style=unboxed]
@@ -142,6 +149,7 @@ for each pre-STAR base model....
 
 \end{description}
 
+\clearpage
 <!-- *********************MODEL 1 RESULTS********************************** -->
 ##Model 1 
 ###Model 1 Base Case Results
@@ -171,6 +179,8 @@ $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt.  Table \ref{tab:Ref_pts_mod1}
 shows the full suite of estimated reference points for the northern area model 
 and Figure \ref{fig:Yield_all} shows the equilibrium yield curve.
 
+
+\clearpage
 
 <!-- *************************MODEL 2 RESULTS****************************** -->
 ##Model 2 

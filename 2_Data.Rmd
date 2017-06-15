@@ -1,4 +1,8 @@
 
+<!-- ** Turn off numbering for inline tables ** -->
+
+\captionsetup[table]{labelformat=empty,justification=raggedright,font=bf, singlelinecheck=false}
+
 #Data
 
 Data used in the Northern and Southern yellowtail rockfish assessments are summarized in Figures \ref{fig:data_plot} and \ref{fig:data_plot}.
@@ -13,6 +17,7 @@ A description of each model's data sources follows.
 
 
 ##Northern Model Data
+\vspace{.5cm}
 
 <!-- ***********Indices of abundance summary table************************* -->
 ```{r, results = "asis"}
@@ -27,9 +32,10 @@ A description of each model's data sources follows.
 
    # Index of abundance summary, create table   
      Data_sources.table = xtable(Data_sources, 
-                                  caption = c("Summary of the data source in the Northern model."),
+                                 caption = c("Summary of the data sources in the Northern model."),
                                  label = "tab:Data_sources",
-                                 digits = 0)    
+                                 align = c("l","l", rep("c", 5),"r"),
+                                 digits = 0) 
 
     # Print index summary table
       print(Data_sources.table, 
@@ -202,8 +208,10 @@ Age structure data were available from the following sources:
 
 
 <!-- ************FISHERY-DEPENDENT DATA************************************ -->
-
+\FloatBarrier
 \newpage
+\clearpage
+\FloatBarrier
 
 ##Southern Model Data
 
@@ -222,14 +230,16 @@ Age structure data were available from the following sources:
 
    # Index of abundance summary, create table   
      Data_sources.table = xtable(Data_sources, 
-                                  caption = c("Summary of the data source in the Northern model."),
+                                 caption = c("Summary of the data source in the Southern model."),
                                  label = "tab:Data_sources",
+                                 align = c("l","l", rep("c", 5),"r"),
                                  digits = 0)    
 
     # Print index summary table
       print(Data_sources.table, 
             include.rownames=FALSE, 
             caption.placement="top",
+            justify=c("l","c","c","c","c","c","c"),
             sanitize.text.function = function(x){x})
 ```
 <!-- ---------------------------------------------------------------------- -->
@@ -328,13 +338,14 @@ Age structure data were available from the following sources:
             sanitize.text.function = function(x){x})
 ```
 <!-- ---------------------------------------------------------------------- -->
+\clearpage
 
 ## Biological Parameters Common to Both Models
 
 \vspace{.5cm}
 **Aging Precision And Bias**
 
-Age error matrices were developed for double-reads at the PFMC aging lab in Newport, OR and for double reads within the WDFW aging lab.  The Newport lab has done all of the Survey aging for the NWFSC, along with some commercial ages and  the 400 fish from the Small Study.  WDFW provided the bulk of recreational and commercial ages.  Between-lab differences in aging were minute, as were within-lab differences.
+Age error matrices were developed for double-reads at the PFMC aging lab in Newport, OR and for double reads within the WDFW aging lab.  The Newport lab has done all of the Survey aging for the NWFSC, along with some commercial ages and  the 400 fish from the Small Study.  WDFW provided the bulk of recreational and commercial ages.  Between-lab differences in aging were minute, as were within-lab differences.  This result is supported by the primary age reader's assessment:  yellowtail rockfish are extremely easy to age (B. Kamikawa, pers. comm.).
 
 \vspace{.5cm}
 **Weight-Length**

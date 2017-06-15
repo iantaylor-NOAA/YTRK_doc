@@ -1,8 +1,5 @@
 <!-- ***************************ACKNOWLEDGEMENTS*************************** -->
 #Acknowledgments
-Include: STAR panel members and affiliations as well as names and affiliations 
-of persons who contributed data, advice or information but were not part of the 
-assessment team. Not required in draft assessment undergoing review.
 
 The authors thank the following individuals for their contributions to this assessment:
 
@@ -12,9 +9,9 @@ Oregon Department of Fish and Wildlife staff:  Alison Whitman and Troy Buell
 
 California Department of Fish and Wildlife staff:  John Budrick
 
-Southwest Fisheries Science Center staff:  Melissa Monk and Don Pearson
+Southwest Fisheries Science Center staff:  Melissa Monk, E.J. Dick, and Don Pearson
 
-Northwest Fisheries Science Center staff:  Beth Horness, John Wallace, Vanessa Tuttle, James Thorson and Owen Hamell
+Northwest Fisheries Science Center staff:  Jim Hastie, Chantel Wetzel, Beth Horness, John Wallace, Vanessa Tuttle, James Thorson and Owen Hamell
 
 RecFIN staff:  Rob Ames
 
@@ -22,15 +19,13 @@ John DeVore, Pacific Fisheries Management Council staff
 
 John Field, STAR panel Chair, SWFSC
 
-CIE Reviewers
+CIE Reviewers:  Panagiota Apostolaki and Kevin Stokes
 
 John Budrick, CDFW
 
 Jessi Doerpinghaus, WDFW and Pacific Fishery Management Council / Groundfish Management Team
 
 Dan Waldeck, Pacific Fishery Management Council / Groundfish Advisory Panel
-
-
 
 
 \newpage
