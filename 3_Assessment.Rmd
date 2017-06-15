@@ -4,14 +4,14 @@
 <!-- ***********HISTORY AND CURRENT ASSESSMENT***************************** -->
 ##History Of Modeling Approaches Used For This Stock
 
-Yellowtail rockfish was previously modeled as a 3-area stock north of 40.10 using ADMB in 1999 <TOADS> Need citation, with an update assessment in 2004[@Wallace2005].  That assessment divided the stock into 3 INPFC areas which are not coincident with state boundaries; this is a concern in that recent reconstructions of historical catch are state-by-state along the West Coast.  Because we cannot produce data that conform to the areas previously assessed, we have made no effort to reproduce the previous model.
+Yellowtail rockfish was previously modeled as a 3-area stock north of 40.10 using a model written in ADMB <TOADS> need citation in 1999. <TOADS> Need citation, with an update assessment in 2004[@Wallace2005].  That assessment divided the stock into 3 INPFC areas which are not coincident with state boundaries; this is a concern in that recent reconstructions of historical catch are state-by-state along the West Coast.  Because we cannot produce data that conform to the areas previously assessed, we have made no effort to reproduce the previous model.
 
 
 ###Previous Assessment Recommendations
 
 Many of the recommendations of the previous STAR panel are not relevant to this assessment, as they related to data deficiencies at that time that have since been resolved.  The 2004 STAR particularly recommended a focus on abundance indices, which they noted might require further survey information.
 
-This assessment provides three indices for the Northern model, and two for the Southern model.
+This assessment provides four indices for the Northern model, and three for the Southern model.  All indices are newly developed for this analysis.
 
 
 <!-- ************************MODEL DESCRIPTION***************************** -->
@@ -35,7 +35,9 @@ These are the main changes from the previous model, and our rationale for them:
 
 **Northern Model** 
 
-\emph{Commercial}: The commercial fleet consists primarily of bottom and midwater trawl.  No attempt was made to analyze the fishery separately by gear, particularly since it seems that in the fishery in the 1980s and 1990s, "bottom trawl"" gear was used in the midwater as well as on the bottom, and "midwater gear"" was sometimes dragged across soft bottoms (Craig Goode, ODFW Port Sampler, pers. comm).
+\emph{Commercial}: The commercial fleet consists primarily of bottom and midwater trawl.  No attempt was made to analyze the fishery separately by gear, particularly since it seems that in the fishery in the 1980s and 1990s, "bottom trawl" gear was used in the midwater as well as on the bottom, and "midwater gear" was sometimes dragged across soft bottoms (Craig Goode, ODFW Port Sampler, pers. comm).
+
+\emph{At-Sea Hake Fishery}: Yellowtail Rockfish are frequently caught in mid-water trawls associated with the At-Sea Hake Fishery (consisting of the Catcher-Processor and Mothership sectors). These catches are recorded and biological sampling takes place but the fish are processed at sea (typically into fish meal) and are not included in the PacFIN database so require separate analysis.
 
 \emph{Recreational}: The recreational fleet includes data from sport fisheries off Washington, Oregon, and northern California (Eureka and Del Norte counties)
 
@@ -51,7 +53,7 @@ These are the main changes from the previous model, and our rationale for them:
 
 
 ###Modeling Software
-The STAT team used Stock Synthesis 3 version 3.3 [@Methot2015].
+The STAT team used Stock Synthesis 3 version 3[@Methot2015].
 
 ###Data Weighting
 
@@ -63,11 +65,11 @@ Age-at-Length samples are unwieghted; that is, each fish is assumed to represent
 
 Recreational trips (the analogue of tows in the commercial fishery) are difficult to define in most cases.  Since much of the recreational data are from the dockside interview MRFSS program, which didn't anticipate the need to delineate samples as belonging to particular trips, we chose to use all recreational data "as-is", with the initial weights entered as number of fish.
 
-Stock Synthesis performs internal re-weighting within fleets to adjust for between-year differences in sample size.  Weighting among fleets uses either the Francis method [@Francis2011] or the Ianelli-McAllister harmonic mean method [@McAllister1997].  The Francis method was used for all fleets, except for the age data from the Southern model's Hook and Line survey, which is a single year of data to which we applied the Ianelli-McAllister method.
+Weighting among fleets uses either the Francis method [@Francis2011] or the Ianelli-McAllister harmonic mean method [@McAllister1997].  The Francis method was used for all fleets, except for the age data from the Southern model's Hook and Line survey, which is a single year of data to which we applied the Ianelli-McAllister method.
 
 
 ###Priors
-Natural Mortality (M) priors were provide by Owen Hamel prior on natural mortality [@Hamel2015].  We used the Hamel prior as a fixed value in the Southern model, however the Northern model was able to estimate M.  In both models, male M was estimated as an offset from female M.  The Southern female M is 0.18; the Northern female M prior is 0.12.
+Natural Mortality (M) priors were provide by Owen Hamel prior on natural mortality [@Hamel2015].  Natural mortality priors were based on examination of 99\% quantile of the observed ages early in the time-series before the full impact of fishing would have taken place. For the Northern model, these quantiles were approximately 35 years for females and 45 years for males, resulting in median M values of 0.15 and 0.12 for females and males. For the Southern model, the 99\% quantile of the early age observations were approximately 30 and 40 years for females and males, resulting in median M prior values of 0.18 and 0.135, respectively. In both models, M for males was represented as an offset from females. In the Northern model, both the female value and the male offset could be estimated without priors so the priors were not used. For the southern model, M was fixed at the median prior values for the two sexes.
 
 The prior for steepness (h, 0.718) was provided by James Thorson and used as a fixed parameter in both models. <TOADS:  Citation>
 
