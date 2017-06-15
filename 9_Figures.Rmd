@@ -18,47 +18,33 @@
 <!-- ![Map showing the state boundary lines for management of the recreational fishing fleets.  CRFS Districts 1-6 in California are presented as well as the WDFW Recreational Management Areas in Washington.  Florence, OR is shown as a potential location of model stratification. \label{fig:boundary_map}](Figures/boundary_map.png)
 -->
 
+![Map depicting the boundaries for the base-case model.  \label{fig:assess_region_map}](Figures/assess_region_map.png)
+
 <!-- ********************************************************************** --> 
 <!-- *************************Data FIGURES********************************* --> 
 <!-- ********************************************************************** -->
 
-##Catch History
-
-<!-- ********************************************************************** --> 
-<!-- ******************Landings and Discards FIGURES************************* --> 
-<!-- *either read in data to create figure or load in figures from analyst* --> 
-<!-- *******************one example of each here*************************** -->
-
-![Estimated catch history of `r spp` in the `r mod1_label`. Recreational catches in Washington are model estimates of total weigth converted from input catch in numbers using model estimates of growth and selectivity. Catches for the Commercial Fishery include estimated discards.\label{fig:r4ss_total_catch_N}](r4ss/plots_mod1/catch5 total catch (including discards) stacked.png)
-
-![Estimated discards in the Commercial Fishery in the `r mod1_label`. Estimates are influenced by the data for landings, discard ratios, and discard length combines and depend on the estimated parameters controlling selectivity and retention.\label{fig:r4ss_discard_N}](r4ss/plots_mod1/catch7 discards stacked plot (depends on multiple fleets).png)
-
-\FloatBarrier
-
-![Estimated catch history of `r spp` in the `r mod2_label`. \label{fig:r4ss_catch2_S}](r4ss/plots_mod2/catch2 landings stacked.png)
-
-\FloatBarrier
 
 <!-- ********************************************************************** -->
-<!-- *****************Maturity and Fecundity FIGURES*********************** --> 
+<!-- ********* SHARED Maturity and Fecundity FIGURES*********************** --> 
 <!-- ********************************************************************** -->
 
 \newpage
 
-##Life History (Maturity, Fecundity, Weight-Length, and Growth)
+##Life history (maturity, fecundity, and growth) for both models
 
 ![Estimated maturity relationship for `r spp` used in both models. Gray points indicate average observed functional maturity within each length bin with point size proportional to the number of samples.\label{fig:maturity}](Figures/YT_Propmat_update3_22.jpeg)
 
 
 <!-- ********************************************************************** -->
-<!-- **********************Weight-Length FIGURES*************************** --> 
+<!-- ************** SHARED Weight-Length FIGURES*************************** --> 
 <!-- ********************************************************************** -->
 
 ![Estimated weight-length relationship for `r spp` used in both models. Colored points show observed values (red for females, blue for males, and green for unsexed). The black line indicates the estimated relationship $W = 0.000011843L^{3.0672}$.\label{fig:weight-length}](Figures/weight-length_fit.png)
 
 
 <!-- ********************************************************************** -->
-<!-- **********************Growth FIGURES*************************** --> 
+<!-- *************** SHARED Growth FIGURES*************************** --> 
 <!-- ********************************************************************** -->
 
 ![Estimated length-at-age for female and male `r spp` in each model. Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. \label{fig:growth}](r4ss/plots_compare/growth_comparison.png)
@@ -66,67 +52,64 @@
 \FloatBarrier 
 
 <!-- ********************************************************************** -->
-<!-- *******************Selectivity & Retention**************************** --> 
+<!-- ****************** NORTHERN MODEL DATA AND FITS*********************** --> 
 <!-- ********************************************************************** -->
 
 \newpage
 
-##Data and model fits
+##Data and model fits for the `r mod1_label`
 
-###Data summary
 ![Summary of data sources used in the `r mod1_label`. \label{fig:data_plot}](r4ss/plots_mod1/data_plot.png)
-
-![Summary of data sources used in the `r mod2_label`. \label{fig:data_plot}](r4ss/plots_mod2/data_plot.png)
 
 \FloatBarrier
 
-###Selectivity, retention, and discards
+![Estimated catch history of `r spp` in the `r mod1_label`. Recreational catches in Washington are model estimates of total weigth converted from input catch in numbers using model estimates of growth and selectivity. Catches for the Commercial Fishery include estimated discards.\label{fig:r4ss_total_catch_N}](r4ss/plots_mod1/catch5 total catch (including discards) stacked.png)
+
+![Estimated discards in the Commercial Fishery in the `r mod1_label`. Estimates are influenced by the data for landings, discard ratios, and discard length combines and depend on the estimated parameters controlling selectivity and retention.\label{fig:r4ss_discard_N}](r4ss/plots_mod1/catch7 discards stacked plot (depends on multiple fleets).png)
+
+\FloatBarrier
+
+\newpage 
+
+<!-- ************** NORTHERN SELECTIVITY  **************************************** -->
+
+###Selectivity, retention, and discards for `r mod1_label`
 
 ![Estimated selectivity by length by each fishery and survey in the `r mod1_label`. \label{fig:selex}](r4ss/plots_mod1/sel01_multiple_fleets_length1.png)
 
 ![Estimated retention by length by the Commercial Fishery in the `r mod1_label`. \label{fig:retention}](r4ss/plots_mod1/time-varying_retention.png)
 
-![Estimated selectivity by length by each fishery and survey in the `r mod2_label`. \label{fig:selex}](r4ss/plots_mod2/sel01_multiple_fleets_length1.png)
-
-\FloatBarrier 
-
-<!-- ********************************************************************** -->
-<!-- ***********************Fits to Discards   **************************** --> 
-<!-- ********************************************************************** -->
+\FloatBarrier
 
 \newpage
 
-![Fit to discard fractions for the commercial fishery in the `r mod1_label`.\label{fig:r4ss_discard_fits}](r4ss/plots_mod1/discard_dataCommercialTrawl.png)
+![Fit to discard fractions for the commercial fishery in the `r mod1_label`.\label{fig:r4ss_discard_fits}](r4ss/plots_mod1/discard_dataCommercial Fishery.png)
 
-
-<!-- ********************************************************************** -->
-<!-- ***********************Fits to the Indices**************************** --> 
-<!-- ********************************************************************** -->
+\FloatBarrier
 
 \newpage
 
-###Fits to indices of abundance
+<!-- *********** NORTHERN INDICES  **************************************** -->
+
+###Fits to indices of abundance for `r mod1_label`
 
 ![Estimated fits to the CPUE and survey indices for the `r mod1_label`. \label{fig:index_fits1}](r4ss/plots_mod1/index0_all_indices_fit.png)
 
-![Estimated fits to the CPUE and survey indices for the `r mod2_label`. \label{fig:index_fits2}](r4ss/plots_mod2/index0_all_indices_fit.png)
+\FloatBarrier
 
-\FloatBarrier 
+\newpage
 
-<!-- ====================================================================== -->
-<!-- *****************                                       ************** -->
-<!-- *****************START FITS TO BIOLOGICAL DATA FIGURES  ************** --> 
-<!-- *****************                                       ************* -->
-<!-- ====================================================================== -->
+<!-- ************** NORTHERN LENGTHS  **************************************** -->
 
-<!-- ********************************************************************** -->
-<!-- ****************Length and Age Composition FIGURES******************** --> 
-<!-- ********************************************************************** -->
+###Length compositions for `r mod1_label`
 
+![Length compositions for all fleets in the `r mod1_label` (figure 1 of 2). Bubble size is proportional to proportions within each year. Bubble colors indicate unsexed fish (gray), females (red), and males (blue).\label{fig:comp_length_bubble_mod1_page1}](r4ss/plots_mod1/comp_lendat__page1_multi-fleet_comparison.png)
 
-<!-- ***********MODEL 1**************************************************** -->
+![Length compositions for all fleets in the `r mod1_label` (figure 2 of 2). \label{fig:comp_length_bubble_mod1_page2}](r4ss/plots_mod1/comp_lendat__page2_multi-fleet_comparison.png)
 
-###Fits to length compositions for `r mod1_label`
+\FloatBarrier
+
+\newpage
 
 ```{r, results='asis'}
     # Plot all of the comp plots
@@ -146,31 +129,12 @@
     }
 ```
 
-\FloatBarrier
+![Length composition Pearson residuals for all fleets in the `r mod1_label` (Figure 1 of 2). Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected). Bubble colors indicate unsexed fish (gray), females (red), and males (blue).\label{fig:comp_Pearson_length_mod1_page1}](r4ss/plots_mod1/comp_lenfit__page1_multi-fleet_comparison.png)
 
-<!-- ***********MODEL 2**************************************************** -->
+![Length composition Pearson residuals for all fleets in the `r mod1_label` (Figure 2 of 2).\label{fig:comp_Pearson_length_mod1_page2}](r4ss/plots_mod1/comp_lenfit__page2_multi-fleet_comparison.png)
 
-###Fits to length compositions for `r mod2_label`
 
-```{r, results='asis'}
-    # Plot all of the comp plots
-    for(i in which(LenComp_mod2$include)) { 
-      # find matches to multi-page plots
-      page_test = sapply(multi_page_fig, grepl, LenComp_mod2$label[i])
-      # if the plot is page2+ of a series, add the extra caption
-      if(TRUE %in% page_test) {
-        cat('\n![](', LenComp_mod2$filepath[i], ')', sep='')
-     
-        cat('\\begin{center} \n
-            Figure continued from previous page \n
-            \\end{center}',sep='')
-      } else {
-        cat('\n![', LenComp_mod2$caption[i], ' \\label{fig:mod2_', i, '_', LenComp_mod2$label[i], '}](', LenComp_mod2$filepath[i], ')\n', sep='')
-      }
-    }
-```
-
-\FloatBarrier
+<!-- ************** NORTHERN AGES ************************************** -->
 
 ###Fits to age compositions for `r mod1_label`
 
@@ -196,6 +160,14 @@
 
 \newpage
 
+![Age composition Pearson residuals for all fleets in the `r mod1_label`. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected). Bubble colors indicate unsexed fish (gray), females (red), and males (blue).\label{fig:comp_Pearson_age_mod1}](r4ss/plots_mod1/comp_agefit__multi-fleet_comparison.png)
+
+\FloatBarrier
+
+\newpage
+
+<!-- ************* NORTHERN CONDITIONALS ************************************** -->
+
 ###Fits to conditional-age-at-length compositions for `r mod1_label`
 
 ```{r, results='asis'}
@@ -220,7 +192,134 @@
 
 \newpage
 
-###Fits to age compositions for `r mod2_label`
+
+<!-- ********************************************************************** -->
+<!-- ******************* NORTHERN MODEL RESULTS *************************** --> 
+<!-- ********************************************************************** -->
+
+##Model results for `r mod1_label`
+
+### Base model results for `r mod1_label`
+
+<!-- ******************* NORTHERN Time-Series Figures ********************* -->
+
+![Estimated time-series of spawning output for `r mod1_label`. \label{fig:ssb}](r4ss/plots_mod1/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png)
+  
+\FloatBarrier
+
+![Estimated time-series of total biomass for `r mod1_label`. \label{fig:total_bio}](r4ss/plots_mod1/ts1_Total_biomass_(mt).png)
+
+\FloatBarrier
+
+![Estimated time-series of relative biomass for `r mod1_label`. \label{fig:depl}](r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png)
+  
+\FloatBarrier
+
+![Estimated time-series of recruitment for the `r mod1_label`. \label{fig:recruits1}](r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png)
+
+\FloatBarrier
+  
+![Estimated time-series of recruitment deviations for the `r mod1_label`. \label{fig:recdevs1}](r4ss/plots_mod1/recdevs2_withbars.png)
+  
+\FloatBarrier
+
+![Estimated recruitment (red circles) for the `r mod1_label` relative to the stock-recruit relationship (black line). The green line shows the effect of the bias correction for the lognormal distribution \label{fig:stock_recruit_curve}](r4ss/plots_mod1/SR_curve2.png)
+
+\FloatBarrier
+
+<!-- ********************************************************************** -->
+<!-- ***********History of modeling approaches FIGURES******************* --> 
+<!-- ********************************************************************** -->
+
+![Comparison of time series of age 4+ biomass for `r spp` across past assessments. \label{fig:assessment_history}](Figures/historical_assessment_timeseries.png)
+
+
+\FloatBarrier
+
+\newpage
+
+<!-- ********************************************************************** -->
+<!-- ****************** SOUTHERN MODEL DATA AND FITS ********************** --> 
+<!-- ********************************************************************** -->
+
+##Data and model fits for `r mod2_label`
+
+![Summary of data sources used in the `r mod2_label`. \label{fig:data_plot}](r4ss/plots_mod2/data_plot.png)
+
+\FloatBarrier
+
+\newpage
+
+![Estimated catch history of `r spp` in the `r mod2_label`. \label{fig:r4ss_catch2_S}](r4ss/plots_mod2/catch2 landings stacked.png)
+
+\FloatBarrier
+
+\newpage 
+
+
+<!-- ************* SOUTHERN SELECTIVITY  **************************************** -->
+
+###Selectivity, retention, and discards for `r mod2_label`
+
+![Estimated selectivity by length by each fishery and survey in the `r mod2_label`. \label{fig:selex}](r4ss/plots_mod2/sel01_multiple_fleets_length1.png)
+
+\FloatBarrier 
+
+\newpage
+
+<!-- ************** SOUTHERN INDICES  **************************************** -->
+
+###Fits to indices of abundance for `r mod2_label`
+
+![Estimated fits to the CPUE and survey indices for the `r mod2_label`. \label{fig:index_fits2}](r4ss/plots_mod2/index0_all_indices_fit.png)
+
+\FloatBarrier 
+
+\newpage
+
+<!-- ************* SOUTHERN LENGTHS  **************************************** -->
+
+###Length compositions for `r mod2_label`
+
+![Length compositions for all fleets in the `r mod2_label`. Bubble size is proportional to proportions within each year. \label{fig:comp_length_bubble_mod2}](r4ss/plots_mod2/comp_lendat__multi-fleet_comparison.png)
+
+```{r, results='asis'}
+    # Plot all of the comp plots
+    for(i in which(LenComp_mod2$include)) { 
+      # find matches to multi-page plots
+      page_test = sapply(multi_page_fig, grepl, LenComp_mod2$label[i])
+      # if the plot is page2+ of a series, add the extra caption
+      if(TRUE %in% page_test) {
+        cat('\n![](', LenComp_mod2$filepath[i], ')', sep='')
+     
+        cat('\\begin{center} \n
+            Figure continued from previous page \n
+            \\end{center}',sep='')
+      } else {
+        cat('\n![', LenComp_mod2$caption[i], ' \\label{fig:mod2_', i, '_', LenComp_mod2$label[i], '}](', LenComp_mod2$filepath[i], ')\n', sep='')
+      }
+    }
+```
+
+\FloatBarrier
+
+\newpage
+
+![Length composition Pearson residuals for all fleets in the `r mod2_label`. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected). \label{fig:comp_Pearson_length_mod2}](r4ss/plots_mod2/comp_lenfit__multi-fleet_comparison.png)
+
+\FloatBarrier
+
+\newpage
+
+<!-- *************** SOUTHERN AGES ************************************** -->
+
+###Age compositions for `r mod2_label`
+
+![Age compositions for all fleets in the `r mod2_label`. Bubble size is proportional to proportions within each year. \label{fig:comp_age_bubble_mod2}](r4ss/plots_mod2/comp_agedat__multi-fleet_comparison.png)
+
+\FloatBarrier
+
+\newpage
 
 ```{r, results='asis'}
     # Plot all of the comp plots
@@ -240,9 +339,15 @@
     }
 ```
 
+![Age composition Pearson residuals for all fleets in the `r mod2_label`. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected). \label{fig:comp_Pearson_age_mod2}](r4ss/plots_mod2/comp_agefit__multi-fleet_comparison.png)
+
 \FloatBarrier
 
 \newpage
+
+
+
+<!-- ************* SOUTHERN CONDITIONALS ************************************** -->
 
 ###Fits to conditional-age-at-length compositions for `r mod2_label`
 
@@ -264,45 +369,45 @@
     }
 ```
 
-<!-- ====================================================================== -->
-<!-- ******************                           ************************* -->
-<!-- ******************END BIOLOGICAL DATA FIGURES************************* --> 
-<!-- ******************                           ************************* -->
-<!-- ====================================================================== -->
-
-
 \FloatBarrier
 
 \newpage
 
-##Model results
-
-### Base model results
 
 <!-- ********************************************************************** -->
-<!-- ******************** Estimated Recruitment**************************** --> 
+<!-- ******************* SOUTHERN MODEL RESULTS *************************** --> 
 <!-- ********************************************************************** -->
 
+##Model results for `r mod2_label`
 
-![Estimated time-series of recruitment for the `r mod1_label`. \label{fig:recruits1}](r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png)
-  
-![Estimated time-series of recruitment deviations for the `r mod1_label`. \label{fig:recdevs1}](r4ss/plots_mod1/recdevs2_withbars.png)
+### Base model results for `r mod2_label`
+
+<!-- ******************* SOUTHERN Time-Series Figures ********************* -->
+
+![Estimated time-series of spawning output for `r mod2_label`. \label{fig:ssb}](r4ss/plots_mod2/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png)
   
 \FloatBarrier
 
-\newpage
-
-### Base model results for `r mod1_label`
-
-![Estimated time-series of recruitment for the `r mod2_label`. \label{fig:recruits2}](r4ss/plots_mod2/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png)
-  
-![Estimated time-series of recruitment deviations for the `r mod2_label`. \label{fig:recdevs2}](r4ss/plots_mod2/recdevs2_withbars.png)
+![Estimated time-series of total biomass for `r mod2_label`. \label{fig:total_bio}](r4ss/plots_mod2/ts1_Total_biomass_(mt).png)
 
 \FloatBarrier
 
-<!-- ********************************************************************** -->
-<!-- ***********History of modeling approaches FIGURES******************* --> 
-<!-- ********************************************************************** -->
+![Estimated time-series of relative biomass for `r mod2_label`. \label{fig:depl}](r4ss/plots_mod2/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png)
+  
+\FloatBarrier
+
+![Estimated time-series of recruitment for the `r mod2_label`. \label{fig:recruits1}](r4ss/plots_mod2/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png)
+
+\FloatBarrier
+  
+![Estimated time-series of recruitment deviations for the `r mod2_label`. \label{fig:recdevs1}](r4ss/plots_mod2/recdevs2_withbars.png)
+  
+\FloatBarrier
+
+![Estimated recruitment (red circles) for the `r mod2_label` relative to the stock-recruit relationship (black line). The green line shows the effect of the bias correction for the lognormal distribution \label{fig:stock_recruit_curve}](r4ss/plots_mod2/SR_curve2.png)
+
+\FloatBarrier
+
 
 
 

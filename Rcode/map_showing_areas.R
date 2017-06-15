@@ -11,7 +11,7 @@ if (system("hostname", intern=TRUE) %in% c("NWCLW04223033") ){
 }
 
 # define names and colors for each area
-mod.names <- c("North","South")
+mod.names <- c("Northern","Southern")
 mod.cols  <- c("blue",  "red")
 # load packages
 require(maps)

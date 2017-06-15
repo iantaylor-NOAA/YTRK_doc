@@ -27,7 +27,7 @@ load("./r4ss/SS_output.RData")
 spp = "Yellowtail Rockfish"
 spp.sci = "Sebastes flavidus"
 
-# long fleetnames for potential use in r4ss plots
+# long fleetnames for potential use in r4ss plots (repeated in 0-Run_r4ss_plots.R)
 fleetnames1 <- c("Commercial Fishery",
                  "At-Sea Hake Fishery",
                  "Recreational OR+CA",
@@ -121,11 +121,14 @@ for(imod in 1:n_models) {
   # add include = TRUE/FALSE to filter which plots go in document
   plotInfoTable$include <- TRUE
   exclude_strings <- c("lenfit_sampsize", "agefit_sampsize",
-                       "mod1_18_comp_gstagefit_residsflt6mkt2",
-                       "mod1_39_comp_gstlenfit_flt1mkt2",
-                       "mod1_40_comp_gstlenfit_residsflt1mkt2",
-                       "mod2_8_comp_agefit_data_weighting_TA1",
-                       "mod2_15_comp_gstagefit_residsflt2mkt2")
+                       "resids",
+                       "multi-fleet_comparison",
+                       "comp_gstlenfit_flt1mkt2",
+                       "comp_gstagefit_residsflt6mkt2",
+                       "comp_gstlenfit_flt1mkt2",
+                       "comp_gstlenfit_residsflt1mkt2",
+                       "comp_agedat_data_weighting_TA1.8_Hook & Line Survey",
+                       "gstagefit_residsflt2mkt2")
                        
   for(istring in 1:length(exclude_strings)){
     plotInfoTable$include[grep(exclude_strings[istring], plotInfoTable$file)] <- FALSE
