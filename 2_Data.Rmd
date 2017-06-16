@@ -79,19 +79,11 @@ Data from Northern California came from the Marine Recreational Fisheries Statis
 The West Coast Groundfish Observing Program (**WCGOP**) is an onboard observer program that has extensively surveyed fishing practices since 2002, with nearly 100% observer coverage in the trawl sector in recent years.  WCGOP provided discard ratios for yellowtail rockfish from 2002 to 2015.
 
 **Pikitch Study**  
-The Pikitch study was conducted between 1985 and 1987 [@Pikitch1988].  The northern 
-and southern boundaries of the study were $48^\circ 42^\prime$ N latitude and 
-$42^\circ 60^\prime$ N. latitude respectively, which is primarily within the 
-Columbia INPFC area [@Pikitch1988 ; @Rogers1992].  
+The Pikitch study was conducted between 1985 and 1987 [@Pikitch1988].  The northern and southern boundaries of the study were $48^\circ 42^\prime$ N latitude and $42^\circ 60^\prime$ N. latitude respectively, which is primarily within the Columbia INPFC area [@Pikitch1988 ; @Rogers1992].  
 
-Participation in the study 
-was voluntary and included vessels using bottom, midwater, and shrimp trawl gears.  
-Observers of normal fishing operations on commercial vessels collected the data, 
-estimated the total weight of the catch by tow and recorded the weight of species 
-retained and discarded in the sample.  
+Participation in the study was voluntary and included vessels using bottom, midwater, and shrimp trawl gears. Observers of normal fishing operations on commercial vessels collected the data, estimated the total weight of the catch by tow and recorded the weight of species retained and discarded in the sample.  
  
-Pikitch study discards were aggregated due to small sample size and included in the
-data as representing a single year mid-way through the study.
+Pikitch study discards were aggregated due to small sample size and included in the data as representing a single year mid-way through the study.
 
 ###Abundance Indices
 
@@ -104,7 +96,8 @@ Usually, the Stephens-MacCall approach is a simple binomial model for presence-a
 
 The hauls identified with a reasonable probability of encountering yellowtail were then modeled in a delta-lognormal glm to produce an annual index of abundance, bootstrapped 500 times to evaluate uncertainty.
 
-**Hake Bycatch Index**   
+**Hake Bycatch Index**
+
 The Hake bycatch data provided by the Alaska Fisheries Science Center (AFSC) was used to generate an index of abundance for 1985-1999.
 
 Data on haul-by-haul catch of Yellowtail Rockfish and Pacific Hake for the period 1976-2016 were obtained from the At-Sea Hake Observer Program along associated information including the location of each tow and the duration. Previous Yellowtail assessments used an index of abundance for the years 1978-1999. The most recent assessment (Wallace and Lai, 2005) stated that the index was not updated to include years beyond 1999 “because subsequent changes in fishery regulations and behavior have altered the statistical properties of these abundance indices”.  The ending year of 1999 was retained for this analysis. However, the years up to 1984 have relatively few tows with adequate information for CPUE analysis, and fishing effort off the coast of Washington where yellowtail are most commonly encountered (Figure \ref{fig:ASHOP_X1}). Therefore, for this new analysis, 1985 was chosen as the starting year.
@@ -115,32 +108,25 @@ For this new analysis, changes in catchability were estimated by comparing an in
  
 VAST was then used to conduct a geostatistical standardization of the CPUE of yellowtail caught as bycatch in the at-sea hake fishery. The resulting yellowtail index after adjustment by the estimated changes in catchability is qualitatively more similar to the index used in previous assessments (Figure \ref{fig:ASHOP_X4}) than the index resulting from assuming constant catchability.
 
-
-**Pikitch Study**  
-The Pikitch data referenced above provided an index for years 1981-91. <TOADS> need information about developing the index.
-
-**NWFSCcombo Index**
-
-**Triennial Index**
-
-<!-- ************FISHERY-INDPENDENT DATA*********************************** -->
+<!-- ************FISHERY-INDEPENDENT DATA*********************************** -->
 
 ###Fishery-Independent Data
 
-**Northwest Fisheries Science Center (NWFSC) shelf-slope survey**     
-This survey, referred to as the **NWFSCcombo Survey**, has been conducted annually since 2003.  
-The survey consistently covers depths between 30 and 700 fm.
+**Northwest Fisheries Science Center (NWFSC) shelf-slope survey**
 
-Data from this survey for yellowtail rockfish was available for 2003-2016, and provided an index
-in addition to length and age data.
+This survey, referred to as the **NWFSCcombo Survey**, has been conducted annually starting in 2003. It uses a random-grid design covering the coastal waters from a depth of 55 m to 1,280 m from late-May to early-October (\hl{add reference: Bradburn 2011}). Four chartered industry vessels are used each year (with the exception of 2013 when the U.S. federal government shutdown curtailed the survey). 
+
+The data from the NWFSCcombo survey was analyzed using a spatio-temporal delta-model (\hl{add reference: Thorson2015}), implemented as an R package VAST (\hl{add reference: Thorson2017}) and publicly available online (https://github.com/James-Thorson/VAST).  Spatial and spatio-temporal variation is specifically included in both encounter probability and positive catch rates, a logit-link for encounter probability, and a log-link for positive catch rates.  Vessel-year effects were included for each unique combination of vessel and year in the database.
+
+Both lognormal and gamma distributions were explored for the positive tows and produced similar results with the lognormal model showing better patterns in Q-Q plot. The index shows variability with an overall gradual increase from 2003 to 2013 with high estimates near the end of the time series in 2014 and 2016. A design-based index extrapolated from swept area densities without any geostatistical standardization shows a more dramatic increase from 2015 to 2016.
+
+Length and age compositions were also developed from this survey.
 
 **Alaska Fisheries Science Center (AFSC) Triennial shelf survey**    
-The **Triennial Survey** was conducted by the AFSC every 
-third year between 1977 and 2001, (and was conducted in 2004 by the NWFSC using the 
-same protocols).  The Triennial Survey trawled in depths of 30 to 275 fm.
 
-The Triennial Survey provided yellowtail rockfish length and age data, as well as an index of
-abundance from 1997-2004.
+The **Triennial Survey** was conducted by the AFSC every third year between 1977 and 2001, (and was conducted in 2004 by the NWFSC using the same protocols). The 1977 survey had incomplete coverage and is not believe to be comparable to the later years. The survey design used equally-spaced transects from which searches for tows in a specific depth range were initiated. The depth range and latitudinal range was not consistent across years, but all years in the period 1980-2004 included the area from 40$^\circ$ 10'N north to the Canadian border and a depth range that included 55-366 meters, which spans the range where the vast majority of Yellowtail encountered in all trawl surveys. Therefore the index was based on this depth range.
+
+An index of abundance was estimated based on the VAST delta-GLMM model as described for the NWFSCcombo Index above. In this case as well, Q-Q plots indicated slightly better performance of the lognormal over gamma models for positive tows. The index shows a gradual decline from 1980 to 1992 followed by high variability in the final 4 points spanning 1995-2004.
 
 
 <!--************BIOLOGICAL DATA*********************************************-->
@@ -148,7 +134,7 @@ abundance from 1997-2004.
 
 **Length And Age Compositions**   
 Length composition data were compiled from PacFIN for Oregon and Washington for the Northern model and combined
-with raw (unexpanded) length data from CalCOM for the two California counties north of 40.10 (Eureka and Del Norte counties).
+with raw (unexpanded) length data from CalCOM for the two California counties north of 40$^\circ$ 10'N (Eureka and Del Norte counties).
 
 
 Length compositions were provided from the following sources:
@@ -247,7 +233,7 @@ Age structure data were available from the following sources:
 ###Commercial Fishery Landings
 
 **California Commercial Landings**   
-The California Commercial Fishery Database (**CalCOM**) provided landings in California south of 40.10 for 1969-2016.
+The California Commercial Fishery Database (**CalCOM**) provided landings in California south of 40$^\circ$ 10'N for 1969-2016.
 
 ###Sport Fishery Removals
 
