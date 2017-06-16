@@ -83,9 +83,9 @@ Synthesis (3.xxx).  The model begins in `r Dat_start_mod1`, and assumes the stoc
 was at an unfished equilibrium that year.
 
 
-Map of assessment region: (Figure \ref{fig:assess_region_map}).  
+Map of assessment region: (Figure \ref{fig:assess_region_map_Exec_Sum}).  
  
-![Map depicting the boundaries for the base-case model.  \label{fig:assess_region_map}](Figures/assess_region_map.png)
+![Map depicting the boundaries for the base-case model.  \label{fig:assess_region_map_Exec_Sum}](Figures/assess_region_map_v2.png)
 
 \FloatBarrier
 
@@ -465,7 +465,7 @@ if(n_models == 3){
 ```
 <!-- ***********Edit caption based on fixed params************************* -->
 
-![Equilibrium yield curve for the base case model. Values are based on the `r Dat_end_mod1` fishery selectivity and with steepness fixed at... \label{fig:Yield_all}](`r yield.file`)
+![Equilibrium yield curve for the base case models.\label{fig:Yield_all}](`r yield.file`)
 
 <!-- ***********END EXECUTIVE SUMMARY RESULTS SUMMARY TABLE AND YIELD CURVE -->
 
