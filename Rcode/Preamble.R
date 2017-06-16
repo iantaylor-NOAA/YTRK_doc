@@ -42,6 +42,8 @@ fleetnames2 <- c("Recreational Fishery",
 
 # minimum vulnerable age class (summary age)
 min_age = "4+"
+bio_scale <- 1000 # convert summary and total biomass from mt to thousands of mt
+recruit_scale <- 1000 # convert recruits from thousands to millions
 
 # number of independent assessment models to include in the document
 n_models = 2 

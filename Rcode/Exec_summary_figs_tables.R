@@ -107,20 +107,21 @@ align(Exec_catch.table_S) = c('l', 'l',
 
 # Retreive data on spawning output and depletion
 for (model in 1:n_models) {
-    if (model==1) {
-     mod=mod1
-     mod_area='mod1'
-    } else {
+  if (model==1) {
+    mod=mod1
+    mod_area='mod1'
+  } else {
     
     if (model==2) {
-     mod=mod2
-     mod_area='mod2'
+      mod=mod2
+      mod_area='mod2'
     } else {
       
-     mod=mod3
-     mod_area='mod3'
-    }}
-          
+      mod=mod3
+      mod_area='mod3'
+    }
+  }
+  
   # Extract biomass/output  
   SpawningB = mod$derived_quants[grep('SPB', mod$derived_quants$Label), ]
   SpawningB = SpawningB[c(-1, -2), ]
@@ -132,9 +133,8 @@ for (model in 1:n_models) {
   
   SpawningByrs$YEAR = seq(FirstYR+1, LastYR+1)
   
-  SpawningByrs$lowerCI = round(SpawningByrs$Value + 
-                                 qnorm(0.025) * SpawningByrs$StdDev, 
-                               digits = 2)
+  SpawningByrs$lowerCI = pmax(0, round(SpawningByrs$Value + 
+                                         qnorm(0.025) * SpawningByrs$StdDev, digits = 2))
   
   SpawningByrs$upperCI = round(SpawningByrs$Value - 
                                  qnorm(0.025) * SpawningByrs$StdDev, 
@@ -166,8 +166,8 @@ for (model in 1:n_models) {
   
   Depletion$Value = round(Depletion$Value, digits=3)
   
-  Depletionyrs$lowerCI = round(Depletionyrs$Value + 
-                               qnorm(0.025)*Depletionyrs$StdDev, digits=3)
+  Depletionyrs$lowerCI = pmax(0, round(Depletionyrs$Value + 
+                                         qnorm(0.025)*Depletionyrs$StdDev, digits=3))
   
   Depletionyrs$upperCI = round(Depletionyrs$Value - 
                                qnorm(0.025)*Depletionyrs$StdDev, digits=3)
@@ -298,7 +298,7 @@ for (model in 1:n_models) {
   Recruityrs$upperCI <- exp(log(Recruityrs$Value) + qnorm(0.975)*Recruityrs$logint)
   
   Recruit_units <- "1,000s"
-  if(mean(Recruityrs$Value) > 10000){
+  if(mean(Recruityrs$Value) > 1000){
     Recruit_units <- "millions"
     Recruityrs$Value <- Recruityrs$Value/1000
     Recruityrs$lowerCI <- Recruityrs$lowerCI/1000
@@ -390,9 +390,10 @@ for (model in 1:n_models) {
                        Exploit$Label <= paste('F_', LastYR, sep=''), ]     
   
   Exploityrs$YEAR = seq(FirstYR, LastYR)
-  
-  Exploityrs$lowerCI = round(Exploityrs$Value +
-                            qnorm(0.025) * Exploityrs$StdDev, digits = 2)
+
+  # added pmax to avoid negative values
+  Exploityrs$lowerCI = pmax(0, round(Exploityrs$Value +
+                                       qnorm(0.025) * Exploityrs$StdDev, digits = 2))
   
   Exploityrs$upperCI = round(Exploityrs$Value -
                             qnorm(0.025) * Exploityrs$StdDev, digits = 2)
@@ -410,8 +411,9 @@ for (model in 1:n_models) {
   
   SPRratioyrs$Year = seq(FirstYR, LastYR)
   
-  SPRratioyrs$lowerCI = round(SPRratioyrs$Value +
-                              qnorm(0.025) * SPRratioyrs$StdDev, digits = 2)
+  # added pmax to avoid negative values
+  SPRratioyrs$lowerCI = pmax(0, round(SPRratioyrs$Value +
+                                        qnorm(0.025) * SPRratioyrs$StdDev, digits = 2))
   
   SPRratioyrs$upperCI = round(SPRratioyrs$Value -
                               qnorm(0.025) * SPRratioyrs$StdDev, digits = 2)
@@ -486,85 +488,95 @@ align(SPRratio_Exploit_mod3.table) = c('l','l',
 
 # Extract reference points table data
 for (model in 1:n_models) {
- if (model == 1){
-   mod = mod1
-   mod_area = 'mod1'
+  if (model == 1){
+    mod = mod1
+    mod_area = 'mod1'
   } else {
-  if(model == 2) {
-   mod = mod2
-   mod_area = 'mod2'
-  } else {
-   mod = mod3
-   mod_area = 'mod3'
- }}
-      
+    if(model == 2) {
+      mod = mod2
+      mod_area = 'mod2'
+    } else {
+      mod = mod3
+      mod_area = 'mod3'
+    }}
+  
 
-  # Rbind all of the data for the big summary reference table  
+  # Rbind all of the data for the big summary reference table
+
+  # first adjust scale of a few things
+  Recr_Unfished_tmp <- mod$derived_quants[grep('Recr_Un', mod$derived_quants$Label), ]
+  Recr_Unfished_tmp$Value <- Recr_Unfished_tmp$Value/recruit_scale
+  Recr_Unfished_tmp$StdDev <- Recr_Unfished_tmp$StdDev/recruit_scale
+  TotBio_Unfished_tmp <- mod$derived_quants[grep('TotBio', mod$derived_quants$Label), ]
+  TotBio_Unfished_tmp$Value <- TotBio_Unfished_tmp$Value/bio_scale
+  TotBio_Unfished_tmp$StdDev <- TotBio_Unfished_tmp$StdDev/bio_scale
+  
   Ref_pts = rbind (
-  SSB_Unfished    = mod$derived_quants[grep('SSB_U', mod$derived_quants$Label), ],
-  TotBio_Unfished = mod$derived_quants[grep('TotBio', mod$derived_quants$Label), ],
-  Recr_Unfished   = mod$derived_quants[grep('Recr_Un', mod$derived_quants$Label), ],
-  SPB_lastyr      = mod$derived_quants[grep(paste0('SPB_', LastYR), mod$derived_quants$Label), ],
-  Depletion_lastyr= mod$derived_quants[grep(paste0('Bratio_', LastYR), mod$derived_quants$Label), ],
-  Refpt_sB        = c(NA, NA, NA),
-  SSB_Btgt        = mod$derived_quants[grep('SSB_Btgt', mod$derived_quants$Label), ],
-  SPR_Btgt        = mod$derived_quants[grep('SPR_Btgt', mod$derived_quants$Label), ],
-  Fstd_Btgt       = mod$derived_quants[grep('Fstd_Btgt', mod$derived_quants$Label), ],
-  TotYield_Btgt   = mod$derived_quants[grep('TotYield_Btgt', mod$derived_quants$Label), ],
-  Refpt_SPR       = c(NA, NA, NA),
-  SSB_SPRtgt      = mod$derived_quants[grep('SSB_SPRtgt', mod$derived_quants$Label), ],
-  SPR_proxy       = c('SPR_proxy', .5, NA),
-  Fstd_SPRtgt     = mod$derived_quants[grep('Fstd_SPRtgt', mod$derived_quants$Label), ],
-  TotYield_SPRtgt = mod$derived_quants[grep('TotYield_SPRtgt', mod$derived_quants$Label), ],
-  Refpts_MSY      = c(NA, NA, NA),
-  SSB_MSY         = mod$derived_quants[grep('SSB_MSY', mod$derived_quants$Label), ],
-  SPR_MSY         = mod$derived_quants[grep('SPR_MSY', mod$derived_quants$Label), ],
-  Fstd_MSY        = mod$derived_quants[grep('Fstd_MSY', mod$derived_quants$Label), ],
-  TotYield_MSY    = mod$derived_quants[grep('TotYield_MSY', mod$derived_quants$Label), ] )
+      SSB_Unfished    = mod$derived_quants[grep('SSB_U', mod$derived_quants$Label), ],
+      TotBio_Unfished = TotBio_Unfished_tmp, # created above
+      Recr_Unfished   = Recr_Unfished_tmp,   # created above
+      SPB_lastyr      = mod$derived_quants[grep(paste0('SPB_', LastYR), mod$derived_quants$Label), ],
+      Depletion_lastyr= mod$derived_quants[grep(paste0('Bratio_', LastYR), mod$derived_quants$Label), ],
+      Refpt_sB        = c(NA, NA, NA),
+      SSB_Btgt        = mod$derived_quants[grep('SSB_Btgt', mod$derived_quants$Label), ],
+      SPR_Btgt        = mod$derived_quants[grep('SPR_Btgt', mod$derived_quants$Label), ],
+      Fstd_Btgt       = mod$derived_quants[grep('Fstd_Btgt', mod$derived_quants$Label), ],
+      TotYield_Btgt   = mod$derived_quants[grep('TotYield_Btgt', mod$derived_quants$Label), ],
+      Refpt_SPR       = c(NA, NA, NA),
+      SSB_SPRtgt      = mod$derived_quants[grep('SSB_SPRtgt', mod$derived_quants$Label), ],
+      SPR_proxy       = c('SPR_proxy', .5, NA),
+      Fstd_SPRtgt     = mod$derived_quants[grep('Fstd_SPRtgt', mod$derived_quants$Label), ],
+      TotYield_SPRtgt = mod$derived_quants[grep('TotYield_SPRtgt', mod$derived_quants$Label), ],
+      Refpts_MSY      = c(NA, NA, NA),
+      SSB_MSY         = mod$derived_quants[grep('SSB_MSY', mod$derived_quants$Label), ],
+      SPR_MSY         = mod$derived_quants[grep('SPR_MSY', mod$derived_quants$Label), ],
+      Fstd_MSY        = mod$derived_quants[grep('Fstd_MSY', mod$derived_quants$Label), ],
+      TotYield_MSY    = mod$derived_quants[grep('TotYield_MSY', mod$derived_quants$Label), ]
+  )
   Ref_pts         = Ref_pts[, 1:3]
   Ref_pts$Value   = as.numeric(Ref_pts$Value)
   Ref_pts$StdDev  = as.numeric(Ref_pts$StdDev)
   Ref_pts$Value1  = ifelse(Ref_pts$Value >= 1, as.character(round(Ref_pts$Value, 1)), 
-                           as.character(round(Ref_pts$Value, 4)))   
-        
+      as.character(round(Ref_pts$Value, 4)))   
+  
   Ref_pts$lowerCI  = round(Ref_pts$Value + qnorm(0.025) * Ref_pts$StdDev, digits = 4)
   
   Ref_pts$upperCI  = round(Ref_pts$Value - qnorm(0.025) * Ref_pts$StdDev, digits = 4)
   
   Ref_pts$lowerCI1 = ifelse(Ref_pts$lowerCI >= 1, as.character(round(Ref_pts$lowerCI, 1)), 
-                            as.character(round(Ref_pts$lowerCI, 4))) 
+      as.character(round(Ref_pts$lowerCI, 4))) 
   
   Ref_pts$upperCI1 = ifelse(Ref_pts$upperCI>=1, as.character(round(Ref_pts$upperCI,1)), 
-                            as.character(round(Ref_pts$upperCI, 4))) 
+      as.character(round(Ref_pts$upperCI, 4))) 
   
   Ref_pts$CI1      = paste('(', Ref_pts$lowerCI1, '-', Ref_pts$upperCI1, ')', sep='')
-        
+  
   Quantity = c(paste('Unfished spawning output (', fecund_unit, ')', sep = ''),
-                     paste('Unfished age ', min_age, ' biomass (mt)', sep = ''),
-                    'Unfished recruitment (R0, thousands)',
-                     paste('Spawning output', '(', LastYR, ' ', fecund_unit, ')', sep = ''),
-                     paste('Depletion (', LastYR,')',sep=''),
-                    '\\textbf{$\\text{Reference points based on } \\mathbf{SB_{40\\%}}$}',
-                    'Proxy spawning output ($B_{40\\%}$)',
-                    'SPR resulting in $B_{40\\%}$ ($SPR_{B40\\%}$)',
-                    'Exploitation rate resulting in $B_{40\\%}$',
-                    'Yield with $SPR_{B40\\%}$ at $B_{40\\%}$ (mt)',
-                    '\\textbf{\\textit{Reference points based on SPR proxy for MSY}}',
-                    'Spawning output',
-                    '$SPR_{proxy}$',
-                    'Exploitation rate corresponding to $SPR_{proxy}$',
-                    'Yield with $SPR_{proxy}$ at $SB_{SPR}$ (mt)',
-                    '\\textbf{\\textit{Reference points based on estimated MSY values}}',
-                    'Spawning output at $MSY$ ($SB_{MSY}$)',
-                    '$SPR_{MSY}$',
-                    'Exploitation rate at $MSY$',
-                    '$MSY$ (mt) ')
-        
+      paste('Unfished age ', min_age, ' biomass (1000 mt)', sep = ''),
+      'Unfished recruitment (R0, millions)',
+      paste('Spawning output', '(', LastYR, ' ', fecund_unit, ')', sep = ''),
+      paste('Relative Spawning Biomass (depletion)', LastYR,')',sep=''),
+      '\\textbf{$\\text{Reference points based on } \\mathbf{SB_{40\\%}}$}',
+      'Proxy spawning output ($B_{40\\%}$)',
+      'SPR resulting in $B_{40\\%}$ ($SPR_{B40\\%}$)',
+      'Exploitation rate resulting in $B_{40\\%}$',
+      'Yield with $SPR_{B40\\%}$ at $B_{40\\%}$ (mt)',
+      '\\textbf{\\textit{Reference points based on SPR proxy for MSY}}',
+      'Spawning output',
+      '$SPR_{proxy}$',
+      'Exploitation rate corresponding to $SPR_{proxy}$',
+      'Yield with $SPR_{proxy}$ at $SB_{SPR}$ (mt)',
+      '\\textbf{\\textit{Reference points based on estimated MSY values}}',
+      'Spawning output at $MSY$ ($SB_{MSY}$)',
+      '$SPR_{MSY}$',
+      'Exploitation rate at $MSY$',
+      '$MSY$ (mt) ')
+  
   Ref_pts = cbind(Quantity, Ref_pts[, c(4, 9)])
   Ref_pts[c(6, 11, 13, 16), 3] = ''
   Ref_pts[c(6, 11, 16), 2] = ''
   colnames(Ref_pts) = c('\\textbf{Quantity}', '\\textbf{Estimate}', 
-                        '\\textbf{\\~95\\%  Confidence Interval}')
+              '\\textbf{\\~95\\%  Confidence Interval}')
   assign(paste('Ref_pts_', mod_area, sep = ''), Ref_pts)
 
 } # end for loop for n models for reference points table
@@ -804,11 +816,11 @@ mngmt = mngmt[,-1]
   SPRratio_Exploit_mod1 = rbind(SPRratio_Exploit_mod1,blanks)
   rownames(SPRratio_Exploit_mod1)[10]='Lastyear'
   
-  # Age 5+ biomass
-  Age5biomass_mod1 = mod1$timeseries[,c('Yr','Bio_smry')]
-  Age5biomassyrs_mod1 = subset(Age5biomass_mod1, Yr>=(FirstYR) & Yr<=(LastYR))
-  Age5biomassyrs_mod1 = Age5biomassyrs_mod1[,2]
-  Age5biomassyrs_mod1 = round(Age5biomassyrs_mod1,2)
+  # Summary biomass (age 4+ for Yellowtail)
+  Summary_biomass_mod1 = mod1$timeseries[,c('Yr','Bio_smry')]
+  Summary_biomassyrs_mod1 = subset(Summary_biomass_mod1, Yr>=(FirstYR) & Yr<=(LastYR))
+  Summary_biomassyrs_mod1 = Summary_biomassyrs_mod1[,2]
+  Summary_biomassyrs_mod1 = round(Summary_biomassyrs_mod1/bio_scale,2)
   
   # Spawning biomass and depltion
   SpawnDeplete_mod1 = SpawnDeplete_mod1[,c(2:5)]
@@ -821,7 +833,7 @@ mngmt = mngmt[,-1]
   
   # BIND ALL DATA TOGETHER
   mod1_summary = cbind(SPRratio_Exploit_mod1,
-                       Age5biomassyrs_mod1,
+                       Summary_biomassyrs_mod1,
                        SpawnDeplete_mod1,
                        Recruittab_mod1)
     
@@ -835,10 +847,10 @@ if (n_models >= 2) {
   rownames(SPRratio_Exploit_mod2)[10]='Lastyear'
 
   # Age 5+ biomass 
-  Age5biomass_mod2 = mod2$timeseries[,c('Yr','Bio_smry')]
-  Age5biomassyrs_mod2 = subset(Age5biomass_mod2, Yr>=(FirstYR) & Yr<=(LastYR))
-  Age5biomassyrs_mod2 = Age5biomassyrs_mod2[,2]
-  Age5biomassyrs_mod2 = round(Age5biomassyrs_mod2,2)
+  Summary_biomass_mod2 = mod2$timeseries[,c('Yr','Bio_smry')]
+  Summary_biomassyrs_mod2 = subset(Summary_biomass_mod2, Yr>=(FirstYR) & Yr<=(LastYR))
+  Summary_biomassyrs_mod2 = Summary_biomassyrs_mod2[,2]
+  Summary_biomassyrs_mod2 = round(Summary_biomassyrs_mod2/bio_scale,2)
   
   # Spawning biomass and depltion
   SpawnDeplete_mod2 = SpawnDeplete_mod2[,c(2:5)]
@@ -849,7 +861,7 @@ if (n_models >= 2) {
   Recruittab_mod2 = Recruittab_mod2[,c(2,3)]
   
   # BIND ALL DATA TOGETHER
-  mod2_summary = cbind(SPRratio_Exploit_mod2,Age5biomassyrs_mod2,SpawnDeplete_mod2,Recruittab_mod2)
+  mod2_summary = cbind(SPRratio_Exploit_mod2,Summary_biomassyrs_mod2,SpawnDeplete_mod2,Recruittab_mod2)
 }
 
 # -----------------------------------------------------------------------------    
