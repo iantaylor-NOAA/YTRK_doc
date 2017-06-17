@@ -32,7 +32,7 @@
 -1 #_Forecast loop control #3 (reserved for future bells&whistles) 
 0 #_Forecast loop control #4 (reserved for future bells&whistles) 
 0 #_Forecast loop control #5 (reserved for future bells&whistles) 
-2030  #FirstYear for caps and allocations (should be after years with fixed
+2050  #FirstYear for caps and allocations (should be after years with fixed
 #  inputs) 
 0 # stddev of log(realized catch/target catch) in forecast (set value>0.0 t
 # o cause active impl_error)

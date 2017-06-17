@@ -33,7 +33,7 @@
 # Conditional input if relative F choice = 2
 # Fleet relative F:  rows are seasons, columns are fleets
 #_Fleet:  RecreationalCatch CommercialCatch OnboardSurvey HookAndLineSurvey RecStudy
-#  0.768472 0.231528 0 0 0
+#  0.803059 0.196941 0 0 0
 # enter list of fleet number and max for fleets with max annual catch; terminate with fleet=-9999
 -9999 -1
 # enter list of area ID and max annual catch; terminate with area=-9999

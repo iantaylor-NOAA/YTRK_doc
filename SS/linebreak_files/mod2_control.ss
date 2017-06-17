@@ -1,5 +1,5 @@
 #V3.30.03.05
-#_data_and_control_files: YTRK.North.data.ss // YTRK.North.control.ss
+#_data_and_control_files: YTRK.South.data.ss // YTRK.South.control.ss
 #_SS-V3.30.03.05-safe;_2017_05_11;_Stock_Synthesis_by_Richard_Methot_(NOAA)
 # _using_ADMB_11.6
 #_SS-V3.30.03.05-safe;user_support_available_at:NMFS.Stock.Synthesis@noaa.g
@@ -255,6 +255,7 @@
 # vey
          4         1         0         0         0         1  #  HookAndLin
 # eSurvey
+  5         1         0         0         0         1  #  Small_Fish_Study
 -9999 0 0 0 0 0
 #
 #_Q_parms(if_any);Qunits_are_ln(q)
@@ -268,6 +269,8 @@
  0  #  LnQ_base_OnboardSurvey
 -30    15   -15.817     0     1     0   -1    0    0    0    0    0    0   
  0  #  LnQ_base_HookAndLineSurvey
+-30    15   -15.817     0     1     0   -1    0    0    0    0    0    0   
+ 0  #  LnQ_Small_Fish_Study
 #
 #_no timevary Q parameters
 #
@@ -389,17 +392,27 @@
  #_6=mult_by_size-at-age_N
  #_7=mult_by_generalized_sizecomp
 #_Factor  Fleet  Value
- #_Factor Fleet     Var_Adj
 #
 #
-4 1 0.005579158
-4 2 0.02327
-4 3 0.006225575
-4 4 1.167896417
-4 5 0.670430019
-5 1 0.062482746
-5 2 0.112764402
-5 4 0.1862
+#Factor Fleet New_Var_adj hash Old_Var_adj New_Francis New_MI Francis_mult 
+# MI_mult Type Name Note
+4 1 0.004518 # 0.005705 0.004518 0.017474 0.791969 3.062844 len Recreationa
+# lCatch 
+4 2 0.306952 # 0.222574 0.306952 0.503206 1.379102 2.26085 len CommercialCa
+# tch 
+4 3 0.004079 # 0.00427 0.004079 0.006502 0.955177 1.522752 len OnboardSurve
+# y 
+4 4 0.983092 # 0.896088 0.983092 2.401472 1.097093 2.679951 len HookAndLine
+# Survey 
+4 5 0.632519 # 0.43201 0.632519 0.812562 1.46413 1.880887 len RecStudy 
+5 1 0.065085 # 0.071088 0.065085 0.348662 0.915555 4.904647 age Recreationa
+# lCatch 
+5 2 0.136786 # 0.091081 0.136786 0.221575 1.501803 2.432719 age CommercialC
+# atch 
+5 4 0.21157 # 0.205116 NA 0.21157 NA 1.031465 age HookAndLineSurvey No Fran
+# cis weight--using MI value
+#
+#
 -9999   1       0.000000000
 #
 #

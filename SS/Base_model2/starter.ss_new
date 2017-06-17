@@ -1,7 +1,7 @@
 #V3.30.03.05
 YTRK.South.data.ss
 YTRK.South.control.ss
-0 # 0=use init values in control file; 1=use ss.par
+1 # 0=use init values in control file; 1=use ss.par
 1 # run display detail (0,1,2)
 1 # detailed age-structured reports in REPORT.SSO (0,1,2) 
 0 # write detailed checkup.sso file (0,1) 
@@ -14,7 +14,7 @@ YTRK.South.control.ss
 1 # MCeval burn interval
 1 # MCeval thin interval
 0 # jitter initial parm value by this fraction
-1967 # min yr for sdreport outputs (-1 for styr)
+1914 # min yr for sdreport outputs (-1 for styr)
 2028 # max yr for sdreport outputs (-1 for endyr; -2 for endyr+Nforecastyrs
 0 # N individual STD years 
 #vector of year values 

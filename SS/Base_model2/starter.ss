@@ -1,7 +1,7 @@
 #V3.30.01.09-trans
 YTRK.South.data.ss
 YTRK.South.control.ss
-0 # 0=use init values in control file; 1=use ss.par
+1 # 0=use init values in control file; 1=use ss.par
 1 # run display detail (0,1,2)
 1 # detailed age-structured reports in REPORT.SSO (0,1,2) 
 0 # write detailed checkup.sso file (0,1) 
