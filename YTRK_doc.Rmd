@@ -94,7 +94,7 @@ header-includes:
 \setcounter{figure}{0}
 \setcounter{table}{0}
 \newpage
-```{r child = "8_Tables.Rmd}
+```{r child = "8_Tables.Rmd"}
 ```
 \newpage
 ```{r child = "9_Figures.Rmd"}
