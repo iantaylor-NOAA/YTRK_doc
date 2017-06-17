@@ -161,7 +161,7 @@ SSplotProfile(profilesummary,           # summary object
               profile.label="Log of unfished equilibrium recruitment, log(R0)") # axis label
 # copy plot with generic name to main folder with more specific name
 file.copy(file.path(dir.prof.R0.N, 'profile_plot_likelihood.png'),
-          file.path(YTdir.profs, 'profile_logR0.N_18.png'), overwrite=TRUE)
+          file.path(YTdir.profs, 'profile_logR0.N.png'), overwrite=TRUE)
 
 # Piner Plot showing influence of age comps by fleet
 PinerPlot(profilesummary,           # summary object
@@ -177,7 +177,7 @@ PinerPlot(profilesummary,           # summary object
           profile.label="Log of unfished equilibrium recruitment, log(R0)") # axis label
 # copy plot with generic name to main folder with more specific name
 file.copy(file.path(dir.prof.R0.N, 'profile_plot_likelihood.png'),
-          file.path(dir.prof.R0.N, '../profile_age-comp_logR0.N_18.png'), overwrite=TRUE)
+          file.path(dir.prof.R0.N, '../profile_age-comp_logR0.N.png'), overwrite=TRUE)
 
 # Piner Plot showing influence of indices by fleet
 PinerPlot(profilesummary,           # summary object
@@ -193,7 +193,7 @@ PinerPlot(profilesummary,           # summary object
           profile.label="Log of unfished equilibrium recruitment, log(R0)") # axis label
 # copy plot with generic name to main folder with more specific name
 file.copy(file.path(dir.prof.R0.N, 'profile_plot_likelihood.png'),
-          file.path(dir.prof.R0.N, '../profile_indices_logR0.N_18.png'), overwrite=TRUE)
+          file.path(dir.prof.R0.N, '../profile_indices_logR0.N.png'), overwrite=TRUE)
 
 SSplotComparisons(profilesummary, subplot=1,
                   legendlabels=c(paste0("log(R0)=",logR0vec.N),"Base Model"),
@@ -220,13 +220,13 @@ SSplotProfile(profilesummary,           # summary object
               profile.label="Natural mortality (M)") # axis label
 # copy plot with generic name to main folder with more specific name
 file.copy(file.path(dir.prof.M.N, 'profile_plot_likelihood.png'),
-          file.path(dir.prof.M.N, '../profile_M.N_18.png'), overwrite=TRUE)
+          file.path(dir.prof.M.N, '../profile_M.N.png'), overwrite=TRUE)
 
 # compare spawning biomass time series
 SSplotComparisons(profilesummary, subplot=1,
                   legendlabels=c(paste0("M=",M.vec),"Base Model"),
                   png=TRUE, plotdir=file.path(YTdir.mods, "profiles"),
-                  filenameprefix="profile_Mortality.N_18_", legendloc="bottomleft")
+                  filenameprefix="profile_M.N_", legendloc="bottomleft")
 
 
 ##################################################################################
@@ -255,7 +255,7 @@ file.copy(file.path(dir.prof.M2.N, 'profile_plot_likelihood.png'),
 SSplotComparisons(profilesummary, subplot=1,
                   legendlabels=c(paste0("male offset M=",M2.vec),"Base Model"),
                   png=TRUE, plotdir=file.path(YTdir.mods, "profiles"),
-                  filenameprefix="profile_M2.N_18_", legendloc="bottomleft")
+                  filenameprefix="profile_M2.N_", legendloc="bottomleft")
 
 ##################################################################################
 # Steepness profile North
@@ -274,13 +274,13 @@ SSplotProfile(profilesummary,           # summary object
               profile.label="Stock-recruit steepness (h)") # axis label
 # copy plot with generic name to main folder with more specific name
 file.copy(file.path(dir.prof.h.N, 'profile_plot_likelihood.png'),
-          file.path(dir.prof.h.N, '../profile_h.N_18.png'), overwrite=TRUE)
+          file.path(dir.prof.h.N, '../profile_h.N.png'), overwrite=TRUE)
 # compare spawning biomass time series
 labels <- paste0("h=",h.vec)
 labels[h.vec==0.718] <- paste(labels[h.vec==0.718], "(Base Model)")
 SSplotComparisons(profilesummary, subplot=1,
                   legendlabels=labels,
                   png=TRUE, plotdir=file.path(YTdir.mods, "profiles"),
-                  filenameprefix="profile_steep.N_18_", legendloc="bottomleft")
+                  filenameprefix="profile_steep.N_", legendloc="bottomleft")
 
 } # end if(FALSE) section that doesn't get sourced
