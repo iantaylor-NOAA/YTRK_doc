@@ -1,7 +1,7 @@
 ### notes on running profiles and making associated plots
 ### for 2017 Yellowtail Rockfish assessment
 
-stop("\n  This file should not be sourced!") # note to stop Ian from accidental sourcing
+#stop("\n  This file should not be sourced!") # note to stop Ian from accidental sourcing
 
 # define directory on a specific computer
 if (system("hostname", intern=TRUE) %in% c("NWCLW04223033") ){
@@ -11,43 +11,48 @@ if (system("hostname", intern=TRUE) %in% c("NWCLW04223033") ){
   if(is.na(file.info(YTdir.profs)$isdir)){
     dir.create(YTdir.profs)
   }
+  # example sourcing this file
+  # source("c:/SS/Yellowtail/Yellowtail2017/YTRK_doc/Rcode/miscellaneous/Yellowtail_profile_notes.R")
 }
 
+require(r4ss)
 
 # load model output into R
 # read base model from each area
-
-mod.S <- 'South/12_Blocked_selectivity'
-mod.S <- 'South/12b_unblock'
-dir.S <- file.path(YTdir.mods, mod.S)
-out.S <- SS_output(dir.S)
-
-mod.N <- 'North/14d_no_discards_comps'
-mod.N <- 'North/14k_extra_var_hake'
+mod.N <- 'North/18_Base_Model'
 dir.N <- file.path(YTdir.mods, mod.N)
-out.N <- SS_output(dir.N)
+if(!exists('out.N')){
+  out.N <- SS_output(dir.N)
+}
 
 # estimated log(R0) value
-out.S$parameters["SR_LN(R0)","Value"]
-## [1] 9.53632
 out.N$parameters["SR_LN(R0)","Value"]
-## [1] 9.83596
+## [1] 10.1811
+#out.S$parameters["SR_LN(R0)","Value"]
+## [1] 9.53632
 
 # fixed M value
-out.S$parameters["NatM_p_1_Fem_GP_1","Value"]
-## [1] 0.12
+out.N$parameters["NatM_p_1_Fem_GP_1","Value"]
+## [1] 0.140629
 
 # fixed h value
-out.S$parameters["SR_BH_steep","Value"]
+out.N$parameters["SR_BH_steep","Value"]
 ## [1] 0.718
 
 # vectors of log(R0) spanning estimates
 # (going from high to low in case low value cause crashes)
-logR0vec.S <- seq(10.0, 8.0, -.2)
 logR0vec.N <- seq(11.0, 9.0, -.2)
 
+# check that range below spans estimated R0 for the South model
+logR0vec.S <- seq(10.0, 8.0, -.2)
+
+### vectors below shared across models
 # vectors of M
-M.vec <- seq(0.08, 0.20, 0.01)
+M.vec <- seq(0.10, 0.24, 0.02)
+
+# vector of offsets for male mortality from equal to females
+# down to about 75% of female M: exp(-0.3) ~ 0.74.
+M2.vec <- seq(0, -0.3, -0.05) 
 
 # vectors of steepness
 h.vec <- c(0.5, 0.6, 0.718, 0.8, 0.9)
@@ -56,7 +61,7 @@ h.vec <- c(0.5, 0.6, 0.718, 0.8, 0.9)
 # function to copy input files
 ####################################################################################
 copy.SS.files <- function(target=NULL, source=NULL,
-                          SSsource='c:/ss/SSv3.30.03.07_May19/ss.exe',
+                          #SSsource='c:/ss/SSv3.30.03.07_May19/ss.exe',
                           control.for.profile=FALSE, overwrite=FALSE){
   start <- SS_readstarter(file.path(YTdir.mods, source, "starter.ss"))
   dir.create(file.path(YTdir.profs, target))
@@ -68,7 +73,9 @@ copy.SS.files <- function(target=NULL, source=NULL,
             to = file.path(YTdir.profs, target, 'control.ss_new'), overwrite=overwrite)
   file.copy(from=file.path(YTdir.mods, source, start$datfile),
             to = file.path(YTdir.profs, target, start$datfile), overwrite=overwrite)
-  file.copy(from=SSsource,
+  ## file.copy(from=SSsource,
+  ##          to = file.path(YTdir.profs, target, "ss.exe"), overwrite=overwrite)
+  file.copy(from=file.path(YTdir.mods, source, "ss.exe"),
             to = file.path(YTdir.profs, target, "ss.exe"), overwrite=overwrite)
   if(control.for.profile){
     start$ctlfile <- "control_modified.ss"
@@ -83,6 +90,8 @@ copy.SS.files <- function(target=NULL, source=NULL,
   }
 }
 
+if(FALSE){ # don't run all the stuff below if sourcing the file
+
 ####################################################################################
 # run profiles
 ####################################################################################
@@ -95,7 +104,7 @@ copy.SS.files(source=mod.S, target=dir.prof.R0.S,
 SS_profile(dir=file.path(YTdir.profs, dir.prof.R0.S),
            string="R0", profilevec=logR0vec.S, extras="-nohess -nox")
 
-dir.prof.R0.N <- "prof.R0.N.14k"
+dir.prof.R0.N <- "prof.R0.N.18"
 copy.SS.files(source=mod.N, target=dir.prof.R0.N,
               control.for.profile=TRUE, overwrite=TRUE)
 SS_profile(dir=file.path(YTdir.profs, dir.prof.R0.N),
@@ -103,11 +112,18 @@ SS_profile(dir=file.path(YTdir.profs, dir.prof.R0.N),
 
 ##################################################################################
 # mortality profiles
-dir.prof.M.S <- "prof.M.S.11b"
-copy.SS.files(source=mod.S, target=dir.prof.M.S,
+dir.prof.M.N <- "prof.M.N.18"
+copy.SS.files(source=mod.N, target=dir.prof.M.N,
               control.for.profile=TRUE, overwrite=TRUE)
-SS_profile(dir=file.path(YTdir.profs, dir.prof.M.S),
+SS_profile(dir=file.path(YTdir.profs, dir.prof.M.N),
            string="NatM_p_1_Fem_GP_1", profilevec=M.vec, extras="-nohess -nox")
+
+# M offset profile
+dir.prof.M2.N <- "prof.M2.N.18"
+copy.SS.files(source=mod.N, target=dir.prof.M2.N,
+              control.for.profile=TRUE, overwrite=TRUE)
+SS_profile(dir=file.path(YTdir.profs, dir.prof.M2.N),
+           string="NatM_p_1_Mal_GP_1", profilevec=M2.vec, extras="-nohess -nox")
 
 ##################################################################################
 # steepness profiles
@@ -116,121 +132,52 @@ copy.SS.files(mod="S", target=dir.prof.h.S, control.for.profile=TRUE, overwrite=
 SS_profile(dir=dir.prof.h.S, string="steep",
            profilevec=h.vec, extras="-nohess -nox")
 
+
+
+
+
 ####################################################################################
 ### plotting profile results
 ####################################################################################
 
-##################################################################################
-# Mortality profile South
-profilemodels <- SSgetoutput(dirvec=file.path(YTdir.profs, dir.prof.M.S),
-                             keyvec=1:length(M.vec), getcovar=FALSE)
-# summarize output
-profilesummary <- SSsummarize(profilemodels)
-# open PNG file (allows extra axis to be added)
-png(file.path(YTdir.mods, "profiles/profile_Mortality.S.png"),
-    width=6.5, height=5, res=300, units='in', pointsize=10)
-SSplotProfile(profilesummary,           # summary object
-              minfraction = 0.001,
-              sort.by.max.change = FALSE,
-              plotdir=dir.prof.M.S,
-              profile.string = "NatM_p_1_Fem_GP_1", # substring of profile parameter
-              profile.label="Natural mortality (M)") # axis label
-axis(1,at=0.053) # axis showing base model values (prior median)
-dev.off() # close PNG file
-
-SSplotComparisons(profilesummary, subplot=1, legendlabels=paste0("M=",M.vec),
-                  png=TRUE, plotdir=file.path(YTdir.mods, "profiles"), models=1:4,
-                  filenameprefix="profile_Mortality.S_")
-
-##################################################################################
-# R0 profile South
-dir.prof.R0.S <- file.path(YTdir.profs, "prof.R0.S.12b")
-profilemodels <- SSgetoutput(dirvec=dir.prof.R0.S,
-                             keyvec=1:length(logR0vec.S), getcovar=FALSE)
-profilemodels$MLE <- out.S
-profilesummary <- SSsummarize(profilemodels)
-# plot profile using summary created above
-SSplotProfile(profilesummary,           # summary object
-              minfraction = 0.0001,
-              sort.by.max.change = FALSE,
-              models = 1:length(logR0vec.S), # exclude MLE
-              #xlim=c(3.2,4.6),
-              #ymax=200,
-              plotdir=dir.prof.R0.S,
-              print=TRUE,
-              profile.string = "R0", # substring of profile parameter
-              profile.label="Log of unfished equilibrium recruitment, log(R0)") # axis label
-file.copy(file.path(dir.prof.R0.S, 'profile_plot_likelihood.png'),
-          file.path(dir.prof.R0.S, 'profile_logR0.S.12b.png'), overwrite=TRUE)
-SSplotComparisons(profilesummary, legendlabels=logR0vec.S)
-
-# Piner Plot showing influence of age comps by fleet
-PinerPlot(profilesummary,           # summary object
-          component="Age_like",
-          main="Changes in age-composition likelihoods by fleet",
-          minfraction = 0.0001,
-          models=1:length(logR0vec.S),
-          #xlim=c(3.2,4.6),
-          #ymax=200,
-          plotdir=dir.prof.R0.S,
-          print=TRUE,
-          profile.string = "R0", # substring of profile parameter
-          profile.label="Log of unfished equilibrium recruitment, log(R0)") # axis label
-file.copy(file.path(dir.prof.R0.S, 'profile_plot_likelihood.png'),
-          file.path(dir.prof.R0.S, 'profile_age-comp_logR0.S_12b.png'), overwrite=TRUE)
-
-# Piner Plot showing influence of indices by fleet
-PinerPlot(profilesummary,           # summary object
-          component="Surv_like",
-          main="Changes in index likelihoods by fleet",
-          minfraction = 0.0001,
-          models=1:length(logR0vec.S),
-          #xlim=c(3.2,4.6),
-          #ymax=200,
-          plotdir=dir.prof.R0.S,
-          print=TRUE,
-          profile.string = "R0", # substring of profile parameter
-          profile.label="Log of unfished equilibrium recruitment, log(R0)") # axis label
-file.copy(file.path(dir.prof.R0.S, 'profile_plot_likelihood.png'),
-          file.path(dir.prof.R0.S, 'profile_indices_logR0.S_12b.png'), overwrite=TRUE)
-
-
-
-
 # R0 profile North
-dir.prof.R0.N <- file.path(YTdir.profs, "prof.R0.N.14k")
+dir.prof.R0.N <- file.path(YTdir.profs, "prof.R0.N.18")
 profilemodels <- SSgetoutput(dirvec=dir.prof.R0.N,
                              keyvec=1:length(logR0vec.N), getcovar=FALSE)
 profilemodels$MLE <- out.N
 profilesummary <- SSsummarize(profilemodels)
+
+
 # plot profile using summary created above
 SSplotProfile(profilesummary,           # summary object
               minfraction = 0.0001,
-              models = 1:length(logR0vec.N), # exclude MLE
+              #models = 1:length(logR0vec.N), # optionally exclude MLE
               sort.by.max.change = FALSE,
               #xlim=c(3.2,4.6),
-              #ymax=50,
+              ymax=50, # modify as required to get reasonable scale to see differences
               plotdir=dir.prof.R0.N,
               print=TRUE,
               profile.string = "R0", # substring of profile parameter
               profile.label="Log of unfished equilibrium recruitment, log(R0)") # axis label
+# copy plot with generic name to main folder with more specific name
 file.copy(file.path(dir.prof.R0.N, 'profile_plot_likelihood.png'),
-          file.path(YTdir.profs, 'profile_logR0.N_14k.png'), overwrite=TRUE)
+          file.path(YTdir.profs, 'profile_logR0.N_18.png'), overwrite=TRUE)
 
 # Piner Plot showing influence of age comps by fleet
 PinerPlot(profilesummary,           # summary object
           component="Age_like",
           main="Changes in age-composition likelihoods by fleet",
           minfraction = 0.0001,
-          models=1:length(logR0vec.N),
+          #models=1:length(logR0vec.N),
           #xlim=c(3.2,4.6),
-          #ymax=200,
+          ymax=8,
           plotdir=dir.prof.R0.N,
           print=TRUE,
           profile.string = "R0", # substring of profile parameter
           profile.label="Log of unfished equilibrium recruitment, log(R0)") # axis label
+# copy plot with generic name to main folder with more specific name
 file.copy(file.path(dir.prof.R0.N, 'profile_plot_likelihood.png'),
-          file.path(dir.prof.R0.N, '../profile_age-comp_logR0.N_14k.png'), overwrite=TRUE)
+          file.path(dir.prof.R0.N, '../profile_age-comp_logR0.N_18.png'), overwrite=TRUE)
 
 # Piner Plot showing influence of indices by fleet
 PinerPlot(profilesummary,           # summary object
@@ -244,5 +191,96 @@ PinerPlot(profilesummary,           # summary object
           print=TRUE,
           profile.string = "R0", # substring of profile parameter
           profile.label="Log of unfished equilibrium recruitment, log(R0)") # axis label
+# copy plot with generic name to main folder with more specific name
 file.copy(file.path(dir.prof.R0.N, 'profile_plot_likelihood.png'),
-          file.path(dir.prof.R0.N, '../profile_indices_logR0.N_14k.png'), overwrite=TRUE)
+          file.path(dir.prof.R0.N, '../profile_indices_logR0.N_18.png'), overwrite=TRUE)
+
+SSplotComparisons(profilesummary, subplot=1,
+                  legendlabels=c(paste0("log(R0)=",logR0vec.N),"Base Model"),
+                  png=TRUE, plotdir=file.path(YTdir.mods, "profiles"),
+                  filenameprefix="profile_R0.N.18_", legendloc="bottomleft")
+
+##################################################################################
+# Mortality profile North
+dir.prof.M.N <- file.path(YTdir.profs, "prof.M.N.18")
+profilemodels <- SSgetoutput(dirvec=dir.prof.M.N,
+                             keyvec=1:length(M.vec), getcovar=FALSE)
+# add MLE to set of models being plotted
+profilemodels$MLE <- out.N
+
+# summarize output
+profilesummary <- SSsummarize(profilemodels)
+# make plot
+SSplotProfile(profilesummary,           # summary object
+              minfraction = 0.001,
+              print=TRUE,
+              sort.by.max.change = FALSE,
+              plotdir=dir.prof.M.N,
+              profile.string = "NatM_p_1_Fem_GP_1", # substring of profile parameter
+              profile.label="Natural mortality (M)") # axis label
+# copy plot with generic name to main folder with more specific name
+file.copy(file.path(dir.prof.M.N, 'profile_plot_likelihood.png'),
+          file.path(dir.prof.M.N, '../profile_M.N_18.png'), overwrite=TRUE)
+
+# compare spawning biomass time series
+SSplotComparisons(profilesummary, subplot=1,
+                  legendlabels=c(paste0("M=",M.vec),"Base Model"),
+                  png=TRUE, plotdir=file.path(YTdir.mods, "profiles"),
+                  filenameprefix="profile_Mortality.N_18_", legendloc="bottomleft")
+
+
+##################################################################################
+# Mortality offset for Males profile North
+dir.prof.M2.N <- file.path(YTdir.profs, "prof.M2.N.18")
+profilemodels <- SSgetoutput(dirvec=dir.prof.M2.N,
+                             keyvec=1:length(M2.vec), getcovar=FALSE)
+# add MLE to set of models being plotted
+profilemodels$MLE <- out.N
+
+# summarize output
+profilesummary <- SSsummarize(profilemodels)
+# make plot
+SSplotProfile(profilesummary,           # summary object
+              minfraction = 0.001,
+              print=TRUE,
+              sort.by.max.change = FALSE,
+              plotdir=dir.prof.M2.N,
+              profile.string = "NatM_p_1_Mal_GP_1", # substring of profile parameter
+              profile.label="Natural mortality offset for males") # axis label
+# copy plot with generic name to main folder with more specific name
+file.copy(file.path(dir.prof.M2.N, 'profile_plot_likelihood.png'),
+          file.path(dir.prof.M2.N, '../profile_M2.N_18.png'), overwrite=TRUE)
+
+# compare spawning biomass time series
+SSplotComparisons(profilesummary, subplot=1,
+                  legendlabels=c(paste0("male offset M=",M2.vec),"Base Model"),
+                  png=TRUE, plotdir=file.path(YTdir.mods, "profiles"),
+                  filenameprefix="profile_M2.N_18_", legendloc="bottomleft")
+
+##################################################################################
+# Steepness profile North
+dir.prof.h.N <- file.path(YTdir.profs, "prof.h.N.18")
+profilemodels <- SSgetoutput(dirvec=dir.prof.h.N,
+                             keyvec=1:length(h.vec), getcovar=FALSE)
+# summarize output
+profilesummary <- SSsummarize(profilemodels)
+# make plot
+SSplotProfile(profilesummary,           # summary object
+              minfraction = 0.001,
+              print=TRUE,
+              sort.by.max.change = FALSE,
+              plotdir=dir.prof.h.N,
+              profile.string = "steep", # substring of profile parameter
+              profile.label="Stock-recruit steepness (h)") # axis label
+# copy plot with generic name to main folder with more specific name
+file.copy(file.path(dir.prof.h.N, 'profile_plot_likelihood.png'),
+          file.path(dir.prof.h.N, '../profile_h.N_18.png'), overwrite=TRUE)
+# compare spawning biomass time series
+labels <- paste0("h=",h.vec)
+labels[h.vec==0.718] <- paste(labels[h.vec==0.718], "(Base Model)")
+SSplotComparisons(profilesummary, subplot=1,
+                  legendlabels=labels,
+                  png=TRUE, plotdir=file.path(YTdir.mods, "profiles"),
+                  filenameprefix="profile_steep.N_18_", legendloc="bottomleft")
+
+} # end if(FALSE) section that doesn't get sourced
