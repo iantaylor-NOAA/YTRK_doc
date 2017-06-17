@@ -89,10 +89,20 @@ header-includes:
 \newpage
 ```{r child = "7_Acknowledgments.Rmd"}
 ```
-\newpage
-\newpage
 \renewcommand{\thefigure}{\arabic{figure}}
 \renewcommand{\thetable}{\arabic{table}}
 \setcounter{figure}{0}
 \setcounter{table}{0}
+\newpage
+```{r child = "8_Tables.Rmd}
+```
+\newpage
+```{r child = "9_Figures.Rmd"}
+```
+\newpage
+```{r child = "10_References.Rmd"}
+```
+\newpage
+```{r child = "11_Appendices.Rmd"}
+```
 <!-- ********************END OF THE DOCUMENT******************************* -->
