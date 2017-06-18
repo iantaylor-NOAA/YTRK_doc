@@ -235,13 +235,20 @@ Age structure data were available from the following sources:
 **California Commercial Landings**   
 The California Commercial Fishery Database (**CalCOM**) provided landings in California south of 40$^\circ$ 10'N for 1969-2016.
 
+**Historical Data**
+A reconstruction of the historical commercial fishery south of Cape Mendocino was provided by the Southwest Fisheries Science Center (**SWFSC**) for 1916-1968.
+
+
 ###Sport Fishery Removals
 
 **MRFSS Estimates and RecFIN**  
 The California Department of Fish and Wildlife (**CDFW**) provided estimated yellowtail removals for the Marine Recreational Fisheries Statistical Survey (**MRFSS**) from 1980-1989, 1993-2003.  The Recreational FIsheries Information Network, (**RecFIN**) provided landings for 2004-2016.
 
+**Historical Data**
+A reconstruction of the historical recreational fishery south of Cape Mendocino was provided by the Southwest Fisheries Science Center (**SWFSC**) for 1928-1980.
+
 **Small Research Study**
-A small number of fish were collected from the recreational fishery by the Southwest Fisheries Science Center (**SWFSC**) and are included in the data for 1978-1984.
+A small number of fish were collected from the recreational fishery by the SWFSC and are included in the data for 1978-1984.
 
 ###Estimated Discards
 
@@ -254,6 +261,9 @@ An index of abundance was developed from trip-aggregated MRFSS data for the year
 
 **California Onboard Survey**  
 An Onboard recreational survey conducted by <TOADS> provided data for an index of abundance provided by the SWFSC for 1987-2016.
+
+**Research Study Index**
+An index of abundance for the small juvenile fish research study was provided by the SWFSC for 2001-2016.
 
 
 <!-- ************FISHERY-INDPENDENT DATA*********************************** -->
@@ -338,7 +348,11 @@ Age error matrices were developed for double-reads at the PFMC aging lab in Newp
 
 The weight-length relationship is based on the standard power function: $W = \alpha(L^\beta)$ where $W$ is individual weight (kg), $L$ is length (cm), and $\alpha$ and $\beta$ are coefficients used as constants.
 
-To estimate this relationship, 12,778 samples with both weight and length measurements from the fishery independent surveys were analyzed. These included 6,354 samples from the NWFSC Combo survey, 5,085 from the Triennial survey, and 1,339 from the Hook and Line survey. All Hook and Line survey samples were from the Southern area, along with 910 samples from the other two surveys (Figure \ref{fig:weight-length}). A single weight-length relationship was chosen for females and males in both areas after examining various factors that may influence this relationships, including sex, area, year, and season. None of these factors had a strong influence in the overall results. Season was one of the bigger factors, with fish sampled later in the year showing a small increase in weight at a given length (2-6% depending on the other factors considered). However, season was confounded with area because most of the samples from the Southern area were collected from the Hook and Line survey which takes place later in the year (mid-September to mid-November) and the resolution of other data in the model do not support modeling the stock at a scale finer than a annual time step. Males and females did not show strong differences in either area, and the estimated differences were in opposite directions for the two areas, suggesting that this might be a spurious relationship or confounded with differences timing of the sampling relative to spawning.
+To estimate this relationship, 12,778 samples with both weight and length measurements from the fishery independent surveys were analyzed. These included 6,354 samples from the NWFSC Combo survey, 5,085 from the Triennial survey, and 1,339 from the Hook and Line survey. All Hook and Line survey samples were from the Southern area, along with 910 samples from the other two surveys (Figure \ref{fig:weight-length}). 
+
+A single weight-length relationship was chosen for females and males in both areas after examining various factors that may influence this relationships, including sex, area, year, and season. None of these factors had a strong influence in the overall results. Season was one of the bigger factors, with fish sampled later in the year showing a small increase in weight at a given length (2-6% depending on the other factors considered). However, season was confounded with area because most of the samples from the Southern area were collected from the Hook and Line survey which takes place later in the year (mid-September to mid-November) and the resolution of other data in the model do not support modeling the stock at a scale finer than a annual time step.
+
+Males and females did not show strong differences in either area, and the estimated differences were in opposite directions for the two areas, suggesting that this might be a spurious relationship or confounded with differences timing of the sampling relative to spawning.
 
 The estimated coefficients resulting from this analysis were $\alpha = 1.1843e-05$ and $\beta = 3.0672$.
 
@@ -352,7 +366,7 @@ Maturity was estimated from histological analysis of
 \vspace{.5cm}
 **Natural Mortality**
 
-Natural mortality estimates used as priors for the Northern model and as fixed values for the Southern model were provided by Owen Hamel (pers. comm.).
+Natural mortality estimates were provided by Owen Hamel (pers. comm.).
 
 
 \vspace{.5cm}

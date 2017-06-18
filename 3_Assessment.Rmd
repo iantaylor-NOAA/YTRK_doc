@@ -4,7 +4,9 @@
 <!-- ***********HISTORY AND CURRENT ASSESSMENT***************************** -->
 ##History Of Modeling Approaches Used For This Stock
 
-Yellowtail rockfish was previously modeled as a 3-area stock north of 40.10 using a model written in ADMB <TOADS> need citation in 1999. <TOADS> Need citation, with an update assessment in 2004[@Wallace2005].  That assessment divided the stock into 3 INPFC areas which are not coincident with state boundaries; this is a concern in that recent reconstructions of historical catch are state-by-state along the West Coast.  Because we cannot produce data that conform to the areas previously assessed, we have made no effort to reproduce the previous model.
+Yellowtail rockfish was previously modeled as a 3-area stock north of 40.10 using a model written in ADMB[@Founier2012] in 1999[@Taggart2000] with an update assessment in 2004[@Wallace2005].  That assessment divided the stock into 3 INPFC areas which are not coincident with state boundaries; this is a concern in that recent reconstructions of historical catch are state-by-state along the West Coast.  Because we cannot produce data that conform to the areas previously assessed, we have made no effort to reproduce the previous model.
+
+A data-moderate approach was used to evaluate stock status in 2013[@Cope2013].  This is also an approach not compatible with the current model, and we have made no attempt to reproduce it.
 
 
 ###Previous Assessment Recommendations
@@ -31,33 +33,51 @@ These are the main changes from the previous model, and our rationale for them:
 
 2. Availability of recent data. \emph{Rationale}: Ten years of data collection have occurred since the last update assessment, and the data necessary for an assessment of the Southern stock is now available.
 
-3. Historical catch reconstructions. \emph{Rationale}:  Reconstruction of catch timeseries in California, Washington and Oregon clarify stock history as far back as 1898.
+3. Historical catch reconstructions. \emph{Rationale}:  Reconstruction of catch timeseries in California, Washington and Oregon clarify stock history as far back as 1889.
 
 
 ###Definition of Fleets and Areas
 
+The Northern model comprises the area between Cape Mendocino, California, and the Canadian border.  The Southern model runs from Cape Mendocino to the Mexican border.
 
 **Northern Model** 
 
-\emph{Commercial}: The commercial fleet consists primarily of bottom and midwater trawl.  No attempt was made to analyze the fishery separately by gear, particularly since it seems that in the fishery in the 1980s and 1990s, "bottom trawl" gear was used in the midwater as well as on the bottom, and "midwater gear" was sometimes dragged across soft bottoms (Craig Goode, ODFW Port Sampler, pers. comm).
+\emph{Commercial}: The commercial fleet consists primarily of bottom and midwater trawl.  No attempt was made to analyze the fishery separately by gear, particularly since it seems that in the fishery in the 1980s and 1990s, "bottom trawl" gear was used in the midwater as well as on the bottom, and "midwater gear" was sometimes dragged across soft bottom (Craig Goode, ODFW Port Sampler, pers. comm).
 
-\emph{At-Sea Hake Fishery}: Yellowtail Rockfish are frequently caught in mid-water trawls associated with the At-Sea Hake Fishery (consisting of the Catcher-Processor and Mothership sectors). These catches are recorded and biological sampling takes place but the fish are processed at sea (typically into fish meal) and are not included in the PacFIN database so require separate analysis.
+The data associated with the commercial fleet includes age- and length-composition data from PacFIN and CalCOM, historical catch timeseries from CDFW, ODFW and WDFW, and observations from the West Coast Groundfish Observing Program (**WCGOP**), which documents discarding in the commercial fishery (providing discard lengths), as well as discard rates calculated from WCGOP data.  Sex was available for the comps in the retained catch, which is by-sex in the model, but was not available for the discards, so they are undifferentiated by sex.
 
-\emph{Recreational}: The recreational fleet includes data from sport fisheries off Washington, Oregon, and northern California (Eureka and Del Norte counties)
+The PacFIN logbook (fish ticket) index developed for the commercial fishery is in fish/tow.
 
-\emph{Research}: Research derived-data include observations from the West Coast Groundfish Observing Program (WCGOP) which documents discarding in the commercial fishery, the Alaska Fisheries Science Center's Triennial Trawl survey, and the Northwest Fisheries Science Center's NWFSCcombo survey.
+\emph{At-Sea Hake Fishery}: Yellowtail Rockfish are frequently caught in mid-water trawls associated with the At-Sea Hake Fishery (consisting of the Catcher-Processor and Mothership sectors). These catches are recorded and biological sampling takes place but the fish are processed at sea (typically into fish meal) and are not included in the PacFIN database, so this fishery requires separate analysis.  The At-Sea Hake fishery provides catches, length compositions by sex, and an index of abundance.
+
+\emph{Recreational}: The recreational fleet includes data from sport fisheries off Oregon, and northern California (Eureka and Del Norte counties), from MRFSS and RecFIN.  The index of abundance for the recreational fleet is in fish per angler-hour.  Length data for this fleet are undifferentiated by sex.
+
+\emph{Washington-Sport}:  The Washington data (WA_Sport) provides catches, lengths and ages, and was treated as a separate fleet for two reasons:  first, the length composition of the Washington catches were different from those in the recreational landings in Oregon and northern California (MRFSS/RecFIN data).  There are very large fish in this dataset, and fewer small ones.  Second, the WA_Sport landings are not available by weight, so they are entered in the model as numbers, and Stock Synthesis internally converts them to weight, using the percentages-at-length and the Weight-Length relationship.  Sex was available for the biological data, however many lengthed fish were not sexed, so the lengths for this fleet are undifferentiated by sex, although the ages are.
+
+\emph{Research}: Research fleets (3).
+The Alaska Fisheries Science Center's **Triennial** Trawl survey, and the Northwest Fisheries Science Center's **NWFSCcombo** survey each provide age- and length-compositions, as well as an index of abundance. 
+
+The remaining research fleet is the **Pikitch study**, which provides discard length-compositions and an index of abundance.
+
+\emph{Conditional Age-at-Length}:  Only the NWFSCcombo ages were used as conditional age-at-length in the model.  All other aged fleets (Commercial, Washington-Sport, Triennial) are present in the model as marginal ages.  This was due to the amount of noise in the age data for those fleets.
+
+\emph{Indices}:  Fish-per-angler-hour for the recreational
 
 **Southern Model**
 
-\emph{Commercial}: The commercial fleet consists primarily of hook and line and trawl gear.  Hook and line gear account for 78% of the landings by weight in the recent period (1978-2016).
+\emph{Commercial}: The commercial fleet consists primarily of hook and line and trawl gear.  Hook and line gear account for 78% of the landings by weight in the recent period (1978-2016).  Commercial data were sexed, although there are many unsexed lengths.  To preserve the large numbers of lengths, the length data are entered in the model as undifferentiated, however the ages are sexed and provide the sole conditional age-at-length timeseries in the Southern Model.
 
-\emph{Recreational}: The recreational fleet includes data from sport fishery off the California coast south of Cape Mendocino.
+\emph{Recreational}: The recreational fleet includes data from sport fishery off the California coast south of Cape Mendocino.  The recreational lengths are unsexed.  The index is in fish per angler_hour.
 
-\emph{Research}: Research derived-data include observations from the Northwest Fisheries Science Center's NWFSCcombo survey, and California Onboard recreational survey.
+\emph{California Onbord Recreational Survey}: Research derived-data include observations from the California Onboard recreational survey.  The length-compositions from this survey are undifferentiated by sex.  The index is in fish per angler_hour.
+
+\emph{NWFSC Hook-and-Line Survey}:  The data from this survey are used in the model as an index of fish per angler_hour, a single year of marginal age data by sex, and sexed length compositions.
+
+\emph{Small Fish Study}: A separate index, length comps and a single year of ages reflect a small study of juvenile fish conducted by the SWFSC.
 
 
 ###Modeling Software
-The STAT team used Stock Synthesis 3 version 3[@Methot2015].
+The STAT team used Stock Synthesis 3[@Methot2015].
 
 ###Data Weighting
 
@@ -73,7 +93,7 @@ Weighting among fleets uses either the Francis method [@Francis2011] or the Iane
 
 
 ###Priors
-Natural Mortality (M) priors were provide by Owen Hamel prior on natural mortality [@Hamel2015].  Natural mortality priors were based on examination of 99\% quantile of the observed ages early in the time-series before the full impact of fishing would have taken place. For the Northern model, these quantiles were approximately 35 years for females and 45 years for males, resulting in median M values of 0.15 and 0.12 for females and males. For the Southern model, the 99\% quantile of the early age observations were approximately 30 and 40 years for females and males, resulting in median M prior values of 0.18 and 0.135, respectively. In both models, M for males was represented as an offset from females. In the Northern model, both the female value and the male offset could be estimated without priors so the priors were not used. For the southern model, M was fixed at the median prior values for the two sexes.
+Natural Mortality (M) priors were provided by Owen Hamel[@Hamel2015].  Natural mortality priors were based on examination of the 99\% quantile of the observed ages from early in the time-series, before the full impact of fishing would have taken place. For the Northern model, these quantiles were approximately 35 years for females and 45 years for males, resulting in median M values of 0.15 and 0.12 for females and males. For the Southern model, the 99\% quantile of the early age observations were approximately 30 and 40 years for females and males, resulting in median M prior values of 0.18 and 0.135, respectively. In both models, M for males was represented as an offset from females. In the Northern model, both the female value and the male offset could be estimated without priors so the priors were not used. For the southern model, M was fixed at the median prior values for the two sexes.
 
 The prior for steepness (h, 0.718) was provided by James Thorson and used as a fixed parameter in both models. <TOADS:  Citation>
 
@@ -103,7 +123,7 @@ These approaches resulted in model fits to data that were obviously poor, and so
 
 ###Convergence
 
-<TOADS> Boilerplate, revisit:
+\ht{Boilerplate, revisit:}
 
 Convergence testing through use of dispersed starting values often requires 
 extreme values to actually explore new areas of the multivariate likelihood 
