@@ -1,19 +1,19 @@
 #Executive Summary{-}
 
 ##Stock{-}
-This assessment reports the status of the `r spp` (\emph{`r spp.sci`}) resource 
-in U.S. waters off the coast of the California, Oregon, and Washington using data 
-through `r LastYR`.  
+This assessment reports the status of the `r spp` (\emph{`r spp.sci`}) resource in U.S. waters off the coast of the California, Oregon, and Washington using data through `r LastYR`.  
 
-The Pacific Fishery Management Council (PFMC) manages the U.S. fishery as two
-stocks separated at Cape Mendocino, California (40$^\circ$ 10'N). This assessment analyzes those two areas as independent stocks, with the southern stock extending southward to the U.S./Mexico border and the northern stock extending northward to the U.S./Canada border.
+The Pacific Fishery Management Council (PFMC) manages the U.S. fishery as two stocks separated at Cape Mendocino, California (40$^\circ$ 10'N). The northern stock has long been assessed on its own; the southern stock is treated as part of the Southern Shelf Complex.  This assessment analyzes each stock independently, with the southern stock extending southward to the U.S./Mexico border and the northern stock extending northward to the U.S./Canada border.
 
-The previous assessment [@Wallace2005], following the pattern of prior assessments, included only the Northern stock which it divided into three assessment areas with divisions at Cape Elizabeth (47$^\circ$ 20'N) and Cape Falcon (45$^\circ$ 46'N). However, a more recent genetic analysis [@Hess2011] found distinct stocks north and south of Cape Mendocino but did not find stock differences within the northern area, with the genetic stock extending northward through British Colombia, Canada to Southeast Alaska. However, Canada and Alaska are not included in this assessment.  Since the previous assessment, reconstruction of historical catch by Washington and Oregon makes any border but the state line incompatible with the data.  Additionally, much of the groundfish catch landed in northern Oregon is caught in Washington waters.
+The most recent fully integrated assessment [@Wallace2005], following the pattern of prior assessments, included only the Northern stock which it divided into three assessment areas with divisions at Cape Elizabeth (47$^\circ$ 20'N) and Cape Falcon (45$^\circ$ 46'N).  A data-moderate assessment conducted in 2013 [@Cope2013] was the first to analyze the southern stock, determining its contribution to the overfishing limit (OFL) for the Southern Shelf Complex. 
 
+Since the 2005 assessment, reconstruction of historical catch by Washington and Oregon makes any border but the state line (roughly 46$^\circ$ N) incompatible with the data from those states.  Additionally, much of the groundfish catch landed in northern Oregon is caught in Washington waters.  
+
+This assessment addresses the stock in two areas consistent with the management border at Cape Mendocino.  This is consistent, as well, with a recent genetic analysis [@Hess2011] that found distinct stocks north and south of Cape Mendocino but did not find stock differences within the northern area. 
 
 
 ##Catches{-}
-Catches from the Northern stock were divided into four categories: commercial catch, bycatch in the at-sea hake fishery, recreational catch in Oregon and California (north of 40$^\circ$ 10'N), and recreational catch in Washington. The first three of these fleets were entered in metric tons, but the recreational catch from Washington was entered in the model as numbers of fish with the average weight calculated internally in the model.
+Catches from the Northern stock were divided into four categories: commercial catch, bycatch in the at-sea hake fishery, recreational catch in Oregon and California (north of 40$^\circ$ 10'N), and recreational catch in Washington. The first three of these fleets were entered in metric tons, but the recreational catch from Washington was entered in the model as numbers of fish with the average weight calculated internally in the model from the weight-length relationship and the length-compositions.
 
 Catches from the Southern stock were divided into two categories: commercial and recreational catch, both of which were entered as metric tons.
 
@@ -78,9 +78,9 @@ Catch tables: (Tables \ref{tab:Exec_catch_N}-\ref{tab:Exec_catch_S})
 \hl{Include: date of last assessment, type of assessment model, data available, new 
 information, and information lacking.}
 
-`r spp` was assessed....  This assessment uses the newest version of Stock 
-Synthesis (3.xxx).  The model begins in `r Dat_start_mod1`, and assumes the stock 
-was at an unfished equilibrium that year.
+`r spp` was assessed north of Cape Mendocino in 2005 in a fully integrated age-based assessment. A 2013 data-moderate assessment was the first to address the southern stock [@Cope2013].  
+
+This assessment uses Stock Synthesis version 3.3.  The Northern model begins in `r Dat_start_mod1`, with the assumption that the stock was at \hl{an unfished equilibrium that year?}  The Southern model begins in `r Dat_start_mod2`, with the assumption that the stock was at \hl{an unfished equilibrium that year?}
 
 
 Map of assessment region: (Figure \ref{fig:assess_region_map_Exec_Sum}).  

@@ -4,10 +4,9 @@
 <!-- ***********HISTORY AND CURRENT ASSESSMENT***************************** -->
 ##History Of Modeling Approaches Used For This Stock
 
-Yellowtail rockfish was previously modeled as a 3-area stock north of 40.10 using a model written in ADMB[@Founier2012] in 1999[@Taggart2000] with an update assessment in 2004[@Wallace2005].  That assessment divided the stock into 3 INPFC areas which are not coincident with state boundaries; this is a concern in that recent reconstructions of historical catch are state-by-state along the West Coast.  Because we cannot produce data that conform to the areas previously assessed, we have made no effort to reproduce the previous model.
+Yellowtail rockfish was previously modeled as ag age-structured, 3-area stock north of  $40^\circ 10^\prime$  in 1999 [@Tagart2000] using a model written in ADMB [@Fournier2012]; an update of this assessment was last conducted in 2004 [@Wallace2005].  That assessment divided the stock into 3 INPFC areas which are not coincident with state boundaries; this is a concern in that recent reconstructions of historical catch are state-by-state along the West Coast.  Because we cannot produce data that conform to the areas previously assessed, we have made no effort to reproduce the previous model.
 
-A data-moderate approach was used to evaluate stock status in 2013[@Cope2013].  This is also an approach not compatible with the current model, and we have made no attempt to reproduce it.
-
+A data-moderate approach was used to evaluate stock status in 2013 [@Cope2013].  This approach is not compatible with the current model, and we have made no attempt to reproduce it.
 
 ###Previous Assessment Recommendations
 
@@ -29,7 +28,7 @@ These are the main changes from the previous model, and our rationale for them:
 
 1. Transition to Stock Synthesis. \emph{Rationale}: The Pacific Fishery Management Council's preferred modeling platform for stock assessments is Stock Synthesis [@Methot2015], developed since the last full assessment of yellowtail rockfish.
 
-2. Addition of Southern model. \emph{Rationale}: Hess, et al. determined that the West Coast yellowtail stocks show a genetic cline occurring near Cape Mendocino, which is roughly 40.10 north latitude [@Hess2011].  This divides the stock into two genetically distinct substocks which we model independently.
+2. Addition of Southern model. \emph{Rationale}: Hess, et al. determined that the West Coast yellowtail stocks show a genetic cline occurring near Cape Mendocino, which is roughly  $40^\circ 10^\prime$ north latitude [@Hess2011].  This divides the stock into two genetically distinct substocks which we model independently.
 
 2. Availability of recent data. \emph{Rationale}: Ten years of data collection have occurred since the last update assessment, and the data necessary for an assessment of the Southern stock is now available.
 
@@ -55,13 +54,13 @@ The PacFIN logbook (fish ticket) index developed for the commercial fishery is i
 \emph{Washington-Sport}:  The Washington data (WA_Sport) provides catches, lengths and ages, and was treated as a separate fleet for two reasons:  first, the length composition of the Washington catches were different from those in the recreational landings in Oregon and northern California (MRFSS/RecFIN data).  There are very large fish in this dataset, and fewer small ones.  Second, the WA_Sport landings are not available by weight, so they are entered in the model as numbers, and Stock Synthesis internally converts them to weight, using the percentages-at-length and the Weight-Length relationship.  Sex was available for the biological data, however many lengthed fish were not sexed, so the lengths for this fleet are undifferentiated by sex, although the ages are.
 
 \emph{Research}: Research fleets (3).
-The Alaska Fisheries Science Center's **Triennial** Trawl survey, and the Northwest Fisheries Science Center's **NWFSCcombo** survey each provide age- and length-compositions, as well as an index of abundance. 
+The Alaska Fisheries Science Center's **Triennial** Trawl survey, and the Northwest Fisheries Science Center's **NWFSCcombo** survey each provide age- and length-compositions, as well as an index of abundance.
 
 The remaining research fleet is the **Pikitch study**, which provides discard length-compositions and an index of abundance.
 
-\emph{Conditional Age-at-Length}:  Only the NWFSCcombo ages were used as conditional age-at-length in the model.  All other aged fleets (Commercial, Washington-Sport, Triennial) are present in the model as marginal ages.  This was due to the amount of noise in the age data for those fleets.
+\emph{Conditional Age-at-Length}:  Only the NWFSCcombo ages were used as conditional age-at-length in the model.  All other aged fleets (Commercial, Washington\_Sport, and Triennial) are present in the model as marginal ages due to the amount of noise in the age data for those fleets.
 
-\emph{Indices}:  Fish-per-angler-hour for the recreational
+\emph{Indices}:  Fish per angler-hour is the basis for the Washington\_Sport and Pikitch indices.  The NWFSCcombo and Triennial surveys provide indices based on fish per area-towed.  The logbook survey for the commercial fleet is in units of fish per tow.
 
 **Southern Model**
 
@@ -77,7 +76,7 @@ The remaining research fleet is the **Pikitch study**, which provides discard le
 
 
 ###Modeling Software
-The STAT team used Stock Synthesis 3[@Methot2015].
+The STAT team used Stock Synthesis 3[@Methot2015], which is the Pacific Fishery Management Council's preferred modeling platform for assessments.
 
 ###Data Weighting
 
@@ -93,7 +92,7 @@ Weighting among fleets uses either the Francis method [@Francis2011] or the Iane
 
 
 ###Priors
-Natural Mortality (M) priors were provided by Owen Hamel[@Hamel2015].  Natural mortality priors were based on examination of the 99\% quantile of the observed ages from early in the time-series, before the full impact of fishing would have taken place. For the Northern model, these quantiles were approximately 35 years for females and 45 years for males, resulting in median M values of 0.15 and 0.12 for females and males. For the Southern model, the 99\% quantile of the early age observations were approximately 30 and 40 years for females and males, resulting in median M prior values of 0.18 and 0.135, respectively. In both models, M for males was represented as an offset from females. In the Northern model, both the female value and the male offset could be estimated without priors so the priors were not used. For the southern model, M was fixed at the median prior values for the two sexes.
+Natural Mortality (M) priors were provided by Owen Hamel [@Hamel2015].  Natural mortality priors were based on examination of the 99\% quantile of the observed ages from early in the time-series, before the full impact of fishing would have taken place. For the Northern model, these quantiles were approximately 35 years for females and 45 years for males, resulting in median M values of 0.15 and 0.12 for females and males. For the Southern model, the 99\% quantile of the early age observations were approximately 30 and 40 years for females and males, resulting in median M prior values of 0.18 and 0.135, respectively. In both models, M for males was represented as an offset from females. In the Northern model, both the female value and the male offset could be estimated without priors so the priors were not used. For the southern model, M was fixed at the median prior values for the two sexes.
 
 The prior for steepness (h, 0.718) was provided by James Thorson and used as a fixed parameter in both models. <TOADS:  Citation>
 
@@ -122,15 +121,7 @@ We also explored time-blocks on selectivity in the Southern model, and domed sel
 These approaches resulted in model fits to data that were obviously poor, and so they were rejected
 
 ###Convergence
-
-\ht{Boilerplate, revisit:}
-
-Convergence testing through use of dispersed starting values often requires 
-extreme values to actually explore new areas of the multivariate likelihood 
-surface. Jitter is a Stock Synthesis option that generates random starting values from a 
-normal distribution logistically transformed into each parameter's range 
-[@Methot2015]. Table \ref{tab:jitter} shows the results of running 100 jitters 
-for each pre-STAR base model....
+Convergence testing through use of dispersed starting values often requires extreme values to explore new areas of the multivariate likelihood surface. Stock Synthesis provides a jitter option that generates random starting values from a normal distribution logistically transformed into each parameter's range [@Methot2015]. We used this function to find parameter values for convergence in the Southern model.  The Northern model did not require jittering.
 
 \clearpage
 
@@ -171,7 +162,7 @@ for each pre-STAR base model....
 
 \clearpage
 <!-- *********************MODEL 1 RESULTS********************************** -->
-##Model 1 
+##Northern Model 
 ###Model 1 Base Case Results
 
 Table \ref{tab:Model1_params}   
@@ -195,7 +186,9 @@ Table \ref{tab:Sensitivity_model1}
 Intro sentence or two....(Table \ref{tab:Timeseries_mod1}). 
 
 Equilibrium yield at the proxy $F_{MSY}$ harvest rate corresponding to 
-$SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt.  Table \ref{tab:Ref_pts_mod1} 
+$SPR_{50\%}$ is 
+
+<!-- `r Ref_pts_mod1[15,2]` mt.  Table \ref{tab:Ref_pts_mod1} -->
 shows the full suite of estimated reference points for the northern area model 
 and Figure \ref{fig:Yield_all} shows the equilibrium yield curve.
 
@@ -203,7 +196,9 @@ and Figure \ref{fig:Yield_all} shows the equilibrium yield curve.
 \clearpage
 
 <!-- *************************MODEL 2 RESULTS****************************** -->
-##Model 2 
+##Southern Model
+
+One thing to point out is that although the scale of the biomass in the model is somewhat sensitive to various data sources, the depletion is not.  In tuning the model we were suprised to note that depletion always stayed above 80\%.
 
 ###Model 2 Base Case Results
 

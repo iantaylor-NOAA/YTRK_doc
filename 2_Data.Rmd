@@ -57,7 +57,7 @@ The Washington Department of Fisheries and Wildlife (**WDFW**) provided historic
 The Oregon Department of Fisheries and Wildlife (**ODFW**) provided historical yellowtail catch from 1892-1985.  ODFW also provided estimates of yellowtail rockfish in the in the un-speciated PacFIN "URCK" and "POP1" catch categories for recent years, and those estimates were combined with PacFIN landings for 1986-2016.
 
 **Northern California Catch**   
-The California Commercial Fishery Database (**CalCOM**) provided landings for the Northern model for the two counties north of 40.10 (Eureka and Del Norte) for 1969-2016.
+The California Commercial Fishery Database (**CalCOM**) provided landings for the Northern model for the two counties north of  $40^\circ 10^\prime$ (Eureka and Del Norte) for 1969-2016.
 
 **Hake Bycatch**   
 The Alaska Fisheries Science Center (**AFSC**) provided data for yellowtail bycatch in the hake fishery from 1976-2016.
