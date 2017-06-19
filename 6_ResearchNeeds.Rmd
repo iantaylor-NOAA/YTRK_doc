@@ -2,13 +2,11 @@
 #Research Needs
 \begin{enumerate}
 
-\item Research need No. 1
+\item A longer timeseries of the juvenile rockfish CPUE in the south.
 
-\item Research need No. 2
+\item A commercial index in the north.  This is by far the largest segment of the fishery, and the introduction of trawl rationalization program should mean that an index can be developed for the current fishery when the next assessment is performed.
 
-\item Research need No. 3
-
-\item etc.
+\item More recent ages for the southern model.  The commercial age timeseries currently stops in 2002.
 
 \end{enumerate}
 

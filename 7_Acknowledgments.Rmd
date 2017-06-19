@@ -29,6 +29,5 @@ Dan Waldeck, Pacific Fishery Management Council / Groundfish Advisory Panel
 
 
 \newpage
-\FloatBarrier
 
 

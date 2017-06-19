@@ -2,14 +2,13 @@
 #Harvest Projections and Decision Tables
 Table \ref{tab:mnmgt_perform}
 
-**Model 1 Projections and Decision Table (groundfish only)**
+** Northern Model Projections and Decision Table (groundfish only)**
 (Table \ref{tab:Forecast_mod1} 
 
 Table \ref{tab:Decision_table_mod1}
 
-**Model 2 Projections and Decision Table (groundfish only)** 
+** Southern Model Projections and Decision Table (groundfish only)** 
 
-**Model 3 Projections and Decision Table (groundfish only)**
 
 
 

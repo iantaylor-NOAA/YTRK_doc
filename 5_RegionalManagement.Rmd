@@ -1,13 +1,12 @@
 <!-- **************************REGIONAL MANAGEMENT************************* -->
 #Regional Management Considerations
-1.  For stocks where current practice is to allocate harvests by management 
-area, a recommended method of allocating harvests based on the distribution 
-of biomass should be provided.  The MT advisor should be consulted on the 
-appropriate management areas for each stock.
-2.  Discuss whether a regional management approach makes sense for the species 
-from a biological perspective.
-3.  If there are insufficient data to analyze a regional management approach,
-what are the research and data needs to answer this question?
+
+Management of the yellowtail rockfish northern stock has always been delineated by the 40$^\circ$ 10' line and the Canadian border.  That the stock's genetic cline was found at Cape Mendocino is a happy accident that reinforces 40$^\circ$ 10' as the appropriate management line.
+
+This assessment was not designed to test that choice.  Given that the data for commercial and recreational fisheries is collected by the individual states (WA, OR, CA), it might have been interesting to investigate a management line at the California/Oregon border, had the STAT team the time and managers the interest in investigating a change.
+
+
+
 
 
 
