@@ -247,7 +247,7 @@
 
 <!-- ***********History of modeling approaches FIGURES******************* --> 
 
-![Comparison of time series of age 4+ biomass for `r spp` across past assessments. \label{fig:assessment_history}](Figures/historical_assessment_timeseries.png)
+![Comparison of time series of age 4+ biomass for `r spp` across past assessments. Previous assessments were focused only on the area north of $40^\circ 10^\prime$, but also included a small area within Canada. \label{fig:assessment_history}](Figures/historical_assessment_timeseries.png)
 
 \FloatBarrier
 
@@ -261,7 +261,21 @@
 
 ### Likelihood profiles for `r mod1_label`
 
-\hl{to be added...}
+![Likelihood profile over the log of equilibrium recruitment ($R_0$) for the `r mod1_label`. \label{fig:profile_logR0.N}](Figures/profiles/profile_logR0.N.png)
+
+\FloatBarrier
+
+![Likelihood profile over female natural mortality for the `r mod1_label`. \label{fig:profile_M.N}](Figures/profiles/profile_M.N.png)
+
+\FloatBarrier
+
+![Likelihood profile over the male offset for natural mortality for the `r mod1_label`. Negative values are associated with natural mortality being lower for males than females.\label{fig:profile_M2.N}](Figures/profiles/profile_M2.N.png)
+
+\FloatBarrier
+
+![Likelihood profile over stock-recruit steepness ($h$) for the `r mod1_label`. \label{fig:profile_h.N}](Figures/profiles/profile_h.N.png)
+
+\FloatBarrier
 
 ### Retrospective analysis for `r mod1_label`
 
@@ -455,7 +469,21 @@
 
 ### Likelihood profiles for `r mod2_label`
 
-\hl{to be added...}
+![Likelihood profile over the log of equilibrium recruitment ($R_0$) for the `r mod2_label`. \label{fig:profile_logR0.S}](Figures/profiles/profile_logR0.S.png)
+
+\FloatBarrier
+
+![Likelihood profile over female natural mortality for the `r mod2_label`. \label{fig:profile_M.S}](Figures/profiles/profile_M.S.png)
+
+\FloatBarrier
+
+![Likelihood profile over the male offset for natural mortality for the `r mod2_label`. Negative values are associated with natural mortality being lower for males than females.\label{fig:profile_M2.S}](Figures/profiles/profile_M2.S.png)
+
+\FloatBarrier
+
+![Likelihood profile over stock-recruit steepness ($h$) for the `r mod2_label`. \label{fig:profile_h.S}](Figures/profiles/profile_h.S.png)
+
+\FloatBarrier
 
 ### Retrospective analysis for `r mod2_label`
 
