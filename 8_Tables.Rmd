@@ -82,8 +82,67 @@
 <!-- **REPEAT THIS SECTION AND EDIT AS NEEDED IF YOU HAVE MULTIPLE MODELS** --> 
 <!-- ====================================================================== -->
 
+<!-- ***********Indices of abundance summary table************************* -->
+```{r, results = 'asis'}
+    Index_summary = read.csv('./txt_files/Index_summary.csv')
+      colnames(Index_summary) = c('Region',
+                                  'ID',
+                                  'Fleet',
+                                  'Years',	
+                                  'Name',
+                                  'Fishery ind.',
+                                  'Filtering',
+                                  'Method',	
+                                  'Endorsed')
 
+   # Index of abundance summary, create table   
+     Index_summary.table = xtable(Index_summary, 
+                                  caption = c('Summary of the biomass/abundance
+                                              time series used in the stock
+                                              assessment.'),
+                                 label = 'tab:Index_summary',
+                                 digits = 0)    
+    # Add alignment  
+      align(Index_summary.table) = c('l',
+                                     '>{\\centering}p{.4in}',
+                                     '>{\\centering}p{.3in}',
+                                     '>{\\centering}p{.3in}',
+                                     '>{\\centering}p{.3in}',
+                                     '>{\\centering}p{.6in}',
+                                     '>{\\centering}p{.5in}', 
+                                     '>{\\centering}p{.8in}',
+                                     '>{\\centering}p{.8in}',
+                                     '>{\\centering}p{.5in}')  
+    
+    # Print index summary table
+      print(Index_summary.table, 
+            include.rownames=FALSE, 
+            caption.placement='top',
+            sanitize.text.function = function(x){x})
+```
+<!-- ---------------------------------------------------------------------- -->
 
+\newpage
+
+<!-- ***********JITTER TABLE*********************************************** --> 
+```{r, results = 'asis'}
+    # Replace values in file and read in - values for all models in 1 table  
+      jitter = read.csv('./txt_files/JitterTable.csv')  
+
+    # Create model 1 jitter table
+    jitter.table = xtable(jitter, 
+                          caption = c('Results from 100 jitters from each of 
+                                      the three models.'),
+                          label = 'tab:jitter')
+    
+    # Print jitter table (all models)    
+    print(jitter.table, 
+          include.rownames = FALSE, 
+          caption.placement = 'top')
+```
+<!-- ---------------------------------------------------------------------- -->
+
+\FloatBarrier
 <!-- ***********MODEL 1 PARAMETERS***************************************** --> 
 \begin{landscape}
 ```{r, results='asis'}
@@ -172,72 +231,6 @@
 ```
 \end{landscape}
 <!-- ---------------------------------------------------------------------- -->
-
-
-
-\newpage
-
-<!-- ***********Indices of abundance summary table************************* -->
-```{r, results = 'asis'}
-    Index_summary = read.csv('./txt_files/Index_summary.csv')
-      colnames(Index_summary) = c('Region',
-                                  'ID',
-                                  'Fleet',
-                                  'Years',	
-                                  'Name',
-                                  'Fishery ind.',
-                                  'Filtering',
-                                  'Method',	
-                                  'Endorsed')
-
-   # Index of abundance summary, create table   
-     Index_summary.table = xtable(Index_summary, 
-                                  caption = c('Summary of the biomass/abundance
-                                              time series used in the stock
-                                              assessment.'),
-                                 label = 'tab:Index_summary',
-                                 digits = 0)    
-    # Add alignment  
-      align(Index_summary.table) = c('l',
-                                     '>{\\centering}p{.4in}',
-                                     '>{\\centering}p{.3in}',
-                                     '>{\\centering}p{.3in}',
-                                     '>{\\centering}p{.3in}',
-                                     '>{\\centering}p{.6in}',
-                                     '>{\\centering}p{.5in}', 
-                                     '>{\\centering}p{.8in}',
-                                     '>{\\centering}p{.8in}',
-                                     '>{\\centering}p{.5in}')  
-    
-    # Print index summary table
-      print(Index_summary.table, 
-            include.rownames=FALSE, 
-            caption.placement='top',
-            sanitize.text.function = function(x){x})
-```
-<!-- ---------------------------------------------------------------------- -->
-
-\newpage
-
-<!-- ***********JITTER TABLE*********************************************** --> 
-```{r, results = 'asis'}
-    # Replace values in file and read in - values for all models in 1 table  
-      jitter = read.csv('./txt_files/JitterTable.csv')  
-
-    # Create model 1 jitter table
-    jitter.table = xtable(jitter, 
-                          caption = c('Results from 100 jitters from each of 
-                                      the three models.'),
-                          label = 'tab:jitter')
-    
-    # Print jitter table (all models)    
-    print(jitter.table, 
-          include.rownames = FALSE, 
-          caption.placement = 'top')
-```
-<!-- ---------------------------------------------------------------------- -->
-
-\FloatBarrier
 
 \newpage
 <!-- ***********MODEL 1 SENSITIVITY TABLE(S)******************************* --> 

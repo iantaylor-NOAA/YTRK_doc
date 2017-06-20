@@ -37,13 +37,13 @@ These are the main changes from the previous model, and our rationale for them:
 
 ###Definition of Fleets and Areas
 
-The Northern model comprises the area between Cape Mendocino, California, and the Canadian border.  The Southern model runs from Cape Mendocino to the Mexican border.
+The Northern model comprises the area between Cape Mendocino, California, and the Canadian border.  The Southern model runs from Cape Mendocino to the Mexican border \ref{fig:assess_region_map}
 
 **Northern Model** 
 
 \emph{Commercial}: The commercial fleet consists primarily of bottom and midwater trawl.  No attempt was made to analyze the fishery separately by gear, particularly since it seems that in the fishery in the 1980s and 1990s, "bottom trawl" gear was used in the midwater as well as on the bottom, and "midwater gear" was sometimes dragged across soft bottom (Craig Goode, ODFW Port Sampler, pers. comm).
 
-The data associated with the commercial fleet includes age- and length-composition data from PacFIN and CalCOM, historical catch timeseries from CDFW, ODFW and WDFW, and observations from the West Coast Groundfish Observing Program (**WCGOP**), which documents discarding in the commercial fishery (providing discard lengths), as well as discard rates calculated from WCGOP data.  Sex was available for the comps in the retained catch, which is by-sex in the model, but was not available for the discards, so they are undifferentiated by sex.
+The data associated with the commercial fleet includes age- and length-composition data from PacFIN and CalCOM, historical catch timeseries from CDFW, ODFW and WDFW. Observations of discards from the Pikitch research study provide lengths and discard rates; the West Coast Groundfish Observing Program (**WCGOP**), which documents discarding in the commercial fishery (providing discard lengths), as well as discard rates calculated from WCGOP data.  Sex was available for the comps in the retained catch, which is by-sex in the model, but was not available for the discards, so they are undifferentiated by sex.
 
 The PacFIN logbook (fish ticket) index developed for the commercial fishery is in fish/tow.
 
@@ -51,16 +51,17 @@ The PacFIN logbook (fish ticket) index developed for the commercial fishery is i
 
 \emph{Recreational}: The recreational fleet includes data from sport fisheries off Oregon, and northern California (Eureka and Del Norte counties), from MRFSS and RecFIN.  The index of abundance for the recreational fleet is in fish per angler-hour.  Length data for this fleet are undifferentiated by sex.
 
-\emph{Washington-Sport}:  The Washington data (WA_Sport) provides catches, lengths and ages, and was treated as a separate fleet for two reasons:  first, the length composition of the Washington catches were different from those in the recreational landings in Oregon and northern California (MRFSS/RecFIN data).  There are very large fish in this dataset, and fewer small ones.  Second, the WA_Sport landings are not available by weight, so they are entered in the model as numbers, and Stock Synthesis internally converts them to weight, using the percentages-at-length and the Weight-Length relationship.  Sex was available for the biological data, however many lengthed fish were not sexed, so the lengths for this fleet are undifferentiated by sex, although the ages are.
+\emph{Washington-Sport}:  The Washington data (WA_Sport) provides catches, lengths and ages, and was treated as a separate fleet for two reasons:  first, the length composition of the Washington catches were different from those in the recreational landings in Oregon and northern California (MRFSS/RecFIN data).  There are very large fish in this dataset, and fewer small ones.  Second, the WA_Sport landings are not available by weight, so they are entered in the model as numbers, andStock Synthesis internally converts them to weight using the combination of estimated selectivity for this fleet (informed by the length compositions), estimated growth, and the weight-length relationship.  Sex was available for the biological data, however many lengthed fish were not sexed, so the lengths for this fleet are undifferentiated by sex, although the ages are.
 
-\emph{Research}: Research fleets (3).
-The Alaska Fisheries Science Center's **Triennial** Trawl survey, and the Northwest Fisheries Science Center's **NWFSCcombo** survey each provide age- and length-compositions, as well as an index of abundance.
+\emph{Research}:
+The Alaska Fisheries Science Center's **Triennial** Trawl survey, provides age- and length-compositions, and an index of abundance.  This survey was conducted every third year from 1977-2004. 
 
-The remaining research fleet is the **Pikitch study**, which provides discard length-compositions and an index of abundance.
+Northwest Fisheries Science Center's **NWFSCcombo** survey each provide age- and length-compositions, as well as an index of abundance.
+
 
 \emph{Conditional Age-at-Length}:  Only the NWFSCcombo ages were used as conditional age-at-length in the model.  All other aged fleets (Commercial, Washington\_Sport, and Triennial) are present in the model as marginal ages due to the amount of noise in the age data for those fleets.
 
-\emph{Indices}:  Fish per angler-hour is the basis for the Washington\_Sport and Pikitch indices.  The NWFSCcombo and Triennial surveys provide indices based on fish per area-towed.  The logbook survey for the commercial fleet is in units of fish per tow.
+\emph{Indices}:  Fish per angler-hour is the basis for the Washington\_Sport and Pikitch indices.  The NWFSCcombo and Triennial surveys provide indices based on biomass per area-towed.  The logbook survey for the commercial fleet is in units of fish per tow.
 
 **Southern Model**
 
@@ -76,7 +77,7 @@ The remaining research fleet is the **Pikitch study**, which provides discard le
 
 
 ###Modeling Software
-The STAT team used Stock Synthesis 3[@Methot2015], which is the Pacific Fishery Management Council's preferred modeling platform for assessments.
+The STAT team used Stock Synthesis 3 [@Methot2015], which is the Pacific Fishery Management Council's preferred modeling platform for assessments.
 
 ###Data Weighting
 
@@ -121,7 +122,7 @@ We also explored time-blocks on selectivity in the Southern model, and domed sel
 These approaches resulted in model fits to data that were obviously poor, and so they were rejected
 
 ###Convergence
-Convergence testing through use of dispersed starting values often requires extreme values to explore new areas of the multivariate likelihood surface. Stock Synthesis provides a jitter option that generates random starting values from a normal distribution logistically transformed into each parameter's range [@Methot2015]. We used this function to find parameter values for convergence in the Southern model.  The Northern model did not require jittering.
+Convergence testing through use of dispersed starting values often requires extreme values to explore new areas of the multivariate likelihood surface. Stock Synthesis provides a jitter option that generates random starting values from a normal distribution logistically transformed into each parameter's range [@Methot2015]. We used this function to find parameter values for convergence in the Southern model.  The Northern model \hl{report jittering when it's been done}.
 
 \clearpage
 
@@ -164,57 +165,67 @@ Convergence testing through use of dispersed starting values often requires extr
 
 <!-- *********************MODEL 1 RESULTS********************************** -->
 
+## Life History Results for both models
+
+Maturity in the model was estimated outside the model at the Northwest Fisheries Science Center by Melissa Head, and is shown in Figure \ref{fig:maturity}.
+
+Figure \ref{fig:weight-length} shows the results of the analysis of the Weight-Length relationship estimated and used as fixed input for both models.
+
+The growth at the beginning of the year estimated by the models for the Northern and Southern stocks is shown in Figure \ref{fig:growth}.  Females grow faster in each case, but the Northern stock grows faster and attains larger maximum size.
+
 ## Northern Model Base Case Results
+
+The data used in the Northern model by fishery is shown in Figure \ref{fig:data_plot}.  Estimated catches are shown in Figure \ref{fig:r4ss_total_catch_N}; estimated discards are in Figure \ref{fig:r4ss_discard_N}.  These show the large catches in the 1980s and 90s are being predicted by the model.  The large discards in latter years match the data well for those years.
 
 ### Selectivities, Indices and Discards
 
-Selectivities in the Northern model \ref{fig:selex_model1} shows the difference between the recreational fisheries and the commercial fishery and survey sampling.  All of the fish are fully selected by 50 cm, but the recreational fish are fully selected at 30 cm.
+Selectivities in the Northern model (Figure \ref{fig:selex_model1}) shows the difference between the recreational fisheries and the commercial fishery and survey sampling.  All of the fish are fully selected by 50 cm, but the recreational fish are fully selected at 30 cm.
 
-Retention by length \ref{fig: retention_model1} varies over time between 40\% and 100\%, with no clear pattern of interannual variation, except for the trawl-rationalization era 2011-present.
+Retention by length (Figure \ref{fig: retention_model1}) varies over time between 40\% and 100\%, with no clear pattern of interannual variation, except for the trawl-rationalization era 2011-present.
 
-Discarding in the commercial fleet \ref{fig:r4ss_discard_model1} is fit only by putting blocks on retention in the Northern model.  Discards were very low except during the 1990s and 2000s, until the trawl-rationalization program implementation.
+Discarding in the commercial fleet (Figure \ref{fig:r4ss_discard_model1}) is fit only by putting blocks on retention in the Northern model.  Discards were very low except during the 1990s and 2000s, until the trawl-rationalization program implementation.
 
 Fits to the indices for the northern model demonstrate the utility of the NWFSCcombo survey.  Although the model misses the uptick at the end of the timeseries, it is the only recent index and is well-fit by the model.  The other indices are noisier.  Most of the indices are fairly flat, indicating little change in abundance during each time-period.  Although the fit to the Triennial index is poor, the data nicely reflects the changes in management during it's tenure:  the CPUE was falling during the 1980s and 1990s, then rising after stringent restrictions began in 2000.
 
 ### Lengths
-Bubble plots for the lengths in the fishery \ref{fig:comp_length_bubble_mod1_page1} show the constancy of the commercial fleet, and the differences in growth between males and females; the females are larger, the males smaller.  The recreational fleet is represented by two different sampling regimes, and the changeover in the mid-2000s is clear in that panel.  That the WA\_Sport fishery catches larger fish is represented in the large bubbles at the top of the panel.  Had we examined that fishery earlier in the process of putting the model together, we might have settled on a larger maximum size bin, however that fishery remains the smallest portion of the catches.
+Bubble plots for the lengths in the fishery (Figure \ref{fig:comp_length_bubble_mod1_page1}) show the constancy of the commercial fleet, and the differences in growth between males and females; the females are larger, the males smaller.  The recreational fleet is represented by two different sampling regimes, and the changeover in the mid-2000s is clear in that panel.  That the WA\_Sport fishery catches larger fish is represented in the large bubbles at the top of the panel.  Had we examined that fishery earlier in the process of putting the model together, we might have settled on a larger maximum size bin, however that fishery remains the smallest portion of the catches.
 
-Commercial length comps are very well fit \ref{fig:xxx}, and \ref{fig:mod1_5_comp_lenfit_data_weighting_xxx}.  Commercial discards are noiser and not well fit \ref{fig:mod1_6_comp_lenfxxx}.  The panel describing the combined fits and data weighting for the commercial fishery is duplicted, need to remove redundant figure.
+Commercial length comps are very well fit (Figures \ref{fig:xxx} and \ref{fig:mod1_5_comp_lenfit_data_weighting_xxx}).  Commercial discards are noiser and not well fit (Figure \ref{fig:mod1_6_comp_lenfxxx}).  The panel describing the combined fits and data weighting for the commercial fishery is duplicted, need to remove redundant figure.
 
-Lengths in the early period of the Hake Bycatch fishery are noisy (doubtless due to small sample sizes).  By 1992, the model is able to fit the data well \ref{fig:mod1_10_comp_xxx}.  \ref{fig:mod1_13_comp_lenfit_data_weighting} shows that the fits in the early period have twice (at last) the uncertainty of the later period.
+Lengths in the early period of the Hake Bycatch fishery are noisy (doubtless due to small sample sizes).  By 1992, the model is able to fit the data well (Figure \ref{fig:mod1_10_comp_xxx}).  Figure \ref{fig:mod1_13_comp_lenfit_data_weighting} shows that the fits in the early period have twice (at last) the uncertainty of the later period.
 
-The recreation OR+N.CA timeseries of lengths demonstrates the difference between the MRFSS sampling and RecFIN sampling.  The fits in the early period are good, those in the later period are noisy and model uncertainty is high \ref{fig:mod1_14_comp_l} and \ref{}
+The recreation OR+N.CA timeseries of lengths demonstrates the difference between the MRFSS sampling and RecFIN sampling.  The fits in the early period are good, those in the later period are noisy and model uncertainty is high (Figures \ref{fig:mod1_14_comp_l} and \ref{}).
 
-The WA_Sport length fits might have been improved with a better choice of maximum size bin for the model \ref{fig:mod1_18_comp_lenf}; \ref{fig:mod1_21_comp_lenfit_data_weighting_TA1.8_Recreational} however the data are noisy throughout the size range represented.
+The WA_Sport length fits might have been improved with a better choice of maximum size bin for the model (Figures \ref{fig:mod1_18_comp_lenf} and \ref{fig:mod1_21_comp_lenfit_data_weighting_TA1.8_Recreational}), however the data are noisy throughout the size range represented.
 
-The Trinnial lengths \ref{fig:mod1_22_comp_len} and \ref{fig:mod1_25_comp_lenfit_data_weighting_TA1.8_Triennial Survey} are fit well in some years and not in others.  The data is not noisy, however the intermittency of data collection may mean that the model is unable to capture interannual variation as well as for an annual timeseries.
+The Trinnial lengths Figures \ref{fig:mod1_22_comp_len} and \ref{fig:mod1_25_comp_lenfit_data_weighting_TA1.8_Triennial Survey} are fit well in some years and not in others.  The data is not noisy, however the intermittency of data collection may mean that the model is unable to capture interannual variation as well as for an annual timeseries.
 
-NWFSCcombo lengths are not well fit, particularly in 2013, where the data show a large number of small fit that may represent a good recruitment several years earlier \ref{fig:mod1_26_comp_len} and \ref{fig:mod1_29_comp_lenfit_data_weighting}.
+NWFSCcombo lengths are not well fit, particularly in 2013, where the data show a large number of small fit that may represent a good recruitment several years earlier Figures \ref{fig:mod1_26_comp_len} and  \ref{fig:mod1_29_comp_lenfit_data_weighting}.
 
-\ref{fig:mod1_30_comp_lenfit__aggregated_across_time} shows the relative fits among the data sources, aggregated across time.  The timeseries of presence-absence residuals indicated by filled- and open-bubbles \ref{fig:comp_Pearson_length_mod1_page1} and \ref{fig:comp_Pearson_length_mod1_page2} demonstrates the relative disappointment in model fits; the smaller the bubble, the better the match between the data and the model expectation.
+Figure \ref{fig:mod1_30_comp_lenfit__aggregated_across_time} shows the relative fits among the data sources, aggregated across time.  The timeseries of presence-absence residuals indicated by filled- and open-bubbles Figure \ref{fig:comp_Pearson_length_mod1_page1} and Figure \ref{fig:comp_Pearson_length_mod1_page2} demonstrates the relative disappointment in model fits; the smaller the bubble, the better the match between the data and the model expectation.
 
 ### Ages
 
 The NWFSCcombo survey provided the only source of conditional age-at-length data for the Northern model; ages for other fleets were treated as marginal ages.  
 
-The fits to the marginal commercial \ref{fig:mod1_1_comp} are quite good from about 1979 on, even fitting the tail where the ages beyond 55 are lumped.  The weightings panel \ref{fig:mod1_5_comp_agefit_data_weighting_TA1.8_Comme} shows the same thing:  fits are good after about 1979, and the decrease in mean age in the population corresponds with high catches in the 1980s and 1990s, with mean age increasing after 2000 as catches were curtailed.
+The fits to the marginal commercial Figure \ref{fig:mod1_1_comp} are quite good from about 1979 on, even fitting the tail where the ages beyond 55 are lumped.  The weightings panel Figure \ref{fig:mod1_5_comp_agefit_data_weighting_TA1.8_Comme} shows the same thing:  fits are good after about 1979, and the decrease in mean age in the population corresponds with high catches in the 1980s and 1990s, with mean age increasing after 2000 as catches were curtailed.
 
-The Washington Sport ages are noisy, and the fit is poor throughout the timeseries \ref{fig:mod1_6_comp_agefit}; \ref{fig:mod1_9_comp_agefit_data_weighting_TA1.8_Recreational}.
+The Washington Sport ages are noisy, and the fit is poor throughout the timeseries, see Figure  \ref{fig:mod1_6_comp_agefit} and Figure \ref{fig:mod1_9_comp_agefit_data_weighting_TA1.8_Recreational}.
 
 The Triennial ages are noisy but are fit surprisingly well \ref{fig:mod1_10_comp_agefit}; \ref{fig:mod1_13_comp_agefit_data_weighting_TA1.8_Triennial Survey}.  That the model misses the influx of young fish in 1986 may be due to the timing of the survey; three-year surveys may not provide enough data for the model to fit recruitment events. 
 
-Aggregated age comps for the Commercial, Washington Sport and Triennial fleets are shown in \ref{fig:mod1_14_comp_agefit__aggregated_across_time}, for comparison.  Agreggated fits for the Commercial and Triennial fleets are very satisfying.
+Aggregated age comps for the Commercial, Washington Sport and Triennial fleets are shown in Figure  \ref{fig:mod1_14_comp_agefit__aggregated_across_time}, for comparison.  Agreggated fits for the Commercial and Triennial fleets are very satisfying.
 
-The Ghost age comps \ref{fig:mod1_16_comp} for the NWFSCcombo survey are the marginal age comps for the survey aggregated over length.  This figure is included for informational purposes only; the marginal "ghost" comps are not included in the likelihood calculations.  It is interesting that the model fits this aggregated data poorly, but the disaggregated data well.  This may be due to the fact that for marginal ages, the data are weighted interannually with number of tows or trips, but this ghost fleet is unweighted.
+The Ghost age comps Figure \ref{fig:mod1_16_comp} for the NWFSCcombo survey are the marginal age comps for the survey aggregated over length.  This figure is included for informational purposes only; the marginal "ghost" comps are not included in the likelihood calculations.  It is interesting that the model fits this aggregated data poorly, but the disaggregated data well.  This may be due to the fact that for marginal ages, the data are weighted interannually with number of tows or trips, but this ghost fleet is unweighted.
 
-Pearson residuals for the marginal age comps, are shown in the bubble plots in \ref{}.  The filled bubbles represent estimates greater than observations, and the open bubbles observations greater than estimates. The large filled bubbles at age 25 in a few years suggest that we might have chosen a slightly older age as the compilation age.
+Pearson residuals for the marginal age comps, are shown in the bubble plots in Figure \ref{}.  The filled bubbles represent estimates greater than observations, and the open bubbles observations greater than estimates. The large filled bubbles at age 25 in a few years suggest that we might have chosen a slightly older age as the compilation age.
 
-The fits to the length-aggregate NWFSCcombo data show more variation in mean age in the population in latter years than might be expected in years with relatively low landings \ref{fig:mod1_3_comp_condAALfit_data_weighting_TA1.8}.  These may represent young fish recruiting to the fishery, which would happen approximately 5 years after a biological recruitment event.  The conditional age-at-length fits are shown in \ref{fig:mod1_4_comp_condAALfit_Andre_plotsflt6mkt2_page1}.  These plots explain the reason this survey was chosen to represent conditional age-at-length; the model was able to fit these data much better than other datasets, and improved fit, lower likelihood values and increased parsimony all contributed to a better model.
+The fits to the length-aggregate NWFSCcombo data show more variation in mean age in the population in latter years than might be expected in years with relatively low landings Figure \ref{fig:mod1_3_comp_condAALfit_data_weighting_TA1.8}.  These may represent young fish recruiting to the fishery, which would happen approximately 5 years after a biological recruitment event.  The conditional age-at-length fits are shown in Figure \ref{fig:mod1_4_comp_condAALfit_Andre_plotsflt6mkt2_page1}.  These plots explain the reason this survey was chosen to represent conditional age-at-length; the model was able to fit these data much better than other datasets, and improved fit, lower likelihood values and increased parsimony all contributed to a better model.
 
 ## Northern Model Parameters
 For the Base model, the parameter fits are given in Table \ref{tab:Model1_params}.  Status for all of the estimated parameters is good, with the exception of the 6th parameter for the selectivity in the Washington Sport fishery.   
 
-### Northern Model Uncertainty and Sensitivity Analyses
+### \hl{Northern Model Uncertainty and Sensitivity Analyses}
 Table \ref{tab:Sensitivity_model1}
 
 
@@ -222,6 +233,16 @@ Table \ref{tab:Sensitivity_model1}
  
 
 ### Northern Model Likelihood Profiles
+We profiled the change in negative log likelihood for the data sources and model total likelihood for critical parameters in the model:  **R0**, the log of equilibrium recruitment; female natural mortality, **MF**; male natural mortality, **MM**; and steepness, **h**, the parameter that reflects how quickly the stock-recruit relationship allows the stock to rebound from depleted stock size.
+
+The likelihood profile over a range of values (from 9 to 11) R0 are shown in Figure \ref{fig:profile_logR0.N}.  This plot shows the tension between the index data and the other data sources.  The indices are better fit with a smaller value of R0, near 9.6, while all other data sources are better fit at larger values.  The overall likelihood in the model is lowest at 10.3 in this figure.  The discards show very little change (are insensitive) over this range of R0, while the recruitments, ages and lengths are all minimized at values larger than 10.5.
+
+The likelihood profile over female natural mortality, MF, is over a range from 0.1 to 0.24 (Figure \ref{fig:profile_M.N}).  In this figure, the indices are fit best when MF is 0.1, the ages and lengths are fit nearer 0.18, and the recruitments and total log likelihoods are minimized at 0.15.
+
+
+Figure \ref{fig:profile_M2.N} shows the likelihood profile for male natural mortality, MM, over a range of negative values that are the offset from female mortality (FM).  The index data are again at odds with the other data sources; all but the indices are minimized at a value of -0.15 \hl{more explanation here, this is not a natural number}.  The indices prefer both larger *and* smaller values of the offset.
+
+The profile over values of steepness, h, from 0.5 to 0.9, Figure \ref{fig:profile_h.N}, shows the index data for once in the majority as all data sources except the lengths support 0.9 as minimizing the likelihood, while the lengths support a value closer to 0.5.  The scale of this plot differs from the others; it is roughly a tenth of the scale of the R0 plot, meaning that the choice of h within this range has far less impact on likelihood in the model than choices for the other profiled parameters.  This suggests the stock is not depleted; the choice of steepness would have a much greater impact on a depleted stock.
 
 
 ### Northern Model Reference Points
@@ -231,7 +252,9 @@ Intro sentence or two....(Table \ref{tab:Timeseries_mod1}).
 Equilibrium yield at the proxy $F_{MSY}$ harvest rate corresponding to 
 $SPR_{50\%}$ is 
 
-<!-- `r Ref_pts_mod1[15,2]` mt.  Table \ref{tab:Ref_pts_mod1} -->
+
+\hl{Knit kept whining about missing ref pts table, wouldn't work, took out ref.}
+
 shows the full suite of estimated reference points for the northern area model 
 and Figure \ref{fig:Yield_all} shows the equilibrium yield curve.
 
@@ -242,13 +265,13 @@ and Figure \ref{fig:Yield_all} shows the equilibrium yield curve.
 
 ## Southern Model Base Case Results
 
+Data used in the Southern model is shown in Figure \ref{fig:data_plot}.  
 One thing to point out is that although the scale of the biomass in the model is somewhat sensitive to various data sources, the depletion is not.  In tuning the model we were suprised to note that depletion always stayed above 80\%.
 
-### Southern Model Fleet Selectivities
 
 ### Southern Model Selectivities, Indices and Discards
 
-Selectivity by fleet is shown in \ref{fig:selex}.  Selectivities for all but the recreational Onboard fishery are modeled as asymptotic; both recreational fleets (MRFSS/RecFIN and Onboard) are fully selected at 30cm; the remaining fleets show full selectivity at 45-50 cm.
+Selectivity by fleet is shown in Figure \ref{fig:selex}.  Selectivities for all but the recreational Onboard fishery are modeled as asymptotic; both recreational fleets (MRFSS/RecFIN and Onboard) are fully selected at 30cm; the remaining fleets show full selectivity at 45-50 cm.
 
 Index fits leave something to be desired.  All are more-or-less flat, with all of the three current indices, the Onboard, the Juvenile study and the Hook-and-Line survey all missing a downturn at the end of the timeseries.  During model tuning, we tried introducing a time-blocked index for the two periods of the Onboard survey, however it didn't improve the fit to the index significantly, and increased the (negative log) likelihood of the model.
 
@@ -257,19 +280,19 @@ There was little information to inform the Southern Model of discard behavior, e
 ### Southern Model Lengths
 Lengths in the Southern model were entered as unsexed, except for the Hook-and-Line fishery.  There were sexes for the Commercial lengths, however there were also large numbers of unsexed lengths, and we chose to model the lengths as unsexed, to include as much of the data as possible.  This was true of the Small-Fish study, as well.
 
-Bubble plots of the lengths by year in each fishery are in \ref{fig:comp_length_bubble_mod2}.  The plot for the recreational fishery clearly shows the transition from the MRFSS sampling program to RecFIN in 2003/2004, as well as suggesting the existence of larger fish in the 1980s.  The Commercial fishery data has been sparse in recent years, however the fish taken in the Commercial catch are consistently larger than those in the recreational fishery, no doubt reflecting trawling in deeper waters.  The Onboard survey lengths reflect two eras of sampling, again with larger fish in the earlier period.  The panel for the Hook-and-Line survey shows that the females landed are always larger than the males, in agreement with the model estimates of growth \ref{fig:growth}.
+Bubble plots of the lengths by year in each fishery are in Figure \ref{fig:comp_length_bubble_mod2}.  The plot for the recreational fishery clearly shows the transition from the MRFSS sampling program to RecFIN in 2003/2004, as well as suggesting the existence of larger fish in the 1980s.  The Commercial fishery data has been sparse in recent years, however the fish taken in the Commercial catch are consistently larger than those in the recreational fishery, no doubt reflecting trawling in deeper waters.  The Onboard survey lengths reflect two eras of sampling, again with larger fish in the earlier period.  The panel for the Hook-and-Line survey shows that the females landed are always larger than the males, in agreement with the model estimates of growth: Figure \ref{fig:growth}.
 
-The fits to the lengths in the Recreational fishery \ref{fig:mod2_1_comp_len} show variable fits through the years, with the noisy and sparse data in 2004 heralding the transition between MRFSS sampling and RecFIN.  Overall, the timeseries is fit fairly well \ref{fig:mod2_4_comp_lenfit_data_weighting_}
+The fits to the lengths in the Recreational fishery Figure \ref{fig:mod2_1_comp_len} show variable fits through the years, with the noisy and sparse data in 2004 heralding the transition between MRFSS sampling and RecFIN.  Overall, the timeseries is fit fairly well: Figure \ref{fig:mod2_4_comp_lenfit_data_weighting_}
 
-The Commercial length comps are fit well through 2005, when data becomes sparse and noisy \ref{fig:mod2_5_comp_len}; and \ref{fig:mod2_8_comp_lenfit_data_weighting_T}.
+The Commercial length comps are fit well through 2005, when data becomes sparse and noisy Figure \ref{fig:mod2_5_comp_len}; and Figure \ref{fig:mod2_8_comp_lenfit_data_weighting_T}.
 
 Fits for the Onboard Survey lengths are good in the early survey, and poor for the later period \ref{fig:mod2_9_comp}; \ref{fig:mod2_12_comp}.  Attempting to apply a time-block to this data resulted in poor convergence.
 
-The Hook-and-Line Survey lengths are noisy \ref{fig:mod2_13_comp_l}, but the fits are acceptable, and follow the trend of the data better than those for the other datasets \ref{fig:mod2_16_comp_lenfit_data_weighting}.
+The Hook-and-Line Survey lengths are noisy (Figure \ref{fig:mod2_13_comp_l}), but the fits are acceptable, and follow the trend of the data better than those for the other datasets:  Figure \ref{fig:mod2_16_comp_lenfit_data_weighting}.
 
 The small fish survey lengths are not fit badly \ref{fig:mod2_17_comp_len}; \ref{fig:mod2_20_comp_lenfit_data_weighting}, and it is perhaps a shame that there are so few years to this timeseries.
 
-The aggregate fits to the length comps for all five datasets is shown in \ref{fig:mod2_21_comp_lenfit__aggregated_across_time}, and Pearson residuals for the lengths in \ref{fig:comp_Pearson_length_mod2}.  Filled bubbles represent under-estimation of the data, open bubbles represent overestimation.
+The aggregate fits to the length comps for all five datasets is shown in Figure \ref{fig:mod2_21_comp_lenfit__aggregated_across_time}, and Pearson residuals for the lengths in Figure \ref{fig:comp_Pearson_length_mod2}.  Filled bubbles represent under-estimation of the data, open bubbles represent overestimation.
 
 
 ### Southern Model Ages
@@ -280,6 +303,16 @@ The aggregate fits to the length comps for all five datasets is shown in \ref{fi
 ### Southern Model Retrospective Analysis
 
 ### Southern Model Likelihood Profiles
+We profiled the change in negative log likelihood for the data sources and model total likelihood for critical parameters fixed in the model:  **R0**, the log of equilibrium recruitment; female natural mortality, **MF**; male natural mortality, **MM**; and steepness, **h** the parameter that reflects how quickly the stock-recruit relationship allows the stock to rebound from depleted stock size.
+
+The likelihood profile for **R0** is shown in Figure \ref{fig:profile_logR0.S}.  R0 was profiled over values from 8.5 -11.  The figure shows that the age data and indices are minimized when R0 is 11; the length data are minimized around 8.5, and the recruitments at 9.8 (or so).  The overall likelihood is minimized near 10.5.
+
+The female natural mortality (FM) profile, \ref{fig:profile_M.S} ranges from 0.1 to 0.24.  The age and length data sources are at odds over FM; the ages and recruitments are minimized when FM is the low end of the range, and the lengths and indices when it is highest.  Changes to the recruitment likelihood is minimal over the whole range.  The overall likelihood is minimized near 0.22.
+
+Male natural mortality (MM) is profiled over a range from -0.4 to 0.  \hl{These values are offsets from female natural mortality}.  All roads lead to Rome in this figure (Figure \ref{fig:profile_M2.S}); since all data sources and the total are minimized at zero.  Likelihoods for recruitments and indices are flat over the range of MM; the other data sources show changes of 20 (lengths) and 80 (ages) likelihood values.
+
+The steepness profile (Figure \ref{fig:profile_h.S}is the most colorful, as the lines bounce around and change direction, however the likelihood scale is from 0 to 0.7, meaning that none of the values in this range (0.5 - 0.9) would have much impact on likelihood in the model.  This supports the conclusion that the stock is abundant.  For a depleted stock, steepness would have a very large impact on the likelihood.
+
 
 ### Southern Model Reference Points
 

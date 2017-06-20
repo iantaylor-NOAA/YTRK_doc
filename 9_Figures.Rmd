@@ -1,22 +1,4 @@
-
-<!-- ====================================================================== -->
-<!-- **************************             ******************************* --> 
-<!-- **************************BEGIN FIGURES******************************* --> 
-<!-- **************************             ******************************* -->
-<!-- ====================================================================== -->
-\FloatBarrier
-
-\newpage
-
-
 #Figures
-
-<!-- ====================================================================== --> 
-<!-- *********************INTRODUCTION FIGURES***************************** --> 
-<!-- ====================================================================== --> 
-
-<!-- ![Map showing the state boundary lines for management of the recreational fishing fleets.  CRFS Districts 1-6 in California are presented as well as the WDFW Recreational Management Areas in Washington.  Florence, OR is shown as a potential location of model stratification. \label{fig:boundary_map}](Figures/boundary_map.png)
--->
 
 ![Map depicting the boundaries for the base-case model.  \label{fig:assess_region_map}](Figures/assess_region_map_v2.png)
 
