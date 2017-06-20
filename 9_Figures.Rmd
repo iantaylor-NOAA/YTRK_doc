@@ -261,7 +261,7 @@
 
 ### Retrospective analysis for `r mod1_label`
 
-\hl{to be added...}
+[Retrospective analysis of spawning output for the `r mod1_label`. \label{fig:retro.N}](Figures/profiles/retro.N_compare1_spawnbio.png)
 
 ### Forecasts analysis for `r mod1_label`
 
@@ -469,7 +469,7 @@
 
 ### Retrospective analysis for `r mod2_label`
 
-\hl{to be added...}
+[Retrospective analysis of spawning output for the `r mod2_label`. \label{fig:retro.S}](Figures/profiles/retro.S_compare1_spawnbio.png)
 
 ### Forecasts analysis for `r mod2_label`
 
