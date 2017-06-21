@@ -4,9 +4,9 @@
 <!-- ***********HISTORY AND CURRENT ASSESSMENT***************************** -->
 ##History Of Modeling Approaches Used For This Stock
 
-Yellowtail rockfish was previously modeled as ag age-structured, 3-area stock north of  $40^\circ 10^\prime$  in 1999 [@Tagart2000] using a model written in ADMB [@Fournier2012]; an update of this assessment was last conducted in 2004 [@Wallace2005].  That assessment divided the stock into 3 INPFC areas which are not coincident with state boundaries; this is a concern in that recent reconstructions of historical catch are state-by-state along the West Coast.  Because we cannot produce data that conform to the areas previously assessed, we have made no effort to reproduce the previous model.
+Yellowtail rockfish was previously modeled as an age-structured, 3-area stock north of  $40^\circ 10^\prime$  in 1999 [@Tagart2000] using a model written in ADMB [@Fournier2012]; an update of this assessment was last conducted in 2004 [@Wallace2005].  That assessment divided the stock into 3 INPFC areas based on the suggestion that there might be biological differences in the stock, however recent genetic studies don't support that [@Hess2011].  The INPFC area boundaries are not coincident with state boundaries; this is a concern in that recent reconstructions of historical catch are state-by-state along the West Coast.  Because we cannot produce data that conform to the areas previously assessed, we have made no effort to reproduce the previous model.
 
-A data-moderate approach was used to evaluate stock status in 2013 [@Cope2013].  This approach is not compatible with the current model, and we have made no attempt to reproduce it.
+A data-moderate approach was used to evaluate stock status in 2013 [@Cope2013].  The data-moderate model used only indices of abundance and made simplifying assumptions about selectivity and growth since no length or age data were included in the model.  This approach is also  incompatible with the current model, and we have made no attempt to reproduce it, either.
 
 ###Previous Assessment Recommendations
 
@@ -37,7 +37,7 @@ These are the main changes from the previous model, and our rationale for them:
 
 ###Definition of Fleets and Areas
 
-The Northern model comprises the area between Cape Mendocino, California, and the Canadian border.  The Southern model runs from Cape Mendocino to the Mexican border \ref{fig:assess_region_map}
+The Northern model comprises the area between Cape Mendocino, California, and the Canadian border.  The Southern model runs from Cape Mendocino to the Mexican border (Figure \ref{fig:assess_region_map}).
 
 **Northern Model** 
 
@@ -106,7 +106,7 @@ This is also the median of the prior. The prior is defined as a lognormal with m
 
 Natural mortality priors for these models were based on examination of the 99\% quantile of the observed ages from early in the time-series, before the full impact of fishing would have taken place. For the Northern model, these quantiles were approximately 35 years for females and 45 years for males, resulting in median M values of 0.15 and 0.12 for females and males. For the Southern model, the 99\% quantile of the early age observations were approximately 30 and 40 years for females and males, resulting in median M prior values of 0.18 and 0.135, respectively. In both models, M for males was represented as an offset from females. In the Northern model, both the female value and the male offset could be estimated without priors so the priors were not used. For the southern model, M was fixed at the median prior values for the two sexes.
 
-The prior for steepness (h, 0.718) was provided by James Thorson and used as a fixed parameter in both models. \hl{need citation}
+The prior for steepness ($h$) assumes a beta distribution with parameters based on an update of the Thorson-Dorn rockfish prior (commonly used in past West Coast rockfish assessments) conducted by James Thorson (personal communication, NWFSC, NOAA) which was reviewed and endorsed by the Scientific and Statistical Committee in 2017. The prior is a beta distribution with $\mu$=0.718 and $\sigma$=0.158.
 
 
 ###General Model Specifications
@@ -119,6 +119,30 @@ Model data, control, starter, and forecast files can be found at \hl{https://DEV
 A full list of all estimated and fixed parameters is provided in Tables....
 Estimated and fixed parameters tables currently read in from .csv file, 
 EXAMPLE: Table \ref{tab:Model1_params}
+
+
+**Growth**
+5 parameters for female growth are estimated in each model: 3 von Bertalanffy parameters and 2 parameters for CV as a function of length at age  related to variability in length at age for small and large fish.
+
+Three parameters are estimated for male growth in each model as offset from female growth.  The size for small fish and CV for small fish were assumed equal to females.
+
+**Natural Mortality**
+Natural mortality is estimated in the Northern model with an offset for males from females.  Natural Mortality is fixed in the Southern model at the values provided by the Hamel analysis described above [@Hamel2015].
+
+**Selectivity**
+Selectivity for all fleets was initially estimated as a 4-parameter double normal, which allows selectivity to be dome shaped, with parameters controlling the position of the peak selectivity, the width of the peak, and the ascending and descending slopes. 
+
+For all fleets where the estimated patterns were asymptotic, we fixed the parameters related to the dome, leaving only the position of the peak and the ascending slope as estimated parameters. For a few fleets, the position of the peak hit the upper bound, and was fixed at 55cm.
+
+**Retention**
+Retention for commercial fishery in Northern model is a logistic function of size, with three parameters estimated: length at 50% retention, the slope of the curve, and the asymptotic retention fraction. The asymptote was allowed to be time-varying, with one value applied for the early years through 2001.  From 2002 through 2011 we applied annual time-blocks for theses years when the WCGOP program observed high discards.  The final block runs from 2012 forward, reflecting the current period in which the implementation of the IFQ program has led to low discard rates.
+
+**Other Estimated Parameters**
+Log(R0) is the equilibrium recruitment, which is estimated in each model.  
+
+Recruitment deviations for the Northern model are estimated from 19xx to 2013.  For the Southern model recruitment deviations are estimated from 19xx to 2013.  \hl{list range of years for each model with some comment as to how this range was chosen}. 
+
+A parameter for extra standard deviation was added to the index based on bycatch in the at-sea hake fishery,  because this index was not well fit by any of the models considered.
 
 \clearpage
 
@@ -191,12 +215,12 @@ The growth at the beginning of the year estimated by the models for the Northern
 
 The data used in the Northern model by fishery is shown in Figure \ref{fig:data_plot}.  Estimated catches are shown in Figure \ref{fig:r4ss_total_catch_N}; estimated discards are in Figure \ref{fig:r4ss_discard_N}.  These show the large catches in the 1980s and 90s are being predicted by the model.  The large discards in latter years match the data well for those years.
 
-The timeseries of estimated spawning output in \hl{units?} is shown in Figure{fig:ssb}.  The model is estimating two periods of decline, one beginning in the forties and a steeper decline in the 1970s and 1980s, followed by an increase since 2000 to pre-1980 levels. There is a decrease in the final years of the timeseries coincident with increased uncertainty.
+The timeseries of estimated spawning output in trillions of eggs is shown in Figure{fig:ssb}.  The model is estimating two periods of decline, one beginning in the forties and a steeper decline in the 1970s and 1980s, followed by an increase since 2000 to pre-1980 levels. There is a decrease in the final years of the timeseries coincident with increased uncertainty.
 
 
-Figure \ref{fig:total_bio} shows the total biomass following a similar pattern; the ending value is \hl{value} metric tonnes.
+Figure \ref{fig:total_bio} shows the total biomass following a similar pattern; the ending value is `r mod1$timeseries$Bio_all[mod1$timeseries$Yr==2017]` metric tonnes.
 
-The spawning depletion (Figure \ref{fig:depl}) went below the 40\% target in the early 1980s, and may have been below the minimum stock size limit of 25% in the late 1990s, but has rebounded since to \hl{value} (see Table \ref{xxx}).
+The relative spawning output (Figure \ref{fig:depl}) went below the 40\% target in the early 1980s, and may have been below the minimum stock size limit of 25% in the late 1990s, but has rebounded since to `r mod1$derived_quants["Bratio_2017","Value"]` (see Table \ref{xxx}).
 
 Figures \ref{fig:recruits1} and \ref{fig:recdevs1} address recruitments estimated the the model.  The first of these shows the age-0 recruits, and the second the recruitment deviations. \hl{Ian?  What do we want to say about these?}.  The stock-recruit curve, Figure \ref{fig:stock_recruit_curve} shows a shallow relationship between stock size and recruitment with \hl{an asymptote at larger stock sizes.}
 
@@ -223,7 +247,7 @@ The recreation OR+N.CA timeseries of lengths demonstrates the difference between
 
 The WA_Sport length fits might have been improved with a better choice of maximum size bin for the model (Figures \ref{fig:mod1_18_comp_lenf} and \ref{fig:mod1_21_comp_lenfit_data_weighting_TA1.8_Recreational}), however the data are noisy throughout the size range represented.
 
-The Trinnial lengths Figures \ref{fig:mod1_22_comp_len} and \ref{fig:mod1_25_comp_lenfit_data_weighting_TA1.8_Triennial Survey} are fit well in some years and not in others.  The data is not noisy, however the intermittency of data collection may mean that the model is unable to capture interannual variation as well as for an annual timeseries.
+The Triennial lengths Figures \ref{fig:mod1_22_comp_len} and \ref{fig:mod1_25_comp_lenfit_data_weighting_TA1.8_Triennial Survey} are fit well in some years and not in others.  The data is not noisy, however the intermittency of data collection may mean that the model is unable to capture interannual variation as well as for an annual timeseries.
 
 NWFSCcombo lengths are not well fit, particularly in 2013, where the data show a large number of small fit that may represent a good recruitment several years earlier Figures \ref{fig:mod1_26_comp_len} and  \ref{fig:mod1_29_comp_lenfit_data_weighting}.
 
@@ -363,4 +387,8 @@ The steepness profile (Figure \ref{fig:profile_h.S}is the most colorful, as the 
 
 
 ### Southern Model Reference Points
+
+## Comparison of the Northern and Southern Model Results.
+
+\hl{No text yet}
 
