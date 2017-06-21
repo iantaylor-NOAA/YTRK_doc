@@ -9,8 +9,7 @@ Once thought to comprise a single stock, a recent genetic study indicates that t
 
 Yellowtail rockfish are colloquially known as "greenies", although *flavidus* is Latin for "yellow" [@Love2011].  We have summarized yellowtail rockfish life history, fisheries, assessment and management here, but in-depth, extensive background information on yellowtail and other managed species is available at [@PFMC2016].  
 
-##Map
-A map showing the scope of the assessment and depicting boundaries for fisheries or data collection strata is provided in Figure \ref{fig:boundary_map}.
+A map showing the scope of the assessment and depicting boundaries for fisheries or data collection strata is provided in Figure \ref{fig:assess_region_map}.
 
 ##Life History
 Rockfish are in general long-lived and slow-growing, however yellowtail rockfish have a high growth rate relative to other rockfish species, reaching a maximum size of about 55 cm in approximately 15 years [@Tagart1991].  Yellowtail can live at least 64 years [@Love2011], however no fish that old occur in data available for this assessment (For the Northern model, the 95th percentile of age is 35 years for females and 45 years for males and for the Southern model, 30 and 40 years respectively for females and males).  Yellowtail rockfish are among those that are fertilized internally and release live young.  Spawning aggregations occur in the fall, and parturition in the winter and spring (January-May) [@Eldridge1991].  Young-of-the-year recruit to nearshore waters from April through August, migrating to deeper water in the fall.  Preferred habitat is the midwater over reefs and boulder fields.  
