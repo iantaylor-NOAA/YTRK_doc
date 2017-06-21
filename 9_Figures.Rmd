@@ -203,27 +203,27 @@
 
 <!-- ******************* NORTHERN Time-Series Figures ********************* -->
 
-![Estimated time-series of spawning output for `r mod1_label`. \label{fig:ssb}](r4ss/plots_mod1/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png)
+![Estimated time-series of spawning output for `r mod1_label`. \label{fig:ssb.N}](r4ss/plots_mod1/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png)
   
 \FloatBarrier
 
-![Estimated time-series of total biomass for `r mod1_label`. \label{fig:total_bio}](r4ss/plots_mod1/ts1_Total_biomass_(mt).png)
+![Estimated time-series of total biomass for `r mod1_label`. \label{fig:total_bio.N}](r4ss/plots_mod1/ts1_Total_biomass_(mt).png)
 
 \FloatBarrier
 
-![Estimated time-series of relative biomass for `r mod1_label`. \label{fig:depl}](r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png)
+![Estimated time-series of relative biomass for `r mod1_label`. \label{fig:depl.N}](r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png)
   
 \FloatBarrier
 
-![Estimated time-series of recruitment for the `r mod1_label`. \label{fig:recruits1}](r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png)
+![Estimated time-series of recruitment for the `r mod1_label`. \label{fig:recruits1.N}](r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png)
 
 \FloatBarrier
   
-![Estimated time-series of recruitment deviations for the `r mod1_label`. \label{fig:recdevs1}](r4ss/plots_mod1/recdevs2_withbars.png)
+![Estimated time-series of recruitment deviations for the `r mod1_label`. \label{fig:recdevs1.N}](r4ss/plots_mod1/recdevs2_withbars.png)
   
 \FloatBarrier
 
-![Estimated recruitment (red circles) for the `r mod1_label` relative to the stock-recruit relationship (black line). The green line shows the effect of the bias correction for the lognormal distribution \label{fig:stock_recruit_curve}](r4ss/plots_mod1/SR_curve2.png)
+![Estimated recruitment (red circles) for the `r mod1_label` relative to the stock-recruit relationship (black line). The green line shows the effect of the bias correction for the lognormal distribution \label{fig:stock_recruit_curve.N}](r4ss/plots_mod1/SR_curve2.png)
 
 \FloatBarrier
 
@@ -261,7 +261,7 @@
 
 ### Retrospective analysis for `r mod1_label`
 
-[Retrospective analysis of spawning output for the `r mod1_label`. \label{fig:retro.N}](Figures/profiles/retro.N_compare1_spawnbio.png)
+[Retrospective analysis of spawning output for the `r mod1_label`. \label{fig:retro.N}](Figures/retrospectives/retro.N_compare1_spawnbio.png)
 
 ### Forecasts analysis for `r mod1_label`
 
@@ -417,27 +417,27 @@
 
 <!-- ******************* SOUTHERN Time-Series Figures ********************* -->
 
-![Estimated time-series of spawning output for `r mod2_label`. \label{fig:ssb}](r4ss/plots_mod2/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png)
+![Estimated time-series of spawning output for `r mod2_label`. \label{fig:ssb.S}](r4ss/plots_mod2/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png)
   
 \FloatBarrier
 
-![Estimated time-series of total biomass for `r mod2_label`. \label{fig:total_bio}](r4ss/plots_mod2/ts1_Total_biomass_(mt).png)
+![Estimated time-series of total biomass for `r mod2_label`. \label{fig:total_bio.S}](r4ss/plots_mod2/ts1_Total_biomass_(mt).png)
 
 \FloatBarrier
 
-![Estimated time-series of relative biomass for `r mod2_label`. \label{fig:depl}](r4ss/plots_mod2/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png)
+![Estimated time-series of relative biomass for `r mod2_label`. \label{fig:depl.S}](r4ss/plots_mod2/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png)
   
 \FloatBarrier
 
-![Estimated time-series of recruitment for the `r mod2_label`. \label{fig:recruits1}](r4ss/plots_mod2/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png)
+![Estimated time-series of recruitment for the `r mod2_label`. \label{fig:recruits1.S}](r4ss/plots_mod2/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png)
 
 \FloatBarrier
   
-![Estimated time-series of recruitment deviations for the `r mod2_label`. \label{fig:recdevs1}](r4ss/plots_mod2/recdevs2_withbars.png)
+![Estimated time-series of recruitment deviations for the `r mod2_label`. \label{fig:recdevs1.S}](r4ss/plots_mod2/recdevs2_withbars.png)
   
 \FloatBarrier
 
-![Estimated recruitment (red circles) for the `r mod2_label` relative to the stock-recruit relationship (black line). The green line shows the effect of the bias correction for the lognormal distribution \label{fig:stock_recruit_curve}](r4ss/plots_mod2/SR_curve2.png)
+![Estimated recruitment (red circles) for the `r mod2_label` relative to the stock-recruit relationship (black line). The green line shows the effect of the bias correction for the lognormal distribution \label{fig:stock_recruit_curve.S}](r4ss/plots_mod2/SR_curve2.png)
 
 \FloatBarrier
 
@@ -469,7 +469,7 @@
 
 ### Retrospective analysis for `r mod2_label`
 
-[Retrospective analysis of spawning output for the `r mod2_label`. \label{fig:retro.S}](Figures/profiles/retro.S_compare1_spawnbio.png)
+[Retrospective analysis of spawning output for the `r mod2_label`. \label{fig:retro.S}](Figures/retrospectives/retro.S_compare1_spawnbio.png)
 
 ### Forecasts analysis for `r mod2_label`
 
