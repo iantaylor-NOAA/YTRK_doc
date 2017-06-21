@@ -155,8 +155,7 @@ The estimated relative depletion level of model 3 in `r LastYR` is
 table for last 10 years and graph with long term estimates.}
 
 Recruitment Figure: (Figure \ref{fig:Recruits_all})     
-Recruitment Tables: (Tables \ref{tab:Recruit_mod1}, \ref{tab:Recruit_mod2} 
-and \ref{tab:Recruit_mod3})
+Recruitment Tables: (Tables \ref{tab:Recruit_mod1} and \ref{tab:Recruit_mod2})
 
 
 
@@ -195,7 +194,7 @@ and \ref{tab:Recruit_mod3})
 \hl{Include: exploitation rates (i.e., total catch divided by exploitable biomass, or the annual SPR harvest rate) – include a table with the last 10 years of data and a graph showing the trend in fishing mortality relative to the target (y-axis) plotted against the trend in biomass relative to the target (x-axis).}
 
 
-Exploitation Tables: Table \ref{tab:SPR_Exploit_mod1}, Table \ref{tab:SPR_Exploit_mod2}, Table \ref{tab:SPR_Exploit_mod3}
+Exploitation Tables: Tables \ref{tab:SPR_Exploit_mod1} and \ref{tab:SPR_Exploit_mod2}
 Exploitation Figure: Figure \ref{fig:SPR_all}). 
 
 A summary of `r spp` exploitation histories for base model is provided as Figure \ref{fig:Phase_all}.

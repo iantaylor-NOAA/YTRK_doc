@@ -45,7 +45,7 @@
 
 ##Data and model fits for the `r mod1_label`
 
-![Summary of data sources used in the `r mod1_label`. \label{fig:data_plot}](r4ss/plots_mod1/data_plot.png)
+![Summary of data sources used in the `r mod1_label`. \label{fig:data_plot.N}](r4ss/plots_mod1/data_plot.png)
 
 \FloatBarrier
 
@@ -61,15 +61,15 @@
 
 ###Selectivity, retention, and discards for `r mod1_label`
 
-![Estimated selectivity by length by each fishery and survey in the `r mod1_label`. \label{fig:selex}](r4ss/plots_mod1/sel01_multiple_fleets_length1.png)
+![Estimated selectivity by length by each fishery and survey in the `r mod1_label`. \label{fig:selex.N}](r4ss/plots_mod1/sel01_multiple_fleets_length1.png)
 
-![Estimated retention by length by the Commercial Fishery in the `r mod1_label`. \label{fig:retention}](r4ss/plots_mod1/time-varying_retention.png)
+![Estimated retention by length by the Commercial Fishery in the `r mod1_label`. \label{fig:retention.N}](r4ss/plots_mod1/time-varying_retention.png)
 
 \FloatBarrier
 
 \newpage
 
-![Fit to discard fractions for the commercial fishery in the `r mod1_label`.\label{fig:r4ss_discard_fits}](r4ss/plots_mod1/discard_dataCommercial Fishery.png)
+![Fit to discard fractions for the commercial fishery in the `r mod1_label`.\label{fig:r4ss_discard_fits.N}](r4ss/plots_mod1/discard_dataCommercial Fishery.png)
 
 \FloatBarrier
 
@@ -277,7 +277,7 @@
 
 ##Data and model fits for `r mod2_label`
 
-![Summary of data sources used in the `r mod2_label`. \label{fig:data_plot}](r4ss/plots_mod2/data_plot.png)
+![Summary of data sources used in the `r mod2_label`. \label{fig:data_plot.S}](r4ss/plots_mod2/data_plot.png)
 
 \FloatBarrier
 
@@ -294,7 +294,7 @@
 
 ###Selectivity, retention, and discards for `r mod2_label`
 
-![Estimated selectivity by length by each fishery and survey in the `r mod2_label`. \label{fig:selex}](r4ss/plots_mod2/sel01_multiple_fleets_length1.png)
+![Estimated selectivity by length by each fishery and survey in the `r mod2_label`. \label{fig:selex.N}](r4ss/plots_mod2/sel01_multiple_fleets_length1.png)
 
 \FloatBarrier 
 

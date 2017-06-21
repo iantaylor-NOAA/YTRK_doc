@@ -213,26 +213,26 @@ The growth at the beginning of the year estimated by the models for the Northern
 
 ## Northern Model Base Case Results
 
-The data used in the Northern model by fishery is shown in Figure \ref{fig:data_plot}.  Estimated catches are shown in Figure \ref{fig:r4ss_total_catch_N}; estimated discards are in Figure \ref{fig:r4ss_discard_N}.  These show the large catches in the 1980s and 90s are being predicted by the model.  The large discards in latter years match the data well for those years.
+The data used in the Northern model by fishery is shown in Figure \ref{fig:data_plot.N}.  Estimated catches are shown in Figure \ref{fig:r4ss_total_catch_N}; estimated discards are in Figure \ref{fig:r4ss_discard_N}.  These show the large catches in the 1980s and 90s are being predicted by the model.  The large discards in latter years match the data well for those years.
 
-The timeseries of estimated spawning output in trillions of eggs is shown in Figure{fig:ssb}.  The model is estimating two periods of decline, one beginning in the forties and a steeper decline in the 1970s and 1980s, followed by an increase since 2000 to pre-1980 levels. There is a decrease in the final years of the timeseries coincident with increased uncertainty.
+The timeseries of estimated spawning output in trillions of eggs is shown in Figure{fig:ssb.N}.  The model is estimating two periods of decline, one beginning in the forties and a steeper decline in the 1970s and 1980s, followed by an increase since 2000 to pre-1980 levels. There is a decrease in the final years of the timeseries coincident with increased uncertainty.
 
 
-Figure \ref{fig:total_bio} shows the total biomass following a similar pattern; the ending value is `r mod1$timeseries$Bio_all[mod1$timeseries$Yr==2017]` metric tonnes.
+Figure \ref{fig:total_bio.N} shows the total biomass following a similar pattern; the ending value is `r round(mod1$timeseries$Bio_all[mod1$timeseries$Yr==2017])` metric tonnes.
 
-The relative spawning output (Figure \ref{fig:depl}) went below the 40\% target in the early 1980s, and may have been below the minimum stock size limit of 25% in the late 1990s, but has rebounded since to `r mod1$derived_quants["Bratio_2017","Value"]` (see Table \ref{xxx}).
+The relative spawning output (Figure \ref{fig:depl.N}) went below the 40\% target in the early 1980s, and may have been below the minimum stock size limit of 25% in the late 1990s, but has rebounded since to `r round(100*mod1$derived_quants["Bratio_2017","Value"])`% (see Table \ref{xxx}).
 
-Figures \ref{fig:recruits1} and \ref{fig:recdevs1} address recruitments estimated the the model.  The first of these shows the age-0 recruits, and the second the recruitment deviations. \hl{Ian?  What do we want to say about these?}.  The stock-recruit curve, Figure \ref{fig:stock_recruit_curve} shows a shallow relationship between stock size and recruitment with \hl{an asymptote at larger stock sizes.}
+Figures \ref{fig:recruits1.N} and \ref{fig:recdevs1.N} address recruitments estimated the the model.  The first of these shows the age-0 recruits, and the second the recruitment deviations. There are no strong patterns in recruitment and the variability of the recruitment deviations was tuned to be 0.546 (based on the method of Methot & Taylor \hl{add reference}) which is slightly lower than what has been assumed or estimated for other rockfish in the California Current.  The stock-recruit curve, Figure \ref{fig:stock_recruit_curve.N} shows a shallow relationship between stock size and recruitment with \hl{an asymptote at larger stock sizes.}
 
 
 
 ### Selectivities, Indices and Discards
 
-Selectivities in the Northern model (Figure \ref{fig:selex}) shows the difference between the recreational fisheries and the commercial fishery and survey sampling.  All of the fish are fully selected by 50 cm, but the recreational fish are fully selected at 30 cm.
+Selectivities in the Northern model (Figure \ref{fig:selex.N}) shows the difference between the recreational fisheries and the commercial fishery and survey sampling.  All of the fish are fully selected by 50 cm, but the recreational fish are fully selected at 30 cm.
 
-Retention by length (Figure \ref{fig: retention}) varies over time between 40\% and 100\%, with no clear pattern of interannual variation, except for the trawl-rationalization era 2011-present.
+Retention by length (Figure \ref{fig:retention.N}) varies over time between 40\% and 100\%, with no clear pattern of interannual variation, except for the trawl-rationalization era 2011-present.
 
-Discarding in the commercial fleet (Figure \ref{fig:r4ss_discard_fits}) is fit only by putting blocks on retention in the Northern model.  Discards were very low except during the 1990s and 2000s, until the trawl-rationalization program implementation.
+Discarding in the commercial fleet (Figure \ref{fig:r4ss_discard_fits.N}) is fit only by putting blocks on retention in the Northern model.  Discards were very low except during the 1990s and 2000s, until the trawl-rationalization program implementation.
 
 Fits to the indices for the northern model (Figure \ref{index_fits1}) demonstrate the utility of the NWFSCcombo survey.  Although the model misses the uptick at the end of the timeseries, it is the only recent index and is well-fit by the model.  The other indices are noisier.  Most of the indices are fairly flat, indicating little change in abundance during each time-period.  Although the fit to the Triennial index is poor, the data nicely reflects the changes in management during it's tenure:  the CPUE was falling during the 1980s and 1990s, then rising after stringent restrictions began in 2000.
 
@@ -315,19 +315,19 @@ and Figure \ref{fig:Yield_all} shows the equilibrium yield curve.
 
 ## Southern Model Base Case Results
 
-Data used in the Southern model is shown in Figure \ref{fig:data_plot}. 
+Data used in the Southern model is shown in Figure \ref{fig:data_plot.S}. 
 
 One thing to point out is that although the scale of the biomass in the model is somewhat sensitive to various data sources, the depletion is not.  In tuning the model we were suprised to note that depletion always stayed above 80\%.
 
 Estimated catches are shown in Figure \ref{fig:r4ss_catch2_S}.
 
-The estimated spawning biomass in Figure \ref{fig:ssb} shows the size of the uncertainty in this model. Total biomass (Figure \ref{fig:total_bio}) shows a sharp upward trend in recent years, the decade with only one year of age data from the Hook-and-Line Survey.  Spawning depletion has sinuous curves and was likely never as low as the 40% target, even in the 1980s-1990s (Figure \ref{fig:depl}.
+The estimated spawning biomass in Figure \ref{fig:ssb.S} shows the size of the uncertainty in this model. Total biomass (Figure \ref{fig:total_bio.S}) shows a sharp upward trend in recent years, the decade with only one year of age data from the Hook-and-Line Survey.  Spawning depletion has sinuous curves and was likely never as low as the 40% target, even in the 1980s-1990s (Figure \ref{fig:depl.S}.
 
-Recruitments have been constant, except 2008 and 2010, when the model sees extra large recruitments with extra large recruitment deviations (Figures \ref{fig:recruits1} and \ref{fig:recdevs1}).  The spawner-recruit curve, Figure \ref{fig:stock_recruit_curve} is a line.
+Recruitments have been constant, except 2008 and 2010, when the model sees extra large recruitments with extra large recruitment deviations (Figures \ref{fig:recruits1.S} and \ref{fig:recdevs1.S}).  The spawner-recruit curve, Figure \ref{fig:stock_recruit_curve.S} is a line.
 
 ### Southern Model Selectivities, Indices and Discards
 
-Selectivity by fleet is shown in Figure \ref{fig:selex}.  Selectivities for all but the recreational Onboard fishery are modeled as asymptotic; both recreational fleets (MRFSS/RecFIN and Onboard) are fully selected at 30cm; the remaining fleets show full selectivity at 45-50 cm.
+Selectivity by fleet is shown in Figure \ref{fig:selex.S}.  Selectivities for all but the recreational Onboard fishery are modeled as asymptotic; both recreational fleets (MRFSS/RecFIN and Onboard) are fully selected at 30cm; the remaining fleets show full selectivity at 45-50 cm.
 
 Index fits leave something to be desired.  All are more-or-less flat, with all of the three current indices, the Onboard, the Juvenile study and the Hook-and-Line survey all missing a downturn at the end of the timeseries.  During model tuning, we tried introducing a time-blocked index for the two periods of the Onboard survey, however it didn't improve the fit to the index significantly, and increased the (negative log) likelihood of the model.
 
