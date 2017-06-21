@@ -1099,13 +1099,11 @@ Literature values for von Bertallanfy parameters are
 \(L_\infty = 47.6, k=0.19, t_0 = -1.69\) for males. Length-Weight
 parameters are \(W = 0.0287L^{2.822}\) for females,
 \(W = 0.0359L^{2.745}\) for males (Love
-\protect\hyperlink{ref-Love2011}{2011}). These values were not those
-used in this assessment, however; the parameters are estimated in the
-models. See Section \ref{bio-params} for a discussion of the new
-analyses of the weight-length relationship used as priors for
-estimation. Fecundity is represented in the models as:
-\(1.1185^{-11}W^{4.59}\). This is a rescaling of the values provided in
-(Dick et al. \protect\hyperlink{ref-Dick2017}{2017}).
+\protect\hyperlink{ref-Love2011}{2011}). See Section \ref{bio-params}
+for a discussion of the new analysis of the weight-length relationship.
+Fecundity is represented in the models as: \(1.1185^{-11}W^{4.59}\).
+This is a rescaling of the values provided in (Dick et al.
+\protect\hyperlink{ref-Dick2017}{2017}).
 
 \subsection{Fishery and Management
 History}\label{fishery-and-management-history}
@@ -1752,22 +1750,27 @@ No environmental index is present in either model.
 \subsection{History Of Modeling Approaches Used For This
 Stock}\label{history-of-modeling-approaches-used-for-this-stock}
 
-Yellowtail rockfish was previously modeled as ag age-structured, 3-area
+Yellowtail rockfish was previously modeled as an age-structured, 3-area
 stock north of \(40^\circ 10^\prime\) in 1999 (Tagart et al.
 \protect\hyperlink{ref-Tagart2000}{2000}) using a model written in ADMB
 (Fournier et al. \protect\hyperlink{ref-Fournier2012}{2012}); an update
 of this assessment was last conducted in 2004 (Wallace and Lai
 \protect\hyperlink{ref-Wallace2005}{2005}). That assessment divided the
-stock into 3 INPFC areas which are not coincident with state boundaries;
-this is a concern in that recent reconstructions of historical catch are
-state-by-state along the West Coast. Because we cannot produce data that
-conform to the areas previously assessed, we have made no effort to
-reproduce the previous model.
+stock into 3 INPFC areas based on the suggestion that there might be
+biological differences in the stock, however recent genetic studies
+don't support that (Hess et al. n.d.). The INPFC area boundaries are not
+coincident with state boundaries; this is a concern in that recent
+reconstructions of historical catch are state-by-state along the West
+Coast. Because we cannot produce data that conform to the areas
+previously assessed, we have made no effort to reproduce the previous
+model.
 
 A data-moderate approach was used to evaluate stock status in 2013 (Cope
-et al. \protect\hyperlink{ref-Cope2013}{2013}). This approach is not
-compatible with the current model, and we have made no attempt to
-reproduce it.
+et al. \protect\hyperlink{ref-Cope2013}{2013}). The data-moderate model
+used only indices of abundance and made simplifying assumptions about
+selectivity and growth since no length or age data were included in the
+model. This approach is also incompatible with the current model, and we
+have made no attempt to reproduce it, either.
 
 \subsubsection{Previous Assessment
 Recommendations}\label{previous-assessment-recommendations}
@@ -1822,7 +1825,7 @@ Areas}\label{definition-of-fleets-and-areas}
 
 The Northern model comprises the area between Cape Mendocino,
 California, and the Canadian border. The Southern model runs from Cape
-Mendocino to the Mexican border \ref{fig:assess_region_map}
+Mendocino to the Mexican border (Figure \ref{fig:assess_region_map}).
 
 \textbf{Northern Model}
 
@@ -2004,8 +2007,12 @@ offset could be estimated without priors so the priors were not used.
 For the southern model, M was fixed at the median prior values for the
 two sexes.
 
-The prior for steepness (h, 0.718) was provided by James Thorson and
-used as a fixed parameter in both models. \hl{need citation}
+The prior for steepness (\(h\)) assumes a beta distribution with
+parameters based on an update of the Thorson-Dorn rockfish prior
+(commonly used in past West Coast rockfish assessments) conducted by
+James Thorson (personal communication, NWFSC, NOAA) which was reviewed
+and endorsed by the Scientific and Statistical Committee in 2017. The
+prior is a beta distribution with \(\mu\)=0.718 and \(\sigma\)=0.158.
 
 \subsubsection{General Model
 Specifications}\label{general-model-specifications}
@@ -2023,6 +2030,54 @@ Parameters}\label{estimated-and-fixed-parameters}
 A full list of all estimated and fixed parameters is provided in
 Tables\ldots{}. Estimated and fixed parameters tables currently read in
 from .csv file, EXAMPLE: Table \ref{tab:Model1_params}
+
+\textbf{Growth} 5 parameters for female growth are estimated in each
+model: 3 von Bertalanffy parameters and 2 parameters for CV as a
+function of length at age related to variability in length at age for
+small and large fish.
+
+Three parameters are estimated for male growth in each model as offset
+from female growth. The size for small fish and CV for small fish were
+assumed equal to females.
+
+\textbf{Natural Mortality} Natural mortality is estimated in the
+Northern model with an offset for males from females. Natural Mortality
+is fixed in the Southern model at the values provided by the Hamel
+analysis described above (Hamel
+\protect\hyperlink{ref-Hamel2015}{2015}).
+
+\textbf{Selectivity} Selectivity for all fleets was initially estimated
+as a 4-parameter double normal, which allows selectivity to be dome
+shaped, with parameters controlling the position of the peak
+selectivity, the width of the peak, and the ascending and descending
+slopes.
+
+For all fleets where the estimated patterns were asymptotic, we fixed
+the parameters related to the dome, leaving only the position of the
+peak and the ascending slope as estimated parameters. For a few fleets,
+the position of the peak hit the upper bound, and was fixed at 55cm.
+
+\textbf{Retention} Retention for commercial fishery in Northern model is
+a logistic function of size, with three parameters estimated: length at
+50\% retention, the slope of the curve, and the asymptotic retention
+fraction. The asymptote was allowed to be time-varying, with one value
+applied for the early years through 2001. From 2002 through 2011 we
+applied annual time-blocks for theses years when the WCGOP program
+observed high discards. The final block runs from 2012 forward,
+reflecting the current period in which the implementation of the IFQ
+program has led to low discard rates.
+
+\textbf{Other Estimated Parameters} Log(R0) is the equilibrium
+recruitment, which is estimated in each model.
+
+Recruitment deviations for the Northern model are estimated from 19xx to
+2013. For the Southern model recruitment deviations are estimated from
+19xx to 2013.
+\hl{list range of years for each model with some comment as to how this range was chosen}.
+
+A parameter for extra standard deviation was added to the index based on
+bycatch in the at-sea hake fishery, because this index was not well fit
+by any of the models considered.
 
 \clearpage
 
@@ -2135,20 +2190,20 @@ The data used in the Northern model by fishery is shown in Figure
 90s are being predicted by the model. The large discards in latter years
 match the data well for those years.
 
-The timeseries of estimated spawning output in \hl{units?} is shown in
-Figure\{fig:ssb\}. The model is estimating two periods of decline, one
-beginning in the forties and a steeper decline in the 1970s and 1980s,
-followed by an increase since 2000 to pre-1980 levels. There is a
-decrease in the final years of the timeseries coincident with increased
-uncertainty.
+The timeseries of estimated spawning output in trillions of eggs is
+shown in Figure\{fig:ssb\}. The model is estimating two periods of
+decline, one beginning in the forties and a steeper decline in the 1970s
+and 1980s, followed by an increase since 2000 to pre-1980 levels. There
+is a decrease in the final years of the timeseries coincident with
+increased uncertainty.
 
 Figure \ref{fig:total_bio} shows the total biomass following a similar
-pattern; the ending value is \hl{value} metric tonnes.
+pattern; the ending value is 86069.8 metric tonnes.
 
-The spawning depletion (Figure \ref{fig:depl}) went below the 40\%
+The relative spawning output (Figure \ref{fig:depl}) went below the 40\%
 target in the early 1980s, and may have been below the minimum stock
 size limit of 25\% in the late 1990s, but has rebounded since to
-\hl{value} (see Table \ref{xxx}).
+0.567412 (see Table \ref{xxx}).
 
 Figures \ref{fig:recruits1} and \ref{fig:recdevs1} address recruitments
 estimated the the model. The first of these shows the age-0 recruits,
@@ -2223,7 +2278,7 @@ of maximum size bin for the model (Figures \ref{fig:mod1_18_comp_lenf}
 and \ref{fig:mod1_21_comp_lenfit_data_weighting_TA1.8_Recreational}),
 however the data are noisy throughout the size range represented.
 
-The Trinnial lengths Figures \ref{fig:mod1_22_comp_len} and
+The Triennial lengths Figures \ref{fig:mod1_22_comp_len} and
 \ref{fig:mod1_25_comp_lenfit_data_weighting_TA1.8_Triennial Survey} are
 fit well in some years and not in others. The data is not noisy, however
 the intermittency of data collection may mean that the model is unable
@@ -2572,6 +2627,11 @@ stock, steepness would have a very large impact on the likelihood.
 
 \subsubsection{Southern Model Reference
 Points}\label{southern-model-reference-points}
+
+\subsection{Comparison of the Northern and Southern Model
+Results.}\label{comparison-of-the-northern-and-southern-model-results.}
+
+\hl{No text yet}
 
 \newpage
 
