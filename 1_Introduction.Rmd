@@ -3,9 +3,9 @@
 #Introduction
 
 ##Basic Information
-Yellowtail rockfish, *Sebastes flavidus*, occur off the West Coast of the United States from Baja California to the Aleutian Islands.  Yellowtail is a major commercial species, captured mostly in trawls from Central California to British Columbia [@Love2011].  Because it is an aggregating, midwater species it is usually caught between 60 and 120 fathoms in the commercial midwater trawl fishery.  In California there is a large recreational fishery as well. The center of yellowtail rockfish abundance is from southern Oregon through British Columbia [@Fraidenburg1980].  
+Yellowtail rockfish, *Sebastes flavidus*, occur off the West Coast of the United States from Baja California to the Aleutian Islands.  Yellowtail is a major commercial species, captured mostly in trawls from Central California to British Columbia [@Love2011].  Because it is an aggregating, midwater species it is usually caught in the commercial midwater trawl fishery. In California there is a large recreational fishery as well. The center of yellowtail rockfish abundance is from southern Oregon through British Columbia [@Fraidenburg1980].  
 
-Once thought to comprise a single stock, a recent genetic study has shown that there are in fact two sub-species, with a genetic cline at Cape Mendocino, California, roughly  $40^\circ 10^\prime$ North Latitude [@Hess2011].  The species has never had a full length and age integrated assessment south of Cape Mendocino, mainly due to a lack of fishery-independent data; this assessment represents the first attempt to do so.
+Once thought to comprise a single stock, a recent genetic study indicates that there are in fact two sub-species, with a genetic cline at Cape Mendocino, California, roughly  $40^\circ 10^\prime$ North Latitude [@Hess2011].  The species has never had a full length and age integrated assessment south of Cape Mendocino, mainly due to a lack of fishery-independent data; this assessment represents the first attempt to do so.
 
 Yellowtail rockfish are colloquially known as "greenies", although *flavidus* is Latin for "yellow" [@Love2011].  We have summarized yellowtail rockfish life history, fisheries, assessment and management here, but in-depth, extensive background information on yellowtail and other managed species is available at [@PFMC2016].  
 
@@ -13,11 +13,13 @@ Yellowtail rockfish are colloquially known as "greenies", although *flavidus* is
 A map showing the scope of the assessment and depicting boundaries for fisheries or data collection strata is provided in Figure \ref{fig:boundary_map}.
 
 ##Life History
-Rockfish are in general long-lived and slow-growing, however yellowtail rockfish have a high growth rate relative to other rockfish species, reaching a maximum size of about 55 cm in approximately 15 years [@Tagart1991].  Yellowtail can live at least 64 years [@Love2011].  Yellowtail rockfish are among those that are fertilized internally and release live young.  Spawning aggregations occur in the fall, and parturition in the winter and spring (January-May) [@Eldridge1991].  Young-of-the-year recruit to nearshore waters from April through August, migrating to deeper water in the fall.  Preferred habitat is the midwater over reefs and boulder fields.  
+Rockfish are in general long-lived and slow-growing, however yellowtail rockfish have a high growth rate relative to other rockfish species, reaching a maximum size of about 55 cm in approximately 15 years [@Tagart1991].  Yellowtail can live at least 64 years [@Love2011], however no fish that old occur in data available for this assessment (For the Northern model, the 95th percentile of age is 35 years for females and 45 years for males and for the Southern model, 30 and 40 years respectively for females and males).  Yellowtail rockfish are among those that are fertilized internally and release live young.  Spawning aggregations occur in the fall, and parturition in the winter and spring (January-May) [@Eldridge1991].  Young-of-the-year recruit to nearshore waters from April through August, migrating to deeper water in the fall.  Preferred habitat is the midwater over reefs and boulder fields.  
 
 Yellowtail rockfish are extremely motile, and make rapid and frequent ascents and descents of 40 meters; they also exhibit strong homing tendencies [@Love2011].  They are able to quickly release gas from their swim bladders, perhaps making them less susceptible to barotrauma than similar species [@Eldridge1991].  
 
 Rockfish Conservation Areas (RCAs) have been closed to fishing since 2002.  Following that closure, Yellowtail rockfish are among the many species that have been seen to increase in both abundance and in average size in Central California  [@Marks2015].
+
+Literature values for von Bertallanfy parameters are $L_\infty = 52.2, k = 0.17, t_0 = -0.75$ for females, $L_\infty = 47.6, k=0.19, t_0 = -1.69$ for males.  Length-Weight parameters are $W = 0.0287L^{2.822}$ for females, $W = 0.0359L^{2.745}$ for males [@Love2011].  These values were not those used in this assessment, however; the parameters are estimated in the models.  See Section \ref{bio-params} for a discussion of the new analyses of the weight-length relationship used as priors for estimation.  Fecundity is represented in the models as:  $1.1185^{-11}W^{4.59}$.  This is a rescaling of the values provided in [@Dick2017].
 
 ##Fishery and Management History
 The rockfish fishery off the U.S. Pacific coast first developed off California in the late 19th century as a hook-and-line fishery [@Love2002].  The rockfish trawl fishery was established in the early 1940s, when the United States became involved in World War II and wartime shortage of red meat created an increased demand for other sources of protein [@Alverson1964; @Harry1961].
@@ -40,8 +42,11 @@ A data-moderate assessment of yellowtail rockfish south of $40^\circ 10^\prime$ 
 
 \hl{Include: Management performance tables comparing 
 Overfishing Limit (OFL), Annual Catch Limit (ACL), Harvest Guideline (HG) 
-[CPS only], landings, and catch (i.e., landings plus discard) for each area and year.
-Management performance table: (Table \ref{tab:mnmgt_perform})      
+[CPS only], landings, and catch (i.e., landings plus discard) for each area and year.}
+
+
+Management performance table: (Table \ref{tab:mnmgt_perform})  
+
 A summary of these values as well as other base case summary results can be found 
 in Table \ref{tab:base_summary}.
 
@@ -51,5 +56,5 @@ The 2015 Stock Assessment conducted by the Department of Fisheries and Oceans (D
 
 The Alaska Fisheries Science Center assesses yellowtail rockfish as one of 25 species in the "Other Rockfish" complex in the Gulf of Alaska.  The 2015 full assessment of this complex found no evidence of overfishing, which is confirmed in the 2016 SAFE document[@AFSC2016].
 
-Limited catches yellowtail are reported as far south as Baja California[@Love2011].
+Limited catches of yellowtail are reported as far south as Baja California[@Love2011].
 

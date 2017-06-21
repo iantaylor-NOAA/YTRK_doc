@@ -336,7 +336,7 @@ Age structure data were available from the following sources:
 <!-- ---------------------------------------------------------------------- -->
 \clearpage
 
-## Biological Parameters Common to Both Models
+## Biological Parameters Common to Both Models \label{bio-params}
 
 \vspace{.5cm}
 **Aging Precision And Bias**
@@ -365,17 +365,7 @@ Maturity was estimated from histological analysis of
 
 \vspace{.5cm}
 **Natural Mortality**
-Hamel [@Hamel2015] developed a method for combining meta-analytic approaches to relating the natural mortality rate M to other life-history parameters such as longevity, size, growth rate and reproductive effort, to provide a prior on M. In that same issue of ICESJMS, Then et al. [@Then2015], provided an updated data set of estimates of M and related life history parameters across a large number of fish species, from which to develop an M estimator for fish species in general.
-They concluded by recommending M estimates be based on maximum age alone, based on an updated Hoenig non-linear least squares (nls) estimator M=4.899A_max^(-.916). 
-
-The approach of basing M priors on maximum age alone was one that was already being used for west coast rockfish assessments. However, in fitting the alternative model forms relating M to Amax, Then et al. did not consistently apply their transformation. In particular, in real space, one would expect substantial heteroscedasticity in both the observation and process error associated with the observed relationship of M to Amax. Therefore, it would be reasonable to fit all models under a log transformation. This was not done.
-
-Re-evaluating the data used in Then et al. [@Then2015] by fitting the one-parameter Amax model under a log-log transformation (such that the slope is forced to be -1 in the transformed space (as in Hamel 2015)), the point estimate for M is:
-
-\center{M=5.4/Amax}
-
-This is also the median of the prior. The prior is defined as a lognormal with mean lna(5.4/Amax) and SE = 0.4384343. Using a Maximum age of \hl{xxx} the point estimate and median of the prior is \hl{ ADD VALUES HERE  }.
-
+Natural Mortality priors were provided by Owen Hamel (pers. comm.).  See Section \ref{priors} for further discussion.
 
 
 \vspace{.5cm}
