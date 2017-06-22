@@ -10,6 +10,8 @@ YTRK_doc.pdf
 YTRK_doc.tex
 #Test_figures_tables.tex
 *.docx
+YTRK_doc.tex
+YTRK_doc.pdf
 
 **/list_of_dataframes.csv
 **/mod_structure.csv
