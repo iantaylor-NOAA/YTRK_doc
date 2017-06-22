@@ -61,7 +61,6 @@ header-includes:
 \renewcommand{\thetable}{\arabic{table}}
 \setcounter{figure}{0}
 \setcounter{table}{0}
-\pagenumbering{arabic}
 
 
 <!-- How to comment out any section while debugging doc -->

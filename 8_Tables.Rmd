@@ -7,6 +7,8 @@
 
 #Tables
 
+## Northern Model Tables
+
 <!-- ********************************************************************** --> 
 <!-- *********************Commercial landings TABLES*********************** --> 
 <!-- ********************************************************************** --> 
@@ -488,11 +490,410 @@
 <!-- ************************MODEL 2 TABLES******************************** --> 
 <!-- ********************************************************************** -->
 
+\newpage
+## Southern Model Tables
 
 
-<!-- ********************************************************************** -->
-<!-- ************************MODEL 3 TABLES******************************** --> 
-<!-- ********************************************************************** -->
+<!-- ***********Indices of abundance summary table************************* -->
+```{r, results = 'asis'}
+    Index_summary = read.csv('./txt_files/Index_summary_S.csv')
+      colnames(Index_summary) = c('Region',
+                                  'ID',
+                                  'Fleet',
+                                  'Years',	
+                                  'Name',
+                                  'Fishery ind.',
+                                  'Filtering',
+                                  'Method',	
+                                  'Endorsed')
+
+   # Index of abundance summary, create table   
+     Index_summary.table = xtable(Index_summary, 
+                                  caption = c('Summary of the biomass/abundance
+                                              time series used in the stock
+                                              assessment.'),
+                                 label = 'tab:Index_summary',
+                                 digits = 0)    
+    # Add alignment  
+      align(Index_summary.table) = c('l',
+                                     '>{\\centering}p{.4in}',
+                                     '>{\\centering}p{.3in}',
+                                     '>{\\centering}p{.3in}',
+                                     '>{\\centering}p{.3in}',
+                                     '>{\\centering}p{.6in}',
+                                     '>{\\centering}p{.5in}', 
+                                     '>{\\centering}p{.8in}',
+                                     '>{\\centering}p{.8in}',
+                                     '>{\\centering}p{.5in}')  
+    
+    # Print index summary table
+      print(Index_summary.table, 
+            include.rownames=FALSE, 
+            caption.placement='top',
+            sanitize.text.function = function(x){x})
+```
+<!-- ---------------------------------------------------------------------- -->
+
+\newpage
+
+<!-- ***********JITTER TABLE*********************************************** --> 
+```{r, results = 'asis'}
+    # Replace values in file and read in - values for all models in 1 table  
+      jitter = read.csv('./txt_files/JitterTable_S.csv')  
+
+    # Create model 2 jitter table
+    jitter.table = xtable(jitter, 
+                          caption = c('Results from 100 jitters from each of 
+                                      the three models.'),
+                          label = 'tab:jitter')
+    
+    # Print jitter table (all models)    
+    print(jitter.table, 
+          include.rownames = FALSE, 
+          caption.placement = 'top')
+```
+<!-- ---------------------------------------------------------------------- -->
+
+\FloatBarrier
+<!-- ***********Model 2 PARAMETERS***************************************** --> 
+\begin{landscape}
+```{r, results='asis'}
+       # If you use this for more than one model = change mod2 to mod2 or mod3
+    mod_params = mod2$parameters[-c(grep('Recr',mod2$parameters$Label),
+                                         grep('Impl',mod2$parameters$Label)),
+                                      (names(mod2$parameters) %in%
+                                         c("Num","Label","Value","Phase","Min",
+                                           "Max","Status","Parm_StDev",
+                                           "Pr_type","Prior","Pr_SD"))]  
+
+    # Combine bounds into one column
+    mod_params$Min = paste('(', mod_params$Min, ', ', mod_params$Max, ')', sep='')
+    
+    
+    # Combine prior info to one column
+    #mod_params$Pr_type = gsub('No_prior', 'None', mod_params$Pr_type)
+    mod_params$Pr_type = ifelse(mod_params$Pr_type == 'No_prior' , 'None',
+                                paste(mod_params$Pr_type,' (', mod_params$Prior, 
+                                      ', ', mod_params$Pr_SD, ')', sep = ''))
+    
+    # Remove the max, prior and prior sd columns
+    drops = c('Max', 'Prior', 'Pr_SD')
+    mod_params = mod_params[, !(names(mod_params) %in% drops)]
+    
+    # Add column names
+    colnames(mod_params) = c('No.',
+                             'Parameter',
+                             'Value',
+                             'Phase',
+                             'Bounds',
+                             'Status',
+                             'SD',
+                             'Prior (Exp.Val, SD) ')
+
+    # Model 2 model parameters
+    mod_params.table = xtable(mod_params, 
+                              caption=c(paste('List of parameters used in
+                                              the base model, including estimated 
+                                              values and standard deviations (SD), 
+                                              bounds (minimum and maximum), 
+                                              estimation phase (negative values indicate
+                                              not estimated), status (indicates if 
+                                              parameters are near bounds, and prior type
+                                              information (mean, SD).'
+                                              , sep='')), 
+                              label='tab:model_params',
+                              digits = c(0,0,0,3,0,3,0,3,0))  
+
+    # Add alignment  
+    align(mod_params.table) = c('lrlrrcccl')
+        # Add alignment  
+     # align(mod_params.table) = c('l',
+    #                                 '>{\\raggedright}p{.4in}',
+    #                                 '>{\\raggedright}p{.8in}',
+    #                                 '>{\\centering}p{.3in}',
+    #                                 '>{\\centering}p{.3in}',
+    #                                 '>{\\centering}p{.4in}',
+    #                                 '>{\\centering}p{.4in}', 
+    #                                 '>{\\centering}p{.4in}',
+    #                                 '>{\\centering}p{.4in}',
+    #                                '>{\\centering}p{.5in}',
+    #                                 '>{\\centering}p{.5in}')  
+ 
+    # Add "continued on next page"" footnote   
+    addtorow          <- list()
+    addtorow$pos      <- list()
+    addtorow$pos[[1]] <- c(0)
+    addtorow$command  <- c(paste("\\hline \n",
+                                 "\\endhead \n",
+                                 "\\hline \n",
+                                 "\\multicolumn{3}{l}",
+                                 "{\\footnotesize Continued on next page} \n",
+                                 "\\endfoot \n",
+                                 "\\endlastfoot \n",sep=""))
+
+
+
+    # Print Model 2 parameters
+    print(mod_params.table, 
+          include.rownames = FALSE,
+          caption.placement = 'top',
+          tabular.environment = 'longtable',
+          floating = FALSE,
+          add.to.row = addtorow)
+```
+\end{landscape}
+<!-- ---------------------------------------------------------------------- -->
+
+\newpage
+<!-- ***********Model 2 SENSITIVITY TABLE(S)******************************* --> 
+```{r, results = 'asis'}
+    
+    # Read in/organize sensitivity file, change column names, caption
+    Sens_model2 = read.csv('./txt_files/Sensitivities_model2.csv')
+    colnames(Sens_model2) = c('Label', 
+                              'Base (Francis weights)', 
+                              'Harmonic mean weights',
+                              'Drop index', 
+                              'Drop ages', 
+                              'Down-weight lengths',
+                              'Free size Age0', 
+                              'Free CV Amin', 
+                              'External growth')
+
+    # Create sensitivities table
+    Sens_model2.table = xtable(Sens_model2, 
+                               caption = c('Sensitivity of the base model 
+                                          to dropping or down-weighting data 
+                                          sources and alternative assumptions 
+                                          about growth.'),
+                               label = 'tab:Sensitivity_model2', digits = 2)    
+  
+    # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
+    # You can change this easily to have variable columns width after you know how many
+    # colunns your final table has
+    align(Sens_model2.table) = c('l','l', rep('>{\\centering}p{.6in}', dim(Sens_model2)[2]-1))
+                    #             '>{\\centering}p{.6in}',
+                    #             '>{\\centering}p{.5in}',
+                    #             '>{\\centering}p{.5in}',
+                    #             '>{\\centering}p{.6in}', 
+                    #             '>{\\centering}p{.5in}',
+                    #             '>{\\centering}p{.6in}',
+                    #             '>{\\centering}p{.6in}',
+                    #             '>{\\centering}p{.6in}')  
+
+    # Print model 2 sensitivity table
+    print(Sens_model2.table, 
+          include.rownames = FALSE,             
+          caption.placement = 'top',
+          floating.environment = 'sidewaystable',
+          scalebox = .9)
+
+```
+<!-- ---------------------------------------------------------------------- -->
+
+
+\newpage
+<!-- ***********Model 2 REFERENCE POINTS TIME SERIES TABLE***************** --> 
+```{r}
+   
+    
+    # Total biomass, extract and subset
+    Bio_all = mod2$sprseries[, c('Yr', 'Bio_all')]
+    Bio_allyrs = subset(Bio_all, Yr > (Dat_start_mod2 - 1) & Yr < (LastYR + 1))
+
+  
+  
+    # Spawning biomass, extract and subset, and turn into scientific notation
+    SpawningB = mod2$derived_quants[grep('SPB', mod2$derived_quants$Label), ]
+    SpawningB = SpawningB[c(-1, -2), ]
+    SpawningByrs = SpawningB[SpawningB$Label >= paste('SPB_', Dat_start_mod2, sep='') &  
+                             SpawningB$Label <= paste('SPB_', LastYR, sep=''), ] 
+        
+        SpawningB_units = ''
+        if(mean(SpawningByrs$Value) > 1000000){
+            SpawningB_units <- "million"
+            SpawningByrs$Value <- SpawningByrs$Value/1000000
+         }
+
+    
+    # Depletion, extract, rename and subset
+    Depl_years = as.data.frame(seq(Dat_start_mod2, LastYR, 1))
+    colnames(Depl_years) = 'Yr'
+    Depl_years$Depl = 0
+    Depletion = mod2$derived_quants[grep('Bratio', mod2$derived_quants$Label), ]
+    Depletionyrs = Depletion[Depletion$Label >= paste0('Bratio_', Dat_start_mod2) &  
+                             Depletion$Label <= paste0('Bratio_', LastYR), ]
+    
+    Depletionyrs$Yr = Depletionyrs$Label1 = substr(Depletionyrs$Label,
+                                                     (nchar(Depletionyrs$Label) + 1) - 4, 
+                                                      nchar(Depletionyrs$Label))
+   # Make sure depletion is numeric and merge ...
+   Depletionyrs$Yr = as.numeric(Depletionyrs$Yr)
+   Depleteyrs = merge(Depl_years, Depletionyrs, all.x=T, all.y=T, by.x='Yr', by.y='Yr')
+   Depleteyrs[is.na(Depleteyrs)] <- 0
+   Depleteyrs$total = Depleteyrs$Depl + Depleteyrs$Value
+    
+   # Recruits, extract and subset
+   Recruit = mod2$derived_quants[grep('Recr', mod2$derived_quants$Label), ]
+   Recruit = Recruit[c(-1, -2), ]
+   Recruityrs = Recruit[Recruit$Label >= paste('Recr_', Dat_start_mod2, sep='') &  
+                        Recruit$Label <= paste('Recr_', LastYR, sep=''), ]  
+    
+    
+   # Landings/total catch, extract and subset years
+   Landings = mod2$sprseries[ , c('Yr','Dead_Catch_B')]
+   Landingsyrs = subset(Landings, Yr > (Dat_start_mod2 - 1) & Yr < (LastYR + 1))
+    
+  
+    
+   # Relatvie exploitation rate, extract, subset and merge
+   Exploit = mod2$derived_quants[grep('F', mod2$derived_quants$Label), ]
+   Exploit = Exploit[c(-1, -2), ]
+   Exploityrs = Exploit[Exploit$Label >= paste('F_', Dat_start_mod2, sep = '') &  
+                        Exploit$Label <= paste('F_', LastYR, sep = ''), ]  
+   Exploityrs$Yr = Exploityrs$Label1 = substr(Exploityrs$Label, 
+                                               (nchar(Exploityrs$Label) + 1) - 4,
+                                                nchar(Exploityrs$Label))
+   Exploityrs$Yr = as.numeric(Exploityrs$Yr)
+   Exploited = merge(Depl_years, Exploityrs, all.x=T, all.y=T, by.x='Yr', by.y='Yr')
+   Exploited[is.na(Exploited)] <- 0
+   Exploited$total = Exploited$Depl + Exploited$Value
+    
+  # SPR, extract and subset years
+  SPR = mod2$sprseries[, c('Yr', 'SPR')]
+  SPRyrs = subset(SPR, Yr > (Dat_start_mod2 - 1) & Yr < (LastYR + 1))
+  
+  
+  # Bind all the columns together for the table
+  Timeseries = as.data.frame(cbind(seq(Dat_start_mod2, LastYR, 1), 
+                                       Bio_allyrs$Bio_all, 
+                                       SpawningByrs$Value,
+                                       Depleteyrs$total,
+                                       Recruityrs$Value, 
+                                       Landingsyrs$Dead_Catch_B, 
+                                       Exploited$total,
+                                       SPRyrs$SPR))
+
+ # Add colulmn names    
+ colnames(Timeseries)=c('Yr', 
+                        'Total biomass (mt)', 
+                        paste0('Spawning biomass', SpawningB_units, ' (mt)'),
+                        'Depletion', 
+                        'Age-0 recruits', 
+                        'Total catch (mt)',
+                        'Relative exploitation rate', 
+                        'SPR')
+ 
+ # Make year a factor so you don't have a decimal   
+ Timeseries$Yr = as.factor(Timeseries$Yr)
+    
+ # Remove 2015 values for last three columns since year isn't complete
+ Timeseries[nrow(Timeseries), c((ncol(Timeseries) - 2):ncol(Timeseries))] <- NA
+```
+
+```{r, results='asis'}
+    # Create the time series table
+    Timeseries.table = xtable(Timeseries, 
+                              caption = c('Time-series of population estimates 
+                                        from the base-case model.'),
+                              label='tab:Timeseries_mod2',
+                              digits = c(0,0,0,0,2,0,0,2,2))   
+
+    # Add alignment
+    align(Timeseries.table) = c('l',
+                                'c',
+                                '>{\\centering}p{.6in}',
+                                '>{\\centering}p{.6in}',
+                                '>{\\centering}p{.6in}',
+                                '>{\\centering}p{.6in}',
+                                '>{\\centering}p{.8in}',
+                                '>{\\centering}p{.8in}',
+                                'c')
+
+    # Print timeseries of population estimates table
+    print(Timeseries.table, 
+          include.rownames = FALSE, 
+          caption.placement = 'top',
+          tabular.environment = 'longtable', 
+          align=TRUE, 
+          floating = FALSE, 
+          add.to.row = list(pos = list(0), 
+          command = '\\hline \\endhead '))
+```
+<!-- ---------------------------------------------------------------------- -->
+
+\FloatBarrier
+
+<!-- ***********Model 2 HARVEST PROJECTIONS TABLE************************** --> 
+\newpage
+```{r, results = 'asis'}
+    # Pull OFL contribution and subset years
+    OFLcatch = mod2$derived_quants[grep('OFLCatch', mod2$derived_quants$Label), ]
+    OFLcatchyrs = OFLcatch[OFLcatch$Label >= paste('OFLCatch_', Project_firstyr, sep = '') &
+                           OFLcatch$Label <= paste('OFLCatch_', Project_lastyr, sep = ''), ]
+
+    # Pull forecasted landings and subset years
+    ForecastC = mod2$timeseries[, grepl('Yr|retain[(]B[)]', names(mod2$timeseries))]
+    ForecastC$total = rowSums(ForecastC[, -1])
+    ForecastCyrs = subset(ForecastC, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
+
+    # Pull Age 5+ biomass and subset years
+    Age5biomass = mod2$timeseries[, c('Yr', 'Bio_smry')]
+    Age5biomassyrs = subset(Age5biomass, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
+
+
+    # Pull spawning biomass and subset years
+    SpawningB = mod2$derived_quants[grep('SPB', mod2$derived_quants$Label), ]
+    SpawningB = SpawningB[c(-1, -2), ]
+    SpawningByrs = SpawningB[SpawningB$Label >= paste('SPB_', Project_firstyr, sep = '') &
+                             SpawningB$Label <= paste('SPB_', Project_lastyr, sep = ''), ]
+
+    # Pull depletion and subset years
+    Depletion = mod2$derived_quants[grep('Bratio', mod2$derived_quants$Label), ]
+    Depletion = Depletion[c(-1, -2), ]
+    Depletionyrs = Depletion[Depletion$Label >= paste('Bratio_', Project_firstyr, sep = '') &
+                             Depletion$Label <= paste('Bratio_', Project_lastyr, sep = ''), ]
+
+    # Combine the data for the forecast table
+    Forecast_mod2 = as.data.frame(cbind(seq(Project_firstyr, Project_lastyr, 1),
+                                        OFLcatchyrs$Value,
+                                        ForecastCyrs$total,
+                                        Age5biomassyrs$Bio_smry,
+                                        SpawningByrs$Value,
+                                        Depletionyrs$Value))
+    # Add column names
+    colnames(Forecast_mod2)=c('Yr',
+                           'OFL contriubtion (mt)',
+                           'ACL landings (mt)',
+                           'Age 5+ biomass (mt)',
+                           'Spawning Biomass (mt)',
+                           'Depletion')
+
+    # Make sure year is a factor, so you don't get decimals
+    Forecast_mod2$Yr = as.factor(Forecast_mod2$Yr)
+
+    # Create the forecast table
+    Forecast_mod2.table = xtable(Forecast_mod2,
+                              caption = c('Projection of potential
+                                        OFL, spawning biomass, and depletion for the
+                                        base case model.'),
+                              label = 'tab:Forecast_mod2', digits = 2)
+    # Add alignment
+    align(Forecast_mod2.table) = c('l',
+                                   'c',
+                                   '>{\\centering}p{1in}',
+                                   '>{\\centering}p{1in}',
+                                   '>{\\centering}p{1in}',
+                                   '>{\\centering}p{1in}',
+                                   '>{\\centering}p{1in}')
+
+    # Print model 2 forecast table
+    print(Forecast_mod2.table,
+          include.rownames = FALSE,
+          caption.placement = 'top')
+```
+<!-- ---------------------------------------------------------------------- -->
+\FloatBarrier
 
 
 

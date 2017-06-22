@@ -3,7 +3,7 @@
 ##Stock{-}
 This assessment reports the status of the `r spp` (\emph{`r spp.sci`}) resource in U.S. waters off the coast of the California, Oregon, and Washington using data through `r LastYR`.  
 
-The Pacific Fishery Management Council (PFMC) manages the U.S. fishery as two stocks separated at Cape Mendocino, California (40$^\circ$ 10'N). The northern stock has long been assessed on its own; the southern stock is treated as part of the Southern Shelf Complex.  This assessment analyzes each stock independently, with the southern stock extending southward to the U.S./Mexico border and the northern stock extending northward to the U.S./Canada border.
+The Pacific Fishery Management Council (PFMC) manages the U.S. fishery as two stocks separated at Cape Mendocino, California (40$^\circ$ 10'N). The northern stock has long been assessed on its own; the southern stock is managed as part of the Southern Shelf Complex.  This assessment analyzes each stock independently, with the southern stock extending southward to the U.S./Mexico border and the northern stock extending northward to the U.S./Canada border.
 
 The most recent fully integrated assessment [@Wallace2005], following the pattern of prior assessments, included only the Northern stock which it divided into three assessment areas with divisions at Cape Elizabeth (47$^\circ$ 20'N) and Cape Falcon (45$^\circ$ 46'N).  A data-moderate assessment conducted in 2013 [@Cope2013] was the first to analyze the southern stock, determining its contribution to the overfishing limit (OFL) for the Southern Shelf Complex. 
 
