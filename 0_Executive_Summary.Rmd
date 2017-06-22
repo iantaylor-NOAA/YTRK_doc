@@ -190,7 +190,9 @@ A summary of `r spp` exploitation histories for base model is provided as Figure
 
 
 ##Ecosystem Considerations{-}
-\hl{More text to be added}
+Rockfish in general are sensitive to the strength and timing of the upwelling cycle in the Eastern Pacific, which affects where pelagic juveniles settle, and impacts the availability of the zooplankton which the young require.
+
+Yellowtail rockfish feed mainly on pelagic animals, but are opportunistic, occasionally eating benthic animals as well. Large juveniles and adults eat fish (small Pacific whiting, Pacific herring, smelt, anchovies, lanternfishes, and others), along with squid, krill, and other planktonic organisms.  They are prey for Chinook salmon, lingcod, cormorants, pigeon guillemots and rhinoceros auklets. [@Love2011]
 
 
 
@@ -209,7 +211,7 @@ SPRproxy for MSY, and estimated MSY values
 
 This stock assessment estimates that `r spp` in the `r mod1_label` are 
 `r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MT>0,"above","below")` the biomass 
-target, but `r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MSST>0,"above","below")` 
+target, and also `r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MSST>0,"above","below")` 
 the minimum stock size threshold.  \hl{Add sentence about spawning output trend.} 
 The estimated relative depletion level for \hl{Model 1} in `r LastYR` is 
 `r Depl_mod1` (~95% asymptotic interval: $\pm$ `r Depl_mod1_CI`, corresponding 
@@ -224,7 +226,7 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt.
 
 This stock assessment estimates that `r spp` in the `r if(n_models>=2){mod2_label}` are 
 `r if(n_models>=2){ifelse(Deplete_mod2[nrow(Deplete_mod2),2]-MT>0,"above","below")}` 
-the biomass target, but `r if(n_models>=2){ifelse(Deplete_mod2[nrow(Deplete_mod2),2]-MSST>0,"above","below")}` 
+the biomass target, as well as `r if(n_models>=2){ifelse(Deplete_mod2[nrow(Deplete_mod2),2]-MSST>0,"above","below")}` 
 the minimum stock size threshold. \hl{Add sentence about spawning output trend.} The 
 estimated relative depletion level for \hl{Model 2} in `r LastYR` is 
 `r if(n_models>=2){Depl_mod2}` (~95% asymptotic interval: $\pm$ 
@@ -411,9 +413,12 @@ We recommend the following research be conducted before the next assessment:
 
 \begin{enumerate}
 
-\item List item No. 1 in the list
+\item A longer timeseries of the juvenile rockfish CPUE in the south.
 
-\item List item No. 2 in the list, etc.
+\item A commercial index in the north.  This is by far the largest segment of the fishery, and the introduction of the trawl rationalization program should mean that an index can be developed for the current fishery when the next assessment is performed.
+
+\item More recent ages for the southern model.  The commercial age timeseries currently stops in 2002.
+
 
 \end{enumerate}
 
