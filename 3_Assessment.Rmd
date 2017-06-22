@@ -215,12 +215,12 @@ The growth at the beginning of the year estimated by the models for the Northern
 
 The data used in the Northern model by fishery is shown in Figure \ref{fig:data_plot.N}.  Estimated catches are shown in Figure \ref{fig:r4ss_total_catch_N}; estimated discards are in Figure \ref{fig:r4ss_discard_N}.  These show the large catches in the 1980s and 90s are being predicted by the model.  The large discards in latter years match the data well for those years.
 
-The timeseries of estimated spawning output in trillions of eggs is shown in Figure{fig:ssb.N}.  The model is estimating two periods of decline, one beginning in the forties and a steeper decline in the 1970s and 1980s, followed by an increase since 2000 to pre-1980 levels. There is a decrease in the final years of the timeseries coincident with increased uncertainty.
+The timeseries of estimated spawning output in trillions of eggs is shown in Figure \ref{fig:ssb.N}.  The model is estimating two periods of decline, one beginning in the forties and a steeper decline in the 1970s and 1980s, followed by an increase since 2000 to pre-1980 levels. There is a decrease in the final years of the timeseries coincident with increased uncertainty.
 
 
 Figure \ref{fig:total_bio.N} shows the total biomass following a similar pattern; the ending value is `r round(mod1$timeseries$Bio_all[mod1$timeseries$Yr==2017])` metric tonnes.
 
-The relative spawning output (Figure \ref{fig:depl.N}) went below the 40\% target in the early 1980s, and may have been below the minimum stock size limit of 25% in the late 1990s, but has rebounded since to `r round(100*mod1$derived_quants["Bratio_2017","Value"])`% (see Table \ref{xxx}).
+The relative spawning output (Figure \ref{fig:depl.N}) went below the 40\% target in the early 1980s, and may have been below the minimum stock size limit of 25% in the late 1990s, but has rebounded since to `r round(100*mod1$derived_quants["Bratio_2017","Value"])`% (see Table \ref{tab:Timeseries_mod1}).
 
 Figures \ref{fig:recruits1.N} and \ref{fig:recdevs1.N} address recruitments estimated the the model.  The first of these shows the age-0 recruits, and the second the recruitment deviations. There are no strong patterns in recruitment and the variability of the recruitment deviations was tuned to be 0.546 (based on the method of Methot & Taylor @Methot2011) which is slightly lower than what has been assumed or estimated for other rockfish in the California Current.  The stock-recruit curve, Figure \ref{fig:stock_recruit_curve.N} shows a shallow relationship between stock size and recruitment.}
 
@@ -234,22 +234,22 @@ Retention by length (Figure \ref{fig:retention.N}) varies over time between 40\%
 
 Discarding in the commercial fleet (Figure \ref{fig:r4ss_discard_fits.N}) is fit only by putting blocks on retention in the Northern model.  Discards were very low except during the 1990s and 2000s, until the trawl-rationalization program implementation.
 
-Fits to the indices for the northern model (Figure \ref{index_fits1}) demonstrate the utility of the NWFSCcombo survey.  Although the model misses the uptick at the end of the timeseries, it is the only recent index and is well-fit by the model.  The other indices are noisier.  Most of the indices are fairly flat, indicating little change in abundance during each time-period.  Although the fit to the Triennial index is poor, the data nicely reflects the changes in management during it's tenure:  the CPUE was falling during the 1980s and 1990s, then rising after stringent restrictions began in 2000.
+Fits to the indices for the northern model (Figure \ref{fig:index_fits1}) demonstrate the utility of the NWFSCcombo survey.  Although the model misses the uptick at the end of the timeseries, it is the only recent index and is well-fit by the model.  The other indices are noisier.  Most of the indices are fairly flat, indicating little change in abundance during each time-period.  Although the fit to the Triennial index is poor, the data nicely reflects the changes in management during it's tenure:  the CPUE was falling during the 1980s and 1990s, then rising after stringent restrictions began in 2000.
 
 ### Lengths
 Bubble plots for the lengths in the fishery (Figure \ref{fig:comp_length_bubble_mod1_page1}) show the constancy of the commercial fleet, and the differences in growth between males and females; the females are larger, the males smaller.  The recreational fleet is represented by two different sampling regimes, and the changeover in the mid-2000s is clear in that panel.  That the WA\_Sport fishery catches larger fish is represented in the large bubbles at the top of the panel.  Had we examined that fishery earlier in the process of putting the model together, we might have settled on a larger maximum size bin, however that fishery remains the smallest portion of the catches.
 
-Commercial length comps are very well fit (Figures \ref{fig:mod1_4_comp_lenfit_data_weighting} and \ref{fig:mod1_5_comp_lenfit_data_weighting}).  Commercial discards are noiser and not well fit (Figure \ref{fig:mod1_6_comp_lenfit_data_weighting}).  The panel describing the combined fits and data weighting for the commercial fishery is duplicted, need to remove redundant figure.
+Commercial length comps are very well fit (Figures \ref{fig:mod1_1_comp_lenfit_flt1mkt2_page1} and \ref{fig:mod1_5_comp_lenfit_data_weighting_TA1.8_Commercial Fishery}).  Commercial discards are noiser and not well fit (Figure \ref{fig:mod1_6_comp_lenfit_flt1mkt1}) although the fit to the mean length (which is lower than for the retained fish), is reasonable (Figure \ref{fig:mod1_5_comp_lenfit_data_weighting_TA1.8_Commercial Fishery}). 
 
-Lengths in the early period of the Hake Bycatch fishery are noisy (doubtless due to small sample sizes).  By 1992, the model is able to fit the data well (Figure \ref{fig:mod1_10_comp_page1}).  Figure \ref{fig:mod1_13_comp_lenfit_data_weighting} shows that the fits in the early period have twice (at last) the uncertainty of the later period.
+Lengths in the early period of the Hake Bycatch fishery are noisy (doubtless due to small sample sizes).  By 1992, the model is able to fit the data well (Figures \ref{fig:mod1_10_comp_lenfit_flt2mkt0} and \ref{fig:mod1_13_comp_lenfit_data_weighting_TA1.8_At-Sea Hake Fishery}).
 
-The recreation OR+N.CA timeseries of lengths demonstrates the difference between the MRFSS sampling and RecFIN sampling.  The fits in the early period are good, those in the later period are noisy and model uncertainty is high (Figures \ref{fig:mod1_14_comp_l} and \ref{}).
+The recreation OR+N.CA timeseries of lengths demonstrates the difference between the MRFSS sampling and RecFIN sampling.  The fits in the early period are good, those in the later period are noisy and model uncertainty is high (Figures \ref{fig:mod1_14_comp_lenfit_flt3mkt2} and \ref{fig:mod1_17_comp_lenfit_data_weighting_TA1.8_Recreational OR+CA}).
 
-The WA_Sport length fits might have been improved with a better choice of maximum size bin for the model (Figures \ref{fig:mod1_18_comp_lenf} and \ref{fig:mod1_21_comp_lenfit_data_weighting_TA1.8_Recreational}), however the data are noisy throughout the size range represented.
+The WA_Sport length fits might have been improved with a better choice of maximum size bin for the model (Figures \ref{fig:mod1_18_comp_lenfit_flt4mkt2} and \ref{fig:mod1_21_comp_lenfit_data_weighting_TA1.8_Recreational WA}), however the data are noisy throughout the size range represented.
 
-The Triennial lengths Figures \ref{fig:mod1_22_comp_len} and \ref{fig:mod1_25_comp_lenfit_data_weighting_TA1.8_Triennial Survey} are fit well in some years and not in others.  The data is not noisy, however the intermittency of data collection may mean that the model is unable to capture interannual variation as well as for an annual timeseries.
+The Triennial lengths Figures \ref{fig:mod1_22_comp_lenfit_flt5mkt2} and \ref{fig:mod1_25_comp_lenfit_data_weighting_TA1.8_Triennial Survey} are fit well in some years and not in others.  The data is not noisy, however the intermittency of data collection may mean that the model is unable to capture interannual variation as well as for an annual timeseries.
 
-NWFSCcombo lengths are not well fit, particularly in 2013, where the data show a large number of small fit that may represent a good recruitment several years earlier Figures \ref{fig:mod1_26_comp_len} and  \ref{fig:mod1_29_comp_lenfit_data_weighting}.
+NWFSCcombo lengths are not well fit, particularly in 2013, where the data show a large number of small fish that may represent a good recruitment several years earlier Figures \ref{fig:mod1_26_comp_lenfit_flt6mkt2} and  \ref{fig:mod1_29_comp_lenfit_data_weighting_TA1.8_NWFSC Combo Survey}.
 
 Figure \ref{fig:mod1_30_comp_lenfit__aggregated_across_time} shows the relative fits among the data sources, aggregated across time.  The timeseries of presence-absence residuals indicated by filled- and open-bubbles Figure \ref{fig:comp_Pearson_length_mod1_page1} and Figure \ref{fig:comp_Pearson_length_mod1_page2} demonstrates the relative disappointment in model fits; the smaller the bubble, the better the match between the data and the model expectation.
 
@@ -257,22 +257,22 @@ Figure \ref{fig:mod1_30_comp_lenfit__aggregated_across_time} shows the relative 
 
 The NWFSCcombo survey provided the only source of conditional age-at-length data for the Northern model; ages for other fleets were treated as marginal ages.  
 
-The fits to the marginal commercial Figure \ref{fig:mod1_1_comp} are quite good from about 1979 on, even fitting the tail where the ages beyond 55 are lumped.  The weightings panel Figure \ref{fig:mod1_5_comp_agefit_data_weighting_TA1.8_Comme} shows the same thing:  fits are good after about 1979, and the decrease in mean age in the population corresponds with high catches in the 1980s and 1990s, with mean age increasing after 2000 as catches were curtailed.
+The fits to the marginal commercial Figure \ref{fig:mod1_1_comp_agefit_flt1mkt2_page1} are quite good from about 1979 on, even fitting the tail where the ages beyond 55 are lumped.  The weightings panel Figure \ref{fig:mod1_5_comp_agefit_data_weighting_TA1.8_Commercial Fishery} shows the same thing:  fits are good after about 1979, and the decrease in mean age in the population corresponds with high catches in the 1980s and 1990s, with mean age increasing after 2000 as catches were curtailed.
 
-The Washington Sport ages are noisy, and the fit is poor throughout the timeseries, see Figure  \ref{fig:mod1_6_comp_agefit} and Figure \ref{fig:mod1_9_comp_agefit_data_weighting_TA1.8_Recreational}.
+The Washington Sport ages are noisy, and the fit is poor throughout the timeseries, see Figure  \ref{fig:mod1_6_comp_agefit_flt4mkt2} and Figure \ref{fig:mod1_9_comp_agefit_data_weighting_TA1.8_Recreational WA}.
 
-The Triennial ages are noisy but are fit surprisingly well \ref{fig:mod1_10_comp_agefit}; \ref{fig:mod1_13_comp_agefit_data_weighting_TA1.8_Triennial Survey}.  That the model misses the influx of young fish in 1986 may be due to the timing of the survey; three-year surveys may not provide enough data for the model to fit recruitment events. 
+The Triennial ages are noisy but are fit surprisingly well \ref{fig:mod1_10_comp_agefit_flt5mkt2}; \ref{fig:mod1_13_comp_agefit_data_weighting_TA1.8_Triennial Survey}.  That the model misses the influx of young fish in 1986 may be due to the timing of the survey; three-year surveys may not provide enough data for the model to fit recruitment events. 
 
 Aggregated age comps for the Commercial, Washington Sport and Triennial fleets are shown in Figure  \ref{fig:mod1_14_comp_agefit__aggregated_across_time}, for comparison.  Agreggated fits for the Commercial and Triennial fleets are very satisfying.
 
-The Ghost age comps Figure \ref{fig:mod1_16_comp} for the NWFSCcombo survey are the marginal age comps for the survey aggregated over length.  This figure is included for informational purposes only; the marginal "ghost" comps are not included in the likelihood calculations.  It is interesting that the model fits this aggregated data poorly, but the disaggregated data well.  This may be due to the fact that for marginal ages, the data are weighted interannually with number of tows or trips, but this ghost fleet is unweighted.
+The implied marginal age comps for the NWFSCcombo survey (Figure \ref{fig:mod1_16_comp_gstagefit_flt6mkt2}) are the conditional-age-at-length compositions for the survey aggregated over length.  This figure is included for informational purposes only; the marginal "ghost" comps are not included in the likelihood calculations.  It is interesting that the model fits these implied marginal ages less well than the conditional ages at length. This is likely due to a combination of factors: the implied marginal ages are not included in the liklihood, and when anomolous patterns appear, such as the numerous age-5 fish in 2013, as long as their ages are as expected given their lengths, the conditional-age-at-length data will be well fit. The implied marginal ages are also expanded to account for the size of the sampled catch relative to the total catch while the conditional data are not.
 
-Pearson residuals for the marginal age comps, are shown in the bubble plots in Figure \ref{}.  The filled bubbles represent estimates greater than observations, and the open bubbles observations greater than estimates. The large filled bubbles at age 25 in a few years suggest that we might have chosen a slightly older age as the compilation age.
+Pearson residuals for the marginal age comps, are shown in the bubble plots in Figure \ref{fig:comp_Pearson_age_mod1}.  The filled bubbles represent estimates greater than observations, and the open bubbles observations greater than estimates. The large filled bubbles at age 25 in a few years suggest that we might have chosen a slightly older age as the compilation age.
 
-The fits to the length-aggregate NWFSCcombo data show more variation in mean age in the population in latter years than might be expected in years with relatively low landings Figure \ref{fig:mod1_3_comp_condAALfit_data_weighting_TA1.8}.  These may represent young fish recruiting to the fishery, which would happen approximately 5 years after a biological recruitment event.  The conditional age-at-length fits are shown in Figure \ref{fig:mod1_4_comp_condAALfit_Andre_plotsflt6mkt2_page1}.  These plots explain the reason this survey was chosen to represent conditional age-at-length; the model was able to fit these data much better than other datasets, and improved fit, lower likelihood values and increased parsimony all contributed to a better model.
+The residuals for the conditional age-at-length from the NWFSCcombo survey show that growth appears to be reasonably estimated with no strong patterns suggesting consistently older or younger fish than expected in any year (Figure \ref{fig:mod1_1_comp_condAALfit_residsflt6mkt2_page1}). However, the mean age aggregated across length bins shows more variability in the observations than expected by the model (Figure \ref{fig:mod1_3_comp_condAALfit_data_weighting_TA1.8_condAgeNWFSC Combo Survey}).  This may represent young fish recruiting to the fishery, which would happen approximately 5 years after a biological recruitment event.  The conditional age-at-length fits are also shown in Figure \ref{fig:mod1_3_comp_condAALfit_data_weighting_TA1.8_condAgeNWFSC Combo Survey}.  These plots explain the reason this survey was chosen to represent conditional age-at-length; the model was able to fit these data much better than other datasets, and improved fit, lower likelihood values and increased parsimony all contributed to a better model.
 
 ## Northern Model Parameters
-For the Base model, the parameter fits are given in Table \ref{tab:Model1_params}.  Status for all of the estimated parameters is good, with the exception of the 6th parameter for the selectivity in the Washington Sport fishery.   
+For the Base model, the parameter estimates are given in Table \ref{tab:Model1_params}.  Status for all of the estimated parameters is good, with the exception of the 6th parameter for the selectivity in the Washington Sport fishery.   
 
 ### \hl{Northern Model Uncertainty and Sensitivity Analyses}
 Table \ref{tab:Sensitivity_model1}
@@ -338,7 +338,7 @@ Lengths in the Southern model were entered as unsexed, except for the Hook-and-L
 
 Bubble plots of the lengths by year in each fishery are in Figure \ref{fig:comp_length_bubble_mod2}.  The plot for the recreational fishery clearly shows the transition from the MRFSS sampling program to RecFIN in 2003/2004, as well as suggesting the existence of larger fish in the 1980s.  The Commercial fishery data has been sparse in recent years, however the fish taken in the Commercial catch are consistently larger than those in the recreational fishery, no doubt reflecting trawling in deeper waters.  The Onboard survey lengths reflect two eras of sampling, again with larger fish in the earlier period.  The panel for the Hook-and-Line survey shows that the females landed are always larger than the males, in agreement with the model estimates of growth: Figure \ref{fig:growth}.
 
-The fits to the lengths in the Recreational fishery Figure \ref{fig:mod2_1_comp_lenfit_flt1mkt2} show variable fits through the years, with the noisy and sparse data in 2004 heralding the transition between MRFSS sampling and RecFIN.  Overall, the timeseries is fit fairly well: Figure \ref{fig:mod2_4_comp_agefit_data_weighting_TA1.8_Recreational}
+The fits to the lengths in the Recreational fishery Figure \ref{fig:mod2_1_comp_lenfit_flt1mkt2} show variable fits through the years, with the noisy and sparse data in 2004 heralding the transition between MRFSS sampling and RecFIN.  Overall, the timeseries is fit fairly well: Figure \ref{fig:mod2_4_comp_agefit_data_weighting_TA1.8_Recreational Onboard Survey}
 
 The Commercial length comps are fit well through 2005, when data becomes sparse and noisy Figure \ref{fig:mod2_5_comp_lenfit_flt2mkt2}; and Figure \ref{fig:mod2_8_comp_lenfit_data_weighting_TA1.8_Commercial Fishery}.
 
@@ -352,22 +352,21 @@ The aggregate fits to the length comps for all five datasets is shown in Figure 
 
 
 ### Southern Model Ages
-There are few marginal ages in the model.  Bubble plots for the Southern model ages (Figure \ref{comp_age_bubble_mod2}) show the small sample from the Juvenile Fish Study and the single year of ages from the Hook-and-Line Survey.  The samples are too small to show any inter-annual variation, and are noisy within-year.
+There are few marginal ages in the model.  Bubble plots for the Southern model ages (Figure \ref{fig:comp_age_bubble_mod2}) show the small sample from the Juvenile Fish Study and the single year of ages from the Hook-and-Line Survey.  The samples are too small to show any inter-annual variation, and are noisy within-year.
 
-Figure \ref{fig:mod2_1_comp_agefits} shows the fit to the Juvenile Fish samples, which is poor in all four years.  The mean age in this data is shown in Figure \ref{fig:mod2_4_comp_agefit_data_weighting_TA1.8_Recreational}, at 10 years.
+Figure \ref{fig:mod2_1_comp_agefits} shows the fit to the Recreational Fishery samples, which is poor in all four years.  The mean age in this data is shown in Figure \ref{fig:mod2_4_comp_agefit_data_weighting_TA1.8_Recreational}, at 10 years.
 
-The Hook-and-Line Survey age "fit" is shown in Figure \ref{fig:mod2_5_comp_agefit}.  Mean age could not be calculated for the single year of data, as it is a inter-annual mean.
+The Hook-and-Line Survey age "fit" is shown in Figure \ref{fig:mod2_5_comp_agefit_flt4mkt0}.  The Francis tuning method could not be applied in this case as it depends on the fit to multiple years of data.
 
 The aggregated fits for the marginal, and I *do* mean *marginal* ages are shown in Figure \ref{fig:mod2_9_comp_agefit__aggregated_across_time}.  They speak for themselves.
 
-The ghost fleet commercial comps aggregated as a marginal timeseries is shown in Figure \ref{fig:mod2_11_comp_ghost}.  This figure is included for informational purposes only; ghosts do not contribute to the model likelihood calculations.  The fits here are quite good 1981-1999, however the last three years of data are very sparse and not well fit.
+The implied marginal age distribution from the commercial conditional-age-at-length compositions is shown in Figure \ref{fig:mod2_11_comp_ghost}.  This figure is included for informational purposes only; as it does not contribute to the model likelihood calculations.  The fits here are quite good 1981-1999, however the last three years of data are very sparse and not well fit.
 
 Pearson residuals for the Small Fish Juvenile Study and the Hook-and-Line Survey are shown in Figure \ref{fig:comp_Pearson_age_mod2}.  Bubble size indicates the amount of disappointment in the fits.  The filled bubbles indicate underestimates by the model; the open bubbles indicate overestimates.
 
-The good news age-data comes from the commercial fleet, as was foreshadowed by the ghost fleet.  Figure \ref{fig:mod2_4_comp_condAALfit_data_weighting_TA1.8_condAgeCommercial} shows the interannual fits to the mean age in the commercial age-at-length data.  Except for 1981, 1982 and 1989, the model is able to fit the data reasonably well, detecting the downward trend in the late 1980s and into the mid-1990s.
+The good news age-data comes from the commercial fleet, as was foreshadowed by the implied marginal ages.  Figure \ref{fig:mod2_4_comp_condAALfit_data_weighting_TA1.8_condAgeCommercial} shows the interannual fits to the mean age in the commercial age-at-length data.  Except for 1981, 1982 and 1989, the model is able to fit the data reasonably well, detecting the downward trend in the late 1980s and into the mid-1990s.
 
-The annual plots of age-at-length fits (Figure \ref{fig:mod2_5_comp_condAALfit_Andre_plotsflt2mkt2_page1}) show good fits in all years except 2001-2002 ("the sparse years, when we had to eat Gefilte-miltz").
-
+The annual plots of age-at-length fits (Figure \ref{fig:mod2_5_comp_condAALfit_Andre_plotsflt2mkt2_page1}) show good fits in all years except 2001-2002.
 
 
 ### Southern Model Uncertainty and Sensitivity Analyses
