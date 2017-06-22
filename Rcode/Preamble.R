@@ -132,6 +132,7 @@ for(imod in 1:n_models) {
                        "comp_gstlenfit_flt1mkt2",
                        "comp_gstlenfit_residsflt1mkt2",
                        "comp_agedat_data_weighting_TA1.8_Hook & Line Survey",
+                       "comp_agefit_data_weighting_TA1.8_Hook",
                        "gstagefit_residsflt2mkt2")
                        
   for(istring in 1:length(exclude_strings)){

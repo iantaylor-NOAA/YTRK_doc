@@ -532,7 +532,7 @@ for (model in 1:n_models) {
       paste('Unfished age ', min_age, ' biomass (1000 mt)', sep = ''),
       'Unfished recruitment (R0, millions)',
       paste('Spawning output', '(', LastYR, ' ', fecund_unit, ')', sep = ''),
-      paste('Relative Spawning Biomass (depletion)', LastYR,')',sep=''),
+      paste('Relative Spawning Output (depletion)', LastYR,')',sep=''),
       '\\textbf{$\\text{Reference points based on } \\mathbf{SB_{40\\%}}$}',
       'Proxy spawning output ($B_{40\\%}$)',
       'SPR resulting in $B_{40\\%}$ ($SPR_{B40\\%}$)',

@@ -367,8 +367,8 @@
  # Add colulmn names    
  colnames(Timeseries)=c('Yr', 
                         'Total biomass (mt)', 
-                        paste0('Spawning biomass', SpawningB_units, ' (mt)'),
-                        'Depletion', 
+                        'Spawning output (trillions of eggs)',
+                        'Relative spawning output (depletion)',
                         'Age-0 recruits', 
                         'Total catch (mt)',
                         'Relative exploitation rate', 
@@ -384,10 +384,10 @@
 ```{r, results='asis'}
     # Create the time series table
     Timeseries.table = xtable(Timeseries, 
-                              caption = c('Time-series of population estimates 
-                                        from the base-case model.'),
+                              caption = paste('Time-series of population estimates 
+                                        from the', mod1_label, 'base-case.'),
                               label='tab:Timeseries_mod1',
-                              digits = c(0,0,0,0,2,0,0,2,2))   
+                              digits = c(0,0,0,2,2,0,0,2,2))   
 
     # Add alignment
     align(Timeseries.table) = c('l',
@@ -427,7 +427,7 @@
     ForecastC$total = rowSums(ForecastC[, -1])
     ForecastCyrs = subset(ForecastC, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
 
-    # Pull Age 5+ biomass and subset years
+    # Pull Age 4+ biomass and subset years
     Age5biomass = mod1$timeseries[, c('Yr', 'Bio_smry')]
     Age5biomassyrs = subset(Age5biomass, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
 
@@ -453,11 +453,11 @@
                                         Depletionyrs$Value))
     # Add column names
     colnames(Forecast_mod1)=c('Yr',
-                           'OFL contriubtion (mt)',
+                           'OFL contribution (mt)',
                            'ACL landings (mt)',
-                           'Age 5+ biomass (mt)',
-                           'Spawning Biomass (mt)',
-                           'Depletion')
+                           'Age 4+ biomass (mt)',
+                           'Spawning output (trillions of eggs)',
+                           'Relative spawning output (depletion)')
 
     # Make sure year is a factor, so you don't get decimals
     Forecast_mod1$Yr = as.factor(Forecast_mod1$Yr)
@@ -465,7 +465,7 @@
     # Create the forecast table
     Forecast_mod1.table = xtable(Forecast_mod1,
                               caption = c('Projection of potential
-                                        OFL, spawning biomass, and depletion for the
+                                        OFL, spawning output, and depletion for the
                                         base case model.'),
                               label = 'tab:Forecast_mod1', digits = 2)
     # Add alignment
@@ -709,13 +709,6 @@
     SpawningByrs = SpawningB[SpawningB$Label >= paste('SPB_', Dat_start_mod2, sep='') &  
                              SpawningB$Label <= paste('SPB_', LastYR, sep=''), ] 
         
-        SpawningB_units = ''
-        if(mean(SpawningByrs$Value) > 1000000){
-            SpawningB_units <- "million"
-            SpawningByrs$Value <- SpawningByrs$Value/1000000
-         }
-
-    
     # Depletion, extract, rename and subset
     Depl_years = as.data.frame(seq(Dat_start_mod2, LastYR, 1))
     colnames(Depl_years) = 'Yr'
@@ -777,8 +770,8 @@
  # Add colulmn names    
  colnames(Timeseries)=c('Yr', 
                         'Total biomass (mt)', 
-                        paste0('Spawning biomass', SpawningB_units, ' (mt)'),
-                        'Depletion', 
+                        'Spawning output (trillions of eggs)',
+                        'Relative spawning output (depletion)',
                         'Age-0 recruits', 
                         'Total catch (mt)',
                         'Relative exploitation rate', 
@@ -794,10 +787,10 @@
 ```{r, results='asis'}
     # Create the time series table
     Timeseries.table = xtable(Timeseries, 
-                              caption = c('Time-series of population estimates 
-                                        from the base-case model.'),
+                              caption = paste('Time-series of population estimates 
+                                        from the', mod2_label, 'base-case.'),
                               label='tab:Timeseries_mod2',
-                              digits = c(0,0,0,0,2,0,0,2,2))   
+                              digits = c(0,0,0,2,2,0,0,2,2))   
 
     # Add alignment
     align(Timeseries.table) = c('l',
@@ -837,7 +830,7 @@
     ForecastC$total = rowSums(ForecastC[, -1])
     ForecastCyrs = subset(ForecastC, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
 
-    # Pull Age 5+ biomass and subset years
+    # Pull Age 4+ biomass and subset years
     Age5biomass = mod2$timeseries[, c('Yr', 'Bio_smry')]
     Age5biomassyrs = subset(Age5biomass, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
 
@@ -863,11 +856,11 @@
                                         Depletionyrs$Value))
     # Add column names
     colnames(Forecast_mod2)=c('Yr',
-                           'OFL contriubtion (mt)',
+                           'OFL contribution (mt)',
                            'ACL landings (mt)',
-                           'Age 5+ biomass (mt)',
-                           'Spawning Biomass (mt)',
-                           'Depletion')
+                           'Age 4+ biomass (mt)',
+                           'Spawning output (trillions of eggs)',
+                           'Relative spawning output (depletion)')
 
     # Make sure year is a factor, so you don't get decimals
     Forecast_mod2$Yr = as.factor(Forecast_mod2$Yr)
@@ -875,7 +868,7 @@
     # Create the forecast table
     Forecast_mod2.table = xtable(Forecast_mod2,
                               caption = c('Projection of potential
-                                        OFL, spawning biomass, and depletion for the
+                                        OFL, spawning output, and depletion for the
                                         base case model.'),
                               label = 'tab:Forecast_mod2', digits = 2)
     # Add alignment
