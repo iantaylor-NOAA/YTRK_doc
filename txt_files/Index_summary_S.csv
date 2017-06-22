@@ -1,5 +1,5 @@
-Region,ID,Fleet,Years,Name,Fishery independent,Filtering,Method,Endorsed
-CA,1,1,1981-2003,Dockside CPUE,No,"trip, area, Stephens-MacCall",delta-GLM (bin-lognormal),SSC
-CA,3,3,1987-2006,Onboard CPUE,No,,Polygon,SSC
-CA,4,4,2004-2016,Hook-and-Line,Yes (?),-,-,-
-CA,5,5,2001-2016,Juvenile CPUE,Yes,-,-,-
+Years,Name,Fishery independent,Method,Endorsed
+1981-2003,Dockside CPUE,No,delta-GLM (bin-lognormal),SSC
+1987-2006,Onboard CPUE,No,Polygon,SSC
+2004-2016,Hook-and-Line,Yes,,
+2001-2016,Juvenile CPUE,Yes,,

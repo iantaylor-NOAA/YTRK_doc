@@ -15,25 +15,124 @@
 
 
 
+```{r, results = 'asis'}
+    Northern_catch = read.csv('./txt_files/Northern.Catch.csv')
+      colnames(Northern_catch) = c('Year',
+                                   'Commercial Trawl',
+                                   'Hake Bycatch',
+                                   'Rec CA and OR',
+                                   'Rec WA')
+
+   # Index of abundance summary, create table   
+     Northern_catch.table = xtable(Northern_catch, 
+                                  caption ='Catch timeseries for the Northern model.',
+                                  label = 'tab:Northern_catch',
+                                  digits=3)
+
+    addtorow          <- list()
+    addtorow$pos      <- list()
+    addtorow$pos[[1]] <- c(0)
+    addtorow$command  <- c(paste("\\hline \n",
+                                 "\\endhead \n",
+                                 "\\hline \n",
+                                 "\\multicolumn{3}{l}",
+                                 "{\\footnotesize Continued on next page} \n",
+                                 "\\endfoot \n",
+                                 "\\endlastfoot \n",sep=""))
+
+
+
+    # Print
+    print(Northern_catch.table, 
+          include.rownames = FALSE,
+          caption.placement = 'top',
+          tabular.environment = 'longtable',
+          floating = FALSE,
+          add.to.row = addtorow)
+```
+
+\newpage
 
 <!-- ********************************************************************** --> 
 <!-- *******************Commercial Discards TABLES************************* --> 
 <!-- ********************************************************************** --> 
 
 
+```{r, results = 'asis'}
+    Northern_discard = read.csv('./txt_files/Northern.Discards.csv')
+      colnames(Northern_discard) = c('Year',
+                                   'Discard')
 
+   # Index of abundance summary, create table   
+     Northern_discard.table = xtable(Northern_discard, 
+                                  caption ='Commercial discard timeseries for the Northern model.',
+                                  label = 'tab:Northern_discard',
+                                  digits=4)
 
+    # Print
+    print(Northern_discard.table, 
+          include.rownames = FALSE,
+          caption.placement = 'top',
+          sanitize.text.function = function(x){x})
+```
+\newpage
+<!-- ***********Indices of abundance summary table************************* -->
+```{r, results = 'asis'}
+    Index_summary = read.csv('./txt_files/Index_summary.csv')
+      colnames(Index_summary) = c('Years',	
+                                  'Name',
+                                  'Fishery ind.',
+                                  'Method',	
+                                  'Endorsed')
+
+   # Index of abundance summary, create table   
+     Index_summary.table = xtable(Index_summary, 
+                                  caption = c('Summary of the biomass/abundance
+                                              time series used in the stock
+                                              assessment.'),
+                                 label = 'tab:Index_summary',
+                                 digits = 0)    
+
+    # Print index summary table
+      print(Index_summary.table, 
+            include.rownames=FALSE, 
+            caption.placement='top',
+            sanitize.text.function = function(x){x})
+```
+<!-- ---------------------------------------------------------------------- -->
+
+\newpage
 
 <!-- ********************************************************************** --> 
-<!-- ***********Recreational Landings and discards TABLES****************** --> 
+<!-- ************ CPUE Table                     ************************* --> 
 <!-- ********************************************************************** --> 
 
 
+```{r, results = 'asis'}
+    Northern_CPUE = read.csv('./txt_files/Northern.CPUE.csv')
+      colnames(Northern_CPUE) = c('Year',
+                                   'Commercial Trawl',
+                                   'SE',
+                                   'Hake ByCatch',
+                                   'SE',
+                                   'NWFSCcombo',
+                                   'SE',
+                                   'Triennial',
+                                   'SE')
 
+   # Index of abundance summary, create table   
+     Northern_CPUE.table = xtable(Northern_CPUE, 
+                                  caption ='CPUE timeseries for the Northern model.',
+                                  label = 'tab:Northern_CPUE',
+                                  digits=2)
 
-<!-- ********************************************************************** --> 
-<!-- ************Oregon commercial logbook TABLES ************************* --> 
-<!-- ********************************************************************** --> 
+    # Print
+    print(Northern_CPUE.table,
+          include.rownames = FALSE,
+          caption.placement = 'top',
+          sanitize.text.function = function(x){x})
+```
+\newpage
 
 
 
@@ -84,47 +183,7 @@
 <!-- **REPEAT THIS SECTION AND EDIT AS NEEDED IF YOU HAVE MULTIPLE MODELS** --> 
 <!-- ====================================================================== -->
 
-<!-- ***********Indices of abundance summary table************************* -->
-```{r, results = 'asis'}
-    Index_summary = read.csv('./txt_files/Index_summary.csv')
-      colnames(Index_summary) = c('Region',
-                                  'ID',
-                                  'Fleet',
-                                  'Years',	
-                                  'Name',
-                                  'Fishery ind.',
-                                  'Filtering',
-                                  'Method',	
-                                  'Endorsed')
 
-   # Index of abundance summary, create table   
-     Index_summary.table = xtable(Index_summary, 
-                                  caption = c('Summary of the biomass/abundance
-                                              time series used in the stock
-                                              assessment.'),
-                                 label = 'tab:Index_summary',
-                                 digits = 0)    
-    # Add alignment  
-      align(Index_summary.table) = c('l',
-                                     '>{\\centering}p{.4in}',
-                                     '>{\\centering}p{.3in}',
-                                     '>{\\centering}p{.3in}',
-                                     '>{\\centering}p{.3in}',
-                                     '>{\\centering}p{.6in}',
-                                     '>{\\centering}p{.5in}', 
-                                     '>{\\centering}p{.8in}',
-                                     '>{\\centering}p{.8in}',
-                                     '>{\\centering}p{.5in}')  
-    
-    # Print index summary table
-      print(Index_summary.table, 
-            include.rownames=FALSE, 
-            caption.placement='top',
-            sanitize.text.function = function(x){x})
-```
-<!-- ---------------------------------------------------------------------- -->
-
-\newpage
 
 <!-- ***********JITTER TABLE*********************************************** --> 
 ```{r, results = 'asis'}
@@ -487,23 +546,62 @@
 
 
 <!-- ********************************************************************** -->
-<!-- ************************MODEL 2 TABLES******************************** --> 
+<!-- ************************ABLES******************************** --> 
 <!-- ********************************************************************** -->
 
 \newpage
 ## Southern Model Tables
 
+<!-- ********************************************************************** --> 
+<!-- *********************Commercial landings TABLES*********************** --> 
+<!-- ********************************************************************** --> 
+
+
+
+```{r, results = 'asis'}
+    Southern_catch = read.csv('./txt_files/Southern.Catch.csv')
+      colnames(Southern_catch) = c('Year',
+                                   'Commercial Catch',
+                                   'Recreational Catch')
+
+
+   # Index of abundance summary, create table   
+     Southern_catch.table = xtable(Southern_catch, 
+                                  caption ='Catch timeseries for the Southern model.',
+                                  label = 'tab:Southern_catch',
+                                  digits=3)
+
+    addtorow          <- list()
+    addtorow$pos      <- list()
+    addtorow$pos[[1]] <- c(0)
+    addtorow$command  <- c(paste("\\hline \n",
+                                 "\\endhead \n",
+                                 "\\hline \n",
+                                 "\\multicolumn{3}{l}",
+                                 "{\\footnotesize Continued on next page} \n",
+                                 "\\endfoot \n",
+                                 "\\endlastfoot \n",sep=""))
+
+
+
+    # Print
+    print(Southern_catch.table, 
+          include.rownames = FALSE,
+          caption.placement = 'top',
+          tabular.environment = 'longtable',
+          floating = FALSE,
+          add.to.row = addtorow)
+```
+
+\newpage
+
 
 <!-- ***********Indices of abundance summary table************************* -->
 ```{r, results = 'asis'}
     Index_summary = read.csv('./txt_files/Index_summary_S.csv')
-      colnames(Index_summary) = c('Region',
-                                  'ID',
-                                  'Fleet',
-                                  'Years',	
+      colnames(Index_summary) = c('Years',	
                                   'Name',
                                   'Fishery ind.',
-                                  'Filtering',
                                   'Method',	
                                   'Endorsed')
 
@@ -512,20 +610,9 @@
                                   caption = c('Summary of the biomass/abundance
                                               time series used in the stock
                                               assessment.'),
-                                 label = 'tab:Index_summary',
+                                 label = 'tab:Index_summary_S',
                                  digits = 0)    
-    # Add alignment  
-      align(Index_summary.table) = c('l',
-                                     '>{\\centering}p{.4in}',
-                                     '>{\\centering}p{.3in}',
-                                     '>{\\centering}p{.3in}',
-                                     '>{\\centering}p{.3in}',
-                                     '>{\\centering}p{.6in}',
-                                     '>{\\centering}p{.5in}', 
-                                     '>{\\centering}p{.8in}',
-                                     '>{\\centering}p{.8in}',
-                                     '>{\\centering}p{.5in}')  
-    
+
     # Print index summary table
       print(Index_summary.table, 
             include.rownames=FALSE, 
@@ -534,6 +621,36 @@
 ```
 <!-- ---------------------------------------------------------------------- -->
 
+\newpage
+<!-- ********************************************************************** --> 
+<!-- ************ CPUE Table                     ************************* --> 
+<!-- ********************************************************************** --> 
+
+
+```{r, results = 'asis'}
+    Southern_CPUE = read.csv('./txt_files/Southern.CPUE.csv')
+      colnames(Southern_CPUE) = c('Year',
+                                   'Hook and Line',
+                                   'SE',
+                                   'Recreational',
+                                   'SE',
+                                   'Onboard',
+                                   'SE',
+                                   'Juvenile Survey',
+                                   'SE')
+
+   # Index of abundance summary, create table   
+     Southern_CPUE.table = xtable(Southern_CPUE, 
+                                  caption ='CPUE timeseries for the Southern model.',
+                                  label = 'tab:Southern_CPUE',
+                                  digits=2)
+
+    # Print
+    print(Southern_CPUE.table,
+          include.rownames = FALSE,
+          caption.placement = 'top',
+          sanitize.text.function = function(x){x})
+```
 \newpage
 
 <!-- ***********JITTER TABLE*********************************************** --> 

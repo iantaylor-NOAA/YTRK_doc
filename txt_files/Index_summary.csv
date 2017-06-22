@@ -1,5 +1,5 @@
-Region,ID,Fleet,Years,Name,Fishery independent,Filtering,Method,Endorsed
-WA,1,4,1981-2014,Dockside CPUE,No,"trip, area, month, Stephens-MacCall",delta-GLM (bin-gamma),SSC
--,-,-,-,-,-,-,-,-
--,-,-,-,-,-,-,-,-
--,-,-,-,-,-,-,-,-
+Years,Name,Fishery independent,Method,Endorsed
+1987-1998,Commercial Logbook,No,delta-GLM (bin-lognormal),NA
+1985-1999,Hake Bycatch,No,VAST,SSC
+1977-2004,Triennial,Yes,VAST,SSC
+2003-2016,NWFSCcombo,Yes,VAST,SSC

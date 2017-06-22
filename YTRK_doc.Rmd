@@ -25,6 +25,7 @@ bibliography: BibFile.bib
 link-citations: yes
 header-includes:
     - \usepackage{caption}
+    - \usepackage{grattanCharts}
 ---
 ```{r global_options, include=FALSE}
     # set global options for R code chunks: echo=FALSE (don't include source code); 
