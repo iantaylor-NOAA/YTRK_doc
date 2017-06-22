@@ -3,7 +3,9 @@
 ##Stock{-}
 This assessment reports the status of the `r spp` (\emph{`r spp.sci`}) resource in U.S. waters off the coast of the California, Oregon, and Washington using data through `r LastYR`.  
 
-The Pacific Fishery Management Council (PFMC) manages the U.S. fishery as two stocks separated at Cape Mendocino, California (40$^\circ$ 10'N). The northern stock has long been assessed on its own; the southern stock is managed as part of the Southern Shelf Complex.  This assessment analyzes each stock independently, with the southern stock extending southward to the U.S./Mexico border and the northern stock extending northward to the U.S./Canada border.
+The Pacific Fishery Management Council (PFMC) manages the U.S. fishery as two stocks separated at Cape Mendocino, California (40$^\circ$ 10'N). The northern stock has long been assessed on its own; the southern stock is managed as part of the "Minor Shelf Rockfish" complex.  This assessment analyzes each stock independently, with the southern stock extending southward to the U.S./Mexico border and the northern stock extending northward to the U.S./Canada border (Figure \ref{fig:assess_region_map_Exec_Sum}).
+
+![Map depicting the boundaries for the base-case model.  \label{fig:assess_region_map_Exec_Sum}](Figures/assess_region_map_v2.png)
 
 The most recent fully integrated assessment [@Wallace2005], following the pattern of prior assessments, included only the Northern stock which it divided into three assessment areas with divisions at Cape Elizabeth (47$^\circ$ 20'N) and Cape Falcon (45$^\circ$ 46'N).  A data-moderate assessment conducted in 2013 [@Cope2013] was the first to analyze the southern stock, determining its contribution to the overfishing limit (OFL) for the Southern Shelf Complex. 
 
@@ -11,26 +13,12 @@ Since the 2005 assessment, reconstruction of historical catch by Washington and 
 
 This assessment addresses the stock in two areas consistent with the management border at Cape Mendocino.  This is consistent, as well, with a recent genetic analysis [@Hess2011] that found distinct stocks north and south of Cape Mendocino but did not find stock differences within the northern area. 
 
+\FloatBarrier
 
 ##Catches{-}
-Catches from the Northern stock were divided into four categories: commercial catch, bycatch in the at-sea hake fishery, recreational catch in Oregon and California (north of 40$^\circ$ 10'N), and recreational catch in Washington. The first three of these fleets were entered in metric tons, but the recreational catch from Washington was entered in the model as numbers of fish with the average weight calculated internally in the model from the weight-length relationship and the length-compositions.
+Catches from the Northern stock (Figure \ref{fig:r4ss_catch_N}) were divided into four categories: commercial catch, bycatch in the at-sea hake fishery, recreational catch in Oregon and California (north of 40$^\circ$ 10'N), and recreational catch in Washington. The first three of these fleets were entered in metric tons, but the recreational catch from Washington was entered in the model as numbers of fish with the average weight calculated internally in the model from the weight-length relationship and the estimated selectivity for this fleet (which is informed by the length-compositions). Catches have been increasing over the past 10 years (Table \ref{tab:Exec_catch_N}) but remain well below the peak catch due to management measures, included lower catch limits and closed areas.
 
-Catches from the Southern stock were divided into two categories: commercial and recreational catch, both of which were entered as metric tons.
-
-
-\hl{Include: trends and current levels-include table for last ten years and graph with 
-long term data}
-
-Catch figures: (Figures \ref{fig:r4ss_catch_N}-\ref{fig:r4ss_catch_S})    
-Catch tables: (Tables \ref{tab:Exec_catch_N}-\ref{tab:Exec_catch_S})
-
-
-
-
-
-
-
-\FloatBarrier
+Catches from the Southern stock (Figure \ref{fig:r4ss_catch_S}) were divided into two categories: commercial and recreational catch, both of which were entered as metric tons. Catches over the past 10 years have remained far below the peak levels, with the majority of recent catch coming from the Recreational fishery (Table \ref{tab:Exec_catch_S})
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY CATCH FIGURES AND TABLES*********** -->
 <!-- ***********Edit the Plot_catch tables and captions******************** -->
@@ -44,9 +32,7 @@ Catch tables: (Tables \ref{tab:Exec_catch_N}-\ref{tab:Exec_catch_S})
 
 ![Estimated catch history of `r spp` in the `r mod2_label`. \label{fig:r4ss_catch_S}](r4ss/plots_mod2/catch2 landings stacked.png)
 
-
-
-
+\FloatBarrier
 
 <!-- ***********CATCH TABLE NORTH****************************************** -->
 ```{r, results='asis'}
@@ -70,44 +56,17 @@ Catch tables: (Tables \ref{tab:Exec_catch_N}-\ref{tab:Exec_catch_S})
 \FloatBarrier
 
 
-
-
 \newpage
 
 ##Data and Assessment{-}
-\hl{Include: date of last assessment, type of assessment model, data available, new 
-information, and information lacking.}
+`r spp` north of Cape Mendocino (40$^\circ$ 10'N) was most recently assessed as part of a 2013 data-moderate stock assessment [@Cope2013] that did not include any length or age data. The northern stock was previously assessed in 2000 [@Tagart2000] with that assessment updated in 2003 and 2005 [@Lai2003, @Wallace2005]. The stock south of 40$^\circ$ 10'N has never been assessed due to a percieved lack of data in this area.
 
-`r spp` was assessed north of Cape Mendocino in 2005 in a fully integrated age-based assessment. A 2013 data-moderate assessment was the first to address the southern stock [@Cope2013].  
-
-This assessment uses Stock Synthesis version 3.3.  The Northern model begins in `r Dat_start_mod1`, with the assumption that the stock was at \hl{an unfished equilibrium that year?}  The Southern model begins in `r Dat_start_mod2`, with the assumption that the stock was at \hl{an unfished equilibrium that year?}
-
-
-Map of assessment region: (Figure \ref{fig:assess_region_map_Exec_Sum}).  
+This assessment uses Stock Synthesis version 3.3.  The Northern model begins in `r Dat_start_mod1`. The Southern model begins in `r Dat_start_mod2`. In both cases those starting years were chosen based on the first year of the available catch data and the start of the estimated recruitment deviations was at a later point, so both models were assumed to start at an unfished equilibrium.
  
-![Map depicting the boundaries for the base-case model.  \label{fig:assess_region_map_Exec_Sum}](Figures/assess_region_map_v2.png)
-
-\FloatBarrier
-
-
 ##Stock Biomass{-}
-\hl{Include: trends and current levels relative to virgin or historic levels, 
-description of uncertainty-include table for last 10 years and graph with 
-long term estimates.}
+The spawning output for the Northern model was estimated to have fallen below 40\% of unifished equilibrium in the early 1980s, to a minimum of `r MinDepl_mod1`% in `r MinDeplYr_mod1` but has rebounded since to `r Depl_mod1` in 2017 (~95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Figures \ref{fig:Spawnbio_all} and \ref{fig:RelDeplete_all}, Table \ref{tab:SpawningDeplete_mod1}).
 
-Spawning output Figure:    Figure \ref{fig:Spawnbio_all}     
-Spawning output Table(s):  Table \ref{tab:SpawningDeplete_mod1}     
-Relative depletion Figure: Figure \ref{fig:RelDeplete_all}     
-
-
-Example text (remove Models 2 and 3 if not needed - if using, remove the # in-line comments!!!)      
-The estimated relative depletion level (spawning output relative to unfished 
-spawning output) of the the base-case model in `r LastYR` is `r Depl_mod1` 
-(~95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Figure \ref{fig:RelDeplete_all}).
-
-The estimated relative depletion level of model 2 in `r LastYR` is 
-`r if(n_models>=2){Depl_mod2}` (~95% asymptotic interval: $\pm$ `r if(n_models>=2){Depl_mod2_CI}`) (Figure \ref{fig:RelDeplete_all}). 
-
+The spawning output for the Southern model is estimated to have experienced less impact from fishing and never fallen below the 40\% reference point. The estimated minimum was `r MinDepl_mod2`% in `r MinDeplYr_mod2` and the estimated relative spawning output in 2017 is `r Depl_mod2` (~95% asymptotic interval: $\pm$ `r Depl_mod2_CI`).
 
 \FloatBarrier
 
@@ -148,12 +107,7 @@ The estimated relative depletion level of model 2 in `r LastYR` is
 
 
 ##Recruitment{-}
-\hl{Include: trends and current levels relative to virgin or historic levels-include 
-table for last 10 years and graph with long term estimates.}
-
-Recruitment Figure: (Figure \ref{fig:Recruits_all})     
-Recruitment Tables: (Tables \ref{tab:Recruit_mod1} and \ref{tab:Recruit_mod2})
-
+Recruitment is estimated to be at a similar scale for both models (Figure \ref{fig:Recruits_all}) except for the final years in which the Southern model is estimated to have had very large recruitments in 2008 and 2010 (Tables \ref{tab:Recruit_mod1} and \ref{tab:Recruit_mod2}). The Southern model has higher mortality but slower growth than the Northern model, leading to a larger level of recruitment relative to the spawning output in the South.
 
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY RECRUITMENT TABLES AND FIGURES***** -->
@@ -188,11 +142,7 @@ Recruitment Tables: (Tables \ref{tab:Recruit_mod1} and \ref{tab:Recruit_mod2})
 
 
 ##Exploitation status{-}
-\hl{Include: exploitation rates (i.e., total catch divided by exploitable biomass, or the annual SPR harvest rate) – include a table with the last 10 years of data and a graph showing the trend in fishing mortality relative to the target (y-axis) plotted against the trend in biomass relative to the target (x-axis).}
-
-
-Exploitation Tables: Tables \ref{tab:SPR_Exploit_mod1} and \ref{tab:SPR_Exploit_mod2}
-Exploitation Figure: Figure \ref{fig:SPR_all}). 
+The Northern model is estimated to have experienced overfishing throughout the 1980s and 1990s relative to the current SPR-based harvest limits (Figure \ref{fig:SPR_all}). The Southern stock is managed as part of a stock complex under catch limits applied at the complex level. However, the fishing intensity is estimated to have remained below 100% for all years. In recent years, the fishing intensity has been well within the management limits for both areas with particularly low estimates for the Southern model (Tables \ref{tab:SPR_Exploit_mod1} and \ref{tab:SPR_Exploit_mod2}).
 
 A summary of `r spp` exploitation histories for base model is provided as Figure \ref{fig:Phase_all}.
 
@@ -240,12 +190,14 @@ A summary of `r spp` exploitation histories for base model is provided as Figure
 
 
 ##Ecosystem Considerations{-}
-In this assessment, ecosystem considerations were.....
+\hl{More text to be added}
 
 
 
 
 ##Reference Points{-}
+\hl{This section yet to be completed}
+
 \hl{Include:} management targets and definition of overfishing, including the harvest 
 rate that brings the stock to equilibrium at $B_{40\%}$ (the $B_{MSY}$ proxy) and 
 the equilibrium stock size that results from fishing at the default harvest rate 
