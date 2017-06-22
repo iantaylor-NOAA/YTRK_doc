@@ -20,75 +20,52 @@
 # Melissa Monk, NMFS
 # =============================================================================
 
-
-# =============================================================================
-# 1. Catch FIGURE(S) ----------------------------------------------------------
-# Required: Read in CSV file, edit this section depending on # of plots!!
-# Read in executive summary catches figure file
-Exec_catch =  read.csv('./txt_files/Exec_catch_for_figs.csv')
-  
-# Assign column names
-colnames(Exec_catch) = c('Year',
-                         'Fleet 1',
-                         'Fleet 2',
-                         'Fleet 3',
-                         'Fleet 4',
-                         'Fleet5')
-    
-# Split catch by regions -retaning the colunns for each -you'll have to edit
-Exec_region1_catch = Exec_catch[,c(1:2)]
-Exec_region2_catch = Exec_catch[,c(1,3,4)]
-Exec_region3_catch = Exec_catch[,c(1,5,6)]
-    
-# Melt data so it can be plotted
-Exec_region1_catch = melt(Exec_region1_catch, id='Year')
-Exec_region2_catch = melt(Exec_region2_catch, id='Year')
-Exec_region3_catch = melt(Exec_region3_catch, id='Year')
-   
-# Reassign column names
-colnames(Exec_region1_catch) = c('Year','Fleet','Removals')
-colnames(Exec_region2_catch) = c('Year','Fleet','Removals')
-colnames(Exec_region3_catch) = c('Year','Fleet','Removals')
-
-# Plot catches function
-Plot_catch = function(Catch_df) {
-             ggplot(Catch_df, aes(x=Year, y=Removals,fill=Fleet)) +
-             geom_area(position='stack') +
-             scale_fill_manual(values=c('lightsteelblue3','coral')) +
-             scale_x_continuous(breaks=seq(Dat_start_mod1, Dat_end_mod1, 20)) +
-             ylab('Landings (mt)')
-}
-
 # -----------------------------------------------------------------------------
 # CATCH TABLE(S) --------------------------------------------------------------
 
-# Read in executive summary catches table
-Exec_catch_summary_N = read.csv('./txt_files/Exec_catch_summary_N.csv')
-Exec_catch_summary_S = read.csv('./txt_files/Exec_catch_summary_S.csv')
-
-# Assign column names as they should appear in the table; change the alignment 
-# to match number of columns +1
-# Assign column names
+# Create NORTH exec summary catch tables based on model input catch
+yrs <- mod1$endyr - 10:0 # range of years
+Exec_catch_summary_N <- data.frame(Year=yrs) # data frame with first column only
+# loop over catch fleets
+for(f in which(mod1$fleet_type==1)){
+  # get recent catch inputs (might be biomass or numbers)
+  cat.f.recent <- round(mod1$catch$Obs[mod1$catch$Fleet==f & mod1$catch$Yr %in% yrs],1)
+  # cbind to existing table
+  Exec_catch_summary_N <- cbind(Exec_catch_summary_N, cat.f.recent)
+}
+# Assign column names as they should appear in the table
 colnames(Exec_catch_summary_N) = c('Year',
-            'Commercial (t)',
-            'At-sea hake bycatch (t)',
-            'Recreational OR+CA (t)',
+            'Commercial (mt)',
+            'At-sea hake bycatch (mt)',
+            'Recreational OR+CA (mt)',
             'Recreational WA (1000s)')
+
+# Create SOUTH exec summary catch tables based on model input catch
+yrs <- mod2$endyr - 10:0 # range of years
+Exec_catch_summary_S <- data.frame(Year=yrs) # data frame with first column only
+# loop over catch fleets
+for(f in which(mod2$fleet_type==1)){
+  # get recent catch inputs (might be biomass or numbers)
+  cat.f.recent <- round(mod2$catch$Obs[mod2$catch$Fleet==f & mod2$catch$Yr %in% yrs],1)
+  # cbind to existing table
+  Exec_catch_summary_S <- cbind(Exec_catch_summary_S, cat.f.recent)
+}
+# Assign column names as they should appear in the table
 colnames(Exec_catch_summary_S) = c('Year',
-            'Recreational (t)',
-            'Commercial (t)')
+            'Recreational (mt)',
+            'Commercial (mt)')
 
 # Make executive summary catch xtable
 Exec_catch.table_N = xtable(Exec_catch_summary_N, 
                           caption = c(paste0('Recent ',spp,' catch by 
-                                             fleet for the Northern stock 
-                                             (north of ', fourtyten,').')),
-                          label='tab:Exec_catch_N')
+                                             fleet for the ', mod1_label, 
+                                             ' (north of ', fourtyten,').')),
+                          label='tab:Exec_catch_N', digits=0)
 Exec_catch.table_S = xtable(Exec_catch_summary_S, 
                             caption = c(paste0('Recent ',spp,' catch by 
-                                            fleet for the Southern stock 
-                                             (south of ', fourtyten,').')),
-                            label='tab:Exec_catch_S')
+                                            fleet for the ', mod2_label,
+                                            ' (south of ', fourtyten,').')),
+                            label='tab:Exec_catch_S', digits=0)
 
 # Add alignment - you will have to adjust based on the number of columns you have
 # and the desired width, remember to add one leading ghost column for row.names

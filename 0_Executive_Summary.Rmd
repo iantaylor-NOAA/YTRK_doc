@@ -108,9 +108,6 @@ spawning output) of the the base-case model in `r LastYR` is `r Depl_mod1`
 The estimated relative depletion level of model 2 in `r LastYR` is 
 `r if(n_models>=2){Depl_mod2}` (~95% asymptotic interval: $\pm$ `r if(n_models>=2){Depl_mod2_CI}`) (Figure \ref{fig:RelDeplete_all}). 
 
-The estimated relative depletion level of model 3 in `r LastYR` is 
-`r if(n_models==3){Depl_mod3}` (~95% asymptotic interval: $\pm$ `r if(n_models==3){Depl_mod3_CI}`) (Figure \ref{fig:RelDeplete_all}).
-
 
 \FloatBarrier
 
@@ -289,22 +286,6 @@ mt in the base case model. The target spawning output based on the biomass targe
 which gives a catch of `r #Ref_pts_mod2[10,2]` mt. Equilibrium yield at the proxy $F_{MSY}$ 
 harvest rate corresponding to $SPR_{50\%}$ is `r if(n_models>=2){Ref_pts_mod2[15,2]}` mt.
 
-This stock assessment estimates that `r spp` in the `r if(n_models==3){mod3_label}` are 
-`r if(n_models==3){ifelse(Deplete_mod3[nrow(Deplete_mod3),2]-MT>0,"above","below")}` 
-the biomass target, but `r if(n_models==3){ifelse(Deplete_mod3[nrow(Deplete_mod3),2]-MSST>0,"above","below")}` 
-the minimum stock size threshold. \hl{Add sentence about spawning output trend.} The 
-estimated relative depletion level or \hl{Model 3} in `r LastYR` is 
-`r if(n_models==3){Depl_mod3}` (~95% asymptotic interval: $\pm$
-`r if(n_models==3){Depl_mod3_CI}`), corresponding to an unfished spawning output of 
-`r if(n_models==3){paste(Spawn_mod3, fecund_unit, sep=' ')}` (~95% asymptotic interval:
-`r if(n_models==3){paste(Spawn_mod3_CI, fecund_unit,sep=' ')}`) of 
-spawning output in the base model (Table \ref{tab:Ref_pts_mod3}). Unfished 
-age `r min_age` biomass was estimated to be `r if(n_models==3){Ref_pts_mod3[2,2]}` mt in the 
-base case model. The target spawning output based on the biomass target 
-($SB_{40\%}$) is `r if(n_models==3){paste(Ref_pts_mod3[7,2], fecund_unit, sep=' ')}`, which gives 
-a catch of `r #Ref_pts_mod3[10,2]` mt. Equilibrium yield at the proxy $F_{MSY}$ 
-harvest rate corresponding to $SPR_{50\%}$ is `r if(n_models==3){Ref_pts_mod3[15,2]}` mt.
-
 \FloatBarrier
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY REFERENCE POINT TABLES************* -->
@@ -368,9 +349,8 @@ depletion levels for each year. Not required in draft assessments undergoing rev
     
 OFL projection table: Table \ref{tab:OFL_projection}    
 
-Decision table(s) Table \ref{tab:Decision_table_mod1}, 
-                  Table \ref{tab:Decision_table_mod2}, 
-                  Table \ref{tab:Decision_table_mod3}
+Decision table(s) Table \ref{tab:Decision_table_mod1} and 
+                  Table \ref{tab:Decision_table_mod2}
  
     Yield curve: Figure \ref{fig:Yield_all}
 
