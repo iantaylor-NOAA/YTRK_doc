@@ -95,12 +95,12 @@ Weighting among fleets uses either the Francis method [@Francis2011] or the Iane
 ###Priors \label{priors}
 
 
-Hamel [@Hamel2015] developed a method for combining meta-analytic approaches to relating the natural mortality rate M to other life-history parameters such as longevity, size, growth rate and reproductive effort, to provide a prior on M. In that same issue of ICESJMS, Then et al. [@Then2014], provided an updated data set of estimates of M and related life history parameters across a large number of fish species, from which to develop an M estimator for fish species in general.
+Hamel [-@Hamel2015] developed a method for combining meta-analytic approaches to relating the natural mortality rate M to other life-history parameters such as longevity, size, growth rate and reproductive effort, to provide a prior on M. In that same issue of ICESJMS, Then et al. [-@Then2015], provided an updated data set of estimates of M and related life history parameters across a large number of fish species, from which to develop an M estimator for fish species in general.
 They concluded by recommending M estimates be based on maximum age alone, based on an updated Hoenig non-linear least squares estimator $M=4.899A_{max }^{-.916}$. 
 
 The approach of basing M priors on maximum age alone was one that was already being used for west coast rockfish assessments. However, in fitting the alternative model forms relating M to Amax, Then et al. did not consistently apply their transformation. In particular, in real space, one would expect substantial heteroscedasticity in both the observation and process error associated with the observed relationship of M to Amax. Therefore, it would be reasonable to fit all models under a log transformation. This was not done.
 
-Re-evaluating the data used in Then et al. [@Then2014] by fitting the one-parameter Amax model under a log-log transformation (such that the slope is forced to be -1 in the transformed space (as in Hamel 2015)), the point estimate for M is $M=5.4/Amax$
+Re-evaluating the data used in Then et al. [-@Then2015] by fitting the one-parameter Amax model under a log-log transformation (such that the slope is forced to be -1 in the transformed space (as in @Hamel2015), the point estimate for M is $M=5.4/Amax$
 
 This is also the median of the prior. The prior is defined as a lognormal with mean lna(5.4/Amax) and SE = 0.4384343. 
 
@@ -127,7 +127,7 @@ EXAMPLE: Table \ref{tab:Model1_params}
 Three parameters are estimated for male growth in each model as offset from female growth.  The size for small fish and CV for small fish were assumed equal to females.
 
 **Natural Mortality**
-Natural mortality is estimated in the Northern model with an offset for males from females.  Natural Mortality is fixed in the Southern model at the values provided by the Hamel analysis described above [@Hamel2015].
+Natural mortality is estimated in the Northern model with an offset for males from females.  Natural Mortality is fixed in the Southern model at the values provided by the Hamel [-@Hamel2015] analysis described above.
 
 **Selectivity**
 Selectivity for all fleets was initially estimated as a 4-parameter double normal, which allows selectivity to be dome shaped, with parameters controlling the position of the peak selectivity, the width of the peak, and the ascending and descending slopes. 
@@ -222,7 +222,7 @@ Figure \ref{fig:total_bio.N} shows the total biomass following a similar pattern
 
 The relative spawning output (Figure \ref{fig:depl.N}) went below the 40\% target in the early 1980s, and may have been below the minimum stock size limit of 25% in the late 1990s, but has rebounded since to `r round(100*mod1$derived_quants["Bratio_2017","Value"])`% (see Table \ref{xxx}).
 
-Figures \ref{fig:recruits1.N} and \ref{fig:recdevs1.N} address recruitments estimated the the model.  The first of these shows the age-0 recruits, and the second the recruitment deviations. There are no strong patterns in recruitment and the variability of the recruitment deviations was tuned to be 0.546 (based on the method of Methot & Taylor \hl{add reference}) which is slightly lower than what has been assumed or estimated for other rockfish in the California Current.  The stock-recruit curve, Figure \ref{fig:stock_recruit_curve.N} shows a shallow relationship between stock size and recruitment with \hl{an asymptote at larger stock sizes.}
+Figures \ref{fig:recruits1.N} and \ref{fig:recdevs1.N} address recruitments estimated the the model.  The first of these shows the age-0 recruits, and the second the recruitment deviations. There are no strong patterns in recruitment and the variability of the recruitment deviations was tuned to be 0.546 (based on the method of Methot & Taylor @Methot2011) which is slightly lower than what has been assumed or estimated for other rockfish in the California Current.  The stock-recruit curve, Figure \ref{fig:stock_recruit_curve.N} shows a shallow relationship between stock size and recruitment.}
 
 
 
@@ -338,15 +338,15 @@ Lengths in the Southern model were entered as unsexed, except for the Hook-and-L
 
 Bubble plots of the lengths by year in each fishery are in Figure \ref{fig:comp_length_bubble_mod2}.  The plot for the recreational fishery clearly shows the transition from the MRFSS sampling program to RecFIN in 2003/2004, as well as suggesting the existence of larger fish in the 1980s.  The Commercial fishery data has been sparse in recent years, however the fish taken in the Commercial catch are consistently larger than those in the recreational fishery, no doubt reflecting trawling in deeper waters.  The Onboard survey lengths reflect two eras of sampling, again with larger fish in the earlier period.  The panel for the Hook-and-Line survey shows that the females landed are always larger than the males, in agreement with the model estimates of growth: Figure \ref{fig:growth}.
 
-The fits to the lengths in the Recreational fishery Figure \ref{fig:mod2_1_comp_len} show variable fits through the years, with the noisy and sparse data in 2004 heralding the transition between MRFSS sampling and RecFIN.  Overall, the timeseries is fit fairly well: Figure \ref{fig:mod2_4_comp_lenfit_data_weighting_}
+The fits to the lengths in the Recreational fishery Figure \ref{fig:mod2_1_comp_lenfit_flt1mkt2} show variable fits through the years, with the noisy and sparse data in 2004 heralding the transition between MRFSS sampling and RecFIN.  Overall, the timeseries is fit fairly well: Figure \ref{fig:mod2_4_comp_agefit_data_weighting_TA1.8_Recreational}
 
-The Commercial length comps are fit well through 2005, when data becomes sparse and noisy Figure \ref{fig:mod2_5_comp_len}; and Figure \ref{fig:mod2_8_comp_lenfit_data_weighting_T}.
+The Commercial length comps are fit well through 2005, when data becomes sparse and noisy Figure \ref{fig:mod2_5_comp_lenfit_flt2mkt2}; and Figure \ref{fig:mod2_8_comp_lenfit_data_weighting_TA1.8_Commercial Fishery}.
 
-Fits for the Onboard Survey lengths are good in the early survey, and poor for the later period \ref{fig:mod2_9_comp}; \ref{fig:mod2_12_comp}.  Attempting to apply a time-block to this data resulted in poor convergence.
+Fits for the Onboard Survey lengths are good in the early survey, and poor for the later period \ref{fig:mod2_9_comp_lenfit_flt3mkt2}; \ref{fig:mod2_12_comp_lenfit_data_weighting_TA1.8_Recreational Onboard Survey}.  Attempting to apply a time-block to this data resulted in poor convergence.
 
-The Hook-and-Line Survey lengths are noisy (Figure \ref{fig:mod2_13_comp_l}), but the fits are acceptable, and follow the trend of the data better than those for the other datasets:  Figure \ref{fig:mod2_16_comp_lenfit_data_weighting}.
+The Hook-and-Line Survey lengths are noisy (Figure \ref{fig:mod2_13_comp_lenfit_flt4mkt0}), but the fits are acceptable, and follow the trend of the data better than those for the other datasets:  Figure \ref{fig:mod2_16_comp_lenfit_data_weighting_TA1.8_Hook & Line Survey}.
 
-The small fish survey lengths are not fit badly \ref{fig:mod2_17_comp_len}; \ref{fig:mod2_20_comp_lenfit_data_weighting}, and it is perhaps a shame that there are so few years to this timeseries.
+The small fish survey lengths are not fit badly \ref{fig:mod2_17_comp_lenfit_flt5mkt2}; \ref{fig:mod2_20_comp_lenfit_data_weighting_TA1.8_Recreational Study}, and it is perhaps a shame that there are so few years to this timeseries.
 
 The aggregate fits to the length comps for all five datasets is shown in Figure \ref{fig:mod2_21_comp_lenfit__aggregated_across_time}, and Pearson residuals for the lengths in Figure \ref{fig:comp_Pearson_length_mod2}.  Filled bubbles represent under-estimation of the data, open bubbles represent overestimation.
 

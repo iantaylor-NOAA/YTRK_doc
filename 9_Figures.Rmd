@@ -294,7 +294,7 @@
 
 ###Selectivity, retention, and discards for `r mod2_label`
 
-![Estimated selectivity by length by each fishery and survey in the `r mod2_label`. \label{fig:selex.N}](r4ss/plots_mod2/sel01_multiple_fleets_length1.png)
+![Estimated selectivity by length by each fishery and survey in the `r mod2_label`. \label{fig:selex.S}](r4ss/plots_mod2/sel01_multiple_fleets_length1.png)
 
 \FloatBarrier 
 

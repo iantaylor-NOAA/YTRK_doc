@@ -5,7 +5,7 @@
 
 #Data
 
-Data used in the Northern and Southern yellowtail rockfish assessments are summarized in Figures \ref{fig:data_plot} and \ref{fig:data_plot}.
+Data used in the Northern and Southern yellowtail rockfish assessments are summarized in Figures \ref{fig:data_plot.N} and \ref{fig:data_plot.S}.
 
 Data sources for the two models are largely distinct.  Northern fisheries and surveys had very sparse data (if any) for the south and vice-versa.  Among the 12 data sources referenced below, only 2 data sources are common to both models.  These are the MRFSS/RecFIN recreational dockside survey, which focuses on California and Oregon, and the CalCOM California commercial dataset, which contributed data from the northern-most California counties (Eureka and Del Norte) to the Northern model.  The CalCOM data account for less than five percent of the commercial landings in the Northern model, and less than 1% of the biological samples. 
 
@@ -114,9 +114,9 @@ VAST was then used to conduct a geostatistical standardization of the CPUE of ye
 
 **Northwest Fisheries Science Center (NWFSC) shelf-slope survey**
 
-This survey, referred to as the **NWFSCcombo Survey**, has been conducted annually starting in 2003. It uses a random-grid design covering the coastal waters from a depth of 55 m to 1,280 m from late-May to early-October (\hl{add reference: Bradburn 2011}). Four chartered industry vessels are used each year (with the exception of 2013 when the U.S. federal government shutdown curtailed the survey). 
+This survey, referred to as the **NWFSCcombo Survey**, has been conducted annually starting in 2003. It uses a random-grid design covering the coastal waters from a depth of 55 m to 1,280 m from late-May to early-October [@Bradburn2011]. Four chartered industry vessels are used each year (with the exception of 2013 when the U.S. federal government shutdown curtailed the survey). 
 
-The data from the NWFSCcombo survey was analyzed using a spatio-temporal delta-model (\hl{add reference: Thorson2015}), implemented as an R package VAST (\hl{add reference: Thorson2017}) and publicly available online (https://github.com/James-Thorson/VAST).  Spatial and spatio-temporal variation is specifically included in both encounter probability and positive catch rates, a logit-link for encounter probability, and a log-link for positive catch rates.  Vessel-year effects were included for each unique combination of vessel and year in the database.
+The data from the NWFSCcombo survey was analyzed using a spatio-temporal delta-model [@Thorson2015], implemented as an R package VAST [@Thorson2017] and publicly available online (https://github.com/James-Thorson/VAST).  Spatial and spatio-temporal variation is specifically included in both encounter probability and positive catch rates, a logit-link for encounter probability, and a log-link for positive catch rates.  Vessel-year effects were included for each unique combination of vessel and year in the database.
 
 Both lognormal and gamma distributions were explored for the positive tows and produced similar results with the lognormal model showing better patterns in Q-Q plot. The index shows variability with an overall gradual increase from 2003 to 2013 with high estimates near the end of the time series in 2014 and 2016. A design-based index extrapolated from swept area densities without any geostatistical standardization shows a more dramatic increase from 2015 to 2016.
 
@@ -360,7 +360,7 @@ The estimated coefficients resulting from this analysis were $\alpha = 1.1843e-0
 **Maturity And Fecundity**
 Maturity was estimated from histological analysis of 
 
-141 samples collected in 2016. These include 96 from the NWFSC Combo survey, 25 from mid-water catches in the NWFSC acoustic/trawl survey, 13 from the Hook and Line survey, and 7 from Oregon Department of Fish and Wildlife. The sample sizes were not adequate to estimate differences in maturity by area. Length at 50\% maturity was estimated at 42.49cm (Figure \ref{fig:maturity.png}) which was consistent with the range 37-45cm cited in the previous assessment [@Wallace2005].
+141 samples collected in 2016. These include 96 from the NWFSC Combo survey, 25 from mid-water catches in the NWFSC acoustic/trawl survey, 13 from the Hook and Line survey, and 7 from Oregon Department of Fish and Wildlife. The sample sizes were not adequate to estimate differences in maturity by area. Length at 50\% maturity was estimated at 42.49cm (Figure \ref{fig:maturity}) which was consistent with the range 37-45cm cited in the previous assessment [@Wallace2005].
 
 
 \vspace{.5cm}
