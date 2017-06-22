@@ -3,10 +3,11 @@
 .Rproj.user
 === 
 .Rhistory
-=== 
-#/Assessment_template.pdf
-#/Assessment_template.html
-#Assessment_template.tex
+===
+.RData
+===
+YTRK_doc.pdf
+YTRK_doc.tex
 #Test_figures_tables.tex
 *.docx
 
