@@ -123,8 +123,10 @@ for(imod in 1:n_models) {
   # add include = TRUE/FALSE to filter which plots go in document
   plotInfoTable$include <- TRUE
   exclude_strings <- c("lenfit_sampsize", "agefit_sampsize",
-                       "resids",
+                       "lenfit_resids",
+                       "agefit_resids",
                        "multi-fleet_comparison",
+                       "mod1_9_comp_lenfit_data_weighting_TA1.8_Commercial Fishery",
                        "comp_gstlenfit_flt1mkt2",
                        "comp_gstagefit_residsflt6mkt2",
                        "comp_gstlenfit_flt1mkt2",

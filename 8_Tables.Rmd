@@ -191,7 +191,7 @@
                                               parameters are near bounds, and prior type
                                               information (mean, SD).'
                                               , sep='')), 
-                              label='tab:model_params',
+                              label='tab:Model1_params',
                               digits = c(0,0,0,3,0,3,0,3,0))  
 
     # Add alignment  
@@ -601,7 +601,7 @@
                                               parameters are near bounds, and prior type
                                               information (mean, SD).'
                                               , sep='')), 
-                              label='tab:model_params',
+                              label='tab:Model2_params',
                               digits = c(0,0,0,3,0,3,0,3,0))  
 
     # Add alignment  
