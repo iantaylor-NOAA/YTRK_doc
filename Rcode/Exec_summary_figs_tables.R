@@ -186,9 +186,15 @@ for (model in 1:n_models) {
     
   assign(paste('Spawn_',mod_area,'_CI',sep=''), 
          paste(SpawnB[nrow(SpawnB), 7], '-', SpawnB[nrow(SpawnB), 8], sep=''))
-
+ 
+  
 } # end model for loop for spawning biomass and depletion
 
+# minimu relative spawning output:
+MinDepl_mod1 <- round(100*min(mod1$timeseries$SpawnBio)/mod1$timeseries$SpawnBio[1],1)
+MinDeplYr_mod1 <- mod1$timeseries$Yr[mod1$timeseries$SpawnBio==min(mod1$timeseries$SpawnBio)]
+MinDepl_mod2 <- round(100*min(mod2$timeseries$SpawnBio)/mod2$timeseries$SpawnBio[1],1)
+MinDeplYr_mod2 <- mod2$timeseries$Yr[mod2$timeseries$SpawnBio==min(mod2$timeseries$SpawnBio)]
 
 # =============================================================================
 # =============================================================================
@@ -532,7 +538,7 @@ for (model in 1:n_models) {
       paste('Unfished age ', min_age, ' biomass (1000 mt)', sep = ''),
       'Unfished recruitment (R0, millions)',
       paste('Spawning output', '(', LastYR, ' ', fecund_unit, ')', sep = ''),
-      paste('Relative Spawning Biomass (depletion)', LastYR,')',sep=''),
+      paste('Relative Spawning Output (depletion)', LastYR,')',sep=''),
       '\\textbf{$\\text{Reference points based on } \\mathbf{SB_{40\\%}}$}',
       'Proxy spawning output ($B_{40\\%}$)',
       'SPR resulting in $B_{40\\%}$ ($SPR_{B40\\%}$)',
