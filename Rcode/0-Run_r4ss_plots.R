@@ -247,6 +247,22 @@ SSplotComparisons(base.summary,
                   filenameprefix = "base_", 
                   col = mod.cols)
 
+# repeat comparison for recruitment with adjusted y-limit
+# to crop the really big uncertainty intervals
+SSplotComparisons(base.summary,
+                  subplot = 8, ylimAdj=0.5, # recruitment only, adjusted ylim
+                  plot = FALSE, 
+                  print = TRUE, 
+                  plotdir = dir.compare.plots,
+                  spacepoints = 20,  # years between points on each line
+                  initpoint = 0,     # "first" year of points (modular arithmetic)
+                  staggerpoints = 0, # points aligned across models
+                  endyrvec = 2017,   # final year to show in time series
+                  legendlabels = mod.names, 
+                  filenameprefix = "base_", 
+                  col = mod.cols)
+
+
 SSplotComparisons(base.summary, 
                   plot = FALSE, 
                   print = TRUE, 
