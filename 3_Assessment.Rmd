@@ -371,6 +371,21 @@ The annual plots of age-at-length fits (Figure \ref{fig:mod2_5_comp_condAALfit_A
 
 ### Southern Model Uncertainty and Sensitivity Analyses
 
+The Southern model was investigated in these N ways:
+\begin{description}
+\item[EarlyCatch] Because the fishery began in the 1880s, we used a linear ramp from 0 catch in 1898 (the first year in the Northern model) to the first catch in 1928 for the commercial fleet.
+\item[NoSmall] The small fish study was included to provide information about growth of young fish.  We took out the biological data associated with this study.
+\item The NWFSCcombo data for south of Cape Mendocino is sparse.  We added it to the model to investigate its utility.
+\item[AddIndex] The index for the NWFSCcombo survey south of Cape Mendocino was also added to the Southern model.
+\item[M Prior] Turn on the prior for M and see if the model can estimate it.  M has been a fixed parameter since very early runs of the model, but changes since then may have made M estimable.
+\item[Age64] The literature value for maximum age is 64.  We fixed mortality at 0.0844, the value associated with that age, to investigate its effect on the model.
+\item[NorthMs] We also investigate the effect of using the natural mortalities for males and females estimated by the Northern model.
+\item[SplitIndices] We split the recreational indices (MRFSS and Onboard) into two separate timeseries, since the model had trouble fitting these indices.
+\item[NoIndex X]We turned off each index in turn (MRFSS, Onboard, Juvenile Study and the Hook-and-Line Survey).
+\end{description}
+
+Results of these investigations can be seen in Figure \ref{xxx}, and Table \ref{yyy}.
+
 ### Southern Model Retrospective Analysis
 
 ### Southern Model Likelihood Profiles
