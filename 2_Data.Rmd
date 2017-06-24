@@ -88,7 +88,7 @@ Pikitch study discards were aggregated due to small sample size and included in 
 ###Abundance Indices
 
 **Commercial Logbook CPUE**   
-The commercial logbook (fish-ticket) data in PacFIN was used to generate an index for the years 1987-1998, a period in which management of the fishery was stable, i.e., regulations weren"t changing fishery practices.  
+The commercial logbook (fish-ticket) data in PacFIN was used to generate an index for the years 1987-1998, a period in which management of the fishery was stable, i.e., regulations weren't changing fishery practices.  
 
 The data were modeled with a modified Stephens-MacCall approach [@Stephens2004].  This approach uses the species composition of the catch to evaluate the per-haul probability of encountering a particular species; in this case, yellowtail rockfish.  The intent of the analysis is to eliminate all hauls from the index that could not encounter yellowtail.  
 
@@ -100,11 +100,11 @@ The hauls identified with a reasonable probability of encountering yellowtail we
 
 The Hake bycatch data provided by the Alaska Fisheries Science Center (AFSC) was used to generate an index of abundance for 1985-1999.
 
-Data on haul-by-haul catch of Yellowtail Rockfish and Pacific Hake for the period 1976-2016 were obtained from the At-Sea Hake Observer Program along associated information including the location of each tow and the duration. Previous Yellowtail assessments used an index of abundance for the years 1978-1999. The most recent assessment (Wallace and Lai, 2005) stated that the index was not updated to include years beyond 1999 “because subsequent changes in fishery regulations and behavior have altered the statistical properties of these abundance indices”.  The ending year of 1999 was retained for this analysis. However, the years up to 1984 have relatively few tows with adequate information for CPUE analysis, and fishing effort off the coast of Washington where yellowtail are most commonly encountered (Figure \ref{fig:ASHOP_X1}). Therefore, for this new analysis, 1985 was chosen as the starting year.
+Data on haul-by-haul catch of yellowtail rockfish and Pacific Hake for the period 1976-2016 were obtained from the At-Sea Hake Observer Program along associated information including the location of each tow and the duration. Previous yellowtail assessments used an index of abundance for the years 1978-1999. The most recent assessment (Wallace and Lai, 2005) stated that the index was not updated to include years beyond 1999 “because subsequent changes in fishery regulations and behavior have altered the statistical properties of these abundance indices”.  The ending year of 1999 was retained for this analysis. However, the years up to 1984 have relatively few tows with adequate information for CPUE analysis, and fishing effort off the coast of Washington where yellowtail are most commonly encountered (Figure \ref{fig:ASHOP_X1}). Therefore, for this new analysis, 1985 was chosen as the starting year.
 
 The hake fishery was evolving during the chosen 15 year period (1985-1999), which included a transition from foreign to domestic fleets fishing for Pacific Hake (Figure \ref{fig:ASHOP_X2}). The index from the at-sea hake fishery used in previous assessments standardized for changes in catchability by using a ratio estimator relating yellowtail catch to hake catch and then scaling by an estimate of fishing effort for hake (Equation 1 in Wallace and Lai, 2005). However, that approach does not take into account differences in the spatial distribution of the at-sea hake fishery relative to the distributions of hake and yellowtail.
  
-For this new analysis, changes in catchability were estimated by comparing an index based on a geostatistical analysis of the hake CPUE from VAST (Thorson et al. YYYY) to the estimated available hake biomass from the most recent stock assessment (Berger et al. 2017). The relative catchability was then used to adjust an independent geostatistical index of yellowtail CPUE (Figure \ref{fig:ASHOP_X3}). In order to capture the general trend in catchability, reducing the variability among years, linear, exponential, and locally smoothed (LOWESS) models were fit to the time series of individual estimates of hake index to available biomass (lower panel in Figure \ref{fig:ASHOP_X3}). Of these, the LOWESS model best captured the pattern of fastest change in the middle of the time series. The average rate of increase in the resulting estimated catchability time series is 13% per year.
+For this new analysis, changes in catchability were estimated by comparing an index based on a geostatistical analysis of the hake CPUE from VAST [@Thorson2017] to the estimated available hake biomass from the most recent stock assessment (Berger et al. 2017). The relative catchability was then used to adjust an independent geostatistical index of yellowtail CPUE (Figure \ref{fig:ASHOP_X3}). In order to capture the general trend in catchability, reducing the variability among years, linear, exponential, and locally smoothed (LOWESS) models were fit to the time series of individual estimates of hake index to available biomass (lower panel in Figure \ref{fig:ASHOP_X3}). Of these, the LOWESS model best captured the pattern of fastest change in the middle of the time series. The average rate of increase in the resulting estimated catchability time series is 13% per year.
  
 VAST was then used to conduct a geostatistical standardization of the CPUE of yellowtail caught as bycatch in the at-sea hake fishery. The resulting yellowtail index after adjustment by the estimated changes in catchability is qualitatively more similar to the index used in previous assessments (Figure \ref{fig:ASHOP_X4}) than the index resulting from assuming constant catchability.
 
@@ -114,20 +114,23 @@ VAST was then used to conduct a geostatistical standardization of the CPUE of ye
 
 **Northwest Fisheries Science Center (NWFSC) shelf-slope survey**
 
+\hl{Stacey: "suggest referencing this survey as NWFSC West Coast Groundfish Bottom Trawl Survey (WCGBTS) rather than informal 'combo survey'." Ian: I'm OK with that change but to do it thoroughly, it would require re-running the model with a new fleet name since some tables and figures include automatically generated names.}
+
 This survey, referred to as the **NWFSCcombo Survey**, has been conducted annually starting in 2003. It uses a random-grid design covering the coastal waters from a depth of 55 m to 1,280 m from late-May to early-October [@Bradburn2011]. Four chartered industry vessels are used each year (with the exception of 2013 when the U.S. federal government shutdown curtailed the survey). 
 
 The data from the NWFSCcombo survey was analyzed using a spatio-temporal delta-model [@Thorson2015], implemented as an R package VAST [@Thorson2017] and publicly available online (https://github.com/James-Thorson/VAST).  Spatial and spatio-temporal variation is specifically included in both encounter probability and positive catch rates, a logit-link for encounter probability, and a log-link for positive catch rates.  Vessel-year effects were included for each unique combination of vessel and year in the database.
 
-Both lognormal and gamma distributions were explored for the positive tows and produced similar results with the lognormal model showing better patterns in Q-Q plot. The index shows variability with an overall gradual increase from 2003 to 2013 with high estimates near the end of the time series in 2014 and 2016. A design-based index extrapolated from swept area densities without any geostatistical standardization shows a more dramatic increase from 2015 to 2016.
+The patterns of estimated density for each year showed consistently higher biomass in the Northern part of the Northern area (Figure \ref{fig:VAST_Dens_NWFSCcombo}). Both lognormal and gamma distributions were explored for the positive tows and produced similar results with the lognormal model showing better patterns in Q-Q plot (Figures \ref{fig:VAST_QQ_NWFSCcombo} and \ref{fig:VAST_QQ_NWFSCcombo_gamma}). The index shows variability with an overall gradual increase from 2003 to 2013 with high estimates near the end of the time series in 2014 and 2016 (Figure \ref{fig:VAST_compare_NWFSCcombo}). A design-based index extrapolated from swept area densities without any geostatistical standardization shows a more dramatic increase from 2015 to 2016 (Figure \ref{fig:VAST_compare_NWFSCcombo})
 
 Length and age compositions were also developed from this survey.
 
 **Alaska Fisheries Science Center (AFSC) Triennial shelf survey**    
 
-The **Triennial Survey** was conducted by the AFSC every third year between 1977 and 2001, (and was conducted in 2004 by the NWFSC using the same protocols). The 1977 survey had incomplete coverage and is not believe to be comparable to the later years. The survey design used equally-spaced transects from which searches for tows in a specific depth range were initiated. The depth range and latitudinal range was not consistent across years, but all years in the period 1980-2004 included the area from 40$^\circ$ 10'N north to the Canadian border and a depth range that included 55-366 meters, which spans the range where the vast majority of Yellowtail encountered in all trawl surveys. Therefore the index was based on this depth range.
+The **Triennial Survey** was conducted by the AFSC every third year between 1977 and 2001, (and was conducted in 2004 by the NWFSC using the same protocols). The 1977 survey had incomplete coverage and is not believe to be comparable to the later years. The survey design used equally-spaced transects from which searches for tows in a specific depth range were initiated. The depth range and latitudinal range was not consistent across years, but all years in the period 1980-2004 included the area from 40$^\circ$ 10'N north to the Canadian border and a depth range that included 55-366 meters, which spans the range where the vast majority of yellowtail encountered in all trawl surveys. Therefore the index was based on this depth range.
 
 An index of abundance was estimated based on the VAST delta-GLMM model as described for the NWFSCcombo Index above. In this case as well, Q-Q plots indicated slightly better performance of the lognormal over gamma models for positive tows. The index shows a gradual decline from 1980 to 1992 followed by high variability in the final 4 points spanning 1995-2004.
 
+\hl{consider adding Q-Q plot and/or comparison for triennial}
 
 <!--************BIOLOGICAL DATA*********************************************-->
 ###Biological Samples
@@ -358,20 +361,21 @@ The estimated coefficients resulting from this analysis were $\alpha = 1.1843e-0
 
 \vspace{.5cm}
 **Maturity And Fecundity**
-Maturity was estimated from histological analysis of 
 
-141 samples collected in 2016. These include 96 from the NWFSC Combo survey, 25 from mid-water catches in the NWFSC acoustic/trawl survey, 13 from the Hook and Line survey, and 7 from Oregon Department of Fish and Wildlife. The sample sizes were not adequate to estimate differences in maturity by area. Length at 50\% maturity was estimated at 42.49cm (Figure \ref{fig:maturity}) which was consistent with the range 37-45cm cited in the previous assessment [@Wallace2005].
+Maturity was estimated from histological analysis of 141 samples collected in 2016. These include 96 from the NWFSC Combo survey, 25 from mid-water catches in the NWFSC acoustic/trawl survey, 13 from the Hook and Line survey, and 7 from Oregon Department of Fish and Wildlife. The sample sizes were not adequate to estimate differences in maturity by area. Length at 50\% maturity was estimated at 42.49cm (Figure \ref{fig:maturity}) which was consistent with the range 37-45cm cited in the previous assessment [@Wallace2005].
 
 
 \vspace{.5cm}
 **Natural Mortality**
+
 Natural Mortality priors were provided by Owen Hamel (pers. comm.).  See Section \ref{priors} for further discussion.
 
+\hl{consider moving some text from Priors section into to this section and then refer back to it in the Priors section}
 
 \vspace{.5cm}
 **Sex ratios**
 
-The largest fish seen in the data are females, however the oldest are males.  The sex ratio falls off differently in each model, as can be seen in Figs(x,y).
+The largest fish seen in the data are females, however the oldest are males.  The sex ratio falls off differently in each model, as can be seen in \hl{add figures}.
 
 ###Environmental Or Ecosystem Data Included In The Assessment
 

@@ -3,7 +3,7 @@
 <!-- ====================================================================== -->
 \color{black}
 
-#References{-}
+#References
 \renewcommand{\thepage}{}
 
 

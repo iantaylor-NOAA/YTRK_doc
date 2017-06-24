@@ -87,6 +87,14 @@
 
 ![Index from the geostatistical model VAST with constant catchability and adjusted for the estimated increase in catchability (previous figure). These are compared to the index from the most recent yellowtail assessment (Wallace and Lai, 2005).\label{fig:ASHOP_X4}](Figures/ASHOP_index_illustration.png)
 
+![Estimated density from the VAST model for the NWFSC shelf-slope trawl survey.\label{fig:VAST_Dens_NWFSCcombo}](Figures/VAST_NWFSCcombo/VAST_output_N_lognormal/Dens.png)
+
+![Quantile-Quantile plot for the VAST model with a log-normal error distribution applied to the NWFSC shelf-slope trawl survey in the Northern area.\label{fig:VAST_QQ_NWFSCcombo}](Figures/VAST_NWFSCcombo/VAST_output_N_lognormal/Q-Q_plot.jpg)
+
+![Quantile-Quantile plot for the VAST model with a gamma error distribution applied to the NWFSC shelf-slope trawl survey.\label{fig:VAST_QQ_NWFSCcombo_gamma}](Figures/VAST_NWFSCcombo/VAST_output_N_gamma/Q-Q_plot.jpg)
+
+![Comparison of estimated indices from the VAST model for the NWFSC shelf-slope trawl survey with log-normal and gamma error distributions and the the design-based estimate that doesn't depend on the geostatistical analysis included in VAST.\label{fig:VAST_compare_NWFSCcombo}](Figures/VAST_NWFSCcombo/NWFSC_index_compare.png)
+
 \FloatBarrier
 
 \newpage
@@ -239,7 +247,7 @@
 
 ### Sensitivity analyses for `r mod1_label`
 
-\hl{to be added...}
+![Time series of spawning output estimated in sensitivity analyses for the `r mod1_label`. \label{fig:sens.N.spawnbio}](Figures/North_sensitivities/compare1_spawnbio.png)
 
 ### Likelihood profiles for `r mod1_label`
 

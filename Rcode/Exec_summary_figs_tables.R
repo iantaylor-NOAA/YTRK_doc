@@ -521,15 +521,20 @@ for (model in 1:n_models) {
   Ref_pts$StdDev  = as.numeric(Ref_pts$StdDev)
   Ref_pts$Value1  = ifelse(Ref_pts$Value >= 1, as.character(round(Ref_pts$Value, 1)), 
       as.character(round(Ref_pts$Value, 4)))   
-  
+
+  # compute confidence interval
   Ref_pts$lowerCI  = round(Ref_pts$Value + qnorm(0.025) * Ref_pts$StdDev, digits = 4)
   
   Ref_pts$upperCI  = round(Ref_pts$Value - qnorm(0.025) * Ref_pts$StdDev, digits = 4)
-  
-  Ref_pts$lowerCI1 = ifelse(Ref_pts$lowerCI >= 1, as.character(round(Ref_pts$lowerCI, 1)), 
+
+  # add floor at 0
+  Ref_pts$lowerCI <- pmax(0, Ref_pts$lowerCI)
+
+  # format with fewer digits based on Value (not CI as in template)
+  Ref_pts$lowerCI1 = ifelse(Ref_pts$Value >=1, as.character(round(Ref_pts$lowerCI, 1)), 
       as.character(round(Ref_pts$lowerCI, 4))) 
   
-  Ref_pts$upperCI1 = ifelse(Ref_pts$upperCI>=1, as.character(round(Ref_pts$upperCI,1)), 
+  Ref_pts$upperCI1 = ifelse(Ref_pts$Value >=1, as.character(round(Ref_pts$upperCI,1)), 
       as.character(round(Ref_pts$upperCI, 4))) 
   
   Ref_pts$CI1      = paste('(', Ref_pts$lowerCI1, '-', Ref_pts$upperCI1, ')', sep='')

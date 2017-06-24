@@ -47,7 +47,7 @@ The data associated with the commercial fleet includes age- and length-compositi
 
 The PacFIN logbook (fish ticket) index developed for the commercial fishery is in fish/tow.  Further information about how the data for the index was worked up is in Appendix \ref{xxx}.
 
-\emph{At-Sea Hake Fishery}: Yellowtail Rockfish are frequently caught in mid-water trawls associated with the At-Sea Hake Fishery (consisting of the Catcher-Processor and Mothership sectors). These catches are recorded and biological sampling takes place but the fish are processed at sea (typically into fish meal) and are not included in the PacFIN database, so this fishery requires separate analysis.  The At-Sea Hake fishery provides catches, length compositions by sex, and an index of abundance.
+\emph{At-Sea Hake Fishery}: yellowtail rockfish are frequently caught in mid-water trawls associated with the At-Sea Hake Fishery (consisting of the Catcher-Processor and Mothership sectors). These catches are recorded and biological sampling takes place but the fish are processed at sea (typically into fish meal) and are not included in the PacFIN database, so this fishery requires separate analysis.  The At-Sea Hake fishery provides catches, length compositions by sex, and an index of abundance.
 
 \emph{Recreational}: The recreational fleet includes data from sport fisheries off Oregon, and northern California (Eureka and Del Norte counties), from MRFSS and RecFIN.  The index of abundance for the recreational fleet is in fish per angler-hour.  Length data for this fleet are undifferentiated by sex.
 
@@ -274,8 +274,19 @@ The residuals for the conditional age-at-length from the NWFSCcombo survey show 
 ## Northern Model Parameters
 For the Base model, the parameter estimates are given in Table \ref{tab:Model1_params}.  Status for all of the estimated parameters is good, with the exception of the 6th parameter for the selectivity in the Washington Sport fishery.   
 
-### \hl{Northern Model Uncertainty and Sensitivity Analyses}
-Table \ref{tab:Sensitivity_model1}
+### Northern Model Uncertainty and Sensitivity Analyses
+\begin{description}
+\item[M prior] In the Northern model, natural mortality was estimated at values very close to the median of the chosen prior distributions in spite of the prior inadvertently having been turned off. This sensitivity explores the impact of including the prior. 
+\item[M prior Age64] The literature value for maximum age is 64.  We centered the prior for female mortality at 0.0844, the value associated with that age, and estimated M for both females and males (with no prior on the offset for males).
+\item[M fixed Age64] We fixed mortality at 0.0844, the value associated with maximum age of 64, for both females and males.
+\item[No commercial index] We turned off the index based on commercial fishery logbook CPUE.
+\item[No hake bycatch index] We turned off the index based on bycatch in the at-sea hake fishery.
+\item[No commercial or hake indices] We turned off the both the commercial CPUE and hake bycatch indices.
+\end{description}
+
+Results of these investigations can be seen in \ref{fig:sens.N.spawnbio} and Table \ref{tab:Sensitivity_model1}.
+
+\hl{Text discussing sensitivity results to be added.}
 
 
 ### Northern Model Retrospective Analysis
