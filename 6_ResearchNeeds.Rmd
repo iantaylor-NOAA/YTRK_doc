@@ -1,6 +1,6 @@
 <!-- ****************************RESEARCH NEEDS**************************** -->
 #Research Needs
-We recommend the following research will be valuable for future `r spp` assessments:
+We recommend that the following research will be valuable for future `r spp` assessments:
 
 \begin{enumerate}
 

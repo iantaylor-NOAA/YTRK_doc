@@ -20,7 +20,13 @@ Rockfish Conservation Areas (RCAs) have been closed to fishing since 2002.  Foll
 
 Literature values for von Bertallanfy parameters are $L_\infty = 52.2, k = 0.17, t_0 = -0.75$ for females, $L_\infty = 47.6, k=0.19, t_0 = -1.69$ for males.  Length-Weight parameters are $W = 0.0287L^{2.822}$ for females, $W = 0.0359L^{2.745}$ for males [@Love2011].  See Section \ref{bio-params} for a discussion of the new analysis of the weight-length relationship.  Fecundity is represented in the models as:  $1.1185^{-11}W^{4.59}$.  This is a rescaling of the values provided in [@Dick2017].
 
-\hl{Stacey suggests adding Ecosystem Considerations here}
+
+##Ecosystem Considerations{-}
+Rockfish in general are sensitive to the strength and timing of the upwelling cycle in the Eastern Pacific, which affects where pelagic juveniles settle, and impacts the availability of the zooplankton which the young require.
+
+Yellowtail rockfish feed mainly on pelagic animals, but are opportunistic, occasionally eating benthic animals as well. Large juveniles and adults eat fish (small Pacific whiting, Pacific herring, smelt, anchovies, lanternfishes, and others), along with squid, krill, and other planktonic organisms.  They are prey for Chinook salmon, lingcod, cormorants, pigeon guillemots and rhinoceros auklets. [@Love2011]
+
+
 
 ##Fishery and Management History
 \hl{Stacey suggests adding text about the history of the recreational fishery here}

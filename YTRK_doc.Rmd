@@ -9,9 +9,10 @@ output:
     includes:
       before_body: Titlepage.tex
       in_header: header.tex
+      after_body: 11_Appendices.Rmd
     keep_tex: yes
-    template: Default_template_modified.tex
     number_sections: yes
+    template: Default_template_modified.tex
     toc: yes
     toc_depth: 4
   html_document:
