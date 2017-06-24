@@ -298,23 +298,21 @@
 ```{r, results = 'asis'}
     
     # Read in/organize sensitivity file, change column names, caption
-    Sens_model1 = read.csv('./txt_files/Sensitivities_model1.csv')
-    colnames(Sens_model1) = c('Label', 
-                              'Base (Francis weights)', 
-                              'Harmonic mean weights',
-                              'Drop index', 
-                              'Drop ages', 
-                              'Down-weight lengths',
-                              'Free size Age0', 
-                              'Free CV Amin', 
-                              'External growth')
+    Sens_model1 = read.csv('./txt_files/comparison_table_sens.N.csv')
+    namelist <- c("Quantity",
+                "Base Model",
+                "McAllister-Ianelli weights",
+                "M prior",
+                "M prior Age64",
+                "M fixed Age64",
+                "No commercial index",
+                "No hake bycatch index",
+                "No commercial or hake indices")
+    colnames(Sens_model1) = namelist
 
     # Create sensitivities table
     Sens_model1.table = xtable(Sens_model1, 
-                               caption = c('Sensitivity of the base model 
-                                          to dropping or down-weighting data 
-                                          sources and alternative assumptions 
-                                          about growth.'),
+                               caption = c('Results of sensitivity analyses for the base model.'),
                                label = 'tab:Sensitivity_model1', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,

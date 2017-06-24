@@ -247,7 +247,7 @@
 
 ### Sensitivity analyses for `r mod1_label`
 
-\hl{to be added...}
+![Time series of spawning output estimated in sensitivity analyses for the `r mod1_label`. \label{fig:sens.N.spawnbio}](Figures/North_sensitivities/compare1_spawnbio.png)
 
 ### Likelihood profiles for `r mod1_label`
 
