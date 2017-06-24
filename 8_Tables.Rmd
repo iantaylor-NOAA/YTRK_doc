@@ -76,6 +76,97 @@
           sanitize.text.function = function(x){x})
 ```
 \newpage
+
+<!--  Northern Lengths -->
+
+```{r, results = 'asis'}
+    Northern_length = read.csv('./txt_files/Northern.Lengths.csv')
+      colnames(Northern_length) = c('Year',
+                                   'C.Trawl',
+                                   'Tows',
+                                   'Bycatch',
+                                   'Tows',
+                                   'Tri',
+                                   'Tows',
+                                   'NWFSC',
+                                   'Tows',
+                                   'WA.Rec',
+                                   'OR-CA.Rec')
+
+   # Index of abundance summary, create table   
+     Northern_length.table = xtable(Northern_length, 
+                                  caption ='Length timeseries for the Northern model.',
+                                  label = 'tab:Northern_length',
+                                  digits=3)
+
+    addtorow          <- list()
+    addtorow$pos      <- list()
+    addtorow$pos[[1]] <- c(0)
+    addtorow$command  <- c(paste("\\hline \n",
+                                 "\\endhead \n",
+                                 "\\hline \n",
+                                 "\\multicolumn{3}{l}",
+                                 "{\\footnotesize Continued on next page} \n",
+                                 "\\endfoot \n",
+                                 "\\endlastfoot \n",sep=""))
+
+
+
+    # Print
+    print(Northern_length.table, 
+          include.rownames = FALSE,
+          caption.placement = 'top',
+          tabular.environment = 'longtable',
+          floating = FALSE,
+          add.to.row = addtorow)
+```
+
+\newpage
+
+
+<!--  Northern ages -->
+
+```{r, results = 'asis'}
+    Northern_age = read.csv('./txt_files/Northern.Ages.csv')
+      colnames(Northern_age) = c('Year',
+                                   'Trawl',
+                                   'Tows',
+                                   'Triennial',
+                                   'Tows',
+                                   'NWFSCcombo',
+                                   'Tows',
+                                   'Rec WA')
+
+   # Index of abundance summary, create table   
+     Northern_age.table = xtable(Northern_age, 
+                                  caption ='Age timeseries for the Northern model.',
+                                  label = 'tab:Northern_age',
+                                  digits=3)
+
+    addtorow          <- list()
+    addtorow$pos      <- list()
+    addtorow$pos[[1]] <- c(0)
+    addtorow$command  <- c(paste("\\hline \n",
+                                 "\\endhead \n",
+                                 "\\hline \n",
+                                 "\\multicolumn{3}{l}",
+                                 "{\\footnotesize Continued on next page} \n",
+                                 "\\endfoot \n",
+                                 "\\endlastfoot \n",sep=""))
+
+
+
+    # Print
+    print(Northern_age.table, 
+          include.rownames = FALSE,
+          caption.placement = 'top',
+          tabular.environment = 'longtable',
+          floating = FALSE,
+          add.to.row = addtorow)
+```
+
+\newpage
+
 <!-- ***********Indices of abundance summary table************************* -->
 ```{r, results = 'asis'}
     Index_summary = read.csv('./txt_files/Index_summary.csv')
@@ -596,6 +687,100 @@
 \newpage
 
 
+<!-- ********************************************************************** --> 
+<!-- *********************Southern Ages          *********************** --> 
+<!-- ********************************************************************** --> 
+
+
+
+```{r, results = 'asis'}
+    Southern_length = read.csv('./txt_files/Southern.Lengths.csv')
+      colnames(Southern_length) = c('Year',
+                                   'Commercial Trawl',
+                                   'Tows',
+                                   'Hook-and-Line',
+                                   'Sites',
+                                   'Small Fish',
+                                   'MRFSS/RecFIN',
+                                   'Onboard')
+
+
+   # Index of abundance summary, create table   
+     Southern_length.table = xtable(Southern_length, 
+                                  caption ='length timeseries for the Southern model.',
+                                  label = 'tab:Southern_length',
+                                  digits=3)
+
+    addtorow          <- list()
+    addtorow$pos      <- list()
+    addtorow$pos[[1]] <- c(0)
+    addtorow$command  <- c(paste("\\hline \n",
+                                 "\\endhead \n",
+                                 "\\hline \n",
+                                 "\\multicolumn{3}{l}",
+                                 "{\\footnotesize Continued on next page} \n",
+                                 "\\endfoot \n",
+                                 "\\endlastfoot \n",sep=""))
+
+
+
+    # Print
+    print(Southern_length.table, 
+          include.rownames = FALSE,
+          caption.placement = 'top',
+          tabular.environment = 'longtable',
+          floating = FALSE,
+          add.to.row = addtorow)
+```
+
+\newpage
+
+
+<!-- ********************************************************************** --> 
+<!-- *********************Southern Ages          *********************** --> 
+<!-- ********************************************************************** --> 
+
+
+
+```{r, results = 'asis'}
+    Southern_Age = read.csv('./txt_files/Southern.Ages.csv')
+      colnames(Southern_Age) = c('Year',
+                                   'Commercial Trawl',
+                                   'Tows',
+                                   'Hook-and-Line',
+                                   'Sites',
+                                   'Small Fish')
+
+   # Index of abundance summary, create table   
+     Southern_Age.table = xtable(Southern_Age, 
+                                  caption ='Age timeseries for the Southern model.',
+                                  label = 'tab:Southern_Age',
+                                  digits=3)
+
+    addtorow          <- list()
+    addtorow$pos      <- list()
+    addtorow$pos[[1]] <- c(0)
+    addtorow$command  <- c(paste("\\hline \n",
+                                 "\\endhead \n",
+                                 "\\hline \n",
+                                 "\\multicolumn{3}{l}",
+                                 "{\\footnotesize Continued on next page} \n",
+                                 "\\endfoot \n",
+                                 "\\endlastfoot \n",sep=""))
+
+
+
+    # Print
+    print(Southern_Age.table, 
+          include.rownames = FALSE,
+          caption.placement = 'top',
+          tabular.environment = 'longtable',
+          floating = FALSE,
+          add.to.row = addtorow)
+```
+
+\newpage
+
 <!-- ***********Indices of abundance summary table************************* -->
 ```{r, results = 'asis'}
     Index_summary = read.csv('./txt_files/Index_summary_S.csv')
@@ -767,15 +952,6 @@
     
     # Read in/organize sensitivity file, change column names, caption
     Sens_model2 = read.csv('./txt_files/Sensitivities_model2.csv')
-    colnames(Sens_model2) = c('Label', 
-                              'Base (Francis weights)', 
-                              'Harmonic mean weights',
-                              'Drop index', 
-                              'Drop ages', 
-                              'Down-weight lengths',
-                              'Free size Age0', 
-                              'Free CV Amin', 
-                              'External growth')
 
     # Create sensitivities table
     Sens_model2.table = xtable(Sens_model2, 
