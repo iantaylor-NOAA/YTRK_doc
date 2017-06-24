@@ -198,24 +198,11 @@ Yellowtail rockfish feed mainly on pelagic animals, but are opportunistic, occas
 
 
 ##Reference Points{-}
-\hl{This section yet to be completed}
+Yellowtail rockfish are managed relative to biomass reference points at $B_{40\%}$ (the $B_{MSY}$ proxy) and $B_{25\%}$ (the minimum stock-size threshold). Harvest rates are managed relative to an $F_{MSY}$ proxy $SPR = 50\%$ which corresponds to a Relative Fishing Intensity, $(1 - {SPR})/(1 - {SPR}_{50\%})$, of 100\%. This assessment estimates both the Northern and Southern stocks to be above the $B_{40\%}$ threshold with Relative Fishing Intensity below 100\% (${SPR} > 50\%$ which means the Spawning Potential is greater than 50\% of the unfished Spawning Potential).
 
-\hl{Include:} management targets and definition of overfishing, including the harvest 
-rate that brings the stock to equilibrium at $B_{40\%}$ (the $B_{MSY}$ proxy) and 
-the equilibrium stock size that results from fishing at the default harvest rate 
-(the $F_{MSY}$ proxy). Include a summary table that compares estimated reference 
-points for SSB, SPR, Exploitation Rate and Yield based on SSBproxy for MSY, 
-SPRproxy for MSY, and estimated MSY values
-
-\hl{Write intro paragraph....and remove text for Models 2 and 3 if not needed}
-
-This stock assessment estimates that `r spp` in the `r mod1_label` are 
-`r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MT>0,"above","below")` the biomass 
-target, and also `r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MSST>0,"above","below")` 
-the minimum stock size threshold.  \hl{Add sentence about spawning output trend.} 
-The estimated relative depletion level for \hl{Model 1} in `r LastYR` is 
+The estimated relative depletion level for the Northern model in 2017 is 
 `r Depl_mod1` (~95% asymptotic interval: $\pm$ `r Depl_mod1_CI`, corresponding 
-to an unfished spawning output of `r paste(Spawn_mod1, fecund_unit,sep=' ')` 
+to an unfished spawning output of `r paste(round(Spawn_mod1,1), fecund_unit,sep=' ')` 
 (~95% asymptotic interval: `r paste(Spawn_mod1_CI, fecund_unit, sep=' ')`) of 
 spawning output in the base model (Table \ref{tab:Ref_pts_mod1}).  Unfished 
 age `r min_age` biomass was estimated to be `r Ref_pts_mod1[2,2]` mt in the 
@@ -224,21 +211,19 @@ base case model. The target spawning output based on the biomass target
 a catch of `r Ref_pts_mod1[10,2]` mt. Equilibrium yield at the proxy $F_{MSY}$ 
 harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt.
 
-This stock assessment estimates that `r spp` in the `r if(n_models>=2){mod2_label}` are 
-`r if(n_models>=2){ifelse(Deplete_mod2[nrow(Deplete_mod2),2]-MT>0,"above","below")}` 
-the biomass target, as well as `r if(n_models>=2){ifelse(Deplete_mod2[nrow(Deplete_mod2),2]-MSST>0,"above","below")}` 
-the minimum stock size threshold. \hl{Add sentence about spawning output trend.} The 
-estimated relative depletion level for \hl{Model 2} in `r LastYR` is 
-`r if(n_models>=2){Depl_mod2}` (~95% asymptotic interval: $\pm$ 
-`r if(n_models>=2){Depl_mod2_CI}`), corresponding to an unfished spawning output of 
-`r if(n_models>=2){paste(Spawn_mod2, fecund_unit, sep=' ')}` (~95% asymptotic interval: 
+The estimated relative depletion level for the Southern model in 2017 is 
+`r {Depl_mod2}` (~95% asymptotic interval: $\pm$ 
+`r {Depl_mod2_CI}`), corresponding to an unfished spawning output of 
+`r {paste(round(Spawn_mod2,1), fecund_unit, sep=' ')}` (~95% asymptotic interval: 
 `r #paste(Spawn_mod2_CI, fecund_unit, sep=' ')`) of 
 spawning output in the base model (Table \ref{tab:Ref_pts_mod2}). Unfished 
-age `r min_age` biomass was estimated to be `r if(n_models>=2){Ref_pts_mod2[2,2]}` 
+age `r min_age` biomass was estimated to be `r {Ref_pts_mod2[2,2]}` 
 mt in the base case model. The target spawning output based on the biomass target 
-($SB_{40\%}$) is `r if(n_models>=2){paste(Ref_pts_mod2[7,2], fecund_unit,sep=' ')}`, 
-which gives a catch of `r #Ref_pts_mod2[10,2]` mt. Equilibrium yield at the proxy $F_{MSY}$ 
-harvest rate corresponding to $SPR_{50\%}$ is `r if(n_models>=2){Ref_pts_mod2[15,2]}` mt.
+($SB_{40\%}$) is `r {paste(Ref_pts_mod2[7,2], fecund_unit,sep=' ')}`, 
+which gives a catch of `r Ref_pts_mod2[10,2]` mt. Equilibrium yield at the proxy $F_{MSY}$ 
+harvest rate corresponding to $SPR_{50\%}$ is `r {Ref_pts_mod2[15,2]}` mt.
+
+Estimated equilibrium yield curves for both models are shown in Figure \ref{fig:Yield_all}.
 
 \FloatBarrier
 
@@ -255,10 +240,6 @@ harvest rate corresponding to $SPR_{50\%}$ is `r if(n_models>=2){Ref_pts_mod2[15
            sanitize.text.function = function(x){x})
    }
 
-   if(n_models == 3) {
-     print(Ref_pts_mod3.table, include.rownames = FALSE, caption.placement = 'top',
-           sanitize.text.function = function(x){x})
-   }
 ```
 <!-- ***********END EXECUTIVE SUMMARY REFERENCE POINT TABLES*************** --> 
 
@@ -290,23 +271,16 @@ Management performance table: Table \ref{tab:mnmgt_perform}
 
 
 ##Unresolved Problems And Major Uncertainties{-}
-   TBD after STAR panel
 
-\FloatBarrier
-
+TBD after STAR panel
 
 
+##Decision Tables{-}
 
-##Decision Table(s) (groundfish only){-}    
-\hl{Include: projected yields (OFL, ABC and ACL), spawning biomass, and stock 
-depletion levels for each year. Not required in draft assessments undergoing review.}
-    
-OFL projection table: Table \ref{tab:OFL_projection}    
+Potential OFL projections for each model are shown in Table \ref{tab:OFL_projection}.
 
-Decision table(s) Table \ref{tab:Decision_table_mod1} and 
-                  Table \ref{tab:Decision_table_mod2}
- 
-    Yield curve: Figure \ref{fig:Yield_all}
+Decision tables \ref{tab:Decision_table_mod1} and \ref{tab:Decision_table_mod2} will be completed during the STAR panel after determination of the axis of uncertainty and catch streams to include.
+
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY OFL AND DECISION TABLES************ -->
 ```{r, results='asis'}   
@@ -407,9 +381,7 @@ if(n_models == 3){
 \newpage
 
 ##Research And Data Needs{-}
-\hl{Include: identify information gaps that seriously impede the stock assessment.}    
-
-We recommend the following research be conducted before the next assessment:
+We recommend the following research will be valuable for future `r spp` assessments:
 
 \begin{enumerate}
 
@@ -417,7 +389,7 @@ We recommend the following research be conducted before the next assessment:
 
 \item A commercial index in the north.  This is by far the largest segment of the fishery, and the introduction of the trawl rationalization program should mean that an index can be developed for the current fishery when the next assessment is performed.
 
-\item More recent ages for the southern model.  The commercial age timeseries currently stops in 2002.
+\item More recent ages for the southern model.  The commercial age timeseries currently stops in 2002. Otoliths have been collected for all years in the Hook \& Line survey but only samples from 2004 have been aged.
 
 
 \end{enumerate}

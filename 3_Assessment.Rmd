@@ -47,7 +47,7 @@ The data associated with the commercial fleet includes age- and length-compositi
 
 The PacFIN logbook (fish ticket) index developed for the commercial fishery is in fish/tow.  Further information about how the data for the index was worked up is in Appendix \ref{xxx}.
 
-\emph{At-Sea Hake Fishery}: Yellowtail Rockfish are frequently caught in mid-water trawls associated with the At-Sea Hake Fishery (consisting of the Catcher-Processor and Mothership sectors). These catches are recorded and biological sampling takes place but the fish are processed at sea (typically into fish meal) and are not included in the PacFIN database, so this fishery requires separate analysis.  The At-Sea Hake fishery provides catches, length compositions by sex, and an index of abundance.
+\emph{At-Sea Hake Fishery}: yellowtail rockfish are frequently caught in mid-water trawls associated with the At-Sea Hake Fishery (consisting of the Catcher-Processor and Mothership sectors). These catches are recorded and biological sampling takes place but the fish are processed at sea (typically into fish meal) and are not included in the PacFIN database, so this fishery requires separate analysis.  The At-Sea Hake fishery provides catches, length compositions by sex, and an index of abundance.
 
 \emph{Recreational}: The recreational fleet includes data from sport fisheries off Oregon, and northern California (Eureka and Del Norte counties), from MRFSS and RecFIN.  The index of abundance for the recreational fleet is in fish per angler-hour.  Length data for this fleet are undifferentiated by sex.
 
