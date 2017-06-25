@@ -99,65 +99,33 @@
 #_growth_parms
 #_LO    HI      INIT    PRIOR   PR_SD   PR_type PHASE   env-var use_dev dev
 # _mnyr dev_mxyr dev_PH Block  Blk_Fxn # parm_name
-#
-#_Female parameters
-#
-0.02    0.25    0.18   -2.12    0.438   0       -2      0       0       0  
-     0       0       0       0       # NatM_p_1_Fem_GP_1
-1       25      22      22      99      0        3      0       0       0  
-     0       0       0       0       # L_at_Amin_Fem_GP_1
-35      70      55      55      99      0        2      0       0       0  
-     0       0       0       0       # L_at_Amax_Fem_GP_1
-0.1     0.4     0.14    0.1     99      0        3      0       0       0  
-     0       0       0       0       # VonBert_K_Fem_GP_1
-0.03    0.16    0.04    0.1     99      0        5      0       0       0  
-     0       0       0       0       # CV_young_Fem_GP_1
-0.03    0.16    0.07    0.1     99      0        5      0       0       0  
-     0       0       0       0       # CV_old_Fem_GP_1
-0       3     1.1843E-5 99      99      0       -50     0       0       0  
-     0       0       0       0       # Wtlen_1_Fem
-2       4       3.0672  99      99      0       -50     0       0       0  
-     0       0       0       0       # Wtlen_2_Fem
-30      56      42.49   42.49   99      0       -50     0       0       0  
-     0       0       0       0       # Mat50%_Fem
--2      1     -0.40078 -0.40078 99      0       -50     0       0       0  
-     0       0       0       0       # Mat_slope_Fem
-0       6    1.1185e-11 99      99      0       -50     0       0       0  
-     0       0       0       0       # Eggs_scalar_Fem
-2       7       4.59    4.59    99      0       -50     0       0       0  
-     0       0       0       0       # Eggs_exp_len_Fem
-#
-#_Male parameters (offset from female)
-#
- -3      3       -0.2876 0       99      6       -2      0       0       0 
-      0       0       0       0       # NatM_p_1_Mal_GP_1
- -1      1       0       0       99      0       -2      0       0       0 
-      0       0       0       0       # L_at_Amin_Mal_GP_1
- -1      1       -0.17   0       99      0        2      0       0       0 
-      0       0       0       0       # L_at_Amax_Mal_GP_1
- -1      1       0.32    0       99      0        3      0       0       0 
-      0       0       0       0       # VonBert_K_Mal_GP_1
- -1      1       0       0       99      0       -5      0       0       0 
-      0       0       0       0       # CV_young_Mal_GP_1
- -1      1       0       0       99      0        5      0       0       0 
-      0       0       0       0       # CV_old_Mal_GP_1
- 0       3     1.1843E-5 99      99      0       -50     0       0       0 
-      0       0       0       0       # Wtlen_1_Mal
- 2       4       3.0672  99      99      0       -50     0       0       0 
-      0       0       0       0       # Wtlen_2_Fem
-# 
-#_Recruit distribution parameters
-# 
- 0       2       1       1       99      0       -50     0       0       0 
-      0       0       0       0       # RecrDist_GP_1
- 0       2       1       1       99      0       -50     0       0       0 
-      0       0       0       0       # RecrDist_Area_1
- 0       2       1       1       99      0       -50     0       0       0 
-      0       0       0       0       # RecrDist_Bseas_1
- 0       2       1       1       99      0       -50     0       0       0 
-      0       0       0       0       # CohortGrowDev
- 0.001   0.999   0.5     0.5     0.5     0       -99     0       0       0 
-      0       0       0       0       # FracFemale_GP_1
+#_ LO HI INIT PRIOR PR_SD PR_type PHASE env_var&link dev_link dev_minyr dev
+# _maxyr dev_PH Block Block_Fxn
+0.02 0.25 0.18 -2.12 0.438 0 -2 0 0 0 0 0 0 0 # NatM_p_1_Fem_GP_1
+1 25 18.5693 22 99 0 3 0 0 0 0 0 0 0 # L_at_Amin_Fem_GP_1
+35 70 49.5336 55 99 0 2 0 0 0 0 0 0 0 # L_at_Amax_Fem_GP_1
+0.1 0.4 0.110307 0.1 99 0 3 0 0 0 0 0 0 0 # VonBert_K_Fem_GP_1
+0.03 0.16 0.0759611 0.1 99 0 5 0 0 0 0 0 0 0 # CV_young_Fem_GP_1
+0.03 0.16 0.0569237 0.1 99 0 5 0 0 0 0 0 0 0 # CV_old_Fem_GP_1
+0 3 1.1843e-005 99 99 0 -50 0 0 0 0 0 0 0 # Wtlen_1_Fem
+2 4 3.0672 99 99 0 -50 0 0 0 0 0 0 0 # Wtlen_2_Fem
+30 56 42.49 42.49 99 0 -50 0 0 0 0 0 0 0 # Mat50%_Fem
+-2 1 -0.40078 -0.40078 99 0 -50 0 0 0 0 0 0 0 # Mat_slope_Fem
+0 6 1.1185e-011 99 99 0 -50 0 0 0 0 0 0 0 # Eggs_scalar_Fem
+2 7 4.59 4.59 99 0 -50 0 0 0 0 0 0 0 # Eggs_exp_len_Fem
+-3 3 -0.2876 0 99 6 -2 0 0 0 0 0 0 0 # NatM_p_1_Mal_GP_1
+-1 1 0 0 99 0 -2 0 0 0 0 0 0 0 # L_at_Amin_Mal_GP_1
+-1 1 -0.122881 0 99 0 2 0 0 0 0 0 0 0 # L_at_Amax_Mal_GP_1
+-1 1 0.122504 0 99 0 3 0 0 0 0 0 0 0 # VonBert_K_Mal_GP_1
+-1 1 0 0 99 0 -5 0 0 0 0 0 0 0 # CV_young_Mal_GP_1
+-1 1 0.372783 0 99 0 5 0 0 0 0 0 0 0 # CV_old_Mal_GP_1
+0 3 1.1843e-005 99 99 0 -50 0 0 0 0 0 0 0 # Wtlen_1_Mal
+2 4 3.0672 99 99 0 -50 0 0 0 0 0 0 0 # Wtlen_2_Mal
+0 2 1 1 99 0 -50 0 0 0 0 0 0 0 # RecrDist_GP_1
+0 2 1 1 99 0 -50 0 0 0 0 0 0 0 # RecrDist_Area_1
+0 2 1 1 99 0 -50 0 0 0 0 0 0 0 # RecrDist_month_1
+1 1 1 1 1 0 -1 0 0 0 0 0 0 0 # CohortGrowDev
+0.001 0.999 0.5 0.5 0.5 0 -99 0 0 0 0 0 0 0 # FracFemale_GP_1
 #
 #
 #
@@ -207,7 +175,7 @@
 1 #do_recdev:  0=none; 1=devvector; 2=simple deviations
 1965 # first year of main recr_devs; early devs can preceed this era
 2015 # last year of main recr_devs; forecast devs start in following year
-4 #_recdev phase 
+2 #_recdev phase 
 #
 #
 1 # (0/1) to read 13 advanced options
@@ -295,72 +263,67 @@
 10 0 0 0 # 4 HookAndLineSurvey
 10 0 0 0 # 5 RecStudy
 #
+20    55    30.201     0    99     0  1  0  0  0  0  0  0  0  #  SizeSel_P1
+# _RecreationalCatch(1)
+ -20    20    20     0    99     0     -4  0  0  0  0  0  0  0  #  SizeSel_
+# P2_RecreationalCatch(1)
+  -5    20   3.55447     0    99     0  3  0  0  0  0  0  0  0  #  SizeSel_
+# P3_RecreationalCatch(1)
+  -5    20    20     0    99     0     -4  0  0  0  0  0  0  0  #  SizeSel_
+# P4_RecreationalCatch(1)
+-999    25  -999     0    99     0    -99  0  0  0  0  0  0  0  #  SizeSel_
+# P5_RecreationalCatch(1)
+-999    25  -999     0    99     0    -99  0  0  0  0  0  0  0  #  SizeSel_
+# P6_RecreationalCatch(1)
+  20    55    55     0    99     0     -1  0  0  0  0  0  0  0  #  SizeSel_
+# P1_CommercialCatch(2)
+ -20    20    20     0    99     0     -4  0  0  0  0  0  0  0  #  SizeSel_
+# P2_CommercialCatch(2)
+  -5    20    5.2631     0    99     0  3  0  0  0  0  0  0  0  #  SizeSel_
+# P3_CommercialCatch(2)
+  -5    20    20     0    99     0     -4  0  0  0  0  0  0  0  #  SizeSel_
+# P4_CommercialCatch(2)
+-999    25  -999     0    99     0    -99  0  0  0  0  0  0  0  #  SizeSel_
+# P5_CommercialCatch(2)
+-999    25  -999     0    99     0    -99  0  0  0  0  0  0  0  #  SizeSel_
+# P6_CommercialCatch(2)
+  20    55   30.2914     0    99     0  1  0  0  0  0  0  0  0  #  SizeSel_
+# P1_OnboardSurvey(3)
+ -20     7   -20     0    99     0     -4  0  0  0  0  0  0  0  #  SizeSel_
+# P2_OnboardSurvey(3)
+  -5    20   3.54627     0    99     0  3  0  0  0  0  0  0  0  #  SizeSel_
+# P3_OnboardSurvey(3)
+  -5    20   7.91106     0    99     0  4  0  0  0  0  0  0  0  #  SizeSel_
+# P4_OnboardSurvey(3)
+-999    25  -999     0    99     0    -99  0  0  0  0  0  0  0  #  SizeSel_
+# P5_OnboardSurvey(3)
+-999    25  -999     0    99     0    -99  0  0  0  0  0  0  0  #  SizeSel_
+# P6_OnboardSurvey(3)
+  20    55   47.9691     0    99     0  1  0  0  0  0  0  0  0  #  SizeSel_
+# P1_HookAndLineSurvey(4)
+ -20    20    20     0    99     0     -4  0  0  0  0  0  0  0  #  SizeSel_
+# P2_HookAndLineSurvey(4)
+  -5    20   5.13065     0    99     0  3  0  0  0  0  0  0  0  #  SizeSel_
+# P3_HookAndLineSurvey(4)
+  -5    20    20     0    99     0     -4  0  0  0  0  0  0  0  #  SizeSel_
+# P4_HookAndLineSurvey(4)
+-999    25  -999     0    99     0    -99  0  0  0  0  0  0  0  #  SizeSel_
+# P5_HookAndLineSurvey(4)
+-999    25  -999     0    99     0    -99  0  0  0  0  0  0  0  #  SizeSel_
+# P6_HookAndLineSurvey(4)
+  20    55    49.124     0    99     0  1  0  0  0  0  0  0  0  #  SizeSel_
+# P1_RecStudy(5)
+ -20    20    20     0    99     0     -4  0  0  0  0  0  0  0  #  SizeSel_
+# P2_RecStudy(5)
+  -5    20   5.34296     0    99     0  3  0  0  0  0  0  0  0  #  SizeSel_
+# P3_RecStudy(5)
+  -5    20    20     0    99     0     -4  0  0  0  0  0  0  0  #  SizeSel_
+# P4_RecStudy(5)
+-999    25  -999     0    99     0    -99  0  0  0  0  0  0  0  #  SizeSel_
+# P5_RecStudy(5)
+-999    25  -999     0    99     0    -99  0  0  0  0  0  0  0  #  SizeSel_
+# P6_RecStudy(5)
 #
-#RecreationalCatch selectivity
-20      55      35      0       99      0       1       0       0       0  
-     0       0       0       0       #       SizeSel_P1
--20     20      20      0       99      0      -4       0       0       0  
-     0       0       0       0       #       SizeSel_P2
--5      20      3       0       99      0       3       0       0       0  
-     0       0       0       0       #       SizeSel_P3
--5      20      20      0       99      0      -4       0       0       0  
-     0       0       0       0       #       SizeSel_P4
--999    25      -999    0       99      0       -99     0       0       0  
-     0       0       0       0       #       SizeSel_P5
--999    25      -999    0       99      0       -99     0       0       0  
-     0       0       0       0       #       SizeSel_P6
-#CommercialCatch selectivity
-20      55      55      0       99      0      -1       0       0       0  
-     0       0       0       0       #       SizeSel_P1
--20     20      20      0       99      0      -4       0       0       0  
-     0       0       0       0       #       SizeSel_P2
--5      20      3       0       99      0       3       0       0       0  
-     0       0       0       0       #       SizeSel_P3
--5      20      20      0       99      0      -4       0       0       0  
-     0       0       0       0       #       SizeSel_P4
--999    25      -999    0       99      0       -99     0       0       0  
-     0       0       0       0       #       SizeSel_P5
--999    25      -999    0       99      0       -99     0       0       0  
-     0       0       0       0       #       SizeSel_P6
-#OnboardSurvey selectivity
-20      55      35      0       99      0       1       0       0       0  
-     0       0       0       0       #       SizeSel_P1
--20     7       -20     0       99      0      -4       0       0       0  
-     0       0       0       0       #       SizeSel_P2
--5      20      3       0       99      0       3       0       0       0  
-     0       0       0       0       #       SizeSel_P3
--5      20      20      0       99      0       4       0       0       0  
-     0       0       0       0       #       SizeSel_P4
--999    25      -999    0       99      0       -99     0       0       0  
-     0       0       0       0       #       SizeSel_P5
--999    25      -999    0       99      0       -99     0       0       0  
-     0       0       0       0       #       SizeSel_P6
-#HookandLine selectivity
-20      55      35      0       99      0       1       0       0       0  
-     0       0       0       0       #       SizeSel_P1
--20     20      20      0       99      0      -4       0       0       0  
-     0       0       0       0       #       SizeSel_P2
--5      20      3       0       99      0       3       0       0       0  
-     0       0       0       0       #       SizeSel_P3
--5      20      20      0       99      0      -4       0       0       0  
-     0       0       0       0       #       SizeSel_P4
--999    25      -999    0       99      0       -99     0       0       0  
-     0       0       0       0       #       SizeSel_P5
--999    25      -999    0       99      0       -99     0       0       0  
-     0       0       0       0       #       SizeSel_P6
-#RecStudy selectivity
-20      55      35      0       99      0       1       0       0       0  
-     0       0       0       0       #       SizeSel_P1
--20     20      20      0       99      0      -4       0       0       0  
-     0       0       0       0       #       SizeSel_P2
--5      20      3       0       99      0       3       0       0       0  
-     0       0       0       0       #       SizeSel_P3
--5      20      20      0       99      0      -4       0       0       0  
-     0       0       0       0       #       SizeSel_P4
--999    25      -999    0       99      0       -99     0       0       0  
-     0       0       0       0       #       SizeSel_P5
--999    25      -999    0       99      0       -99     0       0       0  
-     0       0       0       0       #       SizeSel_P6
 #
 #
 #
@@ -396,20 +359,20 @@
 #
 #Factor Fleet New_Var_adj hash Old_Var_adj New_Francis New_MI Francis_mult 
 # MI_mult Type Name Note
-4 1 0.004518 # 0.005705 0.004518 0.017474 0.791969 3.062844 len Recreationa
+4 1 0.004255 # 0.004518 0.004255 0.016144 0.941808 3.573368 len Recreationa
 # lCatch 
-4 2 0.306952 # 0.222574 0.306952 0.503206 1.379102 2.26085 len CommercialCa
-# tch 
-4 3 0.004079 # 0.00427 0.004079 0.006502 0.955177 1.522752 len OnboardSurve
-# y 
-4 4 0.983092 # 0.896088 0.983092 2.401472 1.097093 2.679951 len HookAndLine
-# Survey 
-4 5 0.632519 # 0.43201 0.632519 0.812562 1.46413 1.880887 len RecStudy 
-5 1 0.065085 # 0.071088 0.065085 0.348662 0.915555 4.904647 age Recreationa
-# lCatch 
-5 2 0.136786 # 0.091081 0.136786 0.221575 1.501803 2.432719 age CommercialC
+4 2 0.317319 # 0.306952 0.317319 0.487048 1.033775 1.586723 len CommercialC
 # atch 
-5 4 0.21157 # 0.205116 NA 0.21157 NA 1.031465 age HookAndLineSurvey No Fran
+4 3 0.003935 # 0.004079 0.003935 0.006097 0.964706 1.494771 len OnboardSurv
+# ey 
+4 4 0.958017 # 0.983092 0.958017 2.049982 0.974494 2.085239 len HookAndLine
+# Survey 
+4 5 0.686709 # 0.632519 0.686709 1.036285 1.085673 1.638346 len RecStudy 
+5 1 0.059082 # 0.065085 0.059082 0.331402 0.907774 5.09183 age Recreational
+# Catch 
+5 2 0.1169 # 0.136786 0.1169 0.212324 0.854621 1.552233 age CommercialCatch
+#  
+5 4 0.205322 # 0.21157 NA 0.205322 NA 0.97047 age HookAndLineSurvey No Fran
 # cis weight--using MI value
 #
 #
