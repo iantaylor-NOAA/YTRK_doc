@@ -88,13 +88,16 @@ Pikitch study discards were aggregated due to small sample size and included in 
 ###Abundance Indices
 
 **Commercial Logbook CPUE**   
-The commercial logbook (fish-ticket) data in PacFIN was used to generate an index for the years 1987-1998, a period in which management of the fishery was stable, i.e., regulations weren't changing fishery practices.  
+The commercial logbook (fish-ticket) data in PacFIN was used to generate an index for the Northern model for the years 1987-1998, a period in which management of the fishery was stable, i.e., regulations weren't changing fishery practices.  
 
-The data were modeled with a modified Stephens-MacCall approach [@Stephens2004].  This approach uses the species composition of the catch to evaluate the per-haul probability of encountering a particular species; in this case, yellowtail rockfish.  The intent of the analysis is to eliminate all hauls from the index that could not encounter yellowtail.  
+The data were first filtered using a modified Stephens-MacCall approach [@Stephens2004].  This approach uses the species composition (presence-absence) of the catch in a binomial genearlized linear model (glm) to evaluate the per-haul probability of encountering a particular species; in this case, yellowtail rockfish.  The intent of the analysis is to eliminate all hauls with a very low probability of encountering yellowtail rockfish. 
 
-Usually, the Stephens-MacCall approach is a simple binomial model for presence-absence of the predictive species and the target, however a generalized linear mixed-effects approach -- modeling the species as binomial and adding random effects for the interaction of year and vessel, for haul duration, and for month improved the model fit.
+For this analysis, the species effects were combined with fishery variables in a mixed-effects glm (a glmm). The species were modeled as binomial, and random effects were added for haul duration, depth, port, state agency, and month, and the interaction of year and vessel.  This approach reduced the number of hauls to be evaluated by 61%.
 
-The hauls identified with a reasonable probability of encountering yellowtail were then modeled in a delta-lognormal glm to produce an annual index of abundance, bootstrapped 500 times to evaluate uncertainty.
+The hauls identified with a reasonable probability of encountering yellowtail were then modeled in a delta-lognormal glm [@Stefansson1996] to produce an annual index of abundance, which was bootstrapped 500 times to evaluate uncertainty.  See Figures \ref{Logbook_lognormal} and \ref(Logbook_gamma) for Q-Q plots demonstrating that the lognormal glm fit the data better than the gamma.
+
+**MRFSS Index**
+MRFSS data was used to generate an index of abundance for 1980-2003.  The MRFSS data were aggregated as "trips" by staff at the SWFSC, and the Stephens-MacCall approach was used to filter the data to the set of fishing trips likely to have encountered yellowtail.  This was followed by application of a delta-lognormal glm using variables month and AREA_X (indicating offshore/onshore fishing) to generate the index, which was then jackknifed to produce estimates of uncertainty.  Q-Q plots for the MRFSS index are \ref{MRFSSlognormal} and \ref{MRFSSgamma}.
 
 **Hake Bycatch Index**
 

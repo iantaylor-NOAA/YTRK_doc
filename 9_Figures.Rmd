@@ -98,6 +98,19 @@
 \FloatBarrier
 
 \newpage
+![Quantile-Quantile plot for the Logbook CPUE model with a log-normal error distribution applied to PacFIN data from 1989 - 1998 \label{fig:Logbook_lognormal}](Figures/Logbook_CPUE/GLMdiagnosticslognormal_B500.png)
+![Quantile-Quantile plot for the Logbook CPUE model with a gamma error distribution applied to PacFIN data from 1989 - 1998. \label{fig:Logbook_gamma}](Figures/Logbook_CPUE/GLMdiagnosticsgamma_B500.png)
+\FloatBarrier
+
+\newpage
+
+![Quantile-Quantile plot for the MRFSS model with a lognormal error distribution applied to California dockside survey data.
+\label{fig:MRFSSlognormal}(Figures/MRFSS_CPUE/GLMdiagnosticslognormalMRFSS.png)
+
+![Quantile-Quantile plot for the MRFSS model with a lognormal error distribution applied to California dockside survey data.
+\label{fig:MRFSSgamma}(Figures/MRFSS_CPUE/GLMdiagnosticsgammaMRFSS.png)
+
+\FloatBarrier
 
 ###Fits to indices of abundance for `r mod1_label`
 
@@ -106,6 +119,7 @@
 \FloatBarrier
 
 \newpage
+
 
 <!-- ************** NORTHERN LENGTHS  **************************************** -->
 
