@@ -1,1 +1,52 @@
+<<<<<<< HEAD
 ## Appendix 
+=======
+<!-- ====================================================================== -->
+<!-- **********APPENDICES******************* -->
+<!-- ====================================================================== -->
+\FloatBarrier
+
+<!-- stuff from Melissa Monk's ReadMe.pdf -->
+
+#Appendix A. Regulations history{-}
+\label{sec:AppendixA}
+\renewcommand{\thepage}{A-\arabic{page}} 
+\renewcommand{\thefigure}{A\arabic{figure}} 
+\renewcommand{\thetable}{A\arabic{table}} 
+\setcounter{page}{1} 
+\setcounter{figure}{0} 
+\setcounter{table}{0} 
+
+<!-- end of stuff from Melissa Monk's ReadMe.pdf -->
+
+```{r, results = 'asis'}
+    Management_history = read.table('./txt_files/YTRK.Mgmt.Hist.table2.txt', header=TRUE)
+
+    colnames(Management_history)=c('Regulation date',
+                                   'Location',
+                                   'Regulation')
+
+    Management_history.table = xtable(Management_history, 
+                                  caption ='Regulations history for yellowtail rockfish (Northern and Southern stocks).',
+                                  label = 'tab:Management_history',
+                                  digits = 0)
+
+    align(Management_history.table) = c('lp',
+                       '>{\\centering}p{.60in}',
+                       '>{\\centering}p{1.0in}',
+                       '>{\\raggedright}p{4.20in}')
+
+    print(Management_history.table, 
+          include.rownames = FALSE,
+          caption.placement = 'top',
+          size="\\fontsize{9pt}{10pt}\\selectfont",
+          sanitize.text.function = function(x){x})
+
+
+
+```
+
+\FloatBarrier
+\newpage
+
+>>>>>>> taylori/master
