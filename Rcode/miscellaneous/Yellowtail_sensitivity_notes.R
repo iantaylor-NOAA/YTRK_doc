@@ -99,6 +99,9 @@ if(FALSE){ # don't run all the stuff below if sourcing the file
   out.sens.no_hake_indices.N <- SS_output(file.path(YTdir.sens.N, "sens.no_hake_index"))
   out.sens.no_logbook_indices.N <- SS_output(file.path(YTdir.sens.N, "sens.no_logbook_index"))
 
+  out.SurveyUnits.N <- SS_output(file.path(YTdir.mods, "North/18d_SurveyUnits"))
+  out.SurveyUnits2.N <- SS_output(file.path(YTdir.mods, "North/19_SurveyUnits_InitVals"))
+  
   ##################################################################################
   # Comparing Northern sensitivities
 
@@ -161,6 +164,25 @@ if(FALSE){ # don't run all the stuff below if sourcing the file
   ##################################################################################
   # Fixed catchability for the South
   out.sens.NWFSCcombo.S <- SS_output(file.path(YTdir.sens.S, "sens.NWFSCcombo"))
+
+  ##################################################################################
+  # No recdevs after 2006
+  out.recdevs2006 <- SS_output(file.path(YTdir.sens.S, "sens.recdevs_end_2006"))
   
+  ##################################################################################
+  # change units for indices
+  out.survey_units <- SS_output(file.path(YTdir.mods,
+                       "South/17e_Base_Model_index_units_3.30.03.05"), covar=FALSE)
+  
+
+
+  
+  ##################################################################################
+  # Running jitter for the North
+  dir.N.jit <- 'C:/SS/Yellowtail/Yellowtail2017/Models/North/18_Base_Model_Jitter'
+  jit.N <- SS_RunJitter(dir.N.jit, Njitter=100)
+
+  dir.N.jit <- 'C:/SS/Yellowtail/Yellowtail2017/Models/North/20_tuned_jitter'
+  jit.N <- SS_RunJitter(dir.N.jit, Njitter=100)
   
 } # end if(FALSE) section that doesn't get sourced
