@@ -102,11 +102,9 @@
 
 \newpage
 
-![Quantile-Quantile plot for the MRFSS model with a lognormal error distribution applied to California dockside survey data.
-\label{fig:MRFSSlognormal}(Figures/MRFSS_CPUE/GLMdiagnosticslognormalMRFSS.png)
+![Quantile-Quantile plot for the MRFSS model with a lognormal error distribution applied to California dockside survey data. \label{fig:MRFSSlognormal}](Figures/MRFSS_CPUE/GLMdiagnosticslognormalMRFSS.png)
 
-![Quantile-Quantile plot for the MRFSS model with a lognormal error distribution applied to California dockside survey data.
-\label{fig:MRFSSgamma}(Figures/MRFSS_CPUE/GLMdiagnosticsgammaMRFSS.png)
+![Quantile-Quantile plot for the MRFSS model with a lognormal error distribution applied to California dockside survey data. \label{fig:MRFSSgamma}](Figures/MRFSS_CPUE/GLMdiagnosticsgammaMRFSS.png)
 
 \FloatBarrier
 
@@ -469,7 +467,15 @@
 
 ### Sensitivity analyses for `r mod2_label`
 
-\hl{to be added...}
+![Time series of relative spawning output estimated in the subset of sensitivity analyses for the `r mod2_label` related to removing biological data from the model. \label{fig:sens_S_bio}](Figures/South_Sens/Bio.png)
+
+![Time series of relative spawning output estimated in the subset of sensitivity analyses for the `r mod2_label` related to natural mortality. \label{fig:sens_S_M}](Figures/South_Sens/M.png)
+
+![Time series of relative spawning output estimated in the subset of sensitivity analyses for the `r mod2_label` related to removing indices of abundance from the model. \label{fig:sens_S_Other}](Figures/South_Sens/CPUE.png)
+
+![Time series of relative spawning output estimated in the additional sensitivity analyses for the `r mod2_label` not representend in the three figures above. \label{fig:sens_S_Other}](Figures/South_Sens/Other.png)
+
+\FloatBarrier
 
 ### Likelihood profiles for `r mod2_label`
 
