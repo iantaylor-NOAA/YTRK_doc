@@ -1021,7 +1021,7 @@ align(mngmnt.table.S) = c('l',
 ```{r, results = 'asis'}
     
     # Read in/organize sensitivity file, change column names, caption
-    Sens_model2 = read.csv('./txt_files/Sensitivities_model2.csv')
+    Sens_model2 = read.csv('./txt_files/parameter_comparison_table.SOUTH.csv')
 
     # Create sensitivities table
     Sens_model2.table = xtable(Sens_model2, 

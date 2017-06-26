@@ -386,7 +386,6 @@ The annual plots of age-at-length fits (Figure \ref{fig:mod2_5_comp_condAALfit_A
 
 The Southern model was investigated in these N ways:
 \begin{description}
-\item[EarlyCatch] Because the fishery began in the 1880s, we used a linear ramp from 0 catch in 1898 (the first year in the Northern model) to the first catch in 1928 for the commercial fleet.
 \item[NoSmall] The small fish study was included to provide information about growth of young fish.  We took out the biological data associated with this study.
 \item The NWFSCcombo data for south of Cape Mendocino is sparse.  We added it to the model to investigate its utility.
 \item[AddIndex] The index for the NWFSCcombo survey south of Cape Mendocino was also added to the Southern model.
@@ -397,7 +396,10 @@ The Southern model was investigated in these N ways:
 \item[NoIndex X]We turned off each index in turn (MRFSS, Onboard, Juvenile Study and the Hook-and-Line Survey).
 \end{description}
 
-Results of these investigations can be seen in Figure \ref{xxx}, and Table \ref{yyy}.
+Results of these investigations can be seen in Figures \ref{xxx}, and Table \ref{yyy}.
+
+###Results of Jitter Runs
+We jittered the model 100 times to ensure that the best parameter values are those in the final base-case.  The jitter runs returned to the base case (likelihood 774.696) 43 times, and no run resulted in a lower likelihood.
 
 ### Southern Model Likelihood Profiles
 We profiled the change in negative log likelihood for the data sources and model total likelihood for critical parameters fixed in the model:  **$log(R_0)$**, the log of equilibrium recruitment; female natural mortality, **MF**; male natural mortality, **MM**; and steepness, **h** the parameter that reflects how quickly the stock-recruit relationship allows the stock to rebound from depleted stock size.
