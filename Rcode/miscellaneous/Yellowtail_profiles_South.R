@@ -153,7 +153,7 @@ SSplotProfile(profilesummary,           # summary object
               #models = 1:length(logR0vec.S), # optionally exclude MLE
               sort.by.max.change = FALSE,
               #xlim=c(3.2,4.6),
-              #ymax=50, # modify as required to get reasonable scale to see differences
+              ymax=10, # modify as required to get reasonable scale to see differences
               plotdir=dir.prof.R0.S,
               print=TRUE,
               profile.string = "R0", # substring of profile parameter
@@ -208,7 +208,8 @@ profilemodels <- SSgetoutput(dirvec=dir.prof.M.S,
 profilemodels$MLE <- out.S
 
 # summarize output
-profilesummary <- SSsummarize(profilemodels)
+good <- c(1,3:8) # which models converged, 9 is the MLE
+profilesummary <- SSsummarize(profilemodels[c(good, 9)])
 # make plot
 SSplotProfile(profilesummary,           # summary object
               minfraction = 0.001,
@@ -223,7 +224,7 @@ file.copy(file.path(dir.prof.M.S, 'profile_plot_likelihood.png'),
 
 # compare spawning biomass time series
 SSplotComparisons(profilesummary, subplot=c(1,3),
-                  legendlabels=c(paste0("M=",M.vec),"Base Model"),
+                  legendlabels=c(paste0("M=",M.vec[good]),"Base Model"),
                   png=TRUE, plotdir=file.path(YTdir.mods, "profiles"),
                   filenameprefix="profile_M.S_", legendloc="topleft")
 
@@ -251,9 +252,9 @@ file.copy(file.path(dir.prof.M2.S, 'profile_plot_likelihood.png'),
           file.path(dir.prof.M2.S, '../profile_M2.S.png'), overwrite=TRUE)
 
 # compare spawning biomass time series
-mods <- c(seq(1,9,2), 10) # subset of models
+mods <- c(seq(1,7,2), 8) # subset of models
 SSplotComparisons(profilesummary, subplot=c(1,3), models=mods,
-                  legendlabels=c(paste0("male offset M=",M2.vec),"Base Model")[mods],
+                  legendlabels=c(paste0("male offset=",M2.vec),"Base Model")[mods],
                   png=TRUE, plotdir=file.path(YTdir.mods, "profiles"),
                   filenameprefix="profile_M2.S_", legendloc="bottomright")
 
