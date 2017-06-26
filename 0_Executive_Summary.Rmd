@@ -248,9 +248,9 @@ Estimated equilibrium yield curves for both models are shown in Figure \ref{fig:
 
 ##Management Performance{-}
 
-Total catch (including landings and discards) from the Northern stock has remained well below the management limits in recent years (Table \ref{tab:mnmgt_perform.N}) and harvest specifications for 2017 and 2018 are set at values similar to the previous years.
+Total catch (including landings and discards) from the Northern stock has remained well below the management limits in recent years (Table \ref{tab:mnmgt_perform_exec.N}) and harvest specifications for 2017 and 2018 are set at values similar to the previous years.
 
-The southern stock has been managed in the Southern Shelf Rockfish complex so is not managed under a single-species catch limit. Nevertheless, the contribution of the yellowtail stock to the reference points for the complex are shown in Table \ref{tab:mnmgt_perform.S}, indicating that recent catches have been well below the OFL contributions in spite of these limits not being used in managing fisheries catches.
+The southern stock has been managed in the Southern Shelf Rockfish complex so is not managed under a single-species catch limit. Nevertheless, the contribution of the yellowtail stock to the reference points for the complex are shown in Table \ref{tab:mnmgt_perform_exec.S}, indicating that recent catches have been well below the OFL contributions in spite of these limits not being used in managing fisheries catches.
 
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLES******* --> 
@@ -393,13 +393,6 @@ We recommend the following research will be valuable for future `r spp` assessme
 
 
 \end{enumerate}
-
-##Rebuilding Projections{-}
-\hl{Include: reference to the principal results from rebuilding analysis if the 
-stock is overfished. This section should be included in the Final/SAFE version 
-assessment document but is not required for draft assessments undergoing review. 
-See Rebuilding Analysis terms of reference for detailed information on 
-rebuilding analysis requirements.}
 
 \FloatBarrier
 

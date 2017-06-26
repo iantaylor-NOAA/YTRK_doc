@@ -64,7 +64,7 @@ The Northwest Fisheries Science Center's NWFSCcombo survey provides age- and len
 
 \emph{Conditional Age-at-Length}:  Only the NWFSCcombo ages were used as conditional age-at-length in the model.  All other aged fleets (Commercial, Washington\_Sport, and Triennial) are present in the model as marginal ages due to the amount of noise in the age data for those fleets.
 
-\emph{Indices}:  Fish per angler-hour is the basis for the Washington\_Sport and Pikitch indices.  The NWFSCcombo and Triennial surveys provide indices based on biomass per area-towed.  The logbook survey for the commercial fleet is in units of fish per tow.
+\emph{Indices}:  The NWFSCcombo and Triennial surveys provide indices based on biomass per area-towed.  The logbook survey for the commercial fleet is in units of biomass per tow and the At-Sea Hake Bycatch index is in units of relative biomass per hour.
 
 **Southern Model**
 
