@@ -29,7 +29,7 @@ Yellowtail Rockfish feed mainly on pelagic animals, but are opportunistic, occas
 
 
 ##Fishery and Management History
-\hl{Stacey suggests adding text about the history of the recreational fishery here}
+There has been a recreational fishery in California for Yellowtail Rockfish since at least 1916, the earliest year for which we have data.  In Washington the Recreational data go back to 1889, however in Washington and Oregon the commercial trawl fishery is many times larger than the recreation fishery.  In California that has not been the case in recent time; the recreational fishery has been larger than the commercial fishery since the 1970s.
 
 The rockfish fishery off the U.S. Pacific coast first developed off California in the late 19th century as a hook-and-line fishery [@Love2002].  The rockfish trawl fishery was established in the early 1940s, when the United States became involved in World War II and wartime shortage of red meat created an increased demand for other sources of protein [@Alverson1964; @Harry1961].
 
