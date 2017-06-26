@@ -1017,19 +1017,16 @@ align(mngmnt.table.S) = c('l',
 <!-- ---------------------------------------------------------------------- -->
 
 \newpage
-<!-- ***********Model 2 SENSITIVITY TABLE(S)******************************* --> 
+<!-- ***********FIRST Model 2 SENSITIVITY TABLE(S)******************************* --> 
 ```{r, results = 'asis'}
     
     # Read in/organize sensitivity file, change column names, caption
     Sens_model2 = read.csv('./txt_files/parameter_comparison_table.SOUTH.csv')
-
+    Sens_model2 = Sens_model2[ , 1:10]
     # Create sensitivities table
     Sens_model2.table = xtable(Sens_model2, 
-                               caption = c('Sensitivity of the base model 
-                                          to dropping or down-weighting data 
-                                          sources and alternative assumptions 
-                                          about growth.'),
-                               label = 'tab:Sensitivity_model2', digits = 2)    
+                               caption = c('Sensitivity of the Southern to a variety of alternative assumptions (first of two tables).'),
+                               label = 'tab:Sensitivity_model2A', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
     # You can change this easily to have variable columns width after you know how many
@@ -1052,6 +1049,41 @@ align(mngmnt.table.S) = c('l',
           scalebox = .9)
 
 ```
+
+<!-- ***********SECOND Model 2 SENSITIVITY TABLE(S)******************************* --> 
+```{r, results = 'asis'}
+    
+    # Read in/organize sensitivity file, change column names, caption
+    Sens_model2 = read.csv('./txt_files/parameter_comparison_table.SOUTH.csv')
+    Sens_model2 = Sens_model2[ , c(1:2, 11:17)]
+
+    # Create sensitivities table
+    Sens_model2.table = xtable(Sens_model2, 
+                               caption = c('Sensitivity of the Southern to a variety of alternative assumptions (second of two tables).'),
+                               label = 'tab:Sensitivity_model2B', digits = 2)    
+  
+    # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
+    # You can change this easily to have variable columns width after you know how many
+    # colunns your final table has
+    align(Sens_model2.table) = c('l','l', rep('>{\\centering}p{.6in}', dim(Sens_model2)[2]-1))
+                    #             '>{\\centering}p{.6in}',
+                    #             '>{\\centering}p{.5in}',
+                    #             '>{\\centering}p{.5in}',
+                    #             '>{\\centering}p{.6in}', 
+                    #             '>{\\centering}p{.5in}',
+                    #             '>{\\centering}p{.6in}',
+                    #             '>{\\centering}p{.6in}',
+                    #             '>{\\centering}p{.6in}')  
+
+    # Print model 2 sensitivity table
+    print(Sens_model2.table, 
+          include.rownames = FALSE,             
+          caption.placement = 'top',
+          floating.environment = 'sidewaystable',
+          scalebox = .9)
+
+```
+
 <!-- ---------------------------------------------------------------------- -->
 
 
