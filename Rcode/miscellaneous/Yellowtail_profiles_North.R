@@ -23,9 +23,8 @@ require(r4ss)
 # read base model from each area
 mod.N <- 'North/20_tuned'
 dir.N <- file.path(YTdir.mods, mod.N)
-if(!exists('out.N')){
-  out.N <- SS_output(dir.N)
-}
+out.N <- SS_output(dir.N)
+
 
 # estimated log(R0) value
 out.N$parameters["SR_LN(R0)","Value"]
@@ -123,7 +122,7 @@ SS_profile(dir=file.path(YTdir.profs, dir.prof.M2.N),
 
 ##################################################################################
 # steepness profiles
-dir.prof.h.N <- file.path(YTdir.mods, "profiles", "prof.h.N")
+dir.prof.h.N <- "prof.h.N.20"
 copy.SS.files(source=mod.N, target=dir.prof.h.N,
               control.for.profile=TRUE, overwrite=TRUE)
 SS_profile(dir=file.path(YTdir.profs, dir.prof.h.N),
@@ -151,7 +150,7 @@ SSplotProfile(profilesummary,           # summary object
               #models = 1:length(logR0vec.N), # optionally exclude MLE
               sort.by.max.change = FALSE,
               #xlim=c(3.2,4.6),
-              ymax=50, # modify as required to get reasonable scale to see differences
+              ymax=25, # modify as required to get reasonable scale to see differences
               plotdir=dir.prof.R0.N,
               print=TRUE,
               profile.string = "R0", # substring of profile parameter
@@ -181,7 +180,7 @@ PinerPlot(profilesummary,           # summary object
           component="Surv_like",
           main="Changes in index likelihoods by fleet",
           minfraction = 0.0001,
-          models=1:length(logR0vec.N),
+          #models=1:length(logR0vec.N),
           #xlim=c(3.2,4.6),
           #ymax=200,
           plotdir=dir.prof.R0.N,
@@ -206,22 +205,24 @@ profilemodels <- SSgetoutput(dirvec=dir.prof.M.N,
 profilemodels$MLE <- out.N
 
 # summarize output
-profilesummary <- SSsummarize(profilemodels)
+good <- c(1:5,8) # which models converged 9 is the MLE
+profilesummary <- SSsummarize(profilemodels[c(good, 9)])
 # make plot
 SSplotProfile(profilesummary,           # summary object
               minfraction = 0.001,
               print=TRUE,
+              ymax=30,
               sort.by.max.change = FALSE,
               plotdir=dir.prof.M.N,
               profile.string = "NatM_p_1_Fem_GP_1", # substring of profile parameter
-              profile.label="Natural mortality (M)") # axis label
+              profile.label="Female natural mortality (M)") # axis label
 # copy plot with generic name to main folder with more specific name
 file.copy(file.path(dir.prof.M.N, 'profile_plot_likelihood.png'),
           file.path(dir.prof.M.N, '../profile_M.N.png'), overwrite=TRUE)
 
 # compare spawning biomass time series
 SSplotComparisons(profilesummary, subplot=1,
-                  legendlabels=c(paste0("M=",M.vec),"Base Model"),
+                  legendlabels=c(paste0("M=",M.vec[good]),"Base Model (M ~ 0.145)"),
                   png=TRUE, plotdir=file.path(YTdir.mods, "profiles"),
                   filenameprefix="profile_M.N_", legendloc="bottomleft")
 
@@ -250,7 +251,7 @@ file.copy(file.path(dir.prof.M2.N, 'profile_plot_likelihood.png'),
 
 # compare spawning biomass time series
 SSplotComparisons(profilesummary, subplot=1,
-                  legendlabels=c(paste0("male offset M=",M2.vec),"Base Model"),
+                  legendlabels=c(paste0("male offset=",M2.vec),"Base Model (offset ~ -0.137)"),
                   png=TRUE, plotdir=file.path(YTdir.mods, "profiles"),
                   filenameprefix="profile_M2.N_", legendloc="bottomleft")
 

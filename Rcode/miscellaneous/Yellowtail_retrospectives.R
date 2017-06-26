@@ -17,17 +17,13 @@ require(r4ss)
 
 # load model output into R
 # read base model from each area
-mod.S <- 'South/17_Base_Model'
+mod.S <- 'South/18_New_South_Base'
 dir.S <- file.path(YTdir.mods, mod.S)
-if(!exists('out.S')){
-  out.S <- SS_output(dir.S)
-}
+out.S <- SS_output(dir.S)
 
-mod.N <- 'North/18_Base_Model'
+mod.N <- 'North/20_tuned'
 dir.N <- file.path(YTdir.mods, mod.N)
-if(!exists('out.N')){
-  out.N <- SS_output(dir.N)
-}
+out.N <- SS_output(dir.N)
 
 # create new folder to contain all retrospectives
 dir.create(file.path(YTdir.mods, "retrospectives"))
@@ -57,8 +53,8 @@ legendlabels <- c("Base Model", paste("Data",-1:-5,"years"))
 retroMods.N <- SSgetoutput(dirvec=file.path(YTdir.mods, 'retrospectives/retro.N',
                                paste("retro",0:-5,sep="")))
 # replace one that had a bad Hessian
-retroMods.N[[6]] <- SS_output(file.path(YTdir.mods,
-                                        'retrospectives/retro.N/retro-5_nohess'))
+## retroMods.N[[6]] <- SS_output(file.path(YTdir.mods,
+##                                         'retrospectives/retro.N/retro-5_nohess'))
 retroSummary <- SSsummarize(retroMods.N)
 endyrvec <- retroSummary$endyrs + 0:-5
 # general timeseries plots

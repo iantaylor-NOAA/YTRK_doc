@@ -619,7 +619,39 @@ align(Ref_pts_mod3.table) = c('l',
 # Read in the management performance table - get from John Devore
 # Will have to change the column names, caption, and the alignment
   
-mngmnt = read.csv('./txt_files/Exec_mngmt_performance.csv')
+mngmnt = read.csv('./txt_files/Exec_mngmt_performance.N.csv')
+mngmnt$Catch <- c(round(mod1$sprseries$Dead_Catch_B[mod1$sprseries$Yr %in% 2007:2016]),
+                        "-","-")
+colnames(mngmnt) = c('Year',
+                     'OFL (mt; ABC prior to 2011)',  
+                     'ABC (mt)', 
+                     'ACL (mt; OY prior to 2011)', 
+                     'Estimated total catch (mt)')
+
+# Create the management performance table
+mngmnt.table.N = xtable(mngmnt, 
+                      caption=c('Northern model recent total catch
+                              relative to the management guidelines. 
+                              Estimated total catch includes estimated discarded
+                              biomass. Note: the OFL was termed the ABC prior to
+                              implementation of FMP Amendment 23 in 2011.
+                              The ABC was redefined to reflect the uncertainty
+                              in estimating the OFL under Amendment 23.
+                              Likewise, the ACL was termed the OY prior to 2011.'), 
+                      label='tab:mnmgt_perform_exec.N')  
+
+# Add alignment
+align(mngmnt.table.N) = c('l',
+                        '>{\\raggedleft}p{1in}',
+                        '>{\\centering}p{1in}',
+                        '>{\\centering}p{1in}',
+                        '>{\\centering}p{1in}', 
+                        '>{\\centering}p{1in}')  
+
+#### repeat above for South
+mngmnt = read.csv('./txt_files/Exec_mngmt_performance.S.csv')
+mngmnt$Catch <- c(round(mod2$sprseries$Dead_Catch_B[mod2$sprseries$Yr %in% 2011:2016],1),
+                        "-","-")
 
 colnames(mngmnt) = c('Year',
                      'OFL (mt; ABC prior to 2011)',  
@@ -628,14 +660,11 @@ colnames(mngmnt) = c('Year',
                      'Estimated total catch (mt)')
 
 # Create the management performance table
-mngmnt.table = xtable(mngmnt, 
-                      caption=c('Recent trend in total catch and commercial 
-                              landings (mt) relative to the management guidelines. 
-                              Estimated total catch reflect the commercial landings 
-                              plus the model estimated discarded biomass.'), 
-                      label='tab:mnmgt_perform')  
+mngmnt.table.S = xtable(mngmnt, 
+                      caption=c('Southern model recent total catch relative to harvest specifications. The southern stock of yellowtail rockfish has been managed in the Southern Shelf Rockfish complex during this period.  The values in this table represent the yellowtail harvest specification contributions to the complex and, as such, are not the reference limits used in managing fisheries catches. There were no harvest specifications for this stock prior to 2011.'), 
+                      label='tab:mnmgt_perform_exec.S')  
 # Add alignment
-align(mngmnt.table) = c('l',
+align(mngmnt.table.S) = c('l',
                         '>{\\raggedleft}p{1in}',
                         '>{\\centering}p{1in}',
                         '>{\\centering}p{1in}',

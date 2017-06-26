@@ -1,6 +1,6 @@
 Status,Model 1,Model 2,Model 3
-Returned to base case,-,-,-
-Found local minimum,-,-,-
-Found better solution,-,-,-
-Error in likelihood,-,-,-
+Returned to base case,88,-,-
+Found local minimum,12,-,-
+Found better solution,0,-,-
+Error in likelihood,0,-,-
 Total,100,100,100
