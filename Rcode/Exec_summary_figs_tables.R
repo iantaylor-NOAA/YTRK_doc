@@ -709,8 +709,8 @@ if (n_models == 1) {
         OFL$Total = rowSums(OFL)
         OFL$Year=seq(Project_firstyr,Project_lastyr,1)
         OFL$Year = as.factor(OFL$Year)
-        OFL = OFL[,c(4,1,2,3)]
-        colnames(OFL) = c('Year','Model 1','Model 2','Total') 
+        OFL = OFL[,c(4,1,2)]
+        colnames(OFL) = c('Year','Northern Model','Southern Model') 
         
         # Create the table
         OFL.table = xtable(OFL, caption=c('Projections of potential OFL (mt) for each model, using the base model forecast.'),
