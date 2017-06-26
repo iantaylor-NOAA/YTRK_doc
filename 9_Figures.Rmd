@@ -87,11 +87,11 @@
 
 ![Index from the geostatistical model VAST with constant catchability and adjusted for the estimated increase in catchability (previous figure). These are compared to the index from the most recent yellowtail assessment (Wallace and Lai, 2005).\label{fig:ASHOP_X4}](Figures/ASHOP_index_illustration.png)
 
-![Estimated density from the VAST model for the NWFSC shelf-slope trawl survey.\label{fig:VAST_Dens_NWFSCcombo}](Figures/VAST_NWFSCcombo/VAST_output_N_lognormal/Dens.png)
+![Estimated density from the VAST model for the Triennial and NWFSCcombo trawl surveys.\label{fig:VAST_Dens}](Figures/VAST density maps.png)
 
 ![Quantile-Quantile plot for the VAST models for the Triennial and NWFSCcombo bottom trawl surveys for the Northern area. Panels are (a) Triennial with log-normal error distribution, (b) Trienial with gama error distribution, (c) NWFSCcombo with log-normal error distribution, and (d) NWFSCcombo with gama error distribution.\label{fig:VAST_QQ}](Figures/Q-Q_plots_VAST.png)
 
-![Comparison of estimated indices from the VAST model for the NWFSC shelf-slope trawl survey with log-normal and gamma error distributions and the the design-based estimate that doesn't depend on the geostatistical analysis included in VAST.\label{fig:VAST_compare_NWFSCcombo}](Figures/VAST density maps.png)
+![Comparison of estimated indices from the VAST model for the NWFSC shelf-slope trawl survey with log-normal and gamma error distributions and the the design-based estimate that doesn't depend on the geostatistical analysis included in VAST.\label{fig:VAST_compare_NWFSCcombo}](Figures/VAST_NWFSCcombo/NWFSC_index_compare.png)
 
 \FloatBarrier
 
