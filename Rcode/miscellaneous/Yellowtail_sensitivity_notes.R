@@ -85,7 +85,6 @@ if(FALSE){ # don't run all the stuff below if sourcing the file
   # Alternative M assumptions NORTH
   out.sens.M_age64_est.N <- SS_output(file.path(YTdir.sens.N, "sens.M_age64_est"))
   out.sens.M_age64_fix.N <- SS_output(file.path(YTdir.sens.N, "sens.M_age64_fix"))
-  out.sens.Mpriors.N <- SS_output(file.path(YTdir.sens.N, "sens.Mpriors"))
 
   ##################################################################################
   # Eliminating indices using lambdas
@@ -94,8 +93,6 @@ if(FALSE){ # don't run all the stuff below if sourcing the file
   out.sens.no_hake_indices.N <- SS_output(file.path(YTdir.sens.N, "sens.no_hake_index"))
   out.sens.no_logbook_indices.N <- SS_output(file.path(YTdir.sens.N, "sens.no_logbook_index"))
 
-  out.SurveyUnits.N <- SS_output(file.path(YTdir.mods, "North/20d_SurveyUnits"))
-  out.SurveyUnits2.N <- SS_output(file.path(YTdir.mods, "North/19_SurveyUnits_InitVals"))
   
   ##################################################################################
   # Comparing Northern sensitivities
@@ -103,7 +100,6 @@ if(FALSE){ # don't run all the stuff below if sourcing the file
   summary.sens.N <-
     SSsummarize(list(out.N,
                      out.sens.MItune.N,
-                     out.sens.Mpriors.N,
                      out.sens.M_age64_est.N,
                      out.sens.M_age64_fix.N,
                      out.sens.no_logbook_indices.N,
@@ -111,7 +107,6 @@ if(FALSE){ # don't run all the stuff below if sourcing the file
                      out.sens.no_fishery_indices.N))
   namelist <- c("Northern Base Model",
                 "McAllister-Ianelli weights",
-                "M prior",
                 "M prior Age64",
                 "M fixed Age64",
                 "No commercial index",
