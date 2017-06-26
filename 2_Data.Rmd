@@ -165,7 +165,7 @@ Length compositions were provided from the following sources:
 ```
 <!-- ---------------------------------------------------------------------- -->
 
-The expanded table detailing the length data is Table \ref{tab:Northern_length}.
+The expanded table detailing the length data is Table \ref{tab:Northern_length}.  The names in this table are truncated so that the data can be compared side-by-side, but should be obvious: "C.Trawl" is the Commercial Trawl fishery.
 
 Age structure data were available from the following sources:
 \vspace{.5cm}
