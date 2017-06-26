@@ -1,4 +1,4 @@
-#V3.30.03.05
+#V3.30.04.02
 # for all year entries except rebuilder; enter either: actual year, -999 for styr, 0 for endyr, neg number for rel. endyr
 1 # Benchmarks: 0=skip; 1=calc F_spr,F_btgt,F_msy 
 2 # MSY: 1= set to F(SPR); 2=calc F(MSY); 3=set to F(Btgt); 4=set to F(endyr) 
@@ -33,7 +33,7 @@
 # Conditional input if relative F choice = 2
 # Fleet relative F:  rows are seasons, columns are fleets
 #_Fleet:  RecreationalCatch CommercialCatch OnboardSurvey HookAndLineSurvey RecStudy
-#  0.803059 0.196941 0 0 0
+#  0.810325 0.189675 0 0 0
 # enter list of fleet number and max for fleets with max annual catch; terminate with fleet=-9999
 -9999 -1
 # enter list of area ID and max annual catch; terminate with area=-9999

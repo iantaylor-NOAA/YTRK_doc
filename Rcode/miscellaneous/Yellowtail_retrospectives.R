@@ -17,17 +17,13 @@ require(r4ss)
 
 # load model output into R
 # read base model from each area
-mod.S <- 'South/17_Base_Model'
+mod.S <- 'South/18_New_South_Base'
 dir.S <- file.path(YTdir.mods, mod.S)
-if(!exists('out.S')){
-  out.S <- SS_output(dir.S)
-}
+out.S <- SS_output(dir.S)
 
-mod.N <- 'North/18_Base_Model'
+mod.N <- 'North/20_tuned'
 dir.N <- file.path(YTdir.mods, mod.N)
-if(!exists('out.N')){
-  out.N <- SS_output(dir.N)
-}
+out.N <- SS_output(dir.N)
 
 # create new folder to contain all retrospectives
 dir.create(file.path(YTdir.mods, "retrospectives"))

@@ -638,7 +638,7 @@ mngmnt.table.N = xtable(mngmnt,
                               The ABC was redefined to reflect the uncertainty
                               in estimating the OFL under Amendment 23.
                               Likewise, the ACL was termed the OY prior to 2011.'), 
-                      label='tab:mnmgt_perform.N')  
+                      label='tab:mnmgt_perform_exec.N')  
 
 # Add alignment
 align(mngmnt.table.N) = c('l',
@@ -662,7 +662,7 @@ colnames(mngmnt) = c('Year',
 # Create the management performance table
 mngmnt.table.S = xtable(mngmnt, 
                       caption=c('Southern model recent total catch relative to harvest specifications. The southern stock of yellowtail rockfish has been managed in the Southern Shelf Rockfish complex during this period.  The values in this table represent the yellowtail harvest specification contributions to the complex and, as such, are not the reference limits used in managing fisheries catches. There were no harvest specifications for this stock prior to 2011.'), 
-                      label='tab:mnmgt_perform.S')  
+                      label='tab:mnmgt_perform_exec.S')  
 # Add alignment
 align(mngmnt.table.S) = c('l',
                         '>{\\raggedleft}p{1in}',

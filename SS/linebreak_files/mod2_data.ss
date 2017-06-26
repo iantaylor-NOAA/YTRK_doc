@@ -10,7 +10,7 @@
 #
 #_observed data:
 #V3.30.03.05
-1916 #_StartYr
+1889 #_StartYr
 2016 #_EndYr
 1 #_Nseas
 12 #_months/season
@@ -127,6 +127,36 @@
 2014    1       1       60.11240193     0.5
 2015    1       1       95.81426094     0.5
 2016    1       1       31.85691141     0.5
+#
+#_Begin_Commercial
+#
+1889 1 2 1 0.5
+1890 1 2 18.31111 0.5
+1891 1 2 36.62222 0.5
+1892 1 2 54.93333 0.5
+1893 1 2 73.24444 0.5
+1894 1 2 91.55556 0.5
+1895 1 2 109.86667 0.5
+1896 1 2 128.17778 0.5
+1897 1 2 146.48889 0.5
+1898 1 2 164.8 0.5
+1899 1 2 183.11111 0.5
+1900 1 2 201.42222 0.5
+1901 1 2 219.73333 0.5
+1902 1 2 238.04444 0.5
+1903 1 2 256.35556 0.5
+1904 1 2 274.66667 0.5
+1905 1 2 292.97778 0.5
+1906 1 2 311.28889 0.5
+1907 1 2 329.6 0.5
+1908 1 2 347.91111 0.5
+1909 1 2 366.22222 0.5
+1910 1 2 384.53333 0.5
+1911 1 2 402.84444 0.5
+1912 1 2 421.15556 0.5
+1913 1 2 439.46667 0.5
+1914 1 2 457.77778 0.5
+1915 1 2 476.08889 0.5
 1916 1 2 494.4 0.5
 1917 1 2 769.48 0.5
 1918 1 2 903.62 0.5
@@ -235,11 +265,11 @@
 #_Errtype:  -1=normal; 0=lognormal; >0=T
 #_SD_Report: 0=no sdreport; 1=enable sdreport
 #_Fleet Units Errtype SD_Report
-1 1 0 0 # RecreationalCatch
+1 0 0 0 # RecreationalCatch
 2 1 0 0 # CommercialCatch_None
-3 1 0 0 # OnboardSurvey
-4 1 0 0 # HookAndLineSurvey
-5 1 0 0 # RecStudy
+3 0 0 0 # OnboardSurvey
+4 0 0 0 # HookAndLineSurvey
+5 0 0 0 # RecStudy
 #_yr month fleet obs stderr
 #_Year  Month   Fleet   Obs     StdErr
 # MRFSS is fish/anglerhr
