@@ -89,11 +89,9 @@
 
 ![Estimated density from the VAST model for the NWFSC shelf-slope trawl survey.\label{fig:VAST_Dens_NWFSCcombo}](Figures/VAST_NWFSCcombo/VAST_output_N_lognormal/Dens.png)
 
-![Quantile-Quantile plot for the VAST model with a log-normal error distribution applied to the NWFSC shelf-slope trawl survey in the Northern area.\label{fig:VAST_QQ_NWFSCcombo}](Figures/VAST_NWFSCcombo/VAST_output_N_lognormal/Q-Q_plot.jpg)
+![Quantile-Quantile plot for the VAST models for the Triennial and NWFSCcombo bottom trawl surveys for the Northern area. Panels are (a) Triennial with log-normal error distribution, (b) Trienial with gama error distribution, (c) NWFSCcombo with log-normal error distribution, and (d) NWFSCcombo with gama error distribution.\label{fig:VAST_QQ}](Figures/Q-Q_plots_VAST.png)
 
-![Quantile-Quantile plot for the VAST model with a gamma error distribution applied to the NWFSC shelf-slope trawl survey.\label{fig:VAST_QQ_NWFSCcombo_gamma}](Figures/VAST_NWFSCcombo/VAST_output_N_gamma/Q-Q_plot.jpg)
-
-![Comparison of estimated indices from the VAST model for the NWFSC shelf-slope trawl survey with log-normal and gamma error distributions and the the design-based estimate that doesn't depend on the geostatistical analysis included in VAST.\label{fig:VAST_compare_NWFSCcombo}](Figures/VAST_NWFSCcombo/NWFSC_index_compare.png)
+![Comparison of estimated indices from the VAST model for the NWFSC shelf-slope trawl survey with log-normal and gamma error distributions and the the design-based estimate that doesn't depend on the geostatistical analysis included in VAST.\label{fig:VAST_compare_NWFSCcombo}](Figures/VAST density maps.png)
 
 \FloatBarrier
 
@@ -285,9 +283,11 @@
 
 ![Retrospective analysis of spawning output for the `r mod1_label`. \label{fig:retro.N}](Figures/retrospectives/retro.N_compare1_spawnbio.png)
 
-### Forecasts analysis for `r mod1_label`
+\FloatBarrier
 
-\hl{to be added...}
+### Forecasts for `r mod1_label`
+
+![Forecast of relative spawning output for the `r mod1_label`. Filled circles for the years 2017 indicate forecast years. \label{fig:forecast.N}](r4ss/plots_mod1/ts9_Relative_spawning_output_with_forecast_with_95_asymptotic_intervals_forecast_intervals.png)
 
 \FloatBarrier
 
@@ -493,9 +493,11 @@
 
 ![Retrospective analysis of spawning output for the `r mod2_label`. \label{fig:retro.S}](Figures/retrospectives/retro.S_compare1_spawnbio.png)
 
-### Forecasts analysis for `r mod2_label`
+\FloatBarrier
 
-\hl{to be added...}
+### Forecasts for `r mod2_label`
+
+![Forecast of relative spawning output for the `r mod2_label`. Filled circles for the years 2017 indicate forecast years. \label{fig:forecast.S}](r4ss/plots_mod2/ts9_Relative_spawning_output_with_forecast_with_95_asymptotic_intervals_forecast_intervals.png)
 
 
 <!-- ********************************************************************** -->

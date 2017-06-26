@@ -147,6 +147,12 @@ for(datonly in c(FALSE,TRUE)){
   }
 }
 
+# forecasts of relative spawning output
+SSplotTimeseries(mod1, subplot=9, forecast=TRUE, print=TRUE, plot=FALSE,
+                 plotdir=out.dir.mod1)
+SSplotTimeseries(mod2, subplot=9, forecast=TRUE, print=TRUE, plot=FALSE,
+                 plotdir=out.dir.mod2)
+
 # time-varying retention for fleet 1 in model 1
 pngfun('time-varying_retention.png', mod=1)
 source('Rcode/time-varying_retention.R')
