@@ -33,7 +33,7 @@ These are the main changes from the previous model, and our rationale for them:
 
 2. Addition of Southern model. \emph{Rationale}: Hess, et al. determined that the West Coast Yellowtail stocks show a genetic cline occurring near Cape Mendocino, which is roughly  $40^\circ 10^\prime$ north latitude [@Hess2011].  This divides the stock into two genetically distinct substocks which we model independently.
 
-2. Availability of recent data. \emph{Rationale}: Ten years of data collection have occurred since the last update assessment, and the data necessary for an assessment of the Southern stock is now available.
+2. Availability of recent data. \emph{Rationale}: Ten years of data collection have occurred since the last update assessment, and the data necessary for an assessment of the southern stock is now available.
 
 3. Historical catch reconstructions. \emph{Rationale}:  Reconstruction of catch timeseries in California, Washington and Oregon clarify stock history as far back as 1889.
 
@@ -70,20 +70,20 @@ The Northwest Fisheries Science Center's NWFSCcombo survey provides age- and len
 
 \emph{Commercial}: The commercial fleet consists primarily of hook and line and trawl gear.  Hook and line gear account for 78% of the landings by weight in the recent period (1978-2016).  Commercial data were sexed, although there are many unsexed lengths.  To preserve the large numbers of lengths, the length data are entered in the model as undifferentiated, however the ages are sexed and provide the sole conditional age-at-length timeseries in the Southern Model.
 
-\emph{Recreational}: The recreational fleet includes data from sport fishery off the California coast south of Cape Mendocino.  The recreational lengths are unsexed.  The index is in fish per angler-hour.  Further information about how the index was worked up is in Appendix \ref{xxx}.
+\emph{Recreational}: The recreational fleet includes data from sport fishery off the California coast south of Cape Mendocino.  The recreational lengths are unsexed.  The index is in fish per angler-hour.  Further information about how the index was worked up is included below.
 
 \emph{California Onbord Recreational Survey}: Research derived-data include observations from the California Onboard recreational survey.  The length-compositions from this survey are undifferentiated by sex.  The index is in fish per angler-hour.
 
 \emph{NWFSC Hook-and-Line Survey}:  The data from this survey are used in the model as an index of fish per angler-hour, a single year of marginal age data by sex, and sexed length compositions.
 
-\emph{Small Fish Study}: A separate index, length comps and a single year of ages reflect a small study of juvenile fish conducted by the SWFSC.
+\emph{Small Fish Study}: Length comps and a single year of ages reflect a small study of juvenile fish conducted by the SWFSC.
 
+\emph{Juvenile Pelagic Survey}:  The SWFSC conducts an annual larval fish survey, and this provides an index of abundance for the Southern Model.
 
 ###Modeling Software
 The STAT team used Stock Synthesis [@Methot2015], which is the Pacific Fishery Management Council's preferred modeling platform for assessments. Version 3.30.03.05 (dated May 11, 2017) was primarily used, but tests with newer versions 3.30.03.07 and 3.30.04.02 produced identical results.
 
 ###Data Weighting
-
 Commercial and survey length composition and marginal age composition data are weighted according to the method of Ian Stewart (pers.comm):
 
    Sample Size = 0.138 * Nfish + Ntows if Nfish/Ntows < 44, and Ntows * 7.06 otherwise.
@@ -96,7 +96,6 @@ Weighting among fleets used the Francis method [@Francis2011] which is based on 
 
 
 ###Priors \label{priors}
-
 Log-normal priors for natural mortality were developed based on the method of Hamel [-@Hamel2015] as discussed under "Natural Mortality" in Section \ref{nat-mort} with point estimates for M of 0.15 and 0.12 for females and males for the Northern model and 0.18 and 0.135 for females and males in the Southern model. In the Northern model, both female mortality (with the prior) and male mortality as an offset (without a prior) were estimated. For the southern model, M was fixed at the median prior values for the two sexes.
 
 The prior for steepness ($h$) assumes a beta distribution with parameters based on an update of the Thorson-Dorn rockfish prior (Thorson et al. [-Thorson2017b], commonly used in past West Coast rockfish assessments) which was reviewed and endorsed by the Scientific and Statistical Committee in 2017. The prior is a beta distribution with $\mu$=0.718 and $\sigma$=0.158.
@@ -124,7 +123,7 @@ The Southern model has a total of `r sum(!is.na(mod2$parameters$Active_Cnt) & su
 * 1 index extra standard deviation parameter, and
 * `r length(grep("Sel", rownames(mod2$estimated_non_dev_parameters)))` selectivity parameters.
 
-The estimated parameters are described in more detail below and a full list of all estimated and fixed parameters is provided in Table \ref{tab:Model1_params} (Northern model) and Table \ref{tab:Model2_params} (Southern model).
+The estimated parameters are described in greater detail below and a full list of all estimated and fixed parameters is provided in Table \ref{tab:Model1_params} (Northern model) and Table \ref{tab:Model2_params} (Southern model).
 
 **Growth**
 5 parameters for female growth are estimated in each model: 3 von Bertalanffy parameters and 2 parameters for CV as a function of length at age  related to variability in length at age for small and large fish.
@@ -152,23 +151,25 @@ A parameter for extra standard deviation was added to the index based on bycatch
 \clearpage
 
 ##Model Selection and Evaluation
+
 ###Key Assumptions and Structural Choices
 Selectivity in both models is asymptotic, with the exception of the OR-CA MRFSS recreational fleet in the Northern model, and the Onboard recreational fleet in the Southern model.
 
 For the Northern model, several options for developing a CPUE series for the recreational fishery were considered but rejected as sparse and noisy.  Similarly, the Washington\_Sport fishery data was evaluated a a possible source for an index, but the data was not available in a form useful for a recreational index, i.e., there was no data that provided for a trip-level analysis of catch and effort, as was used for the MRFSS index in the Southern model [@Stephens2004].
 
 ###Alternate Models Considered
-
-\hl{Stacey suggests "Description is very sparse in this section. Would be helpful to reviewers to have more information on what was done and what models fits were, rather than just saying they were obviously poor."}
-
 Time-blocked selectivity and retention were investigated in the Northern model, as were domed selectivities.
 
-We also explored time-blocks on selectivity in the Southern model, and domed selectivity for the MRFSS/RecFIN data.
+We also explored time-blocks on selectivity in the Southern model, and domed selectivity for the MRFSS/RecFIN data.  For early versions of the model, we allowed the model to estimate natural mortality.  There is very little discard of Yellowtail in the Onboard Survey, however it is the only information on discards in the south, so we attempted to include it in the model.
 
-These approaches resulted in model fits to data that were obviously poor, and so they were rejected
+These approaches resulted in models that didn't converge, and so they were rejected.
 
 ###Convergence
-Convergence testing through use of dispersed starting values often requires extreme values to explore new areas of the multivariate likelihood surface. Stock Synthesis provides a jitter option that generates random starting values from a normal distribution logistically transformed into each parameter's range [@Methot2015]. We used this function to find parameter values for convergence in the Southern model.  The Northern model \hl{report jittering when it's been done}.
+Convergence testing through use of dispersed starting values often requires extreme values to explore new areas of the multivariate likelihood surface. Stock Synthesis provides a jitter option that generates random starting values from a normal distribution logistically transformed into each parameter's range [@Methot2015]. We used this function to find parameter values for convergence in the Southern model. 
+
+The Southern jitter analysis post-tuning was run 100 times, and resulted in 43 of a hundred models that returned to the base case.  No model resulted in a lower likelihood than the base model.
+
+The Northern model \hl{report jittering when it's been done}.
 
 \clearpage
 
@@ -352,7 +353,7 @@ There was little information to inform the Southern Model of discard behavior, e
 ### Southern Model Lengths
 Lengths in the Southern model were entered as unsexed, except for the Hook-and-Line fishery.  There were sexes for the Commercial lengths, however there were also large numbers of unsexed lengths, and we chose to model the lengths as unsexed, to include as much of the data as possible.  This was true of the Small-Fish study, as well.
 
-Bubble plots of the lengths by year in each fishery are in Figure \ref{fig:comp_length_bubble_mod2}.  The plot for the recreational fishery clearly shows the transition from the MRFSS sampling program to RecFIN in 2003/2004, as well as suggesting the existence of larger fish in the 1980s.  The Commercial fishery data has been sparse in recent years, however the fish taken in the Commercial catch are consistently larger than those in the recreational fishery, no doubt reflecting trawling in deeper waters.  The Onboard survey lengths reflect two eras of sampling, again with larger fish in the earlier period.  The panel for the Hook-and-Line survey shows that the females landed are always larger than the males, in agreement with the model estimates of growth: Figure \ref{fig:growth}.
+Bubble plots of the lengths by year in each fishery are in Figure \ref{fig:comp_length_bubble_mod2}.  The plot for the recreational fishery clearly shows the transition from the MRFSS sampling program to RecFIN in 2003/2004, as well as suggesting the existence of larger fish in the 1980s.  The Commercial fishery data has been sparse in recent years; however the fish taken in the Commercial catch are consistently larger than those in the recreational fishery, no doubt reflecting trawling in deeper waters.  The Onboard survey lengths reflect two eras of sampling, again with larger fish in the earlier period.  The panel for the Hook-and-Line survey shows that the females landed are always larger than the males, in agreement with the model estimates of growth: Figure \ref{fig:growth}.
 
 The fits to the lengths in the Recreational fishery Figure \ref{fig:mod2_1_comp_lenfit_flt1mkt2} show variable fits through the years, with the noisy and sparse data in 2004 heralding the transition between MRFSS sampling and RecFIN.  Overall, the timeseries of mean lengths is fit fairly well (Figure \ref{fig:mod2_4_comp_lenfit_data_weighting_TA1.8_Recreational Fishery}).
 
@@ -362,13 +363,13 @@ Fits for the Onboard Survey lengths are good in the early survey, and poor for t
 
 The Hook-and-Line Survey lengths are noisy (Figure \ref{fig:mod2_13_comp_lenfit_flt4mkt0}), but the fits are acceptable, and follow the trend of the data better than those for the other datasets:  Figure \ref{fig:mod2_16_comp_lenfit_data_weighting_TA1.8_Hook & Line Survey}.
 
-The small fish survey lengths are not fit badly (Figures \ref{fig:mod2_17_comp_lenfit_flt5mkt2} and \ref{fig:mod2_20_comp_lenfit_data_weighting_TA1.8_Recreational Study}), and it is perhaps a shame that there are so few years to this timeseries.
+The Small Fish Study lengths are not fit badly (Figures \ref{fig:mod2_17_comp_lenfit_flt5mkt2} and \ref{fig:mod2_20_comp_lenfit_data_weighting_TA1.8_Recreational Study}), and it is perhaps a shame that there are so few years to this timeseries.
 
 The aggregate fits to the length comps for all five datasets is shown in Figure \ref{fig:mod2_21_comp_lenfit__aggregated_across_time}, and Pearson residuals for the lengths in Figure \ref{fig:comp_Pearson_length_mod2}.  Filled bubbles represent under-estimation of the data, open bubbles represent overestimation.
 
 
 ### Southern Model Ages
-There are few marginal ages in the model.  Bubble plots for the Southern model ages (Figure \ref{fig:comp_age_bubble_mod2}) show the small sample from the Juvenile Fish Study and the single year of ages from the Hook-and-Line Survey.  The samples are too small to show any inter-annual variation, and are noisy within-year.
+There are few marginal ages in the model.  Bubble plots for the Southern model ages (Figure \ref{fig:comp_age_bubble_mod2}) show the small sample from the Small Fish Study and the single year of ages from the Hook-and-Line Survey.  The samples are too small to show any inter-annual variation, and are noisy within-year.
 
 Figure \ref{fig:mod2_1_comp_agefit_flt1mkt2} shows the fit to the Recreational Fishery samples, which is poor in all four years.  The mean age in this data is shown in Figure \ref{fig:mod2_4_comp_agefit_data_weighting_TA1.8_Recreational Fishery}, at 10 years.
 
@@ -378,7 +379,7 @@ The aggregated fits for the marginal ages are shown in Figure \ref{fig:mod2_9_co
 
 The implied marginal age distribution from the commercial conditional-age-at-length compositions is shown in Figure \ref{fig:mod2_11_comp_gstagefit_flt2mkt2}.  This figure is included for informational purposes only; as it does not contribute to the model likelihood calculations.  The fits here are quite good 1981-1999, however the last three years of data are very sparse and not well fit.
 
-Pearson residuals for the Small Fish Juvenile Study and the Hook-and-Line Survey are shown in Figure \ref{fig:comp_Pearson_age_mod2}.  Bubble size indicates the amount of disappointment in the fits.  The filled bubbles indicate underestimates by the model; the open bubbles indicate overestimates.
+Pearson residuals for the Small Fish Study and the Hook-and-Line Survey are shown in Figure \ref{fig:comp_Pearson_age_mod2}.  Bubble size indicates the amount of disappointment in the fits.  The filled bubbles indicate underestimates by the model; the open bubbles indicate overestimates.
 
 The good news age-data comes from the commercial fleet, as was foreshadowed by the implied marginal ages.  Figure \ref{fig:mod2_4_comp_condAALfit_data_weighting_TA1.8_condAgeCommercial Fishery} shows the interannual fits to the mean age in the commercial age-at-length data.  Except for 1981, 1982 and 1989, the model is able to fit the data reasonably well, detecting the downward trend in the late 1980s and into the mid-1990s.
 
@@ -389,20 +390,23 @@ The annual plots of age-at-length fits (Figure \ref{fig:mod2_5_comp_condAALfit_A
 
 The Southern model was investigated in these N ways:
 \begin{description}
-\item[NoSmall] The small fish study was included to provide information about growth of young fish.  We took out the biological data associated with this study.
-\item The NWFSCcombo data for south of Cape Mendocino is sparse.  We added it to the model to investigate its utility.
-\item[AddIndex] The index for the NWFSCcombo survey south of Cape Mendocino was also added to the Southern model.
-\item[M Prior] Turn on the prior for M and see if the model can estimate it.  M has been a fixed parameter since very early runs of the model, but changes since then may have made M estimable.
-\item[Age64] The literature value for maximum age is 64.  We fixed mortality at 0.0844, the value associated with that age, to investigate its effect on the model.
-\item[NorthMs] We also investigate the effect of using the natural mortalities for males and females estimated by the Northern model.
+\item[Drop Biological Datasets]The data from each source in turn was dropped from the model.  This resulted in improved Total Likelihoods, but implausible results.  Three models (those without the Small Fish, without the Onboard lengths and without the Commercial data) had timeseries with spawning biomass higher than virgin spawning biomass in some years.  Removal of the Hook and Line data or the Onboard data results in models with dramatically increased uncertainty.
+The model without the Hook and Line data and the model lacking the Small Fish both estimate much higher fishing mortality than the base model.
+
+\item[Drop Indices]Each index in turn was dropped from the model.  This made very little difference in Total Likelihoods, but except for the model lacking the Juvenile index, estimated virgin spawning biomass 5 orders of magnitude smaller than the base model, however all models ended up with similar timeseries and similar relative depletion.
+
+\item[Changes to M]Three sensitivities to M were run:  we let the model estimate M, we fixed M at the northern values, and we fixed M at a value that Hamel[-@Hamel2015] estimated for a maximum age of 64, the value reported in [-@Love2011].  The model is very sensitive to changes in M.
+
+\item The NWFSCcombo data for south of Cape Mendocino is sparse.  Adding it to the model created a monster.
+
 \item[SplitIndices] We split the recreational indices (MRFSS and Onboard) into two separate timeseries, since the model had trouble fitting these indices.
-\item[NoIndex X]We turned off each index in turn (MRFSS, Onboard, Juvenile Study and the Hook-and-Line Survey).
+
+\item[Tuning] We investigated tuning the model according to the method of McAlister and Ianelli[-@Ianelli2009].  
+
 \end{description}
 
 Results of these investigations can be seen in Figures \ref{xxx}, and Table \ref{yyy}.
 
-###Results of Jitter Runs
-We jittered the model 100 times to ensure that the best parameter values are those in the final base-case.  The jitter runs returned to the base case (likelihood 774.696) 43 times, and no run resulted in a lower likelihood.
 
 ### Southern Model Likelihood Profiles
 We profiled the change in negative log likelihood for the data sources and model total likelihood for critical parameters fixed in the model:  **R0**, the log of equilibrium recruitment; female natural mortality, **MF**; male natural mortality, **MM**; and steepness, **h** the parameter that reflects how quickly the stock-recruit relationship allows the stock to rebound from depleted stock size.
