@@ -90,7 +90,7 @@ Pikitch study discards were aggregated due to small sample size and included in 
 **Commercial Logbook CPUE**   
 The commercial logbook (fish-ticket) data in PacFIN was used to generate an index for the Northern model for the years 1987-1998, a period in which management of the fishery was stable, i.e., regulations weren't changing fishery practices.  
 
-The data were first filtered using a modified Stephens-MacCall approach [@Stephens2004].  This approach uses the species composition (presence-absence) of the catch in a binomial genearlized linear model (glm) to evaluate the per-haul probability of encountering a particular species; in this case, Yellowtail Rockfish.  The intent of the analysis is to eliminate all hauls with a very low probability of encountering Yellowtail Rockfish. 
+The data were first filtered using a modified Stephens-MacCall approach [@Stephens2004].  This approach uses the species composition (presence-absence) of the catch in a binomial generalized linear model (glm) to evaluate the per-haul probability of encountering a particular species; in this case, Yellowtail Rockfish.  The intent of the analysis is to eliminate all hauls with a very low probability of encountering Yellowtail Rockfish. 
 
 For this analysis, the species effects were combined with fishery variables in a mixed-effects glm (a glmm). The species were modeled as binomial, and random effects were added for haul duration, depth, port, state agency, and month, and the interaction of year and vessel.  This approach reduced the number of hauls to be evaluated by 61%.
 

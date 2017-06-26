@@ -28,7 +28,7 @@ Catches from the Southern stock (Figure \ref{fig:r4ss_catch_S}) were divided int
 
 \FloatBarrier
 
-![Estimated catch history of `r spp` in the `r mod1_label`. Recreational catches in Washington are model estimates of total weigth converted from input catch in numbers using model estimates of growth and selectivity.\label{fig:r4ss_catch_N}](r4ss/plots_mod1/catch2 landings stacked.png)
+![Estimated catch history of `r spp` in the `r mod1_label`. Recreational catches in Washington are model estimates of total weight converted from input catch in numbers using model estimates of growth and selectivity.\label{fig:r4ss_catch_N}](r4ss/plots_mod1/catch2 landings stacked.png)
 
 ![Estimated catch history of `r spp` in the `r mod2_label`. \label{fig:r4ss_catch_S}](r4ss/plots_mod2/catch2 landings stacked.png)
 
@@ -64,7 +64,7 @@ Catches from the Southern stock (Figure \ref{fig:r4ss_catch_S}) were divided int
 This assessment uses Stock Synthesis version 3.3.  The Northern model begins in `r Dat_start_mod1`. The Southern model begins in `r Dat_start_mod2`. In both cases those starting years were chosen based on the first year of the available catch data and the start of the estimated recruitment deviations was at a later point, so both models were assumed to start at an unfished equilibrium.
  
 ##Stock Biomass{-}
-The spawning output for the Northern model was estimated to have fallen below 40\% of unifished equilibrium in the early 1980s, to a minimum of `r MinDepl_mod1`% in `r MinDeplYr_mod1` but has rebounded since to `r Depl_mod1` in 2017 (~95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Figures \ref{fig:Spawnbio_all} and \ref{fig:RelDeplete_all}, Table \ref{tab:SpawningDeplete_mod1}).
+The spawning output for the Northern model was estimated to have fallen below 40\% of unfished equilibrium in the early 1980s, to a minimum of `r MinDepl_mod1`% in `r MinDeplYr_mod1` but has rebounded since to `r Depl_mod1` in 2017 (~95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Figures \ref{fig:Spawnbio_all} and \ref{fig:RelDeplete_all}, Table \ref{tab:SpawningDeplete_mod1}).
 
 The spawning output for the Southern model is estimated to have experienced less impact from fishing and never fallen below the 40\% reference point. The estimated minimum was `r MinDepl_mod2`% in `r MinDeplYr_mod2` and the estimated relative spawning output in 2017 is `r Depl_mod2` (~95% asymptotic interval: $\pm$ `r Depl_mod2_CI`).
 
@@ -95,7 +95,7 @@ The spawning output for the Southern model is estimated to have experienced less
 
 ![Time series of spawning output trajectory (circles and line: median; light broken lines: 95% credibility intervals) for the base case assessment model.  \label{fig:Spawnbio_all}](`r spawn.file`)
 
-![Estimated relative depletion with approximate 95\% asymptotic confidnce intervals (dashed lines) for the base case assessment model. \label{fig:RelDeplete_all}](`r Bratio.file`)
+![Estimated relative depletion with approximate 95\% asymptotic confidance intervals (dashed lines) for the base case assessment model. \label{fig:RelDeplete_all}](`r Bratio.file`)
 
 <!-- ***********END  EXECUTIVE SUMMARY SPAWNING BIOMASS AND**************** -->
 
