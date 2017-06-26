@@ -239,7 +239,7 @@ Age structure data were available from the following sources:
 ###Commercial Fishery Landings
 
 **California Commercial Landings**   
-The California Commercial Fishery Database (**CalCOM**) provided landings in California south of 40$^\circ$ 10'N for 1969-2016.
+The California Commercial Fishery Database (**CalCOM**) provided landings in California south of 40$^\circ$ 10'N for 1969-2016. Because this fishery is known to have begun in the 1880s, we added catch as a linear ramp from 1889 (the earliest catch in the Northern model) to the 2016 value.
 
 **Historical Data**
 A reconstruction of the historical commercial fishery south of Cape Mendocino was provided by the Southwest Fisheries Science Center (**SWFSC**) for 1916-1968.
