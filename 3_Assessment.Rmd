@@ -97,17 +97,7 @@ Weighting among fleets used the Francis method [@Francis2011] which is based on 
 
 ###Priors \label{priors}
 
-
-Hamel [-@Hamel2015] developed a method for combining meta-analytic approaches to relating the natural mortality rate M to other life-history parameters such as longevity, size, growth rate and reproductive effort, to provide a prior on M. In that same issue of ICESJMS, Then et al. [-@Then2015], provided an updated data set of estimates of M and related life history parameters across a large number of fish species, from which to develop an M estimator for fish species in general.
-They concluded by recommending M estimates be based on maximum age alone, based on an updated Hoenig non-linear least squares estimator $M=4.899A_{max }^{-.916}$. 
-
-The approach of basing M priors on maximum age alone was one that was already being used for west coast rockfish assessments. However, in fitting the alternative model forms relating M to Amax, Then et al. did not consistently apply their transformation. In particular, in real space, one would expect substantial heteroscedasticity in both the observation and process error associated with the observed relationship of M to Amax. Therefore, it would be reasonable to fit all models under a log transformation. This was not done.
-
-Re-evaluating the data used in Then et al. [-@Then2015] by fitting the one-parameter Amax model under a log-log transformation (such that the slope is forced to be -1 in the transformed space (as in @Hamel2015), the point estimate for M is $M=5.4/Amax$
-
-This is also the median of the prior. The prior is defined as a lognormal with mean lna(5.4/Amax) and SE = 0.4384343. 
-
-Natural mortality priors for these models were based on examination of the 99\% quantile of the observed ages from early in the time-series, before the full impact of fishing would have taken place. For the Northern model, these quantiles were approximately 35 years for females and 45 years for males, resulting in median M values of 0.15 and 0.12 for females and males. For the Southern model, the 99\% quantile of the early age observations were approximately 30 and 40 years for females and males, resulting in median M prior values of 0.18 and 0.135, respectively. In both models, M for males was represented as an offset from females. In the Northern model, both the female value and the male offset could be estimated without priors so the priors were not used. For the southern model, M was fixed at the median prior values for the two sexes.
+Log-normal priors for natural mortality were developed based on the method of Hamel [-@Hamel2015] as discussed under "Natural Mortality" in Section \ref{nat-mort} with point estimates for M of 0.15 and 0.12 for females and males for the Northern model and 0.18 and 0.135 for females and males in the Southern model. In the Northern model, both female mortality (with the prior) and male mortality as an offset (without a prior) were estimated. For the southern model, M was fixed at the median prior values for the two sexes.
 
 The prior for steepness ($h$) assumes a beta distribution with parameters based on an update of the Thorson-Dorn rockfish prior (Thorson et al. [-Thorson2017b], commonly used in past West Coast rockfish assessments) which was reviewed and endorsed by the Scientific and Statistical Committee in 2017. The prior is a beta distribution with $\mu$=0.718 and $\sigma$=0.158.
 
