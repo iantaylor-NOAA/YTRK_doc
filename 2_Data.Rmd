@@ -133,7 +133,6 @@ The **Triennial Survey** was conducted by the AFSC every third year between 1977
 
 An index of abundance was estimated based on the VAST delta-GLMM model as described for the NWFSCcombo Index above. In this case as well, Q-Q plots indicated slightly better performance of the lognormal over gamma models for positive tows. The index shows a gradual decline from 1980 to 1992 followed by high variability in the final 4 points spanning 1995-2004.
 
-\hl{consider adding Q-Q plot and/or comparison for triennial}
 
 <!--************BIOLOGICAL DATA*********************************************-->
 ###Biological Samples
@@ -169,6 +168,7 @@ Length compositions were provided from the following sources:
 ```
 <!-- ---------------------------------------------------------------------- -->
 
+The expanded table detailing the length data is Table \ref{tab:Northern_length}.
 
 Age structure data were available from the following sources:
 \vspace{.5cm}
@@ -198,6 +198,7 @@ Age structure data were available from the following sources:
 ```
 <!-- ---------------------------------------------------------------------- -->
 
+The expanded table detailing the ages can be found in Table \ref{Northern_age}
 
 <!-- ************FISHERY-DEPENDENT DATA************************************ -->
 \FloatBarrier
@@ -209,7 +210,7 @@ Age structure data were available from the following sources:
 
 \vspace{.5cm}
 
-<!-- ***********Indices of abundance summary table************************* -->
+<!-- ***********Data sources summary table************************* -->
 ```{r, results = "asis"}
     Data_sources = read.csv("./txt_files/02_Summary_S_Data_Sources.csv")
       colnames(Data_sources) = c("Source",
@@ -289,7 +290,7 @@ Length compositions were provided from the following sources:
 
 \vspace{.5cm}
 
-<!-- ***********Indices of abundance summary table************************* -->
+<!-- ***********Length summary table************************* -->
 ```{r, results = "asis"}
     Length_sources = read.csv("./txt_files/02_Summary_S_Length_sources.csv")
       colnames(Length_sources) = c("Source",
@@ -301,7 +302,7 @@ Length compositions were provided from the following sources:
    # Lengths summary, create table   
      Length_sources.table = xtable(Length_sources, 
                                   caption = c("Summary of the time series of lengths used in the stock assessment."),
-                                 label = "tab:Length_sources", digits = 0)    
+                                 label = "tab:Length_sources_South", digits = 0)    
 
     # Print index summary table
       print(Length_sources.table, 
@@ -311,6 +312,7 @@ Length compositions were provided from the following sources:
 ```
 <!-- ---------------------------------------------------------------------- -->
 
+The expanded table with detailed lengths is Table \ref{Southern_length}
 
 Age structure data were available from the following sources:
 
@@ -330,7 +332,7 @@ Age structure data were available from the following sources:
                                   caption = c("Summary of the
                                               time series of age data used in the stock
                                               assessment."),
-                                 label = "tab:Age_sources",
+                                 label = "tab:Age_sources_South",
                                  digits = 0)    
 
     # Print index summary table
@@ -340,6 +342,9 @@ Age structure data were available from the following sources:
             sanitize.text.function = function(x){x})
 ```
 <!-- ---------------------------------------------------------------------- -->
+
+The expanded table with detailed age information is Table \ref{Southern_Age}
+
 \clearpage
 
 ## Biological Parameters Common to Both Models \label{bio-params}
