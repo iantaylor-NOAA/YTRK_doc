@@ -294,10 +294,6 @@ Results of these investigations can be seen in \ref{fig:sens.N.spawnbio} and Tab
 
 \hl{Text discussing sensitivity results to be added.}
 
-
-### Northern Model Retrospective Analysis
- 
-
 ### Northern Model Likelihood Profiles
 We profiled the change in negative log likelihood for the data sources and model total likelihood for critical parameters in the model:  **R0**, the log of equilibrium recruitment; female natural mortality, **MF**; male natural mortality, **MM**; and steepness, **h**, the parameter that reflects how quickly the stock-recruit relationship allows the stock to rebound from depleted stock size.
 
@@ -310,6 +306,9 @@ Figure \ref{fig:profile_M2.N} shows the likelihood profile for male natural mort
 
 
 The profile over values of steepness, h, from 0.5 to 0.9, Figure \ref{fig:profile_h.N}, shows the index data for once in the majority as all data sources except the lengths support 0.9 as minimizing the likelihood, while the lengths support a value closer to 0.5.  The scale of this plot differs from the others; it is roughly a tenth of the scale of the R0 plot, meaning that the choice of h within this range has far less impact on likelihood in the model than choices for the other profiled parameters.  This suggests the stock is not depleted; the choice of steepness would have a much greater impact on a depleted stock.
+
+### Northern Model Retrospective Analysis
+The Northern model shows little influence of removing up to 5 years of data (Figure \ref{fig:retro.N}). Examination of the contributions of each index to the likelihood profile over $log(R_0)$ indicated that the NWFSCcombo survey, which is the only index available within the most recent data, had the least influence on the scale of the model, so shortening this time series wouldn't be expected to have a large contribution on the population estimates.
 
 
 ### Northern Model Reference Points
@@ -403,8 +402,6 @@ The Southern model was investigated in these N ways:
 
 Results of these investigations can be seen in Figure \ref{xxx}, and Table \ref{yyy}.
 
-### Southern Model Retrospective Analysis
-
 ### Southern Model Likelihood Profiles
 We profiled the change in negative log likelihood for the data sources and model total likelihood for critical parameters fixed in the model:  **R0**, the log of equilibrium recruitment; female natural mortality, **MF**; male natural mortality, **MM**; and steepness, **h** the parameter that reflects how quickly the stock-recruit relationship allows the stock to rebound from depleted stock size.
 
@@ -416,6 +413,8 @@ Male natural mortality (MM) is profiled over a range from -0.4 to 0.  Male natur
 
 The steepness profile (Figure \ref{fig:profile_h.S}is the most colorful, as the lines bounce around and change direction, however the likelihood scale is from 0 to 0.7, meaning that none of the values in this range (0.5 - 0.9) would have much impact on likelihood in the model.  This supports the conclusion that the stock is abundant.  For a depleted stock, steepness would have a very large impact on the likelihood.
 
+### Southern Model Retrospective Analysis
+The Southern model shows a retrospective pattern in which removing one year of data at a time leads to highest estimates of spawning output (Figure \ref{fig:retro.S}). The changes associated with up to 3 years of data removed was relatively small, but removing 4 or 5 years of data had a larger impact on spawning output, with equilibrium value increasing from 5.2 trillion eggs to 6.8 trillion eggs. 
 
 ### Southern Model Reference Points
 
