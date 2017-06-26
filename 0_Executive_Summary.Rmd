@@ -246,28 +246,28 @@ Estimated equilibrium yield curves for both models are shown in Figure \ref{fig:
 \FloatBarrier
 
 
-
-
 ##Management Performance{-}
-\hl{Include: catches in comparison to OFL, ABC and OY/ACL values for the most 
-recent 10 years (when available), overfishing levels, actual catch and discard. 
-Include OFL(encountered), OFL(retained) and OFL(dead) if different due to discard 
-and discard mortality.}     
 
-Management performance table: Table \ref{tab:mnmgt_perform}
+Total catch (including landings and discards) from the Northern stock has remained well below the management limits in recent years (Table \ref{tab:mnmgt_perform.N}) and harvest specifications for 2017 and 2018 are set at values similar to the previous years.
+
+The southern stock has been managed in the Southern Shelf Rockfish complex so is not managed under a single-species catch limit. Nevertheless, the contribution of the yellowtail stock to the reference points for the complex are shown in Table \ref{tab:mnmgt_perform.S}, indicating that recent catches have been well below the OFL contributions in spite of these limits not being used in managing fisheries catches.
 
 
-<!-- ***********BEGIN EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLE******* --> 
+<!-- ***********BEGIN EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLES******* --> 
 ```{r, results='asis'}
-    # Print management performance table - will have to edit the text file and 
-    # R code for this table
-    # Edit file: './txt_files/Exec_mngmt_performance.csv'
-    print(mngmnt.table, include.rownames = FALSE, caption.placement = 'top', 
+    print(mngmnt.table.N, include.rownames = FALSE, caption.placement = 'top', 
           sanitize.text.function = function(x){x}, scalebox = .9)
 ```
-<!-- ***********END EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLE********* -->
+
+```{r, results='asis'}
+    print(mngmnt.table.S, include.rownames = FALSE, caption.placement = 'top', 
+          sanitize.text.function = function(x){x}, scalebox = .9)
+```
+
+<!-- ***********END EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLES********* -->
 
 
+\FloatBarrier
 
 
 ##Unresolved Problems And Major Uncertainties{-}
