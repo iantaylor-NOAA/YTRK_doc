@@ -8,7 +8,7 @@ We recommend that the following research will be valuable for future `r spp` ass
 
 \item A commercial index in the north.  This is by far the largest segment of the fishery, and the introduction of the trawl rationalization program should mean that an index can be developed for the current fishery when the next assessment is performed.
 
-\item More recent ages for the southern model.  The commercial age timeseries currently stops in 2002. Otoliths have been collected for all years in the Hook \& Line survey but only samples from 2004 have been aged.
+\item More recent ages for the Southern model.  The commercial age timeseries currently stops in 2002. Otoliths have been collected for all years in the Hook \& Line survey but only samples from 2004 have been aged.
 
 \end{enumerate}
 

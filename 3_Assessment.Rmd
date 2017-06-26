@@ -4,7 +4,7 @@
 <!-- ***********HISTORY AND CURRENT ASSESSMENT***************************** -->
 ##History Of Modeling Approaches Used For This Stock
 
-Yellowtail rockfish was previously modeled as an age-structured, 3-area stock north of  $40^\circ 10^\prime$  in 1999 [@Tagart2000] using a model written in ADMB [@Fournier2012]; an update of this assessment was last conducted in 2004 [@Wallace2005].  That assessment divided the stock into 3 INPFC areas based on the suggestion that there might be biological differences in the stock, however recent genetic studies don't support that [@Hess2011].  The INPFC area boundaries are not coincident with state boundaries; this is a concern in that recent reconstructions of historical catch are state-by-state along the West Coast.  Because we cannot produce data that conform to the areas previously assessed, we have made no effort to reproduce the previous model.
+Yellowtail Rockfish was previously modeled as an age-structured, 3-area stock north of  $40^\circ 10^\prime$  in 1999 [@Tagart2000] using a model written in ADMB [@Fournier2012]; an update of this assessment was last conducted in 2004 [@Wallace2005].  That assessment divided the stock into 3 INPFC areas based on the suggestion that there might be biological differences in the stock, however recent genetic studies don't support that [@Hess2011].  The INPFC area boundaries are not coincident with state boundaries; this is a concern in that recent reconstructions of historical catch are state-by-state along the West Coast.  Because we cannot produce data that conform to the areas previously assessed, we have made no effort to reproduce the previous model.
 
 A data-moderate approach was used to evaluate stock status in 2013 [@Cope2013].  The data-moderate model used only indices of abundance and made simplifying assumptions about selectivity and growth since no length or age data were included in the model.  This approach is also  incompatible with the current model, and we have made no attempt to reproduce it, either.
 
@@ -12,13 +12,13 @@ A data-moderate approach was used to evaluate stock status in 2013 [@Cope2013]. 
 
 ###Previous Assessment Recommendations
 
-The STAR Panel report for the 2005 yellowtail rockfish update assessment (for the area North of $40^\circ 10^\prime$ included three recommendations for future assessments:
+The STAR Panel report for the 2005 Yellowtail Rockfish update assessment (for the area North of $40^\circ 10^\prime$ included three recommendations for future assessments:
 
 1. \emph{Figure out the root cause of the low average weight at age in South Vancouver in 2002 and 2003. The actual cause of this problem is unclear, but may involve instability in fitting von Bertalanffy parameters, sampling, ageing, or penalties in the model.} The Northern model is no longer divided into sub-stocks and no longer uses empirical weights because weight at age is modeled using internally estimated growth curve. The length compositions for 2002 and 2003 do not show anomolously small fish.
 
-2. \emph{The major hindrance to yellowtail stock assessments is lack of a credible abundance index. A major effort should be made to develop a credible abundance index for yellowtail rockfish. This may need to involve new survey technology.} The abundance indices used in both the Northern and Southern models in this assessment are all newly analyzed using updated statistical approaches, but there remains no fishery independent index that samples fish in the mid-water. In 2005, the NWFSC shelf-slope bottom trawl survey had only been in place for 2 years whereas it now represents a 14-year timeseries for the Northern stock. However, there remains the challenge of using bottom trawl gear to sample a rockfish often associated with mid-water or untrawable bottom habitat.
+2. \emph{The major hindrance to Yellowtail stock assessments is lack of a credible abundance index. A major effort should be made to develop a credible abundance index for Yellowtail Rockfish. This may need to involve new survey technology.} The abundance indices used in both the Northern and Southern models in this assessment are all newly analyzed using updated statistical approaches, but there remains no fishery independent index that samples fish in the mid-water. In 2005, the NWFSC shelf-slope bottom trawl survey had only been in place for 2 years whereas it now represents a 14-year timeseries for the Northern stock. However, there remains the challenge of using bottom trawl gear to sample a rockfish often associated with mid-water or untrawable bottom habitat.
 
-3. \emph{Considering that the last full assessment of yellowtail was conducted in 2000, and the stock assessment model software currently in use is no longer being updated or maintained, a full assessment of yellowtail should be considered in the next assessment cycle.} This is a full assessment conducting using the actively maintained Stock Synthesis software.
+3. \emph{Considering that the last full assessment of Yellowtail was conducted in 2000, and the stock assessment model software currently in use is no longer being updated or maintained, a full assessment of Yellowtail should be considered in the next assessment cycle.} This is a full assessment conducting using the actively maintained Stock Synthesis software.
 
 
 <!-- ************************MODEL DESCRIPTION***************************** -->
@@ -29,9 +29,9 @@ The STAR Panel report for the 2005 yellowtail rockfish update assessment (for th
 ###Transition To The Current Stock Assessment
 These are the main changes from the previous model, and our rationale for them:
 
-1. Transition to Stock Synthesis. \emph{Rationale}: The Pacific Fishery Management Council's preferred modeling platform for stock assessments is Stock Synthesis [@Methot2015], developed since the last full assessment of yellowtail rockfish.
+1. Transition to Stock Synthesis. \emph{Rationale}: The Pacific Fishery Management Council's preferred modeling platform for stock assessments is Stock Synthesis [@Methot2015], developed since the last full assessment of Yellowtail Rockfish.
 
-2. Addition of Southern model. \emph{Rationale}: Hess, et al. determined that the West Coast yellowtail stocks show a genetic cline occurring near Cape Mendocino, which is roughly  $40^\circ 10^\prime$ north latitude [@Hess2011].  This divides the stock into two genetically distinct substocks which we model independently.
+2. Addition of Southern model. \emph{Rationale}: Hess, et al. determined that the West Coast Yellowtail stocks show a genetic cline occurring near Cape Mendocino, which is roughly  $40^\circ 10^\prime$ north latitude [@Hess2011].  This divides the stock into two genetically distinct substocks which we model independently.
 
 2. Availability of recent data. \emph{Rationale}: Ten years of data collection have occurred since the last update assessment, and the data necessary for an assessment of the Southern stock is now available.
 
@@ -50,7 +50,7 @@ The data associated with the commercial fleet includes age- and length-compositi
 
 The PacFIN logbook (fish ticket) index developed for the commercial fishery is in fish/tow.  Further information about how the data for the index was worked up is in Appendix \ref{xxx}.
 
-\emph{At-Sea Hake Fishery}: yellowtail rockfish are frequently caught in mid-water trawls associated with the At-Sea Hake Fishery (consisting of the Catcher-Processor and Mothership sectors). This fishery requires separate analysis than the shore-based commercial fishery because the at-sea catches are processed at sea (typically into fish meal). The catches are recorded and biological sampling takes place but the data are housed in a different database.  The At-Sea Hake fishery provides catches, length compositions by sex, and an index of abundance.
+\emph{At-Sea Hake Fishery}: Yellowtail Rockfish are frequently caught in mid-water trawls associated with the At-Sea Hake Fishery (consisting of the Catcher-Processor and Mothership sectors). This fishery requires separate analysis than the shore-based commercial fishery because the at-sea catches are processed at sea (typically into fish meal). The catches are recorded and biological sampling takes place but the data are housed in a different database.  The At-Sea Hake fishery provides catches, length compositions by sex, and an index of abundance.
 
 \emph{Recreational}: The recreational fleet includes data from sport fisheries off Oregon, and northern California (Eureka and Del Norte counties), from MRFSS and RecFIN.  The index of abundance for the recreational fleet is in fish per angler-hour.  Length data for this fleet are undifferentiated by sex.
 
@@ -345,7 +345,7 @@ Recruitments have been constant, except 2008 and 2010, when the model sees extra
 
 Selectivity by fleet is shown in Figure \ref{fig:selex.S}.  Selectivities for all but the recreational Onboard fishery are modeled as asymptotic; both recreational fleets (MRFSS/RecFIN and Onboard) are fully selected at 30cm; the remaining fleets show full selectivity at 45-50 cm.
 
-Index fits leave something to be desired.  All are more-or-less flat, with all of the three current indices, the Onboard, the Juvenile study and the Hook-and-Line survey all missing a downturn at the end of the timeseries.  During model tuning, we tried introducing a time-blocked index for the two periods of the Onboard survey, however it didn't improve the fit to the index significantly, and increased the (negative log) likelihood of the model.
+Index fits leave something to be desired.  All are more-or-less flat, with each of the three current-period indices: the Onboard, the Juvenile Survey and the Hook-and-Line survey all missing a downturn at the end of the timeseries.  During model tuning, we tried introducing a time-blocked index for the two periods of the Onboard survey, however it didn't improve the fit to the index significantly, and increased the (negative log) likelihood of the model.
 
 There was little information to inform the Southern Model of discard behavior, except in the Onboard survey, where it was represented by extremely small numbers.  We included these discards in the retained fishery, since attempts to include it as a type-1 "retained plus discards" fishery prevented the model from converging.
 
