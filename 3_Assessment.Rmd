@@ -290,7 +290,7 @@ For the Base model, the parameter estimates are given in Table \ref{tab:Model1_p
 \item[No commercial or hake indices] We turned off the both the commercial CPUE and hake bycatch indices.
 \end{description}
 
-Results of these investigations can be seen in \ref{fig:sens.N.spawnbio} and Table \ref{tab:Sensitivity_model1}.
+Results of these investigations can be seen in Figure \ref{fig:sens.N.spawnbio} and Table \ref{tab:Sensitivity_model1}.
 
 \hl{Text discussing sensitivity results to be added.}
 
