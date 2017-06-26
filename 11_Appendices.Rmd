@@ -7,38 +7,60 @@
 
 #Appendix A. Regulations history{-}
 \label{sec:AppendixA}
-\begin{longtable}{lp|p{.60in}p{1.0in}p{4.20in}}
 <!-- end of stuff from Melissa Monk's ReadMe.pdf -->
 
 ```{r, results = 'asis'}
 
+# read table of management history from CalCOM database
+Management_history_all <- read.table('./txt_files/YTRK.Mgmt.Hist.table2.txt',
+                                     header=TRUE)
+# convert to date format
+dates <- as.Date(Management_history_all$regulation_date, format="%m/%d/%Y")
+# improve headers
+colnames(Management_history_all)=c('Regulation date','Location','Regulation')
 
-    Management_history = read.table('./txt_files/YTRK.Mgmt.Hist.table2.txt', header=TRUE)
+# manually chosen set of dates for when to break up the table
+table_starts <- as.Date(c("1/1/1983", "4/28/1985", "1/1/1989", "1/1/1993",
+                          "1/1/1996", "1/1/1998", "4/1/1999", #"4/16/1999",
+                          "6/1/1999", "10/1/1999",
+                          "1/1/2001", "1/1/2003", "1/1/2004", "1/1/2005",
+                          "7/1/2005", "1/1/2007", "1/1/2008", "1/1/2009",
+                          "1/1/2010", "3/1/2011", "1/1/2014",
+                          "12/31/2050"),
+                        format="%m/%d/%Y")
+npages <- length(table_starts)-1
 
-    colnames(Management_history)=c('Regulation date',
-                                   'Location',
-                                   'Regulation')
+# loop over pages to add table
+for(ipage in 1:npages){
+  Management_history <- Management_history_all[dates >= table_starts[ipage] &
+                                                 dates < table_starts[ipage+1],]
 
-    Management_history.table = xtable(Management_history, 
-                                  caption = c('Regulations history for yellowtail rockfish', 
-                                              ' (Northern and Southern stocks).'),
-                                  label = 'tab:Management_history',
-                                  digits = 0)
+  caption <- paste0('Regulations history for Yellowtail Rockfish (page ',
+                    ipage, " of ", npages, ")")
+                   
+  Management_history.table <- xtable(Management_history, 
+      caption = caption,
+      label = paste0('tab:Management_history_page',ipage),
+      digits = 0)
 
-    # align(Management_history.table) = c('lp',
-    #                    '>{\\centering}p{.60in}',
-    #                    '>{\\centering}p{1.0in}',
-    #                    '>{\\raggedright}p{4.20in}')
+  align(Management_history.table) <- c('lp',
+           '>{\\centering}p{.60in}',
+           '>{\\centering}p{1.0in}',
+           '>{\\raggedright}p{4.20in}')
+  cat(caption,"\n") 
+  print(Management_history.table, 
+        include.rownames = FALSE,
+        caption.placement = 'top',
+        size="\\fontsize{9pt}{10pt}\\selectfont",
+        floating = FALSE)
+  if(ipage < npages){
+    cat("\\newpage\n")
+  }
 
-    print(Management_history.table, 
-          include.rownames = FALSE,
-          caption.placement = 'top',
-          size="\\fontsize{9pt}{10pt}\\selectfont",
-          tabular.environment = 'longtable',
-          floating = FALSE)
+
+}
 
 
 ```
-\end{longtable}
 \FloatBarrier
 \newpage
