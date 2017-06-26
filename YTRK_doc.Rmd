@@ -9,7 +9,6 @@ output:
     includes:
       before_body: Titlepage.tex
       in_header: header.tex
-      #after_body: 11_Appendices.Rmd
     keep_tex: yes
     number_sections: yes
     template: Default_template_modified.tex
@@ -103,7 +102,15 @@ header-includes:
 \newpage
 ```{r child = "10_References.Rmd"}
 ```
+
+<div id="refs"></div>
+
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\setcounter{figure}{0}
+\setcounter{table}{0}
 \newpage
+
 ```{r child = "11_Appendices.Rmd"}
 ```
 <!-- ********************END OF THE DOCUMENT******************************* -->
