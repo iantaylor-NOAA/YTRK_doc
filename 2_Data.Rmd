@@ -5,7 +5,7 @@
 
 #Data
 
-Data used in the Northern and Southern yellowtail rockfish assessments are summarized in Figures \ref{fig:data_plot.N} and \ref{fig:data_plot.S}.
+Data used in the Northern and Southern Yellowtail Rockfish assessments are summarized in Figures \ref{fig:data_plot.N} and \ref{fig:data_plot.S}.
 
 Data sources for the two models are largely distinct.  Northern fisheries and surveys had very sparse data (if any) for the south and vice-versa.  Among the 12 data sources referenced below, only 2 data sources are common to both models.  These are the MRFSS/RecFIN recreational dockside survey, which focuses on California and Oregon, and the CalCOM California commercial dataset, which contributed data from the northern-most California counties (Eureka and Del Norte) to the Northern model.  The CalCOM data account for less than five percent of the commercial landings in the Northern model, and less than 1% of the biological samples. 
 
@@ -51,16 +51,16 @@ A description of each model's data sources follows.
 The bulk of the commercial landings for Washington and Oregon came from the from the Pacific Fisheries Information Network (**PacFIN**) database.
 
 **Washington Catch Information**   
-The Washington Department of Fisheries and Wildlife (**WDFW**) provided historical yellowtail catch for 1889–1980.  Landings for 1981-2016 came from the PacFIN database.  WDFW also provided catches for the period 1981 – 2016 to include the re-distribution of the unspeciated "URCK" landings in PacFIN; this information is currently not available from PacFIN.  
+The Washington Department of Fisheries and Wildlife (**WDFW**) provided historical Yellowtail catch for 1889–1980.  Landings for 1981-2016 came from the PacFIN database.  WDFW also provided catches for the period 1981 – 2016 to include the re-distribution of the unspeciated "URCK" landings in PacFIN; this information is currently not available from PacFIN.  
 
 **Oregon Catch Information**   
-The Oregon Department of Fisheries and Wildlife (**ODFW**) provided historical yellowtail catch from 1892-1985.  ODFW also provided estimates of yellowtail rockfish in the in the un-speciated PacFIN "URCK" and "POP1" catch categories for recent years, and those estimates were combined with PacFIN landings for 1986-2016.
+The Oregon Department of Fisheries and Wildlife (**ODFW**) provided historical Yellowtail catch from 1892-1985.  ODFW also provided estimates of Yellowtail Rockfish in the in the un-speciated PacFIN "URCK" and "POP1" catch categories for recent years, and those estimates were combined with PacFIN landings for 1986-2016.
 
 **Northern California Catch**   
 The California Commercial Fishery Database (**CalCOM**) provided landings for the Northern model for the two counties north of  $40^\circ 10^\prime$ (Eureka and Del Norte) for 1969-2016.
 
 **Hake Bycatch**   
-The Alaska Fisheries Science Center (**AFSC**) provided data for yellowtail bycatch in the hake fishery from 1976-2016.
+The Alaska Fisheries Science Center (**AFSC**) provided data for Yellowtail bycatch in the hake fishery from 1976-2016.
 
 ###Sport Fishery Removals
 
@@ -76,7 +76,7 @@ Data from Northern California came from the Marine Recreational Fisheries Statis
 ###Estimated Discards
 
 **Commercial Discards**   
-The West Coast Groundfish Observing Program (**WCGOP**) is an onboard observer program that has extensively surveyed fishing practices since 2002, with nearly 100% observer coverage in the trawl sector in recent years.  WCGOP provided discard ratios for yellowtail rockfish from 2002 to 2015.
+The West Coast Groundfish Observing Program (**WCGOP**) is an onboard observer program that has extensively surveyed fishing practices since 2002, with nearly 100% observer coverage in the trawl sector in recent years.  WCGOP provided discard ratios for Yellowtail Rockfish from 2002 to 2015.
 
 **Pikitch Study**  
 The Pikitch study was conducted between 1985 and 1987 [@Pikitch1988].  The northern and southern boundaries of the study were $48^\circ 42^\prime$ N latitude and $42^\circ 60^\prime$ N. latitude respectively, which is primarily within the Columbia INPFC area [@Pikitch1988 ; @Rogers1992].  
@@ -90,11 +90,11 @@ Pikitch study discards were aggregated due to small sample size and included in 
 **Commercial Logbook CPUE**   
 The commercial logbook (fish-ticket) data in PacFIN was used to generate an index for the Northern model for the years 1987-1998, a period in which management of the fishery was stable, i.e., regulations weren't changing fishery practices.  
 
-The data were first filtered using a modified Stephens-MacCall approach [@Stephens2004].  This approach uses the species composition (presence-absence) of the catch in a binomial genearlized linear model (glm) to evaluate the per-haul probability of encountering a particular species; in this case, yellowtail rockfish.  The intent of the analysis is to eliminate all hauls with a very low probability of encountering yellowtail rockfish. 
+The data were first filtered using a modified Stephens-MacCall approach [@Stephens2004].  This approach uses the species composition (presence-absence) of the catch in a binomial genearlized linear model (glm) to evaluate the per-haul probability of encountering a particular species; in this case, Yellowtail Rockfish.  The intent of the analysis is to eliminate all hauls with a very low probability of encountering Yellowtail Rockfish. 
 
 For this analysis, the species effects were combined with fishery variables in a mixed-effects glm (a glmm). The species were modeled as binomial, and random effects were added for haul duration, depth, port, state agency, and month, and the interaction of year and vessel.  This approach reduced the number of hauls to be evaluated by 61%.
 
-The hauls identified with a reasonable probability of encountering yellowtail were then modeled in a delta-lognormal glm [@Stefansson1996] to produce an annual index of abundance, which was bootstrapped 500 times to evaluate uncertainty.  See Figures \ref{Logbook_lognormal} and \ref(Logbook_gamma) for Q-Q plots demonstrating that the lognormal glm fit the data better than the gamma.
+The hauls identified with a reasonable probability of encountering Yellowtail were then modeled in a delta-lognormal glm [@Stefansson1996] to produce an annual index of abundance, which was bootstrapped 500 times to evaluate uncertainty.  See Figures \ref{Logbook_lognormal} and \ref(Logbook_gamma) for Q-Q plots demonstrating that the lognormal glm fit the data better than the gamma.
 
 **MRFSS Index**
 MRFSS data was used to generate an index of abundance for 1980-2003.  The MRFSS data were aggregated as "trips" by staff at the SWFSC, and the Stephens-MacCall approach was used to filter the data to the set of fishing trips likely to have encountered yellowtail.  This was followed by application of a delta-lognormal glm using variables month and AREA_X (indicating offshore/onshore fishing) to generate the index, which was then jackknifed to produce estimates of uncertainty.  Q-Q plots for the MRFSS index are \ref{MRFSSlognormal} and \ref{MRFSSgamma}.
@@ -103,13 +103,13 @@ MRFSS data was used to generate an index of abundance for 1980-2003.  The MRFSS 
 
 The Hake bycatch data provided by the Alaska Fisheries Science Center (AFSC) was used to generate an index of abundance for 1985-1999.
 
-Data on haul-by-haul catch of yellowtail rockfish and Pacific Hake for the period 1976-2016 were obtained from the At-Sea Hake Observer Program along associated information including the location of each tow and the duration. Previous yellowtail assessments used an index of abundance for the years 1978-1999. The most recent assessment (Wallace and Lai, 2005) stated that the index was not updated to include years beyond 1999 “because subsequent changes in fishery regulations and behavior have altered the statistical properties of these abundance indices”.  The ending year of 1999 was retained for this analysis. However, the years up to 1984 have relatively few tows with adequate information for CPUE analysis, and fishing effort off the coast of Washington where yellowtail are most commonly encountered (Figure \ref{fig:ASHOP_X1}). Therefore, for this new analysis, 1985 was chosen as the starting year.
+Data on haul-by-haul catch of Yellowtail Rockfish and Pacific Hake for the period 1976-2016 were obtained from the At-Sea Hake Observer Program along associated information including the location of each tow and the duration. Previous Yellowtail assessments used an index of abundance for the years 1978-1999. The most recent assessment (Wallace and Lai, 2005) stated that the index was not updated to include years beyond 1999 “because subsequent changes in fishery regulations and behavior have altered the statistical properties of these abundance indices”.  The ending year of 1999 was retained for this analysis. However, the years up to 1984 have relatively few tows with adequate information for CPUE analysis, and fishing effort off the coast of Washington where Yellowtail are most commonly encountered (Figure \ref{fig:ASHOP_X1}). Therefore, for this new analysis, 1985 was chosen as the starting year.
 
-The hake fishery was evolving during the chosen 15 year period (1985-1999), which included a transition from foreign to domestic fleets fishing for Pacific Hake (Figure \ref{fig:ASHOP_X2}). The index from the at-sea hake fishery used in previous assessments standardized for changes in catchability by using a ratio estimator relating yellowtail catch to hake catch and then scaling by an estimate of fishing effort for hake (Equation 1 in Wallace and Lai, 2005). However, that approach does not take into account differences in the spatial distribution of the at-sea hake fishery relative to the distributions of hake and yellowtail.
+The hake fishery was evolving during the chosen 15 year period (1985-1999), which included a transition from foreign to domestic fleets fishing for Pacific Hake (Figure \ref{fig:ASHOP_X2}). The index from the at-sea hake fishery used in previous assessments standardized for changes in catchability by using a ratio estimator relating Yellowtail catch to hake catch and then scaling by an estimate of fishing effort for hake (Equation 1 in Wallace and Lai, 2005). However, that approach does not take into account differences in the spatial distribution of the at-sea hake fishery relative to the distributions of hake and yellowtail.
  
-For this new analysis, changes in catchability were estimated by comparing an index based on a geostatistical analysis of the hake CPUE from VAST [@Thorson2017] to the estimated available hake biomass from the most recent stock assessment (Berger et al. 2017). The relative catchability was then used to adjust an independent geostatistical index of yellowtail CPUE (Figure \ref{fig:ASHOP_X3}). In order to capture the general trend in catchability, reducing the variability among years, linear, exponential, and locally smoothed (LOWESS) models were fit to the time series of individual estimates of hake index to available biomass (lower panel in Figure \ref{fig:ASHOP_X3}). Of these, the LOWESS model best captured the pattern of fastest change in the middle of the time series. The average rate of increase in the resulting estimated catchability time series is 13% per year.
+For this new analysis, changes in catchability were estimated by comparing an index based on a geostatistical analysis of the hake CPUE from VAST [@Thorson2017] to the estimated available hake biomass from the most recent stock assessment (Berger et al. 2017). The relative catchability was then used to adjust an independent geostatistical index of Yellowtail CPUE (Figure \ref{fig:ASHOP_X3}). In order to capture the general trend in catchability, reducing the variability among years, linear, exponential, and locally smoothed (LOWESS) models were fit to the time series of individual estimates of hake index to available biomass (lower panel in Figure \ref{fig:ASHOP_X3}). Of these, the LOWESS model best captured the pattern of fastest change in the middle of the time series. The average rate of increase in the resulting estimated catchability time series is 13% per year.
  
-VAST was then used to conduct a geostatistical standardization of the CPUE of yellowtail caught as bycatch in the at-sea hake fishery. The resulting yellowtail index after adjustment by the estimated changes in catchability is qualitatively more similar to the index used in previous assessments (Figure \ref{fig:ASHOP_X4}) than the index resulting from assuming constant catchability.
+VAST was then used to conduct a geostatistical standardization of the CPUE of Yellowtail caught as bycatch in the at-sea hake fishery. The resulting Yellowtail index after adjustment by the estimated changes in catchability is qualitatively more similar to the index used in previous assessments (Figure \ref{fig:ASHOP_X4}) than the index resulting from assuming constant catchability.
 
 <!-- ************FISHERY-INDEPENDENT DATA*********************************** -->
 
@@ -129,7 +129,7 @@ Length and age compositions were also developed from this survey.
 
 **Alaska Fisheries Science Center (AFSC) Triennial shelf survey**    
 
-The **Triennial Survey** was conducted by the AFSC every third year between 1977 and 2001, (and was conducted in 2004 by the NWFSC using the same protocols). The 1977 survey had incomplete coverage and is not believe to be comparable to the later years. The survey design used equally-spaced transects from which searches for tows in a specific depth range were initiated. The depth range and latitudinal range was not consistent across years, but all years in the period 1980-2004 included the area from 40$^\circ$ 10'N north to the Canadian border and a depth range that included 55-366 meters, which spans the range where the vast majority of yellowtail encountered in all trawl surveys. Therefore the index was based on this depth range.
+The **Triennial Survey** was conducted by the AFSC every third year between 1977 and 2001, (and was conducted in 2004 by the NWFSC using the same protocols). The 1977 survey had incomplete coverage and is not believe to be comparable to the later years. The survey design used equally-spaced transects from which searches for tows in a specific depth range were initiated. The depth range and latitudinal range was not consistent across years, but all years in the period 1980-2004 included the area from 40$^\circ$ 10'N north to the Canadian border and a depth range that included 55-366 meters, which spans the range where the vast majority of Yellowtail encountered in all trawl surveys. Therefore the index was based on this depth range.
 
 An index of abundance was estimated based on the VAST delta-GLMM model as described for the NWFSCcombo Index above. In this case as well, Q-Q plots indicated slightly better performance of the lognormal over gamma models for positive tows. The index shows a gradual decline from 1980 to 1992 followed by high variability in the final 4 points spanning 1995-2004.
 
@@ -248,7 +248,7 @@ A reconstruction of the historical commercial fishery south of Cape Mendocino wa
 ###Sport Fishery Removals
 
 **MRFSS Estimates and RecFIN**  
-The California Department of Fish and Wildlife (**CDFW**) provided estimated yellowtail removals for the Marine Recreational Fisheries Statistical Survey (**MRFSS**) from 1980-1989, 1993-2003.  The Recreational FIsheries Information Network, (**RecFIN**) provided landings for 2004-2016.
+The California Department of Fish and Wildlife (**CDFW**) provided estimated Yellowtail removals for the Marine Recreational Fisheries Statistical Survey (**MRFSS**) from 1980-1989, 1993-2003.  The Recreational FIsheries Information Network, (**RecFIN**) provided landings for 2004-2016.
 
 **Historical Data**
 A reconstruction of the historical recreational fishery south of Cape Mendocino was provided by the Southwest Fisheries Science Center (**SWFSC**) for 1928-1980.
@@ -347,7 +347,7 @@ Age structure data were available from the following sources:
 \vspace{.5cm}
 **Aging Precision And Bias**
 
-Age error matrices were developed for double-reads at the PFMC aging lab in Newport, OR and for double reads within the WDFW aging lab.  The Newport lab has done all of the Survey aging for the NWFSC, along with some commercial ages and  the 400 fish from the Small Study.  WDFW provided the bulk of recreational and commercial ages.  Between-lab differences in aging were minute, as were within-lab differences.  This result is supported by the primary age reader's assessment:  yellowtail rockfish are extremely easy to age (B. Kamikawa, pers. comm.).
+Age error matrices were developed for double-reads at the PFMC aging lab in Newport, OR and for double reads within the WDFW aging lab.  The Newport lab has done all of the Survey aging for the NWFSC, along with some commercial ages and  the 400 fish from the Small Study.  WDFW provided the bulk of recreational and commercial ages.  Between-lab differences in aging were minute, as were within-lab differences.  This result is supported by the primary age reader's assessment:  Yellowtail Rockfish are extremely easy to age (B. Kamikawa, pers. comm.).
 
 \vspace{.5cm}
 **Weight-Length**

@@ -192,13 +192,13 @@ A summary of `r spp` exploitation histories for base model is provided as Figure
 ##Ecosystem Considerations{-}
 Rockfish in general are sensitive to the strength and timing of the upwelling cycle in the Eastern Pacific, which affects where pelagic juveniles settle, and impacts the availability of the zooplankton which the young require.
 
-Yellowtail rockfish feed mainly on pelagic animals, but are opportunistic, occasionally eating benthic animals as well. Large juveniles and adults eat fish (small Pacific whiting, Pacific herring, smelt, anchovies, lanternfishes, and others), along with squid, krill, and other planktonic organisms.  They are prey for Chinook salmon, lingcod, cormorants, pigeon guillemots and rhinoceros auklets. [@Love2011]
+Yellowtail Rockfish feed mainly on pelagic animals, but are opportunistic, occasionally eating benthic animals as well. Large juveniles and adults eat fish (small Pacific whiting, Pacific herring, smelt, anchovies, lanternfishes, and others), along with squid, krill, and other planktonic organisms.  They are prey for Chinook salmon, lingcod, cormorants, pigeon guillemots and rhinoceros auklets. [@Love2011]
 
 
 
 
 ##Reference Points{-}
-Yellowtail rockfish are managed relative to biomass reference points at $B_{40\%}$ (the $B_{MSY}$ proxy) and $B_{25\%}$ (the minimum stock-size threshold). Harvest rates are managed relative to an $F_{MSY}$ proxy $SPR = 50\%$ which corresponds to a Relative Fishing Intensity, $(1 - {SPR})/(1 - {SPR}_{50\%})$, of 100\%. This assessment estimates both the Northern and Southern stocks to be above the $B_{40\%}$ threshold with Relative Fishing Intensity below 100\% (${SPR} > 50\%$ which means the Spawning Potential is greater than 50\% of the unfished Spawning Potential).
+Yellowtail Rockfish are managed relative to biomass reference points at $B_{40\%}$ (the $B_{MSY}$ proxy) and $B_{25\%}$ (the minimum stock-size threshold). Harvest rates are managed relative to an $F_{MSY}$ proxy $SPR = 50\%$ which corresponds to a Relative Fishing Intensity, $(1 - {SPR})/(1 - {SPR}_{50\%})$, of 100\%. This assessment estimates both the Northern and Southern stocks to be above the $B_{40\%}$ threshold with Relative Fishing Intensity below 100\% (${SPR} > 50\%$ which means the Spawning Potential is greater than 50\% of the unfished Spawning Potential).
 
 The estimated relative depletion level for the Northern model in 2017 is 
 `r Depl_mod1` (~95% asymptotic interval: $\pm$ `r Depl_mod1_CI`, corresponding 
@@ -250,7 +250,7 @@ Estimated equilibrium yield curves for both models are shown in Figure \ref{fig:
 
 Total catch (including landings and discards) from the Northern stock has remained well below the management limits in recent years (Table \ref{tab:mnmgt_perform_exec.N}) and harvest specifications for 2017 and 2018 are set at values similar to the previous years.
 
-The southern stock has been managed in the Southern Shelf Rockfish complex so is not managed under a single-species catch limit. Nevertheless, the contribution of the yellowtail stock to the reference points for the complex are shown in Table \ref{tab:mnmgt_perform_exec.S}, indicating that recent catches have been well below the OFL contributions in spite of these limits not being used in managing fisheries catches.
+The southern stock has been managed in the Southern Shelf Rockfish complex so is not managed under a single-species catch limit. Nevertheless, the contribution of the Yellowtail stock to the reference points for the complex are shown in Table \ref{tab:mnmgt_perform_exec.S}, indicating that recent catches have been well below the OFL contributions in spite of these limits not being used in managing fisheries catches.
 
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLES******* --> 
