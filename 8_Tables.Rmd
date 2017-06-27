@@ -475,7 +475,7 @@ align(mngmnt.table.N) = c('l',
    
     
     # Total biomass, extract and subset
-    Bio_all = mod1$sprseries[, c('Yr', 'Bio_all')]
+    Bio_all = mod1$timeseries[, c('Yr', 'Bio_all')]
     Bio_allyrs = subset(Bio_all, Yr > (Dat_start_mod1 - 1) & Yr < (LastYR + 1))
 
   
@@ -1093,7 +1093,7 @@ align(mngmnt.table.S) = c('l',
    
     
     # Total biomass, extract and subset
-    Bio_all = mod2$sprseries[, c('Yr', 'Bio_all')]
+    Bio_all = mod2$timeseries[, c('Yr', 'Bio_all')]
     Bio_allyrs = subset(Bio_all, Yr > (Dat_start_mod2 - 1) & Yr < (LastYR + 1))
 
   
