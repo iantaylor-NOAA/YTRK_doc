@@ -474,7 +474,7 @@
 
 ![Time series of relative spawning output estimated in the subset of sensitivity analyses for the `r mod2_label` related to natural mortality. \label{fig:sens_S_M}](Figures/South_Sens/M.png)
 
-![Time series of relative spawning output estimated in the subset of sensitivity analyses for the `r mod2_label` related to removing indices of abundance from the model. \label{fig:sens_S_Other}](Figures/South_Sens/CPUE.png)
+![Time series of relative spawning output estimated in the subset of sensitivity analyses for the `r mod2_label` related to removing indices of abundance from the model. \label{fig:sens_S_indices}](Figures/South_Sens/CPUE.png)
 
 ![Time series of relative spawning output estimated in the additional sensitivity analyses for the `r mod2_label` not representend in the three figures above. \label{fig:sens_S_Other}](Figures/South_Sens/Other.png)
 
