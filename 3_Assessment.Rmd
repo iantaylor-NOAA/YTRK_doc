@@ -14,9 +14,9 @@ A data-poor assessment method, Depletion-Based Stock Reduction Analysis [@Dick20
 
 The STAR Panel report for the 2005 Yellowtail Rockfish update assessment (for the area North of $40^\circ 10^\prime$ included three recommendations for future assessments:
 
-1. \emph{Figure out the root cause of the low average weight at age in South Vancouver in 2002 and 2003. The actual cause of this problem is unclear, but may involve instability in fitting von Bertalanffy parameters, sampling, ageing, or penalties in the model.} The Northern model is no longer divided into sub-stocks and no longer uses empirical weights because weight at age is modeled using internally estimated growth curve. The length compositions for 2002 and 2003 do not show anomolously small fish.
+1. \emph{Figure out the root cause of the low average weight at age in South Vancouver in 2002 and 2003. The actual cause of this problem is unclear, but may involve instability in fitting von Bertalanffy parameters, sampling, ageing, or penalties in the model.} The Northern model is no longer divided into sub-stocks and no longer uses empirical weights because weight at age is modeled using an internally estimated growth curve. The length compositions for 2002 and 2003 do not show anomolously small fish.
 
-2. \emph{The major hindrance to Yellowtail stock assessments is lack of a credible abundance index. A major effort should be made to develop a credible abundance index for Yellowtail Rockfish. This may need to involve new survey technology.} The abundance indices used in both the Northern and Southern models in this assessment are all newly analyzed using updated statistical approaches, but there remains no fishery independent index that samples fish in the mid-water. In 2005, the NWFSC shelf-slope bottom trawl survey had only been in place for 2 years whereas it now represents a 14-year timeseries for the Northern stock. However, there remains the challenge of using bottom trawl gear to sample a rockfish often associated with mid-water or untrawable bottom habitat.
+2. \emph{The major hindrance to Yellowtail stock assessments is lack of a credible abundance index. A major effort should be made to develop a credible abundance index for Yellowtail Rockfish. This may need to involve new survey technology.} The abundance indices used in both the Northern and Southern models in this assessment are all newly analyzed using updated statistical approaches, but there is no fishery independent survey that samples fish in the mid-water. In 2005, the NWFSC shelf-slope bottom trawl survey had only been in place for 2 years whereas it now represents a 14-year timeseries for the Northern stock. However, there remains the challenge of using bottom trawl gear to sample a rockfish often associated with mid-water or untrawable bottom habitat.
 
 3. \emph{Considering that the last full assessment of Yellowtail was conducted in 2000, and the stock assessment model software currently in use is no longer being updated or maintained, a full assessment of Yellowtail should be considered in the next assessment cycle.} This is a full assessment conducting using the actively maintained Stock Synthesis software.
 
@@ -57,10 +57,9 @@ The PacFIN logbook (fish ticket) index developed for the commercial fishery is i
 \emph{Washington-Sport}:  The Washington data (WA_Sport) provides catches, lengths and ages, and was treated as a separate fleet for two reasons:  first, the length composition of the Washington catches were different from those in the recreational landings in Oregon and northern California (MRFSS/RecFIN data).  There are very large fish in this dataset, and fewer small ones.  Second, the WA_Sport landings are not available by weight, so they are entered in the model as numbers, andStock Synthesis internally converts them to weight using the combination of estimated selectivity for this fleet (informed by the length compositions), estimated growth, and the weight-length relationship.  Sex was available for the biological data, however many lengthed fish were not sexed, so the lengths for this fleet are undifferentiated by sex, although the ages are.
 
 \emph{Research}:
-The Alaska Fisheries Science Center's Triennial Trawl survey, provides age- and length-compositions, and an index of abundance.  This survey was conducted every third year from 1977-2004. Details on the workup of the CPUE (in biomass/area towed) can be found in Appendix \ref{xxx}.
+The Alaska Fisheries Science Center's Triennial Trawl survey, provides age- and length-compositions, and an index of abundance.  This survey was conducted every third year from 1977-2004. 
 
-The Northwest Fisheries Science Center's NWFSCcombo survey provides age- and length-compositions, as well as an index of abundance.  Details on the workup of the CPUE (in biomass/area towed) can be found in Appendix \ref{xxx}.
-
+The Northwest Fisheries Science Center's NWFSCcombo survey provides age- and length-compositions, as well as an index of abundance.  
 
 \emph{Conditional Age-at-Length}:  Only the NWFSCcombo ages were used as conditional age-at-length in the model.  All other aged fleets (Commercial, Washington\_Sport, and Triennial) are present in the model as marginal ages due to the amount of noise in the age data for those fleets.
 
@@ -235,7 +234,7 @@ Figures \ref{fig:recruits1.N} and \ref{fig:recdevs1.N} address recruitments esti
 
 ### Selectivities, Indices and Discards
 
-Selectivities in the Northern model (Figure \ref{fig:selex.N}) shows the difference between the recreational fisheries and the commercial fishery and survey sampling.  All of the fish are fully selected by 50 cm, but the recreational fish are fully selected at 30 cm.
+Selectivities in the Northern model (Figure \ref{fig:selex.N}) show the difference between the recreational fisheries and the commercial fishery and survey sampling.  All of the fish are fully selected by 50 cm, but the recreational fish are fully selected at 30 cm.
 
 Retention by length (Figure \ref{fig:retention.N}) varies over time between 40\% and 100\%, with no clear pattern of interannual variation, except for the trawl-rationalization era 2011-present.
 
@@ -278,8 +277,8 @@ Pearson residuals for the marginal age comps, are shown in the bubble plots in F
 
 The residuals for the conditional age-at-length from the NWFSCcombo survey show that growth appears to be reasonably estimated with no strong patterns suggesting consistently older or younger fish than expected in any year (Figure \ref{fig:mod1_1_comp_condAALfit_residsflt6mkt2_page1}). However, the mean age aggregated across length bins shows more variability in the observations than expected by the model (Figure \ref{fig:mod1_3_comp_condAALfit_data_weighting_TA1.8_condAgeNWFSC Combo Survey}).  This may represent young fish recruiting to the fishery, which would happen approximately 5 years after a biological recruitment event.  The conditional age-at-length fits are also shown in Figure \ref{fig:mod1_3_comp_condAALfit_data_weighting_TA1.8_condAgeNWFSC Combo Survey}.  These plots explain the reason this survey was chosen to represent conditional age-at-length; the model was able to fit these data much better than other datasets, and improved fit, lower likelihood values and increased parsimony all contributed to a better model.
 
-## Northern Model Parameters
-For the Base model, the parameter estimates are given in Table \ref{tab:Model1_params}.  Status for all of the estimated parameters is good although the parameter for peak selectivity of the Triennial survey as estimated close the 55 cm upper bound with a value of `r round(mod1$estimated_non_dev_parameters["SizeSel_P1_Triennial(5)", "Value"],2)`.
+### Northern Model Parameters
+For the Base model, the parameter estimates are given in Table \ref{tab:Model1_params}.  Status for all of the estimated parameters is good although the parameter for peak selectivity of the Triennial survey is estimated close to the 55 cm upper bound with a value of `r round(mod1$estimated_non_dev_parameters["SizeSel_P1_Triennial(5)", "Value"],2)`.
 
 ### Northern Model Uncertainty and Sensitivity Analyses
 \begin{description}
@@ -311,8 +310,17 @@ The Northern model shows little influence of removing up to 5 years of data (Fig
 
 ### Northern Model Reference Points
 
-Please see Reference Points section of Executive Summary
 
+The estimated relative depletion level for the Northern model in 2017 is 
+`r Depl_mod1` (~95% asymptotic interval: $\pm$ `r Depl_mod1_CI`, corresponding 
+to an unfished spawning output of `r paste(round(Spawn_mod1,1), fecund_unit,sep=' ')` 
+(~95% asymptotic interval: `r paste(Spawn_mod1_CI, fecund_unit, sep=' ')`) of 
+spawning output in the base model (Table \ref{tab:Ref_pts_mod1}).  Unfished 
+age `r min_age` biomass was estimated to be `r Ref_pts_mod1[2,2]` mt in the 
+base case model. The target spawning output based on the biomass target 
+($SB_{40\%}$) is `r paste(Ref_pts_mod1[7,2], fecund_unit,sep=' ')`, which gives 
+a catch of `r Ref_pts_mod1[10,2]` mt. Equilibrium yield at the proxy $F_{MSY}$ 
+harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt.
 
 \clearpage
 
@@ -373,6 +381,10 @@ The good news age-data comes from the commercial fleet, as was foreshadowed by t
 
 The annual plots of age-at-length fits (Figure \ref{fig:mod2_5_comp_condAALfit_Andre_plotsflt2mkt2_page1}) show good fits in all years except 2001-2002.
 
+### Southern Model Parameters
+
+For the Southern Base model, the parameter estimates are given in Table \ref{tab:Model2_params}. Status for all of the 161
+estimated parameters is good.
 
 ### Southern Model Uncertainty and Sensitivity Analyses
 
@@ -405,6 +417,17 @@ The Southern model shows a retrospective pattern in which removing one year of d
 
 ### Southern Model Reference Points
 
-Please see Reference Points section of Executive Summary
+The estimated relative depletion level for the Southern model in 2017 is 
+`r {Depl_mod2}` (~95% asymptotic interval: $\pm$ 
+`r {Depl_mod2_CI}`), corresponding to an unfished spawning output of 
+`r {paste(round(Spawn_mod2,1), fecund_unit, sep=' ')}` (~95% asymptotic interval: 
+`r #paste(Spawn_mod2_CI, fecund_unit, sep=' ')`) of 
+spawning output in the base model (Table \ref{tab:Ref_pts_mod2}). Unfished 
+age `r min_age` biomass was estimated to be `r {Ref_pts_mod2[2,2]}` 
+mt in the base case model. The target spawning output based on the biomass target 
+($SB_{40\%}$) is `r {paste(Ref_pts_mod2[7,2], fecund_unit,sep=' ')}`, 
+which gives a catch of `r Ref_pts_mod2[10,2]` mt. Equilibrium yield at the proxy $F_{MSY}$ 
+harvest rate corresponding to $SPR_{50\%}$ is `r {Ref_pts_mod2[15,2]}` mt.
+
 
 

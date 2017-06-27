@@ -192,7 +192,7 @@ A summary of `r spp` exploitation histories for base model is provided as Figure
 ##Ecosystem Considerations{-}
 Rockfish in general are sensitive to the strength and timing of the upwelling cycle in the Eastern Pacific, which affects where pelagic juveniles settle, and impacts the availability of the zooplankton which the young require.
 
-Yellowtail Rockfish feed mainly on pelagic animals, but are opportunistic, occasionally eating benthic animals as well. Large juveniles and adults eat fish (small Pacific whiting, Pacific herring, smelt, anchovies, lanternfishes, and others), along with squid, krill, and other planktonic organisms.  They are prey for Chinook salmon, lingcod, cormorants, pigeon guillemots and rhinoceros auklets. [@Love2011]
+Yellowtail Rockfish feed mainly on pelagic animals, but are opportunistic, occasionally eating benthic animals as well. Large juveniles and adults eat fish (small Pacific whiting, Pacific herring, smelt, anchovies, lanternfishes, and others), along with squid, krill, and other planktonic organisms.  They are prey for Chinook Salmon, Lingcod, Cormorants, Pigeon Guillemots and Rhinoceros Auklets. [@Love2011]
 
 
 
@@ -381,15 +381,15 @@ if(n_models == 3){
 \newpage
 
 ##Research And Data Needs{-}
-We recommend the following research will be valuable for future `r spp` assessments:
+The following research will be valuable for future `r spp` assessments:
 
 \begin{enumerate}
 
 \item A longer timeseries of the juvenile rockfish CPUE in the south.
 
-\item A commercial index in the north.  This is by far the largest segment of the fishery, and the introduction of the trawl rationalization program should mean that an index can be developed for the current fishery when the next assessment is performed.
+\item A commercial index in the North.  This is by far the largest segment of the fishery, and the introduction of the trawl rationalization program should mean that an index can be developed for the current fishery when the next assessment is performed.
 
-\item More recent ages for the southern model.  The commercial age timeseries currently stops in 2002. Otoliths have been collected for all years in the Hook \& Line survey but only samples from 2004 have been aged.
+\item More recent ages for the Southern model.  The commercial age timeseries currently stops in 2002. Otoliths have been collected for all years in the Hook \& Line survey but only samples from 2004 have been aged.
 
 
 \end{enumerate}

@@ -316,24 +316,6 @@ align(mngmnt.table.N) = c('l',
 
 
 
-<!-- ***********JITTER TABLE*********************************************** --> 
-```{r, results = 'asis'}
-    # Replace values in file and read in - values for all models in 1 table  
-      jitter = read.csv('./txt_files/JitterTable.csv')  
-
-    # Create model 1 jitter table
-    jitter.table = xtable(jitter, 
-                          caption = c('Results from 100 jitters from each of 
-                                      the three models.'),
-                          label = 'tab:jitter')
-    
-    # Print jitter table (all models)    
-    print(jitter.table, 
-          include.rownames = FALSE, 
-          caption.placement = 'top')
-```
-<!-- ---------------------------------------------------------------------- -->
-
 \FloatBarrier
 <!-- ***********MODEL 1 PARAMETERS***************************************** --> 
 \begin{landscape}
