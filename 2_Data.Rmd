@@ -85,7 +85,7 @@ Participation in the study was voluntary and included vessels using bottom, midw
  
 Pikitch study discards were aggregated due to small sample size and included in the data as representing a single year mid-way through the study.
 
-###Abundance Indices
+###Abundance Indices \label{abundance-indices}
 
 **Commercial Logbook CPUE**   
 The commercial logbook (fish-ticket) data in PacFIN was used to generate an index for the Northern model for the years 1987-1998, a period in which management of the fishery was stable, i.e., regulations weren't changing fishery practices.  
@@ -195,7 +195,7 @@ Age structure data were available from the following sources:
 ```
 <!-- ---------------------------------------------------------------------- -->
 
-The expanded table detailing the ages can be found in Table \ref{Northern_age}
+The expanded table detailing the ages can be found in Table \ref{tab:Northern_age}
 
 <!-- ************FISHERY-DEPENDENT DATA************************************ -->
 \FloatBarrier
@@ -309,7 +309,7 @@ Length compositions were provided from the following sources:
 ```
 <!-- ---------------------------------------------------------------------- -->
 
-The expanded table with detailed lengths is Table \ref{Southern_length}
+The expanded table with detailed lengths is Table \ref{tab:Southern_length}
 
 Age structure data were available from the following sources:
 
@@ -340,7 +340,7 @@ Age structure data were available from the following sources:
 ```
 <!-- ---------------------------------------------------------------------- -->
 
-The expanded table with detailed age information is Table \ref{Southern_Age}
+The expanded table with detailed age information is Table \ref{tab:Southern_Age}
 
 \clearpage
 
