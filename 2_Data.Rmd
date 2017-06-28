@@ -94,10 +94,10 @@ The data were first filtered using a modified Stephens-MacCall approach [@Stephe
 
 For this analysis, the species effects were combined with fishery variables in a mixed-effects glm (a glmm). The species were modeled as binomial, and random effects were added for haul duration, depth, port, state agency, and month, and the interaction of year and vessel.  This approach reduced the number of hauls to be evaluated by 61%.
 
-The hauls identified with a reasonable probability of encountering Yellowtail were then modeled in a delta-lognormal glm [@Stefansson1996] to produce an annual index of abundance, which was bootstrapped 500 times to evaluate uncertainty.  See Figures \ref{Logbook_lognormal} and \ref(Logbook_gamma) for Q-Q plots demonstrating that the lognormal glm fit the data better than the gamma.
+The hauls identified with a reasonable probability of encountering Yellowtail were then modeled in a delta-lognormal glm [@Stefansson1996] to produce an annual index of abundance, which was bootstrapped 500 times to evaluate uncertainty.  See Figures \ref{fig:Logbook_lognormal} and \ref{fig:Logbook_gamma} for Q-Q plots demonstrating that the lognormal glm fit the data better than the gamma.
 
 **MRFSS Index**
-MRFSS data was used to generate an index of abundance for 1980-2003.  The MRFSS data were aggregated as "trips" by staff at the SWFSC, and the Stephens-MacCall approach was used to filter the data to the set of fishing trips likely to have encountered yellowtail.  This was followed by application of a delta-lognormal glm using variables month and AREA_X (indicating offshore/onshore fishing) to generate the index, which was then jackknifed to produce estimates of uncertainty.  Q-Q plots for the MRFSS index are \ref{MRFSSlognormal} and \ref{MRFSSgamma}.
+MRFSS data was used to generate an index of abundance for 1980-2003.  The MRFSS data were aggregated as "trips" by staff at the SWFSC, and the Stephens-MacCall approach was used to filter the data to the set of fishing trips likely to have encountered yellowtail.  This was followed by application of a delta-lognormal glm using variables month and AREA_X (indicating offshore/onshore fishing) to generate the index, which was then jackknifed to produce estimates of uncertainty.  Q-Q plots for the MRFSS index are \ref{fig:MRFSSlognormal} and \ref{fig:MRFSSgamma}.
 
 **Hake Bycatch Index**
 

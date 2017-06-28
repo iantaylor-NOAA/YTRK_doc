@@ -960,8 +960,8 @@ if (n_models == 2) {
                        '~95\\% CI')
   
   base_summary$region = c('','','','',
-                          'Model 1','Base Case','','','','','','','',
-                          'Model 2','Base Case','','','','','','','' )
+                          'Northern Model','Base Case','','','','','','','',
+                          'Southern Model','Base Case','','','','','','','' )
   
   base_summary = base_summary[,c(ncol(base_summary),
                                  (ncol(base_summary)-1),
