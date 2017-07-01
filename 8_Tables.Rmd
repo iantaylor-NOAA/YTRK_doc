@@ -16,18 +16,89 @@
 
 
 ```{r, results = 'asis'}
-    Northern_catch = read.csv('./txt_files/Northern.Catch.csv')
-      colnames(Northern_catch) = c('Year',
-                                   'Commercial Trawl',
-                                   'Hake Bycatch',
-                                   'Rec CA and OR',
-                                   'Rec WA')
 
-   # Index of abundance summary, create table   
+#    Northern_catch = read.csv('./txt_files/Northern.Catch.csv') 
+#      colnames(Northern_catch) = c('Year',                      
+#                                   'Commercial Trawl',          
+#                                   'Hake Bycatch',              
+#                                   'Rec CA and OR',             
+#                                   'Rec WA')                    
+
+   # data frame with years from model output
+   Northern_catch <-
+     data.frame(Yr = sort(unique(mod1$catch$Yr[mod1$catch$Yr>=mod1$startyr])),
+                ComRet=NA,
+                ComDis=NA,
+                ComTot=NA,
+                HakeByCatch=NA,
+                RecORandCA=NA,
+                RecWA_N=NA,
+                RecWA_B=NA)
+   # loop over years to fill in catches
+   for(irow in 1:nrow(Northern_catch)){
+     # get year
+     y <- Northern_catch$Yr[irow]
+     # get retained biomass for fleet 1 (commercial)
+     ret <- mod1$catch$ret_bio[mod1$catch$Fleet==1 &
+                                 mod1$catch$Yr==y]
+     tot <- mod1$catch$kill_bio[mod1$catch$Fleet==1 &
+                                   mod1$catch$Yr==y]
+     dis <- tot - ret
+     Northern_catch$ComRet[irow] <- round(ret,1)
+     Northern_catch$ComDis[irow] <- round(dis,1)
+     Northern_catch$ComTot[irow] <- round(tot,1)
+   
+     # get dead biomass for fleet 2 (hake)
+     catch <- mod1$catch$kill_bio[mod1$catch$Fleet==2 &
+                                    mod1$catch$Yr==y]
+     Northern_catch$HakeByCatch[irow] <- round(catch,1)
+   
+     # get dead biomass for fleet 3 (RecORandCA)
+     catch <- mod1$catch$kill_bio[mod1$catch$Fleet==3 &
+                                    mod1$catch$Yr==y]
+     Northern_catch$RecORandCA[irow] <- round(catch,1)
+   
+     # get dead NUMBERS for fleet 4 (RecWA)
+     catch <- mod1$catch$kill_bio[mod1$catch$Fleet==4 &
+                                    mod1$catch$Yr==y]
+     Northern_catch$RecWA_N[irow] <- round(catch,0)
+     # get dead BIOMASS for fleet 4 (RecWA)
+     catch <- mod1$catch$kill_bio[mod1$catch$Fleet==4 &
+                                    mod1$catch$Yr==y]
+     Northern_catch$RecWA_B[irow] <- round(catch,1)
+   }
+   # calculate total catch by summing biomass columns
+   Northern_catch$Total <-
+     Northern_catch$ComTot +
+       Northern_catch$HakeByCatch +
+         Northern_catch$RecORandCA +
+           Northern_catch$RecWA_B
+           
+   # checked results against mod1$sprseries$Dead_Catch_B and it matches
+   colnames(Northern_catch) = c('Year',
+                                 'Comm (retain, mt)',
+                                 'Comm (discard, mt)',
+                                 'Comm (total, mt)',
+                                 'Hake Bycatch (mt)',
+                                 'Rec CA and OR (mt)',
+                                 'Rec WA (1000s)',
+                                 'Rec WA (mt)',
+                                 'Total (mt)')
+
+   # strange hack to get column widths while keeping right alignment
+   # found in 2nd answer (by Raoul) to question here:
+   # https://stackoverflow.com/questions/2686320/how-to-put-a-newline-into-a-column-header-in-an-xtable-in-r
+   for(icol in 1:9){
+      colnames(Northern_catch)[icol] <- paste0("\\multicolumn{1}{p{0.6in}}{\\centering ",
+                                        colnames(Northern_catch)[icol],
+                                        "}")
+                                        }
+   caption <- 'Catch timeseries for the Northern model. Commercial discards are estimated within the model based on estimated selectivity and retention functions. Numbers for the Recreational catch in Washington are converted to weight in the model based on the weight-length relationships combined with estimated growth and selectivity for this fleet.'
+   # create table   
      Northern_catch.table = xtable(Northern_catch, 
-                                  caption ='Catch timeseries for the Northern model.',
+                                  caption =caption,
                                   label = 'tab:Northern_catch',
-                                  digits=3)
+                                  digits=c(0,0,1,1,1,1,1,0,1,1))
 
     addtorow          <- list()
     addtorow$pos      <- list()
@@ -39,15 +110,13 @@
                                  "{\\footnotesize Continued on next page} \n",
                                  "\\endfoot \n",
                                  "\\endlastfoot \n",sep=""))
-
-
-
     # Print
     print(Northern_catch.table, 
           include.rownames = FALSE,
           caption.placement = 'top',
           tabular.environment = 'longtable',
           floating = FALSE,
+          sanitize.colnames.function=function(x){x},
           add.to.row = addtorow)
 ```
 
@@ -100,11 +169,12 @@ align(mngmnt.table.N) = c('l',
 ```{r, results = 'asis'}
     Northern_discard = read.csv('./txt_files/Northern.Discards.csv')
       colnames(Northern_discard) = c('Year',
-                                   'Discard')
+                                   'Discard fraction',
+                                   'CV')
 
    # Index of abundance summary, create table   
      Northern_discard.table = xtable(Northern_discard, 
-                                  caption ='Commercial discard timeseries for the Northern model.',
+                                  caption ='Timeseries of observed discard fractions and the estimated CV for the commercial fleet in the Northern model.',
                                   label = 'tab:Northern_discard',
                                   digits=4)
 
@@ -669,17 +739,44 @@ align(mngmnt.table.N) = c('l',
 
 
 ```{r, results = 'asis'}
-    Southern_catch = read.csv('./txt_files/Southern.Catch.csv')
-      colnames(Southern_catch) = c('Year',
-                                   'Commercial Catch',
-                                   'Recreational Catch')
+    #Southern_catch = read.csv('./txt_files/Southern.Catch.csv')
+    #  colnames(Southern_catch) = c('Year',
+    #                               'Commercial Catch',
+    #                               'Recreational Catch')
+
+    # data frame with years from model output
+    Southern_catch <-
+      data.frame(Yr = sort(unique(mod2$catch$Yr[mod2$catch$Yr>=mod2$startyr])),
+                           Com = NA,
+                           Rec = NA)
+    # loop over years to fill in catches
+    for(irow in 1:nrow(Southern_catch)){
+      # get year
+      y <- Southern_catch$Yr[irow]
+      # get dead biomass for fleet 2 (commercial)
+      catch <- mod2$catch$kill_bio[mod2$catch$Fleet==2 &
+                                     mod2$catch$Yr==y]
+      Southern_catch$Com[irow] <- round(catch,1)
+      # get dead biomass for fleet 1 (rec)
+      catch <- mod2$catch$kill_bio[mod2$catch$Fleet==1 &
+                                     mod2$catch$Yr==y]
+      Southern_catch$Rec[irow] <- round(catch,1)
+    }
+    Southern_catch$Total <-
+      Southern_catch$Rec +
+        Southern_catch$Com
+    colnames(Southern_catch) <- c('Year',
+                                  'Commercial (mt)',
+                                  'Recreational (mt)',
+                                  'Total (mt)')
 
 
    # create table   
      Southern_catch.table = xtable(Southern_catch, 
                                   caption ='Catch timeseries for the Southern model.',
                                   label = 'tab:Southern_catch',
-                                  digits=3)
+                                  digits = c(0,0,1,1,1))
+
 
     addtorow          <- list()
     addtorow$pos      <- list()
@@ -692,6 +789,15 @@ align(mngmnt.table.N) = c('l',
                                  "\\endfoot \n",
                                  "\\endlastfoot \n",sep=""))
 
+    # align(Southern_catch.table) = c('l','l',
+    #        'p{1.0in}', 
+    #        'p{1.0in}', 
+    #        'p{1.0in}')  
+
+    # align(Southern_catch.table) = c('l','l',
+    #        '>{\\centering}p{0.5in}', 
+    #        '>{\\centering}p{0.5in}', 
+    #        '>{\\centering}p{0.5in}')  
 
 
     # Print
