@@ -17,11 +17,22 @@ if (system("hostname", intern=TRUE) %in% c("NWCLW04223033") ){
   # source("c:/SS/Yellowtail/Yellowtail2017/YTRK_doc/Rcode/miscellaneous/Yellowtail_profiles_South.R")
 }
 
+if (system("hostname", intern=TRUE) %in% c("NWCLW04418545") ){
+  YTdir <- "C:/Users/Andi.Stephens/YTRK_Models"
+  YTdir.mods <- file.path(YTdir, "New_South_20")
+  YTdir.profs <- file.path(YTdir.mods, "profiles")
+  if(is.na(file.info(YTdir.profs)$isdir)){
+    dir.create(YTdir.profs)
+  }
+  # example sourcing this file
+  # source("c:/SS/Yellowtail/Yellowtail2017/YTRK_doc/Rcode/miscellaneous/Yellowtail_profiles_South.R")
+}
+
 require(r4ss)
 
 # load model output into R
 # read base model from each area
-mod.S <- 'South/18_New_South_Base'
+mod.S <- '21_newbase'
 dir.S <- file.path(YTdir.mods, mod.S)
 if(!exists('out.S')){
   out.S <- SS_output(dir.S)

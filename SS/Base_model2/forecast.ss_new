@@ -32,8 +32,8 @@
 2 # basis for fcast catch tuning and for fcast catch caps and allocation  (2=deadbio; 3=retainbio; 5=deadnum; 6=retainnum)
 # Conditional input if relative F choice = 2
 # Fleet relative F:  rows are seasons, columns are fleets
-#_Fleet:  RecreationalCatch CommercialCatch OnboardSurvey HookAndLineSurvey RecStudy
-#  0.810325 0.189675 0 0 0
+#_Fleet:  RecreationalCatch CommercialCatch OnboardSurvey HookAndLineSurvey JuvenilePelagic SmallFish
+#  0.821316 0.178684 0 0 0 0
 # enter list of fleet number and max for fleets with max annual catch; terminate with fleet=-9999
 -9999 -1
 # enter list of area ID and max annual catch; terminate with area=-9999
