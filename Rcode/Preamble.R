@@ -27,19 +27,6 @@ load("./r4ss/SS_output.RData")
 spp = "Yellowtail Rockfish"
 spp.sci = "Sebastes flavidus"
 
-# long fleetnames for potential use in r4ss plots (repeated in 0-Run_r4ss_plots.R)
-fleetnames1 <- c("Commercial Fishery",
-                 "At-Sea Hake Fishery",
-                 "Recreational OR+CA",
-                 "Recreational WA",
-                 "Triennial Survey",
-                 "NWFSC Combo Survey")
-fleetnames2 <- c("Recreational Fishery",
-                 "Commercial Fishery",
-                 "Recreational Onboard Survey",
-                 "Hook & Line Survey",
-                 "Pelagic Juvenile Survey",       
-                 "Small Fish Study")
 
 # minimum vulnerable age class (summary age)
 min_age = "4+"
