@@ -44,8 +44,9 @@ colnames(Exec_catch_summary_N) = c('Year',
 yrs <- mod2$endyr - 10:0 # range of years
 Exec_catch_summary_S <- data.frame(Year=yrs) # data frame with first column only
 # loop over catch fleets
-for(f in which(mod2$fleet_type==1)){
-  # get recent catch inputs (might be biomass or numbers)
+#for(f in which(mod2$fleet_type==1)){
+for(f in unique(mod2$catch$Fleet[mod2$catch$Obs > 0])){
+   # get recent catch inputs (might be biomass or numbers)
   cat.f.recent <- round(mod2$catch$Obs[mod2$catch$Fleet==f & mod2$catch$Yr %in% yrs],1)
   # cbind to existing table
   Exec_catch_summary_S <- cbind(Exec_catch_summary_S, cat.f.recent)

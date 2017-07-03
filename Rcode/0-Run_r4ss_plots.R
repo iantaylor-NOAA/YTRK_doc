@@ -13,6 +13,8 @@
 ### Section 3: save the entire myreplist and mod_structure files from r4ss as csv's
 # =============================================================================
 
+stop("\n  This file should not be sourced!") # note to stop from accidental sourcing
+
 # start fresh here - this script is separate from the script for the assessment
 # document
 rm(list=ls(all=TRUE))
@@ -23,8 +25,6 @@ if (system("hostname", intern=TRUE) %in% c("NWCLW04223033") ){ #Ian's computer
 }
 
 # SECTION1: Run r4ss, parse plotInfoTable.csv file, & add linebreaks to SS files
-
-#stop("\n  This file should not be sourced!") # note to stop from accidental sourcing
 
 # Here we're going to make sure you have all the required packages for the template
 # Check for installtion and make sure all R libraries can be loaded
@@ -93,7 +93,7 @@ out.dir.mod1 = file.path(output.dir,'plots_mod1')
 out.dir.mod2 = file.path(output.dir,'plots_mod2')
 out.dir.mod3 = file.path(output.dir,'plots_mod3')
 
-# long fleetnames for potential use in r4ss plots (repeated in Preamble.R)
+# long fleetnames for potential use in r4ss plots
 fleetnames1 <- c("Commercial Fishery",
                  "At-Sea Hake Fishery",
                  "Recreational OR+CA",
@@ -104,7 +104,12 @@ fleetnames2 <- c("Recreational Fishery",
                  "Commercial Fishery",
                  "Recreational Onboard Survey",
                  "Hook & Line Survey",
-                 "Recreational Study")         
+                 "Pelagic Juvenile Survey",       
+                 "Small Fish Study")
+# vector of colors for each fleet of fleet_type==3 for Southern model
+# required to avoid change in default colors
+# caused by fleet 6 "Small Fish Study" looking like a catch fleet
+fleetcols2 <- c(rich.colors.short(2),'yellow')
 
 # Model 1
 SS_plots(mod1, fleetnames=fleetnames1,
@@ -116,11 +121,15 @@ SS_plots(mod1, fleetnames=fleetnames1,
 SS_plots(mod2, fleetnames=fleetnames2,
          png = TRUE, html = FALSE, datplot = TRUE, uncertainty = TRUE,
          maxrows = 6, maxcols = 6, maxrows2 = 4, maxcols2 = 4, 
-         printfolder = '', dir = out.dir.mod2)
+         printfolder = '', dir = out.dir.mod2, fleetcols=fleetcols2)
 
 # simple function to write streamline writing PNG for specialized plots
 pngfun <- function(file,mod=1,w=6.5,h=5,pt=10){
-  out.dir <- get(paste0("out.dir.mod",mod))
+  if(mod > 0){
+    out.dir <- get(paste0("out.dir.mod",mod))
+  }else{
+    out.dir <- dir.compare.plots
+  }
   file <- file.path(out.dir, file)
   cat('writing PNG to',file,'\n')
   png(filename=file,
@@ -253,20 +262,20 @@ SSplotComparisons(base.summary,
                   filenameprefix = "base_", 
                   col = mod.cols)
 
-# repeat comparison for recruitment with adjusted y-limit
-# to crop the really big uncertainty intervals
-SSplotComparisons(base.summary,
-                  subplot = 8, ylimAdj=0.5, # recruitment only, adjusted ylim
-                  plot = FALSE, 
-                  print = TRUE, 
-                  plotdir = dir.compare.plots,
-                  spacepoints = 20,  # years between points on each line
-                  initpoint = 0,     # "first" year of points (modular arithmetic)
-                  staggerpoints = 0, # points aligned across models
-                  endyrvec = 2017,   # final year to show in time series
-                  legendlabels = mod.names, 
-                  filenameprefix = "base_", 
-                  col = mod.cols)
+## # repeat comparison for recruitment with adjusted y-limit
+## # to crop the really big uncertainty intervals
+## SSplotComparisons(base.summary,
+##                   subplot = 8, ylimAdj=1.0, # recruitment only, adjusted ylim
+##                   plot = FALSE, 
+##                   print = TRUE, 
+##                   plotdir = dir.compare.plots,
+##                   spacepoints = 20,  # years between points on each line
+##                   initpoint = 0,     # "first" year of points (modular arithmetic)
+##                   staggerpoints = 0, # points aligned across models
+##                   endyrvec = 2017,   # final year to show in time series
+##                   legendlabels = mod.names, 
+##                   filenameprefix = "base_", 
+##                   col = mod.cols)
 
 
 SSplotComparisons(base.summary, 
@@ -338,19 +347,19 @@ dev.off()
 # END SECTION 2================================================================
 # =============================================================================
 
-
-
-
 # =============================================================================
-# Section 3: saves entire myreplist and mod_structure files 
-# writes the entire myreplist and mod structure to a file
-# useful if you need to find a particular variable r4ss creates
-# change model and directory
+# Section 2B: extra plots for presentations (maybe also for post-STAR document)
 
-#sink("./r4ss/plots_mod1/list_of_dataframes.csv", type="output")
-#invisible(lapply(mod1, function(x) dput(write.csv(x))))
-#sink()
-
-#sink("./r4ss/plots_mod1/mod_structure.csv", type="output")
-#invisible(str(mod1,list.len = 9999))
-#sink()
+# compare total catch across N & S models
+pngfun("catch_comparison.png", mod=0)
+par(mar=c(4,4,.1,.1))
+plot(mod1$sprseries$Yr, mod1$sprseries$Dead_Catch_B,
+     type='h', col=rgb(0,0,1,.7), lend=3, lwd=2,
+     xlab='Year', ylab='Total catch (mt)', ylim=c(0, 11000), yaxs='i')
+points(mod2$sprseries$Yr, mod2$sprseries$Dead_Catch_B,
+       type='h', lend=3, lwd=3, col=rgb(1,0,0,.5))
+legend('topleft', fill=mod.cols, legend=paste(mod.names, "model"), bty='n')
+dev.off()
+# =============================================================================
+# END SECTION 2B================================================================
+# =============================================================================
