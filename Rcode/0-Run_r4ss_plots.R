@@ -293,7 +293,8 @@ SSplotComparisons(base.summary,
                   legendlabels = mod.names, 
                   filenameprefix = "forecast_", 
                   col = mod.cols)
-  
+
+
   
   
 # Plot comparison of growth curves --------------------------------------------
@@ -366,3 +367,61 @@ dev.off()
 # =============================================================================
 # END SECTION 2B================================================================
 # =============================================================================
+
+if(FALSE){
+# =============================================================================
+# plots for old southern model in document sent out for review
+# =============================================================================
+
+mod2.old <- SS_output('c:/SS/Yellowtail/Yellowtail2017/Models/South/18_New_South_Base')
+fleetnames2.old <- c("Recreational Fishery",
+                 "Commercial Fishery",
+                 "Recreational Onboard Survey",
+                 "Hook & Line Survey",
+                 "Recreational Study")
+SS_plots(mod2.old, fleetnames=fleetnames2.old,
+         png = TRUE, html = FALSE, datplot = TRUE, uncertainty = TRUE,
+         maxrows = 6, maxcols = 6, maxrows2 = 4, maxcols2 = 4, 
+         printfolder = '', dir = file.path(output.dir,'plots_mod2_old_model18'),
+         SSplotDatMargin=13) # avoid cropping fleet names in data presence/absence plot
+
+
+# fit to indices for old model 2
+  pngfun('index0_all_indices_fit_old.png',
+         
+par(mfrow=c(2,2),mar=c(2,2,2,1),oma=c(2,2,0,0)+.1)
+SSplotIndices(mod2,subplot=2,datplot=FALSE, maximum_ymax_ratio=3) #,fleetnames=fleets)
+mtext(side=1,line=1,outer=TRUE,'Year')
+mtext(side=2,line=1,outer=TRUE,'Index')
+dev.off()
+
+# North vs. old South
+old.base.summary <- SSsummarize(list(out.mod1, mod2.old))
+SSplotComparisons(old.base.summary, 
+                  plot = FALSE, 
+                  print = TRUE, 
+                  plotdir = 'r4ss/plots_compare_North_vs_Old_South',
+                  spacepoints = 20,  # years between points on each line
+                  initpoint = 0,     # "first" year of points (modular arithmetic)
+                  staggerpoints = 0, # points aligned across models
+                  endyrvec = 2017,   # final year to show in time series
+                  legendlabels = c("Northern","Southern (old)"), 
+                  filenameprefix = "old_base_", 
+                  col = mod.cols)
+
+# Old South vs. New South
+new.vs.old.summary <- SSsummarize(list(out.mod2, mod2.old))
+SSplotComparisons(new.vs.old.summary, 
+                  plot = FALSE, 
+                  print = TRUE, 
+                  plotdir = 'r4ss/plots_compare_Old_South_vs_New_South',
+                  spacepoints = 20,  # years between points on each line
+                  initpoint = 0,     # "first" year of points (modular arithmetic)
+                  staggerpoints = 0, # points aligned across models
+                  endyrvec = 2017,   # final year to show in time series
+                  legendlabels = c("Southern (old)", "Southern (new)"), 
+                  filenameprefix = "old_vs_new_base_", 
+                  col = mod.cols)
+
+
+} # end if(FALSE) to avoid accidental running this section
