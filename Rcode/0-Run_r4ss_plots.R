@@ -115,13 +115,16 @@ fleetcols2 <- c(rich.colors.short(2),'yellow')
 SS_plots(mod1, fleetnames=fleetnames1,
          png = TRUE, html = FALSE, datplot = TRUE, uncertainty = TRUE,
          maxrows = 6, maxcols = 6, maxrows2 = 4, maxcols2 = 4, 
-         printfolder = '', dir = out.dir.mod1)
+         printfolder = '', dir = out.dir.mod1,
+         SSplotDatMargin=13) # avoid cropping fleet names in data presence/absence plot
 
 # Model 2
 SS_plots(mod2, fleetnames=fleetnames2,
          png = TRUE, html = FALSE, datplot = TRUE, uncertainty = TRUE,
          maxrows = 6, maxcols = 6, maxrows2 = 4, maxcols2 = 4, 
-         printfolder = '', dir = out.dir.mod2, fleetcols=fleetcols2)
+         printfolder = '', dir = out.dir.mod2,
+         fleetcols=fleetcols2,
+         SSplotDatMargin=13) # avoid cropping fleet names in data presence/absence plot
 
 # simple function to write streamline writing PNG for specialized plots
 pngfun <- function(file,mod=1,w=6.5,h=5,pt=10){
