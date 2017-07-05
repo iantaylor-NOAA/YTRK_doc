@@ -97,7 +97,7 @@ Weighting among fleets used the Francis method [@Francis2011] which is based on 
 ###Priors \label{priors}
 Log-normal priors for natural mortality were developed based on the method of Hamel [-@Hamel2015] as discussed under "Natural Mortality" in Section \ref{nat-mort} with point estimates for M of 0.15 and 0.12 for females and males for the Northern model and 0.18 and 0.135 for females and males in the Southern model. In the Northern model, both female mortality (with the prior) and male mortality as an offset (without a prior) were estimated. For the southern model, M was fixed at the median prior values for the two sexes.
 
-The prior for steepness ($h$) assumes a beta distribution with parameters based on an update of the Thorson-Dorn rockfish prior (Thorson et al. [-Thorson2017b], commonly used in past West Coast rockfish assessments) which was reviewed and endorsed by the Scientific and Statistical Committee in 2017. The prior is a beta distribution with $\mu$=0.718 and $\sigma$=0.158.
+The prior for steepness ($h$) assumes a beta distribution with parameters based on an update of the Thorson-Dorn rockfish prior (Thorson et al. [-@Thorson2017b], commonly used in past West Coast rockfish assessments) which was reviewed and endorsed by the Scientific and Statistical Committee in 2017. The prior is a beta distribution with $\mu$=0.718 and $\sigma$=0.158.
 
 
 ###General Model Specifications
@@ -122,7 +122,7 @@ The Southern model has a total of `r sum(!is.na(mod2$parameters$Active_Cnt) & su
 * 1 index extra standard deviation parameter, and
 * `r length(grep("Sel", rownames(mod2$estimated_non_dev_parameters)))` selectivity parameters.
 
-The estimated parameters are described in greater detail below and a full list of all estimated and fixed parameters is provided in Table \ref{tab:Model1_params} (Northern model) and Table \ref{tab:Model2_params} (Southern model).
+The estimated parameters are described in greater detail below, and a full list of all estimated and fixed parameters is provided in Table \ref{tab:Model1_params} (Northern model) and Table \ref{tab:Model2_params} (Southern model).
 
 **Growth**
 5 parameters for female growth are estimated in each model: 3 von Bertalanffy parameters and 2 parameters for CV as a function of length at age  related to variability in length at age for small and large fish.
@@ -130,7 +130,7 @@ The estimated parameters are described in greater detail below and a full list o
 Three parameters are estimated for male growth in each model as offset from female growth.  The size for small fish and CV for small fish were assumed equal to females.
 
 **Natural Mortality**
-Natural mortality is estimated in the Northern model with an offset for males from females.  Natural Mortality is fixed in the Southern model at the values provided by the Hamel [-@Hamel2015] analysis described above.
+Natural mortality is estimated in the Northern model with an offset for males from females.  After much exploration of alternatives, natural mortality was fixed in the Southern model at the values estimated by the Northern model.
 
 **Selectivity**
 Selectivity for all fleets was initially estimated as a 4-parameter double normal, which allows selectivity to be dome shaped, with parameters controlling the position of the peak selectivity, the width of the peak, and the ascending and descending slopes. 
@@ -166,7 +166,7 @@ These approaches resulted in models that didn't converge, and so they were rejec
 ###Convergence
 Convergence testing through use of dispersed starting values often requires extreme values to explore new areas of the multivariate likelihood surface. Stock Synthesis provides a jitter option that generates random starting values from a normal distribution logistically transformed into each parameter's range [@Methot2015]. We used this function to find parameter values for convergence in the Southern model. 
 
-The Southern jitter analysis post-tuning was run 100 times, and resulted in 43 models that returned to the base case.  No model resulted in a lower likelihood than the base model.
+The Southern jitter analysis post-tuning was run 100 times, and resulted in 75 models that returned to the base case.  No model resulted in a lower likelihood than the base model.
 
 The Northern jitter analysis was run 100 times, and resulted in 88 models that returned to the base case.  No model resulted in a lower likelihood than the base model.
 
@@ -330,19 +330,17 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt.
 
 Data used in the Southern model is shown in Figure \ref{fig:data_plot.S}. 
 
-One thing to point out is that although the scale of the biomass in the model is somewhat sensitive to various data sources, the depletion is not.  In tuning the model we were suprised to note that depletion always stayed above 80\%.
-
 Estimated catches are shown in Figure \ref{fig:r4ss_catch2_S}.
 
-The estimated spawning biomass in Figure \ref{fig:ssb.S} shows the size of the uncertainty in this model. Total biomass (Figure \ref{fig:total_bio.S}) shows a sharp upward trend in recent years, the decade with only one year of age data from the Hook-and-Line Survey.  Spawning depletion has sinuous curves and was likely never as low as the 40% target, even in the 1980s-1990s (Figure \ref{fig:depl.S}.
+The estimated spawning biomass in Figure \ref{fig:ssb.S} shows the size of the uncertainty in this model. Total biomass (Figure \ref{fig:total_bio.S}) shows a sharp upward trend in recent years, the decade in which there is only one year of age data, 2004, from the Hook-and-Line Survey.  Spawning depletion likely dropped below the 40% target in the 1990s (Figure \ref{fig:depl.S}).
 
 Recruitments have been constant, except 2008 and 2010, when the model sees extra large recruitments with extra large recruitment deviations (Figures \ref{fig:recruits1.S} and \ref{fig:recdevs1.S}).  The spawner-recruit curve, Figure \ref{fig:stock_recruit_curve.S} is a line.
 
 ### Southern Model Selectivities, Indices and Discards
 
-Selectivity by fleet is shown in Figure \ref{fig:selex.S}.  Selectivities for all but the recreational Onboard fishery are modeled as asymptotic; both recreational fleets (MRFSS/RecFIN and Onboard) are fully selected at 30cm; the remaining fleets show full selectivity at 45-50 cm.
+Selectivity by fleet is shown in Figure \ref{fig:selex.S}.  Selectivities for all but the recreational Onboard fishery are modeled as asymptotic; both recreational fleets (MRFSS/RecFIN and Onboard) are fully selected at 30cm; the remaining fleets show full selectivity at 45cm, except for the Commercial fishery, which isn't fully selected until the maximum size, 55cm.
 
-Index fits leave something to be desired.  All are more-or-less flat, with each of the three current-period indices: the Onboard, the Juvenile Survey and the Hook-and-Line survey all missing a downturn at the end of the timeseries.  During model tuning, we tried introducing a time-blocked index for the two periods of the Onboard survey, however it didn't improve the fit to the index significantly, and increased the (negative log) likelihood of the model.
+Index fits are shown in \ref{fig:index_fits2}.  The MRFSS index is more-or-less flat.  The Onboard survey fits to the two periods are flat in each period.  The Hook-and-Line survey fit does not seem to capture trends in time.  However, the model fits the data from the Juvenile Pelagic remarkably well, capturing the downward trend at the end of the period, which the other fits for the current period do not.  During model tuning, we tried introducing a time-blocked index for the two periods of the MRFSS and the two periods of the Onboard survey, however it didn't improve the fit to the index until we also introduced the Northern model's estimates of natural mortality.  These two changes had to be made in concert, since either in isolation destabilized the model further.
 
 There was little information to inform the Southern Model of discard behavior, except in the Onboard survey, where it was represented by extremely small numbers.  We included these discards in the retained fishery, since attempts to include it as a type-1 "retained plus discards" fishery prevented the model from converging.
 
