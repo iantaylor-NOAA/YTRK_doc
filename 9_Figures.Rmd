@@ -286,6 +286,8 @@
 
 \FloatBarrier
 
+\newpage
+
 ### Forecasts for `r mod1_label`
 
 ![Forecast of relative spawning output for the `r mod1_label`. Filled circles for the years 2017 indicate forecast years. \label{fig:forecast.N}](r4ss/plots_mod1/ts9_Relative_spawning_output_with_forecast_with_95_asymptotic_intervals_forecast_intervals.png)

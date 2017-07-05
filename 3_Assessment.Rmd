@@ -71,7 +71,7 @@ The Northwest Fisheries Science Center's NWFSCcombo survey provides age- and len
 
 \emph{Recreational}: The recreational fleet includes data from sport fishery off the California coast south of Cape Mendocino.  The recreational lengths are unsexed.  The index is in fish per angler-hour.  Further information about how the index was worked up is included below.
 
-\emph{California Onbord Recreational Survey}: Research derived-data include observations from the California Onboard recreational survey.  The length-compositions from this survey are undifferentiated by sex.  The index is in fish per angler-hour.
+\emph{California Onboard Recreational Survey}: Research derived-data include observations from the California Onboard recreational survey.  The length-compositions from this survey are undifferentiated by sex.  The index is in fish per angler-hour.
 
 \emph{NWFSC Hook-and-Line Survey}:  The data from this survey are used in the model as an index of fish per angler-hour, a single year of marginal age data by sex, and sexed length compositions.
 
@@ -357,7 +357,7 @@ Fits for the Onboard Survey lengths are good in the early survey, and poor for t
 
 The Hook-and-Line Survey lengths are noisy (Figure \ref{fig:mod2_13_comp_lenfit_flt4mkt0}), but the fits are acceptable, and follow the trend of the data better than those for the other datasets:  Figure \ref{fig:mod2_16_comp_lenfit_data_weighting_TA1.8_Hook & Line Survey}.
 
-The Small Fish Study lengths are not fit badly (Figures \ref{fig:mod2_17_comp_lenfit_flt5mkt2} and \ref{fig:mod2_20_comp_lenfit_data_weighting_TA1.8_Recreational Study}), and it is perhaps a shame that there are so few years to this timeseries.
+The Small Fish Study lengths are not fit badly (Figures \ref{fig:mod2_17_comp_lenfit_flt6mkt2} and \ref{fig:mod2_20_comp_lenfit_data_weighting_TA1.8_Small Fish Study}), and it is perhaps a shame that there are so few years to this timeseries.
 
 The aggregate fits to the length comps for all five datasets is shown in Figure \ref{fig:mod2_21_comp_lenfit__aggregated_across_time}, and Pearson residuals for the lengths in Figure \ref{fig:comp_Pearson_length_mod2}.  Filled bubbles represent under-estimation of the data, open bubbles represent overestimation.
 
@@ -365,9 +365,9 @@ The aggregate fits to the length comps for all five datasets is shown in Figure 
 ### Southern Model Ages
 There are few marginal ages in the model.  Bubble plots for the Southern model ages (Figure \ref{fig:comp_age_bubble_mod2}) show the small sample from the Small Fish Study and the single year of ages from the Hook-and-Line Survey.  The samples are too small to show any inter-annual variation, and are noisy within-year.
 
-Figure \ref{fig:mod2_1_comp_agefit_flt1mkt2} shows the fit to the Recreational Fishery samples, which is poor in all four years.  The mean age in this data is shown in Figure \ref{fig:mod2_4_comp_agefit_data_weighting_TA1.8_Recreational Fishery}, at 10 years.
+Figure \ref{fig:mod2_5_comp_agefit_flt6mkt2} shows the fit to the Recreational Fishery samples, which is poor in all four years.  The mean age in this data is shown in Figure \ref{fig:mod2_8_comp_agefit_data_weighting_TA1.8_Small Fish Study}, at 10 years.
 
-The Hook-and-Line Survey age fit is shown in Figure \ref{fig:mod2_5_comp_agefit_flt4mkt0}.  The Francis tuning method could not be applied in this case as it depends on the fit to multiple years of data.
+The Hook-and-Line Survey age fit is shown in Figure \ref{fig:mod2_1_comp_agefit_flt4mkt0}.  The Francis tuning method could not be applied in this case as it depends on the fit to multiple years of data.
 
 The aggregated fits for the marginal ages are shown in Figure \ref{fig:mod2_9_comp_agefit__aggregated_across_time}.
 
@@ -386,32 +386,34 @@ estimated parameters is good.
 
 ### Southern Model Uncertainty and Sensitivity Analyses
 
-The Southern model was investigated in these 15 analyses:
-\begin{description}
-\item[Drop Biological Datasets]The data from each source in turn was dropped from the model.
-\item[Drop Indices]Each index in turn was dropped from the model.
-\item[Changes to M]Three sensitivities to M were run:  we let the model estimate M, we fixed M at the northern values, and we fixed M at a value that Hamel[-@Hamel2015] estimated for a maximum age of 64, the value reported in [-@Love2011].
-\item The NWFSCcombo data for south of Cape Mendocino is sparse.  Adding it to the model created a monster.
-\item[SplitIndices] We split the recreational indices (MRFSS and Onboard) into two separate timeseries, since the model had trouble fitting these indices.
-\item[Tuning] We investigated tuning the model according to the method of McAlister and Ianelli[-@Ianelli2009].  
-\end{description}
+The Southern model was investigated in these 16 analyses:
 
-The Southern model is very reactive to many of these sensitivity analyses (Tables \ref{tab:Sensitivity_model2A} and \ref{tab:Sensitivity_model2B}), and not so much to others.  Changes in M in particular results in very different models (Figure \ref{fig:sens_S_M}).  Changing the biological data results in improvements to the likelihood, but implausible results, as shown in \ref{fig:sens_S_bio}.  In Figure \ref{fig:sens_S_indices} we can see that the model is not very sensitive to removal of the indices.  The NWFSCcombo Survey and the Tuning experiment resulted in unstable biomass timeseries (Figure \ref{fig:sens_S_Other}).  Also shown in that figure is the result of splitting the recreational indices results in an improved likelihood (646.952 vs 774.696 in the Base Case).  We tried this while devoping the model but at that point the model wouldn't converge with those time-blocks.  This model may be worthy of further consideration.
+* **Drop Biological Datasets** The data from each source in turn was dropped from the model.
+* **Drop Indices** Each index in turn was dropped from the model.
+* **Changes to M** Two sensitivities to M were run:  we let the model estimate M and we fixed M at a value that Hamel [-@Hamel2015] estimated for a maximum age of 64, the value reported in [@Love2011].
+* **add NWFSCcombo** Samples South of Cape Mendocino in the NWFSCcombo shelf-slope bottom trawl survey were too sparse to create an index, but as a sensitivity, the VAST analysis that produced the index for the Northern model was re-run at a coastwide scale with the output stratified at Cape Mendocino. The estimates for the Southern area were input to the Southern model as an additional fleet with catchability and selectivity assumed equal to the estimated values from the Northern model.
+* **Tuning**  We investigated tuning the model according to the method of McAllister and Ianelli[-@McAllister1997].  
+
+The Southern model is very reactive to many of these sensitivity analyses (Tables \ref{tab:Sensitivity_model2A} and \ref{tab:Sensitivity_model2B}), and not so much to others. Removing different subsets of the biological data (Figures \ref{fig:sens_S_bio1} and \ref{fig:sens_S_bio2}) had a large impact only in a few cases: removing all ages or removing all lengths resulted in large changes as expected. Commercial Fishery biological data and removing the Recreational (MRFSS) biological data also had large changes, which.  In Figures \ref{fig:sens_S_indices1} and \ref{fig:sens_S_indices2} we can see that the model is not very sensitive to removal of the indices.  The remaining fleets (all of which had shorter time-series of biological data) had much smaller impacts.
+
+Removing all indices of abundance has relatively little impact on the model results, with removal of the Hook and Line index causing the largest impact (though still small). However, removing the Juvenile Index (or all indices, including this one) resulted in large changes to the estimates of recruitment in the most recent years \ref{fig:sens_S_indices3}. This is likely caused by recent recruitment getting information from the Juvenile Survey which is assumed to index only age-0 fish.
+
+The impact of the remaining sensitivies on estimates of spawning output are shown in Figures \ref{fig:sens_S_Other1} and \ref{fig:sens_S_Other2}. Adding an index form the NWFSCcombo Survey with catchability fixed at the value estimated in the Northern model resulted in a low biomass at the end of the time series and in order to sustain the observed history of removals, the model estimate very high recruitment causing an implausible increase in biomass prior to the period of peak removals in the 1980s. Estimating M resulted in estimes of $M = 0.21$ for females and $M = 0.23$ for males along with a much highest stock size. Fixing mortality at the low $M = 0.08$ value associated with a maximum age of 64 resulted in a much lower estimate of the scale of the model. Tuning based on the McAllister-Ianelli method had very little impact.
 
 
 ### Southern Model Likelihood Profiles
 We profiled the change in negative log likelihood for the data sources and model total likelihood for critical parameters fixed in the model:  **$log(R_0)$**, the log of equilibrium recruitment; female natural mortality, **MF**; male natural mortality, **MM**; and steepness, **h** the parameter that reflects how quickly the stock-recruit relationship allows the stock to rebound from depleted stock size.
 
-The likelihood profile for **$log(R_0)$** is shown in Figure \ref{fig:profile_logR0.S}.  The parameter $log(R_0)$ was profiled over values from 8.6-11.0.  The figure shows that best fit to the age data and indices occur when $log(R_0)$ is 11; the length data are minimized around 8.5, and the recruitments around 9.8.  The overall negative-log-likelihood is minimized at `r round(mod2$parameters["SR_LN(R0)","Value"],1)`.
+The likelihood profile for **$log(R_0)$** is shown in Figure \ref{fig:profile_logR0.S}.  The parameter $log(R_0)$ was profiled over values from 8.6-11.0.  The figure shows that best fit to the age and length data all occur in the range of 9.0 to 9.6 but the indices are best fit at the upper end of the range: 11.0.  The overall negative-log-likelihood is minimized at `r round(mod2$parameters["SR_LN(R0)","Value"],1)`.
 
-The female natural mortality (FM) profile, \ref{fig:profile_M.S} ranges from 0.1 to 0.24.  The age and length data sources are at odds over FM; the ages and recruitments are minimized when FM is the low end of the range, and the lengths and indices when it is highest.  Changes to the recruitment likelihood is minimal over the whole range.  The overall likelihood is minimized near 0.22, higher than the 0.18 fixed in the base model based on the mean of the prior (which is higher still than the estimated value for the Northern model).
+The female natural mortality (FM) profile, \ref{fig:profile_M.S} ranges from 0.1 to 0.24.  This shows that the indices and length data show the greatest change in likelihood associated with changing M and all support a higher value (consistent with the sensitivitiy analysis where mortality was estimated).
 
-Male natural mortality (MM) is profiled over a range from -0.4 to 0.  Male natural mortality is represented as an offset from that for females based on the equation ${MM} = {MF}*e^{offset}$, such that an offset of 0 results in equal mortality for males and females, and an offset of -0.3 results in a male natural mortality which is about 74% of the female mortality ($exp(-0.3) = 0.7408$).  All roads lead to Rome in this figure (Figure \ref{fig:profile_M2.S}); since all data sources and the overall likelihood are minimized at zero.  Likelihoods for recruitments and indices are flat over the range of MM; the other data sources show changes of about 20 (lengths) and 80 (ages) likelihood values. However, given the larger amount of data available to the Northern model supporting lower mortality for males than females (Figure \ref{fig:profile_M2.N}), the choice to fix the male mortality at a lower value than females (the mean of the prior, based on quantiles of the observed ages), seems reasonable.
+Male natural mortality (MM) is profiled over a range from -0.4 to 0.  Male natural mortality is represented as an offset from that for females based on the equation ${MM} = {MF}*e^{offset}$, such that an offset of 0 results in equal mortality for males and females, and an offset of -0.3 results in a male natural mortality which is about 74% of the female mortality ($exp(-0.3) = 0.7408$).  All roads lead to Rome in this figure (Figure \ref{fig:profile_M2.S}); since all data sources and the overall likelihood are minimized at zero.  Likelihoods for recruitments and indices are flat over the range of MM; the other data sources show changes of about 20 (lengths) and 40 (ages) likelihood values. However, given the larger amount of data available to the Northern model supporting lower mortality for males than females (Figure \ref{fig:profile_M2.N}), the choice to fix the male mortality at the value from the Northern model, resulting in lower mortality for males than females, seems reasonable.
 
-The steepness profile (Figure \ref{fig:profile_h.S}is the most colorful, as the lines bounce around and change direction, however the likelihood scale is from 0 to 0.7, meaning that none of the values in this range (0.5 - 0.9) would have much impact on likelihood in the model.  This supports the conclusion that the stock is abundant.  For a depleted stock, steepness would have a very large impact on the likelihood. The lack of information on steepness supports the choice to fix the value at the mean of the prior: $h=0.718$.
+The profile over stock-recruit steepness (Figure \ref{fig:profile_h.S}) shows little information about steepness, with the change in total likelihood less than 0.7, over a range of $h = 0.5$ to $h = 0.9$. This supports the conclusion that the stock was never at a very low biomass.  For a more depleted stock, steepness would have a larger impact on the likelihood. The lack of information on steepness supports the choice to fix the value at the mean of the prior: $h=0.718$.
 
 ### Southern Model Retrospective Analysis
-The Southern model shows a retrospective pattern in which removing one year of data at a time leads to highest estimates of spawning output (Figure \ref{fig:retro.S}). The changes associated with up to 3 years of data removed was relatively small, but removing 4 or 5 years of data had a larger impact on spawning output, with equilibrium value increasing from 5.2 trillion eggs to 6.8 trillion eggs. 
+The Southern model shows a retrospective pattern in which removing one year of data at a time leads to slightly higher estimates of spawning output (Figure \ref{fig:retro.S}). The changes associated with 1 or 2 years of data removed are relatively small, but removing years of data had a larger impact on spawning output, with equilibrium value increasing from 2.8 trillion eggs to 3.5 trillion eggs when 5 years of data were removed. 
 
 ### Southern Model Reference Points
 

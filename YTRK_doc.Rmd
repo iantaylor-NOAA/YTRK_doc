@@ -2,6 +2,7 @@
 title: 'Status of Yellowtail Rockfish (*Sebastes flavidus*) Along the U.S. Pacific Coast in 2017'
 author: ''
 date: ''
+footer: 'July 5 DRAFT with proposed alternative Southern model'
 output:
   pdf_document:
     fig_caption: yes
@@ -26,9 +27,6 @@ link-citations: yes
 header-includes:
     - \usepackage{caption}
     - \usepackage{grattanCharts}
-    - \usepackage{fancyhdr}
-    - \pagestyle{fancy}
-    - \fancyhead[CO,CE]{"July 5 DRAFT with proposed alternative Southern model"}
 ---
 ```{r global_options, include=FALSE}
     # set global options for R code chunks: echo=FALSE (don't include source code); 

@@ -204,12 +204,12 @@ align(mngmnt.table.N) = c('l',
                                    'Rec-OR+CA Fish')
 
    # strange hack to get column widths while keeping right alignment
-   colnames(Northern_length) <- paste0("\\multicolumn{1}{p{0.6in}}{\\centering ",
+   colnames(Northern_length) <- paste0("\\multicolumn{1}{p{0.45in}}{\\centering ",
                                         colnames(Northern_length), "}")
 
-   # Index of abundance summary, create table   
+   # Length comp sample sizes, create table   
      Northern_length.table = xtable(Northern_length, 
-                                  caption = 'Time series of length composition sample sizes for the Northern model. Numbers of fish sampled and number of tows with samples are provided for all but the recreational fleets where only the number of fish was available.',
+                                  caption = 'Time series of length composition sample sizes for the Northern model. Numbers of fish sampled and number of tows with samples are provided for all but the recreational fleets where only the number of fish was available. "Comm." refers to the Commercial fishery. "Hake" to the bycatch in the At-Sea Hake fish" and "Tri." to the triennial survey.',
                                   label = 'tab:Northern_length',
                                   digits=3)
 
@@ -1094,7 +1094,7 @@ align(mngmnt.table.S) = c('l',
     
     # Read in/organize sensitivity file, change column names, caption
     Sens_model2 = read.csv('./txt_files/parameter_comparison_table.SOUTH.csv')
-    Sens_model2 = Sens_model2[ , 1:10]
+    Sens_model2 = Sens_model2[ , c(1,3:10)]
     # Create sensitivities table
     Sens_model2.table = xtable(Sens_model2, 
                                caption = c('Sensitivity of the Southern model to a variety of alternative assumptions (first of two tables).'),
@@ -1103,7 +1103,7 @@ align(mngmnt.table.S) = c('l',
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
     # You can change this easily to have variable columns width after you know how many
     # colunns your final table has
-    align(Sens_model2.table) = c('l','l', rep('>{\\centering}p{.6in}', dim(Sens_model2)[2]-1))
+    align(Sens_model2.table) = c('l','l', rep('>{\\centering}p{.7in}', dim(Sens_model2)[2]-1))
                     #             '>{\\centering}p{.6in}',
                     #             '>{\\centering}p{.5in}',
                     #             '>{\\centering}p{.5in}',
@@ -1127,7 +1127,7 @@ align(mngmnt.table.S) = c('l',
     
     # Read in/organize sensitivity file, change column names, caption
     Sens_model2 = read.csv('./txt_files/parameter_comparison_table.SOUTH.csv')
-    Sens_model2 = Sens_model2[ , c(1:2, 11:17)]
+    Sens_model2 = Sens_model2[ , c(1, 3, 12:16, 18:21)]
 
     # Create sensitivities table
     Sens_model2.table = xtable(Sens_model2, 
@@ -1137,7 +1137,7 @@ align(mngmnt.table.S) = c('l',
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
     # You can change this easily to have variable columns width after you know how many
     # colunns your final table has
-    align(Sens_model2.table) = c('l','l', rep('>{\\centering}p{.6in}', dim(Sens_model2)[2]-1))
+    align(Sens_model2.table) = c('l','l', rep('>{\\centering}p{.7in}', dim(Sens_model2)[2]-1))
                     #             '>{\\centering}p{.6in}',
                     #             '>{\\centering}p{.5in}',
                     #             '>{\\centering}p{.5in}',
