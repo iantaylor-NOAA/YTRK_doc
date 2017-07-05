@@ -266,8 +266,8 @@ An index of abundance was developed from trip-aggregated MRFSS data for the year
 **California Onboard Survey**  
 An Onboard recreational survey conducted by <TOADS> provided data for an index of abundance provided by the SWFSC for 1987-2016.
 
-**Research Study Index**
-An index of abundance for the small juvenile fish research study was provided by the SWFSC for 2001-2016.
+**Juvenile Pelagic Index**
+The SWFSC conducts an annual survey for juvenile pelagic (young-of-the-year) fish.  This provided an index for 2001-2016.
 
 
 <!-- ************FISHERY-INDPENDENT DATA*********************************** -->
@@ -382,7 +382,7 @@ Re-evaluating the data used in Then et al. [-@Then2015] by fitting the one-param
 
 This is also the median of the prior. The prior is defined as a lognormal with mean $ln(5.4/Amax)$ and SE = 0.4384343. 
 
-Natural mortality priors for these models were based on examination of the 99\% quantile of the observed ages from early in the time-series, before the full impact of fishing would have taken place. For the Northern model, these quantiles were approximately 35 years for females and 45 years for males, resulting in median M values of 0.15 and 0.12 for females and males. For the Southern model, the 99\% quantile of the early age observations were approximately 30 and 40 years for females and males, resulting in median M prior values of 0.18 and 0.135, respectively. In both models, M for males was represented as an offset from females.
+Initial natural mortality priors for these models were based on examination of the 99\% quantile of the observed ages from early in the time-series, before the full impact of fishing would have taken place. For the Northern model, these quantiles were approximately 35 years for females and 45 years for males, resulting in median M values of 0.15 and 0.12 for females and males. For the Southern model, the 99\% quantile of the early age observations were approximately 30 and 40 years for females and males, resulting in median M prior values of 0.18 and 0.135, respectively. In both models, M for males was represented as an offset from females.
 
 ###Environmental Or Ecosystem Data Included In The Assessment
 
