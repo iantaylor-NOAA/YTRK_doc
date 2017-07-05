@@ -192,20 +192,24 @@ align(mngmnt.table.N) = c('l',
 ```{r, results = 'asis'}
     Northern_length = read.csv('./txt_files/Northern.Lengths.csv')
       colnames(Northern_length) = c('Year',
-                                   'C.Trawl',
-                                   'Tows',
-                                   'Bycatch',
-                                   'Tows',
-                                   'Tri',
-                                   'Tows',
-                                   'NWFSC',
-                                   'Tows',
-                                   'WA.Rec',
-                                   'OR-CA.Rec')
+                                   'Comm. Fish',
+                                   'Comm. Tows',
+                                   'Hake Fish',
+                                   'Hake Tows',
+                                   'Tri. Fish',
+                                   'Tri. Tows',
+                                   'NWFSC Fish',
+                                   'NWFSC Tows',
+                                   'Rec-WA Fish',
+                                   'Rec-OR+CA Fish')
+
+   # strange hack to get column widths while keeping right alignment
+   colnames(Northern_length) <- paste0("\\multicolumn{1}{p{0.6in}}{\\centering ",
+                                        colnames(Northern_length), "}")
 
    # Index of abundance summary, create table   
      Northern_length.table = xtable(Northern_length, 
-                                  caption ='Length timeseries for the Northern model.',
+                                  caption = 'Time series of length composition sample sizes for the Northern model. Numbers of fish sampled and number of tows with samples are provided for all but the recreational fleets where only the number of fish was available.',
                                   label = 'tab:Northern_length',
                                   digits=3)
 
@@ -220,14 +224,13 @@ align(mngmnt.table.N) = c('l',
                                  "\\endfoot \n",
                                  "\\endlastfoot \n",sep=""))
 
-
-
     # Print
     print(Northern_length.table, 
           include.rownames = FALSE,
           caption.placement = 'top',
           tabular.environment = 'longtable',
           floating = FALSE,
+          sanitize.colnames.function=function(x){x},
           add.to.row = addtorow)
 ```
 
@@ -289,8 +292,7 @@ align(mngmnt.table.N) = c('l',
    # Index of abundance summary, create table   
      Index_summary.table = xtable(Index_summary, 
                                   caption = c('Summary of the biomass/abundance
-                                              time series used in the stock
-                                              assessment.'),
+                                              time series used in the Northern model.'),
                                  label = 'tab:Index_summary',
                                  digits = 0)    
 
@@ -425,7 +427,7 @@ align(mngmnt.table.N) = c('l',
     # Model 1 model parameters
     mod_params.table = xtable(mod_params, 
                               caption=c(paste('List of parameters used in
-                                              the base model, including estimated 
+                                              the base Northern model, including estimated 
                                               values and standard deviations (SD), 
                                               bounds (minimum and maximum), 
                                               estimation phase (negative values indicate
@@ -494,7 +496,7 @@ align(mngmnt.table.N) = c('l',
 
     # Create sensitivities table
     Sens_model1.table = xtable(Sens_model1, 
-                               caption = c('Results of sensitivity analyses for the base model.'),
+                               caption = c('Results of sensitivity analyses for the Northern model.'),
                                label = 'tab:Sensitivity_model1', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
@@ -705,7 +707,7 @@ align(mngmnt.table.N) = c('l',
     Forecast_mod1.table = xtable(Forecast_mod1,
                               caption = c('Projection of potential
                                         OFL, spawning output, and depletion for the
-                                        base case model.'),
+                                        Northern model.'),
                               label = 'tab:Forecast_mod1', digits = 2)
     # Add alignment
     align(Forecast_mod1.table) = c('l',
@@ -951,8 +953,7 @@ align(mngmnt.table.S) = c('l',
    # Index of abundance summary, create table   
      Index_summary.table = xtable(Index_summary, 
                                   caption = c('Summary of the biomass/abundance
-                                              time series used in the stock
-                                              assessment.'),
+                                              time series used in the Southern model.'),
                                  label = 'tab:Index_summary_S',
                                  digits = 0)    
 
@@ -1036,7 +1037,7 @@ align(mngmnt.table.S) = c('l',
     # Model 2 model parameters
     mod_params.table = xtable(mod_params, 
                               caption=c(paste('List of parameters used in
-                                              the base model, including estimated 
+                                              the Southern base model, including estimated 
                                               values and standard deviations (SD), 
                                               bounds (minimum and maximum), 
                                               estimation phase (negative values indicate
@@ -1096,7 +1097,7 @@ align(mngmnt.table.S) = c('l',
     Sens_model2 = Sens_model2[ , 1:10]
     # Create sensitivities table
     Sens_model2.table = xtable(Sens_model2, 
-                               caption = c('Sensitivity of the Southern to a variety of alternative assumptions (first of two tables).'),
+                               caption = c('Sensitivity of the Southern model to a variety of alternative assumptions (first of two tables).'),
                                label = 'tab:Sensitivity_model2A', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
@@ -1130,7 +1131,7 @@ align(mngmnt.table.S) = c('l',
 
     # Create sensitivities table
     Sens_model2.table = xtable(Sens_model2, 
-                               caption = c('Sensitivity of the Southern to a variety of alternative assumptions (second of two tables).'),
+                               caption = c('Sensitivity of the Southern model to a variety of alternative assumptions (second of two tables).'),
                                label = 'tab:Sensitivity_model2B', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
@@ -1335,7 +1336,7 @@ align(mngmnt.table.S) = c('l',
     Forecast_mod2.table = xtable(Forecast_mod2,
                               caption = c('Projection of potential
                                         OFL, spawning output, and depletion for the
-                                        base case model.'),
+                                        Southern base case model.'),
                               label = 'tab:Forecast_mod2', digits = 2)
     # Add alignment
     align(Forecast_mod2.table) = c('l',

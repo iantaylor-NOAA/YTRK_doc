@@ -61,7 +61,7 @@
 
 ###Selectivity, retention, and discards for `r mod1_label`
 
-![Estimated selectivity by length by each fishery and survey in the `r mod1_label`. \label{fig:selex.N}](r4ss/plots_mod1/sel01_multiple_fleets_length1.png)
+![Estimated selectivity by length for each fishery and survey in the `r mod1_label`. \label{fig:selex.N}](r4ss/plots_mod1/sel01_multiple_fleets_length1.png)
 
 ![Estimated retention by length by the Commercial Fishery in the `r mod1_label`. \label{fig:retention.N}](r4ss/plots_mod1/time-varying_retention.png)
 
@@ -79,35 +79,35 @@
 
 ###At-Sea Hake Bycatch Index
 
-![Number of observed hauls from the at-sea hake fishery classified by location relative to Washington, Oregon, and California (north and south of 40-10). Grey bars indicate observed tows with no haul duration available which were excluded from the CPUE analysis.\label{fig:ASHOP_X1}](Figures/ASHOP_hauls_observed_by_state.png)
+![Number of observed hauls (with or without bycatch of Yellowtail Rockfish) from the at-sea hake fishery classified by location relative to Washington, Oregon, and California (north and south of 40-10). Grey bars indicate observed tows with no haul duration available which were excluded from the CPUE analysis for the Northern model.\label{fig:ASHOP_X1}](Figures/ASHOP_hauls_observed_by_state.png)
 
-![Catch history for Pacific Hake by sector. Data used in the CPUE analysis are from the "U.S. Joint-Venture" and "U.S. Foreign sectors" through 1990 and from the Catcher-Processor ("U.S. CP") and Mothership ("U.S. MS") sectors from 1990 onward.\label{fig:ASHOP_X2}](Figures/Hake_fishery_catch_history.png)
+![Catch history for Pacific Hake by sector. Data used in the CPUE analysis for the NOrthern model are from the "U.S. Joint-Venture" and "U.S. Foreign sectors" through 1990 and from the Catcher-Processor ("U.S. CP") and Mothership ("U.S. MS") sectors from 1990 onward.\label{fig:ASHOP_X2}](Figures/Hake_fishery_catch_history.png)
 
 ![Geostatical index for Pacific Hake developed using VAST compared to the estimated avaialble hake biomass.\label{fig:ASHOP_X3}](Figures/ASHOP_catchability_illustration.png)
 
-![Index from the geostatistical model VAST with constant catchability and adjusted for the estimated increase in catchability (previous figure). These are compared to the index from the most recent yellowtail assessment (Wallace and Lai, 2005).\label{fig:ASHOP_X4}](Figures/ASHOP_index_illustration.png)
+![Index for the Northern model from the geostatistical model VAST with constant catchability and adjusted for the estimated increase in catchability (previous figure). These are compared to the index used in recent yellowtail assessments (Wallace and Lai, 2005).\label{fig:ASHOP_X4}](Figures/ASHOP_index_illustration.png)
 
-![Estimated density from the VAST model for the Triennial and NWFSCcombo trawl surveys.\label{fig:VAST_Dens}](Figures/VAST density maps.png)
+![Estimated density from the VAST model for the Triennial and NWFSCcombo trawl surveys for the Northern area.\label{fig:VAST_Dens}](Figures/VAST density maps.png)
 
 ![Quantile-Quantile plot for the VAST models for the Triennial and NWFSCcombo bottom trawl surveys for the Northern area. Panels are (a) Triennial with log-normal error distribution, (b) Trienial with gama error distribution, (c) NWFSCcombo with log-normal error distribution, and (d) NWFSCcombo with gama error distribution.\label{fig:VAST_QQ}](Figures/Q-Q_plots_VAST.png)
 
-![Comparison of estimated indices from the VAST model for the NWFSC shelf-slope trawl survey with log-normal and gamma error distributions and the the design-based estimate that doesn't depend on the geostatistical analysis included in VAST.\label{fig:VAST_compare_NWFSCcombo}](Figures/VAST_NWFSCcombo/NWFSC_index_compare.png)
+![Comparison of estimated indices for the Northern model calculated from the VAST model for the NWFSCcombo shelf-slope trawl survey with log-normal and gamma error distributions and the the design-based estimate that doesn't depend on the geostatistical analysis included in VAST.\label{fig:VAST_compare_NWFSCcombo}](Figures/VAST_NWFSCcombo/NWFSC_index_compare.png)
 
 \FloatBarrier
 
 \newpage
 
-![Quantile-Quantile plot for the Logbook CPUE model with a log-normal error distribution applied to PacFIN data from 1989 - 1998. \label{fig:Logbook_lognormal}](Figures/Logbook_CPUE/GLMdiagnosticslognormal_B500.png)
+![Quantile-Quantile plot for the Northern model Logbook CPUE model with a log-normal error distribution applied to PacFIN data from 1989 - 1998. \label{fig:Logbook_lognormal}](Figures/Logbook_CPUE/GLMdiagnosticslognormal_B500.png)
 
-![Quantile-Quantile plot for the Logbook CPUE model with a gamma error distribution applied to PacFIN data from 1989 - 1998. \label{fig:Logbook_gamma}](Figures/Logbook_CPUE/GLMdiagnosticsgamma_B500.png)
+![Quantile-Quantile plot for the Northern model Logbook CPUE model with a gamma error distribution applied to PacFIN data from 1989 - 1998. \label{fig:Logbook_gamma}](Figures/Logbook_CPUE/GLMdiagnosticsgamma_B500.png)
 
 \FloatBarrier
 
 \newpage
 
-![Quantile-Quantile plot for the MRFSS model with a lognormal error distribution applied to California dockside survey data. \label{fig:MRFSSlognormal}](Figures/MRFSS_CPUE/GLMdiagnosticslognormalMRFSS.png)
+![Quantile-Quantile plot for the Northern model MRFSS model with a lognormal error distribution applied to California dockside survey data. \label{fig:MRFSSlognormal}](Figures/MRFSS_CPUE/GLMdiagnosticslognormalMRFSS.png)
 
-![Quantile-Quantile plot for the MRFSS model with a lognormal error distribution applied to California dockside survey data. \label{fig:MRFSSgamma}](Figures/MRFSS_CPUE/GLMdiagnosticsgammaMRFSS.png)
+![Quantile-Quantile plot for the Northern model MRFSS model with a lognormal error distribution applied to California dockside survey data. \label{fig:MRFSSgamma}](Figures/MRFSS_CPUE/GLMdiagnosticsgammaMRFSS.png)
 
 \FloatBarrier
 
@@ -317,7 +317,13 @@
 
 ###Selectivity, retention, and discards for `r mod2_label`
 
-![Estimated selectivity by length by each fishery and survey in the `r mod2_label`. \label{fig:selex.S}](r4ss/plots_mod2/sel01_multiple_fleets_length1.png)
+![Estimated selectivity by length for each fishery and survey in the `r mod2_label`. The Pelagic Juvenile Survey has age-based selectivity as shown in the following figure.\label{fig:selex.S}](r4ss/plots_mod2/sel01_multiple_fleets_length1.png)
+
+\FloatBarrier 
+
+\newpage
+
+![Fixed age-based component of selectivity for each fishery and survey in the `r mod2_label`. The Pelagic Juvenile Survey is assumed to select only age-0 fish while all other fleets are assumed to not select any age-0 fish.\label{fig:selex2.S}](r4ss/plots_mod2/sel02_multiple_fleets_age1.png)
 
 \FloatBarrier 
 
@@ -470,15 +476,27 @@
 
 ### Sensitivity analyses for `r mod2_label`
 
+<!-- BIO SENSITIVITIES -->
 
-<!-- four lines below temporarily commented out pending replacement of the files -->
-<!-- ![Time series of relative spawning output estimated in the subset of sensitivity analyses for the `r mod2_label` related to removing biological data from the model. \label{fig:sens_S_bio}](Figures/South_Sens/Bio.png) -->
+![Time series of spawning output (in trillions of eggs) estimated in the subset of sensitivity analyses for the `r mod2_label` related to removing biological data from the model. The yellow line at 0 associated with removing the MRFSS data represents a model that did not converge.\label{fig:sens_S_bio1}](Figures/South_Sens/Bio/Bio_plots/compare1_spawnbio.png)
 
-<!-- ![Time series of relative spawning output estimated in the subset of sensitivity analyses for the `r mod2_label` related to natural mortality. \label{fig:sens_S_M}](Figures/South_Sens/M.png) -->
+![Time series of relative spawning output estimated in the subset of sensitivity analyses for the `r mod2_label` related to removing biological data from the model. The yellow line at 0 associated with removing the MRFSS represents a model that did not converge.\label{fig:sens_S_bio2}](Figures/South_Sens/Bio/Bio_plots/compare3_Bratio.png)
 
-<!-- ![Time series of relative spawning output estimated in the subset of sensitivity analyses for the `r mod2_label` related to removing indices of abundance from the model. \label{fig:sens_S_indices}](Figures/South_Sens/CPUE.png) -->
+<!-- CPUE SENSITIVITIES -->
 
-<!-- ![Time series of relative spawning output estimated in the additional sensitivity analyses for the `r mod2_label` not representend in the three figures above. \label{fig:sens_S_Other}](Figures/South_Sens/Other.png) -->
+![Time series of spawning output (in trillions of eggs) estimated in the subset of sensitivity analyses for the `r mod2_label` related to removing indices of abundance from the model. \label{fig:sens_S_indices1}](Figures/South_Sens/CPUE/CPUE_plots/compare1_spawnbio.png)
+
+![Time series of relative spawning output estimated in the subset of sensitivity analyses for the `r mod2_label` related to removing indices of abundance from the model. \label{fig:sens_S_indices2}](Figures/South_Sens/CPUE/CPUE_plots/compare3_Bratio.png)
+
+![Time series of recruitment estimated in the subset of sensitivity analyses for the `r mod2_label` related to removing indices of abundance from the model. \label{fig:sens_S_indices3}](Figures/South_Sens/CPUE/CPUE_plots/compare7_recruits.png)
+
+<!-- OTHER SENSITIVITIES -->
+
+![Time series of spawning output (in trillions of eggs) estimated in the additional sensitivity analyses for the `r mod2_label` not representend in the three figures above. \label{fig:sens_S_Other1}](Figures/South_Sens/Other/OTHER_plots/compare1_spawnbio.png)
+
+![Time series of relative spawning output estimated in the additional sensitivity analyses for the `r mod2_label` not representend in the three figures above. \label{fig:sens_S_Other2}](Figures/South_Sens/Other/OTHER_plots/compare3_Bratio.png)
+
+
 
 \FloatBarrier
 
