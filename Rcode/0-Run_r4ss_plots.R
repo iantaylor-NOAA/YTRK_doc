@@ -41,7 +41,7 @@ for(p in requiredPackages){
 }
 
 # Install the latest version of r4ss using devtools
-devtools::install_github("r4ss/r4ss", ref='comp-plots-and-weights')
+devtools::install_github("r4ss/r4ss")
 library(r4ss)
 
 # CHANGE values in this section ===============================================
@@ -159,6 +159,31 @@ for(datonly in c(FALSE,TRUE)){
   }
 }
 
+# Francis plot of mean length data for all fleets North
+pngfun("comp_lendat_data_weighting_TA1.8_fleets1-3.png", mod=1)
+par(mfrow=c(2,2), mar=c(2,2,1,1)+0.1, mgp=c(0,0.5,0), oma=c(1.2,1.2,0,0), las=1)
+SSMethod.TA1.8(fit=mod1, type='len', fleet=1, part=2, datonly=TRUE,
+               fleetnames=fleetnames1, set.pars=FALSE)
+SSMethod.TA1.8(fit=mod1, type='len', fleet=1, part=1, pick.sex=0, datonly=TRUE,
+               fleetnames=fleetnames1, set.pars=FALSE)
+SSMethod.TA1.8(fit=mod1, type='len', fleet=2, datonly=TRUE, label.part=FALSE,
+               fleetnames=fleetnames1, set.pars=FALSE)
+SSMethod.TA1.8(fit=mod1, type='len', fleet=3, datonly=TRUE, label.part=FALSE,
+               fleetnames=fleetnames1, set.pars=FALSE)
+dev.off()
+pngfun("comp_lendat_data_weighting_TA1.8_fleets1-4.png", mod=1)
+par(mfrow=c(2,2), mar=c(2,2,1,1)+0.1, mgp=c(0,0.5,0), oma=c(1.2,1.2,0,0), las=1)
+for(fleet in 4:6){
+  SSMethod.TA1.8(fit=mod1, type='len', fleet=fleet, datonly=TRUE, label.part=FALSE,
+                 fleetnames=fleetnames1, set.pars=FALSE)
+}
+dev.off()
+
+# Francis plot of mean length data for all fleets South
+pngfun("comp_lendat_data_weighting_TA1.8_all_fleets.png", mod=2)
+SSMethod.TA1.8(fit=mod2, type='len', fleet=1:6, datonly=TRUE, fleetnames=fleetnames2)
+dev.off()
+
 # forecasts of relative spawning output
 SSplotTimeseries(mod1, subplot=9, forecast=TRUE, print=TRUE, plot=FALSE,
                  plotdir=out.dir.mod1)
@@ -189,7 +214,7 @@ dev.off()
 # fit to indices for model 2
 pngfun('index0_all_indices.png', mod=2)
 par(mfrow=c(2,2),mar=c(2,2,2,1),oma=c(2,2,0,0)+.1)
-SSplotIndices(mod2,subplot=1,datplot=TRUE) #,fleetnames=fleets)
+SSplotIndices(mod2,subplot=1,datplot=TRUE, maximum_ymax_ratio=3) #,fleetnames=fleets)
 mtext(side=1,line=1,outer=TRUE,'Year')
 mtext(side=2,line=1,outer=TRUE,'Index')
 dev.off()
@@ -364,6 +389,19 @@ points(mod2$sprseries$Yr, mod2$sprseries$Dead_Catch_B,
        type='h', lend=3, lwd=3, col=rgb(1,0,0,.5))
 legend('topleft', fill=mod.cols, legend=paste(mod.names, "model"), bty='n')
 dev.off()
+
+
+# maturity, fecundity, growth
+if(FALSE){
+  SSplotBiology(mod1, subplot=6)
+  fec.a <- mod1$parameters["Eggs_scalar_Fem", "Value"]
+  fec.b <- mod1$parameters["Eggs_exp_len_Fem", "Value"]
+  lenvec <- 20:60
+  lines(x=lenvec, y=300*fec.a*lenvec^fec.b)
+}
+
+
+
 # =============================================================================
 # END SECTION 2B================================================================
 # =============================================================================
