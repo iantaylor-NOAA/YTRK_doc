@@ -295,6 +295,31 @@ SSplotComparisons(base.summary,
                   filenameprefix = "base_", 
                   col = mod.cols)
 
+# extra function for other stuff in timeseries (Bio_smry or Bio_all)
+compare_timeseries <- function(mod1, mod2, column="Bio_smry", forecast=FALSE,
+                               legendlabels=c("Northern","Southern"),
+                               cols=c("blue", "red"), end=2017,
+                               ylab="Age 4+ biomass (x 1000 mt)", scale=1e-3){
+  yrs <- mod1$timeseries$Yr
+  show <- yrs <= mod1$endyr+1
+  y1 <- scale*mod1$timeseries[[column]][show]
+  y2 <- scale*mod2$timeseries[[column]][show]
+  yrs <- yrs[show]
+  plot(0, xlim=range(yrs), ylim=c(0, 1.05*max(y1,y2)),
+       xlab="Year", ylab=ylab, type='n', las=1)
+  lines(yrs, y1, lwd=3, col=cols[1])
+  lines(yrs, y2, lwd=3, col=cols[2])
+  legend('topright', legendlabels, lwd=3, col=cols, bty='n')
+  abline(h=0, col='grey')
+}
+# compare summary and total biomass
+pngfun('base_compare_Summary_bio.png', mod=0)
+compare_timeseries(mod1, mod2)
+dev.off()
+pngfun('base_compare_Total_bio.png', mod=0)
+compare_timeseries(mod1, mod2, column="Bio_all")
+dev.off()
+
 ## # repeat comparison for recruitment with adjusted y-limit
 ## # to crop the really big uncertainty intervals
 ## SSplotComparisons(base.summary,
@@ -405,6 +430,7 @@ if(FALSE){
   SSplotBiology(out.sens.GundersonMaturity.N, subplot=6, add=TRUE, colvec=2)
   SSplotBiology(out.sens.EcheverriaMaturity.N, subplot=6, add=TRUE, colvec=3)
   legend('topleft',
+  par(lwd=1)
   
   plot(0, xlim=c(20, 60), ylim=c(0, 0.002))
   abline(h=0, col='grey')
@@ -449,16 +475,6 @@ SS_plots(mod2.old, fleetnames=fleetnames2.old,
          printfolder = '', dir = file.path(output.dir,'plots_mod2_old_model18'),
          SSplotDatMargin=13) # avoid cropping fleet names in data presence/absence plot
 
-
-# fit to indices for old model 2
-  pngfun('index0_all_indices_fit_old.png',
-         
-par(mfrow=c(2,2),mar=c(2,2,2,1),oma=c(2,2,0,0)+.1)
-SSplotIndices(mod2,subplot=2,datplot=FALSE, maximum_ymax_ratio=3) #,fleetnames=fleets)
-mtext(side=1,line=1,outer=TRUE,'Year')
-mtext(side=2,line=1,outer=TRUE,'Index')
-dev.off()
-
 # North vs. old South
 old.base.summary <- SSsummarize(list(out.mod1, mod2.old))
 SSplotComparisons(old.base.summary, 
@@ -473,6 +489,13 @@ SSplotComparisons(old.base.summary,
                   filenameprefix = "old_base_", 
                   col = mod.cols)
 
+# compare summary biomass
+png(file.path('r4ss/plots_compare_North_vs_Old_South',
+              'old_base_compare_Summary_bio.png'),
+    width = 6.5, height = 5, res = 300, units = 'in')
+compare_timeseries(mod1, mod2.old, legendlabels=c("Northern","Southern (old)"))
+dev.off()
+
 # Old South vs. New South
 new.vs.old.summary <- SSsummarize(list(mod2.old, out.mod2))
 SSplotComparisons(new.vs.old.summary, 
@@ -486,6 +509,13 @@ SSplotComparisons(new.vs.old.summary,
                   legendlabels = c("Southern (old)", "Southern (new)"), 
                   filenameprefix = "old_vs_new_base_", 
                   col = mod.cols)
+
+# compare summary biomass
+png(file.path('r4ss/plots_compare_Old_South_vs_New_South',
+              'old_base_compare_Summary_bio.png'),
+    width = 6.5, height = 5, res = 300, units = 'in')
+compare_timeseries(mod2.old, mod2, legendlabels=c("Southern (old)", "Southern (new)"))
+dev.off()
 
 
 } # end if(FALSE) to avoid accidental running this section
