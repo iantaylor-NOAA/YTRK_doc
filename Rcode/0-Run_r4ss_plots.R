@@ -439,7 +439,7 @@ plot(mod1$sprseries$Yr, mod1$sprseries$Dead_Catch_B,
      xlab='Year', ylab='Total catch (mt)', ylim=c(0, 11000), yaxs='i')
 points(mod2$sprseries$Yr, mod2$sprseries$Dead_Catch_B,
        type='h', lend=3, lwd=3, col=rgb(1,0,0,.5))
-legend('topleft', fill=mod.cols, legend=paste(mod.names, "model"), bty='n')
+legend('topleft', fill=mod.cols, legend=paste(mod.names, "area"), bty='n')
 dev.off()
 
 
