@@ -184,6 +184,11 @@ pngfun("comp_lendat_data_weighting_TA1.8_all_fleets.png", mod=2)
 SSMethod.TA1.8(fit=mod2, type='len', fleet=1:6, datonly=TRUE, fleetnames=fleetnames2)
 dev.off()
 
+# Francis plot of mean age data for all fleets South
+pngfun("comp_condAALdat_bubflt2mkt2_page1B.png", mod=2)
+dev.off()
+
+
 # forecasts of relative spawning output
 SSplotTimeseries(mod1, subplot=9, forecast=TRUE, print=TRUE, plot=FALSE,
                  plotdir=out.dir.mod1)
@@ -391,13 +396,34 @@ legend('topleft', fill=mod.cols, legend=paste(mod.names, "model"), bty='n')
 dev.off()
 
 
-# maturity, fecundity, growth
 if(FALSE){
-  SSplotBiology(mod1, subplot=6)
-  fec.a <- mod1$parameters["Eggs_scalar_Fem", "Value"]
-  fec.b <- mod1$parameters["Eggs_exp_len_Fem", "Value"]
-  lenvec <- 20:60
-  lines(x=lenvec, y=300*fec.a*lenvec^fec.b)
+  # maturity, fecundity, growth
+  plot(0, xlim=c(20, 60), ylim=c(0, 1), xlab="Length (cm)", ylab="Maturity")
+  abline(h=0, col='grey')
+  par(lwd=3)
+  SSplotBiology(mod1, subplot=6, colvec=4, add=TRUE)
+  SSplotBiology(out.sens.GundersonMaturity.N, subplot=6, add=TRUE, colvec=2)
+  SSplotBiology(out.sens.EcheverriaMaturity.N, subplot=6, add=TRUE, colvec=3)
+  legend('topleft',
+  
+  plot(0, xlim=c(20, 60), ylim=c(0, 0.002))
+  abline(h=0, col='grey')
+  SSplotBiology(mod1, subplot=10, colvec=4, add=TRUE)
+  SSplotBiology(mod1, subplot=9, colvec=1, add=TRUE)
+  SSplotBiology(out.sens.GundersonMaturity.N, subplot=10, add=TRUE, colvec=2)
+  SSplotBiology(out.sens.EcheverriaMaturity.N, subplot=10, add=TRUE, colvec=3)
+  ## fec.a <- mod1$parameters["Eggs_scalar_Fem", "Value"]
+  ## fec.b <- mod1$parameters["Eggs_exp_len_Fem", "Value"]
+  ## lenvec <- 20:60
+  ## lines(x=lenvec, y=300*fec.a*lenvec^fec.b)
+
+
+  yrs <- mod1$catch$Yr[mod1$catch$Name=="RecWA"]
+  bio <- mod1$catch$kill_bio[mod1$catch$Name=="RecWA"]
+  num <- mod1$catch$kill_num[mod1$catch$Name=="RecWA"]
+  plot(yrs, bio/num,
+       xlim=range(yrs[num>0]),
+       ylim=c(0, max(bio/num, na.rm=TRUE)))
 }
 
 
@@ -448,7 +474,7 @@ SSplotComparisons(old.base.summary,
                   col = mod.cols)
 
 # Old South vs. New South
-new.vs.old.summary <- SSsummarize(list(out.mod2, mod2.old))
+new.vs.old.summary <- SSsummarize(list(mod2.old, out.mod2))
 SSplotComparisons(new.vs.old.summary, 
                   plot = FALSE, 
                   print = TRUE, 
