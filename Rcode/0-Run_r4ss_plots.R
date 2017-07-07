@@ -159,6 +159,28 @@ for(datonly in c(FALSE,TRUE)){
   }
 }
 
+# plot showing discards for Northern model
+pngfun('catch_with_discards.png', mod=1)
+SSplotCatch(mod1, subplot=5, ymax=11000, fleetcols='lightblue', addmax=FALSE,
+            showlegend=FALSE)
+SSplotCatch(mod1, subplot=2, ymax=11000, add=TRUE, addmax=FALSE,
+            showlegend=FALSE, labels=rep("",10))
+legend('topleft', bty='n', legend=c('Commercial Fishery discards', fleetnames1[1:4]),
+       fill=c('lightblue', rich.colors.short(5)[-1]))
+dev.off()
+
+pngfun('catch_with_discards_zoom.png', mod=1)
+SSplotCatch(mod1, subplot=5, ymax=2000, fleetcols='lightblue', addmax=FALSE,
+            showlegend=FALSE)
+SSplotCatch(mod1, subplot=2, ymax=2000, add=TRUE, addmax=FALSE,
+            showlegend=FALSE, labels=rep("",10))
+axis(2)
+abline(h=seq(0,2000,500), lty=3)
+legend('topleft', bty='n', legend=c('Commercial Fishery discards', fleetnames1[1:4]),
+       fill=c('lightblue', rich.colors.short(5)[-1]))
+dev.off()
+
+
 # Francis plot of mean length data for all fleets North
 pngfun("comp_lendat_data_weighting_TA1.8_fleets1-3.png", mod=1)
 par(mfrow=c(2,2), mar=c(2,2,1,1)+0.1, mgp=c(0,0.5,0), oma=c(1.2,1.2,0,0), las=1)
@@ -495,6 +517,7 @@ png(file.path('r4ss/plots_compare_North_vs_Old_South',
     width = 6.5, height = 5, res = 300, units = 'in')
 compare_timeseries(mod1, mod2.old, legendlabels=c("Northern","Southern (old)"))
 dev.off()
+
 
 # Old South vs. New South
 new.vs.old.summary <- SSsummarize(list(mod2.old, out.mod2))
