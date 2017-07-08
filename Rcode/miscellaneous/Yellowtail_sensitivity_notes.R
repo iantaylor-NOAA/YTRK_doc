@@ -8,7 +8,7 @@ if (system("hostname", intern=TRUE) %in% c("NWCLW04223033") ){
   YTdir <- "C:/SS/Yellowtail/Yellowtail2017"
   YTdir.mods <- file.path(YTdir, "Models")
   YTdir.sens.N <- file.path(YTdir.mods, "North_sens_20")
-  YTdir.sens.S <- file.path(YTdir.mods, "South_sens_18")
+  YTdir.sens.S <- file.path(YTdir.mods, "South_sens_21")
 }
 
 require(r4ss)
@@ -93,6 +93,55 @@ if(FALSE){ # don't run all the stuff below if sourcing the file
   out.sens.no_hake_indices.N <- SS_output(file.path(YTdir.sens.N, "sens.no_hake_index"))
   out.sens.no_logbook_indices.N <- SS_output(file.path(YTdir.sens.N, "sens.no_logbook_index"))
 
+  # alternative maturity ogives
+  out.mat2.N <- SS_output(file.path(YTdir.sens.N, "sens.GundersonMaturity"))
+  out.mat3.N <- SS_output(file.path(YTdir.sens.N, "sens.EcheverriaMaturity"))
+  legend.mat <- c("Northern base model (50% maturity at 42.5cm)",
+                  "Echeverria (1987) maturity (50% maturity at 36.4cm)",
+                  "Gunderson (1980) maturity (50% at 45.0cm)")
+  # plot summary biomass for alternative maturity curves
+  png(file.path(YTdir.sens.N, 'compare_smry_bio_maturities.N.png'),
+      width=6.5, height=5, res = 300, units = 'in')
+  par(mar=c(4,4,1,1))
+  cols <- c(4,2,3)
+  yrs <- mod1$timeseries$Yr
+  show <- yrs <= mod1$endyr+1
+  y1 <- 1e-3*mod1$timeseries[["Bio_smry"]][show]
+  y2 <- 1e-3*out.mat2.N$timeseries[["Bio_smry"]][show]
+  y3 <- 1e-3*out.mat3.N$timeseries[["Bio_smry"]][show]
+  yrs <- yrs[show]
+  plot(0, xlim=range(yrs), ylim=c(0, 1.1*max(y1,y2)), yaxs='i',
+       xlab="Year", ylab="Age 4+ biomass (x 1000 mt)", type='n', las=1)
+  lines(yrs, y2, lwd=3, col=cols[2])
+  lines(yrs, y3, lwd=3, col=cols[3])
+  lines(yrs, y1, lwd=3, col=cols[1])
+  legend('bottomleft', legend.mat, lwd=3, col=cols, bty='n')
+  dev.off()
+
+  # alternative maturity ogives SOUTH
+  out.mat2.S <- SS_output(file.path(YTdir.sens.S, "sens.S.GundersonMaturity"))
+  out.mat3.S <- SS_output(file.path(YTdir.sens.S, "sens.S.EcheverriaMaturity"))
+  legend.mat <- c("Southern base model (50% maturity at 42.5cm)",
+                  "Echeverria (1987) maturity (50% maturity at 36.4cm)",
+                  "Gunderson (1980) maturity (50% at 45.0cm)")
+  # plot summary biomass for alternative maturity curves
+  png(file.path(YTdir.sens.S, 'compare_smry_bio_maturities.S.png'),
+      width=6.5, height=5, res = 300, units = 'in')
+  par(mar=c(4,4,1,1))
+  cols <- c(4,2,3)
+  yrs <- mod1$timeseries$Yr
+  show <- yrs <= mod1$endyr+1
+  y1 <- 1e-3*mod2$timeseries[["Bio_smry"]][show]
+  y2 <- 1e-3*out.mat2.S$timeseries[["Bio_smry"]][show]
+  y3 <- 1e-3*out.mat3.S$timeseries[["Bio_smry"]][show]
+  yrs <- yrs[show]
+  plot(0, xlim=range(yrs), ylim=c(0, 1.1*max(y1,y2)), yaxs='i',
+       xlab="Year", ylab="Age 4+ biomass (x 1000 mt)", type='n', las=1)
+  lines(yrs, y2, lwd=3, col=cols[2])
+  lines(yrs, y3, lwd=3, col=cols[3])
+  lines(yrs, y1, lwd=3, col=cols[1])
+  legend('bottomleft', legend.mat, lwd=3, col=cols, bty='n')
+  dev.off()
   
   ##################################################################################
   # Comparing Northern sensitivities
@@ -134,6 +183,9 @@ if(FALSE){ # don't run all the stuff below if sourcing the file
                        csvfile = "comparison_table_sens.N.csv"
                        )
 
+
+
+
   
   ##################################################################################
   # McAllister-Ianelli tuning SOUTH
@@ -158,6 +210,8 @@ if(FALSE){ # don't run all the stuff below if sourcing the file
   # No recdevs after 2006
   out.recdevs2006 <- SS_output(file.path(YTdir.sens.S, "sens.recdevs_end_2006"))
 
+  out.mat2.S <- SS_output(file.path(YTdir.sens.S, "sens.S.GundersonMaturity"))
+  out.mat3.S <- SS_output(file.path(YTdir.sens.S, "sens.S.EcheverriaMaturity"))
 
   
   ##################################################################################
