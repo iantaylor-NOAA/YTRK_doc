@@ -445,27 +445,42 @@ dev.off()
 
 if(FALSE){
   # maturity, fecundity, growth
-  plot(0, xlim=c(20, 60), ylim=c(0, 1), xlab="Length (cm)", ylab="Maturity")
+  pngfun("maturity_curves.png", mod=0)
+  plot(0, xlim=c(20, 60), ylim=c(0, 1), xlab="Length (cm)", ylab="Maturity", las=1)
   abline(h=0, col='grey')
   par(lwd=3)
   SSplotBiology(mod1, subplot=6, colvec=4, add=TRUE)
   SSplotBiology(out.sens.GundersonMaturity.N, subplot=6, add=TRUE, colvec=2)
   SSplotBiology(out.sens.EcheverriaMaturity.N, subplot=6, add=TRUE, colvec=3)
-  legend('topleft',
+  legend('topleft', col=c(4,3,2), lwd=3, bty='n',
+         legend=c("Base model relationship using 2016 data",
+             "Echeverria (1987)", "Gunderson et al. (1980)"))
   par(lwd=1)
-  
-  plot(0, xlim=c(20, 60), ylim=c(0, 0.002))
+  dev.off()
+
+  # fecundity and spawning output
+  pngfun("fecundity.png", mod=0)
+  plot(0, xlim=c(20, 60), ylim=c(0, 0.002), xlab="Length (cm)", ylab="Eggs (millions)",
+       axes=FALSE)
   abline(h=0, col='grey')
-  SSplotBiology(mod1, subplot=10, colvec=4, add=TRUE)
-  SSplotBiology(mod1, subplot=9, colvec=1, add=TRUE)
-  SSplotBiology(out.sens.GundersonMaturity.N, subplot=10, add=TRUE, colvec=2)
-  SSplotBiology(out.sens.EcheverriaMaturity.N, subplot=10, add=TRUE, colvec=3)
-  ## fec.a <- mod1$parameters["Eggs_scalar_Fem", "Value"]
-  ## fec.b <- mod1$parameters["Eggs_exp_len_Fem", "Value"]
-  ## lenvec <- 20:60
-  ## lines(x=lenvec, y=300*fec.a*lenvec^fec.b)
+  par(lwd=3)
+  ## SSplotBiology(out.sens.GundersonMaturity.N, subplot=10, add=TRUE, colvec=2,
+  ##               labels=rep("", 14))
+  ## SSplotBiology(out.sens.EcheverriaMaturity.N, subplot=10, add=TRUE, colvec=3,
+  ##               labels=rep("", 14))
+  SSplotBiology(mod1, subplot=9, colvec=1, add=TRUE, labels=rep("", 14))
+  SSplotBiology(mod1, subplot=10, colvec=4, add=TRUE, labels=rep("", 14))
+  par(lwd=1)
+  axis(1)
+  yvec <- seq(0,2,.5)
+  axis(2, at=yvec/1000, label=yvec, las=1)
+  legend('topleft', col=c(1,4), lwd=3, bty='n',
+         legend=c("Fecundity (Dick, 2017)",
+             "Fecundity x Maturity"))
+  box()
+  dev.off()
 
-
+  # comparing 
   yrs <- mod1$catch$Yr[mod1$catch$Name=="RecWA"]
   bio <- mod1$catch$kill_bio[mod1$catch$Name=="RecWA"]
   num <- mod1$catch$kill_num[mod1$catch$Name=="RecWA"]
