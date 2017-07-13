@@ -6,7 +6,7 @@
 #stop("\n  This file should not be sourced!") # note to stop Ian from accidental sourcing
 
 # define directory on a specific computer
-if (system("hostname", intern=TRUE) %in% c("NWCLW04223033") ){
+if (system("hostname", intern=TRUE) %in% c("NWCLW04223033","NWCDW04008137") ){
   YTdir <- "C:/SS/Yellowtail/Yellowtail2017"
   YTdir.mods <- file.path(YTdir, "Models")
   YTdir.profs <- file.path(YTdir.mods, "profiles")
@@ -22,19 +22,18 @@ require(r4ss)
 # load model output into R
 # read base model from each area
 mod.N <- 'North/20_tuned'
+mod.N <- 'North/STAR_2_NORTH'
 dir.N <- file.path(YTdir.mods, mod.N)
 out.N <- SS_output(dir.N)
 
 
 # estimated log(R0) value
 out.N$parameters["SR_LN(R0)","Value"]
-## [1] 10.1811
-#out.S$parameters["SR_LN(R0)","Value"]
-## [1] 9.53632
+## [1] 10.8322
 
-# fixed M value
+# estimated M value
 out.N$parameters["NatM_p_1_Fem_GP_1","Value"]
-## [1] 0.140629
+## [1] 0.173974
 
 # fixed h value
 out.N$parameters["SR_BH_steep","Value"]
@@ -42,10 +41,7 @@ out.N$parameters["SR_BH_steep","Value"]
 
 # vectors of log(R0) spanning estimates
 # (going from high to low in case low value cause crashes)
-logR0vec.N <- seq(11.0, 9.0, -.2)
-
-# check that range below spans estimated R0 for the South model
-logR0vec.S <- seq(10.0, 8.0, -.2)
+logR0vec.N <- seq(11.4, 9.0, -.2)
 
 ### vectors below shared across models
 # vectors of M
@@ -99,7 +95,7 @@ if(FALSE){ # don't run all the stuff below if sourcing the file
 
 ##################################################################################
 # log(R0) profiles
-dir.prof.R0.N <- "prof.R0.N.20"
+dir.prof.R0.N <- "prof.R0.N.STAR2"
 copy.SS.files(source=mod.N, target=dir.prof.R0.N,
               control.for.profile=TRUE, overwrite=TRUE)
 SS_profile(dir=file.path(YTdir.profs, dir.prof.R0.N),
@@ -107,14 +103,14 @@ SS_profile(dir=file.path(YTdir.profs, dir.prof.R0.N),
 
 ##################################################################################
 # mortality profiles
-dir.prof.M.N <- "prof.M.N.20"
+dir.prof.M.N <- "prof.M.N.STAR2"
 copy.SS.files(source=mod.N, target=dir.prof.M.N,
               control.for.profile=TRUE, overwrite=TRUE)
 SS_profile(dir=file.path(YTdir.profs, dir.prof.M.N),
            string="NatM_p_1_Fem_GP_1", profilevec=M.vec, extras="-nohess -nox")
 
 # M offset profile
-dir.prof.M2.N <- "prof.M2.N.20"
+dir.prof.M2.N <- "prof.M2.N.STAR2"
 copy.SS.files(source=mod.N, target=dir.prof.M2.N,
               control.for.profile=TRUE, overwrite=TRUE)
 SS_profile(dir=file.path(YTdir.profs, dir.prof.M2.N),
@@ -122,7 +118,7 @@ SS_profile(dir=file.path(YTdir.profs, dir.prof.M2.N),
 
 ##################################################################################
 # steepness profiles
-dir.prof.h.N <- "prof.h.N.20"
+dir.prof.h.N <- "prof.h.N.STAR2"
 copy.SS.files(source=mod.N, target=dir.prof.h.N,
               control.for.profile=TRUE, overwrite=TRUE)
 SS_profile(dir=file.path(YTdir.profs, dir.prof.h.N),
@@ -137,7 +133,7 @@ SS_profile(dir=file.path(YTdir.profs, dir.prof.h.N),
 ####################################################################################
 
 # R0 profile North
-dir.prof.R0.N <- file.path(YTdir.profs, "prof.R0.N.20")
+dir.prof.R0.N <- file.path(YTdir.profs, "prof.R0.N.STAR2")
 profilemodels <- SSgetoutput(dirvec=dir.prof.R0.N,
                              keyvec=1:length(logR0vec.N), getcovar=FALSE)
 profilemodels$MLE <- out.N
@@ -198,7 +194,7 @@ SSplotComparisons(profilesummary, subplot=1,
 
 ##################################################################################
 # Mortality profile North
-dir.prof.M.N <- file.path(YTdir.profs, "prof.M.N.20")
+dir.prof.M.N <- file.path(YTdir.profs, "prof.M.N.STAR2")
 profilemodels <- SSgetoutput(dirvec=dir.prof.M.N,
                              keyvec=1:length(M.vec), getcovar=FALSE)
 # add MLE to set of models being plotted
@@ -229,7 +225,7 @@ SSplotComparisons(profilesummary, subplot=1,
 
 ##################################################################################
 # Mortality offset for Males profile North
-dir.prof.M2.N <- file.path(YTdir.profs, "prof.M2.N.20")
+dir.prof.M2.N <- file.path(YTdir.profs, "prof.M2.N.STAR2")
 profilemodels <- SSgetoutput(dirvec=dir.prof.M2.N,
                              keyvec=1:length(M2.vec), getcovar=FALSE)
 # add MLE to set of models being plotted
@@ -257,7 +253,7 @@ SSplotComparisons(profilesummary, subplot=1,
 
 ##################################################################################
 # Steepness profile North
-dir.prof.h.N <- file.path(YTdir.profs, "prof.h.N.20")
+dir.prof.h.N <- file.path(YTdir.profs, "prof.h.N.STAR2")
 profilemodels <- SSgetoutput(dirvec=dir.prof.h.N,
                              keyvec=1:length(h.vec), getcovar=FALSE)
 # summarize output

@@ -6,9 +6,9 @@
 #stop("\n  This file should not be sourced!") # note to stop Ian from accidental sourcing
 
 # define directory on a specific computer
-if (system("hostname", intern=TRUE) %in% c("NWCLW04223033") ){
+if (system("hostname", intern=TRUE) %in% c("NWCLW04223033","NWCDW04008137") ){
   YTdir <- "C:/SS/Yellowtail/Yellowtail2017"
-  YTdir.mods <- file.path(YTdir, "Models")
+  YTdir.mods <- file.path(YTdir, "Models/South")
   YTdir.profs <- file.path(YTdir.mods, "profiles")
   if(is.na(file.info(YTdir.profs)$isdir)){
     dir.create(YTdir.profs)
@@ -33,6 +33,7 @@ require(r4ss)
 # load model output into R
 # read base model from each area
 mod.S <- '21_newbase'
+mod.S <- 'STAR_2_SOUTH'
 dir.S <- file.path(YTdir.mods, mod.S)
 if(!exists('out.S')){
   out.S <- SS_output(dir.S)
@@ -40,17 +41,17 @@ if(!exists('out.S')){
 
 # estimated log(R0) value
 out.S$parameters["SR_LN(R0)","Value"]
-## [1] 10.4209
+## [1] 10.1468
 
 # fixed M values
 out.S$parameters["NatM_p_1_Fem_GP_1","Value"]
-## [1] 0.18
+## [1] 0.174
 out.S$parameters["NatM_p_1_Mal_GP_1","Value"]
-## [1] -0.2876
-# confirm that product of female M and exponential of male offset is ~ 0.135
+## [1] -0.149
+# check product of female M and exponential of male offset
 out.S$parameters["NatM_p_1_Fem_GP_1","Value"]*
   exp(out.S$parameters["NatM_p_1_Mal_GP_1","Value"])
-## [1] 0.1350111
+## [1] 0.149913
 
 # fixed h value
 out.S$parameters["SR_BH_steep","Value"]
@@ -113,7 +114,7 @@ if(FALSE){ # don't run all the stuff below if sourcing the file
 
 ##################################################################################
 # log(R0) profiles
-dir.prof.R0.S <- "prof.R0.S.18"
+dir.prof.R0.S <- "prof.R0.S.STAR2"
 copy.SS.files(source=mod.S, target=dir.prof.R0.S,
               control.for.profile=TRUE, overwrite=TRUE)
 SS_profile(dir=file.path(YTdir.profs, dir.prof.R0.S),
@@ -121,14 +122,14 @@ SS_profile(dir=file.path(YTdir.profs, dir.prof.R0.S),
 
 ##################################################################################
 # mortality profiles
-dir.prof.M.S <- "prof.M.S.18"
+dir.prof.M.S <- "prof.M.S.STAR2"
 copy.SS.files(source=mod.S, target=dir.prof.M.S,
               control.for.profile=TRUE, overwrite=TRUE)
 SS_profile(dir=file.path(YTdir.profs, dir.prof.M.S),
            string="NatM_p_1_Fem_GP_1", profilevec=M.vec, extras="-nohess -nox")
 
 # M offset profile
-dir.prof.M2.S <- "prof.M2.S.18"
+dir.prof.M2.S <- "prof.M2.S.STAR2"
 copy.SS.files(source=mod.S, target=dir.prof.M2.S,
               control.for.profile=TRUE, overwrite=TRUE)
 SS_profile(dir=file.path(YTdir.profs, dir.prof.M2.S),
@@ -136,7 +137,7 @@ SS_profile(dir=file.path(YTdir.profs, dir.prof.M2.S),
 
 ##################################################################################
 # steepness profiles
-dir.prof.h.S <- "prof.h.S.18"
+dir.prof.h.S <- "prof.h.S.STAR2"
 copy.SS.files(source=mod.S, target=dir.prof.h.S,
               control.for.profile=TRUE, overwrite=TRUE)
 SS_profile(dir=file.path(YTdir.profs, dir.prof.h.S),
@@ -151,7 +152,7 @@ SS_profile(dir=file.path(YTdir.profs, dir.prof.h.S),
 ####################################################################################
 
 # R0 profile
-dir.prof.R0.S <- file.path(YTdir.profs, "prof.R0.S.18")
+dir.prof.R0.S <- file.path(YTdir.profs, "prof.R0.S.STAR2")
 profilemodels <- SSgetoutput(dirvec=dir.prof.R0.S,
                              keyvec=1:length(logR0vec.S), getcovar=FALSE)
 profilemodels$MLE <- out.S
@@ -212,7 +213,7 @@ SSplotComparisons(profilesummary, subplot=1,
 
 ##################################################################################
 # Mortality profile
-dir.prof.M.S <- file.path(YTdir.profs, "prof.M.S.18")
+dir.prof.M.S <- file.path(YTdir.profs, "prof.M.S.STAR2")
 profilemodels <- SSgetoutput(dirvec=dir.prof.M.S,
                              keyvec=1:length(M.vec), getcovar=FALSE)
 # add MLE to set of models being plotted
@@ -242,7 +243,7 @@ SSplotComparisons(profilesummary, subplot=c(1,3),
 
 ##################################################################################
 # Mortality offset for Males profile
-dir.prof.M2.S <- file.path(YTdir.profs, "prof.M2.S.18")
+dir.prof.M2.S <- file.path(YTdir.profs, "prof.M2.S.STAR2")
 profilemodels <- SSgetoutput(dirvec=dir.prof.M2.S,
                              keyvec=1:length(M2.vec), getcovar=FALSE)
 # add MLE to set of models being plotted
@@ -271,7 +272,7 @@ SSplotComparisons(profilesummary, subplot=c(1,3), models=mods,
 
 ##################################################################################
 # Steepness profile 
-dir.prof.h.S <- file.path(YTdir.profs, "prof.h.S.18")
+dir.prof.h.S <- file.path(YTdir.profs, "prof.h.S.STAR2")
 profilemodels <- SSgetoutput(dirvec=dir.prof.h.S,
                              keyvec=1:length(h.vec), getcovar=FALSE)
 # summarize output
