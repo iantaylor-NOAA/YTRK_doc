@@ -133,7 +133,7 @@ SS_profile(dir=file.path(YTdir.profs, dir.prof.h.N),
 ####################################################################################
 
 # R0 profile North
-dir.prof.R0.N <- file.path(YTdir.profs, "prof.R0.N.STAR2")
+dir.prof.R0.N <- file.path(YTdir.profs, "course.prof.R0.N.STAR2")
 profilemodels <- SSgetoutput(dirvec=dir.prof.R0.N,
                              keyvec=1:length(logR0vec.N), getcovar=FALSE)
 profilemodels$MLE <- out.N
