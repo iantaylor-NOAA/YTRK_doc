@@ -19,7 +19,7 @@ mod.N <- 'North/20_tuned'
 dir.N <- file.path(YTdir.mods, mod.N)
 out.N <- SS_output(dir.N)
 
-mod.S <- 'South/18_New_South_Base'
+mod.S <- 'South/21_newbase'
 dir.S <- file.path(YTdir.mods, mod.S)
 out.S <- SS_output(dir.S)
 
@@ -142,6 +142,35 @@ if(FALSE){ # don't run all the stuff below if sourcing the file
   lines(yrs, y1, lwd=3, col=cols[1])
   legend('bottomleft', legend.mat, lwd=3, col=cols, bty='n')
   dev.off()
+
+  
+  ##################################################################################
+  # early recdevs North
+  sens.N.recdevs1869 <- SS_output(file.path(YTdir.sens.N,'sens.N.recdevs1869'))
+  sens.N.recdevs1889 <- SS_output(file.path(YTdir.sens.N,'sens.N.recdevs1889'))
+  SSplotComparisons(SSsummarize(list(mod1, sens.N.recdevs1889, sens.N.recdevs1869)), subplot=2,
+                    legendlabels=c('Northern base model',
+                        'Recruitment deviations start in 1889',
+                        'Recruitment deviations start in 1869'),
+                    )
+
+  # early recdevs South
+  sens.S.recdevs1869 <- SS_output(file.path(YTdir.sens.S,'sens.S.recdevs1869'))
+  sens.S.recdevs1889 <- SS_output(file.path(YTdir.sens.S,'sens.S.recdevs1889'))
+  SSplotComparisons(SSsummarize(list(out.S, sens.S.recdevs1889, sens.S.recdevs1869)),
+                    subplot=c(2,4),
+                    legendlabels=c('Southern base model',
+                        'Recruitment deviations start in 1889',
+                        'Recruitment deviations start in 1869'),
+                    )
+
+
+  ##################################################################################
+  # early recdevs North
+  out.N.20b_added_variance <- SS_output(file.path(YTdir.mods,'North/20b_added_variance'))
+  out.N.20c_block_rec_selex <- SS_output(file.path(YTdir.mods,'North/20c_block_rec_selex'),
+                                         covar=FALSE)
+
   
   ##################################################################################
   # Comparing Northern sensitivities
@@ -221,5 +250,7 @@ if(FALSE){ # don't run all the stuff below if sourcing the file
 
   dir.N.jit <- 'C:/SS/Yellowtail/Yellowtail2017/Models/North/20_tuned_jitter'
   jit.N <- SS_RunJitter(dir.N.jit, Njitter=100)
+
+
   
 } # end if(FALSE) section that doesn't get sourced
