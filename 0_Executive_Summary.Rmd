@@ -279,7 +279,23 @@ TBD after STAR panel
 
 Potential OFL projections for each model are shown in Table \ref{tab:OFL_projection}.
 
-Decision tables \ref{tab:Decision_table_mod1} and \ref{tab:Decision_table_mod2} will be completed during the STAR panel after determination of the axis of uncertainty and catch streams to include.
+A decision table for the Northern model is provided in Table \ref{tab:Decision_table_mod1}. The initial catch streams chosen during the STAR panel with input from the GMT and GAP representatives are as follows.
+
+* Base catch stream. Annual catches for each fleet are calculated within Stock Synthesis for from the Base Model by applying the default SPR-based control rule with a 0.956 adjustment from OFL to ACL associated with a P-star of 0.45 and the default 0.36 Sigma for Category-1 stocks
+* Historic target opportunity catch stream example. This is based on a calculation by the GMT of the based on an average attainment during a period when there was a mid-water fishery targing Yellowtail. It results in an total annual catch of approximately 4000 mt.
+* Recent 5-year average. It results in an total annual catch of approximately 2000 mt.
+
+These are shown in the table in order of increasing average catch.
+
+Allocation of catch among fleets for the years 2019 and beyond was based on an average ratio among fleets over the last 5 years as follows: Commercial, 89.6%; At-sea Hake Bycatch, 6.6%; Recreational Oregon and California, 1.2%; and Recreational Washington, 2.6%. For the years 2017 and 2018, the fleet-specific catches were based on the following calculations.
+
+* Recreational catch of 620 mt in 2017 and 597 mt in 2018 based on the set-asides in the harvest specifications.  These were divided among the two recreational fleets based based on the recent 5-year average split among them estimated as 35\% to the Oregon and Northern California and 65\% to Washington.
+* At-sea Hake bycatch of 300 mt based on current set-aside.
+* Commercial catch of 5276 and 5105 mt in 2017 and 2018 based on the difference between the ACLs for these two years (6196 and 6002 mt, respectively) and the values for the recreational and At-sea Hake fisheries noted above.
+
+In all these calculations, the catch of the Washington Recreational fleet relative to the other fleets based on the estimated catch in biomass, but the forecast catches for this fleet are input in numbers of fish to match the inputs of the historic catch in the model. The conversion of biomass to numbers in the forecast is based on an average weight of 1.056 kg calculated from the period since 2003 after the estimated change in selectivity of both recreational fleets. Minor discrepencies between this average and the average weight estimated within the model within the forecast period are a source of the small difference between the catch values shown in the decision table and the 2000 and 4000 mt values for two of the catch streams as well as the difference between the 5979 mt catch for 2018 in these forecasts and the 6002 ACL for that year.
+
+No decision table for the Southern model was developed because this model is not recommended for use in management. 
 
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY OFL AND DECISION TABLES************ -->
@@ -297,24 +313,8 @@ Decision tables \ref{tab:Decision_table_mod1} and \ref{tab:Decision_table_mod2} 
     # print Model 1 decision table
     print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 
           caption.placement = 'top', 
-          hline.after = c(-1, 0, 10, 20, 30, nrow(decision_mod1.table)), 
+          hline.after = c(-1, 0, 2, 12, 22, nrow(decision_mod1.table)), 
           scalebox = .85)
-
-if(n_models >= 2) {
-    # Print Model 2 decision table
-    print(decision_mod2.table, add.to.row = addtorow, include.rownames = FALSE, 
-          caption.placement = 'top', 
-          hline.after = c(-1, 0, 10, 20, 30, nrow(decision_mod2.table)), 
-          scalebox = .85)
-}
-    
-if(n_models ==3) {    
-    # Print Model 3 decision table
-    print(decision_mod3.table, add.to.row = addtorow, include.rownames = FALSE, 
-         caption.placement = 'top',
-         hline.after = c(-1, 0, 10, 20, 30, nrow(decision_mod3.table)), 
-         scalebox = .9)
-}
 ```
 <!-- ***********END EXECUTIVE SUMMARY OFL AND DECISION TABLES************** -->
 

@@ -737,15 +737,15 @@ if (n_models == 1) {
                                    'Depletion')
       
        decision_mod1.table = xtable(decision_mod1, 
-                                    caption = c(paste('Summary of 10-year 
-                                             projections beginning in ', LastYR+2,' 
-                                             for alternate states of nature based on 
+                                    caption = c(paste('Summary of Spawning Output and Relative
+                                             Spawning Output (Depletion) over 12-year 
+                                             projections for alternate states of nature based on 
                                              an axis of uncertainty for the ', mod1_label, 
                                              '.  Columns range over low, mid, and high
                                              states of nature, and rows range over different 
-                                             assumptions of catch levels. An entry of "--" 
-                                             indicates that the stock is driven to very low 
-                                             abundance under the particular scenario.', sep = '')), 
+                                             assumptions of catch levels. Projections for the
+                                             years 2017/18 are shown in the first two rows
+                                             and are used in all catch streams.', sep = '')), 
                                      label='tab:Decision_table_mod1')
       
     # Assign alignment and add the header columns
@@ -758,61 +758,11 @@ if (n_models == 1) {
         addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
                                & \\multicolumn{2}{c}{\\textbf{States of nature}} 
                                & \\multicolumn{2}{c}{} \\\\\n', 
-                               ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low M 0.05} 
-                               & \\multicolumn{2}{c}{Base M 0.07} 
-                               &  \\multicolumn{2}{c}{High M 0.09} \\\\\n')
+                               ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low state (M = 0.122)} 
+                               & \\multicolumn{2}{c}{Base (M = 0.174)} 
+                               &  \\multicolumn{2}{c}{High state (M = 0.249)} \\\\\n')
         
   
-# Model 2
-if (n_models >= 2) {
-    # Read in decision table file 
-    decision_mod2 = read.csv('./txt_files/DecisionTable_mod2.csv')
-         colnames(decision_mod2) = c('', 
-                                     'Year',  
-                                     'Catch',  
-                                     'Spawning Output',	
-                                     'Depletion',
-                                     'Spawning Output',	
-                                     'Depletion',	
-                                     'Spawning Output',	
-                                     'Depletion')
-  
-     decision_mod2.table = xtable(decision_mod2, 
-                                  caption=c(paste('Summary of 10-year projections 
-                                                  beginning in ', LastYR+2,' for 
-                                                  alternate states of nature based 
-                                                  on an axis of uncertainty for the ',
-                                                  mod2_label,'.  Columns range over low, 
-                                                  mid, and high states of nature, and rows 
-                                                  range over different assumptions of catch 
-                                                  levels. An entry of "--" indicates that the 
-                                                  stock is driven to very low abundance under the
-                                                  particular scenario.', sep='')), 
-                                      label='tab:Decision_table_mod2')
-  
-    # Assign alignment and add the header columns
-    align(decision_mod2.table) = c('l',
-                                   'l|',
-                                   'c',
-                                   'c|',
-                                   '>{\\centering}p{.7in}',
-                                   'c|',
-                                   '>{\\centering}p{.7in}',
-                                   'c|',
-                                   '>{\\centering}p{.7in}',
-                                   'c') 
-    # Add additional header
-    addtorow <- list()
-    addtorow$pos <- list()
-    addtorow$pos[[1]] <- -1
-    addtorow$pos[[2]] <- -1
-    addtorow$command <- c( ' \\multicolumn{3}{c}{} &  \\multicolumn{2}{c}{} 
-                          &  \\multicolumn{2}{c}{\\textbf{States of nature}} 
-                          &   \\multicolumn{2}{c}{} \\\\\n', 
-                          ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low M 0.05} 
-                          &  \\multicolumn{2}{c}{Base M 0.07} 
-                          &   \\multicolumn{2}{c}{High M 0.09} \\\\\n')
-}   
     
 
 # =============================================================================
