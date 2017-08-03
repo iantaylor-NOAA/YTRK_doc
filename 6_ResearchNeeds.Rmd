@@ -4,11 +4,15 @@ We recommend that the following research will be valuable for future `r spp` ass
 
 \begin{enumerate}
 
+
 \item A longer timeseries of the juvenile rockfish CPUE in the south.
 
-\item A commercial index in the north.  This is by far the largest segment of the fishery, and the introduction of the trawl rationalization program should mean that an index can be developed for the current fishery when the next assessment is performed.
+\item A commercial index in the North.  This is by far the largest segment of the fishery, and the introduction of the trawl rationalization program should mean that an index can be developed for the current fishery when the next assessment is performed.
 
 \item More recent ages for the Southern model.  The commercial age timeseries currently stops in 2002. Otoliths have been collected for all years in the Hook \& Line survey but only samples from 2004 have been aged.
+
+\item Further analysis of growth patterns along the Northern coast.  The previous full assessment subdivided the Northern stock based on research showing differential growth along the coast, and although data for the assessment is no longer available along the INPFC areas used in that analysis, there may be some evidence of growth variability that would be useful to include in a future assessment.
+
 
 \end{enumerate}
 

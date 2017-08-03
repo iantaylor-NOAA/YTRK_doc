@@ -1,17 +1,18 @@
 #Executive Summary{-}
 
+`r n_models=1`
 ##Stock{-}
 This assessment reports the status of the `r spp` (\emph{`r spp.sci`}) resource in U.S. waters off the coast of the California, Oregon, and Washington using data through `r LastYR`.  
 
-The Pacific Fishery Management Council (PFMC) manages the U.S. fishery as two stocks separated at Cape Mendocino, California (40$^\circ$ 10'N). The northern stock has long been assessed on its own; the southern stock is managed as part of the "Minor Shelf Rockfish" complex.  This assessment analyzes each stock independently, with the southern stock extending southward to the U.S./Mexico border and the northern stock extending northward to the U.S./Canada border (Figure \ref{fig:assess_region_map_Exec_Sum}).
+The Pacific Fishery Management Council (PFMC) manages the U.S. fishery as two stocks separated at Cape Mendocino, California (40$^\circ$ 10'N). The northern stock has long been assessed on its own; the southern stock is managed as part of the "Minor Shelf Rockfish" complex.  This assessment analyzed each stock independently, with the southern stock extending southward to the U.S./Mexico border and the northern stock extending northward to the U.S./Canada border (Figure \ref{fig:assess_region_map_Exec_Sum}).
+
+The Southern model was not robust enough for management purposes; therefore the data and sensitivities investigated for the model are reported in this document, however results of any of those sensitivities are inherently misleading.  We report estimates and projections only for the Northern model.
 
 ![Map depicting the boundaries for the base-case model.  \label{fig:assess_region_map_Exec_Sum}](Figures/assess_region_map_v2.png)
 
 The most recent fully integrated assessment [@Wallace2005], following the pattern of prior assessments, included only the Northern stock which it divided into three assessment areas with divisions at Cape Elizabeth (47$^\circ$ 20'N) and Cape Falcon (45$^\circ$ 46'N).  A data-moderate assessment conducted in 2013 [@Cope2013] was the first to analyze the southern stock, determining its contribution to the overfishing limit (OFL) for the Southern Shelf Complex. 
 
-Since the 2005 assessment, reconstruction of historical catch by Washington and Oregon makes any border but the state line (roughly 46$^\circ$ N) incompatible with the data from those states.  Additionally, much of the groundfish catch landed in northern Oregon is caught in Washington waters.  
-
-This assessment addresses the stock in two areas consistent with the management border at Cape Mendocino.  This is consistent, as well, with a recent genetic analysis [@Hess2011] that found distinct stocks north and south of Cape Mendocino but did not find stock differences within the northern area. 
+Since the 2005 assessment, reconstruction of historical catch by Washington and Oregon makes any border but the state line (roughly 46$^\circ$ N) incompatible with the data from those states.  Additionally, an unknown amount of the groundfish catch landed in northern Oregon is believed to have been caught in Washington waters.  This is not an issue that can be resolved at present, and we have elected to address the stock in two areas consistent with the management border at Cape Mendocino.  This is consistent, as well, with a recent genetic analysis [@Hess2011] that found distinct stocks north and south of Cape Mendocino but did not find stock differences within the northern area. 
 
 \FloatBarrier
 
@@ -59,14 +60,14 @@ Catches from the Southern stock (Figure \ref{fig:r4ss_catch_S}) were divided int
 \newpage
 
 ##Data and Assessment{-}
-`r spp` north of Cape Mendocino (40$^\circ$ 10'N) was most recently assessed as part of a 2013 data-moderate stock assessment [@Cope2013] that did not include any length or age data. The northern stock was previously assessed in 2000 [@Tagart2000] with that assessment updated in 2003 and 2005 [@Lai2003, @Wallace2005]. The stock south of 40$^\circ$ 10'N has never been assessed due to a percieved lack of data in this area.
+`r spp` north of Cape Mendocino (40$^\circ$ 10'N) was most recently assessed as part of a 2013 data-moderate stock assessment [@Cope2013] that did not include any length or age data. The northern stock was previously assessed in 2000 [@Tagart2000] with that assessment updated in 2003 and 2005 [@Lai2003, @Wallace2005]. The stock south of 40$^\circ$ 10'N has never been fully assessed due to the lack of data for this area.
 
-This assessment uses Stock Synthesis version 3.3.  The Northern model begins in `r Dat_start_mod1`. The Southern model begins in `r Dat_start_mod2`. In both cases those starting years were chosen based on the first year of the available catch data and the start of the estimated recruitment deviations was at a later point, so both models were assumed to start at an unfished equilibrium.
+This assessment uses Stock Synthesis version 3.3.  The Northern model begins in `r Dat_start_mod1`, as does the Southern model. In both cases those starting years were chosen based on the first year of the available catch data and the start of the estimated recruitment deviations was at a later point, so both models were assumed to start at an unfished equilibrium.
  
 ##Stock Biomass{-}
 The spawning output for the Northern model was estimated to have fallen below 40\% of unfished equilibrium in the early 1980s, to a minimum of `r MinDepl_mod1`% in `r MinDeplYr_mod1` but has rebounded since to `r Depl_mod1` in 2017 (~95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Figures \ref{fig:Spawnbio_all} and \ref{fig:RelDeplete_all}, Table \ref{tab:SpawningDeplete_mod1}).
 
-The spawning output for the Southern model is estimated to have experienced less impact from fishing and never fallen below the 40\% reference point. The estimated minimum was `r MinDepl_mod2`% in `r MinDeplYr_mod2` and the estimated relative spawning output in 2017 is `r Depl_mod2` (~95% asymptotic interval: $\pm$ `r Depl_mod2_CI`).
+No estimate of spawning output from the Southern model is available.
 
 \FloatBarrier
 
@@ -107,7 +108,8 @@ The spawning output for the Southern model is estimated to have experienced less
 
 
 ##Recruitment{-}
-Recruitment is estimated to be at a similar scale for both models (Figure \ref{fig:Recruits_all}) except for the final years in which the Southern model is estimated to have had very large recruitments in 2008 and 2010 (Tables \ref{tab:Recruit_mod1} and \ref{tab:Recruit_mod2}). The Southern model has higher mortality but slower growth than the Northern model, leading to a larger level of recruitment relative to the spawning output in the South.
+
+Text describing recruitment.  TOADS
 
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY RECRUITMENT TABLES AND FIGURES***** -->
@@ -142,9 +144,9 @@ Recruitment is estimated to be at a similar scale for both models (Figure \ref{f
 
 
 ##Exploitation status{-}
-The Northern model is estimated to have experienced overfishing throughout the 1980s and 1990s relative to the current SPR-based harvest limits (Figure \ref{fig:SPR_all}). The Southern stock is managed as part of a stock complex under catch limits applied at the complex level. However, the fishing intensity is estimated to have remained below 100% for all years. In recent years, the fishing intensity has been well within the management limits for both areas with particularly low estimates for the Southern model (Tables \ref{tab:SPR_Exploit_mod1} and \ref{tab:SPR_Exploit_mod2}).
+The Northern model is estimated to have experienced overfishing throughout the 1980s and 1990s relative to the current SPR-based harvest limits (Figure \ref{fig:SPR_all}). However, the fishing intensity is estimated to have remained below 100% for all years. In recent years, the fishing intensity has been well within the management limits (Table \ref{tab:SPR_Exploit_mod1}).
 
-A summary of `r spp` exploitation histories for base model is provided as Figure \ref{fig:Phase_all}.
+A summary of `r spp` exploitation histories for the Northern base model is provided as Figure \ref{fig:Phase_all}.
 
 
 \FloatBarrier
@@ -198,7 +200,7 @@ Yellowtail Rockfish feed mainly on pelagic animals, but are opportunistic, occas
 
 
 ##Reference Points{-}
-Yellowtail Rockfish are managed relative to biomass reference points at $B_{40\%}$ (the $B_{MSY}$ proxy) and $B_{25\%}$ (the minimum stock-size threshold). Harvest rates are managed relative to an $F_{MSY}$ proxy $SPR = 50\%$ which corresponds to a Relative Fishing Intensity, $(1 - {SPR})/(1 - {SPR}_{50\%})$, of 100\%. This assessment estimates both the Northern and Southern stocks to be above the $B_{40\%}$ threshold with Relative Fishing Intensity below 100\% (${SPR} > 50\%$ which means the Spawning Potential is greater than 50\% of the unfished Spawning Potential).
+Yellowtail Rockfish are managed relative to biomass reference points at $B_{40\%}$ (the $B_{MSY}$ proxy) and $B_{25\%}$ (the minimum stock-size threshold). Harvest rates are managed relative to an $F_{MSY}$ proxy $SPR = 50\%$ which corresponds to a Relative Fishing Intensity, $(1 - {SPR})/(1 - {SPR}_{50\%})$, of 100\%. This assessment estimates the Northern stock to be above the $B_{40\%}$ threshold with Relative Fishing Intensity below 100\% (${SPR} > 50\%$ which means the Spawning Potential is greater than 50\% of the unfished Spawning Potential).
 
 The estimated relative depletion level for the Northern model in 2017 is 
 `r Depl_mod1` (~95% asymptotic interval: $\pm$ `r Depl_mod1_CI`, corresponding 
@@ -211,19 +213,7 @@ base case model. The target spawning output based on the biomass target
 a catch of `r Ref_pts_mod1[10,2]` mt. Equilibrium yield at the proxy $F_{MSY}$ 
 harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt.
 
-The estimated relative depletion level for the Southern model in 2017 is 
-`r {Depl_mod2}` (~95% asymptotic interval: $\pm$ 
-`r {Depl_mod2_CI}`), corresponding to an unfished spawning output of 
-`r {paste(round(Spawn_mod2,1), fecund_unit, sep=' ')}` (~95% asymptotic interval: 
-`r #paste(Spawn_mod2_CI, fecund_unit, sep=' ')`) of 
-spawning output in the base model (Table \ref{tab:Ref_pts_mod2}). Unfished 
-age `r min_age` biomass was estimated to be `r {Ref_pts_mod2[2,2]}` 
-mt in the base case model. The target spawning output based on the biomass target 
-($SB_{40\%}$) is `r {paste(Ref_pts_mod2[7,2], fecund_unit,sep=' ')}`, 
-which gives a catch of `r Ref_pts_mod2[10,2]` mt. Equilibrium yield at the proxy $F_{MSY}$ 
-harvest rate corresponding to $SPR_{50\%}$ is `r {Ref_pts_mod2[15,2]}` mt.
-
-Estimated equilibrium yield curves for both models are shown in Figure \ref{fig:Yield_all}.
+Estimated equilibrium yield curves for the Northern model is shown in Figure \ref{fig:Yield_all}.
 
 \FloatBarrier
 
@@ -250,9 +240,6 @@ Estimated equilibrium yield curves for both models are shown in Figure \ref{fig:
 
 Total catch (including landings and discards) from the Northern stock has remained well below the management limits in recent years (Table \ref{tab:mnmgt_perform_exec.N}) and harvest specifications for 2017 and 2018 are set at values similar to the previous years.
 
-The southern stock has been managed in the Southern Shelf Rockfish complex so is not managed under a single-species catch limit. Nevertheless, the contribution of the Yellowtail stock to the reference points for the complex are shown in Table \ref{tab:mnmgt_perform_exec.S}, indicating that recent catches have been well below the OFL contributions in spite of these limits not being used in managing fisheries catches.
-
-
 <!-- ***********BEGIN EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLES******* --> 
 ```{r, results='asis'}
     print(mngmnt.table.N, include.rownames = FALSE, caption.placement = 'top', 
@@ -272,12 +259,12 @@ The southern stock has been managed in the Southern Shelf Rockfish complex so is
 
 ##Unresolved Problems And Major Uncertainties{-}
 
-TBD after STAR panel
+TBD after STAR panel  TOADS
 
 
 ##Decision Tables{-}
 
-Potential OFL projections for each model are shown in Table \ref{tab:OFL_projection}.
+Potential OFL projections for the Northern model are shown in Table \ref{tab:OFL_projection}.
 
 A decision table for the Northern model is provided in Table \ref{tab:Decision_table_mod1}. The initial catch streams chosen during the STAR panel with input from the GMT and GAP representatives are as follows.
 
@@ -293,7 +280,7 @@ Allocation of catch among fleets for the years 2019 and beyond was based on an a
 * At-sea Hake bycatch of 300 mt based on current set-aside.
 * Commercial catch of 5276 and 5105 mt in 2017 and 2018 based on the difference between the ACLs for these two years (6196 and 6002 mt, respectively) and the values for the recreational and At-sea Hake fisheries noted above.
 
-In all these calculations, the catch of the Washington Recreational fleet relative to the other fleets based on the estimated catch in biomass, but the forecast catches for this fleet are input in numbers of fish to match the inputs of the historic catch in the model. The conversion of biomass to numbers in the forecast is based on an average weight of 1.056 kg calculated from the period since 2003 after the estimated change in selectivity of both recreational fleets. Minor discrepencies between this average and the average weight estimated within the model within the forecast period are a source of the small difference between the catch values shown in the decision table and the 2000 and 4000 mt values for two of the catch streams as well as the difference between the 5979 mt catch for 2018 in these forecasts and the 6002 ACL for that year.
+In all these calculations, the catch of the Washington Recreational fleet relative to the other fleets is based on the estimated catch in biomass, but the forecast catches for this fleet are input in numbers of fish to match the inputs of the historic catch in the model. The conversion of biomass to numbers in the forecast is based on an average weight of 1.056 kg calculated from the period since 2003 after the estimated change in selectivity of both recreational fleets. Minor discrepencies between this average and the average weight estimated within the model within the forecast period are the source of the small difference between the catch values shown in the decision table and the 2000 and 4000 mt values for two of the catch streams as well as the difference between the 5979 mt catch for 2018 in these forecasts and the 6002 ACL for that year.
 
 No decision table for the Southern model was developed because this model is not recommended for use in management. 
 
@@ -326,7 +313,7 @@ No decision table for the Southern model was developed because this model is not
    # depending on the stock structure
    # Edit file: ./txt_files/Exec_basemodel_summary.csv and the Summary Results 
    # section in R code R_exec_summary_figs_tables.R
-
+n_models = 1
 if(n_models == 1){   
  print(base_summary.table, 
        include.rownames = FALSE, 
@@ -391,6 +378,7 @@ The following research will be valuable for future `r spp` assessments:
 
 \item More recent ages for the Southern model.  The commercial age timeseries currently stops in 2002. Otoliths have been collected for all years in the Hook \& Line survey but only samples from 2004 have been aged.
 
+\item Further analysis of growth patterns along the Northern coast.  The previous full assessment subdivided the Northern stock based on research showing differential growth along the coast, and although data for the assessment is no longer available along the INPFC areas used in that analysis, there may be some evidence of growth variability that would be useful to include in a future assessment.
 
 \end{enumerate}
 

@@ -33,9 +33,11 @@ These are the main changes from the previous model, and our rationale for them:
 
 2. Addition of Southern model. \emph{Rationale}: Hess, et al. determined that the West Coast Yellowtail stocks show a genetic cline occurring near Cape Mendocino, which is roughly  $40^\circ 10^\prime$ north latitude [@Hess2011].  This divides the stock into two genetically distinct substocks which we model independently.
 
-2. Availability of recent data. \emph{Rationale}: Ten years of data collection have occurred since the last update assessment, and the data necessary for an assessment of the southern stock is now available.
+3. Availability of recent data. \emph{Rationale}: Ten years of data collection have occurred since the last update assessment, and the data necessary for an assessment of the southern stock is now available.
 
-3. Historical catch reconstructions. \emph{Rationale}:  Reconstruction of catch timeseries in California, Washington and Oregon clarify stock history as far back as 1889.
+4. Historical catch reconstructions. \emph{Rationale}:  Reconstruction of catch timeseries in California, Washington and Oregon clarify stock history as far back as 1889.
+
+5. Collapsing the stock north of $40^\circ 10^\prime$ into one, heterogeneous stock. \emph{Rationale}: the previous full assessment of the Northern stock used three INPFC areas as proxies for sub-stocks thought to exhibit differential growth.  No attempt was made in this assessment to evaluate growth in those areas because the areas themselves have become obsolete with respect to data availability. In addition, the Hess, et al. study [@Hess2011] found that although there was notable heterogeneity in the Southern stock, there was very little in the North.  This suggests that differences in growth might be due to environmental factors that could change over time.  Evaluating growth patterns along the Northern Coast is among the recommendations for future research.
 
 
 ###Definition of Fleets and Areas
