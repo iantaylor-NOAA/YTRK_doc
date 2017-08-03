@@ -112,6 +112,10 @@ header-includes:
 \setcounter{table}{0}
 \newpage
 
-```{r child = "11_Appendices.Rmd"}
+```{r child = "11_Appendix_1.Rmd"}
 ```
+
+```{r child = "12_Appendix_2.Rmd"}
+```
+
 <!-- ********************END OF THE DOCUMENT******************************* -->
