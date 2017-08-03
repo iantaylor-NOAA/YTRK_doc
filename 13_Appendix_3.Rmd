@@ -1,0 +1,19 @@
+<!-- ====================================================================== -->
+<!-- **********APPENDICES******************* -->
+<!-- ====================================================================== -->
+
+\FloatBarrier
+\newpage
+
+\label{sec:AppendixC}
+
+![AppendixC_page1](appendixC_files/Pre-recruit_Index_Field_Appendix_page1.pdf)
+![AppendixC_page2](appendixC_files/Pre-recruit_Index_Field_Appendix_page2.pdf)
+![AppendixC_page3](appendixC_files/Pre-recruit_Index_Field_Appendix_page3.pdf)
+![AppendixC_page4](appendixC_files/Pre-recruit_Index_Field_Appendix_page4.pdf)
+![AppendixC_page5](appendixC_files/Pre-recruit_Index_Field_Appendix_page5.pdf)
+![AppendixC_page6](appendixC_files/Pre-recruit_Index_Field_Appendix_page6.pdf)
+![AppendixC_page7](appendixC_files/Pre-recruit_Index_Field_Appendix_page7.pdf)
+![AppendixC_page8](appendixC_files/Pre-recruit_Index_Field_Appendix_page8.pdf)
+![AppendixC_page9](appendixC_files/Pre-recruit_Index_Field_Appendix_page9.pdf)
+![AppendixC_page10](appendixC_files/Pre-recruit_Index_Field_Appendix_page10.pdf)
