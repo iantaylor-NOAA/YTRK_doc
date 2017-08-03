@@ -107,7 +107,7 @@ An index of abundance was estimated based on the VAST delta-GLMM model as descri
 
 **Northwest Fisheries Science Center West Coast Groundfish Bottom Trawl Survey**
 
-In 2003, the NWFSC took over an ongoing slope survey the AFSC had been conducting, and expanded it spatially to include the continental shelf. This survey, referred to in this document as the **NWFSCcombo Survey**, has been conducted annually since. It uses a random-grid design covering the coastal waters from a depth of 55 m to 1,280 m from late-May to early-October [@Bradburn2011]. Four chartered industry vessels are used each year (with the exception of 2013 when the U.S. federal-government shutdown curtailed the survey). 
+In 2003, the NWFSC took over an ongoing slope survey the AFSC had been conducting, and expanded it spatially to include the continental shelf. This survey, referred to in this document as the **NWFSCcombo Survey**, has been conducted annually since. It uses a random-grid design covering the coastal waters from a depth of 55 m to 1,280 m from late-May to early-October [@Bradburn2011 ; @Keller2017]. Four chartered industry vessels are used each year (with the exception of 2013 when the U.S. federal-government shutdown curtailed the survey). 
 
 The data from the NWFSCcombo survey was analyzed using a spatio-temporal delta-model [@Thorson2015], implemented as an R package VAST [@Thorson2017] and publicly available online (https://github.com/James-Thorson/VAST).  Spatial and spatio-temporal variation is specifically included in both encounter probability and positive catch rates, a logit-link for encounter probability, and a log-link for positive catch rates.  Vessel-year effects were included for each unique combination of vessel and year in the database.
 
