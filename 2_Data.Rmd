@@ -281,8 +281,7 @@ A reconstruction of the historical recreational fishery south of Cape Mendocino 
 
 
 **Small Research Study**
-A small number of fish were collected from the recreational fishery by the SWFSC and are included in the data for 1978-1984.
-TOADS
+California Cooperative Groundfish Survey CPFV Sampling, 1978-1984.  Commercial port samplers with the California Cooperative Groundfish Survey sampled landings from CPFVs operating north of Point Conception in the late 1970s and early 1980s.  This data set represents the only source of sex-specific length information available for Yellowtail Rockfish in California. 
 
 ###Estimated Discards
 
