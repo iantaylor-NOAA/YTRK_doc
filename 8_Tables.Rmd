@@ -280,6 +280,66 @@ align(mngmnt.table.N) = c('l',
 
 \newpage
 
+<!-- ***********Sample sizes for surveys************************* -->
+```{r, results = 'asis'}
+    Triennial_hauls = read.csv('./txt_files/Triennial survey sample sizes.csv')
+    colnames(Triennial_hauls) = c('Year',
+                                  'Hauls in Northern area',
+                                  'Hauls with Yellowtail in Northern area',
+                                  'Hauls in Southern area',
+                                  'Hauls with Yellowtail in Southern area')
+
+   # Index of abundance summary, create table   
+     Triennial_hauls.table = xtable(Triennial_hauls, 
+                                  caption = c('Number of hauls by year and area in total and with Yellowtail Rockfish for the Triennial bottom trawl survey.'),
+                                 label = 'tab:Triennial_hauls',
+                                 digits = 0)    
+
+   align(Triennial_hauls.table) = c('l','c',
+                         '>{\\centering}p{1.2in}',
+                         '>{\\centering}p{1.2in}',
+                         '>{\\centering}p{1.2in}', 
+                         '>{\\centering}p{1.2in}')  
+
+    # Print table
+      print(Triennial_hauls.table, 
+            include.rownames=FALSE, 
+            caption.placement='top',
+            sanitize.colnames.function=function(x){x},
+            sanitize.text.function = function(x){x})
+```
+
+```{r, results = 'asis'}
+    NWFSCcombo_hauls = read.csv('./txt_files/NWFSCcombo survey sample sizes.csv')
+    colnames(NWFSCcombo_hauls) = c('Year',
+                                  'Hauls in Northern area',
+                                  'Hauls with Yellowtail in Northern area',
+                                  'Hauls in Southern area',
+                                  'Hauls with Yellowtail in Southern area')
+
+   # Index of abundance summary, create table   
+     NWFSCcombo_hauls.table = xtable(NWFSCcombo_hauls, 
+                                  caption = c('Number of hauls by year and area in total and with Yellowtail Rockfish for the NWFSCcombo bottom trawl survey.'),
+                                 label = 'tab:NWFSCcombo_hauls',
+                                 digits = 0)    
+
+    # Add alignment
+    align(NWFSCcombo_hauls.table) = c('l','c',
+                         '>{\\centering}p{1.2in}',
+                         '>{\\centering}p{1.2in}',
+                         '>{\\centering}p{1.2in}', 
+                         '>{\\centering}p{1.2in}')  
+
+    # Print table
+      print(NWFSCcombo_hauls.table, 
+            include.rownames=FALSE, 
+            caption.placement='top',
+            sanitize.text.function = function(x){x})
+```
+
+<!-- ---------------------------------------------------------------------- -->
+
+
 <!-- ***********Indices of abundance summary table************************* -->
 ```{r, results = 'asis'}
     Index_summary = read.csv('./txt_files/Index_summary.csv')
@@ -287,7 +347,7 @@ align(mngmnt.table.N) = c('l',
                                   'Name',
                                   'Fishery ind.',
                                   'Method',	
-                                  'Endorsed')
+                                  'Used in model')
 
    # Index of abundance summary, create table   
      Index_summary.table = xtable(Index_summary, 
@@ -316,7 +376,7 @@ align(mngmnt.table.N) = c('l',
       colnames(Northern_CPUE) = c('Year',
                                    'Commercial Trawl',
                                    'SE',
-                                   'Hake ByCatch',
+                                   'Hake Bycatch',
                                    'SE',
                                    'NWFSCcombo',
                                    'SE',
@@ -325,7 +385,7 @@ align(mngmnt.table.N) = c('l',
 
    # Index of abundance summary, create table   
      Northern_CPUE.table = xtable(Northern_CPUE, 
-                                  caption ='CPUE timeseries for the Northern model.',
+                                  caption ='CPUE timeseries for the Northern model. The SE values represent standard error on a log scale, which is similar to a CV. The Commercial Trawl and Hake Bycatch indices were not included in the likelihood of the final model.',
                                   label = 'tab:Northern_CPUE',
                                   digits=2)
 
@@ -976,16 +1036,16 @@ align(mngmnt.table.S) = c('l',
       colnames(Southern_CPUE) = c('Year',
                                    'Hook and Line',
                                    'SE',
-                                   'Recreational',
-                                   'SE',
                                    'Onboard',
+                                   'SE',
+                                   'Recreational',
                                    'SE',
                                    'Juvenile Survey',
                                    'SE')
 
    # Index of abundance summary, create table   
      Southern_CPUE.table = xtable(Southern_CPUE, 
-                                  caption ='CPUE timeseries for the Southern model.',
+                                  caption ='CPUE timeseries for the Southern model. The SE values represent standard error on a log scale, which is similar to a CV. The two time periods for the onboard survey were treated as independent indices.',
                                   label = 'tab:Southern_CPUE',
                                   digits=2)
 

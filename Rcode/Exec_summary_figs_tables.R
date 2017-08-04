@@ -678,7 +678,8 @@ align(mngmnt.table.S) = c('l',
 
 
 #For 1 model:
-if (n_models == 1) {
+#if (n_models == 1) {
+if(TRUE){
 # Extract OFLs for next 10 years for each model
       OFL_mod1 = mod1$derived_quants[grep('OFL',mod1$derived_quants$Label),]
       OFL_mod1 = OFL_mod1[, 2]    
@@ -692,12 +693,14 @@ if (n_models == 1) {
 
 # Create the table
       OFL.table = xtable(OFL, caption=c('Projections of potential OFL (mt) for 
-                                        each model, using the base model forecast.'),
+                                        the Northern model,
+                                        using the base model forecast.'),
                   label = 'tab:OFL_projection')
 }
 
-# For 2 models:
-      if (n_models == 2) {
+# For 2 models (cancelled to exclude Southern model):
+      if (FALSE) {
+      #if (n_models == 2) {
         # Extract predicted OFLs for each model
         OFL_mod1 = mod1$derived_quants[grep('OFL',mod1$derived_quants$Label),]
         OFL_mod1 = OFL_mod1[, 2]
@@ -836,8 +839,9 @@ if (n_models >= 2) {
 # CREATE TABLES BASED ON HOW MANY MODELS AND MANAGEMENT AREAS YOU HAVE
   
 # ONE MODEL
-if (n_models == 1) {
-  # Bind data from all three models together
+#if (n_models == 1) {
+if (TRUE) {
+   # Bind data from all three models together
   base_summary1 = as.data.frame(cbind(mngmt,mod1_summary))
 
   # Transpose the dataframe to create the table and create data labels  
@@ -878,7 +882,8 @@ if (n_models == 1) {
                                 '>{\\centering}p{1.1in}')
 }
   # TWO MODELS
-if (n_models == 2) {
+#if (n_models == 2) {
+if (FALSE) {
   # Bind data from all three models together
   base_summary1 = as.data.frame(cbind(mngmt,mod1_summary, mod2_summary))
   

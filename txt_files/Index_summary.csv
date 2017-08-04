@@ -1,5 +1,5 @@
-Years,Name,Fishery independent,Method,Endorsed
-1987-1998,Commercial Logbook,No,delta-GLM (bin-lognormal),NA
-1985-1999,Hake Bycatch,No,VAST,SSC
-1977-2004,Triennial,Yes,VAST,SSC
-2003-2016,NWFSCcombo,Yes,VAST,SSC
+Years,Name,Fishery independent,Method,Included in likelihood
+1987-1998,Commercial Logbook,No,delta-GLM (bin-lognormal),No
+1985-1999,Hake Bycatch,No,VAST with catchability adjustment,No
+1977-2004,Triennial,Yes,VAST,Yes
+2003-2016,NWFSCcombo,Yes,VAST,Yes

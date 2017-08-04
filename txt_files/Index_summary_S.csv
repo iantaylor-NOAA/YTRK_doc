@@ -1,5 +1,5 @@
 Years,Name,Fishery independent,Method,Endorsed
 1981-2003,Dockside CPUE,No,delta-GLM (bin-lognormal),SSC
 1987-2006,Onboard CPUE,No,Polygon,SSC
-2004-2016,Hook-and-Line,Yes,,
-2001-2016,Juvenile CPUE,Yes,,
+2004-2016,Hook-and-Line,Yes,Binomial GLM,
+2001-2016,Juvenile CPUE,Yes,Delta-GLM,
