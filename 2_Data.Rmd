@@ -134,7 +134,7 @@ Two fishery-dependent abundance indices were developed for this analysis that we
 
 The commercial trawl index used the species composition of catch to infer the potential for Yellowtail Rockfish in each haul, however the way in which market categories were changing throughout the period of interest made the species composition of catch unreliable (Theresa Tsou, pers. comm.). The Hake fishery was explained to have had greater heterogeneity among the boats used in the fishery than had been assumed in developing the index (Dan Waldeck, pers. comm.).
 
-Give the unknown impact of incomplete information used in developing these indices, and that there were fishery-independent indices covering the period in question, the decision was made to withdraw these two indices.  They are described in \ref{sec:AppendixB} for completeness.
+Give the unknown impact of incomplete information used in developing these indices, and that there were fishery-independent indices covering the period in question, the decision was made to withdraw these two indices.  They are described in Appendix B for completeness.
 
 <!-- ************FISHERY-INDEPENDENT DATA*********************************** -->
 
@@ -321,7 +321,7 @@ The abundance index was developed using a delta-GLM within a hierarchical Bayesi
 ###Fishery-Independent Data
 
 **Hook and Line Survey**  
-The NWFSC Hook and Line survey provided data for an index in the Southern California Bight from 2004-2016.  This was developed using the VAST R package.  The Yellowtail index of abundance is based on numbers of fish provided by the Northwest Fisheries Science Center’s Hook and Line survey in the Southern California Bight. This index used survey data from 2004-2016 and was created following the methods put forth in [@Harms2010], after those methods were updated to create models with greater parsimony.  In addition, the final index is averaged over all crew staff and sites. (Note that vessels are confounded with crew staff.)  Two vessels were employed for the survey in 2004-12 and three vessels in 2013-16.  Data from inside the Cowcod Conservation Area (CCA) was not used in this index.
+The NWFSC Hook and Line survey provided data for an index in the Southern California Bight from 2004-2016.  The Yellowtail index of abundance is based on numbers of fish provided by the Northwest Fisheries Science Center’s Hook and Line survey in the Southern California Bight. This index used survey data from 2004-2016 and was created following the methods put forth in [@Harms2010], after those methods were updated to create models with greater parsimony.  In addition, the final index is averaged over all crew staff and sites. (Note that vessels are confounded with crew staff.)  Two vessels were employed for the survey in 2004-12 and three vessels in 2013-16.  Data from inside the Cowcod Conservation Area (CCA) was not used in this index.
 
 The 2016 index value differs from previous years in that certain variables such as sea surface temperature and tide flow were not available for this analysis, due to an ongoing upgrade in data collection software.
 
