@@ -698,28 +698,29 @@ if(TRUE){
                   label = 'tab:OFL_projection')
 }
 
-# For 2 models (cancelled to exclude Southern model):
-      if (FALSE) {
-      #if (n_models == 2) {
-        # Extract predicted OFLs for each model
-        OFL_mod1 = mod1$derived_quants[grep('OFL',mod1$derived_quants$Label),]
-        OFL_mod1 = OFL_mod1[, 2]
+## # For 2 models (cancelled to exclude Southern model):
+##       if (FALSE) {
+##       #if (n_models == 2) {
+##         # Extract predicted OFLs for each model
+##         OFL_mod1 = mod1$derived_quants[grep('OFL',mod1$derived_quants$Label),]
+##         OFL_mod1 = OFL_mod1[, 2]
         
-        OFL_mod2 = mod2$derived_quants[grep('OFL',mod2$derived_quants$Label),]
-        OFL_mod2 = OFL_mod2[, 2]
+##         OFL_mod2 = mod2$derived_quants[grep('OFL',mod2$derived_quants$Label),]
+##         OFL_mod2 = OFL_mod2[, 2]
         
-        # Turn into a dataframe and get the total
-        OFL = as.data.frame(cbind(OFL_mod1, OFL_mod2))
-        OFL$Total = rowSums(OFL)
-        OFL$Year=seq(Project_firstyr,Project_lastyr,1)
-        OFL$Year = as.factor(OFL$Year)
-        OFL = OFL[,c(4,1,2)]
-        colnames(OFL) = c('Year','Northern Model','Southern Model') 
+##         # Turn into a dataframe and get the total
+##         OFL = as.data.frame(cbind(OFL_mod1, OFL_mod2))
+##         OFL$Total = rowSums(OFL)
+##         OFL$Year=seq(Project_firstyr,Project_lastyr,1)
+##         OFL$Year = as.factor(OFL$Year)
+##         OFL = OFL[,c(4,1,2)]
+##         colnames(OFL) = c('Year','Northern Model','Southern Model') 
         
-        # Create the table
-        OFL.table = xtable(OFL, caption=c('Projections of potential OFL (mt) for each model, using the base model forecast.'),
-                           label = 'tab:OFL_projection')     
-}           
+##         # Create the table
+##         OFL.table = xtable(OFL, caption=c('Projections of potential OFL (mt) for each model, using the base model forecast.'),
+##                            label = 'tab:OFL_projection')     
+## }  
+
       
   
 # =============================================================================
@@ -839,8 +840,8 @@ if (n_models >= 2) {
 # CREATE TABLES BASED ON HOW MANY MODELS AND MANAGEMENT AREAS YOU HAVE
   
 # ONE MODEL
-#if (n_models == 1) {
-if (TRUE) {
+if (n_models == 1) {
+#if (TRUE) {
    # Bind data from all three models together
   base_summary1 = as.data.frame(cbind(mngmt,mod1_summary))
 
@@ -882,8 +883,8 @@ if (TRUE) {
                                 '>{\\centering}p{1.1in}')
 }
   # TWO MODELS
-#if (n_models == 2) {
-if (FALSE) {
+if (n_models == 2) {
+#if (FALSE) {
   # Bind data from all three models together
   base_summary1 = as.data.frame(cbind(mngmt,mod1_summary, mod2_summary))
   
@@ -915,9 +916,9 @@ if (FALSE) {
                        'Recruits',
                        '~95\\% CI')
   
-  base_summary$region = c('','','','',
+  base_summary$region = c('Northern Model','','','',
                           'Northern Model','Base Case','','','','','','','',
-                          'Southern Model','Base Case','','','','','','','' )
+                          'Southern Model','Final Model','','','','','','','' )
   
   base_summary = base_summary[,c(ncol(base_summary),
                                  (ncol(base_summary)-1),
