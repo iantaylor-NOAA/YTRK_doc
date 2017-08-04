@@ -5,6 +5,49 @@
 
 #Data
 
+##Biological Parameters \label{bio-params}
+
+\vspace{.5cm}
+###Weight-Length
+
+The weight-length relationship is based on the standard power function: $W = \alpha(L^\beta)$ where $W$ is individual weight (kg), $L$ is length (cm), and $\alpha$ and $\beta$ are coefficients used as constants.
+
+To estimate this relationship, 12,778 samples with both weight and length measurements from the fishery independent surveys were analyzed. These included 6,354 samples from the NWFSC Combo survey, 5,085 from the Triennial survey, and 1,339 from the Hook and Line survey. All Hook and Line survey samples were from the Southern area, along with 910 samples from the other two surveys (Figure \ref{fig:weight-length}). 
+
+A single weight-length relationship was chosen for females and males in both areas after examining various factors that may influence this relationships, including sex, area, year, and season. None of these factors had a strong influence in the overall results. Season was one of the bigger factors, with fish sampled later in the year showing a small increase in weight at a given length (2-6% depending on the other factors considered). However, season was confounded with area because most of the samples from the Southern area were collected from the Hook and Line survey which takes place later in the year (mid-September to mid-November) and the resolution of other data in the model do not support modeling the stock at a scale finer than a annual time step.
+
+Males and females did not show strong differences in either area, and the estimated differences were in opposite directions for the two areas, suggesting that this might be a spurious relationship or confounded with differences timing of the sampling relative to spawning.
+
+The estimated coefficients resulting from this analysis were $\alpha = 1.1843e-05$ and $\beta = 3.0672$.
+
+\vspace{.5cm}
+###Maturity And Fecundity
+
+Maturity was estimated from histological analysis of 141 samples collected in 2016. These include 96 from the NWFSC Combo survey, 25 from mid-water catches in the NWFSC acoustic/trawl survey, 13 from the Hook and Line survey, and 7 from Oregon Department of Fish and Wildlife. The sample sizes were not adequate to estimate differences in maturity by area. Length at 50\% maturity was estimated at 42.49cm (Figure \ref{fig:maturity}) which was consistent with the range 37-45cm cited in the previous assessment [@Wallace2005].
+
+
+\vspace{.5cm}
+###Natural Mortality \label{nat-mort}
+
+Hamel [-@Hamel2015] developed a method for combining meta-analytic approaches to relating the natural mortality rate M to other life-history parameters such as longevity, size, growth rate and reproductive effort, to provide a prior on M. In that same issue of ICESJMS, Then et al. [-@Then2015], provided an updated data set of estimates of M and related life history parameters across a large number of fish species, from which to develop an M estimator for fish species in general.
+They concluded by recommending M estimates be based on maximum age alone, based on an updated Hoenig non-linear least squares estimator $M=4.899A_{max }^{-.916}$. 
+
+The approach of basing M priors on maximum age alone was one that was already being used for west coast rockfish assessments. However, in fitting the alternative model forms relating M to Amax, Then et al. did not consistently apply their transformation. In particular, in real space, one would expect substantial heteroscedasticity in both the observation and process error associated with the observed relationship of M to Amax. Therefore, it would be reasonable to fit all models under a log transformation. This was not done.
+
+Re-evaluating the data used in Then et al. [-@Then2015] by fitting the one-parameter Amax model under a log-log transformation (such that the slope is forced to be -1 in the transformed space (as in @Hamel2015), the point estimate for M is $M=5.4/Amax$
+
+This is also the median of the prior. The prior is defined as a lognormal with mean $ln(5.4/Amax)$ and SE = 0.4384343. 
+
+Initial natural mortality priors for these models were based on examination of the 99\% quantile of the observed ages from early in the time-series, before the full impact of fishing would have taken place. For the Northern model, these quantiles were approximately 35 years for females and 45 years for males, resulting in median M values of 0.15 and 0.12 for females and males. For the Southern model, the 99\% quantile of the early age observations were approximately 30 and 40 years for females and males, resulting in median M prior values of 0.18 and 0.135, respectively. In both models, M for males was represented as an offset from females.
+
+\vspace{.5cm}
+###Aging Precision And Bias
+
+Age error matrices were developed for double-reads at the PFMC aging lab in Newport, OR and for double reads within the WDFW aging lab.  The Newport lab has done all of the Survey aging for the NWFSC, along with some commercial ages and  the 400 fish from the Small Study.  WDFW provided the bulk of recreational and commercial ages.  Between-lab differences in aging were minute, as were within-lab differences.  This result is supported by the primary age reader's assessment:  Yellowtail Rockfish are extremely easy to age (B. Kamikawa, pers. comm.).
+
+
+##Biological Data and Indices
+
 Data used in the Northern and Southern Yellowtail Rockfish assessments are summarized in Figures \ref{fig:data_plot.N} and \ref{fig:data_plot.S}.
 
 Data sources for the two models are largely distinct.  Northern fisheries and surveys had very sparse data (if any) for the south and vice-versa.  Among the 12 data sources referenced below, only 2 data sources are common to both models.  These are the MRFSS/RecFIN recreational dockside survey, which focuses on California and Oregon, and the CalCOM California commercial dataset, which contributed data from the northern-most California counties (Eureka and Del Norte) to the Northern model.  The CalCOM data account for less than five percent of the commercial landings in the Northern model, and less than 1% of the biological samples. 
@@ -89,7 +132,7 @@ Pikitch study discards were aggregated due to small sample size and included in 
 
 Two fishery-dependent abundance indices were developed for this analysis that were discovered in course of review to be based on incomplete information about how the commercial trawl and Hake fisheries were operated in the late 1980s through the late 1990s.  Representatives from WDFW and from the Council's Groundfish Advisory Panel raised objections to the Commercial Trawl Index and the Hake Bycatch Index, respectively, and they were ultimately removed from the model.
 
-The commercial trawl index used the species composition of catch to infer the potential for Yellowtail Rockfish in each haul, however the way in which market categories were changing throughout the period of interest made the species composition of catch unreliable (Teresa Tsou, pers. comm.). The Hake fishery was explained to have had greater heterogeneity among the boats used in the fishery than had been assumed in developing the index (adfsdfad, pers. comm.).
+The commercial trawl index used the species composition of catch to infer the potential for Yellowtail Rockfish in each haul, however the way in which market categories were changing throughout the period of interest made the species composition of catch unreliable (Theresa Tsou, pers. comm.). The Hake fishery was explained to have had greater heterogeneity among the boats used in the fishery than had been assumed in developing the index (Dan Waldeck, pers. comm.).
 
 Give the unknown impact of incomplete information used in developing these indices, and that there were fishery-independent indices covering the period in question, the decision was made to withdraw these two indices.  They are described in \ref{sec:AppendixB} for completeness.
 
@@ -239,6 +282,7 @@ A reconstruction of the historical recreational fishery south of Cape Mendocino 
 
 **Small Research Study**
 A small number of fish were collected from the recreational fishery by the SWFSC and are included in the data for 1978-1984.
+TOADS
 
 ###Estimated Discards
 
@@ -278,8 +322,18 @@ The abundance index was developed using a delta-GLM within a hierarchical Bayesi
 ###Fishery-Independent Data
 
 **Hook and Line Survey**  
-The NWFSC Hook and Line survey provided data for an index in the Southern California Bight from 2004-2016.  This was developed using the VAST R package.  TOADS
+The NWFSC Hook and Line survey provided data for an index in the Southern California Bight from 2004-2016.  This was developed using the VAST R package.  The Yellowtail index of abundance is based on numbers of fish provided by the Northwest Fisheries Science Center’s Hook and Line survey in the Southern California Bight. This index used survey data from 2004-2016 and was created following the methods put forth in [@Harms2010], after those methods were updated to create models with greater parsimony.  In addition, the final index is averaged over all crew staff and sites. (Note that vessels are confounded with crew staff.)  Two vessels were employed for the survey in 2004-12 and three vessels in 2013-16.  Data from inside the Cowcod Conservation Area (CCA) was not used in this index.
 
+The 2016 index value differs from previous years in that certain variables such as sea surface temperature and tide flow were not available for this analysis, due to an ongoing upgrade in data collection software.
+
+Variables in the binomial model with logit link:
+
+NumYTRK ~ Year + SiteName + CrewStaff + DropNum + HookNum + poly(WaveHt.m,3) + poly(SwellHt.m, 3) + poly(PctLiteR, 2) + poly(MoonPct, 3)
+
+Where poly(…, X) identifies the Xth degree polynomials for continuous variables, and a colon (‘:’)  represents an interaction term. ‘PctLite’ is the percent of daylight that has passed at the time the drop occurs on a given day.
+
+The posterior median index values and their associated posterior log-SD are from a converged, 2.5 million draw MCMC.
+ 
 
 <!--************BIOLOGICAL DATA*********************************************-->
 ###Biological Samples
@@ -347,45 +401,6 @@ The expanded table with detailed age information is Table \ref{tab:Southern_Age}
 
 \clearpage
 
-## Biological Parameters Common to Both Models \label{bio-params}
-
-\vspace{.5cm}
-**Aging Precision And Bias**
-
-Age error matrices were developed for double-reads at the PFMC aging lab in Newport, OR and for double reads within the WDFW aging lab.  The Newport lab has done all of the Survey aging for the NWFSC, along with some commercial ages and  the 400 fish from the Small Study.  WDFW provided the bulk of recreational and commercial ages.  Between-lab differences in aging were minute, as were within-lab differences.  This result is supported by the primary age reader's assessment:  Yellowtail Rockfish are extremely easy to age (B. Kamikawa, pers. comm.).
-
-\vspace{.5cm}
-**Weight-Length**
-
-The weight-length relationship is based on the standard power function: $W = \alpha(L^\beta)$ where $W$ is individual weight (kg), $L$ is length (cm), and $\alpha$ and $\beta$ are coefficients used as constants.
-
-To estimate this relationship, 12,778 samples with both weight and length measurements from the fishery independent surveys were analyzed. These included 6,354 samples from the NWFSC Combo survey, 5,085 from the Triennial survey, and 1,339 from the Hook and Line survey. All Hook and Line survey samples were from the Southern area, along with 910 samples from the other two surveys (Figure \ref{fig:weight-length}). 
-
-A single weight-length relationship was chosen for females and males in both areas after examining various factors that may influence this relationships, including sex, area, year, and season. None of these factors had a strong influence in the overall results. Season was one of the bigger factors, with fish sampled later in the year showing a small increase in weight at a given length (2-6% depending on the other factors considered). However, season was confounded with area because most of the samples from the Southern area were collected from the Hook and Line survey which takes place later in the year (mid-September to mid-November) and the resolution of other data in the model do not support modeling the stock at a scale finer than a annual time step.
-
-Males and females did not show strong differences in either area, and the estimated differences were in opposite directions for the two areas, suggesting that this might be a spurious relationship or confounded with differences timing of the sampling relative to spawning.
-
-The estimated coefficients resulting from this analysis were $\alpha = 1.1843e-05$ and $\beta = 3.0672$.
-
-\vspace{.5cm}
-**Maturity And Fecundity**
-
-Maturity was estimated from histological analysis of 141 samples collected in 2016. These include 96 from the NWFSC Combo survey, 25 from mid-water catches in the NWFSC acoustic/trawl survey, 13 from the Hook and Line survey, and 7 from Oregon Department of Fish and Wildlife. The sample sizes were not adequate to estimate differences in maturity by area. Length at 50\% maturity was estimated at 42.49cm (Figure \ref{fig:maturity}) which was consistent with the range 37-45cm cited in the previous assessment [@Wallace2005].
-
-
-\vspace{.5cm}
-**Natural Mortality** \label{nat-mort}
-
-Hamel [-@Hamel2015] developed a method for combining meta-analytic approaches to relating the natural mortality rate M to other life-history parameters such as longevity, size, growth rate and reproductive effort, to provide a prior on M. In that same issue of ICESJMS, Then et al. [-@Then2015], provided an updated data set of estimates of M and related life history parameters across a large number of fish species, from which to develop an M estimator for fish species in general.
-They concluded by recommending M estimates be based on maximum age alone, based on an updated Hoenig non-linear least squares estimator $M=4.899A_{max }^{-.916}$. 
-
-The approach of basing M priors on maximum age alone was one that was already being used for west coast rockfish assessments. However, in fitting the alternative model forms relating M to Amax, Then et al. did not consistently apply their transformation. In particular, in real space, one would expect substantial heteroscedasticity in both the observation and process error associated with the observed relationship of M to Amax. Therefore, it would be reasonable to fit all models under a log transformation. This was not done.
-
-Re-evaluating the data used in Then et al. [-@Then2015] by fitting the one-parameter Amax model under a log-log transformation (such that the slope is forced to be -1 in the transformed space (as in @Hamel2015), the point estimate for M is $M=5.4/Amax$
-
-This is also the median of the prior. The prior is defined as a lognormal with mean $ln(5.4/Amax)$ and SE = 0.4384343. 
-
-Initial natural mortality priors for these models were based on examination of the 99\% quantile of the observed ages from early in the time-series, before the full impact of fishing would have taken place. For the Northern model, these quantiles were approximately 35 years for females and 45 years for males, resulting in median M values of 0.15 and 0.12 for females and males. For the Southern model, the 99\% quantile of the early age observations were approximately 30 and 40 years for females and males, resulting in median M prior values of 0.18 and 0.135, respectively. In both models, M for males was represented as an offset from females.
 
 ###Environmental Or Ecosystem Data Included In The Assessment
 
