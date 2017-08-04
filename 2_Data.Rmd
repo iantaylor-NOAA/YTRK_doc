@@ -268,7 +268,7 @@ The expanded table detailing the ages can be found in Table \ref{tab:Northern_ag
 The California Commercial Fishery Database (**CalCOM**) provided landings in California south of 40$^\circ$ 10'N for 1969-2016. Because this fishery is known to have begun in the 1880s, we added catch as a linear ramp from 1889 (the earliest catch in the Northern model) to the 2016 value.
 
 **Historical Data**
-A reconstruction of the historical commercial fishery south of Cape Mendocino was provided by the Southwest Fisheries Science Center (**SWFSC**) for 1916-1968.
+A reconstruction of the historical commercial fishery south of Cape Mendocino was provided by the Southwest Fisheries Science Center (**SWFSC**) for 1916-1968 [@Ralston2010].
 
 
 ###Sport Fishery Removals
@@ -310,9 +310,9 @@ California onboard CPFV observer data, spanning the years 1999-2011 was provided
 Indices from these datasets were provided by the SWFSC according to the methods described in [@Monk2016].
 
 **Juvenile Pelagic Index**
-The Fishery Ecology Division of the Southwest Fishery Science Center has conducted a standardized pelagic juvenile trawl survey during May-June every year since 1983 [@Williams2010]. The primary purpose of the survey is to estimate the abundance of pelagic juvenile rockfishes (Sebastes spp.) and to develop indices of year-class strength for use in groundfish stock assessments on the U. S. West Coast. The survey samples young-of-the-year rockfish when they are ~100 days old, an ontogenetic stage that occurs after year-class strength is established, but well before cohorts recruit to commercial and recreational fisheries. 
+The Fishery Ecology Division of the Southwest Fishery Science Center has conducted a standardized pelagic juvenile trawl survey during May-June every year since 1983 [@Williams2002]. The primary purpose of the survey is to estimate the abundance of pelagic juvenile rockfishes (Sebastes spp.) and to develop indices of year-class strength for use in groundfish stock assessments on the U. S. West Coast. The survey samples young-of-the-year rockfish when they are ~100 days old, an ontogenetic stage that occurs after year-class strength is established, but well before cohorts recruit to commercial and recreational fisheries [@Ralston2013],[@Sakuma2016]. 
 
-The survey has encountered tremendous interannual variability in the abundance of the ten species that are routinely indexed, as well as high apparent synchrony in abundance among the ten most frequently encountered species.
+The survey has encountered tremendous interannual variability in the abundance of the ten species that are routinely indexed, as well as high apparent synchrony in abundance among the ten most frequently encountered species [@Ralston2013].
 
 The abundance index was developed using a delta-GLM within a hierarchical Bayesian framework using the R package \emph{rstanarm}, and used as an indicator of age-0 fish.  Further details of the analysis are available in Appendix C.
 

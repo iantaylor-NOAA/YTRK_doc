@@ -1,6 +1,5 @@
 #Executive Summary{-}
 
-`r n_models=1`
 ##Stock{-}
 This assessment reports the status of the `r spp` (\emph{`r spp.sci`}) resource in U.S. waters off the coast of the California, Oregon, and Washington using data through `r LastYR`.  
 
@@ -219,6 +218,7 @@ Estimated equilibrium yield curves for the Northern model is shown in Figure \re
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY REFERENCE POINT TABLES************* -->
 ```{r, results='asis'}
+   n_models = 1
    # Print reference point tables
    if(n_models >= 1) {
      print(Ref_pts_mod1.table, include.rownames = FALSE, caption.placement = 'top',
@@ -351,6 +351,7 @@ if(n_models == 3){
 <!-- ***********Yield curve table****************************************** -->
 ```{r, results='asis'}
    # Select the file to use for the yield curve depending on the number of models
+   n_models == 2
    if(n_models == 1) {
      yield.file  = 'r4ss/plots_mod1/yield1_yield_curve.png'
     } else {
