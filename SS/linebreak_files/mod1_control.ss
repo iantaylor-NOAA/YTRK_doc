@@ -20,14 +20,15 @@
  1 1 1 0 
 #
 #
-2  #_Nblock_Patterns
+3  #_Nblock_Patterns
 #
-10 1 #_blocks_per_pattern
+10 1 1 #_blocks_per_pattern
 # begin and end years of blocks
 2002 2002 2003 2003 2004 2004 2005 2005 2006 2006 2007 2007 2008 2008 2009 
 2009 2010 2010 2011 2016
 #2002 2010 2011 2016
 2002 2016
+2003 2016
 #
 #
 # controls for all timevary parameters
@@ -162,8 +163,8 @@
 # l
 #0.2     1       0.4     0.715   0.160   0       6       0       0       0 
 #       0       0       0       0       # SR_BH_steep
-0.5     1.2     0.546   0.67     99      0       -6      0       0       0 
-      0       0       0       0       # SR_sigmaR
+0.5     1.2     0.4997   0.67     99      0       -6      0       0       0
+       0       0       0       0       # SR_sigmaR
 -5      5       0       0       99      0       -50     0       0       0  
      0       0       0       0       # SR_regime
 0       2       0       1       99      0       -50     0       0       0  
@@ -209,10 +210,10 @@
 #_Q_setup
 #_fleet link link_info extra_se biasadj float   #       fleetname
 1       1       0       0       0       1       #       CommercialTrawl
-2       1       0       1       0       1       #       HakeByCatch
+2       1       0       0       0       1       #       HakeByCatch
 # no fleets 3 or 4 because no index (yet)
-5       1       0       0       0       1       #       Triennial
-6       1       0       0       0       1       #       NWFSCcombo
+5       1       0       1       0       1       #       Triennial
+6       1       0       1       0       1       #       NWFSCcombo
 -9999   0       0       0       0       0
 #
 #_Q_parms(if_any);Qunits_are_ln(q)
@@ -220,14 +221,20 @@
 # _mnyr dev_mxyr dev_PH Block  Blk_Fxn # parm_name
 -30     15      -15     0       1       0       -1      0       0       0  
      0       0       0       0       # LnQ_base_1
+#0       0.5     0.01    0       1       0        1      0       0       0 
+#       0       0       0       0       # Extra_SD_logbook
 -30     15      -15     0       1       0       -1      0       0       0  
      0       0       0       0       # LnQ_base_2
-0       0.5     0.01    0       1       0        1      0       0       0  
-     0       0       0       0       # Extra_SD_hake_bycatch
+#0       0.5     0.01    0       1       0        1      0       0       0 
+#       0       0       0       0       # Extra_SD_hake_bycatch
 -30     15      -15     0       1       0       -1      0       0       0  
      0       0       0       0       # LnQ_base_4
+0       0.5     0.01    0       1       0        1      0       0       0  
+     0       0       0       0       # Extra_SD_triennial
 -30     15      -15     0       1       0       -1      0       0       0  
      0       0       0       0       # LnQ_base_5
+0       0.5     0.01    0       1       0        1      0       0       0  
+     0       0       0       0       # Extra_SD_NWFSCcombo
 #_no    timevary        Q       parameters
 #
 #_size_selex_types
@@ -288,33 +295,33 @@
 -999    25      -999    0       99      0       -99     0       0       0  
      0       0       0       0       #       SizeSel_P6_HakeByCatch(2)
 #RecORandCA
-20      55      30.6396 0       99      0       1       0       0       0  
-     0       0       0       0       #       SizeSel_P1_RecORandCA(3)
--20     7       -19.119 0       99      0       -4      0       0       0  
+20      55      30.811  0       99      0       6       0       0       0  
+     0       0       3       2       #       SizeSel_P1_RecORandCA(3)
+-20     70      -20     0       99      0       -4      0       0       0  
      0       0       0       0       #       SizeSel_P2_RecORandCA(3)
--5      20      3.12559 0       99      0       3       0       0       0  
-     0       0       0       0       #       SizeSel_P3_RecORandCA(3)
--5      20      6.8552  0       99      0       4       0       0       0  
-     0       0       0       0       #       SizeSel_P4_RecORandCA(3)
+-5      20      3.173   0       99      0       6       0       0       0  
+     0       0       3       2       #       SizeSel_P3_RecORandCA(3)
+-5      20      20      0       99      0       -4      0       0       0  
+     0       0       3       2       #       SizeSel_P4_RecORandCA(3)
 -999    25      -999    0       99      0       -99     0       0       0  
      0       0       0       0       #       SizeSel_P5_RecORandCA(3)
 -999    25      -999    0       99      0       -99     0       0       0  
      0       0       0       0       #       SizeSel_P6_RecORandCA(3)
 #RecWA (initial values from previously estimated run)
-20      55      34.7169 0       99      0       6       0       0       0  
-     0       0       0       0       #       SizeSel_P1_RecWA(4)
--20     70      70      0       99      0       -4      0       0       0  
+20      55      55      0       99      0       -6      0       0       0  
+     0       0       3       2       #       SizeSel_P1_RecWA(4)
+-20     70      -20     0       99      0       -4      0       0       0  
      0       0       0       0       #       SizeSel_P2_RecWA(4)
--5      20      2.87258 0       99      0       6       0       0       0  
-     0       0       0       0       #       SizeSel_P3_RecWA(4)
--5      70      70      0       99      0       -4      0       0       0  
-     0       0       0       0       #       SizeSel_P4_RecWA(4)
+-5      20      5.365   0       99      0       6       0       0       0  
+     0       0       3       2       #       SizeSel_P3_RecWA(4)
+-5      70      20      0       99      0       -4      0       0       0  
+     0       0       3       2       #       SizeSel_P4_RecWA(4)
 -999    25      -999    0       99      0       -99     0       0       0  
      0       0       0       0       #       SizeSel_P5_RecWA(4)
 -999    25      -999    0       99      0       -99     0       0       0  
      0       0       0       0       #       SizeSel_P6_RecWA(4)
 #Triennial
-20      55      54.4206 0       99      0       1       0       0       0  
+20      55      55.0    0       99      0       -1      0       0       0  
      0       0       0       0       #       SizeSel_P1_Triennial(5)
 -20     70      70      0       99      0       -4      0       0       0  
      0       0       0       0       #       SizeSel_P2_Triennial(5)
@@ -370,6 +377,22 @@
 -10            20       7.37535             3            99             0  
     6  # Retain_P3_CommercialTrawl(1)_BLK1repl_2011
 #
+#LO     HI      INIT    PRIOR   PR_SD  PR_type  PHASE   # parm_name
+#RecORandCA blocks
+20      55      31.22   0       99      0       6       # SizeSel_P1_RecORa
+# ndCA(3)
+-5      20      2.904   0       99      0       6       # SizeSel_P3_RecORa
+# ndCA(3)
+-5      20      4.248   0       99      0       6       # SizeSel_P4_RecORa
+# ndCA(3)
+#RecWA blocks
+20      55      33.46   0       99      0       6       # SizeSel_P1_RecWA(
+# 4)
+-5      20      2.726   0       99      0       6       # SizeSel_P3_RecWA(
+# 4)
+-5      70      8.841   0       99      0       6       # SizeSel_P4_RecWA(
+# 4)
+
 #
 #
 0   #  use 2D_AR1 selectivity(0/1):  experimental feature
@@ -392,28 +415,28 @@
  #_5=mult_by_agecomp_N
  #_6=mult_by_size-at-age_N
  #_7=mult_by_generalized_sizecomp
- #Factor Fleet New_Var_adj hash Old_Var_adj New_Francis   New_MI Francis_mu
-# lt  MI_mult Type            Name Note
-   4     1    0.035876    #    0.036575    0.035876 0.032176     0.980880 0
-# .879737  len CommercialTrawl     
-   4     2    0.116664    #    0.118083    0.116664 0.080381     0.987980 0
-# .680717  len     HakeByCatch     
-   4     3    0.084029    #    0.091601    0.084029 0.057589     0.917334 0
-# .628692  len      RecORandCA     
-   4     4    0.010682    #    0.010860    0.010682 0.019126     0.983578 1
-# .761107  len           RecWA     
-   4     5    0.038143    #    0.039046    0.038143 0.269960     0.976875 6
-# .913904  len       Triennial     
-   4     6    0.028581    #    0.028003    0.028581 0.222037     1.020627 7
-# .929043  len      NWFSCcombo     
-   5     1    0.129955    #    0.122891    0.129955 0.423335     1.057484 3
-# .444798  age CommercialTrawl     
-   5     4    0.024531    #    0.021650    0.024531 0.031229     1.133073 1
-# .442438  age           RecWA     
-   5     5    0.094315    #    0.090829    0.094315 0.846564     1.038379 9
-# .320417  age       Triennial     
-   5     6    0.315797    #    0.315435    0.315797 0.216106     1.001148 0
-# .685104  age      NWFSCcombo     
+  #Factor Fleet New_Var_adj hash Old_Var_adj New_Francis   New_MI Francis_m
+# ult Francis_lo Francis_hi  MI_mult Type            Name Note
+        4     1    0.034445    #    0.034646    0.034445 0.032181     0.994
+# 208   0.757131   1.475207 0.928847  len CommercialTrawl     
+        4     2    0.111832    #    0.113822    0.111832 0.080316     0.982
+# 515   0.649763   1.825709 0.705631  len     HakeByCatch     
+        4     3    0.105365    #    0.093773    0.105365 0.061105     1.123
+# 614   0.723761   2.276493 0.651628  len      RecORandCA     
+        4     4    0.032220    #    0.028657    0.032220 0.038488     1.124
+# 346   0.636596   3.387543 1.343044  len           RecWA     
+        4     5    0.037147    #    0.037539    0.037147 0.271632     0.989
+# 553   0.538021   5.476215 7.236003  len       Triennial     
+        4     6    0.027307    #    0.028395    0.027307 0.224192     0.961
+# 685   0.561170   4.168205 7.895461  len      NWFSCcombo     
+        5     1    0.128648    #    0.126374    0.128648 0.432362     1.017
+# 995   0.679252   1.736141 3.421285  age CommercialTrawl     
+        5     4    0.021984    #    0.024747    0.021984 0.033729     0.888
+# 341   0.486756   9.799211 1.362970  age           RecWA     
+        5     5    0.094145    #    0.092872    0.094145 0.850602     1.013
+# 712   0.594811   3.292327 9.158869  age       Triennial     
+        5     6    0.320667    #    0.310368    0.320667 0.222916     1.033
+# 183   0.718329   2.399408 0.718230  age      NWFSCcombo     
 -9999     1 0.00000000
 #
 5 #_maxlambdaphase
@@ -424,6 +447,9 @@
 # 10=recrdev; 11=parm_prior; 12=parm_dev; 13=CrashPen; 14=Morphcomp; 15=Tag
 # -comp; 16=Tag-negbin; 17=F_ballpark
 #like_comp fleet  phase  value  sizefreq_method
+1      1  1  0  0 # turn off commercial fishery logbook CPUE index from pha
+# se 1
+1      2  1  0  0 # turn off hake CPUE index from phase 1
 17     1  5  0  0 # turn off ballpark likelihood in phase 5
 -9999  1  1  1  1  #  terminator
 #

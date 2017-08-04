@@ -56,7 +56,7 @@
 #_Females
 #
 #_LO    HI    INIT       PRIOR  PR_SD  PR_type  PHASE  env_var&link  dev_link  dev_minyr  dev_maxyr  dev_PH  Block  Block_Fxn
-  0.02  0.25  0.149      -2.12  0.438  0        -2  0  0  0  0  0  0  0  #  NatM_p_1_Fem_GP_1
+  0.02  0.25  0.174      -2.12  0.438  0        -2  0  0  0  0  0  0  0  #  NatM_p_1_Fem_GP_1
   1     25    19.1511     22       99  0         3  0  0  0  0  0  0  0  #  L_at_Amin_Fem_GP_1
   35    70    49.4756     55       99  0         2  0  0  0  0  0  0  0  #  L_at_Amax_Fem_GP_1
   0.1   0.4   0.10909     0.1      99  0         3  0  0  0  0  0  0  0  #  VonBert_K_Fem_GP_1
@@ -71,7 +71,7 @@
   #
   #_Males
   #
-  -3    3    -0.142        0       99  6        -2  0  0  0  0  0  0  0  #  NatM_p_1_Mal_GP_1
+  -3    3    -0.149        0       99  6        -2  0  0  0  0  0  0  0  #  NatM_p_1_Mal_GP_1
   -1    1     0            0       99  0        -2  0  0  0  0  0  0  0  #  L_at_Amin_Mal_GP_1
   -1    1    -0.109466     0       99  0         2  0  0  0  0  0  0  0  #  L_at_Amax_Mal_GP_1
   -1    1     0.0368187    0       99  0         3  0  0  0  0  0  0  0  #  VonBert_K_Mal_GP_1
@@ -104,7 +104,7 @@
 #_LO HI   INIT    PRIOR  PR_SD  PR_type PHASE  env-var  use_dev   dev_mnyr   dev_mxyr   dev_PH Block  Blk_Fxn #  parm_name
  8   12   9.90052   10 5  0       1        0   0   0   0   0   0   0 # SR_LN(R0)
  0.2  1   0.718     0.718 0.158   0       -6   0   0   0   0   0   0  0 # SR_BH_steep
- 0.5  1.2 0.85      0.76  99 0   -6        0   0   0   0   0   0   0 # SR_sigmaR
+ 0.5  1.2 0.77      0.76  99 0   -6        0   0   0   0   0   0   0 # SR_sigmaR
 -5    5   0         0     99 0   -50       0   0   0   0   0   0   0 # SR_regime
  0    2   0         1     99 0   -50       0   0   0   0   0   0   0 # SR_autocorr
 #
@@ -119,9 +119,9 @@
  5 #_recdev_early_phase
  5 #_forecast_recruitment phase (incl. late recr) (0 value resets to maxphase+1)
  1 #_lambda for Fcast_recr_like occurring before endyr+1
- 1961.1 #_last_early_yr_nobias_adj_in_MPD
- 1974.2 #_first_yr_fullbias_adj_in_MPD
- 2015.9 #_last_yr_fullbias_adj_in_MPD
+ 1965 #_last_early_yr_nobias_adj_in_MPD
+ 1972.2 #_first_yr_fullbias_adj_in_MPD
+ 2014.7 #_last_yr_fullbias_adj_in_MPD
  2016.1 #_first_recent_yr_nobias_adj_in_MPD
  0.7734 #_max_bias_adj_in_MPD (-1 to override ramp and set biasadj=1.0 for all estimated recdevs)
 #
@@ -141,9 +141,10 @@
 #_Q_setup
 #_fleet link link_info  extra_se   biasadj  float   #  fleetname
    1     1       0       1           0       0      #  RecreationalCatch
-   3     1       0       0           0       0      #  OnboardSurvey
-   4     1       0       0           0       1      #  HookAndLineSurvey
-   5     1       0       0           0       1      #  JuvenilePelagic
+   3     1       0       1           0       1      #  Onboard_Early
+   4     1       0       1           0       1      #  Onboard_Late
+   5     1       0       1           0       1      #  HookAndLineSurvey
+   6     1       0       1           0       1      #  JuvenilePelagic
 -9999 0 0 0 0 0
 #
 #_Q_parms(if_any);Qunits_are_ln(q)
@@ -151,15 +152,19 @@
 #_LO   HI      INIT      PRIOR   PR_SD PR_type   PHASE env-var use_dev   dev_mnyr   dev_mxyr  dev_PH   Block Blk_Fxn  #  parm_name
   -30   15   -11.9566    0 1 0  1 0 0 0 0 0 3 2  #  LnQ_base_RecreationalCatch(1)
     0   0.5    0.465482  0 1 0  1 0 0 0 0 0 0 0  #  Q_extraSD_RecreationalCatch(1)
-  -30   15   -10.9298    0 1 0  1 0 0 0 0 0 2 2  #  LnQ_base_OnboardSurvey(3)
-  -30   15   -12.5777    0 1 0 -1 0 0 0 0 0 0 0  #  LnQ_base_HookAndLineSurvey(4)
-  -30   15    -8.6975    0 1 0 -1 0 0 0 0 0 0 0  #  LnQ_base_JuvenilePelagic(5)
+  -30   15   -10.9298    0 1 0  -1 0 0 0 0 0 0 0  #  LnQ_base_OnboardSurvey(3)
+    0   0.5    0.465482  0 1 0  1 0 0 0 0 0 0 0  #  Q_extraSD_RecreationalCatch(1)
+  -30   15   -10.9298    0 1 0  -1 0 0 0 0 0 0 0  #  LnQ_base_OnboardSurvey(4)
+    0   0.5    0.465482  0 1 0  1 0 0 0 0 0 0 0  #  Q_extraSD_RecreationalCatch(1)
+  -30   15   -12.5777    0 1 0 -1 0 0 0 0 0 0 0  #  LnQ_base_HookAndLineSurvey(5)
+    0   0.5    0.465482  0 1 0  1 0 0 0 0 0 0 0  #  Q_extraSD_RecreationalCatch(1)
+  -30   15    -8.6975    0 1 0 -1 0 0 0 0 0 0 0  #  LnQ_base_JuvenilePelagic(6)
+    0   0.5    0.465482  0 1 0  1 0 0 0 0 0 0 0  #  Q_extraSD_RecreationalCatch(1)
 #
 # timevary Q parameters 
 #
 #_LO   HI    INIT      PRIOR PR_SD  PR_type  PHASE  #  parm_name
   -30   15   -12.0538    0    1      0       1  # LnQ_base_RecreationalCatch(1)_BLK3repl_1993
-  -30   15   -12.9157    0    1      0       1  # LnQ_base_OnboardSurvey(3)_BLK2repl_1999
 #
 #_size_selex_types
 #
@@ -168,20 +173,22 @@
 #_Pattern Discard Male Special
  24 0 0 0 # 1 RecreationalCatch
  24 0 0 0 # 2 CommercialCatch
- 24 0 0 0 # 3 OnboardSurvey
- 24 0 0 0 # 4 HookAndLineSurvey
-  0 0 0 0 # 5 JuvenilePelagic
- 24 0 0 0 # 6 SmallFish
+ 24 0 0 0 # 3 Onboard_Early
+ 24 0 0 0 # 4 Onboard_Late
+ 24 0 0 0 # 5 HookAndLineSurvey
+  0 0 0 0 # 6 JuvenilePelagic
+ 24 0 0 0 # 7 SmallFish
 #
 #_age_selex_types
 #
 #_Pattern Discard Male Special
  10 0 0 0 # 1 RecreationalCatch
  10 0 0 0 # 2 CommercialCatch
- 10 0 0 0 # 3 OnboardSurvey
- 10 0 0 0 # 4 HookAndLineSurvey
- 11 0 0 0 # 5 JuvenilePelagic
- 10 0 0 0 # 6 SmallFish
+ 10 0 0 0 # 3 Onboard_Early
+ 10 0 0 0 # 4 Onboard_Late
+ 10 0 0 0 # 5 HookAndLineSurvey
+ 11 0 0 0 # 6 JuvenilePelagic
+ 10 0 0 0 # 7 SmallFish
 #
 #_LO   HI    INIT    PRIOR   PR_SD    PR_type   PHASE env-var use_dev   dev_mnyr   dev_mxyr  dev_PH   Block Blk_Fxn  #  parm_name
  20    55    33.1304   0   99    0    1    0    0    0    0    0    3    2  #  SizeSel_P1_RecreationalCatch(1)
@@ -190,42 +197,50 @@
 -5     20    20        0   99    0   -4    0    0    0    0    0    0    0  #  SizeSel_P4_RecreationalCatch(1)
 -999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P5_RecreationalCatch(1)
 -999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P6_RecreationalCatch(1)
- 20    55    55        0   99    0   -1    0    0    0    0    0    0    0  #  SizeSel_P1_CommercialCatch(2)
+#
+ 20    55    35        0   99    0    1    0    0    0    0    0    0    0  #  SizeSel_P1_CommercialCatch(2)
 -20    20    20        0   99    0   -4    0    0    0    0    0    0    0  #  SizeSel_P2_CommercialCatch(2)
 -5     20     5.2539   0   99    0    3    0    0    0    0    0    0    0  #  SizeSel_P3_CommercialCatch(2)
 -5     20    20        0   99    0   -4    0    0    0    0    0    0    0  #  SizeSel_P4_CommercialCatch(2)
 -999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P5_CommercialCatch(2)
 -999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P6_CommercialCatch(2)
- 20    55    30.6644   0   99    0    1    0    0    0    0    0    2    2  #  SizeSel_P1_OnboardSurvey(3)
--20     7   -20        0   99    0   -4    0    0    0    0    0    0    0  #  SizeSel_P2_OnboardSurvey(3)
--5     20     3.31382  0   99    0    3    0    0    0    0    0    2    2  #  SizeSel_P3_OnboardSurvey(3)
--5     20    19.9902   0   99    0    4    0    0    0    0    0    2    2  #  SizeSel_P4_OnboardSurvey(3)
--999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P5_OnboardSurvey(3)
--999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P6_OnboardSurvey(3)
- 20    55    48.1678   0   99    0    1    0    0    0    0    0    0    0  #  SizeSel_P1_HookAndLineSurvey(4)
--20    20    20        0   99    0   -4    0    0    0    0    0    0    0  #  SizeSel_P2_HookAndLineSurvey(4)
--5     20     5.13638  0   99    0    3    0    0    0    0    0    0    0  #  SizeSel_P3_HookAndLineSurvey(4)
--5     20    20        0   99    0   -4    0    0    0    0    0    0    0  #  SizeSel_P4_HookAndLineSurvey(4)
--999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P5_HookAndLineSurvey(4)
--999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P6_HookAndLineSurvey(4)
- 20    55    46.7886   0   99    0    1    0    0    0    0    0    0    0  #  SizeSel_P1_SmallFish(6)
--20    20    20        0   99    0   -4    0    0    0    0    0    0    0  #  SizeSel_P2_SmallFish(6)
--5     20     5.19586  0   99    0    3    0    0    0    0    0    0    0  #  SizeSel_P3_SmallFish(6)
--5     20    20        0   99    0   -4    0    0    0    0    0    0    0  #  SizeSel_P4_SmallFish(6)
--999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P5_SmallFish(6)
--999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P6_SmallFish(6)
+#
+ 20    55    30.6644   0   99    0    1    0    0    0    0    0    0    0  #  SizeSel_P1_Onboard_Early(3)
+-20     7   -20        0   99    0   -4    0    0    0    0    0    0    0  #  SizeSel_P2_Onboard_Early(3)
+-5     20     3.3      0   99    0    3    0    0    0    0    0    0    0  #  SizeSel_P3_Onboard_Early(3)
+-5     20    5         0   99    0    4    0    0    0    0    0    0    0  #  SizeSel_P4_Onboard_Early(3)
+-999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P5_Onboard_Early(3)
+-999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P6_Onboard_Early(3)
+#
+ 20    55    30.6644   0   99    0    1    0    0    0    0    0    0    0  #  SizeSel_P1_Onboard_Late(4)
+-20     7   -20        0   99    0   -4    0    0    0    0    0    0    0  #  SizeSel_P2_Onboard_Late(4)
+-5     20     3.3      0   99    0    3    0    0    0    0    0    0    0  #  SizeSel_P3_Onboard_Late(4)
+-5     20     5        0   99    0    4    0    0    0    0    0    0    0  #  SizeSel_P4_Onboard_Late(4)
+-999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P5_Onboard_Late(4)
+-999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P6_Onboard_Late(4)
+#
+ 20    55    48.1678   0   99    0    1    0    0    0    0    0    0    0  #  SizeSel_P1_HookAndLineSurvey(5)
+-20    20    20        0   99    0   -4    0    0    0    0    0    0    0  #  SizeSel_P2_HookAndLineSurvey(5)
+-5     20     5.13638  0   99    0    3    0    0    0    0    0    0    0  #  SizeSel_P3_HookAndLineSurvey(5)
+-5     20    20        0   99    0   -4    0    0    0    0    0    0    0  #  SizeSel_P4_HookAndLineSurvey(5)
+-999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P5_HookAndLineSurvey(5)
+-999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P6_HookAndLineSurvey(5)
+#
+ 20    55    46.7886   0   99    0    1    0    0    0    0    0    0    0  #  SizeSel_P1_SmallFish(7)
+-20    20    20        0   99    0   -4    0    0    0    0    0    0    0  #  SizeSel_P2_SmallFish(7)
+-5     20     5.19586  0   99    0    3    0    0    0    0    0    0    0  #  SizeSel_P3_SmallFish(7)
+-5     20    20        0   99    0   -4    0    0    0    0    0    0    0  #  SizeSel_P4_SmallFish(7)
+-999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P5_SmallFish(7)
+-999   25   -999       0   99    0  -99    0    0    0    0    0    0    0  #  SizeSel_P6_SmallFish(7)
 #
 #_Age_selex for Juvenile Pelagic Survey
 #
- 0     40     0        5   99    0   -1    0    0    0    0    0    0    0  #  AgeSel_P1_JuvenilePelagic(5)
- 0     40     0        6   99    0   -1    0    0    0    0    0    0    0  #  AgeSel_P2_JuvenilePelagic(5)
+ 0     40     0        5   99    0   -1    0    0    0    0    0    0    0  #  AgeSel_P1_JuvenilePelagic(6)
+ 0     40     0        6   99    0   -1    0    0    0    0    0    0    0  #  AgeSel_P2_JuvenilePelagic(6)
 # timevary selex parameters 
 #_LO       HI          INIT    PRIOR    PR_SD  PR_type    PHASE  #  parm_name
   20       55       29.9853        0       99        0      1    # SizeSel_P1_RecreationalCatch(1)_BLK3repl_1993
  -5        20       3.59529        0       99        0      3    # SizeSel_P3_RecreationalCatch(1)_BLK3repl_1993
-  20       55       30.3874        0       99        0      1    # SizeSel_P1_OnboardSurvey(3)_BLK2repl_1999
- -5        20       4.35595        0       99        0      3    # SizeSel_P3_OnboardSurvey(3)_BLK2repl_1999
- -5        20       3.07634        0       99        0      4    # SizeSel_P4_OnboardSurvey(3)_BLK2repl_1999
 #
 #
 0   #  use 2D_AR1 selectivity(0/1):  experimental feature
@@ -241,16 +256,22 @@
  #_5=mult_by_agecomp_N
  #_6=mult_by_size-at-age_N
  #_7=mult_by_generalized_sizecomp
-#_Factor  Fleet  Value
-      4      1  0.008687
-      4      2  0.459941
-      4      3  0.013375
-      4      4  0.678107
-      4      6  0.611821
-      5      2  0.069471
-      5      4  0.224691
-      5      6  0.079138
- -9999   1    0  # terminator
+#
+#
+#
+#Factor Fleet New_Var_adj hash Old_Var_adj New_Francis New_MI Francis_mult MI_mult Type Name Note
+4 1 0.006896 # 0.01 0.006896 0.018571 0.68963 1.857066 len RecreationalCatch 
+4 2 0.39211 # 0.38 0.39211 0.495223 1.031869 1.303219 len CommercialCatch 
+4 3 0.006977 # 0.01 0.006977 0.023855 0.697654 2.385539 len OnboardSurvey_Early 
+4 4 0.029389 # 0.03 0.029389 0.028288 0.979633 0.942943 len OnboardSurvey_Late 
+4 5 0.825847 # 0.83 0.825847 2.140478 0.994997 2.57889 len HookAndLineSurvey 
+4 7 0.703572 # 0.71 0.703572 1.164502 0.990947 1.640144 len SmallFish 
+5 2 0.096071 # 0.1 0.096071 0.215668 0.960714 2.156677 age CommercialCatch 
+5 5 0.219381 # 0.22 NA 0.219381 NA 0.997185 age HookAndLineSurvey No Francis weight--using MI value
+5 7 0.080067 # 0.08 0.080067 0.330671 1.000835 4.133385 age SmallFish 
+#
+#
+-9999   1    0  # terminator
 #
 5 #_maxlambdaphase
 1 #_sd_offset

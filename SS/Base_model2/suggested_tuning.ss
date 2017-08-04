@@ -1,9 +1,0 @@
-#Factor Fleet New_Var_adj hash Old_Var_adj New_Francis New_MI Francis_mult MI_mult Type Name Note
-4 1 0.006738 # 0.008687 0.006738 0.018034 0.775619 2.076021 len RecreationalCatch 
-4 2 0.402307 # 0.459941 0.402307 0.493462 0.874692 1.072881 len CommercialCatch 
-4 3 0.011705 # 0.013375 0.011705 0.009288 0.875148 0.694413 len OnboardSurvey 
-4 4 0.816048 # 0.678107 0.816048 1.965167 1.203421 2.898019 len HookAndLineSurvey 
-4 6 0.698369 # 0.611821 0.698369 1.022201 1.14146 1.670751 len SmallFish 
-5 2 0.101457 # 0.069471 0.101457 0.201949 1.460426 2.906951 age CommercialCatch 
-5 4 0.209464 # 0.224691 NA 0.209464 NA 0.932233 age HookAndLineSurvey No Francis weight--using MI value
-5 6 0.084988 # 0.079138 0.084988 0.303943 1.073923 3.840674 age SmallFish 

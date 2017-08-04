@@ -102,7 +102,8 @@ fleetnames1 <- c("Commercial Fishery",
                  "NWFSC Combo Survey")
 fleetnames2 <- c("Recreational Fishery",
                  "Commercial Fishery",
-                 "Recreational Onboard Survey",
+                 "Rec. Onboard Survey Early",
+                 "Rec. Onboard Survey Late",
                  "Hook & Line Survey",
                  "Pelagic Juvenile Survey",       
                  "Small Fish Study")
@@ -239,15 +240,15 @@ dev.off()
 
 
 # fit to indices for model 2
-pngfun('index0_all_indices.png', mod=2)
-par(mfrow=c(2,2),mar=c(2,2,2,1),oma=c(2,2,0,0)+.1)
+pngfun('index0_all_indices.png', mod=2, h=6.5)
+par(mfrow=c(3,2),mar=c(2,2,2,1),oma=c(2,2,0,0)+.1)
 SSplotIndices(mod2,subplot=1,datplot=TRUE, maximum_ymax_ratio=3) #,fleetnames=fleets)
 mtext(side=1,line=1,outer=TRUE,'Year')
 mtext(side=2,line=1,outer=TRUE,'Index')
 dev.off()
 
-pngfun('index0_all_indices_fit.png', mod=2)
-par(mfrow=c(2,2),mar=c(2,2,2,1),oma=c(2,2,0,0)+.1)
+pngfun('index0_all_indices_fit.png', mod=2, h=6.5)
+par(mfrow=c(3,2),mar=c(2,2,2,1),oma=c(2,2,0,0)+.1)
 SSplotIndices(mod2,subplot=2,datplot=FALSE, maximum_ymax_ratio=3) #,fleetnames=fleets)
 mtext(side=1,line=1,outer=TRUE,'Year')
 mtext(side=2,line=1,outer=TRUE,'Index')
