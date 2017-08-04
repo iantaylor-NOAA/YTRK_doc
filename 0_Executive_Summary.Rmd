@@ -313,7 +313,7 @@ No decision table for the Southern model was developed because this model is not
    # depending on the stock structure
    # Edit file: ./txt_files/Exec_basemodel_summary.csv and the Summary Results 
    # section in R code R_exec_summary_figs_tables.R
-n_models = 1
+n_models = 2
 if(n_models == 1){   
  print(base_summary.table, 
        include.rownames = FALSE, 
@@ -360,7 +360,7 @@ if(n_models == 3){
 ```
 <!-- ***********Edit caption based on fixed params************************* -->
 
-![Equilibrium yield curve for the base case Northern model and Final Southern model.\label{fig:Yield_all}](`r yield.file`)
+![Equilibrium yield curve for the base-case Northern model.\label{fig:Yield_all}](`r yield.file`)
 
 <!-- ***********END EXECUTIVE SUMMARY RESULTS SUMMARY TABLE AND YIELD CURVE -->
 

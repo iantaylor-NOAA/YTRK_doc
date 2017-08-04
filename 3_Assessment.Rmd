@@ -139,7 +139,11 @@ Selectivity for all fleets was initially estimated as a 4-parameter double norma
 
 For all fleets where the estimated patterns were asymptotic, we fixed the parameters related to the dome, leaving only the position of the peak and the ascending slope as estimated parameters. For a few fleets, the position of the peak hit the upper bound, and was fixed at 55cm.
 
-The length composititions the Onboard Index in the Southern model showed a large change between the early sampling period prior to 1999 and the later period starting in 2003. The patterns were relatively stable within each period, suggesting that the change was likely due to changes in fishing patterns or sampling, rather than changes in the underlying stock. Therefore, separate selectivity parameters were estimated for the two periods. Although the changes in the data were less dramatic, separate selectivity patterns werealso estimated for the Recreational Fishery (lengths from MRFSS and RecFIN) estimated with the later period starting in 1993 after the gap in sampling that started in 1990. In both cases, the change in selectivity was also paired with an estimated change in catchability for the associated indices of abundance.
+The two recreational fleets in the Northern model had a block on selectivity beginning in 2003 to allow a change in selectivity associated with management measures which constrained the depth range of recreational fishing.
+
+The early and late Onboard Indices in the Southern model were treated as a single fleet with blocks on selectivity in earlier versions of the model. However, in the Final Southern Model, the Onboard survey from these two periods was split into separate fleets with independent selectivity.
+
+
 
 **Retention**
 Retention for commercial fishery in Northern model is a logistic function of size, with three parameters estimated: length at 50% retention, the slope of the curve, and the asymptotic retention fraction. The asymptote was allowed to be time-varying, with one value applied for the early years through 2001.  From 2002 through 2011 we applied annual time-blocks for theses years when the WCGOP program observed high discards.  The final block runs from 2012 forward, reflecting the current period in which the implementation of the IFQ program has led to low discard rates.
@@ -149,7 +153,7 @@ Log(R0) is the equilibrium recruitment, which is estimated in each model.
 
 Recruitment deviations for the Northern model are estimated from `r min(mod1$recruit$Yr[mod1$recruit$era %in% c("Early","Main","Late")])` to 2016.  For the Southern model recruitment deviations are estimated from `r min(mod2$recruit$Yr[mod2$recruit$era %in% c("Early","Main","Late")])` to 2016. Both models also included estimated recruitment devations for the forecast years, although these have no impact on the model estimates for the current year.
 
-A parameter for extra standard deviation was added to the index based on bycatch in the at-sea hake fishery,  because this index was not well fit by any of the models considered.
+A parameter representing extra standard deviation added to all years was estimated for each index that was included in the likelihood to allow the model to appropriately weight these data sources compared to other data types.
 
 \clearpage
 
@@ -161,7 +165,9 @@ Selectivity in both models is asymptotic, with the exception of the OR-CA MRFSS 
 For the Northern model, several options for developing a CPUE series for the recreational fishery were considered but rejected as sparse and noisy.  Similarly, the Washington\_Sport fishery data was evaluated a a possible source for an index, but the data was not available in a form useful for a recreational index, i.e., there was no data that provided for a trip-level analysis of catch and effort, as was used for the MRFSS index in the Southern model [@Stephens2004].
 
 ###Alternate Models Considered
-Time-blocked selectivity and retention were investigated in the Northern model, as were domed selectivities.
+The indices based on the Commercial Logbook CPUE and At-Sea Hake Bycatch were included during initial development of the Northern model but removed after further considerations and investigation at the STAR panel as described elsewhere.
+
+Alternative structures for the time-blocked selectivity and retention were investigated in the Northern model, as were domed selectivities.
 
 We also explored time-blocks on selectivity in the Southern model, and domed selectivity for the MRFSS/RecFIN data.  For early versions of the model, we allowed the model to estimate natural mortality.  There is very little discard of Yellowtail in the Onboard Survey, however it is the only information on discards in the south, so we attempted to include it in the model.
 
@@ -169,10 +175,8 @@ These approaches resulted in models that didn't converge, and so they were rejec
 
 Finally, we evaluated different assumptions pertaining to maturity ogives, modeling these parameters from the literature:
 
-@begin{itemize}
-Parameters in [@Gunderson1980]: L50% = 45.0, slope = -0.5315
-Parameters in [@Echeverria1987]:  L50% = 36.36, slope = - 0.4331
-@end{itemize}
+* Parameters in [@Gunderson1980]: L50% = 45.0, slope = -0.5315
+* Parameters in [@Echeverria1987]:  L50% = 36.36, slope = - 0.4331
 
 which we discovered made no significant changes in model outcomes.
 
@@ -254,7 +258,7 @@ Retention by length (Figure \ref{fig:retention.N}) varies over time between 40\%
 
 Discarding in the commercial fleet (Figure \ref{fig:r4ss_discard_fits.N}) is fit only by putting blocks on retention in the Northern model.  Discards were very low except during the 1990s and 2000s, until the trawl-rationalization program implementation.
 
-Fits to the indices for the northern model (Figure \ref{fig:index_fits1}) demonstrate the utility of the NWFSCcombo survey.  Although the model misses the uptick at the end of the timeseries, it is the only recent index and is well-fit by the model.  The other indices are noisier.  Most of the indices are fairly flat, indicating little change in abundance during each time-period.  Although the fit to the Triennial index is poor, the data nicely reflects the changes in management during it's tenure:  the CPUE was falling during the 1980s and 1990s, then rising after stringent restrictions began in 2000.
+Fits to the indices for the northern model (Figure \ref{fig:index_fits1}) demonstrate the utility of the NWFSCcombo survey. Although the model misses the uptick at the end of the timeseries, it is the only recent index and is well-fit by the model.  The other indices are noisier.  Most of the indices are fairly flat, indicating little change in abundance during each time-period.  Although the fit to the Triennial index is poor, the data nicely reflects the changes in management during it's tenure:  the CPUE was falling during the 1980s and 1990s, then rising after stringent restrictions began in 2000.
 
 ### Lengths
 Bubble plots for the lengths in the fishery (Figure \ref{fig:comp_length_bubble_mod1_page1}) show the constancy of the commercial fleet, and the differences in growth between males and females; the females are larger, the males smaller.  The recreational fleet is represented by two different sampling regimes, and the changeover in the mid-2000s is clear in that panel.  That the WA\_Sport fishery catches larger fish is represented in the large bubbles at the top of the panel.  Had we examined that fishery earlier in the process of putting the model together, we might have settled on a larger maximum size bin, however that fishery remains the smallest portion of the catches.
@@ -295,6 +299,8 @@ The residuals for the conditional age-at-length from the NWFSCcombo survey show 
 For the Base model, the parameter estimates are given in Table \ref{tab:Model1_params}.  Status for all of the estimated parameters is good although the parameter for peak selectivity of the Triennial survey is estimated close to the 55 cm upper bound with a value of `r round(mod1$estimated_non_dev_parameters["SizeSel_P1_Triennial(5)", "Value"],2)`.
 
 ### Northern Model Uncertainty and Sensitivity Analyses
+\hl{This section not yet updated to reflect final Northern model.}
+
 \begin{description}
 \item[M prior Age64] The literature value for maximum age is 64.  We centered the prior for female mortality at 0.0844, the value associated with that age, and estimated M for both females and males (with no prior on the offset for males).
 \item[M fixed Age64] We fixed mortality at 0.0844, the value associated with maximum age of 64, for both females and males.
@@ -319,6 +325,8 @@ Figure \ref{fig:profile_M2.N} shows the likelihood profile for male natural mort
 The profile over values of steepness, $h$, from 0.5 to 0.9, Figure \ref{fig:profile_h.N}, shows the index data for once in the majority as all data sources except the lengths support 0.9 as minimizing the likelihood, while the lengths support a value closer to 0.5.  The scale of this plot differs from the others showing that the that the choice of h within this range has far less impact on likelihood in the model than choices for the other profiled parameters.  This suggests the stock is not depleted; the choice of steepness would have a much greater impact on a depleted stock. The MLE occurring at the maximum $h$ value also supports the choice to fix the steepness at the mean of the prior $h=0.718$.
 
 ### Northern Model Retrospective Analysis
+\hl{This section not yet updated to reflect final Northern model.}
+
 The Northern model shows little influence of removing up to 5 years of data (Figure \ref{fig:retro.N}). Examination of the contributions of each index to the likelihood profile over $log(R_0)$ indicated that the NWFSCcombo survey, which is the only index available within the most recent data, had the least influence on the scale of the model, so shortening this time series wouldn't be expected to have a large contribution on the population estimates.
 
 
@@ -371,11 +379,11 @@ The Commercial length comps are fit well through 2005, when data becomes sparse 
 
 Fits for the Onboard Survey lengths are good in the early survey, and poor for the later period \ref{fig:mod2_9_comp_lenfit_flt3mkt2}; \ref{fig:mod2_12_comp_lenfit_data_weighting_TA1.8_Recreational Onboard Survey}.  Attempting to apply a time-block to this data resulted in poor convergence.
 
-The Hook-and-Line Survey lengths are noisy (Figure \ref{fig:mod2_13_comp_lenfit_flt4mkt0}), but the fits are acceptable, and follow the trend of the data better than those for the other datasets:  Figure \ref{fig:mod2_16_comp_lenfit_data_weighting_TA1.8_Hook & Line Survey}.
+The Hook-and-Line Survey lengths are noisy (Figure \ref{fig:mod2_17_comp_lenfit_flt5mkt0}), but the fits are acceptable, and follow the trend of the data better than those for the other datasets:  Figure \ref{fig:mod2_16_comp_lenfit_data_weighting_TA1.8_Hook & Line Survey}.
 
-The Small Fish Study lengths are not fit badly (Figures \ref{fig:mod2_17_comp_lenfit_flt6mkt2} and \ref{fig:mod2_20_comp_lenfit_data_weighting_TA1.8_Small Fish Study}), and it is perhaps a shame that there are so few years to this timeseries.
+The Small Fish Study lengths are not fit badly (Figures \ref{fig:mod2_21_comp_lenfit_flt7mkt2} and \ref{fig:mod2_24_comp_lenfit_data_weighting_TA1.8_Small Fish Study}), and it is perhaps a shame that there are so few years to this timeseries.
 
-The aggregate fits to the length comps for all five datasets is shown in Figure \ref{fig:mod2_21_comp_lenfit__aggregated_across_time}, and Pearson residuals for the lengths in Figure \ref{fig:comp_Pearson_length_mod2}.  Filled bubbles represent under-estimation of the data, open bubbles represent overestimation.
+The aggregate fits to the length comps for all five datasets is shown in Figure \ref{fig:mod2_25_comp_lenfit__aggregated_across_time}, and Pearson residuals for the lengths in Figure \ref{fig:comp_Pearson_length_mod2}.  Filled bubbles represent under-estimation of the data, open bubbles represent overestimation.
 
 
 ### Final Southern Model Ages
@@ -383,7 +391,7 @@ There are few marginal ages in the model.  Bubble plots for the Southern model a
 
 Figure \ref{fig:mod2_5_comp_agefit_flt6mkt2} shows the fit to the Recreational Fishery samples, which is poor in all four years.  The mean age in this data is shown in Figure \ref{fig:mod2_8_comp_agefit_data_weighting_TA1.8_Small Fish Study}, at 10 years.
 
-The Hook-and-Line Survey age fit is shown in Figure \ref{fig:mod2_1_comp_agefit_flt4mkt0}.  The Francis tuning method could not be applied in this case as it depends on the fit to multiple years of data.
+The Hook-and-Line Survey age fit is shown in Figure \ref{fig:mod2_1_comp_agefit_flt5mkt0}.  The Francis tuning method could not be applied in this case as it depends on the fit to multiple years of data.
 
 The aggregated fits for the marginal ages are shown in Figure \ref{fig:mod2_9_comp_agefit__aggregated_across_time}.
 
@@ -401,6 +409,7 @@ For the Final Southern model, the parameter estimates are given in Table \ref{ta
 estimated parameters is good.
 
 ### Final Southern Model Uncertainty and Sensitivity Analyses
+\hl{This section not yet updated to reflect Final Southern model.}
 
 The Final Southern model was investigated in these 16 analyses:
 
@@ -433,6 +442,8 @@ Male natural mortality (MM) is profiled over a range from -0.4 to 0.  Male natur
 The profile over stock-recruit steepness (Figure \ref{fig:profile_h.S}) shows little information about steepness, with the change in total likelihood less than 0.7, over a range of $h = 0.5$ to $h = 0.9$. This supports the conclusion that the stock was never at a very low biomass.  For a more depleted stock, steepness would have a larger impact on the likelihood. The lack of information on steepness supports the choice to fix the value at the mean of the prior: $h=0.718$.
 
 ### Final Southern Model Retrospective Analysis
+\hl{This section not yet updated to reflect final Southern model.}
+
 The Southern model shows a retrospective pattern in which removing one year of data at a time leads to slightly higher estimates of spawning output (Figure \ref{fig:retro.S}). The changes associated with 1 or 2 years of data removed are relatively small, but removing years of data had a larger impact on spawning output, with equilibrium value increasing from 2.8 trillion eggs to 3.5 trillion eggs when 5 years of data were removed. 
 
 ### Final Southern Model Reference Points
