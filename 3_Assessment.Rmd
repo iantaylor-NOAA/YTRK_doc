@@ -167,7 +167,7 @@ We also explored time-blocks on selectivity in the Southern model, and domed sel
 
 These approaches resulted in models that didn't converge, and so they were rejected.
 
-We also evaluated different assumptions pertaining to maturity ogives, modeling these parameters from the literature:
+Finally, we evaluated different assumptions pertaining to maturity ogives, modeling these parameters from the literature:
 
 @begin{itemize}
 Parameters in [@Gunderson1980]: L50% = 45.0, slope = -0.5315
@@ -180,7 +180,7 @@ which we discovered made no significant changes in model outcomes.
 ###Convergence
 Convergence testing through use of dispersed starting values often requires extreme values to explore new areas of the multivariate likelihood surface. Stock Synthesis provides a jitter option that generates random starting values from a normal distribution logistically transformed into each parameter's range [@Methot2015]. We used this function to find parameter values for convergence in the Southern model. 
 
-The Southern jitter analysis post-tuning was run 100 times, and resulted in 75 models that returned to the base case.  No model resulted in a lower likelihood than the base model.
+The jitter analysis of the final Southern model post-tuning was run 100 times, and resulted in 75 models that returned to the base case.  No model resulted in a lower likelihood than the base model.
 
 The Northern jitter analysis was run 100 times, and resulted in 88 models that returned to the base case.  No model resulted in a lower likelihood than the base model.
 
@@ -340,7 +340,7 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt.
 
 <!-- *************************MODEL 2 RESULTS****************************** -->
 
-## Southern Example Model Results
+## Final Southern Model Results
 
 The results offered here are for a version of the Southern model that was thought to be the most robust among sensitivites, and is not a "Base Case", as the model was deemed too sensitive for management.
 
@@ -352,15 +352,15 @@ The estimated spawning biomass in Figure \ref{fig:ssb.S} shows the size of the u
 
 Recruitments have been constant, except 2008 and 2010, when the model sees extra large recruitments with extra large recruitment deviations (Figures \ref{fig:recruits1.S} and \ref{fig:recdevs1.S}).  The spawner-recruit curve, Figure \ref{fig:stock_recruit_curve.S} is a line.
 
-### Southern Example Model Selectivities, Indices and Discards
+### Final Southern Model Selectivities, Indices and Discards
 
 Selectivity by fleet is shown in Figure \ref{fig:selex.S}.  Selectivities for all but the recreational Onboard fishery are modeled as asymptotic; both recreational fleets (MRFSS/RecFIN and Onboard) are fully selected at 30cm; the remaining fleets show full selectivity at 45cm, except for the Commercial fishery, which isn't fully selected until the maximum size, 55cm.
 
 Index fits are shown in \ref{fig:index_fits2}.  The estimated change in catchability in 1993 for the MRFSS index is small and both the observed and expected index values show little trend.  The Onboard survey fits to the two periods are flat in each period with a large change in catchability estimated between the two periods.  The Hook-and-Line survey fit does not seem to capture trends in time.  However, the model fits the data from the Juvenile Pelagic remarkably well, capturing the downward trend at the end of the period, which the other fits for the current period do not.  During model tuning, we tried introducing a time-blocked index for the two periods of the MRFSS and the two periods of the Onboard survey, however it didn't improve the fit to the index until we also introduced the Northern model's estimates of natural mortality.  These two changes had to be made in concert, since either in isolation destabilized the model further.
 
-There was little information to inform the Southern Model of discard behavior, except in the Onboard survey, where it was represented by extremely small numbers.  We included these discards in the retained fishery, since attempts to include it as a type-1 "retained plus discards" fishery prevented the model from converging.
+There was little information to inform this model of discard behavior, except in the Onboard survey, where it was represented by extremely small numbers.  We included these discards in the retained fishery, since attempts to include it as a type-1 "retained plus discards" fishery prevented the model from converging.
 
-### Southern Example Model Lengths
+### Final Southern Model Lengths
 Lengths in the Southern model were entered as unsexed, except for the Hook-and-Line fishery.  There were sexes for the Commercial lengths, however there were also large numbers of unsexed lengths, and we chose to model the lengths as unsexed, to include as much of the data as possible.  This was true of the Small-Fish study, as well.
 
 Bubble plots of the lengths by year in each fishery are in Figure \ref{fig:comp_length_bubble_mod2}.  The plot for the recreational fishery clearly shows the transition from the MRFSS sampling program to RecFIN in 2003/2004, as well as suggesting the existence of larger fish in the 1980s.  The Commercial fishery data has been sparse in recent years; however the fish taken in the Commercial catch are consistently larger than those in the recreational fishery, no doubt reflecting trawling in deeper waters.  The Onboard survey lengths reflect two eras of sampling, again with larger fish in the earlier period.  The panel for the Hook-and-Line survey shows that the females landed are always larger than the males, in agreement with the model estimates of growth: Figure \ref{fig:growth}.
@@ -378,7 +378,7 @@ The Small Fish Study lengths are not fit badly (Figures \ref{fig:mod2_17_comp_le
 The aggregate fits to the length comps for all five datasets is shown in Figure \ref{fig:mod2_21_comp_lenfit__aggregated_across_time}, and Pearson residuals for the lengths in Figure \ref{fig:comp_Pearson_length_mod2}.  Filled bubbles represent under-estimation of the data, open bubbles represent overestimation.
 
 
-### Southern Example Model Ages
+### Final Southern Model Ages
 There are few marginal ages in the model.  Bubble plots for the Southern model ages (Figure \ref{fig:comp_age_bubble_mod2}) show the small sample from the Small Fish Study and the single year of ages from the Hook-and-Line Survey.  The samples are too small to show any inter-annual variation, and are noisy within-year.
 
 Figure \ref{fig:mod2_5_comp_agefit_flt6mkt2} shows the fit to the Recreational Fishery samples, which is poor in all four years.  The mean age in this data is shown in Figure \ref{fig:mod2_8_comp_agefit_data_weighting_TA1.8_Small Fish Study}, at 10 years.
@@ -395,16 +395,14 @@ The good news age-data comes from the commercial fleet, as was foreshadowed by t
 
 The annual plots of age-at-length fits (Figure \ref{fig:mod2_5_comp_condAALfit_Andre_plotsflt2mkt2_page1}) show good fits in all years except 2001-2002.
 
-### Southern Example Model Parameters
+### Final Southern Model Parameters
 
-For the Southern Base model, the parameter estimates are given in Table \ref{tab:Model2_params}. Status for all of the 161
+For the Final Southern model, the parameter estimates are given in Table \ref{tab:Model2_params}. Status for all of the 161
 estimated parameters is good.
 
-### Southern Example 
+### Final Southern Model Uncertainty and Sensitivity Analyses
 
-Model Uncertainty and Sensitivity Analyses
-
-The Example Southern model was investigated in these 16 analyses:
+The Final Southern model was investigated in these 16 analyses:
 
 * **Drop Biological Datasets** The data from each source in turn was dropped from the model.
 * **Drop Indices** Each index in turn was dropped from the model.
@@ -423,7 +421,7 @@ Adding an index from the NWFSCcombo Survey with catchability fixed at the value 
 Estimating M resulted in estimates of $M = 0.21$ for females and $M = 0.23$ for males, along with a much highest stock size. Fixing mortality at the low $M = 0.08$ (the value associated with a maximum age of 64) resulted in a much lower estimate of the scale of the model. Tuning based on the McAllister-Ianelli method had very little impact.
 
 
-### Southern Example Model Likelihood Profiles
+### Final Southern Model Likelihood Profiles
 We profiled the change in negative log likelihood for the data sources and model total likelihood for critical parameters fixed in the model:  **$log(R_0)$**, the log of equilibrium recruitment; female natural mortality, **MF**; male natural mortality, **MM**; and steepness, **h** the parameter that reflects how quickly the stock-recruit relationship allows the stock to rebound from depleted stock size.
 
 The likelihood profile for **$log(R_0)$** is shown in Figure \ref{fig:profile_logR0.S}.  The parameter $log(R_0)$ was profiled over values from 8.6-11.0.  The figure shows that best fit to the age and length data all occur in the range of 9.0 to 9.6 but the indices are best fit at the upper end of the range: 11.0.  The overall negative-log-likelihood is minimized at `r round(mod2$parameters["SR_LN(R0)","Value"],1)`.
@@ -434,10 +432,10 @@ Male natural mortality (MM) is profiled over a range from -0.4 to 0.  Male natur
 
 The profile over stock-recruit steepness (Figure \ref{fig:profile_h.S}) shows little information about steepness, with the change in total likelihood less than 0.7, over a range of $h = 0.5$ to $h = 0.9$. This supports the conclusion that the stock was never at a very low biomass.  For a more depleted stock, steepness would have a larger impact on the likelihood. The lack of information on steepness supports the choice to fix the value at the mean of the prior: $h=0.718$.
 
-### Southern Example Model Retrospective Analysis
+### Final Southern Model Retrospective Analysis
 The Southern model shows a retrospective pattern in which removing one year of data at a time leads to slightly higher estimates of spawning output (Figure \ref{fig:retro.S}). The changes associated with 1 or 2 years of data removed are relatively small, but removing years of data had a larger impact on spawning output, with equilibrium value increasing from 2.8 trillion eggs to 3.5 trillion eggs when 5 years of data were removed. 
 
-### Southern Example Model Reference Points
+### Final Southern Model Reference Points
 
 The estimated relative depletion level for the Southern model in 2017 is 
 `r {Depl_mod2}` (~95% asymptotic interval: $\pm$ 
