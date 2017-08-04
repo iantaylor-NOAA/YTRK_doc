@@ -9,7 +9,7 @@ The Southern model was not robust enough for management purposes; therefore the 
 
 ![Map depicting the boundaries for the base-case model.  \label{fig:assess_region_map_Exec_Sum}](Figures/assess_region_map_v2.png)
 
-The most recent fully integrated assessment [@Wallace2005], following the pattern of prior assessments, included only the Northern stock which it divided into three assessment areas with divisions at Cape Elizabeth (47$^\circ$ 20'N) and Cape Falcon (45$^\circ$ 46'N).  A data-moderate assessment conducted in 2013 [@Cope2013] was the first to analyze the southern stock, determining its contribution to the overfishing limit (OFL) for the Southern Shelf Complex. 
+The most recent fully integrated assessment [@Wallace2005], following the pattern of prior assessments, included only the Northern stock which it divided into three assessment areas with divisions at Cape Elizabeth (47$^\circ$ 20'N) and Cape Falcon (45$^\circ$ 46'N).  The northern stock was assessed most recently using a data-moderate assessment method in 2013 [@Cope2013]. The southern stock was also analyzed using the data-moderate method but that model was never reviewed or put forward for management. The contribution of the southern stock to the overfishing limit (OFL) for the Southern Shelf Complex was determined using Depletion-Based Stock Reduction Analysis [@Dick2011]. 
 
 Since the 2005 assessment, reconstruction of historical catch by Washington and Oregon makes any border but the state line (roughly 46$^\circ$ N) incompatible with the data from those states.  Additionally, an unknown amount of the groundfish catch landed in northern Oregon is believed to have been caught in Washington waters.  This is not an issue that can be resolved at present, and we have elected to address the stock in two areas consistent with the management border at Cape Mendocino.  This is consistent, as well, with a recent genetic analysis [@Hess2011] that found distinct stocks north and south of Cape Mendocino but did not find stock differences within the northern area. 
 
@@ -61,12 +61,12 @@ Catches from the Southern stock (Figure \ref{fig:r4ss_catch_S}) were divided int
 ##Data and Assessment{-}
 `r spp` north of Cape Mendocino (40$^\circ$ 10'N) was most recently assessed as part of a 2013 data-moderate stock assessment [@Cope2013] that did not include any length or age data. The northern stock was previously assessed in 2000 [@Tagart2000] with that assessment updated in 2003 and 2005 [@Lai2003, @Wallace2005]. The stock south of 40$^\circ$ 10'N has never been fully assessed due to the lack of data for this area.
 
-This assessment uses Stock Synthesis version 3.3.  The Northern model begins in `r Dat_start_mod1`, as does the Southern model. In both cases those starting years were chosen based on the first year of the available catch data and the start of the estimated recruitment deviations was at a later point, so both models were assumed to start at an unfished equilibrium.
+This assessment uses Stock Synthesis version 3.30.  The Northern model begins in `r Dat_start_mod1`, as does the Southern model. In both cases those starting years were chosen based on the first year of the available catch data and the start of the estimated recruitment deviations was at a later point, so both models were assumed to start at an unfished equilibrium.
  
 ##Stock Biomass{-}
 The spawning output for the Northern model was estimated to have fallen below 40\% of unfished equilibrium in the early 1980s, to a minimum of `r MinDepl_mod1`% in `r MinDeplYr_mod1` but has rebounded since to `r Depl_mod1` in 2017 (~95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Figures \ref{fig:Spawnbio_all} and \ref{fig:RelDeplete_all}, Table \ref{tab:SpawningDeplete_mod1}).
 
-No estimate of spawning output from the Southern model is available.
+The spawning output and depletion from the Final Southern model are shown in the same set of figures for comparison, although this model is not being put forward for management.
 
 \FloatBarrier
 
@@ -93,9 +93,9 @@ No estimate of spawning output from the Southern model is available.
 \FloatBarrier
 
 
-![Time series of spawning output trajectory (circles and line: median; light broken lines: 95% credibility intervals) for the base case assessment model.  \label{fig:Spawnbio_all}](`r spawn.file`)
+![Time series of spawning output trajectory (circles and line: median; light broken lines: 95% credibility intervals) for the base case Northern model and Final Southern model.  \label{fig:Spawnbio_all}](`r spawn.file`)
 
-![Estimated relative depletion with approximate 95\% asymptotic confidance intervals (dashed lines) for the base case assessment model. \label{fig:RelDeplete_all}](`r Bratio.file`)
+![Estimated relative depletion with approximate 95\% asymptotic confidance intervals (dashed lines) for the base case Northern model and Final Southern model. \label{fig:RelDeplete_all}](`r Bratio.file`)
 
 <!-- ***********END  EXECUTIVE SUMMARY SPAWNING BIOMASS AND**************** -->
 
@@ -134,7 +134,7 @@ Text describing recruitment.  TOADS
 
 \FloatBarrier
 
-![Time series of estimated `r spp` recruitments for the base-case model with 95\% confidence or credibility intervals. \label{fig:Recruits_all}](`r recruit.file`)
+![Time series of estimated `r spp` recruitments for the base-case Northern model and Final Southern Model with 95\% confidence or credibility intervals. \label{fig:Recruits_all}](`r recruit.file`)
 
 <!-- ***********END EXECUTIVE SUMMARY RECRUITMENT TABLEs AND FIGURES******* -->
 
@@ -177,10 +177,10 @@ A summary of `r spp` exploitation histories for the Northern base model is provi
 
 \FloatBarrier
 
-![Estimated spawning potential ratio (SPR) for the base-case model. One minus SPR is plotted so that higher exploitation rates occur on the upper portion of the y-axis. The management target is plotted as a red horizontal line and values above this reflect harvests in excess of the overfishing proxy based on the SPR\textsubscript{50\%} harvest rate. The last year in the time series is `r Dat_end_mod1`. \label{fig:SPR_all}](`r SPR.file`)
+![Estimated spawning potential ratio (SPR) for the base-case Northern model and Final Southern model. One minus SPR is plotted so that higher exploitation rates occur on the upper portion of the y-axis. The management target is plotted as a red horizontal line and values above this reflect harvests in excess of the overfishing proxy based on the SPR\textsubscript{50\%} harvest rate. The last year in the time series is `r Dat_end_mod1`. \label{fig:SPR_all}](`r SPR.file`)
 
 
-![Phase plot of estimated relative (1-SPR) vs. relative spawning biomass for the base case model. The relative (1-SPR) is (1-SPR) divided by 50\% (the SPR target). Relative depletion is the annual spawning biomass divided by the unfished spawning biomass. \label{fig:Phase_all}](`r Phase.file`)
+![Phase plot of estimated relative (1-SPR) vs. relative spawning biomass for the base case Northern model and Final Southern model. The relative (1-SPR) is (1-SPR) divided by 50\% (the SPR target). Relative depletion is the annual spawning biomass divided by the unfished spawning biomass. \label{fig:Phase_all}](`r Phase.file`)
 
 <!-- ************END EXECUTIVE SUMMARY EXPLOITATION************************ -->
 <!-- ************AND SPRratio TABLE AND FIGURES**************************** -->
@@ -212,7 +212,7 @@ base case model. The target spawning output based on the biomass target
 a catch of `r Ref_pts_mod1[10,2]` mt. Equilibrium yield at the proxy $F_{MSY}$ 
 harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt.
 
-Estimated equilibrium yield curves for the Northern model is shown in Figure \ref{fig:Yield_all}.
+Estimated equilibrium yield curves for the base-case Northern model is shown in Figure \ref{fig:Yield_all}.
 
 \FloatBarrier
 
@@ -360,7 +360,7 @@ if(n_models == 3){
 ```
 <!-- ***********Edit caption based on fixed params************************* -->
 
-![Equilibrium yield curve for the base case models.\label{fig:Yield_all}](`r yield.file`)
+![Equilibrium yield curve for the base case Northern model and Final Southern model.\label{fig:Yield_all}](`r yield.file`)
 
 <!-- ***********END EXECUTIVE SUMMARY RESULTS SUMMARY TABLE AND YIELD CURVE -->
 
