@@ -7,7 +7,7 @@
 if (system("hostname", intern=TRUE) %in% c("NWCLW04223033") ){
   YTdir <- "C:/SS/Yellowtail/Yellowtail2017"
   YTdir.mods <- file.path(YTdir, "Models")
-  YTdir.sens.N <- file.path(YTdir.mods, "North_sens_20")
+  YTdir.sens.N <- file.path(YTdir.mods, "North_sens_Final")
   YTdir.sens.S <- file.path(YTdir.mods, "South_sens_21")
 }
 
@@ -15,7 +15,7 @@ require(r4ss)
 
 # load model output into R
 # read base model from each area
-mod.N <- 'North/20_tuned'
+mod.N <- 'North/STAR_2_NORTH'
 dir.N <- file.path(YTdir.mods, mod.N)
 out.N <- SS_output(dir.N)
 
@@ -89,9 +89,12 @@ if(FALSE){ # don't run all the stuff below if sourcing the file
   ##################################################################################
   # Eliminating indices using lambdas
 
-  out.sens.no_fishery_indices.N <- SS_output(file.path(YTdir.sens.N, "sens.no_fishery_indices"))
-  out.sens.no_hake_indices.N <- SS_output(file.path(YTdir.sens.N, "sens.no_hake_index"))
-  out.sens.no_logbook_indices.N <- SS_output(file.path(YTdir.sens.N, "sens.no_logbook_index"))
+  ## out.sens.no_fishery_indices.N <- SS_output(file.path(YTdir.sens.N, "sens.no_fishery_indices"))
+  ## out.sens.no_hake_indices.N <- SS_output(file.path(YTdir.sens.N, "sens.no_hake_index"))
+  ## out.sens.no_logbook_indices.N <- SS_output(file.path(YTdir.sens.N, "sens.no_logbook_index"))
+  out.sens.add_fishery_indices.N <- SS_output(file.path(YTdir.sens.N, "sens.N_add_both_comm_indices"))
+  out.sens.add_hake_indices.N <- SS_output(file.path(YTdir.sens.N, "sens.N_add_hake_index"))
+  out.sens.add_logbook_indices.N <- SS_output(file.path(YTdir.sens.N, "sens.N_add_logbook_index"))
 
   # alternative maturity ogives
   out.mat2.N <- SS_output(file.path(YTdir.sens.N, "sens.GundersonMaturity"))
@@ -180,17 +183,38 @@ if(FALSE){ # don't run all the stuff below if sourcing the file
                      out.sens.MItune.N,
                      out.sens.M_age64_est.N,
                      out.sens.M_age64_fix.N,
-                     out.sens.no_logbook_indices.N,
-                     out.sens.no_hake_indices.N,
-                     out.sens.no_fishery_indices.N))
+                     out.sens.add_logbook_indices.N,
+                     out.sens.add_hake_indices.N,
+                     out.sens.add_fishery_indices.N))
   namelist <- c("Northern Base Model",
                 "McAllister-Ianelli weights",
                 "M prior Age64",
                 "M fixed Age64",
-                "No commercial index",
-                "No hake bycatch index",
-                "No commercial or hake indices")
+                "Add commercial index",
+                "Add hake bycatch index",
+                "Add commercial and hake indices")
   SSplotComparisons(summary.sens.N,
+                    legendloc='bottomleft', subplot=1:2, 
+                    legendlabels=namelist,
+                    densitynames=c("SPB_Virgin", "R0",
+                        "NatM_p_1_Fem_GP_1"),
+                    indexfleets=6,
+                    indexUncertainty=TRUE,
+                    plot=FALSE, print=TRUE,
+                    plotdir=YTdir.sens.N)
+# remake plots 1 and 2 with legend in lower left
+  SSplotComparisons(summary.sens.N,
+                    legendloc=c(0, 0.4), subplot=1:2, 
+                    legendlabels=namelist,
+                    densitynames=c("SPB_Virgin", "R0",
+                        "NatM_p_1_Fem_GP_1"),
+                    indexfleets=6,
+                    indexUncertainty=TRUE,
+                    plot=FALSE, print=TRUE,
+                    plotdir=YTdir.sens.N)
+# remake plots 3 and 4 with legend in specific spot
+  SSplotComparisons(summary.sens.N,
+                    legendloc=c(0, 0.75), subplot=3:4, 
                     legendlabels=namelist,
                     densitynames=c("SPB_Virgin", "R0",
                         "NatM_p_1_Fem_GP_1"),

@@ -113,7 +113,7 @@
 
 ###Fits to indices of abundance for `r mod1_label`
 
-![Estimated fits to the CPUE and survey indices for the `r mod1_label`. \label{fig:index_fits1}](r4ss/plots_mod1/index0_all_indices_fit.png)
+![Estimated fits to the CPUE and survey indices for the `r mod1_label`. The Commercial Trawl Logbook and Hake Bycatch indices are not included in the likelihood so the fits shown here are shown only for comparison purposes.\label{fig:index_fits1}](r4ss/plots_mod1/index0_all_indices_fit.png)
 
 \FloatBarrier
 
@@ -260,7 +260,9 @@
 
 ### Sensitivity analyses for `r mod1_label`
 
-![Time series of spawning output estimated in sensitivity analyses for the `r mod1_label`. \label{fig:sens.N.spawnbio}](Figures/North_sensitivities/compare1_spawnbio.png)
+![Time series of spawning output (in trillions of eggs) estimated in sensitivity analyses for the `r mod1_label`. \label{fig:sens.N.spawnbio}](Figures/North_sensitivities/compare1_spawnbio.png)
+
+![Time series of relative spawning output estimated in sensitivity analyses for the `r mod1_label`. \label{fig:sens.N.Bratio}](Figures/North_sensitivities/compare3_Bratio.png)
 
 ### Likelihood profiles for `r mod1_label`
 

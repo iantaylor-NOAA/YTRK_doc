@@ -23,11 +23,11 @@ require(r4ss)
 
 # load model output into R
 # read base model from each area
-mod.S <- 'New_South_20/21_newbase'
+mod.S <- 'South/STAR_2_SOUTH'
 dir.S <- file.path(YTdir.mods, mod.S)
 out.S <- SS_output(dir.S)
 
-mod.N <- 'North/20_tuned'
+mod.N <- 'North/STAR_2_NORTH'
 dir.N <- file.path(YTdir.mods, mod.N)
 out.N <- SS_output(dir.N)
 

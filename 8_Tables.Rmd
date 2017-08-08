@@ -549,9 +549,9 @@ align(mngmnt.table.N) = c('l',
                 "McAllister-Ianelli weights",
                 "M prior Age64",
                 "M fixed Age64",
-                "No commercial index",
-                "No hake bycatch index",
-                "No commercial or hake indices")
+                "Include commercial index",
+                "Include hake bycatch index",
+                "Include commercial and hake indices")
     colnames(Sens_model1) = namelist
 
     # Create sensitivities table
@@ -559,10 +559,10 @@ align(mngmnt.table.N) = c('l',
                                caption = c('Results of sensitivity analyses for the Northern model.'),
                                label = 'tab:Sensitivity_model1', digits = 2)    
   
-    # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
+    # Add alignment - this uses centered aligment of .7 inches for all columns 2+,
     # You can change this easily to have variable columns width after you know how many
     # colunns your final table has
-    align(Sens_model1.table) = c('l','l', rep('>{\\centering}p{.6in}', dim(Sens_model1)[2]-1))
+    align(Sens_model1.table) = c('l','l', rep('>{\\centering}p{.7in}', dim(Sens_model1)[2]-1))
                     #             '>{\\centering}p{.6in}',
                     #             '>{\\centering}p{.5in}',
                     #             '>{\\centering}p{.5in}',
