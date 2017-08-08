@@ -65,6 +65,7 @@ retroSummary <- SSsummarize(retroMods.N)
 endyrvec <- retroSummary$endyrs + 0:-5
 # general timeseries plots
 SSplotComparisons(retroSummary, endyrvec=endyrvec, png=TRUE, indexUncertainty=TRUE,
+                  legendloc=c(0,0.4), spacepoints=10000,
                   plotdir=file.path(YTdir.mods, 'retrospectives/retro.N'),
                   filenameprefix="retro.N_", 
                   legendlabels=paste("Data",0:-5,"years"))
@@ -86,7 +87,7 @@ endyrvec <- retroSummary$endyrs + 0:-5
 # general timeseries plots
 SSplotComparisons(retroSummary, endyrvec=endyrvec, png=TRUE, indexUncertainty=TRUE,
                   plotdir=file.path(YTdir.mods, 'retrospectives/retro.S'),
-                  legendloc='bottomleft',
+                  legendloc=c(0,0.4), spacepoints=10000,
                   filenameprefix="retro.S_", 
                   legendlabels=legendlabels)
 # fits to indices
