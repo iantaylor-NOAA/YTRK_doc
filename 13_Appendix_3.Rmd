@@ -3,8 +3,8 @@
 <!-- ====================================================================== -->
 
 \FloatBarrier
-\newpage
 
+#Appendix C. Pre-recuit Index{-}
 \label{sec:AppendixC}
 
 ![AppendixC_page1](appendixC_files/Pre-recruit_Index_Field_Appendix_page1.pdf)
@@ -17,3 +17,5 @@
 ![AppendixC_page8](appendixC_files/Pre-recruit_Index_Field_Appendix_page8.pdf)
 ![AppendixC_page9](appendixC_files/Pre-recruit_Index_Field_Appendix_page9.pdf)
 ![AppendixC_page10](appendixC_files/Pre-recruit_Index_Field_Appendix_page10.pdf)
+
+\FloatBarrier
