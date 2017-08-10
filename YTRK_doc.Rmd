@@ -121,4 +121,7 @@ header-includes:
 ```{r child = "13_Appendix_3.Rmd"}
 ```
 
+```{r child = "14_Appendix_4.Rmd"}
+```
+
 <!-- ********************END OF THE DOCUMENT******************************* -->

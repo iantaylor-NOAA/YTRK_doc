@@ -191,41 +191,8 @@ The Northern jitter analysis was run 100 times, and resulted in 88 models that r
 \clearpage
 
 ##Response To The Current STAR Panel Requests
-\begin{description}[style=unboxed]
 
-\item[Request No. 1: Add after STAR panel.] \hfill \\
-
-    \textbf{Rationale:} Add after STAR panel.  
-
-    \textbf{STAT Response:} Add after STAR panel.
-
-\item[Request No. 2: Add after STAR panel.] \hfill \\
-
-    \textbf{Rationale:} Add after STAR panel.
-
-    \textbf{STAT Response:} Add after STAR panel.
-
-\item[Request No. 3: Add after STAR panel.] \hfill \\
-
-    \textbf{Rationale:} Add after STAR panel.
-  
-    \textbf{STAT Response:} Add after STAR panel.
-
-\item[Request No. 4: Example of a request that may have a list:] \hfill \\
-\begin{itemize}
-\item \textbf{Item No. 1}
-\item \textbf{Item No. 2}
-\item \textbf{Item No. 3, etc.}
-\end{itemize}
-
-    \textbf{Rationale:} Add after STAR panel.
-
-    \textbf{STAT Response:} Continue requests as needed.
-
-
-\end{description}
-
-\clearpage
+The comprehensive explorations of the models conducted by the STAR panel are detailed in Appendix D.
 
 <!-- *********************MODEL 1 RESULTS********************************** -->
 
