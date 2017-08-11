@@ -133,16 +133,32 @@ Re-tune the new base Northern model with the changes agreed on the 1st set of re
 ![Changes in base model as a result of STAR and STAT  recommendations.\label{fig:Ch-Ch-Changes}](STAR_Response.figs/Changes.Fig.8.png)
 
 
-The natural mortality estimated in northern models has increased due to the changed implemented. The posterior shown in Figure \ref{fig:NatM} is much narrower than the prior, supporting a much smaller range of plausible values for M. 
+The natural mortality estimated in northern models has increased due to the changed implemented. The posterior shown in Figure \ref{fig:NatM} is much narrower than the prior, supporting a much smaller range of plausible values for M. The M values associated with this series of models are shown in Table \ref{tab:M_table}. 
 
-TOADS
+<!-- ***********M table************************* -->
+```{r, results = 'asis'}
+    M_table = data.frame(col1=c("M (females)","M (males)"),
+                         col2=c(0.145, 0.138),
+                         col3=c(0.159, 0.138),
+                         col4=c(0.174, 0.150))
+    colnames(M_table) = c('Quantity',	
+                          'pre-STAR model',
+                          'adjusted, tuned model',
+                          'without cpue indices')	
 
-Table 1:  Pre-STAR, intermediate, and Post-STAR model estimates of natural mortality for northern yellowtail.
+   # create table   
+   M_table.table = xtable(M_table, 
+                                  caption = c('Pre-STAR, intermediate, and Post-STAR model estimates of natural mortality for northern yellowtail.'),
+                                 label = 'tab:M_table',
+                                 digits = 3)    
 
-	pre-STAR model	adjusted, tuned model	without cpue indices
-M (females)	0.145	0.159	0.174
-M (males)	0.138	0.138	0.15
-
+    # Print M table
+      print(M_table.table, 
+            include.rownames=FALSE, 
+            caption.placement='top',
+            sanitize.text.function = function(x){x})
+```
+<!-- ---------------------------------------------------------------------- -->
  
 ![Comparison of prior distribution, model initial value, and posterior for natural mortality (females) as estimated from the Northern base model.\label{fig:NatM}](STAR_Response.figs/NatM.Fig.9.png)
 
