@@ -5,13 +5,16 @@ This assessment reports the status of the `r spp` (\emph{`r spp.sci`}) resource 
 
 The Pacific Fishery Management Council (PFMC) manages the U.S. fishery as two stocks separated at Cape Mendocino, California (40$^\circ$ 10'N). The northern stock has long been assessed on its own; the southern stock is managed as part of the "Minor Shelf Rockfish" complex.  This assessment analyzed each stock independently, with the southern stock extending southward to the U.S./Mexico border and the northern stock extending northward to the U.S./Canada border (Figure \ref{fig:assess_region_map_Exec_Sum}).
 
-The Southern model was not robust enough for management purposes; therefore the data and sensitivities investigated for the model are reported in this document, however results of any of those sensitivities are inherently misleading.  We report estimates and projections only for the Northern model.
+
+The Southern model was not robust enough for management purposes, mainly due to lack of data.  Therefore although the data and sensitivities investigated for the model are reported in this document, the results of any of those sensitivities should be interpreted with the recognition that the model is not considered suitable for management.  We therefore report estimates and projections only for the Northern model.
+
 
 ![Map depicting the boundaries for the base-case model.  \label{fig:assess_region_map_Exec_Sum}](Figures/assess_region_map_v2.png)
 
 The most recent fully integrated assessment [@Wallace2005], following the pattern of prior assessments, included only the Northern stock which it divided into three assessment areas with divisions at Cape Elizabeth (47$^\circ$ 20'N) and Cape Falcon (45$^\circ$ 46'N).  The northern stock was assessed most recently using a data-moderate assessment method in 2013 [@Cope2013]. The southern stock was also analyzed using the data-moderate method but that model was never reviewed or put forward for management. The contribution of the southern stock to the overfishing limit (OFL) for the Southern Shelf Complex was determined using Depletion-Based Stock Reduction Analysis [@Dick2011]. 
 
 Since the 2005 assessment, reconstruction of historical catch by Washington and Oregon makes any border but the state line (roughly 46$^\circ$ N) incompatible with the data from those states.  Additionally, an unknown amount of the groundfish catch landed in northern Oregon is believed to have been caught in Washington waters.  This is not an issue that can be resolved at present, and we have elected to address the stock in two areas consistent with the management border at Cape Mendocino.  This is consistent, as well, with a recent genetic analysis [@Hess2011] that found distinct stocks north and south of Cape Mendocino but did not find stock differences within the northern area. 
+
 
 \FloatBarrier
 
@@ -61,12 +64,18 @@ Catches from the Southern stock (Figure \ref{fig:r4ss_catch_S}) were divided int
 ##Data and Assessment{-}
 `r spp` north of Cape Mendocino (40$^\circ$ 10'N) was most recently assessed as part of a 2013 data-moderate stock assessment [@Cope2013] that did not include any length or age data. The northern stock was previously assessed in 2000 [@Tagart2000] with that assessment updated in 2003 and 2005 [@Lai2003, @Wallace2005]. The stock south of 40$^\circ$ 10'N has never been fully assessed due to the lack of data for this area.
 
-This assessment uses Stock Synthesis version 3.30.  The Northern model begins in `r Dat_start_mod1`, as does the Southern model. In both cases those starting years were chosen based on the first year of the available catch data and the start of the estimated recruitment deviations was at a later point, so both models were assumed to start at an unfished equilibrium.
- 
+Northern model landings are from one recreational and two commercial fisheries: the commercial trawl fishery and the bycatch of Yellowtail Rockfish in the Hake fishery.  The Triennial Trawl Survey and the NWFSC Shelf-Slope Survey provide fishery-independent information.  A research study and the West Coast Groundfish Observing Program provide data on discards.  Length and age samples are available from 1972 to the present (308,133 and 16,781 samples, respectively).
+
+Southern model landings are treated as one recreational and one commercial fishery. Two recreational surveys have been conducted onboard private fishing vessels, and a Hook and Line Survey conducted by the NWFSC provides fishery-independent survey data, although this survey is conducted mainly outside the range of the stock, and has only been sampling since 2004.  No discard data are available for the Southern model.  Biological sampling since 1980 provides 179,308 length samples, however age sampling was sparse (6,352 samples) and mainly covers the period 1980-1999.
+
+Lack of data for the Southern model contributed heavily to its failure to meet standards for use in management.
+
+This assessment uses Stock Synthesis version 3.30.  The Northern model begins in `r Dat_start_mod1`, as does the Southern model. In both cases those starting years were chosen based on the first year of the available catch data and the start of the estimated recruitment deviations was at a later point, so both models were assumed to start at an unfished equilibrium.  Steepness was fixed in both models at 0.718.  Natural mortality was estmated in the Northern model for females with a male offset, and those estimated values from the Northern model were used as fixed values in the Southern model. Growth parameters, selectivities, equilibrium recruitment and recruitment deviations were estimated in both models.
+
 ##Stock Biomass{-}
 The spawning output for the Northern model was estimated to have fallen below 40\% of unfished equilibrium in the early 1980s, to a minimum of `r MinDepl_mod1`% in `r MinDeplYr_mod1` but has rebounded since to `r Depl_mod1` in 2017 (~95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Figures \ref{fig:Spawnbio_all} and \ref{fig:RelDeplete_all}, Table \ref{tab:SpawningDeplete_mod1}).
 
-The spawning output and depletion from the Final Southern model are shown in the same set of figures for comparison, although this model is not being put forward for management.
+The spawning output and depletion from the final Southern model are shown in the same set of figures for comparison, although this model is not being put forward for management, however most variations of the Southern model explored during development and review showed the stock to be healthy and well above management targets.
 
 \FloatBarrier
 
@@ -93,9 +102,9 @@ The spawning output and depletion from the Final Southern model are shown in the
 \FloatBarrier
 
 
-![Time series of spawning output trajectory (circles and line: median; light broken lines: 95% credibility intervals) for the base case Northern model and Final Southern model.  \label{fig:Spawnbio_all}](`r spawn.file`)
+![Time series of spawning output trajectory (line: median; shaded areas: approximate 95% credibility intervals) for the base case Northern model and final Southern model.  \label{fig:Spawnbio_all}](`r spawn.file`)
 
-![Estimated relative depletion with approximate 95\% asymptotic confidance intervals (dashed lines) for the base case Northern model and Final Southern model. \label{fig:RelDeplete_all}](`r Bratio.file`)
+![Estimated relative depletion with approximate 95\% asymptotic confidance intervals (dashed lines) for the base case Northern model and final Southern model. \label{fig:RelDeplete_all}](`r Bratio.file`)
 
 <!-- ***********END  EXECUTIVE SUMMARY SPAWNING BIOMASS AND**************** -->
 
@@ -108,7 +117,10 @@ The spawning output and depletion from the Final Southern model are shown in the
 
 ##Recruitment{-}
 
-Text describing recruitment.  TOADS
+The Northern model recruitments have ranged from roughly 21 million to 72 million since 2008, although with large uncertainty.  Recruitments have shown remarkable consistency since 2013.  
+
+Southern model recruitments have ranged from 21 million to 103 million.  In 2008 and 2010 it estimates especially large recruitments and extra large recruitment deviations.
+
 
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY RECRUITMENT TABLES AND FIGURES***** -->
@@ -134,7 +146,7 @@ Text describing recruitment.  TOADS
 
 \FloatBarrier
 
-![Time series of estimated `r spp` recruitments for the base-case Northern model and Final Southern Model with 95\% confidence or credibility intervals. \label{fig:Recruits_all}](`r recruit.file`)
+![Time series of estimated `r spp` recruitments for the base-case Northern model and final Southern Model with 95\% confidence or credibility intervals. \label{fig:Recruits_all}](`r recruit.file`)
 
 <!-- ***********END EXECUTIVE SUMMARY RECRUITMENT TABLEs AND FIGURES******* -->
 
@@ -177,10 +189,10 @@ A summary of `r spp` exploitation histories for the Northern base model is provi
 
 \FloatBarrier
 
-![Estimated spawning potential ratio (SPR) for the base-case Northern model and Final Southern model. One minus SPR is plotted so that higher exploitation rates occur on the upper portion of the y-axis. The management target is plotted as a red horizontal line and values above this reflect harvests in excess of the overfishing proxy based on the SPR\textsubscript{50\%} harvest rate. The last year in the time series is `r Dat_end_mod1`. \label{fig:SPR_all}](`r SPR.file`)
+![Estimated spawning potential ratio (SPR) for the base-case Northern model and final Southern model. One minus SPR is plotted so that higher exploitation rates occur on the upper portion of the y-axis. The management target is plotted as a red horizontal line and values above this reflect harvests in excess of the overfishing proxy based on the SPR\textsubscript{50\%} harvest rate. The last year in the time series is `r Dat_end_mod1`. \label{fig:SPR_all}](`r SPR.file`)
 
 
-![Phase plot of estimated relative (1-SPR) vs. relative spawning biomass for the base case Northern model and Final Southern model. The relative (1-SPR) is (1-SPR) divided by 50\% (the SPR target). Relative depletion is the annual spawning biomass divided by the unfished spawning biomass. \label{fig:Phase_all}](`r Phase.file`)
+![Phase plot of estimated relative (1-SPR) vs. relative spawning biomass for the base case Northern model and final Southern model. The relative (1-SPR) is (1-SPR) divided by 50\% (the SPR target). Relative depletion is the annual spawning biomass divided by the unfished spawning biomass. \label{fig:Phase_all}](`r Phase.file`)
 
 <!-- ************END EXECUTIVE SUMMARY EXPLOITATION************************ -->
 <!-- ************AND SPRratio TABLE AND FIGURES**************************** -->
@@ -259,7 +271,15 @@ Total catch (including landings and discards) from the Northern stock has remain
 
 ##Unresolved Problems And Major Uncertainties{-}
 
-TBD after STAR panel  TOADS
+At the STAR meeting the Northern model underwent a major change in that the two fishery-dependent indices that had been included in the pre-STAR model were withdrawn.  Representatives of the Groundfish Advisory Panel and Washington Department of Fish and Wildlife identified mistaken assumptions about the datasets used in developing these indices.  In the case of the commercial logbook index, this had to do with underestimating the impact of changes in reporting the species and market categories which was occuring differently among the three reporting states.  The Hake bycatch index was developed with inaccurate information about the Hake fleet of the time, which was much more heterogeneous than had been believed.  These indices were removed because the biases introduced could not be addressed within the time-frame of the review; however they were influential in the model, and both merit further investigation.
+
+In the past, the Northern stock has been modeled as three stocks assumed to have a latitudinal cline in growth.  This was not addressed in the present model, in part because the Hess study [@Hess2011] suggests there is no genetic basis for such a cline, and because of objections raised by Washington and Oregon over boundary assumptions made previously.  Future research should examine the assumption that growth is invariant along the coast, and evaluate whether the Northern model is sensitive to alternate assumptions.
+
+Another structural decision in the Northern model was in treating female natural mortality as age-independent.  This conflicts with prior assessments of Yellowtail Rockfish and with recent assesments of other rockfish stocks.  Sex ratios in the data change definitively with age, and old females are conspicuous in their absence.  Assessments have addressed this by increasing female mortality after a certain age.  One problem with this approach is in defining the age at which such a change occurs. Another is that this assumes that the disappearance of older females is not due to their retirement to habitat unavailable to the fishery.  In any case, this was not investigated during the present assessment, and may have provided further insight had it been.
+
+The Southern model unquestionably had insufficient data to support an age-structured model.  The ages were sparse and the period since 1999 was barely represented at all.  The only fishery-independent survey (the Hook and Line Survey) is conducted mostly outside of the range of the species, and there is no discard data available for the Southern model.  Attempting this separate assessment of the Southern stock is useful in defining what constitutes sufficient data, but also in that discussions engendered by the lack of data has identified an otolith collection at the SWFSC that could be investigated, as well as otoliths collected in the Hook and Line Survey that have not been aged.
+
+A final problem common to all stocks caught in the midwater is the lack of a targeting survey.  The STAR panel report accompanying this document suggests several avenues to approach this problem.  Because depleted midwater stocks have impeded fishing for many species, the lack of such a survey is an ongoing financial burden on industry that deserves further attention.
 
 
 ##Decision Tables{-}
