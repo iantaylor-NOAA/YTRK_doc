@@ -51,7 +51,7 @@ If time allows, run the Southern model without the 1982 recreational catch spike
 
 \emph{Rationale}: To understand the influence of this catch, which is suspiciously large.
 
-\emp{Response}: Changing 1982 recreational catch to the average of the 1981 and 1983 catch had little impact on model results.  There was a 1.3% reduction in total removals from reducing this value.
+\emph{Response}: Changing 1982 recreational catch to the average of the 1981 and 1983 catch had little impact on model results.  There was a 1.3% reduction in total removals from reducing this value.
 
 **Request 5**
 For the Northern model, provide a table of the species that occur in each state's trawl logbook program.  Confirm the model is using nominal retained catch from the original logbook data.

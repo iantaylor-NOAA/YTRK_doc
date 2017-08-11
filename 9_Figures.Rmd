@@ -264,6 +264,8 @@
 
 ![Time series of relative spawning output estimated in sensitivity analyses for the `r mod1_label`. \label{fig:sens.N.Bratio}](Figures/North_sensitivities/compare3_Bratio.png)
 
+\FloatBarrier
+
 ### Likelihood profiles for `r mod1_label`
 
 ![Likelihood profile over the log of equilibrium recruitment ($R_0$) for the `r mod1_label`. \label{fig:profile_logR0.N}](Figures/profiles/profile_logR0.N.png)
