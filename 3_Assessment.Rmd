@@ -56,7 +56,7 @@ The PacFIN logbook (fish ticket) index developed for the commercial fishery is i
 
 \emph{Recreational}: The recreational fleet includes data from sport fisheries off Oregon, and northern California (Eureka and Del Norte counties), from MRFSS and RecFIN.  The index of abundance for the recreational fleet is in fish per angler-hour.  Length data for this fleet are undifferentiated by sex.
 
-\emph{Washington-Sport}:  The Washington data (WA_Sport) provides catches, lengths and ages, and was treated as a separate fleet for two reasons:  first, the length composition of the Washington catches were different from those in the recreational landings in Oregon and northern California (MRFSS/RecFIN data).  There are very large fish in this dataset, and fewer small ones.  Second, the WA_Sport landings are not available by weight, so they are entered in the model as numbers, andStock Synthesis internally converts them to weight using the combination of estimated selectivity for this fleet (informed by the length compositions), estimated growth, and the weight-length relationship.  Sex was available for the biological data, however many lengthed fish were not sexed, so the lengths for this fleet are undifferentiated by sex, although the ages are.
+\emph{Washington-Sport}:  The Washington data (WA_Sport) provides catches, lengths and ages, and was treated as a separate fleet because the WA_Sport landings are not available by weight, so they are entered in the model as numbers, and Stock Synthesis internally converts them to weight using the combination of estimated selectivity for this fleet (informed by the length compositions), estimated growth, and the weight-length relationship.  Sex was available for the biological data, however many lengthed fish were not sexed, so the lengths for this fleet are undifferentiated by sex, although the ages are.
 
 \emph{Research}:
 The Alaska Fisheries Science Center's Triennial Trawl survey, provides age- and length-compositions, and an index of abundance.  This survey was conducted every third year from 1977-2004. 
@@ -127,7 +127,7 @@ The Southern model has a total of `r sum(!is.na(mod2$parameters$Active_Cnt) & su
 The estimated parameters are described in greater detail below, and a full list of all estimated and fixed parameters is provided in Table \ref{tab:Model1_params} (Northern model) and Table \ref{tab:Model2_params} (Southern model).
 
 **Growth**
-5 parameters for female growth are estimated in each model: 3 von Bertalanffy parameters and 2 parameters for CV as a function of length at age  related to variability in length at age for small and large fish.
+Five parameters for female growth are estimated in each model: three von Bertalanffy parameters and two parameters for CV as a function of length at age  related to variability in length at age for small and large fish.
 
 Three parameters are estimated for male growth in each model as offset from female growth.  The size for small fish and CV for small fish were assumed equal to females.
 
@@ -213,7 +213,7 @@ Figure \ref{fig:total_bio.N} shows the total biomass following a similar pattern
 
 The relative spawning output (Figure \ref{fig:depl.N}) went below the 40\% target in the early 1980s, and may have been below the minimum stock size limit of 25% in the late 1990s, but has rebounded since to `r round(100*mod1$derived_quants["Bratio_2017","Value"])`% (see Table \ref{tab:Timeseries_mod1}).
 
-Figures \ref{fig:recruits1.N} and \ref{fig:recdevs1.N} address recruitments estimated the the model.  The first of these shows the age-0 recruits, and the second the recruitment deviations. There are no strong patterns in recruitment and the variability of the recruitment deviations was tuned to be 0.546 (based on the method of Methot & Taylor @Methot2011) which is slightly lower than what has been assumed or estimated for other rockfish in the California Current.  The stock-recruit curve, Figure \ref{fig:stock_recruit_curve.N} shows a shallow relationship between stock size and recruitment.}
+Figures \ref{fig:recruits1.N} and \ref{fig:recdevs1.N} address recruitments estimated the the model.  The first of these shows the age-0 recruits, and the second the recruitment deviations. There are no strong patterns in recruitment and the variability of the recruitment deviations was tuned to be 0.546 (based on the method of Methot & Taylor @Methot2011) which is similar to what has been assumed or estimated for other rockfish in the California Current.  The stock-recruit curve, Figure \ref{fig:stock_recruit_curve.N} shows a shallow relationship between stock size and recruitment.}
 
 
 
@@ -228,7 +228,7 @@ Discarding in the commercial fleet (Figure \ref{fig:r4ss_discard_fits.N}) is fit
 Fits to the indices for the northern model (Figure \ref{fig:index_fits1}) demonstrate the utility of the NWFSCcombo survey. Although the model misses the uptick at the end of the timeseries, it is the only recent index and is well-fit by the model.  The other indices are noisier.  Most of the indices are fairly flat, indicating little change in abundance during each time-period.  Although the fit to the Triennial index is poor, the data nicely reflects the changes in management during it's tenure:  the CPUE was falling during the 1980s and 1990s, then rising after stringent restrictions began in 2000.
 
 ### Lengths
-Bubble plots for the lengths in the fishery (Figure \ref{fig:comp_length_bubble_mod1_page1}) show the constancy of the commercial fleet, and the differences in growth between males and females; the females are larger, the males smaller.  The recreational fleet is represented by two different sampling regimes, and the changeover in the mid-2000s is clear in that panel.  That the WA\_Sport fishery catches larger fish is represented in the large bubbles at the top of the panel.  Had we examined that fishery earlier in the process of putting the model together, we might have settled on a larger maximum size bin, however that fishery remains the smallest portion of the catches.
+Bubble plots for the lengths in the fishery (Figure \ref{fig:comp_length_bubble_mod1_page1}) show the constancy of the commercial fleet, and the differences in growth between males and females; the females are larger, the males smaller.  The recreational fleet is represented by two different sampling regimes, and the changeover in the mid-2000s is clear in that panel.  
 
 Commercial length comps are very well fit (Figures \ref{fig:mod1_1_comp_lenfit_flt1mkt2_page1} and \ref{fig:mod1_5_comp_lenfit_data_weighting_TA1.8_Commercial Fishery}).  Commercial discards are noiser and not well fit (Figure \ref{fig:mod1_6_comp_lenfit_flt1mkt1}) although the fit to the mean length (which is lower than for the retained fish), is reasonable (Figure \ref{fig:mod1_5_comp_lenfit_data_weighting_TA1.8_Commercial Fishery}). 
 
@@ -246,7 +246,7 @@ Figure \ref{fig:mod1_30_comp_lenfit__aggregated_across_time} shows the relative 
 
 ### Ages
 
-The NWFSCcombo survey provided the only source of conditional age-at-length data for the Northern model; ages for other fleets were treated as marginal ages.  
+The NWFSCcombo survey was the only datasource used to inform growth as conditional age-at-length data for the Northern model; ages for other fleets were treated as marginal ages.  
 
 The fits to the marginal commercial Figure \ref{fig:mod1_1_comp_agefit_flt1mkt2_page1} are quite good from about 1979 on, even fitting the tail where the ages beyond 55 are lumped.  The weightings panel Figure \ref{fig:mod1_5_comp_agefit_data_weighting_TA1.8_Commercial Fishery} shows the same thing:  fits are good after about 1979, and the decrease in mean age in the population corresponds with high catches in the 1980s and 1990s, with mean age increasing after 2000 as catches were curtailed.
 
@@ -256,7 +256,7 @@ The Triennial ages are noisy but are fit surprisingly well \ref{fig:mod1_10_comp
 
 Aggregated age comps for the Commercial, Washington Sport and Triennial fleets are shown in Figure  \ref{fig:mod1_14_comp_agefit__aggregated_across_time}, for comparison.  Agreggated fits for the Commercial and Triennial fleets are very satisfying.
 
-The implied marginal age comps for the NWFSCcombo survey (Figure \ref{fig:mod1_16_comp_gstagefit_flt6mkt2}) are the conditional-age-at-length compositions for the survey aggregated over length.  This figure is included for informational purposes only; the marginal "ghost" comps are not included in the likelihood calculations.  It is interesting that the model fits these implied marginal ages less well than the conditional ages at length. This is likely due to a combination of factors: the implied marginal ages are not included in the liklihood, and when anomolous patterns appear, such as the numerous age-5 fish in 2013, as long as their ages are as expected given their lengths, the conditional-age-at-length data will be well fit. The implied marginal ages are also expanded to account for the size of the sampled catch relative to the total catch while the conditional data are not.
+The implied marginal age comps for the NWFSCcombo survey (Figure \ref{fig:mod1_16_comp_gstagefit_flt6mkt2}) are the conditional-age-at-length compositions for the survey aggregated over length.  This figure is included for informational purposes only; the marginal "ghost" comps are not included in the likelihood calculations. 
 
 Pearson residuals for the marginal age comps, are shown in the bubble plots in Figure \ref{fig:comp_Pearson_age_mod1}.  The filled bubbles represent estimates greater than observations, and the open bubbles observations greater than estimates. The large filled bubbles at age 25 in a few years suggest that we might have chosen a slightly older age as the compilation age.
 
@@ -316,13 +316,13 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt.
 
 ## Final Southern Model Results
 
-The results offered here are for a version of the Southern model that was thought to be the most robust among sensitivites, and is not a "Base Case", as the model was deemed too sensitive for management.
+The results offered here are for a version of the Southern model that was thought to be the most robust among sensitivites, and is not a "Base Case", as the model was deemed too uncertain for management.  The model was unable to estimate natural mortality (M), and was very sensitive to a range of alternates evaluated, responding to plausible values with large shifts in the scale of the population.  We investigated using the NWFSCcombo Survey as an index, however Yellowtail Rockfish do not occur in the survey trawls in large numbers in the south as they do in the north, therefore the Hook and Line Survey was the sole fishery-independent index available to inform the model.
 
 Data used in the Southern model is shown in Figure \ref{fig:data_plot.S}. 
 
 Estimated catches are shown in Figure \ref{fig:r4ss_catch2_S}.
 
-The estimated spawning biomass in Figure \ref{fig:ssb.S} shows the size of the uncertainty in this model. Total biomass (Figure \ref{fig:total_bio.S}) shows a sharp upward trend in recent years, the decade in which there is only one year of age data, 2004, from the Hook-and-Line Survey.  Spawning depletion likely dropped below the 40% target in the 1990s (Figure \ref{fig:depl.S}).
+The estimated spawning biomass in Figure \ref{fig:ssb.S} shows the size of the uncertainty in this model. Total biomass (Figure \ref{fig:total_bio.S}) shows a sharp upward trend in recent years, the decade in which there is only one year of age data, 2004, from the Hook-and-Line Survey.  Spawning depletion has likely never been below the 40% management target (Figure \ref{fig:depl.S}), since almost all variations of the model explored show a healthy stock well above that level.
 
 Recruitments have been constant, except 2008 and 2010, when the model sees extra large recruitments with extra large recruitment deviations (Figures \ref{fig:recruits1.S} and \ref{fig:recdevs1.S}).  The spawner-recruit curve, Figure \ref{fig:stock_recruit_curve.S} is a line.
 
