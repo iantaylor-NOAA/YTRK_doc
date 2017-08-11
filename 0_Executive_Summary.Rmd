@@ -394,7 +394,12 @@ The following research will be valuable for future `r spp` assessments:
 
 \begin{enumerate}
 
-\item A hindrance to analysis of the commercial fishery is the inability to distinguish between midwater and trawl gear, particularly in the 1980s-1990s.  Reliable recording of gear type will ensure that this does not continue to be problematic for future assessments.
+\item A problem common to assessments of all stocks caught in the midwater is the lack of a targeting survey.  Because limits on the take of depleted midwater stocks have impeded fishing for many species, the lack of such a survey is an ongoing financial burden on industry.
+
+\item Research to determine whether old females of a variety of rockfish species,  actually have a mortality rate different than that of younger females.  Assessments variously treat the discrepancies seen in sex ratios of older fish as either mortality-related or due unavailability to the fishery (e.g., ontogenetic movement offshore, or to rockier habitats).  As these assumptions impact model outcomes very differently, resolving this issue would greatly improve confidence in the assessments.
+
+
+\item A hindrance to analysis of the commercial fishery is the inability to distinguish between midwater and trawl gear, particularly in data from the 1980s-1990s.  Reliable recording of gear type will ensure that this does not continue to be problematic for future assessments.
 
 \item We recommend that the next assessment of the Northern stock be an update to this assessment, unless fishing patterns change dramatically, or new sources of data are discovered.
 
@@ -403,6 +408,8 @@ The following research will be valuable for future `r spp` assessments:
 \begin{itemize}
 \item A commercial index in the North.  This is by far the largest segment of the fishery, and the introduction of the trawl rationalization program should mean that an index can be developed for the current fishery when the next full assessment is performed.
 
+\item Further investigation into an index for the commercial logbook dataset from earlier periods.
+
 \item Further analysis of growth patterns along the Northern coast.  The previous full assessment subdivided the Northern stock based on research showing differential growth along the coast, and although data for the assessment is no longer available along the INPFC areas used in that analysis, there may be some evidence of growth variability that would be useful to include in a future assessment.
 
 \end{itemize}
@@ -410,11 +417,12 @@ The following research will be valuable for future `r spp` assessments:
 \item The Southern stock cannot be evaluated with a full statistical catch-at-age model unless more data are made available. In particular, we feel that the following are minimally required:
 
 \begin{itemize}
-\item A longer timeseries of the juvenile rockfish CPUE in the south, which will of course only be available after several years have elapsed..
+\item A longer timeseries of the juvenile rockfish CPUE in the south, which will of course only be available after several years have elapsed.
 
-\item A timeseries of recent ages for the Southern model.  The commercial age timeseries currently stops in 2002. Otoliths have been collected for all years in the Hook \& Line survey, however only samples from 2004 have been aged.
+\item A timeseries of recent ages for the Southern model.  The commercial age timeseries currently stops in 2002. Otoliths have been collected for all years in the Hook \& Line survey, however only samples from 2004 have been aged.  There may also be a collection otoliths associated with research at the SWFSC, and these should be investigated as well.
 
 \end{itemize}
+
 \end{enumerate}
 
 \FloatBarrier

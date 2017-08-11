@@ -24,11 +24,11 @@ For each model, provide the numbers of fish north and south of 40°10’ N lat. 
 
 \emph{Rationale}: To see if there is greater uncertainty and/or bias from samples collected in only one area.
 
-\emph{Response}: There were an insufficient number of otoliths from each area for a comparison of cross-lab reads.  Cross-reads between WDFW and NWFSC within-lab comparison for the northern area alone showed a minor deviation from the one to one line for the 121 samples compared \ref{fig:AgeReads}.  
+\emph{Response}: There were an insufficient number of otoliths from each area for a comparison of cross-lab reads.  Cross-reads between WDFW and NWFSC within-lab comparison for the northern area alone showed a minor deviation from the one to one line for the 121 samples compared (Figure \ref{fig:AgeReads}).  
 
 There were 1085 otoliths from the northern area and only 88 fish from south (collected in the NWFSC Trawl survey) that were double read by the NWFSC in within-lab comparisons.  
 
-There were few deviations from the one to one line for within-lab double reads by the NWFSC in either area \ref{fig:AgeReads}.  The R-square values were 0.9198 and 0.9515 for northern or southern areas, respectively showing no discernable difference in the accuracy of reads between areas for the within-lab reads.  
+There were few deviations from the one to one line for within-lab double reads by the NWFSC in either area (Figure \ref{fig:AgeReads}).  The R-square values were 0.9198 and 0.9515 for northern or southern areas, respectively showing no discernable difference in the accuracy of reads between areas for the within-lab reads.  
  
 ![Comparison of yellowtail rockfish age determination double reads across aging laboratories (upper left) and within-lab (survey age structures) in each area.\label{fig:AgeReads}](STAR_Response.figs/Age.reads.Fig.3a.png)
 
