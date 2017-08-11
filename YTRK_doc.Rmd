@@ -2,7 +2,7 @@
 title: 'Status of Yellowtail Rockfish (*Sebastes flavidus*) Along the U.S. Pacific Coast in 2017'
 author: ''
 date: ''
-footer: 'July 5 DRAFT with proposed alternative Southern model'
+footer: 'July 11th DRAFT'
 output:
   pdf_document:
     fig_caption: yes
