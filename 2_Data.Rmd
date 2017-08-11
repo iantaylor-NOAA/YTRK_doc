@@ -130,11 +130,11 @@ Pikitch study discards were aggregated due to small sample size and included in 
 
 ###Abundance Indices \label{abundance-indices}
 
-Two fishery-dependent abundance indices were developed for this analysis that were discovered in course of review to be based on incomplete information about how the commercial trawl and Hake fisheries were operated in the late 1980s through the late 1990s.  Representatives from WDFW and from the Council's Groundfish Advisory Panel raised objections to the Commercial Trawl Index and the Hake Bycatch Index, respectively, and they were ultimately removed from the model.
+Two fishery-dependent abundance indices were developed for this analysis that were discovered in course of review to be based on incomplete information about how the commercial trawl and Hake fisheries were operated in the late 1980s through the late 1990s.  Representatives from WDFW and from the Council's Groundfish Advisory Panel raised numerous concerns about the Commercial Trawl Index and the Hake Bycatch Index, respectively, and they were ultimately removed from the model.
 
-The commercial trawl index used the species composition of catch to infer the potential for Yellowtail Rockfish in each haul, however the way in which market categories were changing throughout the period of interest made the species composition of catch unreliable (Theresa Tsou, pers. comm.). The Hake fishery was explained to have had greater heterogeneity among the boats used in the fishery than had been assumed in developing the index (Dan Waldeck, pers. comm.).
+The commercial trawl index used the species composition of catch to infer the potential for Yellowtail Rockfish in each haul, however the way in which market categories were changing throughout the period of interest made the species composition of catch  led to concerns about the consistency of the resolution of catch reporting over time (Theresa Tsou, pers. comm.). The Hake fishery was explained to have had greater heterogeneity among the boats used in the fishery than had been assumed in developing the index (Dan Waldeck, pers. comm.).
 
-Give the unknown impact of incomplete information used in developing these indices, and that there were fishery-independent indices covering the period in question, the decision was made to withdraw these two indices.  They are described in Appendix B for completeness.
+Give the unknown impact of incomplete information used in developing these indices which could not be adequately addressed during the review, and that there were fishery-independent indices covering the period in question, the decision was made to withdraw these two indices.  They are described in Appendix B for completeness.
 
 <!-- ************FISHERY-INDEPENDENT DATA*********************************** -->
 
@@ -303,7 +303,7 @@ This assessment uses two indices derived from onboard CPFV observer data and col
 
 The CDFW (formerly CDFG) Central California Marine Sport Fish Project sampled the Northern and Central California CPFV fleet using onboard observers from 1987-1998. Observers recorded the total catch (kept and released fish) of a subset of anglers during each fishing drift. Catches from drifts occurring at a single CDFW fishing site were aggregated into a “fishing stop.” Each stop in the database is associated with the closest reef structure. Retained fish were measured at the end of the fishing day. Additional details about the survey design, data collected, spatial associations between fishing stops and reef habitat, and the structure of the relational database are described in [@Monk2016].
 
-*1999-2011*
+*1999-2016*
 California onboard CPFV observer data, spanning the years 1999-2011 was provided by the SWFSC [@Monk2014]. Each observation included a unique trip and drift identifier, and a subset of anglers was observed at each drift. Drift-level information included catch of blue rockfish in numbers (kept and discarded) including zeros, number of observed anglers, time fished (in minutes), location where drift began (latitude and longitude), year, month, county, CRFS district, depth (in feet), distance from nearest reef habitat (in meters), and unique reef identified.
 
 Indices from these datasets were provided by the SWFSC according to the methods described in [@Monk2016].
