@@ -30,7 +30,7 @@ There were 1085 otoliths from the northern area and only 88 fish from south (col
 
 There were few deviations from the one to one line for within-lab double reads by the NWFSC in either area \ref{fig:AgeReads}.  The R-square values were 0.9198 and 0.9515 for northern or southern areas, respectively showing no discernable difference in the accuracy of reads between areas for the within-lab reads.  
  
-![Comparison of yellowtail rockfish age determination double reads across aging laboratories (upper left) and within-lab (survey age structures) in each area.\label{AgeReads}](STAR_Response.figs/Age.reads.Fig.3a.png)
+![Comparison of yellowtail rockfish age determination double reads across aging laboratories (upper left) and within-lab (survey age structures) in each area.\label{fig:AgeReads}](STAR_Response.figs/Age.reads.Fig.3a.png)
 
 ![](STAR_Response.figs/Age.reads.Fig.3b.png)
 
@@ -71,7 +71,7 @@ Recalculate the trawl logbook CPUE index to catch/tow hour rather than catch/tow
 
  
 
-![Original and revised trawl CPUE index upon standardizing data to catch per tow hour and refining the list of co-occurring species for the filtering model.\label{Logbook_CPUE}](STAR_Response.figs/Logbook.CPUE.Fig4.png)
+![Original and revised trawl CPUE index upon standardizing data to catch per tow hour and refining the list of co-occurring species for the filtering model.\label{fig:Logbook_CPUE}](STAR_Response.figs/Logbook.CPUE.Fig4.png)
 
 
 Information that came to light about the commercial data collection both in the trawl fishery and in the directed hake fishery during the course of the STAR panel eroded confidence in this index as well as confidence in the hake bycatch index. These indices were ultimately omitted from the Northern base model.
@@ -88,10 +88,14 @@ The second issue concerned sample sizes for the age comps, for which there was a
 Both lengths and ages for the WA recreational fishery were re-processed. Old (above) and new (below) length compositions are shown in Figure \ref{fig:Fig5_A}. Data reprocessing removed the spikes at large sizes that were shown in the length composition. 
 
 These reworked data were used in the Northern base model.
-  
-![Draft (above) and final (below) model length compositions for the WA recreational fleet when correcting length units and effective starting sample sizes.\label{Fig5_A}](STAR_Response.figs/LengthComps.Fig5a.png)
 
-![](STAR_Response.figs/LengthComps.Fig5b.png)
+\FloatBarrier
+
+![Draft (above) and final (below) model length compositions for the WA recreational fleet when correcting length units and effective starting sample sizes.\label{fig:Fig5_A}](STAR_Response.figs/LengthComps.Fig5a.png)
+
+![Figure continued from previous page](STAR_Response.figs/LengthComps.Fig5b.png)
+
+\FloatBarrier
 
 **Request 8**
 Put a time block on the recreational selectivity pattern in the Northern model from 2003 onward.
@@ -100,7 +104,7 @@ Put a time block on the recreational selectivity pattern in the Northern model f
 
 \emph{Response}:  The model-estimated selectivity curves changed very little for the Oregon and Northern California recreational fisheries, however there was a noticeable change for Washington when the time block was added. The selectivity estimates are compared in Figure \ref{fig:Sel_Curves}.
  
-![Estimated selectivity curves for northern model recreational fisheries when including a time block to account for regulatory changes.\label{Sel_Curves}](STAR_Response.figs/Sel.curves.fig.6.png)
+![Estimated selectivity curves for northern model recreational fisheries when including a time block to account for regulatory changes.\label{fig:Sel_Curves}](STAR_Response.figs/Sel.curves.fig.6.png)
 
 The corrections to the length and age compositions for Washington data preceeded this change to selectivities.  The selectivities were then allowed to be dome shaped, which resulted in better fits. Both the dome-shaped curve and the time block were incorporated into the base case model.
 
@@ -112,7 +116,7 @@ If time allows, estimate the added variance parameter for all indices in each mo
 \emph{Response}: Figure \ref{fig:Index_fits} shows the fits to the Northern model indices when additional variances for all indices are estimated.
 
 
-!Fits to index data for the Northern Yellowtail model when added variance parameters are estimated.\label{Index_fits}](STAR_Response.figs/IndexFits.Fig7.png)
+!Fits to index data for the Northern Yellowtail model when added variance parameters are estimated.\label{fig:Index_fits}](STAR_Response.figs/IndexFits.Fig7.png)
 
 This aspect of the analyses was not explored further but the additional variance was maintained in the model.
 
@@ -126,7 +130,7 @@ Re-tune the new base Northern model with the changes agreed on the 1st set of re
 \emph{Response}: The newly-tuned northern model was plotted with and without fishery CPUE indices, in comparison with the pre-STAR meeting model (Figure \ref{fig:Ch-Ch-Changes}).
 
 
-![Changes in base model as a result of STAR and STAT  recommendations.\label{Ch-Ch-Changes}](STAR_Response.figs/Changes.Fig.8.png)
+![Changes in base model as a result of STAR and STAT  recommendations.\label{fig:Ch-Ch-Changes}](STAR_Response.figs/Changes.Fig.8.png)
 
 
 The natural mortality estimated in northern models has increased due to the changed implemented. The posterior shown in Figure \ref{fig:NatM} is much narrower than the prior, supporting a much smaller range of plausible values for M. 
@@ -140,7 +144,7 @@ M (females)	0.145	0.159	0.174
 M (males)	0.138	0.138	0.15
 
  
-![Comparison of prior distribution, model initial value, and posterior for natural mortality (females) as estimated from the Northern base model.\label{NatM}](STAR_Response.figs/NatM.Fig.9.png)
+![Comparison of prior distribution, model initial value, and posterior for natural mortality (females) as estimated from the Northern base model.\label{fig:NatM}](STAR_Response.figs/NatM.Fig.9.png)
 
 **Request 11**
 Use the preliminary new M estimate from the revised Northern model in the Southern model as revised after the first round of requests.  Compare the existing Southern base and the new potential base using the new M estimate.  Explore other M assumptions in the Southern model as deemed appropriate and as time allows.
@@ -149,7 +153,7 @@ Use the preliminary new M estimate from the revised Northern model in the Southe
 
 \emph{Response}: The pre-STAR value for M of 0.14 was replaced by the value of 0.175 based on the value estimated in the proposed Northern base model.  Results are shown in Figure \ref{fig:Spawn_till_you_die}.
  
-![Spawning output and confidence intervals for the yellowtail rockfish southern assessment base model and the alternative model with a higher value of M.\label{Spawn_till_you_die}](STAR_Response.figs/Spawn.Fig.10.png)
+![Spawning output and confidence intervals for the yellowtail rockfish southern assessment base model and the alternative model with a higher value of M.\label{fig:Spawn_till_you_die}](STAR_Response.figs/Spawn.Fig.10.png)
 
 
 **Request 12**
