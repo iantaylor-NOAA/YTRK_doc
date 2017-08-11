@@ -396,7 +396,7 @@ The following research will be valuable for future `r spp` assessments:
 
 \item A problem common to assessments of all stocks caught in the midwater is the lack of a targeting survey.  Because limits on the take of depleted midwater stocks have impeded fishing for many species, the lack of such a survey is an ongoing financial burden on industry.
 
-\item Research to determine whether old females of a variety of rockfish species,  actually have a mortality rate different than that of younger females.  Assessments variously treat the discrepancies seen in sex ratios of older fish as either mortality-related or due unavailability to the fishery (e.g., ontogenetic movement offshore, or to rockier habitats).  As these assumptions impact model outcomes very differently, resolving this issue would greatly improve confidence in the assessments.
+\item Research to determine whether old females of a variety of rockfish species  actually have a mortality rate different than that of younger females.  Assessments variously treat the discrepancies seen in sex ratios of older fish as either mortality-related or due unavailability to the fishery (e.g., ontogenetic movement offshore, or to rockier habitats).  As these assumptions impact model outcomes very differently, resolving this issue would greatly improve confidence in the assessments.
 
 
 \item A hindrance to analysis of the commercial fishery is the inability to distinguish between midwater and trawl gear, particularly in data from the 1980s-1990s.  Reliable recording of gear type will ensure that this does not continue to be problematic for future assessments.
