@@ -377,10 +377,10 @@ for (model in 1:n_models) {
 
   # added pmax to avoid negative values
   Exploityrs$lowerCI = pmax(0, round(Exploityrs$Value +
-                                       qnorm(0.025) * Exploityrs$StdDev, digits = 2))
+                                       qnorm(0.025) * Exploityrs$StdDev, digits = 3))
   
   Exploityrs$upperCI = round(Exploityrs$Value -
-                            qnorm(0.025) * Exploityrs$StdDev, digits = 2)
+                            qnorm(0.025) * Exploityrs$StdDev, digits = 3)
   
   Exploityrs$CI = paste('(', Exploityrs$lowerCI, '-', Exploityrs$upperCI, ')', sep='')
   
@@ -423,8 +423,8 @@ SPRratio_Exploit_mod1.table = xtable(SPRratio_Exploit_mod1,
                                         ratio and exploitation for ', spp, ' in the ', 
                                         mod1_label, '.  Fishing intensity is (1-SPR) 
                                         divided by 50\\% (the SPR target) and exploitation 
-                                        is F divided by F\\textsubscript{SPR}.', sep='')), 
-                              label='tab:SPR_Exploit_mod1')  
+                                        is catch divided by age 4+ biomass.', sep='')), 
+                              label='tab:SPR_Exploit_mod1', digits=3)  
       
 align(SPRratio_Exploit_mod1.table) = c('l','l',
                                        '>{\\centering}p{1in}',
@@ -439,8 +439,8 @@ SPRratio_Exploit_mod2.table = xtable(SPRratio_Exploit_mod2,
                                         ratio and exploitation for ', spp, ' in the ', 
                                         mod2_label, '. Fishing intensity is (1-SPR) 
                                         divided by 50\\% (the SPR target) and exploitation 
-                                        is F divided by F\\textsubscript{SPR}.', sep='')), 
-                              label='tab:SPR_Exploit_mod2')  
+                                        is catch divided by age 4+ biomass.', sep='')), 
+                              label='tab:SPR_Exploit_mod2', digits=3)  
         
 align(SPRratio_Exploit_mod2.table) = c('l','l',
                                        '>{\\centering}p{1in}',
@@ -781,7 +781,7 @@ mngmt = mngmt[,-1]
 # Model 1
   # SPR ratio and exploitation
   SPRratio_Exploit_mod1 = SPRratio_Exploit_mod1[2:nrow(SPRratio_Exploit_mod1),c(2,4)]
-  SPRratio_Exploit_mod1[,c(1,2)] = round(SPRratio_Exploit_mod1[,c(1,2)],2)
+  SPRratio_Exploit_mod1[,c(1,2)] = round(SPRratio_Exploit_mod1[,c(1,2)],3)
 
   # SPR blanks for the last year
   blanks = c(NA,NA)
@@ -796,8 +796,8 @@ mngmt = mngmt[,-1]
   
   # Spawning biomass and depltion
   SpawnDeplete_mod1 = SpawnDeplete_mod1[,c(2:5)]
-  SpawnDeplete_mod1[,1] = round(SpawnDeplete_mod1[,1],1)
-  SpawnDeplete_mod1[,3] = round(SpawnDeplete_mod1[,3],1)
+  SpawnDeplete_mod1[,1] = round(SpawnDeplete_mod1[,1],2)
+  SpawnDeplete_mod1[,3] = round(SpawnDeplete_mod1[,3],2)
   
   # Recruitment
   Recruittab_mod1 = Recruittab_mod1[,c(2,3)]
@@ -813,7 +813,7 @@ mngmt = mngmt[,-1]
 if (n_models >= 2) {
   # SPR ratio and exploitation
   SPRratio_Exploit_mod2 = SPRratio_Exploit_mod2[2:nrow(SPRratio_Exploit_mod2),c(2,4)]
-  SPRratio_Exploit_mod2[,c(1,2)] = round(SPRratio_Exploit_mod2[,c(1,2)],2)
+  SPRratio_Exploit_mod2[,c(1,2)] = round(SPRratio_Exploit_mod2[,c(1,2)],3)
   #SPRratio_Exploit_mod2 = SPRratio_Exploit_mod2[-dim(SPRratio_Exploit_mod2)[1],]
   SPRratio_Exploit_mod2 = rbind(SPRratio_Exploit_mod2,blanks)
   rownames(SPRratio_Exploit_mod2)[10]='Lastyear'
@@ -824,9 +824,9 @@ if (n_models >= 2) {
   Summary_biomassyrs_mod2 = Summary_biomassyrs_mod2[,2]
   Summary_biomassyrs_mod2 = round(Summary_biomassyrs_mod2/bio_scale,2)
   
-  # Spawning biomass and depltion
+  # Spawning biomass and depletion
   SpawnDeplete_mod2 = SpawnDeplete_mod2[,c(2:5)]
-  SpawnDeplete_mod2[,1] = round(SpawnDeplete_mod2[,1],0)
+  SpawnDeplete_mod2[,1] = round(SpawnDeplete_mod2[,1],2)
   SpawnDeplete_mod2[,3] = round(SpawnDeplete_mod2[,3],2)
   
   # Recruitment 
@@ -927,8 +927,8 @@ if (n_models == 2) {
   colnames(base_summary) = c('Model Region','Quantity',seq(FirstYR+1,LastYR+1))
   
   # # Create the table
-  base_summary.table = xtable(base_summary, caption=c(paste(spp,' base case results summary.',sep='')),
-                              label='tab:base_summary',digits=0)
+  base_summary.table = xtable(base_summary, caption=c('Results summary for base-case Northern model and final Southern model.'),
+                              label='tab:base_summary',digits=3)
   # # Add alignment   
   align(base_summary.table) = c('l',
                                 'r',

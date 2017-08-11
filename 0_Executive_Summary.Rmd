@@ -155,7 +155,7 @@ Southern model recruitments have ranged from 21 million to 103 million.  In 2008
 
 
 ##Exploitation status{-}
-The Northern model is estimated to have experienced overfishing throughout the 1980s and 1990s relative to the current SPR-based harvest limits (Figure \ref{fig:SPR_all}). However, the fishing intensity is estimated to have remained below 100% for all years. In recent years, the fishing intensity has been well within the management limits (Table \ref{tab:SPR_Exploit_mod1}).
+The Northern model is estimated to have experienced overfishing throughout the 1980s and 1990s relative to the current SPR-based harvest limits (Figure \ref{fig:SPR_all}). However, in recent years, the fishing intensity has been well within the management limits and exploitation rates (catch divided by age 4+ biomass) are estimated to have been less than 2\% per year (Table \ref{tab:SPR_Exploit_mod1}).
 
 A summary of `r spp` exploitation histories for the Northern base model is provided as Figure \ref{fig:Phase_all}.
 
