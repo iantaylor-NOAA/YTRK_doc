@@ -370,17 +370,17 @@ if(n_models == 3){
 
 <!-- ***********Yield curve table****************************************** -->
 ```{r, results='asis'}
-   # Select the file to use for the yield curve depending on the number of models
-   n_models == 2
-   if(n_models == 1) {
-     yield.file  = 'r4ss/plots_mod1/yield1_yield_curve.png'
-    } else {
-     yield.file  = 'r4ss/plots_compare/yield_comparison_n_models.png'
-   }
+   # # Select the file to use for the yield curve depending on the number of models
+   # n_models == 2
+   # if(n_models == 1) {
+   #   yield.file  = 'r4ss/plots_mod1/yield1_yield_curve.png'
+   #  } else {
+   #   yield.file  = 'r4ss/plots_compare/yield_comparison_n_models.png'
+   # }
 ```
 <!-- ***********Edit caption based on fixed params************************* -->
 
-![Equilibrium yield curve for the base-case Northern model and final Southern model.\label{fig:Yield_all}](`r yield.file`)
+![Equilibrium yield curve for the base-case Northern model and final Southern model.\label{fig:Yield_all}](r4ss/plots_compare/yield_comparison_n_models.png)
 
 <!-- ***********END EXECUTIVE SUMMARY RESULTS SUMMARY TABLE AND YIELD CURVE -->
 
