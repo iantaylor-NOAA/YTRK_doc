@@ -113,10 +113,9 @@ If time allows, estimate the added variance parameter for all indices in each mo
 
 \emph{Rationale}: This is standard practice.
 
-\emph{Response}: Figure \ref{fig:Index_fits} shows the fits to the Northern model indices when additional variances for all indices are estimated.
+\emph{Response}: Figure \ref{fig:Index_fits_STAR} shows the fits to the Northern model indices when additional variances for all indices are estimated.
 
-
-!Fits to index data for the Northern Yellowtail model when added variance parameters are estimated.\label{fig:Index_fits}](STAR_Response.figs/IndexFits.Fig7.png)
+![Fits to index data for the Northern Yellowtail model when added variance parameters are estimated. At this point in the review, all four indices were included in the model. For the final base model, the commercial trawl index and hake index were removed from the likelihood and the extra variance parameters no longer estimated.\label{fig:Index_fits_STAR}](STAR_Response.figs/IndexFits.Fig7.png)
 
 This aspect of the analyses was not explored further but the additional variance was maintained in the model.
 
