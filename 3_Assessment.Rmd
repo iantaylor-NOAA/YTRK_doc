@@ -397,6 +397,9 @@ Estimating M resulted in estimates of $M = 0.21$ for females and $M = 0.23$ for 
 
 
 ### Final Southern Model Likelihood Profiles
+
+The Southern model likelihood profiles shown here are those for one of the many sensitivities, and may be slightly different than those that would be the result of profiles on the "final" Southern model.  These likelihood profiles show the general pattern of likelihood profiles for the Southern model, which was not found to be sufficient for management purposes.
+
 We profiled the change in negative log likelihood for the data sources and model total likelihood for critical parameters fixed in the model:  **$log(R_0)$**, the log of equilibrium recruitment; female natural mortality, **MF**; male natural mortality, **MM**; and steepness, **h** the parameter that reflects how quickly the stock-recruit relationship allows the stock to rebound from depleted stock size.
 
 The likelihood profile for **$log(R_0)$** is shown in Figure \ref{fig:profile_logR0.S}.  The parameter $log(R_0)$ was profiled over values from 8.6-11.0.  The figure shows that best fit to the age and length data all occur in the range of 9.0 to 9.6 but the indices are best fit at the upper end of the range: 11.0.  The overall negative-log-likelihood is minimized at `r round(mod2$parameters["SR_LN(R0)","Value"],1)`.
@@ -408,7 +411,8 @@ Male natural mortality (MM) is profiled over a range from -0.4 to 0.  Male natur
 The profile over stock-recruit steepness (Figure \ref{fig:profile_h.S}) shows little information about steepness, with the change in total likelihood less than 0.7, over a range of $h = 0.5$ to $h = 0.9$. This supports the conclusion that the stock was never at a very low biomass.  For a more depleted stock, steepness would have a larger impact on the likelihood. The lack of information on steepness supports the choice to fix the value at the mean of the prior: $h=0.718$.
 
 ### Final Southern Model Retrospective Analysis
-\hl{This section not yet updated to reflect final Southern model.}
+
+The Southern model retrospectives shown here are those for one of the many sensitivities, and may be slightly different than those that would be the result of arun on the "final" Southern model.  These retrospectives show the general pattern of retrospectives for the Southern model, which was not found to be sufficient for management purposes.
 
 The Southern model shows a retrospective pattern in which removing one year of data at a time leads to slightly higher estimates of spawning output (Figure \ref{fig:retro.S}). The changes associated with 1 or 2 years of data removed are relatively small, but removing years of data had a larger impact on spawning output, with equilibrium value increasing from 2.8 trillion eggs to 3.5 trillion eggs when 5 years of data were removed. 
 

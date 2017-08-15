@@ -2,7 +2,6 @@
 #Research and Data Needs
 
 The following research will be valuable for future `r spp` assessments:
-The following research will be valuable for future `r spp` assessments:
 
 \begin{enumerate}
 
