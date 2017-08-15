@@ -213,7 +213,7 @@ Figure \ref{fig:total_bio.N} shows the total biomass following a similar pattern
 
 The relative spawning output (Figure \ref{fig:depl.N}) went below the 40\% target in the early 1980s, and may have been below the minimum stock size limit of 25% in the late 1990s, but has rebounded since to `r round(100*mod1$derived_quants["Bratio_2017","Value"])`% (see Table \ref{tab:Timeseries_mod1}).
 
-Figures \ref{fig:recruits1.N} and \ref{fig:recdevs1.N} address recruitments estimated the the model.  The first of these shows the age-0 recruits, and the second the recruitment deviations. There are no strong patterns in recruitment and the variability of the recruitment deviations was tuned to be 0.546 (based on the method of Methot & Taylor @Methot2011) which is similar to what has been assumed or estimated for other rockfish in the California Current.  The stock-recruit curve, Figure \ref{fig:stock_recruit_curve.N} shows a shallow relationship between stock size and recruitment.}
+Figures \ref{fig:recruits1.N} and \ref{fig:recdevs1.N} address recruitments estimated the the model.  The first of these shows the age-0 recruits, and the second the recruitment deviations. There are no strong patterns in recruitment and the variability of the recruitment deviations was tuned to be 0.546 (based on the method of Methot & Taylor [-@Methot2011]) which is similar to what has been assumed or estimated for other rockfish in the California Current.  The stock-recruit curve, Figure \ref{fig:stock_recruit_curve.N} shows a shallow relationship between stock size and recruitment.}
 
 
 
@@ -343,9 +343,9 @@ The fits to the lengths in the Recreational fishery Figure \ref{fig:mod2_1_comp_
 
 The Commercial length comps are fit well through 2005, when data becomes sparse and noisy Figure \ref{fig:mod2_5_comp_lenfit_flt2mkt2}; and Figure \ref{fig:mod2_8_comp_lenfit_data_weighting_TA1.8_Commercial Fishery}.
 
-Fits for the Onboard Survey lengths are good in the early survey, and poor for the later period \ref{fig:mod2_9_comp_lenfit_flt3mkt2}; \ref{fig:mod2_12_comp_lenfit_data_weighting_TA1.8_Recreational Onboard Survey}.  Attempting to apply a time-block to this data resulted in poor convergence.
+Fits for the Onboard Survey lengths are reasonable for both the early and late periods (Figures \ref{fig:mod2_9_comp_lenfit_flt3mkt2} - \ref{fig:mod2_16_comp_lenfit_data_weighting_TA1.8_Rec. Onboard Survey Late}.  Previous attempts to apply a time-block to this data resulted in poor convergence, but splitting the onboard index into separate fleets (along with revising the indices) during the STAR panel resulted in better fits and model performance.
 
-The Hook-and-Line Survey lengths are noisy (Figure \ref{fig:mod2_17_comp_lenfit_flt5mkt0}), but the fits are acceptable, and follow the trend of the data better than those for the other datasets:  Figure \ref{fig:mod2_16_comp_lenfit_data_weighting_TA1.8_Hook & Line Survey}.
+The Hook-and-Line Survey lengths are noisy (Figure \ref{fig:mod2_17_comp_lenfit_flt5mkt0}), but the fits are acceptable, and follow the trend of the data better than those for the other datasets:  Figure \ref{fig:mod2_20_comp_lenfit_data_weighting_TA1.8_Hook & Line Survey}.
 
 The Small Fish Study lengths are not fit badly (Figures \ref{fig:mod2_21_comp_lenfit_flt7mkt2} and \ref{fig:mod2_24_comp_lenfit_data_weighting_TA1.8_Small Fish Study}), and it is perhaps a shame that there are so few years to this timeseries.
 
@@ -355,7 +355,7 @@ The aggregate fits to the length comps for all five datasets is shown in Figure 
 ### Final Southern Model Ages
 There are few marginal ages in the model.  Bubble plots for the Southern model ages (Figure \ref{fig:comp_age_bubble_mod2}) show the small sample from the Small Fish Study and the single year of ages from the Hook-and-Line Survey.  The samples are too small to show any inter-annual variation, and are noisy within-year.
 
-Figure \ref{fig:mod2_5_comp_agefit_flt6mkt2} shows the fit to the Recreational Fishery samples, which is poor in all four years.  The mean age in this data is shown in Figure \ref{fig:mod2_8_comp_agefit_data_weighting_TA1.8_Small Fish Study}, at 10 years.
+Figure \ref{fig:mod2_5_comp_agefit_flt7mkt2} shows the fit to the Recreational Fishery samples, which is poor in all four years.  The mean age in this data is shown in Figure \ref{fig:mod2_8_comp_agefit_data_weighting_TA1.8_Small Fish Study}, at 10 years.
 
 The Hook-and-Line Survey age fit is shown in Figure \ref{fig:mod2_1_comp_agefit_flt5mkt0}.  The Francis tuning method could not be applied in this case as it depends on the fit to multiple years of data.
 
@@ -418,17 +418,6 @@ The Southern model shows a retrospective pattern in which removing one year of d
 
 ### Final Southern Model Reference Points
 
-The estimated relative depletion level for the Southern model in 2017 is 
-`r {Depl_mod2}` (~95% asymptotic interval: $\pm$ 
-`r {Depl_mod2_CI}`), corresponding to an unfished spawning output of 
-`r {paste(round(Spawn_mod2,1), fecund_unit, sep=' ')}` (~95% asymptotic interval: 
-`r #paste(Spawn_mod2_CI, fecund_unit, sep=' ')`) of 
-spawning output in the base model (Table \ref{tab:Ref_pts_mod2}). Unfished 
-age `r min_age` biomass was estimated to be `r {Ref_pts_mod2[2,2]}` 
-mt in the base case model. The target spawning output based on the biomass target 
-($SB_{40\%}$) is `r {paste(Ref_pts_mod2[7,2], fecund_unit,sep=' ')}`, 
-which gives a catch of `r Ref_pts_mod2[10,2]` mt. Equilibrium yield at the proxy $F_{MSY}$ 
-harvest rate corresponding to $SPR_{50\%}$ is `r {Ref_pts_mod2[15,2]}` mt.
-
+Reference points are not reported for the Southern model because it is not being recommended for management of the species.
 
 
