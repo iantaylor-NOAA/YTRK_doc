@@ -1315,7 +1315,7 @@ align(mngmnt.table.S) = c('l',
     # Create the time series table
     Timeseries.table = xtable(Timeseries, 
                               caption = paste('Time-series of population estimates 
-                                        from the', mod2_label, 'base-case.'),
+                                        from the final', mod2_label, '.'),
                               label='tab:Timeseries_mod2',
                               digits = c(0,0,0,2,2,0,0,2,2))   
 

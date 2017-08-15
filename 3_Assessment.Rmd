@@ -324,7 +324,7 @@ Estimated catches are shown in Figure \ref{fig:r4ss_catch2_S}.
 
 The estimated spawning biomass in Figure \ref{fig:ssb.S} shows the size of the uncertainty in this model. Total biomass (Figure \ref{fig:total_bio.S}) shows a sharp upward trend in recent years, the decade in which there is only one year of age data, 2004, from the Hook-and-Line Survey.  Spawning depletion has likely never been below the 40% management target (Figure \ref{fig:depl.S}), since almost all variations of the model explored show a healthy stock well above that level.
 
-Recruitments have been constant, except 2008 and 2010, when the model sees extra large recruitments with extra large recruitment deviations (Figures \ref{fig:recruits1.S} and \ref{fig:recdevs1.S}).  The spawner-recruit curve, Figure \ref{fig:stock_recruit_curve.S} is a line.
+Recruitments have been constant, except 2008 and 2010, when the model sees extra large recruitments with extra large recruitment deviations (Figures \ref{fig:recruits1.S} and \ref{fig:recdevs1.S}).  The spawner-recruit curve, Figure \ref{fig:stock_recruit_curve.S} shows a shallow relationship between stock size and recruitment, much like that in the Northern model.
 
 ### Final Southern Model Selectivities, Indices and Discards
 
@@ -374,10 +374,9 @@ The annual plots of age-at-length fits (Figure \ref{fig:mod2_5_comp_condAALfit_A
 For the Final Southern model, the parameter estimates are given in Table \ref{tab:Model2_params}. Status for all of the 161
 estimated parameters is good.
 
-### Final Southern Model Uncertainty and Sensitivity Analyses
-\hl{This section not yet updated to reflect Final Southern model.}
+### Southern Model Uncertainty and Sensitivity Analyses
 
-The Final Southern model was investigated in these 16 analyses:
+The Southern model was investigated in these 16 analyses:
 
 * **Drop Biological Datasets** The data from each source in turn was dropped from the model.
 * **Drop Indices** Each index in turn was dropped from the model.
