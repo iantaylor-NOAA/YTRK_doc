@@ -380,7 +380,7 @@ if(n_models == 3){
 ```
 <!-- ***********Edit caption based on fixed params************************* -->
 
-![Equilibrium yield curve for the base-case Northern model.\label{fig:Yield_all}](`r yield.file`)
+![Equilibrium yield curve for the base-case Northern model and final Southern model.\label{fig:Yield_all}](`r yield.file`)
 
 <!-- ***********END EXECUTIVE SUMMARY RESULTS SUMMARY TABLE AND YIELD CURVE -->
 
