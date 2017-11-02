@@ -471,6 +471,7 @@ align(SPRratio_Exploit_mod3.table) = c('l','l',
 # Reference points ------------------------------------------------------------
 
 # Extract reference points table data
+
 for (model in 1:n_models) {
   if (model == 1){
     mod = mod1
@@ -495,12 +496,13 @@ for (model in 1:n_models) {
   TotBio_Unfished_tmp$Value <- TotBio_Unfished_tmp$Value/bio_scale
   TotBio_Unfished_tmp$StdDev <- TotBio_Unfished_tmp$StdDev/bio_scale
   
+  tmpLastYR = LastYR + 1
   Ref_pts = rbind (
-      SSB_Unfished    = mod$derived_quants[grep('SSB_U', mod$derived_quants$Label), ],
+      SPB_Unfished    = mod$derived_quants[grep('SPB_V', mod$derived_quants$Label), ],
       TotBio_Unfished = TotBio_Unfished_tmp, # created above
       Recr_Unfished   = Recr_Unfished_tmp,   # created above
-      SPB_lastyr      = mod$derived_quants[grep(paste0('SPB_', LastYR), mod$derived_quants$Label), ],
-      Depletion_lastyr= mod$derived_quants[grep(paste0('Bratio_', LastYR), mod$derived_quants$Label), ],
+      SPB_lastyr      = mod$derived_quants[grep(paste0('SPB_', tmpLastYR), mod$derived_quants$Label), ],
+      Depletion_lastyr= mod$derived_quants[grep(paste0('Bratio_', tmpLastYR), mod$derived_quants$Label), ],
       Refpt_sB        = c(NA, NA, NA),
       SSB_Btgt        = mod$derived_quants[grep('SSB_Btgt', mod$derived_quants$Label), ],
       SPR_Btgt        = mod$derived_quants[grep('SPR_Btgt', mod$derived_quants$Label), ],
@@ -540,11 +542,11 @@ for (model in 1:n_models) {
   
   Ref_pts$CI1      = paste('(', Ref_pts$lowerCI1, '-', Ref_pts$upperCI1, ')', sep='')
   
-  Quantity = c(paste('Unfished spawning output (', fecund_unit, ')', sep = ''),
+  Quantity = c(paste('Unfished spawning output', ' (', fecund_unit, ')', sep = ''),
       paste('Unfished age ', min_age, ' biomass (1000 mt)', sep = ''),
       'Unfished recruitment (R0, millions)',
-      paste('Spawning output', '(', LastYR, ' ', fecund_unit, ')', sep = ''),
-      paste('Relative Spawning Output (depletion)', LastYR,')',sep=''),
+      paste(tmpLastYR, ' Spawning output', ' (', fecund_unit, ')', sep = ''),
+      paste(tmpLastYR, ' Relative Spawning Output (Depletion)',sep=''),
       '\\textbf{$\\text{Reference points based on } \\mathbf{SB_{40\\%}}$}',
       'Proxy spawning output ($B_{40\\%}$)',
       'SPR resulting in $B_{40\\%}$ ($SPR_{B40\\%}$)',
@@ -568,6 +570,7 @@ for (model in 1:n_models) {
               '\\textbf{\\~95\\%  Confidence Interval}')
   assign(paste('Ref_pts_', mod_area, sep = ''), Ref_pts)
 
+  
 } # end for loop for n models for reference points table
 
 # =============================================================================
@@ -577,7 +580,7 @@ for (model in 1:n_models) {
 Ref_pts_mod1.table = xtable(Ref_pts_mod1, 
                             caption=c(paste('Summary of reference 
                                       points and management quantities for the 
-                                      base case ', mod1_label, '.',sep = '')), 
+                                       ', mod1_label, '.',sep = '')), 
                             label='tab:Ref_pts_mod1')  
 # Add alignment      
 align(Ref_pts_mod1.table) = c('l',
@@ -810,38 +813,38 @@ mngmt = mngmt[,-1]
                        Recruittab_mod1)
     
 # Model 2
-if (n_models >= 2) {
-  # SPR ratio and exploitation
-  SPRratio_Exploit_mod2 = SPRratio_Exploit_mod2[2:nrow(SPRratio_Exploit_mod2),c(2,4)]
-  SPRratio_Exploit_mod2[,c(1,2)] = round(SPRratio_Exploit_mod2[,c(1,2)],3)
-  #SPRratio_Exploit_mod2 = SPRratio_Exploit_mod2[-dim(SPRratio_Exploit_mod2)[1],]
-  SPRratio_Exploit_mod2 = rbind(SPRratio_Exploit_mod2,blanks)
-  rownames(SPRratio_Exploit_mod2)[10]='Lastyear'
-
-  # Age 5+ biomass 
-  Summary_biomass_mod2 = mod2$timeseries[,c('Yr','Bio_smry')]
-  Summary_biomassyrs_mod2 = subset(Summary_biomass_mod2, Yr>=(FirstYR) & Yr<=(LastYR))
-  Summary_biomassyrs_mod2 = Summary_biomassyrs_mod2[,2]
-  Summary_biomassyrs_mod2 = round(Summary_biomassyrs_mod2/bio_scale,2)
-  
-  # Spawning biomass and depletion
-  SpawnDeplete_mod2 = SpawnDeplete_mod2[,c(2:5)]
-  SpawnDeplete_mod2[,1] = round(SpawnDeplete_mod2[,1],2)
-  SpawnDeplete_mod2[,3] = round(SpawnDeplete_mod2[,3],2)
-  
-  # Recruitment 
-  Recruittab_mod2 = Recruittab_mod2[,c(2,3)]
-  
-  # BIND ALL DATA TOGETHER
-  mod2_summary = cbind(SPRratio_Exploit_mod2,Summary_biomassyrs_mod2,SpawnDeplete_mod2,Recruittab_mod2)
-}
+# if (n_models >= 2) {
+#   # SPR ratio and exploitation
+#   SPRratio_Exploit_mod2 = SPRratio_Exploit_mod2[2:nrow(SPRratio_Exploit_mod2),c(2,4)]
+#   SPRratio_Exploit_mod2[,c(1,2)] = round(SPRratio_Exploit_mod2[,c(1,2)],3)
+#   #SPRratio_Exploit_mod2 = SPRratio_Exploit_mod2[-dim(SPRratio_Exploit_mod2)[1],]
+#   SPRratio_Exploit_mod2 = rbind(SPRratio_Exploit_mod2,blanks)
+#   rownames(SPRratio_Exploit_mod2)[10]='Lastyear'
+# 
+#   # Age 5+ biomass 
+#   Summary_biomass_mod2 = mod2$timeseries[,c('Yr','Bio_smry')]
+#   Summary_biomassyrs_mod2 = subset(Summary_biomass_mod2, Yr>=(FirstYR) & Yr<=(LastYR))
+#   Summary_biomassyrs_mod2 = Summary_biomassyrs_mod2[,2]
+#   Summary_biomassyrs_mod2 = round(Summary_biomassyrs_mod2/bio_scale,2)
+#   
+#   # Spawning biomass and depletion
+#   SpawnDeplete_mod2 = SpawnDeplete_mod2[,c(2:5)]
+#   SpawnDeplete_mod2[,1] = round(SpawnDeplete_mod2[,1],2)
+#   SpawnDeplete_mod2[,3] = round(SpawnDeplete_mod2[,3],2)
+#   
+#   # Recruitment 
+#   Recruittab_mod2 = Recruittab_mod2[,c(2,3)]
+#   
+#   # BIND ALL DATA TOGETHER
+#   mod2_summary = cbind(SPRratio_Exploit_mod2,Summary_biomassyrs_mod2,SpawnDeplete_mod2,Recruittab_mod2)
+#}
 
 # -----------------------------------------------------------------------------    
 # CREATE TABLES BASED ON HOW MANY MODELS AND MANAGEMENT AREAS YOU HAVE
   
 # ONE MODEL
-if (n_models == 1) {
-#if (TRUE) {
+#if (n_models == 1) {
+if (TRUE) {
    # Bind data from all three models together
   base_summary1 = as.data.frame(cbind(mngmt,mod1_summary))
 
@@ -866,7 +869,7 @@ if (n_models == 1) {
   colnames(base_summary) = c('Quantity',seq(FirstYR+1,LastYR+1))
   
   # # Create the table``
-  base_summary.table = xtable(base_summary, caption=c('Base case results summary.'),
+  base_summary.table = xtable(base_summary, caption=c('Northern model results summary.'),
                               label='tab:base_summary',digits=0)
   # # Add alignment   
   align(base_summary.table) = c('l',
@@ -883,8 +886,8 @@ if (n_models == 1) {
                                 '>{\\centering}p{1.1in}')
 }
   # TWO MODELS
-if (n_models == 2) {
-#if (FALSE) {
+#if (n_models == 2) {
+if (FALSE) {
   # Bind data from all three models together
   base_summary1 = as.data.frame(cbind(mngmt,mod1_summary, mod2_summary))
   
