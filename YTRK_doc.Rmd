@@ -2,7 +2,7 @@
 title: 'Status of Yellowtail Rockfish (*Sebastes flavidus*) Along the U.S. Pacific Coast in 2017'
 author: ''
 date: ''
-footer: 'July 11th DRAFT'
+footer: ''
 output:
   pdf_document:
     fig_caption: yes
@@ -68,7 +68,7 @@ header-includes:
 <!-- How to comment out any section while debugging doc -->
 <!--  -->
 <!--  ```{r child='SS_file_appendices.rmd'}
-``` --> 
+``` -->
 
 ```{r child = "1_Introduction.Rmd"}
 ```

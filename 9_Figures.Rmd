@@ -45,7 +45,7 @@
 
 ##Data and model fits for the `r mod1_label`
 
-![Summary of data sources used in the `r mod1_label`. \label{fig:data_plot.N}](r4ss/plots_mod1/data_plot.png)
+![Summary of data sources used in the `r mod1_label`.  Two of the indices, the Commercial Fishery Index and the At-Sea Hake Bycatch Index, were not used in the final version of the model. \label{fig:data_plot.N}](r4ss/plots_mod1/data_plot.png)
 
 \FloatBarrier
 

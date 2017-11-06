@@ -6,10 +6,10 @@ This assessment reports the status of the `r spp` (\emph{`r spp.sci`}) resource 
 The Pacific Fishery Management Council (PFMC) manages the U.S. fishery as two stocks separated at Cape Mendocino, California (40$^\circ$ 10'N). The northern stock has long been assessed on its own; the southern stock is managed as part of the "Minor Shelf Rockfish" complex.  This assessment analyzed each stock independently, with the southern stock extending southward to the U.S./Mexico border and the northern stock extending northward to the U.S./Canada border (Figure \ref{fig:assess_region_map_Exec_Sum}).
 
 
-The Southern model was not robust enough for management purposes, mainly due to lack of data.  Therefore although the data and sensitivities investigated for the model are reported in this document, the results of any of those sensitivities should be interpreted with the recognition that the model is not considered suitable for management.  We therefore report estimates and projections only for the Northern model.
+The Southern model was not sufficiently robust for management purposes, primarily due to lack of data.  Therefore although the data and sensitivities investigated for the model are reported in this document, the results of any of those sensitivities should be interpreted with the recognition that the model is not considered suitable for management.  We therefore report estimates and projections only for the Northern model.
 
 
-![Map depicting the boundaries for the base-case model.  \label{fig:assess_region_map_Exec_Sum}](Figures/assess_region_map_v2.png)
+![Map depicting the boundaries for the two models.  \label{fig:assess_region_map_Exec_Sum}](Figures/assess_region_map_v2.png)
 
 The most recent fully integrated assessment [@Wallace2005], following the pattern of prior assessments, included only the Northern stock which it divided into three assessment areas with divisions at Cape Elizabeth (47$^\circ$ 20'N) and Cape Falcon (45$^\circ$ 46'N).  The northern stock was assessed most recently using a data-moderate assessment method in 2013 [@Cope2013]. The southern stock was also analyzed using the data-moderate method but that model was never reviewed or put forward for management. The contribution of the southern stock to the overfishing limit (OFL) for the Southern Shelf Complex was determined using Depletion-Based Stock Reduction Analysis [@Dick2011]. 
 
@@ -33,7 +33,7 @@ Catches from the Southern stock (Figure \ref{fig:r4ss_catch_S}) were divided int
 
 ![Estimated catch history of `r spp` in the `r mod1_label`. Recreational catches in Washington are model estimates of total weight converted from input catch in numbers using model estimates of growth and selectivity.\label{fig:r4ss_catch_N}](r4ss/plots_mod1/catch2 landings stacked.png)
 
-![Estimated catch history of `r spp` in the `r mod2_label`. \label{fig:r4ss_catch_S}](r4ss/plots_mod2/catch2 landings stacked.png)
+![Estimated catch history of `r spp` in the `r mod2_label`.  Early catches are represented by a linear ramp from the presumed beginning of the fishery in 1889 to the period in which actual data are available. \label{fig:r4ss_catch_S}](r4ss/plots_mod2/catch2 landings stacked.png)
 
 \FloatBarrier
 
@@ -75,7 +75,12 @@ This assessment uses Stock Synthesis version 3.30.  The Northern model begins in
 ##Stock Biomass{-}
 The spawning output for the Northern model was estimated to have fallen below 40\% of unfished equilibrium in the early 1980s, to a minimum of `r MinDepl_mod1`% in `r MinDeplYr_mod1` but has rebounded since to `r Depl_mod1` in 2017 (~95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Figures \ref{fig:Spawnbio_all} and \ref{fig:RelDeplete_all}, Table \ref{tab:SpawningDeplete_mod1}).
 
-The spawning output and depletion from the final Southern model are shown in the same set of figures for comparison, although this model is not being put forward for management, however most variations of the Southern model explored during development and review showed the stock to be healthy and well above management targets.
+
+TOADS ON
+<!-- The spawning output and depletion from the final Southern model are shown in the same set of figures for comparison, although this model is not being put forward for management, however most variations of the Southern model explored during development and review showed the stock to be healthy and well above management targets. -->
+
+TOADS OFF
+
 
 \FloatBarrier
 
@@ -83,6 +88,9 @@ The spawning output and depletion from the final Southern model are shown in the
 <!--BEGIN  EXECUTIVE SUMMARY SPAWNING BIOMASS AND DEPLETE TABLES AND FIGURES-->
 ```{r, results='asis'}
     # Print spawning biomass table(s)
+
+    n_models = 1
+
     print(Spawn_Deplete_mod1.table, include.rownames = FALSE, caption.placement = 'top')
     if(n_models >= 2) {print(Spawn_Deplete_mod2.table, include.rownames = FALSE, caption.placement = 'top')}
     if(n_models == 3) {print(Spawn_Deplete_mod3.table, include.rownames = FALSE, caption.placement = 'top')}
@@ -102,9 +110,9 @@ The spawning output and depletion from the final Southern model are shown in the
 \FloatBarrier
 
 
-![Time series of spawning output trajectory (line: median; shaded areas: approximate 95% credibility intervals) for the base case Northern model and final Southern model.  \label{fig:Spawnbio_all}](`r spawn.file`)
+![Time series of spawning output trajectory (line: median; shaded areas: approximate 95% credibility intervals) for the Northern model. \label{fig:Spawnbio_all}](`r spawn.file`)
 
-![Estimated relative depletion with approximate 95\% asymptotic confidance intervals (dashed lines) for the base case Northern model and final Southern model. \label{fig:RelDeplete_all}](`r Bratio.file`)
+![Estimated relative depletion with approximate 95\% asymptotic confidance intervals (dashed lines) for the Northern model. \label{fig:RelDeplete_all}](`r Bratio.file`)
 
 <!-- ***********END  EXECUTIVE SUMMARY SPAWNING BIOMASS AND**************** -->
 
@@ -119,7 +127,7 @@ The spawning output and depletion from the final Southern model are shown in the
 
 The Northern model recruitments have ranged from roughly 21 million to 72 million since 2008, although with large uncertainty.  Recruitments have shown remarkable consistency since 2013.  
 
-Southern model recruitments have ranged from 21 million to 103 million.  In 2008 and 2010 it estimates especially large recruitments and extra large recruitment deviations.
+<!-- Southern model recruitments have ranged from 21 million to 103 million.  In 2008 and 2010 it estimates especially large recruitments and extra large recruitment deviations. -->
 
 
 
@@ -127,6 +135,9 @@ Southern model recruitments have ranged from 21 million to 103 million.  In 2008
 ```{r, results='asis'}
    # Print recruitment tables; will print up to 3 depending on the number of models, you can delete the code
    # for models you don't need as well
+
+   n_models = 1
+
    print(Recruit_mod1.table, include.rownames = FALSE, caption.placement = 'top')
    
    if(n_models >= 2) {
@@ -146,7 +157,7 @@ Southern model recruitments have ranged from 21 million to 103 million.  In 2008
 
 \FloatBarrier
 
-![Time series of estimated `r spp` recruitments for the base-case Northern model and final Southern Model with 95\% confidence or credibility intervals. \label{fig:Recruits_all}](`r recruit.file`)
+![Time series of estimated `r spp` recruitments for the Northern model with 95\% confidence or credibility intervals. \label{fig:Recruits_all}](`r recruit.file`)
 
 <!-- ***********END EXECUTIVE SUMMARY RECRUITMENT TABLEs AND FIGURES******* -->
 
@@ -155,9 +166,9 @@ Southern model recruitments have ranged from 21 million to 103 million.  In 2008
 
 
 ##Exploitation status{-}
-The Northern model is estimated to have experienced overfishing throughout the 1980s and 1990s relative to the current SPR-based harvest limits (Figure \ref{fig:SPR_all}). However, in recent years, the fishing intensity has been well within the management limits and exploitation rates (catch divided by age 4+ biomass) are estimated to have been less than 2\% per year (Table \ref{tab:SPR_Exploit_mod1}).
+The Northern stock is estimated to have experienced overfishing throughout the 1980s and 1990s relative to the current SPR-based harvest limits (Figure \ref{fig:SPR_all}). However, in recent years, the fishing intensity has been well within the management limits and exploitation rates (catch divided by age 4+ biomass) are estimated to have been less than 2\% per year (Table \ref{tab:SPR_Exploit_mod1}).
 
-A summary of `r spp` exploitation histories for the Northern base model is provided as Figure \ref{fig:Phase_all}.
+A summary of `r spp` exploitation histories for the Northern model is provided as Figure \ref{fig:Phase_all}.
 
 
 \FloatBarrier
@@ -166,6 +177,9 @@ A summary of `r spp` exploitation histories for the Northern base model is provi
 <!-- ***********SPRratio TABLE AND FIGURES********************************* -->
 ```{r, results='asis'}
    # Print exploitation and SPRratio tables depending on how many models there are
+
+   n_models = 1
+
    if(n_models >= 1) {
      print(SPRratio_Exploit_mod1.table, include.rownames = FALSE, caption.placement = 'top')
    }
@@ -189,10 +203,10 @@ A summary of `r spp` exploitation histories for the Northern base model is provi
 
 \FloatBarrier
 
-![Estimated spawning potential ratio (SPR) for the base-case Northern model and final Southern model. One minus SPR is plotted so that higher exploitation rates occur on the upper portion of the y-axis. The management target is plotted as a red horizontal line and values above this reflect harvests in excess of the overfishing proxy based on the SPR\textsubscript{50\%} harvest rate. The last year in the time series is `r Dat_end_mod1`. \label{fig:SPR_all}](`r SPR.file`)
+![Estimated spawning potential ratio (SPR) for the Northern model. One minus SPR is plotted so that higher exploitation rates occur on the upper portion of the y-axis. The management target is plotted as a red horizontal line and values above this reflect harvests in excess of the overfishing proxy based on the SPR\textsubscript{50\%} harvest rate. The last year in the time series is `r Dat_end_mod1`. \label{fig:SPR_all}](`r SPR.file`)
 
 
-![Phase plot of estimated relative (1-SPR) vs. relative spawning biomass for the base case Northern model and final Southern model. The relative (1-SPR) is (1-SPR) divided by 50\% (the SPR target). Relative depletion is the annual spawning biomass divided by the unfished spawning biomass. \label{fig:Phase_all}](`r Phase.file`)
+![Phase plot of estimated relative (1-SPR) vs. relative spawning biomass for the Northern model. The relative (1-SPR) is (1-SPR) divided by 50\% (the SPR target). Relative depletion is the annual spawning biomass divided by the unfished spawning biomass. \label{fig:Phase_all}](`r Phase.file`)
 
 <!-- ************END EXECUTIVE SUMMARY EXPLOITATION************************ -->
 <!-- ************AND SPRratio TABLE AND FIGURES**************************** -->
@@ -217,20 +231,18 @@ The estimated relative depletion level for the Northern model in 2017 is
 `r Depl_mod1` (~95% asymptotic interval: $\pm$ `r Depl_mod1_CI`, corresponding 
 to an unfished spawning output of `r paste(round(Spawn_mod1,1), fecund_unit,sep=' ')` 
 (~95% asymptotic interval: `r paste(Spawn_mod1_CI, fecund_unit, sep=' ')`) of 
-spawning output in the base model (Table \ref{tab:Ref_pts_mod1}).  Unfished 
-age `r min_age` biomass was estimated to be `r Ref_pts_mod1[2,2]` mt in the 
-base case model. The target spawning output based on the biomass target 
-($SB_{40\%}$) is `r paste(Ref_pts_mod1[7,2], fecund_unit,sep=' ')`, which gives 
-a catch of `r Ref_pts_mod1[10,2]` mt. Equilibrium yield at the proxy $F_{MSY}$ 
-harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt.
+spawning output in the model (Table \ref{tab:Ref_pts_mod1}).  Unfished 
+age `r min_age` biomass was estimated to be `r Ref_pts_mod1[2,2]` mt. The target spawning output based on the biomass target ($SB_{40\%}$) is `r paste(Ref_pts_mod1[7,2], fecund_unit,sep=' ')`, which gives  a catch of `r Ref_pts_mod1[10,2]` mt. Equilibrium yield at the proxy $F_{MSY}$ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt.
 
-Estimated equilibrium yield curves for the base-case Northern model is shown in Figure \ref{fig:Yield_all}.
+The estimated equilibrium yield curve for the Northern model is shown in Figure \ref{fig:Yield_all}.
 
 \FloatBarrier
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY REFERENCE POINT TABLES************* -->
 ```{r, results='asis'}
+
    n_models = 1
+
    # Print reference point tables
    if(n_models >= 1) {
      print(Ref_pts_mod1.table, include.rownames = FALSE, caption.placement = 'top',
@@ -259,8 +271,8 @@ Total catch (including landings and discards) from the Northern stock has remain
 ```
 
 ```{r, results='asis'}
-    print(mngmnt.table.S, include.rownames = FALSE, caption.placement = 'top', 
-          sanitize.text.function = function(x){x}, scalebox = .9)
+    #print(mngmnt.table.S, include.rownames = FALSE, caption.placement = 'top', 
+    #      sanitize.text.function = function(x){x}, scalebox = .9)
 ```
 
 <!-- ***********END EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLES********* -->
@@ -271,11 +283,11 @@ Total catch (including landings and discards) from the Northern stock has remain
 
 ##Unresolved Problems And Major Uncertainties{-}
 
-At the STAR meeting the Northern model underwent a major change in that the two fishery-dependent indices that had been included in the pre-STAR model were withdrawn.  Representatives of the Groundfish Advisory Panel and Washington Department of Fish and Wildlife identified mistaken assumptions about the datasets used in developing these indices.  In the case of the commercial logbook index, this had to do with underestimating the impact of changes in reporting the species and market categories which was occuring differently among the three reporting states.  The Hake bycatch index was developed with inaccurate information about the Hake fleet of the time, which was much more heterogeneous than had been believed.  These indices were removed because the biases introduced could not be addressed within the time-frame of the review; however they were influential in the model, and both merit further investigation.
+At the STAR meeting the Northern model underwent a major change in that two fishery-dependent indices that had been included in the pre-STAR model were withdrawn.  Representatives of the Groundfish Advisory Panel and Washington Department of Fish and Wildlife identified mistaken assumptions about the datasets used in developing these indices.  In the case of the commercial logbook index, this had to do with underestimating the impact of changes in the reporting of species and market categories which was occuring differently among the three reporting states.  The Hake bycatch index was developed with inaccurate information about the Hake fleet of the time, which was much more heterogeneous than had been believed.  These indices were removed because the biases introduced could not be addressed within the time-frame of the review; however they were influential in the model, and both merit further investigation.
 
-In the past, the Northern stock has been modeled as three stocks assumed to have a latitudinal cline in growth.  This was not addressed in the present model, in part because the Hess study [@Hess2011] suggests there is no genetic basis for such a cline, and because of objections raised by Washington and Oregon over boundary assumptions made previously.  Future research should examine the assumption that growth is invariant along the coast, and evaluate whether the Northern model is sensitive to alternate assumptions.
+In the past, the Northern stock has been modeled as three stocks assumed to have a latitudinal cline in growth.  This was not addressed in the present model, in part because the Hess study [@Hess2011] suggests there is no genetic basis for such a cline, and because of objections raised by Washington and Oregon representatives over boundary assumptions made previously.  Future research should examine the assumption that growth is invariant along the coast, and evaluate whether the Northern model is sensitive to alternate assumptions.
 
-Another structural decision in the Northern model was in treating female natural mortality as age-independent.  This conflicts with prior assessments of Yellowtail Rockfish and with recent assesments of other rockfish stocks.  Sex ratios in the data change definitively with age, and old females are conspicuous in their absence.  Assessments have addressed this by increasing female mortality after a certain age.  One problem with this approach is in defining the age at which such a change occurs. Another is that this assumes that the disappearance of older females is not due to their retirement to habitat unavailable to the fishery.  In any case, this was not investigated during the present assessment, and may have provided further insight had it been.
+Another structural decision in the Northern model was in treating female natural mortality as age-independent.  This conflicts with prior assessments of Yellowtail Rockfish and with recent assesments of other rockfish stocks.  Sex ratios in the data change definitively with age, and old females are conspicuous in their absence.  Some assessments have addressed this by increasing female mortality after a certain age.  One problem with this approach is in defining the age at which such a change occurs. Another is that this assumes that the disappearance of older females is not due to their movement to habitat unavailable to the fishery.  In any case, this was not investigated during the present assessment, and may have provided further insight had it been.
 
 The Southern model unquestionably had insufficient data to support an age-structured model.  The ages were sparse and the period since 1999 was barely represented at all.  The only fishery-independent survey (the Hook and Line Survey) is conducted mostly outside of the range of the species, and there is no discard data available for the Southern model.  Attempting this separate assessment of the Southern stock is useful in defining what constitutes sufficient data, but also in that discussions engendered by the lack of data has identified an otolith collection at the SWFSC that could be investigated, as well as otoliths collected in the Hook and Line Survey that have not been aged.
 
@@ -288,7 +300,7 @@ Potential OFL projections for the Northern model are shown in Table \ref{tab:OFL
 
 A decision table for the Northern model is provided in Table \ref{tab:Decision_table_mod1}. The initial catch streams chosen during the STAR panel with input from the GMT and GAP representatives are as follows.
 
-* Base catch stream. Annual catches for each fleet are calculated within Stock Synthesis for from the Base Model by applying the default SPR-based control rule with a 0.956 adjustment from OFL to ACL associated with a P-star of 0.45 and the default 0.36 Sigma for Category-1 stocks
+* Base catch stream. Annual catches for each fleet are calculated within Stock Synthesis by applying the default SPR-based control rule with a 0.956 adjustment from OFL to ACL associated with a P-star of 0.45 and the default 0.36 Sigma for Category-1 stocks
 * Historic target opportunity catch stream example. This is based on a calculation by the GMT of the based on an average attainment during a period when there was a mid-water fishery targing Yellowtail. It results in an total annual catch of approximately 4000 mt.
 * Recent 5-year average. It results in an total annual catch of approximately 2000 mt.
 
@@ -302,7 +314,7 @@ Allocation of catch among fleets for the years 2019 and beyond was based on an a
 
 In all these calculations, the catch of the Washington Recreational fleet relative to the other fleets is based on the estimated catch in biomass, but the forecast catches for this fleet are input in numbers of fish to match the inputs of the historic catch in the model. The conversion of biomass to numbers in the forecast is based on an average weight of 1.056 kg calculated from the period since 2003 after the estimated change in selectivity of both recreational fleets. Minor discrepencies between this average and the average weight estimated within the model within the forecast period are the source of the small difference between the catch values shown in the decision table and the 2000 and 4000 mt values for two of the catch streams as well as the difference between the 5979 mt catch for 2018 in these forecasts and the 6002 ACL for that year.
 
-No decision table for the Southern model was developed because this model is not recommended for use in management. 
+No decision table was developed for the Southern model because this model is not recommended for use in management. 
 
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY OFL AND DECISION TABLES************ -->
@@ -333,7 +345,7 @@ No decision table for the Southern model was developed because this model is not
    # depending on the stock structure
    # Edit file: ./txt_files/Exec_basemodel_summary.csv and the Summary Results 
    # section in R code R_exec_summary_figs_tables.R
-n_models = 2
+n_models = 1
 if(n_models == 1){   
  print(base_summary.table, 
        include.rownames = FALSE, 
@@ -370,17 +382,19 @@ if(n_models == 3){
 
 <!-- ***********Yield curve table****************************************** -->
 ```{r, results='asis'}
-   # # Select the file to use for the yield curve depending on the number of models
-   # n_models == 2
-   # if(n_models == 1) {
-   #   yield.file  = 'r4ss/plots_mod1/yield1_yield_curve.png'
-   #  } else {
-   #   yield.file  = 'r4ss/plots_compare/yield_comparison_n_models.png'
-   # }
+   # Select the file to use for the yield curve depending on the number of models
+   n_models = 1
+   if(n_models == 1) {
+     yield.file  = 'r4ss/plots_mod1/yield1_yield_curve.png'
+    } else {
+     yield.file  = 'r4ss/plots_compare/yield_comparison_n_models.png'
+   }
 ```
 <!-- ***********Edit caption based on fixed params************************* -->
 
-![Equilibrium yield curve for the base-case Northern model and final Southern model.\label{fig:Yield_all}](r4ss/plots_compare/yield_comparison_n_models.png)
+<!-- ![Equilibrium yield curve for the base-case Northern model and final Southern model.\label{fig:Yield_all}](r4ss/plots_compare/yield_comparison_n_models.png) -->
+
+![Equilibrium yield curve for the Northern model.\label{fig:Yield_all}](r4ss/plots_mod1/yield1_yield_curve.png)
 
 <!-- ***********END EXECUTIVE SUMMARY RESULTS SUMMARY TABLE AND YIELD CURVE -->
 
