@@ -76,10 +76,7 @@ This assessment uses Stock Synthesis version 3.30.  The Northern model begins in
 The spawning output for the Northern model was estimated to have fallen below 40\% of unfished equilibrium in the early 1980s, to a minimum of `r MinDepl_mod1`% in `r MinDeplYr_mod1` but has rebounded since to `r Depl_mod1` in 2017 (~95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Figures \ref{fig:Spawnbio_all} and \ref{fig:RelDeplete_all}, Table \ref{tab:SpawningDeplete_mod1}).
 
 
-TOADS ON
-<!-- The spawning output and depletion from the final Southern model are shown in the same set of figures for comparison, although this model is not being put forward for management, however most variations of the Southern model explored during development and review showed the stock to be healthy and well above management targets. -->
-
-TOADS OFF
+No southern model is being put forward for management, however the models that were considered in the review do not indicate concern that the stock is below its target level
 
 
 \FloatBarrier
