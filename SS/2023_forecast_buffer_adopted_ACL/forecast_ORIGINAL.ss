@@ -16,7 +16,7 @@
 1 # Control rule method (1=catch=f(SSB) west coast; 2=F=f(SSB) ) 
 0.40 # Control rule Biomass level for constant F (as frac of Bzero, e.g. 0.40); (Must be > the no F level below) 
 0.10 # Control rule Biomass level for no F (as frac of Bzero, e.g. 0.10) 
-0.896 # Control rule target as fraction of Flimit for 2028 based on PEPtools::get_buffer(years = 2017:2028, sigma = 0.5, pstar = 0.45)
+0.956 # Control rule target as fraction of Flimit (e.g. 0.75) 
 3 #_N forecast loops (1=OFL only; 2=ABC; 3=get F from forecast ABC catch with allocations applied)
 3 #_First forecast loop with stochastic recruitment
 -1 #_Forecast loop control #3 (reserved for future bells&whistles) 
@@ -47,54 +47,16 @@
  -9999  1 
 2 # basis for input Fcast catch: -1=read basis with each obs; 2=dead catch; 3=retained catch; 99=input Hrate(F)
 #enter list of Fcast catches; terminate with line having year=-9999
-#Year Seas Fleet Catch
-2017 1 1 5276
-2017 1 2 300
-2017 1 3 217
-2017 1 4 381.63
-2018 1 1 5105
-2018 1 2 300
-2018 1 3 208.95
-2018 1 4 367.47
-2019 1 1 5642.71
-2019 1 2 415.65
-2019 1 3 75.57
-2019 1 4 168.11088295687887
-2020 1 1 5343.82
-2020 1 2 393.63
-2020 1 3 71.57
-2020 1 4 159.2094455852156
-2021 1 1 5122.6
-2021 1 2 377.33
-2021 1 3 68.61
-2021 1 4 152.61806981519507
-2022 1 1 4962.93
-2022 1 2 365.57
-2022 1 3 66.47
-2022 1 4 147.8542094455852
-2023 1 1 4847.76
-2023 1 2 357.09
-2023 1 3 64.93
-2023 1 4 144.42505133470226
-2024 1 1 4774.07
-2024 1 2 351.66
-2024 1 3 63.94
-2024 1 4 142.22792607802876
-2025 1 1 4722.89
-2025 1 2 347.89
-2025 1 3 63.25
-2025 1 4 140.70841889117045
-2026 1 1 4678.84
-2026 1 2 344.65
-2026 1 3 62.66
-2026 1 4 139.39425051334703
-2027 1 1 4645.8
-2027 1 2 342.21
-2027 1 3 62.22
-2027 1 4 138.40862422997947
-2028 1 1 4614.13
-2028 1 2 339.88
-2028 1 3 61.8
-2028 1 4 137.46406570841887
--9999  1  1  1
-999 # verify end of input
+#_Year Seas Fleet Catch(or_F)
+2017   1    1     5276   # 5276 = 6196 ACL - 300 hake - 620 rec
+2018   1    1     5105   # 5105 = 6002 ACL - 300 hake - 597 rec
+2017   1    2     300    # hake set aside
+2017   1    2     300    # hake set aside
+2017   1    3     217    # recOR+CA = 35% of 620 set aside
+2018   1    3     208.95 # recOR+CA = 35% of 597 set aside
+2017   1    4     381.63 # recWA = 65% of 620 set aside / 1.056 kg/fish
+2018   1    4     367.47 # recWA = 65% of 597 set aside / 1.056 kg/fish
+
+-9999 1 1 0 
+#
+999 # verify end of input 
